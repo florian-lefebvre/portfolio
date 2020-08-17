@@ -2,7 +2,7 @@ title:              Florian LEFEBVRE's portfolio
 email:              florian.lefebvre3184@orange.fr
 description:        "I'm a French student who likes to program on his free time since 2018: Unreal Engine 4, web development..."
 author:             Florian LEFEBVRE
-baseurl:            ""
+baseurl:            "/portfolio"
 url:                ""
 
 # Social Profiles
