@@ -1,0 +1,51 @@
+title:              Florian LEFEBVRE's portfolio
+email:              florian.lefebvre3184@orange.fr
+description:        "I'm a French student who likes to program on his free time since 2018: Unreal Engine 4, web development..."
+author:             Florian LEFEBVRE
+baseurl:            ""
+url:                ""
+
+# Social Profiles
+#twitter_username:   
+github_username:    florian-lefebvre
+#facebook_username:  
+#instagram_username:  
+#linkedin_username:
+
+# Add your google-analytics ID here to activate google analytics
+google_analytics:   UA-155020188-3 # out your google-analytics code
+
+# Build settings
+markdown:           kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+paginate:           15
+paginate_path:      "/posts/page:num/"
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /posts/:year/:month/:day/:title
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+collections:
+  tags:
+    output: true
+    permalink: tags/:path/
+
+exclude:
+    - node_modules
