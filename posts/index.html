@@ -13,7 +13,7 @@ background: '/img/bg-post.jpg'
     {% for tag in tags %}
     {% assign tag_slug = tag['name'] | slugify: "raw" %}
     <li>
-      <a class="tag-link" href={{ site.baseurl | append: "/posts/tags/" | append: tag_slug | append: "/" }}
+      <a class="tag-link" href={{ site.baseurl | append: "/posts/tags/" | append: tag_slug }}
         rel="category tag">
         {{ tag['name'] }} ({{ tag['count'] }})
       </a>
