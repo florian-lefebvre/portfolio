@@ -114,4 +114,10 @@
     -o-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
+
+  @media only screen and (max-width: 427px) {
+    &.is-fixed {
+      top: -97px !important;
+    }
+  }
 }
