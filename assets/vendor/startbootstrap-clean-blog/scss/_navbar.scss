@@ -114,12 +114,16 @@
     -ms-transform: translate3d(0, 0, 0);
     -o-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-  }
-
-  &.notransition {
     top: 0;
     -webkit-transition: -webkit-transform 0s;
     -moz-transition: -moz-transform 0s;
     transition: transform 0s;
+  }
+
+  &.notransition {
+    /*top: 0;
+    -webkit-transition: -webkit-transform 0s;
+    -moz-transition: -moz-transform 0s;
+    transition: transform 0s;*/
   }
 }
