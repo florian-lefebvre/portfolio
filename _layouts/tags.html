@@ -2,12 +2,47 @@
 layout: page
 ---
 
-<div class="snippets">
-    <h1 class="snippets-heading">Articles tagged with "{{ page.tag-name }}"</h1>
+<a href="{{"/posts/" | relative_url }}" class="btn btn-primary text-white"><i class="fas fa-arrow-left"></i> Back to all articles</a>
 
-    {% for post in site.posts %}
-    {% if post.tags contains page.tag-name %}
-    {{ post.title }}
+<h1 class="section-heading">Articles tagged with "{{ page.tag-name }}"</h1>
+
+{% for post in site.posts %}
+{% if post.tags contains page.tag-name %}
+
+<article class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+      <h2 class="post-title">{{ post.title }}</h2>
+    </a>
+  
+    <p class="post-meta mb-3">{{ post.date | date: '%B %d, %Y' }} ·
+  
+      {% assign tags = post.tags | split:" " %}
+      {% for tag in tags %}
+      {% if forloop.first == true %}
+      {% assign tag_size = tag | size | minus: 4 %}
+      {% assign tag_name = tag | slice: 2, tag_size %}
+      {% else %}
+      {% assign tag_size = tag | size | minus: 3 %}
+      {% assign tag_name = tag | slice: 1, tag_size %}
+      {% endif %}
+  
+      <a class="mr-1" href={{ site.baseurl | append: "/posts/tags/" | append: tag_name | append: "/" }}
+        rel="category tag">
+        #{{ tag_name }}
+      </a>
+  
+      {% endfor %}
+  
+    </p>
+    {% if post.subtitle %}
+    <h4 class="font-weight-normal">{{ post.subtitle }}</h4>
+    {% else %}
+    <h4 class="font-weight-normal">{{ post.excerpt | strip_html | truncatewords: 15 }}</h4>
     {% endif %}
-    {% endfor %}
-</div>
+    <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}" class="btn btn-primary text-white">Read article <i class="fas fa-arrow-right"></i></a>
+  </article>
+  
+  <hr>
+  
+{% endif %}
+{% endfor %}

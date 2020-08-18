@@ -55,6 +55,7 @@
     -ms-transform: translate3d(0, 100%, 0);
     -o-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
   }
 
   &.is-open {
@@ -97,6 +98,7 @@
     &.is-fixed {
       top: -67px !important;
       border-bottom: 1px solid darken($white, 0.05);
+      //background-color: fade-out($white, 0.1);
       background-color: $white;
       .navbar-brand {
         color: $gray-900;
