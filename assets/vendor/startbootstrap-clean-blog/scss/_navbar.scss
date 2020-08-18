@@ -7,6 +7,7 @@
   .navbar-brand {
     font-weight: 800;
     color: $gray-800;
+    font-size: 1rem;
   }
   .navbar-toggler {
     font-size: 12px;
@@ -32,6 +33,7 @@
     .navbar-brand {
       padding: 10px 20px;
       color: $white;
+      font-size: 1.25rem;
       &:focus,
       &:hover {
         color: fade-out($white, 0.2);
@@ -115,7 +117,7 @@
     transform: translate3d(0, 0, 0);
   }
 
-  @media only screen and (max-width: 427px) {
+  /*@media only screen and (max-width: 427px) {
     &.is-fixed {
       top: -97px !important;
       &.open {
@@ -126,5 +128,5 @@
         transform: translate3d(0, 97px, 0);
       }
     }
-  }
+  }*/
 }
