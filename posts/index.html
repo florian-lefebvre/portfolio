@@ -3,11 +3,8 @@ layout: page
 title: Posts
 background: '/img/bg-post.jpg'
 ---
-<div class="alert alert-warning">
-  The tag system is under development.
-</div>
 <div class="all-tags">
-  All tags:
+  <h1 class="font-weight-normal">All tags:</h1>
   <ul>
     {% assign tags = site.posts | all_tags %}
     {% for tag in tags %}
@@ -21,6 +18,7 @@ background: '/img/bg-post.jpg'
     {% endfor %}
   </ul>
 </div>
+<hr>
 {% for post in paginator.posts %}
 
 <article class="post-preview">
