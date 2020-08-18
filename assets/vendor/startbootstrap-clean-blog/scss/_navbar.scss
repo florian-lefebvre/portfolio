@@ -118,22 +118,13 @@
   @media only screen and (max-width: 427px) {
     &.is-fixed {
       top: -97px !important;
-
       &.open {
-        -webkit-transform: translate3d(0, 0, 0);
-        -moz-transform: translate3d(0, 0, 0);
-        -ms-transform: translate3d(0, 0, 0);
-        -o-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 97px, 0);
+        -moz-transform: translate3d(0, 97px, 0);
+        -ms-transform: translate3d(0, 97px, 0);
+        -o-transform: translate3d(0, 97px, 0);
+        transform: translate3d(0, 97px, 0);
       }
-    }
-
-    &.open {
-      -webkit-transform: translate3d(0, 97px, 0);
-      -moz-transform: translate3d(0, 97px, 0);
-      -ms-transform: translate3d(0, 97px, 0);
-      -o-transform: translate3d(0, 97px, 0);
-      transform: translate3d(0, 97px, 0);
     }
   }
 }
