@@ -54,6 +54,27 @@
 
     &.is-fixed {
       top: -67px !important;
+      border-bottom: 1px solid darken($white, 0.05);
+      //background-color: fade-out($white, 0.1);
+      background-color: $white;
+      .navbar-brand {
+        color: $gray-900;
+        &:focus,
+        &:hover {
+          color: $primary;
+        }
+      }
+      .navbar-nav {
+        > li.nav-item {
+          > a {
+            color: $gray-900;
+            &:focus,
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+      }
     }
   }
   //@media only screen and (min-width: 992px) {
@@ -72,31 +93,10 @@
   &.is-fixed {
     /* when the user scrolls down, we hide the header right above the viewport */
     position: fixed;
-    top: -57px;
+    top: -58px;
     -webkit-transition: -webkit-transform 0.2s;
     -moz-transition: -moz-transform 0.2s;
     transition: transform 0.2s;
-    border-bottom: 1px solid darken($white, 0.05);
-    //background-color: fade-out($white, 0.1);
-    background-color: $white;
-    .navbar-brand {
-      color: $gray-900;
-      &:focus,
-      &:hover {
-        color: $primary;
-      }
-    }
-    .navbar-nav {
-      > li.nav-item {
-        > a {
-          color: $gray-900;
-          &:focus,
-          &:hover {
-            color: $primary;
-          }
-        }
-      }
-    }
   }
   &.is-visible {
     /* if the user changes the scrolling direction, we show the header */
