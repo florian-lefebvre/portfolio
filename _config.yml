@@ -49,3 +49,7 @@ collections:
 
 exclude:
     - node_modules
+    - vendor
+    - Gemfile
+    - Gemfile.lock
+    - Rakefile
