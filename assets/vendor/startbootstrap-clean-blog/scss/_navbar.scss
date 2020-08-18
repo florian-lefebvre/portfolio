@@ -49,6 +49,10 @@
         }
       }
     }
+
+    &.is-fixed {
+      top: -57px;
+    }
   }
   //@media only screen and (min-width: 992px) {
     -webkit-transition: background-color 0.2s;
@@ -60,7 +64,9 @@
     -ms-transform: translate3d(0, 0, 0);
     -o-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
     &.is-fixed {
       /* when the user scrolls down, we hide the header right above the viewport */
       position: fixed;
@@ -98,4 +104,13 @@
       transform: translate3d(0, 100%, 0);
     }
   //}
+
+  &.open {
+    top: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+      -o-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+  }
 }
