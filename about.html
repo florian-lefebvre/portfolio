@@ -3,8 +3,6 @@ title: About Me
 background: '/img/bg-about.jpg'
 ---
 <div class="text-justify">
-    <p>{{site.description}}</p>
-
     <h2 class="section-heading">Education and qualifications</h2>
     <h3>Secondary school Sainte Geneviève at Saint Jory</h3>
     <ul>
@@ -36,7 +34,7 @@ background: '/img/bg-about.jpg'
         </li>
     </ul>
     <h3>Extracurricular</h3>
-    <p>Check out my <a href="/projects">projects</a>.</p>
+    <p>Check out my <a href="{{ "/projects" | relative_url }}">projects</a>.</p>
 
     <h2 class="section-heading">Skills</h2>
     <h3>Programming languages & framework</h3>
@@ -68,8 +66,8 @@ background: '/img/bg-about.jpg'
                 <i class="fab fa-js fa-stack-1x fa-inverse"></i>
             </span>
             <div>
-                <h5>Javascript</h5>
-                <h6>Learning in progress</h6>
+                <h5>Javascript (Web)</h5>
+                <h6>Good knowledge</h6>
             </div>
         </div>
         <div class="col d-flex flex-column justify-content-around p-3" style="color:#CD6799;">
@@ -79,7 +77,7 @@ background: '/img/bg-about.jpg'
             </span>
             <div>
                 <h5>SCSS</h5>
-                <h6>Learning in progress</h6>
+                <h6>Good knowledge</h6>
             </div>
         </div>
         <div class="col d-flex flex-column justify-content-around p-3" style="color:#474A8A;">
@@ -130,12 +128,9 @@ background: '/img/bg-about.jpg'
             </span>
             <div>
                 <h5>Bootstrap 5</h5>
-                <h6>Learning in progress</h6>
+                <h6>Good knowledge</h6>
             </div>
         </div>
-    </div>
-    <h4 class="text-center mt-3">The ones I want to learn</h4>
-    <div class="row row-cols-md-3 row-cols-sm-2 row-cols-1 text-center bg-light p-3 rounded">
         <div class="col d-flex flex-column justify-content-around p-3" style="color:#F05340;">
             <span class="fa-stack fa-lg mx-auto">
                 <i class="fas fa-circle fa-stack-2x"></i>
@@ -143,8 +138,22 @@ background: '/img/bg-about.jpg'
             </span>
             <div>
                 <h5>Laravel</h5>
+                <h6>Learning in progress</h6>
             </div>
         </div>
+        <div class="col d-flex flex-column justify-content-around p-3" style="color:#41B883;">
+            <span class="fa-stack fa-lg mx-auto">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-vuejs fa-stack-1x fa-inverse"></i>
+            </span>
+            <div>
+                <h5>Vue.js</h5>
+                <h6>Learning in progress</h6>
+            </div>
+        </div>
+    </div>
+    <h4 class="text-center mt-3">The ones I want to learn</h4>
+    <div class="row row-cols-md-3 row-cols-sm-2 row-cols-1 text-center bg-light p-3 rounded">
         <div class="col d-flex flex-column justify-content-around p-3" style="color:#61DBFB;">
             <span class="fa-stack fa-lg mx-auto">
                 <i class="fas fa-circle fa-stack-2x"></i>
@@ -326,28 +335,29 @@ background: '/img/bg-about.jpg'
 
     <h3>Music</h3>
     <p>I play the drums (<span id="drums-date"></span>), percussions (<span id="percus-date"></span>) and bass guitar
-        (<span id="bass-date"></span>) in several orchestras ans groups: <a href="https://www.ohf31.fr" target="_blank"
+        (<span id="bass-date"></span>) in several orchestras and groups: <a href="https://www.ohf31.fr" target="_blank"
             rel="noopener noreferrer">the Frontonnais Concert Band</a>, the symphonic orchestra of the intermunicipal
-        music school of the frontonnais and <a href="https://www.instagram.com/legrouperock/" target="_blank" rel="noopener noreferrer">the rock band</a>.</p>
+        music school of the frontonnais and <a href="https://www.instagram.com/legrouperock/" target="_blank"
+            rel="noopener noreferrer">the rock band</a>.</p>
     <p>I also like reading and riding my bike.</p>
     <script>
-            (function () {
-                'use strict'
+        (function () {
+            'use strict'
 
-                var output;
-                function checkYear(date) {
+            var output;
+            function checkYear(date) {
 
-                    if (date == 1) {
-                        output = date + " year";
-                    } else {
-                        output = date + " years";
-                    }
-                    return output;
+                if (date == 1) {
+                    output = date + " year";
+                } else {
+                    output = date + " years";
                 }
+                return output;
+            }
 
-                document.getElementById("drums-date").innerHTML = checkYear(new Date().getFullYear() - 2010);
-                document.getElementById("percus-date").innerHTML = checkYear(new Date().getFullYear() - 2018);
-                document.getElementById("bass-date").innerHTML = checkYear(new Date().getFullYear() - 2019);
-            })()
+            document.getElementById("drums-date").innerHTML = checkYear(new Date().getFullYear() - 2010);
+            document.getElementById("percus-date").innerHTML = checkYear(new Date().getFullYear() - 2018);
+            document.getElementById("bass-date").innerHTML = checkYear(new Date().getFullYear() - 2019);
+        })()
     </script>
 </div>
