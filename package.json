@@ -37,6 +37,6 @@
   },
   "scripts": {
     "git": "git add . && git commit -m 'updated'",
-    "postgit": "git push --all"
+    "postgit": "git push"
   }
 }
