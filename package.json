@@ -36,6 +36,7 @@
     "gulp": "4.0.2"
   },
   "scripts": {
-      "deploy": "git add . && git commit -m 'updated' && git push --all"
+    "git": "git add . && git commit -m 'updated'",
+    "postgit": "git push --all"
   }
 }
