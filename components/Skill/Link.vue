@@ -3,7 +3,7 @@
     <a
       v-if="external"
       :href="url"
-      class="text-purple-500 inline-flex items-center hover:text-purple-700"
+      class="inline-flex items-center hover:opacity-75"
       target="_blank"
       rel="noopener noreferrer"
       >{{ text
@@ -21,7 +21,7 @@
     <nuxt-link
       v-else
       :to="url"
-      class="text-purple-500 inline-flex items-center hover:text-purple-700"
+      class="inline-flex items-center hover:opacity-75"
       >{{ text }}
       <svg
         fill="none"

@@ -23,7 +23,7 @@
           </svg>
         </nuxt-link>
       </div>
-      <nav class="headerNav flex items-center h-full">
+      <nav class="headerNav sm:flex sm:items-center sm:h-full">
         <nuxt-link to="/" exact-active-class="active">Home</nuxt-link>
         <nuxt-link to="/work" exact-active-class="active">Work</nuxt-link>
         <nuxt-link to="/about" exact-active-class="active">About</nuxt-link>
