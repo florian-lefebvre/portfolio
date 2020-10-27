@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <!-- <div>
     <section
       class="text-purple-100 body-font bg-gradient-to-r from-purple-500 to-purple-800"
     >
@@ -65,6 +65,83 @@
         </div>
       </div>
     </section>
+  </div> -->
+  <!--
+  Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
+  Read the documentation to get started: https://tailwindui.com/documentation
+-->
+  <div class="relative bg-white overflow-hidden">
+    <div class="max-w-screen-xl mx-auto">
+      <div
+        class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32"
+      >
+        <svg
+          class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
+          fill="currentColor"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <polygon points="50,0 100,0 50,100 0,100" />
+        </svg>
+
+        <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+          <nav
+            class="relative flex items-center justify-between sm:h-10 lg:justify-start"
+          ></nav>
+        </div>
+
+        <main
+          class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28"
+        >
+          <div class="sm:text-center lg:text-left">
+            <h2
+              class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl"
+            >
+              Hi! I'm
+              <br class="xl:hidden" />
+              <span class="text-teal-600">Florian LEFEBVRE</span>
+            </h2>
+            <p
+              class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
+            >
+              I am a French student who likes to program on his free time since
+              2018, when I discovered programming with
+              <strong>Unreal Engine 4</strong>. In December 2019, I started web
+              development and since then, I can't stop :
+              <strong>Tailwind css</strong>, <strong>Laravel</strong>,
+              <strong>Vue.js</strong>... And many more to come!
+            </p>
+            <div
+              class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"
+            >
+              <div class="rounded-md shadow">
+                <a
+                  href="#"
+                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
+                >
+                  Check out my work
+                </a>
+              </div>
+              <div class="mt-3 sm:mt-0 sm:ml-3">
+                <a
+                  href="#"
+                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-300 transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
+                >
+                  Learn about me
+                </a>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+      <img
+        class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+        src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
+        alt=""
+      />
+    </div>
   </div>
 </template>
 
@@ -113,12 +190,13 @@ export default {
             desc:
               "Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.",
             projectsDesc: "I use CSS3 in all my web projects.",
-            links: [{
+            links: [
+              {
                 text: "Learn more",
-                url:
-                  "https://developer.mozilla.org/en-US/docs/Web/CSS",
+                url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
                 external: true
-              }]
+              }
+            ]
           }
         },
         {
@@ -132,18 +210,18 @@ export default {
             desc:
               "Javascript is an object-oriented scripting language mainly used in HTML pages in which it adds dynamic content (modal...).",
             projectsDesc: "I use Javascript in almost all my web projects.",
-            links: [{
+            links: [
+              {
                 text: "Official website",
-                url:
-                  "https://www.javascript.com",
+                url: "https://www.javascript.com",
                 external: true
               },
               {
                 text: "Learn more",
-                url:
-                  "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+                url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
                 external: true
-              }]
+              }
+            ]
           }
         },
         {
@@ -208,15 +286,16 @@ export default {
             status: "Learning",
             desc:
               "Vue is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable.",
-            projects: [{
-              text: "Portfolio",
-              url: "/work/portfolio"
-            }],
+            projects: [
+              {
+                text: "Portfolio",
+                url: "/work/portfolio"
+              }
+            ],
             links: [
               {
                 text: "Official website",
-                url:
-                  "https://vuejs.org/",
+                url: "https://vuejs.org/",
                 external: true
               }
             ]
