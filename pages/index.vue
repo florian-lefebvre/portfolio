@@ -78,11 +78,11 @@
         <div
           class="flex flex-wrap w-full mb-20 flex-col items-center text-center"
         >
-          <h1
+          <h2
             class="text-2xl tracking-tight leading-10 font-extrabold text-gray-900 sm:leading-none md:text-3xl"
           >
             I know a lot of technologies and tools
-          </h1>
+          </h2>
           <p
             class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
           >
@@ -90,9 +90,34 @@
             knowledge in many areas
           </p>
         </div>
-        <div class="flex flex-wrap -m-4">
+        <h3
+          class="text-xl tracking-tight leading-10 font-bold text-gray-900 sm:leading-none md:text-2xl mb-4"
+        >
+          The ones I know
+        </h3>
+        <div class="flex flex-wrap justify-center -m-4 mb-10 lg:mb-24">
           <Skill
             v-for="tech in knownTechnologies"
+            :key="tech.name"
+            :title="tech.data.title"
+            :icon="tech.data.icon"
+            :color="tech.data.color"
+            :variant="tech.data.variant"
+            :status="tech.data.status"
+            :desc="tech.data.desc"
+            :projectsDesc="tech.data.projectsDesc"
+            :projects="tech.data.projects"
+            :links="tech.data.links"
+          />
+        </div>
+        <h3
+          class="text-xl tracking-tight leading-10 font-bold text-gray-900 sm:leading-none md:text-2xl mb-4"
+        >
+          The ones I want to learn
+        </h3>
+        <div class="flex flex-wrap justify-center -m-4">
+          <Skill
+            v-for="tech in futureTechnologies"
             :key="tech.name"
             :title="tech.data.title"
             :icon="tech.data.icon"
@@ -242,25 +267,19 @@ export default {
           }
         },
         {
-          name: "vuejs",
+          name: "mysql",
           data: {
-            title: "Vue.js",
-            icon: "VueJsIcon",
-            color: "#41B883",
-            variant: "warning",
-            status: "Learning",
+            title: "MySQL",
+            icon: "MySqlIcon",
+            color: "#00758F",
+            variant: "success",
+            status: "Basic knowledge",
             desc:
-              "Vue is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable.",
-            projects: [
-              {
-                text: "Portfolio",
-                url: "/work/portfolio"
-              }
-            ],
+              "MySQL is an open-source relational database management system.",
             links: [
               {
                 text: "Official website",
-                url: "https://vuejs.org/",
+                url: "https://www.mysql.com/",
                 external: true
               }
             ]
@@ -296,44 +315,6 @@ export default {
           }
         },
         {
-          name: "python",
-          data: {
-            title: "Python",
-            icon: "PythonIcon",
-            color: "#306998",
-            variant: "warning",
-            status: "Learning at school",
-            desc:
-              "Python is a programming language that lets you work quickly and integrate systems more effectively.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://www.python.org/",
-                external: true
-              }
-            ]
-          }
-        },
-        {
-          name: "mysql",
-          data: {
-            title: "MySQL",
-            icon: "MySqlIcon",
-            color: "#00758F",
-            variant: "success",
-            status: "Basic knowledge",
-            desc:
-              "MySQL is an open-source relational database management system.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://www.mysql.com/",
-                external: true
-              }
-            ]
-          }
-        },
-        {
           name: "bootstrap",
           data: {
             title: "Bootstrap",
@@ -347,6 +328,88 @@ export default {
               {
                 text: "Official website",
                 url: "https://getbootstrap.com/",
+                external: true
+              }
+            ]
+          }
+        },
+        {
+          name: "ue4",
+          data: {
+            title: "Unreal Engine",
+            icon: "UnrealEngineIcon",
+            color: "#000",
+            variant: "success",
+            status: "Good knowledge",
+            desc:
+              "The Unreal Engine is a game engine developed by Epic Games. Written in C++, its features a high degree of portability, supporting a wide range of platforms.",
+            links: [
+              {
+                text: "Official website",
+                url: "https://www.unrealengine.com/en-US/",
+                external: true
+              }
+            ]
+          }
+        },
+        {
+          name: "python",
+          data: {
+            title: "Python",
+            icon: "PythonIcon",
+            color: "#306998",
+            variant: "warning",
+            status: "Learning at highschool",
+            desc:
+              "Python is a programming language that lets you work quickly and integrate systems more effectively.",
+            links: [
+              {
+                text: "Official website",
+                url: "https://www.python.org/",
+                external: true
+              }
+            ]
+          }
+        },
+        {
+          name: "vuejs",
+          data: {
+            title: "Vue.js",
+            icon: "VueJsIcon",
+            color: "#41B883",
+            variant: "warning",
+            status: "Learning",
+            desc:
+              "Vue is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable.",
+            projects: [
+              {
+                text: "Portfolio",
+                url: "/work/portfolio"
+              }
+            ],
+            links: [
+              {
+                text: "Official website",
+                url: "https://vuejs.org/",
+                external: true
+              }
+            ]
+          }
+        },
+        {
+          name: "nuxtjs",
+          data: {
+            title: "NuxtJs",
+            icon: "NuxtJsIcon",
+            color: "#41b883",
+            variant: "warning",
+            status: "Learning",
+            desc:
+              "NuxtJs, built on top of Vue.js, is an open source framework making web development simple and powerful.",
+            links: [
+              {
+                text: "Official website",
+                url: "https://nuxtjs.org/",
                 external: true
               }
             ]
@@ -372,25 +435,6 @@ export default {
           }
         },
         {
-          name: "nuxtjs",
-          data: {
-            title: "NuxtJs",
-            icon: "NuxtJsIcon",
-            color: "#41b883",
-            variant: "warning",
-            status: "Learning",
-            desc:
-              "Build your next Vue.js application with confidence using NuxtJS. An open source framework making web development simple and powerful.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://nuxtjs.org/",
-                external: true
-              }
-            ]
-          }
-        },
-        {
           name: "graphql",
           data: {
             title: "GraphQL",
@@ -410,6 +454,179 @@ export default {
           }
         },
         {
+          name: "git",
+          data: {
+            title: "Git",
+            icon: "GitIcon",
+            color: "#F1502F",
+            variant: "info",
+            status: "Used",
+            desc:
+              "Git is a distributed version-control system for tracking changes in source code during software development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files.",
+            links: [
+              {
+                text: "Official website",
+                url: "https://git-scm.com/",
+                external: true
+              }
+            ]
+          }
+        },
+        {
+          name: "bitbucket",
+          data: {
+            title: "Bitbucket",
+            icon: "BitbucketIcon",
+            color: "#0D54C3",
+            variant: "info",
+            status: "Used",
+            desc:
+              "Bitbucket is a web-based version control repository hosting service owned by Atlassian, for source code and development projects that use either Mercurial or Git revision control systems.",
+            links: [
+              {
+                text: "Official website",
+                url: "https://bitbucket.org/",
+                external: true
+              }
+            ]
+          }
+        },
+        {
+          name: "trello",
+          data: {
+            title: "Trello",
+            icon: "TrelloIcon",
+            color: "#007BCB",
+            variant: "info",
+            status: "Used",
+            desc:
+              "Trello is a web-based Kanban-style list-making application which is a subsidiary of Atlassian.",
+            links: [
+              {
+                text: "Official website",
+                url: "https://trello.com/",
+                external: true
+              }
+            ]
+          }
+        },
+        {
+          name: "jekyll",
+          data: {
+            title: "Jekyll",
+            icon: "JekyllIcon",
+            color: "#c90000",
+            variant: "info",
+            status: "Tried",
+            desc:
+              "Jekyll is a simple, blog-aware, static site generator for personal, project, or organization sites written in Ruby.",
+            links: [
+              {
+                text: "Official website",
+                url: "https://jekyllrb.com/",
+                external: true
+              }
+            ]
+          }
+        },
+        {
+          name: "vscode",
+          data: {
+            title: "Visual Studio Code",
+            icon: "VisualStudioCodeIcon",
+            color: "#22a6f1",
+            variant: "info",
+            status: "Used",
+            desc:
+              "Visual Studio Code is a free source-code editor. Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git.",
+            links: [
+              {
+                text: "Official website",
+                url: "https://code.visualstudio.com/",
+                external: true
+              }
+            ]
+          }
+        },
+        {
+          name: "sketchup",
+          data: {
+            title: "Sketchup",
+            icon: "SketchUpIcon",
+            color: "#f7162c",
+            variant: "success",
+            status: "Learned at college",
+            desc:
+              "SketchUp is a 3D modeling computer program for a wide range of drawing applications such as architectural, interior design, landscape architecture, civil and mechanical engineering, film and video game design.",
+            links: [
+              {
+                text: "Official website",
+                url: "https://www.sketchup.com/",
+                external: true
+              }
+            ]
+          }
+        },
+        {
+          name: "office",
+          data: {
+            title: "Microsoft Office",
+            icon: "MicrosoftOfficeIcon",
+            color: "#DC3E15",
+            variant: "info",
+            status: "Used",
+            desc:
+              "Microsoft Office is a family of client software, server software, and services. Includes Outlook, OneDrive, Word, Excel, PowerPoint, OneNote, SharePoint, Teams, and Yammer.",
+            links: [
+              {
+                text: "Official website",
+                url: "https://www.office.com/",
+                external: true
+              }
+            ]
+          }
+        },
+        {
+          name: "photoshop",
+          data: {
+            title: "Photoshop",
+            icon: "AdobePhotoshopIcon",
+            color: "#001d34",
+            variant: "success",
+            status: "Basic knowledge",
+            desc:
+              "Adobe Photoshop is a raster graphics editor.",
+            links: [
+              {
+                text: "Official website",
+                url: "https://www.adobe.com/products/photoshop.html",
+                external: true
+              }
+            ]
+          }
+        },
+        {
+          name: "musescore",
+          data: {
+            title: "Musescore",
+            icon: "MuseScoreIcon",
+            color: "#1f74bd",
+            variant: "success",
+            status: "Basic knowledge",
+            desc:
+              "MuseScore is a scorewriter supporting a wide variety of file formats and input methods.",
+            links: [
+              {
+                text: "Official website",
+                url: "https://musescore.org/",
+                external: true
+              }
+            ]
+          }
+        }
+      ],
+      futureTechnologies: [
+        {
           name: "react",
           data: {
             title: "React",
@@ -417,12 +634,144 @@ export default {
             color: "#61DBFB",
             variant: "info",
             status: "Planned",
-            desc:
-              "A JavaScript library for building user interfaces.",
+            desc: "A JavaScript library for building user interfaces.",
             links: [
               {
                 text: "Official website",
                 url: "https://reactjs.org/",
+                external: true
+              }
+            ]
+          }
+        },
+        {
+          name: "nodejs",
+          data: {
+            title: "Node.js",
+            icon: "NodeJsIcon",
+            color: "#3C873A",
+            variant: "info",
+            status: "Planned",
+            desc:
+              "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+            links: [
+              {
+                text: "Official website",
+                url: "https://nodejs.org/",
+                external: true
+              }
+            ]
+          }
+        },
+        {
+          name: "docker",
+          data: {
+            title: "Docker",
+            icon: "DockerIcon",
+            color: "#0091e2",
+            variant: "info",
+            status: "Planned",
+            desc:
+              "Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers.",
+            links: [
+              {
+                text: "Official website",
+                url: "https://nodejs.org/",
+                external: true
+              }
+            ]
+          }
+        },
+        {
+          name: "electron",
+          data: {
+            title: "Electron",
+            icon: "ElectronIcon",
+            color: "#2f3241",
+            variant: "info",
+            status: "Planned",
+            desc:
+              "Electron allows for the development of desktop GUI applications using web technologies: it combines the Chromium rendering engine and the Node.js runtime.",
+            links: [
+              {
+                text: "Official website",
+                url: "https://www.electronjs.org/",
+                external: true
+              }
+            ]
+          }
+        },
+        {
+          name: "rubyonrails",
+          data: {
+            title: "Ruby on Rails",
+            icon: "RubyOnRailsIcon",
+            color: "#cc0000",
+            variant: "info",
+            status: "Planned",
+            desc:
+              "Ruby on Rails is a server-side web application framework written in Ruby that encourages and facilitates the use of web standards such as JSON or XML for data transfer and HTML, CSS and JavaScript for user interfacing.",
+            links: [
+              {
+                text: "Official website",
+                url: "https://rubyonrails.org/",
+                external: true
+              }
+            ]
+          }
+        },
+        {
+          name: "django",
+          data: {
+            title: "Django",
+            icon: "DjangoIcon",
+            color: "#004d40",
+            variant: "info",
+            status: "Planned",
+            desc:
+              "Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.",
+            links: [
+              {
+                text: "Official website",
+                url: "https://www.djangoproject.com/",
+                external: true
+              }
+            ]
+          }
+        },
+        {
+          name: "c++",
+          data: {
+            title: "C++",
+            icon: "CPlusPlusIcon",
+            color: "#2B538F",
+            variant: "info",
+            status: "Planned",
+            desc:
+              "C++ was designed with a bias toward system programming and embedded, resource-constrained software and large systems, with performance, efficiency, and flexibility of use as its design highlights but it has been found useful in many other contexts.",
+            links: [
+              {
+                text: "Official website",
+                url: "https://isocpp.org/",
+                external: true
+              }
+            ]
+          }
+        },
+        {
+          name: "java",
+          data: {
+            title: "Java",
+            icon: "JavaIcon",
+            color: "#EB2D2F",
+            variant: "info",
+            status: "Planned",
+            desc:
+              "Java is a class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It is a general-purpose programming language intended to let application developers write once, run anywhere.",
+            links: [
+              {
+                text: "Official website",
+                url: "https://www.java.com/",
                 external: true
               }
             ]

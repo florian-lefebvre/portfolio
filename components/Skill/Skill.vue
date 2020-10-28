@@ -18,7 +18,7 @@
             {{ title }}
           </h2>
           <div
-            class="font-medium px-2 py-1 text-xs rounded-r border-l-4 uppercase"
+            class="font-medium px-2 py-1 text-xs rounded-r border-l-4 uppercase inline-block"
             :class="colorVariants"
           >
             {{ status }}
@@ -85,7 +85,7 @@ import {
   NodeJsIcon,
   DockerIcon,
   ElectronIcon,
-  RubyIcon,
+  RubyOnRailsIcon,
   DjangoIcon,
   CPlusPlusIcon,
   JavaIcon,
@@ -131,7 +131,7 @@ export default {
     NodeJsIcon,
     DockerIcon,
     ElectronIcon,
-    RubyIcon,
+    RubyOnRailsIcon,
     DjangoIcon,
     CPlusPlusIcon,
     JavaIcon,

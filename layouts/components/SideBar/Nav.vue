@@ -18,7 +18,7 @@
       </template>
       Home
     </NavLink>
-    <NavLink url="work">
+    <NavLink url="/work">
       <template #icon>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,7 @@
       </template>
       Work
     </NavLink>
-    <NavLink url="about">
+    <NavLink url="/about">
       <template #icon>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@
       </template>
       About
     </NavLink>
-    <NavLink url="articles">
+    <NavLink url="/articles">
       <template #icon>
         <svg
           xmlns="http://www.w3.org/2000/svg"
