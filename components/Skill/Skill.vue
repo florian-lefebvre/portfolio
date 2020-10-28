@@ -1,36 +1,44 @@
 <template>
-  <div class="xl:w-1/3 md:w-1/2 p-4 flex">
+  <div class="w-full xl:w-1/3 md:w-1/2 p-4 flex">
     <div
       class="border border-gray-300 p-6 rounded-lg shadow divide-y divide-gray-300 flex flex-col flex-1"
     >
       <div class="flex items-center mb-2 pb-2">
         <div
-          class="w-10 h-10 transform scale-150 inline-flex items-center justify-center rounded-full bg-gray-100 mr-4 shadow-md border-gray-300 border" :style="'color:'+ color"
+          class="w-10 h-10 transform scale-150 inline-flex items-center justify-center rounded-full mr-4 shadow-md border-gray-300 border"
+          :style="'color:' + color"
         >
-        <component :is="icon" size="1.5x" fill="currentColor"></component>
+          <component :is="icon" size="1.5x" fill="currentColor"></component>
         </div>
         <div>
-          <h2 class="text-lg font-medium title-font text-xl" :style="'color:'+ color">
+          <h2
+            class="text-lg font-medium title-font text-xl"
+            :style="'color:' + color"
+          >
             {{ title }}
           </h2>
           <div
-            :class="
-              colorVariants +
-                ' font-medium px-2 py-1 text-xs rounded-r border-l-4 uppercase'
-            "
+            class="font-medium px-2 py-1 text-xs rounded-r border-l-4 uppercase"
+            :class="colorVariants"
           >
             {{ status }}
           </div>
         </div>
       </div>
-      <p class="leading-relaxed text-base py-2">
+      <p class="leading-relaxed text-base py-2 text-justify">
         {{ desc }}
       </p>
       <div class="py-2" v-if="projectsDesc || projects">
-        <h3 class="font-medium uppercase text-gray-900">Projects</h3>
-        <p v-if="projectsDesc">{{ projectsDesc }}</p>
+        <h3 class="font-medium uppercase text-gray-900">
+          Projects
+        </h3>
+        <p v-if="projectsDesc" class="text-justify">{{ projectsDesc }}</p>
         <div v-if="projects">
-          <div v-for="project in projects" :key="project.name" :style="'color:'+ color">
+          <div
+            v-for="project in projects"
+            :key="project.name"
+            :style="'color:' + color"
+          >
             <Link
               :text="project.text"
               :url="project.url"
@@ -40,7 +48,12 @@
         </div>
       </div>
       <div class="mt-auto" v-if="links">
-        <div v-for="link in links" :key="link.name" class="pt-2" :style="'color:'+ color">
+        <div
+          v-for="link in links"
+          :key="link.name"
+          class="pt-2"
+          :style="'color:' + color"
+        >
           <Link
             :text="link.text"
             :url="link.url"
@@ -148,7 +161,10 @@ export default {
     },
     variant: {
       type: String,
-      default: "warning"
+      default: "warning",
+      validator(value) {
+        return ['success', 'warning', 'danger', 'info'].includes(value);
+      }
     },
     icon: {
       type: String
@@ -172,20 +188,12 @@ export default {
   },
   computed: {
     colorVariants() {
-      switch (this.variant) {
-        case "success":
-          return "bg-green-300 text-green-800 border-green-800";
-          break;
-        case "warning":
-          return "bg-yellow-300 text-yellow-800 border-yellow-800";
-          break;
-        case "danger":
-          return "bg-red-300 text-red-800 border-red-800";
-          break;
-        case "info":
-          return "bg-blue-300 text-blue-800 border-blue-800";
-          break;
-      }
+      return {
+        success: "bg-green-300 text-green-800 border-green-800",
+        warning: "bg-yellow-300 text-yellow-800 border-yellow-800",
+        danger: "bg-red-300 text-red-800 border-red-800",
+        info: "bg-blue-300 text-blue-800 border-blue-800"
+      }[this.variant]
     }
   }
 };

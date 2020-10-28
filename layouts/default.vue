@@ -14,7 +14,7 @@ export default {
 
 <style lang="scss">
 html {
-  @apply bg-teal-100;
+  @apply bg-white;
 }
 button,
 a {
