@@ -1,29 +1,40 @@
 <template>
   <div class="min-h-screen flex flex-col md:flex-row text-teal-900">
-    <!--  flex-col container bg-gray-100 mx-auto overflow-x-hidden shadow-2xl -->
-    <div class="w-full md:w-3/12 lg:w-2/12">
-      <slot name="sidebar" />
-    </div>
-    <div class="w-full md:w-9/12 lg:w-10/12">
+    <MobileMenuToggle />
+    <SideBar />
+    <div class="w-full lg:ml-64">
       <transition name="page">
-        <slot name="content" />
+        <Nuxt />
       </transition>
-      <slot name="footer" />
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import MobileMenuToggle from "../components/SideBar/MobileMenuToggle";
+import SideBar from "../components/SideBar/SideBar";
+
+export default {
+  components: {
+    MobileMenuToggle,
+    SideBar
+  }
+};
 </script>
 
 <style scoped>
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 0.25s ease-in-out;
+  @apply transition duration-500 ease-in-out;
 }
+
+.page-from,
+.leave-from {
+  @apply opacity-100;
+}
+
 .page-enter,
-.page-leave-active {
-  opacity: 0;
+.page-leave {
+  @apply opacity-0;
 }
 </style>

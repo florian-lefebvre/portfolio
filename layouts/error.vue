@@ -1,22 +1,32 @@
 <template>
-  <div class="flex flex-col items-center py-24">
-    <h1 class="text-center text-6xl font-bold leading-none mt-auto mb-6 tracking-tight">
-      <span
-        class="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-500"
-      >
-        Error {{ error.statusCode }}
-      </span>
+  <div class="h-full flex flex-col justify-center py-24 bg-red-300">
+    <h1
+      class="text-center text-6xl font-extrabold leading-none mb-4 tracking-tight text-red-600"
+    >
+      Error {{ error.statusCode }}
     </h1>
-    <h1 class="text-center text-3xl font-medium leading-none mt-auto mb-6 tracking-tight">
-      <span
-        class="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-500"
-      >
-        An error occured
-      </span>
+    <h1
+      class="text-center text-3xl font-medium leading-none mb-10 tracking-tight text-red-600"
+    >
+      Oops! An error occured
     </h1>
     <div class="flex justify-center mt-6">
-      <nuxt-link to="/" class="mr-2 px-6 py-2 bg-red-500 rounded text-red-100 hover:bg-red-700 shadow font-medium uppercase">Home</nuxt-link>
-      <button @click="$router.back()" class="px-6 py-2 border-red-500 border-2 rounded text-red-500 hover:bg-red-500 hover:text-red-100 shadow font-medium uppercase">Previous page</button>
+      <div class="inline-flex rounded-md shadow">
+        <nuxt-link
+          to="/"
+          class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-red-600 hover:bg-red-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
+        >
+          Home
+        </nuxt-link>
+      </div>
+      <div class="ml-3 inline-flex rounded-md shadow">
+        <button
+          @click="$router.back()"
+          class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-red-600 bg-white hover:text-red-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
+        >
+          Previous page
+        </button>
+      </div>
     </div>
   </div>
 </template>
