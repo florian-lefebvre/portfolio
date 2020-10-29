@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="relative bg-white overflow-hidden">
+    <div class="relative bg-white overflow-hidden shadow-lg">
       <div class="max-w-screen-xl mx-auto">
         <div
           class="relative pb-8 z-10 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32"
@@ -73,80 +73,103 @@
         />
       </div>
     </div>
-    <section class="text-gray-700 body-font">
+    <section class="bg-teal-200 text-teal-600 body-font shadow-lg">
       <div class="container px-5 py-24 mx-auto">
-        <div
-          class="flex flex-wrap w-full mb-20 flex-col items-center text-center"
-        >
+        <div class="flex flex-wrap w-full flex-col items-center text-center">
           <h2
-            class="text-2xl tracking-tight leading-10 font-extrabold text-gray-900 sm:leading-none md:text-3xl"
+            class="text-2xl tracking-tight leading-10 font-extrabold text-teal-900 sm:leading-none md:text-3xl"
           >
             I know a lot of technologies and tools
           </h2>
           <p
-            class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
+            class="mt-3 text-base sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 mb-4"
           >
             From Git to Vue.js through Bootstrap or Unreal Engine, I have
             knowledge in many areas
           </p>
-        </div>
-        <h3
-          class="text-xl tracking-tight leading-10 font-bold text-gray-900 sm:leading-none md:text-2xl mb-4"
-        >
-          The ones I know
-        </h3>
-        <div class="flex flex-wrap justify-center -m-4 mb-10 lg:mb-24">
-          <Skill
-            v-for="tech in knownTechnologies"
-            :key="tech.name"
-            :title="tech.data.title"
-            :icon="tech.data.icon"
-            :color="tech.data.color"
-            :variant="tech.data.variant"
-            :status="tech.data.status"
-            :desc="tech.data.desc"
-            :projectsDesc="tech.data.projectsDesc"
-            :projects="tech.data.projects"
-            :links="tech.data.links"
-          />
-        </div>
-        <h3
-          class="text-xl tracking-tight leading-10 font-bold text-gray-900 sm:leading-none md:text-2xl mb-4"
-        >
-          The ones I want to learn
-        </h3>
-        <div class="flex flex-wrap justify-center -m-4">
-          <Skill
-            v-for="tech in futureTechnologies"
-            :key="tech.name"
-            :title="tech.data.title"
-            :icon="tech.data.icon"
-            :color="tech.data.color"
-            :variant="tech.data.variant"
-            :status="tech.data.status"
-            :desc="tech.data.desc"
-            :projectsDesc="tech.data.projectsDesc"
-            :projects="tech.data.projects"
-            :links="tech.data.links"
-          />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-10 h-10 animate-bounce"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"
+            />
+          </svg>
         </div>
       </div>
     </section>
+    <div class="flex flex-col-reverse sm:flex-row">
+      <section
+        class="text-gray-700 body-font w-full md:w-2/3 max-h-screen-1/2 sm:max-h-screen overflow-y-auto"
+      >
+        <div class="container px-5 py-10 mx-auto">
+          <h3
+            class="text-xl tracking-tight leading-10 font-bold text-gray-900 sm:leading-none md:text-2xl mb-4"
+          >
+            The ones I know
+          </h3>
+          <div class="flex flex-wrap justify-center -m-4 mb-10 lg:mb-24">
+            <Skill
+              v-for="tech in knownTechnologies"
+              :key="tech.name"
+              :title="tech.data.title"
+              :icon="tech.data.icon"
+              :color="tech.data.color"
+              :variant="tech.data.variant"
+              :status="tech.data.status"
+              :desc="tech.data.desc"
+              :projectsDesc="tech.data.projectsDesc"
+              :projects="tech.data.projects"
+              :links="tech.data.links"
+              v-on:set-current-skill="currentSkill = tech"
+            />
+          </div>
+          <h3
+            class="text-xl tracking-tight leading-10 font-bold text-gray-900 sm:leading-none md:text-2xl mb-4"
+          >
+            The ones I want to learn
+          </h3>
+          <div class="flex flex-wrap justify-center -m-4">
+            <Skill
+              v-for="tech in futureTechnologies"
+              :key="tech.name"
+              :title="tech.data.title"
+              :icon="tech.data.icon"
+              :color="tech.data.color"
+              :variant="tech.data.variant"
+              :status="tech.data.status"
+              :desc="tech.data.desc"
+              :projectsDesc="tech.data.projectsDesc"
+              :projects="tech.data.projects"
+              :links="tech.data.links"
+              v-on:set-current-skill="currentSkill = tech"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="w-full md:w-1/3 h-screen-1/2 sm:h-screen bg-gray-200">
+        <div class="container px-5 py-10 mx-auto h-full">
+          <SkillZoom :skill="currentSkill" />
+        </div>
+      </section>
+    </div>
   </div>
 </template>
 
 <script>
-import Skill from "@/components/Skill/Skill";
-
 export default {
-  components: {
-    Skill
-  },
   head: {
     title: "Home"
   },
   data() {
     return {
+      currentSkill: null,
       knownTechnologies: [
         {
           name: "html5",
@@ -241,7 +264,7 @@ export default {
           }
         },
         {
-          name: "php_procedural",
+          name: "php",
           data: {
             title: "PHP (Procedural)",
             icon: "PhpIcon",
@@ -555,7 +578,7 @@ export default {
             icon: "SketchUpIcon",
             color: "#f7162c",
             variant: "success",
-            status: "Learned at college",
+            status: "Learned at secondary school",
             desc:
               "SketchUp is a 3D modeling computer program for a wide range of drawing applications such as architectural, interior design, landscape architecture, civil and mechanical engineering, film and video game design.",
             links: [
@@ -594,8 +617,7 @@ export default {
             color: "#001d34",
             variant: "success",
             status: "Basic knowledge",
-            desc:
-              "Adobe Photoshop is a raster graphics editor.",
+            desc: "Adobe Photoshop is a raster graphics editor.",
             links: [
               {
                 text: "Official website",
@@ -626,6 +648,25 @@ export default {
         }
       ],
       futureTechnologies: [
+        {
+          name: "flutter",
+          data: {
+            title: "Flutter",
+            icon: "FlutterIcon",
+            color: "#1389FD",
+            variant: "info",
+            status: "Planned",
+            desc:
+              "Flutter is Google’s UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.",
+            links: [
+              {
+                text: "Official website",
+                url: "https://flutter.dev/",
+                external: true
+              }
+            ]
+          }
+        },
         {
           name: "react",
           data: {

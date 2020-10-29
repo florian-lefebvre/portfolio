@@ -1,6 +1,9 @@
 ---
 title: TITLE 2
 desc: A super description
+tags:
+  - test
+  - wtf
 ---
 
 # Test 2
@@ -24,12 +27,3 @@ This is some more info
     This is a vue component inside markdown using slots
   </template>
 </info-box>
-
-```js[nuxt.config.js]
-export default {
-  nuxt: "is the best"
-}
-```
-```html[my-first-blog-post.md]
-<p>code styling is easy liuqzfliugqzfliugqzlfiyg iulgZFILG ILUGfz iugLZUIGF LiugzfluigZFUIG LIUGFIUHGLQIUF iqufiugq</p>
-```

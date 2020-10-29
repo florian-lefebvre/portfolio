@@ -1,6 +1,8 @@
 ---
 title: TITLE 1
 desc: A super description
+tags:
+  - md
 ---
 
 # Test 1

@@ -1,9 +1,10 @@
 <template>
-  <div class="w-full xl:w-1/3 md:w-1/2 p-4 flex">
+  <div class="flex-1 sm:w-full sm:flex-none xl:w-1/2 md:w-1/2 p-4 flex">
     <div
-      class="border border-gray-300 p-6 rounded-lg shadow divide-y divide-gray-300 flex flex-col flex-1"
+      class="border border-gray-300 p-6 rounded-lg shadow divide-y divide-gray-300 flex flex-col flex-1 cursor-pointer transition duration-100 ease-out transform hover:scale-105"
+      @click="$emit('set-current-skill')"
     >
-      <div class="flex items-center mb-2 pb-2">
+      <div class="flex items-center">
         <div
           class="w-10 h-10 transform scale-150 inline-flex items-center justify-center rounded-full mr-4 shadow-md border-gray-300 border"
           :style="'color:' + color"
@@ -12,7 +13,7 @@
         </div>
         <div>
           <h2
-            class="text-lg font-medium title-font text-xl"
+            class="font-medium title-font text-xl"
             :style="'color:' + color"
           >
             {{ title }}
@@ -25,7 +26,7 @@
           </div>
         </div>
       </div>
-      <p class="leading-relaxed text-base py-2 text-justify">
+      <!-- <p class="leading-relaxed text-base py-2 text-justify">
         {{ desc }}
       </p>
       <div class="py-2" v-if="projectsDesc || projects">
@@ -60,7 +61,7 @@
             :external="link.external ? true : false"
           />
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -102,7 +103,8 @@ import {
   SketchUpIcon,
   MicrosoftOfficeIcon,
   AdobePhotoshopIcon,
-  MuseScoreIcon
+  MuseScoreIcon,
+  FlutterIcon
 } from "vue-simple-icons";
 import Vue from "vue";
 
@@ -148,7 +150,8 @@ export default {
     SketchUpIcon,
     MicrosoftOfficeIcon,
     AdobePhotoshopIcon,
-    MuseScoreIcon
+    MuseScoreIcon,
+    FlutterIcon
   },
   props: {
     title: {

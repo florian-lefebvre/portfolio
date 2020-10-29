@@ -3,7 +3,7 @@
     <!-- {{ article }} -->
     <!-- <hr /> -->
     <img v-if="article.img"
-      class="lg:h-48 md:h-36 w-full object-cover object-center"
+      class="lg:h-64 md:h-36 w-full object-cover object-center"
       :src="`/img/articles/${article.img}`"
       :alt="article.alt"
     />
@@ -21,7 +21,9 @@
       </ul>
     </nav>
     <p>Post last updated: {{ updatedAt }}</p>
-    <nuxt-content :document="article" />
+    <div class="container px-5 py-24 mx-auto">
+      <nuxt-content :document="article" />
+    </div>
     <hr />
     <prev-next :prev="prev" :next="next" />
   </article>
@@ -62,7 +64,7 @@ export default {
   margin-bottom: 20px;
 }
 .nuxt-content-highlight {
-  @apply relative;
+  @apply relative shadow-xs;
 }
 .nuxt-content-highlight .filename {
   @apply absolute right-0 text-gray-600 font-light z-10 mr-2 mt-1 text-sm;
