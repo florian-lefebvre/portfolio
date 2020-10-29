@@ -14,6 +14,7 @@
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
     "prism-themes": "^1.5.0",
+    "vue-compare-image": "^0.2.0",
     "vue-simple-icons": "^3.10.0"
   },
   "devDependencies": {

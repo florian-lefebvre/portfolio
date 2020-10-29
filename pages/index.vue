@@ -123,10 +123,6 @@
               :color="tech.data.color"
               :variant="tech.data.variant"
               :status="tech.data.status"
-              :desc="tech.data.desc"
-              :projectsDesc="tech.data.projectsDesc"
-              :projects="tech.data.projects"
-              :links="tech.data.links"
               v-on:set-current-skill="currentSkill = tech"
             />
           </div>
@@ -144,16 +140,14 @@
               :color="tech.data.color"
               :variant="tech.data.variant"
               :status="tech.data.status"
-              :desc="tech.data.desc"
-              :projectsDesc="tech.data.projectsDesc"
-              :projects="tech.data.projects"
-              :links="tech.data.links"
               v-on:set-current-skill="currentSkill = tech"
             />
           </div>
         </div>
       </section>
-      <section class="w-full md:w-1/3 h-screen-1/2 sm:h-screen bg-gray-200">
+      <section
+        class="w-full md:w-1/3 h-screen-1/2 overflow-y-auto sm:h-screen bg-gray-200"
+      >
         <div class="container px-5 py-10 mx-auto h-full">
           <SkillZoom :skill="currentSkill" />
         </div>
@@ -181,15 +175,7 @@ export default {
             status: "Mastered",
             desc:
               "HTML5 is a markup language used for structuring and presenting content on the World Wide Web.",
-            projectsDesc: "I use HTML5 in all my web projects.",
-            links: [
-              {
-                text: "Learn more",
-                url:
-                  "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5",
-                external: true
-              }
-            ]
+            url: "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5"
           }
         },
         {
@@ -202,14 +188,7 @@ export default {
             status: "Good knowledge",
             desc:
               "Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.",
-            projectsDesc: "I use CSS3 in all my web projects.",
-            links: [
-              {
-                text: "Learn more",
-                url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
-                external: true
-              }
-            ]
+            url: "https://developer.mozilla.org/en-US/docs/Web/CSS"
           }
         },
         {
@@ -222,19 +201,7 @@ export default {
             status: "Good knowledge",
             desc:
               "Javascript is an object-oriented scripting language mainly used in HTML pages in which it adds dynamic content (modal...).",
-            projectsDesc: "I use Javascript in almost all my web projects.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://www.javascript.com",
-                external: true
-              },
-              {
-                text: "Learn more",
-                url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-                external: true
-              }
-            ]
+            url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
           }
         },
         {
@@ -247,46 +214,20 @@ export default {
             status: "Good knowledge",
             desc:
               "Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.",
-            projects: [
-              {
-                text: "OHF31 - public website",
-                url: "/work/ohf31-public",
-                external: true
-              }
-            ],
-            links: [
-              {
-                text: "Official website",
-                url: "https://sass-lang.com/",
-                external: true
-              }
-            ]
+            url: "https://sass-lang.com/"
           }
         },
         {
           name: "php",
           data: {
-            title: "PHP (Procedural)",
+            title: "PHP",
             icon: "PhpIcon",
             color: "#474A8A",
             variant: "success",
             status: "Good knowledge",
             desc:
               "PHP is a general-purpose scripting language especially suited to web development.",
-            projects: [
-              {
-                text: "OHF31 - public website",
-                url: "/work/ohf31-public",
-                external: true
-              }
-            ],
-            links: [
-              {
-                text: "Official website",
-                url: "https://www.php.net/",
-                external: true
-              }
-            ]
+            url: "https://www.php.net/"
           }
         },
         {
@@ -299,13 +240,7 @@ export default {
             status: "Basic knowledge",
             desc:
               "MySQL is an open-source relational database management system.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://www.mysql.com/",
-                external: true
-              }
-            ]
+            url: "https://www.mysql.com/"
           }
         },
         {
@@ -318,23 +253,7 @@ export default {
             status: "Good knowledge",
             desc:
               "Tailwind CSS is a highly customizable, low-level CSS framework that gives you all of the building blocks you need to build bespoke designs without any annoying opinionated styles you have to fight to override.",
-            projects: [
-              {
-                text: "Portfolio",
-                url: "/work/portfolio"
-              },
-              {
-                text: "yNotes website",
-                url: "/work/yNotes"
-              }
-            ],
-            links: [
-              {
-                text: "Official website",
-                url: "https://tailwindcss.com/",
-                external: true
-              }
-            ]
+            url: "https://tailwindcss.com/"
           }
         },
         {
@@ -347,13 +266,7 @@ export default {
             status: "Good knowledge",
             desc:
               "Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://getbootstrap.com/",
-                external: true
-              }
-            ]
+            url: "https://getbootstrap.com/"
           }
         },
         {
@@ -366,13 +279,7 @@ export default {
             status: "Good knowledge",
             desc:
               "The Unreal Engine is a game engine developed by Epic Games. Written in C++, its features a high degree of portability, supporting a wide range of platforms.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://www.unrealengine.com/en-US/",
-                external: true
-              }
-            ]
+            url: "https://www.unrealengine.com/en-US/"
           }
         },
         {
@@ -385,13 +292,7 @@ export default {
             status: "Learning at highschool",
             desc:
               "Python is a programming language that lets you work quickly and integrate systems more effectively.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://www.python.org/",
-                external: true
-              }
-            ]
+            url: "https://www.python.org/"
           }
         },
         {
@@ -404,19 +305,7 @@ export default {
             status: "Learning",
             desc:
               "Vue is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable.",
-            projects: [
-              {
-                text: "Portfolio",
-                url: "/work/portfolio"
-              }
-            ],
-            links: [
-              {
-                text: "Official website",
-                url: "https://vuejs.org/",
-                external: true
-              }
-            ]
+            url: "https://vuejs.org/"
           }
         },
         {
@@ -429,13 +318,7 @@ export default {
             status: "Learning",
             desc:
               "NuxtJs, built on top of Vue.js, is an open source framework making web development simple and powerful.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://nuxtjs.org/",
-                external: true
-              }
-            ]
+            url: "https://nuxtjs.org/"
           }
         },
         {
@@ -448,13 +331,7 @@ export default {
             status: "Learning",
             desc:
               "Laravel is a web application framework with expressive, elegant syntax. We’ve already laid the foundation — freeing you to create without sweating the small things.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://laravel.com/",
-                external: true
-              }
-            ]
+            url: "https://laravel.com/"
           }
         },
         {
@@ -467,13 +344,7 @@ export default {
             status: "Learning",
             desc:
               "GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://graphql.org/",
-                external: true
-              }
-            ]
+            url: "https://graphql.org/"
           }
         },
         {
@@ -486,13 +357,7 @@ export default {
             status: "Used",
             desc:
               "Git is a distributed version-control system for tracking changes in source code during software development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://git-scm.com/",
-                external: true
-              }
-            ]
+            url: "https://git-scm.com/"
           }
         },
         {
@@ -505,13 +370,7 @@ export default {
             status: "Used",
             desc:
               "Bitbucket is a web-based version control repository hosting service owned by Atlassian, for source code and development projects that use either Mercurial or Git revision control systems.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://bitbucket.org/",
-                external: true
-              }
-            ]
+            url: "https://bitbucket.org/"
           }
         },
         {
@@ -524,13 +383,7 @@ export default {
             status: "Used",
             desc:
               "Trello is a web-based Kanban-style list-making application which is a subsidiary of Atlassian.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://trello.com/",
-                external: true
-              }
-            ]
+            url: "https://trello.com/"
           }
         },
         {
@@ -543,32 +396,20 @@ export default {
             status: "Tried",
             desc:
               "Jekyll is a simple, blog-aware, static site generator for personal, project, or organization sites written in Ruby.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://jekyllrb.com/",
-                external: true
-              }
-            ]
+            url: "https://jekyllrb.com/"
           }
         },
         {
           name: "vscode",
           data: {
-            title: "Visual Studio Code",
+            title: "VS Code",
             icon: "VisualStudioCodeIcon",
             color: "#22a6f1",
             variant: "info",
             status: "Used",
             desc:
               "Visual Studio Code is a free source-code editor. Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://code.visualstudio.com/",
-                external: true
-              }
-            ]
+            url: "https://code.visualstudio.com/"
           }
         },
         {
@@ -581,32 +422,20 @@ export default {
             status: "Learned at secondary school",
             desc:
               "SketchUp is a 3D modeling computer program for a wide range of drawing applications such as architectural, interior design, landscape architecture, civil and mechanical engineering, film and video game design.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://www.sketchup.com/",
-                external: true
-              }
-            ]
+            url: "https://www.sketchup.com/"
           }
         },
         {
           name: "office",
           data: {
-            title: "Microsoft Office",
+            title: "Office",
             icon: "MicrosoftOfficeIcon",
             color: "#DC3E15",
             variant: "info",
             status: "Used",
             desc:
               "Microsoft Office is a family of client software, server software, and services. Includes Outlook, OneDrive, Word, Excel, PowerPoint, OneNote, SharePoint, Teams, and Yammer.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://www.office.com/",
-                external: true
-              }
-            ]
+            url: "https://www.office.com/"
           }
         },
         {
@@ -618,13 +447,7 @@ export default {
             variant: "success",
             status: "Basic knowledge",
             desc: "Adobe Photoshop is a raster graphics editor.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://www.adobe.com/products/photoshop.html",
-                external: true
-              }
-            ]
+            url: "https://www.adobe.com/products/photoshop.html"
           }
         },
         {
@@ -637,13 +460,7 @@ export default {
             status: "Basic knowledge",
             desc:
               "MuseScore is a scorewriter supporting a wide variety of file formats and input methods.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://musescore.org/",
-                external: true
-              }
-            ]
+            url: "https://musescore.org/"
           }
         }
       ],
@@ -658,13 +475,7 @@ export default {
             status: "Planned",
             desc:
               "Flutter is Google’s UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://flutter.dev/",
-                external: true
-              }
-            ]
+            url: "https://flutter.dev/"
           }
         },
         {
@@ -676,13 +487,7 @@ export default {
             variant: "info",
             status: "Planned",
             desc: "A JavaScript library for building user interfaces.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://reactjs.org/",
-                external: true
-              }
-            ]
+            url: "https://reactjs.org/"
           }
         },
         {
@@ -695,13 +500,7 @@ export default {
             status: "Planned",
             desc:
               "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://nodejs.org/",
-                external: true
-              }
-            ]
+            url: "https://nodejs.org/"
           }
         },
         {
@@ -714,13 +513,7 @@ export default {
             status: "Planned",
             desc:
               "Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://nodejs.org/",
-                external: true
-              }
-            ]
+            url: "https://nodejs.org/"
           }
         },
         {
@@ -733,13 +526,7 @@ export default {
             status: "Planned",
             desc:
               "Electron allows for the development of desktop GUI applications using web technologies: it combines the Chromium rendering engine and the Node.js runtime.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://www.electronjs.org/",
-                external: true
-              }
-            ]
+            url: "https://www.electronjs.org/"
           }
         },
         {
@@ -752,13 +539,7 @@ export default {
             status: "Planned",
             desc:
               "Ruby on Rails is a server-side web application framework written in Ruby that encourages and facilitates the use of web standards such as JSON or XML for data transfer and HTML, CSS and JavaScript for user interfacing.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://rubyonrails.org/",
-                external: true
-              }
-            ]
+            url: "https://rubyonrails.org/"
           }
         },
         {
@@ -771,13 +552,7 @@ export default {
             status: "Planned",
             desc:
               "Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://www.djangoproject.com/",
-                external: true
-              }
-            ]
+            url: "https://www.djangoproject.com/"
           }
         },
         {
@@ -790,13 +565,7 @@ export default {
             status: "Planned",
             desc:
               "C++ was designed with a bias toward system programming and embedded, resource-constrained software and large systems, with performance, efficiency, and flexibility of use as its design highlights but it has been found useful in many other contexts.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://isocpp.org/",
-                external: true
-              }
-            ]
+            url: "https://isocpp.org/"
           }
         },
         {
@@ -809,13 +578,7 @@ export default {
             status: "Planned",
             desc:
               "Java is a class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It is a general-purpose programming language intended to let application developers write once, run anywhere.",
-            links: [
-              {
-                text: "Official website",
-                url: "https://www.java.com/",
-                external: true
-              }
-            ]
+            url: "https://www.java.com/"
           }
         }
       ]

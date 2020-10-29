@@ -2,7 +2,6 @@
 title: TITLE 2
 desc: A super description
 tags:
-  - html5
   - css3
   - js
 ---

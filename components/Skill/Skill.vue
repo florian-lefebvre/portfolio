@@ -6,10 +6,10 @@
     >
       <div class="flex items-center">
         <div
-          class="w-10 h-10 transform scale-150 inline-flex items-center justify-center rounded-full mr-4 shadow-md border-gray-300 border"
+          class="w-10 h-10 inline-flex items-center justify-center mr-4"
           :style="'color:' + color"
         >
-          <component :is="icon" size="1.5x" fill="currentColor"></component>
+          <component :is="icon" size="3x" fill="currentColor"></component>
         </div>
         <div>
           <h2
@@ -26,48 +26,11 @@
           </div>
         </div>
       </div>
-      <!-- <p class="leading-relaxed text-base py-2 text-justify">
-        {{ desc }}
-      </p>
-      <div class="py-2" v-if="projectsDesc || projects">
-        <h3 class="font-medium uppercase text-gray-900">
-          Projects
-        </h3>
-        <p v-if="projectsDesc" class="text-justify">{{ projectsDesc }}</p>
-        <div v-if="projects">
-          <div
-            v-for="project in projects"
-            :key="project.name"
-            :style="'color:' + color"
-          >
-            <Link
-              :text="project.text"
-              :url="project.url"
-              :external="project.external ? true : false"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="mt-auto" v-if="links">
-        <div
-          v-for="link in links"
-          :key="link.name"
-          class="pt-2"
-          :style="'color:' + color"
-        >
-          <Link
-            :text="link.text"
-            :url="link.url"
-            :external="link.external ? true : false"
-          />
-        </div>
-      </div> -->
     </div>
   </div>
 </template>
 
 <script>
-import Link from "./Link";
 import {
   Html5Icon,
   Css3Icon,
@@ -106,16 +69,10 @@ import {
   MuseScoreIcon,
   FlutterIcon
 } from "vue-simple-icons";
-import Vue from "vue";
-
-Vue.component("icon", {
-  template: "<div>ICON</div>"
-});
 
 export default {
   name: "Skill",
   components: {
-    Link,
     Html5Icon,
     Css3Icon,
     TailwindCssIcon,
@@ -171,19 +128,6 @@ export default {
     },
     icon: {
       type: String
-    },
-    desc: {
-      type: String,
-      default: "No description provided."
-    },
-    projectsDesc: {
-      type: String
-    },
-    projects: {
-      type: Array
-    },
-    links: {
-      type: Array
     },
     color: {
       type: String

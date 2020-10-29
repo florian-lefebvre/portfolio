@@ -1,6 +1,6 @@
 <template>
   <nav role="navigation" class="px-2 mb-4">
-    <NavLink url="/">
+    <NavLink url="/" home>
       <template #icon>
         <svg
           xmlns="http://www.w3.org/2000/svg"
