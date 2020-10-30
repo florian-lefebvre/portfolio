@@ -1,17 +1,17 @@
 <template>
-  <article>
-    <!-- {{ article }} -->
+  <div>
+    <!-- {{ project }} -->
     <!-- <hr /> -->
-    <img v-if="article.img"
+    <img v-if="project.img"
       class="lg:h-64 md:h-36 w-full object-cover object-center"
-      :src="`/img/articles/${article.img}`"
-      :alt="article.alt"
+      :src="`/img/articles/${project.img}`"
+      :alt="project.alt"
     />
-    <h1>{{ article.title }}</h1>
-    <h2>{{ article.desc }}</h2>
+    <h1>{{ project.title }}</h1>
+    <h2>{{ project.desc }}</h2>
     <nav>
       <ul>
-        <li v-for="link of article.toc" :key="link.id">
+        <li v-for="link of project.toc" :key="link.id">
           <nuxt-link
             :to="`#${link.id}`"
             :class="{ 'py-2': link.depth === 2, 'ml-2 pb-2': link.depth === 3 }"
@@ -22,30 +22,30 @@
     </nav>
     <p>Post last updated: {{ updatedAt }}</p>
     <div class="container px-5 py-24 mx-auto">
-      <nuxt-content :document="article" />
+      <nuxt-content :document="project" />
     </div>
     <hr />
     <prev-next :prev="prev" :next="next" />
-  </article>
+  </div>
 </template>
 
 <script>
 export default {
   async asyncData({ $content, params }) {
-    const article = await $content("articles", params.slug).fetch();
+    const project = await $content("work", params.slug).fetch();
 
-    const [prev, next] = await $content("articles")
+    const [prev, next] = await $content("work")
       .only(["title", "slug"])
       .sortBy("createdAt", "asc")
       .surround(params.slug)
       .fetch();
 
-    return { article, prev, next };
+    return { project, prev, next };
   },
   computed: {
     updatedAt() {
       const options = { year: "numeric", month: "long", day: "numeric" };
-      return new Date(this.article.updatedAt).toLocaleDateString("en", options);
+      return new Date(this.project.updatedAt).toLocaleDateString("en", options);
     }
   }
 };

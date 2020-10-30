@@ -52,12 +52,74 @@
           {{ skill.data.desc }}
         </p>
         <div class="flex justify-between items-center mb-2 mt-4">
-          <h3 class="title-font text-xl font-medium text-gray-900 uppercase">Last articles</h3>
+          <h3 class="title-font text-xl font-medium text-gray-900 uppercase">
+            Last project
+          </h3>
           <nuxt-link
             :to="`/articles/tags/${skill.name}`"
             class="mt-3 inline-flex items-center hover:opacity-75"
             :style="'color:' + skill.data.color"
-            >All articles
+            >View all
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              class="w-4 h-4 ml-2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </nuxt-link>
+        </div>
+        <div v-if="projects !== null">
+          <div v-if="projects.length == 0">
+            <p>No articles with this tag</p>
+          </div>
+          <div v-else>
+            <nuxt-link
+              :to="project.path"
+              class="py-8 px-4 w-full bg-gray-100 inline-block mb-2 rounded shadow"
+              v-for="project in projects"
+              :key="project.slug"
+            >
+              <div class="h-full flex items-start">
+                <div
+                  class="w-12 flex-shrink-0 flex flex-col text-center leading-none"
+                >
+                  <span
+                    class="text-gray-500 pb-2 mb-2 border-b-2 border-gray-300 uppercase"
+                    >{{ formatDate(project.updatedAt).m }}</span
+                  >
+                  <span class="font-medium text-xl text-gray-800 title-font">{{
+                    formatDate(project.updatedAt).d
+                  }}</span>
+                </div>
+                <div class="flex-grow pl-6">
+                  <h1 class="title-font text-xl font-medium text-gray-900 mb-3">
+                    {{ project.title }}
+                  </h1>
+                  <h2
+                    class="tracking-widest text-sm title-font font-medium text-teal-500 mb-1"
+                  >
+                    {{ project.tags }}
+                  </h2>
+                  <p class="leading-relaxed">{{ project.desc }}</p>
+                </div>
+              </div>
+            </nuxt-link>
+          </div>
+        </div>
+        <div class="flex justify-between items-center mb-2 mt-4">
+          <h3 class="title-font text-xl font-medium text-gray-900 uppercase">
+            Last article
+          </h3>
+          <nuxt-link
+            :to="`/articles/tags/${skill.name}`"
+            class="mt-3 inline-flex items-center hover:opacity-75"
+            :style="'color:' + skill.data.color"
+            >View all
             <svg
               fill="none"
               stroke="currentColor"
@@ -225,7 +287,8 @@ export default {
   },
   data() {
     return {
-      articles: null
+      articles: null,
+      projects: null
     };
   },
   methods: {
@@ -251,11 +314,12 @@ export default {
     },
     async getArticles() {
       const articles = await this.$content("articles")
+        .only(["title", "desc", "tags", "updatedAt"])
         .where({
           tags: { $contains: this.skill.name }
         })
         .sortBy("createdAt", "desc")
-        .limit(3)
+        .limit(1)
         .fetch();
 
       articles.forEach(function(item, index) {
@@ -267,17 +331,39 @@ export default {
       });
 
       this.articles = articles;
+    },
+    async getProjects() {
+      const projects = await this.$content("work")
+        .only(["title", "desc", "tags", "updatedAt"])
+        .where({
+          tags: { $contains: this.skill.name }
+        })
+        .sortBy("createdAt", "desc")
+        .limit(1)
+        .fetch();
+
+      projects.forEach(function(item, index) {
+        var tags = "";
+        item.tags.forEach(function(item2, index2) {
+          tags += "#" + item2 + " ";
+        });
+        item.tags = tags;
+      });
+
+      this.projects = projects;
     }
   },
   computed: {
     setColorVariant() {
       this.colorVariants();
       this.getArticles();
+      this.getProjects();
     }
   },
   updated() {
     this.colorVariants();
     this.getArticles();
+    this.getProjects();
   }
 };
 </script>
