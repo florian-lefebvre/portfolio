@@ -1,6 +1,6 @@
 ---
-title: My portfolio
-desc: Here is the breakdown of my portfolio, how I switched from Jekyll to Nuxt.js
+title: Test
+desc: blabla
 img: test.jpg
 alt: cool code
 tags:

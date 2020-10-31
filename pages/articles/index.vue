@@ -2,7 +2,7 @@
   <section class="text-gray-700 body-font">
     <div class="container px-5 py-24 mx-auto">
       <nuxt-link to="/articles/tags">Tags</nuxt-link>
-      <SearchInput />
+      <SearchInput directory="articles" />
       <div class="flex flex-wrap -m-4">
         <nuxt-link
           class="p-4 md:w-1/3"

@@ -29,6 +29,6 @@ export default {
 <style>
   .left-label,
   .right-label {
-    @apply font-medium bg-gray-900 text-gray-100 rounded p-2;
+    @apply font-medium bg-gray-900 text-gray-100 rounded p-2 bg-opacity-50;
   }
 </style>

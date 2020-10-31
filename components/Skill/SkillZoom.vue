@@ -51,125 +51,29 @@
         <p class="leading-relaxed text-base">
           {{ skill.data.desc }}
         </p>
-        <div class="flex justify-between items-center mb-2 mt-4">
-          <h3 class="title-font text-xl font-medium text-gray-900 uppercase">
-            Last project
-          </h3>
+        <div class="mt-4 mb-2" v-if="project !== null || article !== null">
+          <nuxt-link v-if="project !== null" :to="`/work/tags/${skill.name}`" class="bg-gray-400 text-gray-800 px-4 py-2 whitespace-no-wrap inline-block mb-2 rounded shadow hover:bg-gray-600 hover:text-gray-100 transition duration-100 ease-out">All projects</nuxt-link>
+          <nuxt-link v-if="article !== null" :to="`/articles/tags/${skill.name}`" class="bg-gray-400 text-gray-800 px-4 py-2 whitespace-no-wrap inline-block mb-2 rounded shadow hover:bg-gray-600 hover:text-gray-100 transition duration-100 ease-out">All articles</nuxt-link>
+        </div>
+        <div v-if="project !== null">
           <nuxt-link
-            :to="`/articles/tags/${skill.name}`"
-            class="mt-3 inline-flex items-center hover:opacity-75"
-            :style="'color:' + skill.data.color"
-            >View all
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-4 h-4 ml-2"
-              viewBox="0 0 24 24"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
+            :to="project.path"
+            class="py-6 px-4 w-full bg-gray-100 inline-block mb-2 rounded shadow transform transition duration-100 ease-out hover:scale-105 relative"
+          >
+            <span class="bg-teal-300 text-teal-800 text-xs px-2 py-1 pr-4 font-bold rounded-tl rounded-br-full shadow-xs absolute top-0 left-0">Last project</span>
+            <h2 class="title-font text-xl font-medium text-gray-900 mb-2">{{ project.title }}</h2>
+            <p class="leading-relaxed">{{ project.desc }}</p>
           </nuxt-link>
         </div>
-        <div v-if="projects !== null">
-          <div v-if="projects.length == 0">
-            <p>No articles with this tag</p>
-          </div>
-          <div v-else>
-            <nuxt-link
-              :to="project.path"
-              class="py-8 px-4 w-full bg-gray-100 inline-block mb-2 rounded shadow"
-              v-for="project in projects"
-              :key="project.slug"
-            >
-              <div class="h-full flex items-start">
-                <div
-                  class="w-12 flex-shrink-0 flex flex-col text-center leading-none"
-                >
-                  <span
-                    class="text-gray-500 pb-2 mb-2 border-b-2 border-gray-300 uppercase"
-                    >{{ formatDate(project.updatedAt).m }}</span
-                  >
-                  <span class="font-medium text-xl text-gray-800 title-font">{{
-                    formatDate(project.updatedAt).d
-                  }}</span>
-                </div>
-                <div class="flex-grow pl-6">
-                  <h1 class="title-font text-xl font-medium text-gray-900 mb-3">
-                    {{ project.title }}
-                  </h1>
-                  <h2
-                    class="tracking-widest text-sm title-font font-medium text-teal-500 mb-1"
-                  >
-                    {{ project.tags }}
-                  </h2>
-                  <p class="leading-relaxed">{{ project.desc }}</p>
-                </div>
-              </div>
-            </nuxt-link>
-          </div>
-        </div>
-        <div class="flex justify-between items-center mb-2 mt-4">
-          <h3 class="title-font text-xl font-medium text-gray-900 uppercase">
-            Last article
-          </h3>
+        <div v-if="article !== null">
           <nuxt-link
-            :to="`/articles/tags/${skill.name}`"
-            class="mt-3 inline-flex items-center hover:opacity-75"
-            :style="'color:' + skill.data.color"
-            >View all
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-4 h-4 ml-2"
-              viewBox="0 0 24 24"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
+            :to="article.path"
+            class="py-6 px-4 w-full bg-gray-100 inline-block mb-2 rounded shadow transform transition duration-100 ease-out hover:scale-105 relative"
+          >
+            <span class="bg-teal-300 text-teal-800 text-xs px-2 py-1 pr-4 font-bold rounded-tl rounded-br-full shadow-xs absolute top-0 left-0">Last article</span>
+            <h2 class="title-font text-xl font-medium text-gray-900 mb-2">{{ article.title }}</h2>
+            <p class="leading-relaxed">{{ article.desc }}</p>
           </nuxt-link>
-        </div>
-        <div v-if="articles !== null">
-          <div v-if="articles.length == 0">
-            <p>No articles with this tag</p>
-          </div>
-          <div v-else>
-            <nuxt-link
-              :to="article.path"
-              class="py-8 px-4 w-full bg-gray-100 inline-block mb-2 rounded shadow"
-              v-for="article in articles"
-              :key="article.slug"
-            >
-              <div class="h-full flex items-start">
-                <div
-                  class="w-12 flex-shrink-0 flex flex-col text-center leading-none"
-                >
-                  <span
-                    class="text-gray-500 pb-2 mb-2 border-b-2 border-gray-300 uppercase"
-                    >{{ formatDate(article.updatedAt).m }}</span
-                  >
-                  <span class="font-medium text-xl text-gray-800 title-font">{{
-                    formatDate(article.updatedAt).d
-                  }}</span>
-                </div>
-                <div class="flex-grow pl-6">
-                  <h1 class="title-font text-xl font-medium text-gray-900 mb-3">
-                    {{ article.title }}
-                  </h1>
-                  <h2
-                    class="tracking-widest text-sm title-font font-medium text-teal-500 mb-1"
-                  >
-                    {{ article.tags }}
-                  </h2>
-                  <p class="leading-relaxed">{{ article.desc }}</p>
-                </div>
-              </div>
-            </nuxt-link>
-          </div>
         </div>
       </div>
     </div>
@@ -287,8 +191,8 @@ export default {
   },
   data() {
     return {
-      articles: null,
-      projects: null
+      article: null,
+      project: null
     };
   },
   methods: {
@@ -300,21 +204,21 @@ export default {
         info: "bg-blue-600"
       }[this.skill.data.variant];
     },
-    formatDate(date) {
-      const options = [
-        { year: "numeric" },
-        { month: "short" },
-        { day: "numeric" }
-      ];
-      return {
-        y: new Date(date).toLocaleDateString("en", options[0]),
-        m: new Date(date).toLocaleDateString("en", options[1]),
-        d: new Date(date).toLocaleDateString("en", options[2])
-      };
-    },
+    // formatDate(date) {
+    //   const options = [
+    //     { year: "numeric" },
+    //     { month: "short" },
+    //     { day: "numeric" }
+    //   ];
+    //   return {
+    //     y: new Date(date).toLocaleDateString("en", options[0]),
+    //     m: new Date(date).toLocaleDateString("en", options[1]),
+    //     d: new Date(date).toLocaleDateString("en", options[2])
+    //   };
+    // },
     async getArticles() {
       const articles = await this.$content("articles")
-        .only(["title", "desc", "tags", "updatedAt"])
+        .only(["title", "desc"])
         .where({
           tags: { $contains: this.skill.name }
         })
@@ -322,19 +226,16 @@ export default {
         .limit(1)
         .fetch();
 
-      articles.forEach(function(item, index) {
-        var tags = "";
-        item.tags.forEach(function(item2, index2) {
-          tags += "#" + item2 + " ";
-        });
-        item.tags = tags;
-      });
-
-      this.articles = articles;
+      if (typeof articles[0] !== "undefined") {
+        articles[0].desc = this.shortenSentence(articles[0].desc, 50);
+        this.article = articles[0];
+      } else {
+        this.article = null;
+      }
     },
     async getProjects() {
       const projects = await this.$content("work")
-        .only(["title", "desc", "tags", "updatedAt"])
+        .only(["title", "desc"])
         .where({
           tags: { $contains: this.skill.name }
         })
@@ -342,15 +243,24 @@ export default {
         .limit(1)
         .fetch();
 
-      projects.forEach(function(item, index) {
-        var tags = "";
-        item.tags.forEach(function(item2, index2) {
-          tags += "#" + item2 + " ";
-        });
-        item.tags = tags;
-      });
-
-      this.projects = projects;
+      if (typeof projects[0] !== "undefined") {
+        projects[0].desc = this.shortenSentence(projects[0].desc, 50);
+        this.project = projects[0];
+      } else {
+        this.project = null;
+      }
+    },
+    shortenSentence(string, maxLength) {
+      if (string.length > maxLength) {
+        var trimmedString = string.substr(0, maxLength);
+        trimmedString = trimmedString.substr(
+          0,
+          Math.min(trimmedString.length, trimmedString.lastIndexOf(" "))
+        );
+        return trimmedString + "...";
+      } else {
+        return string;
+      }
     }
   },
   computed: {
@@ -360,10 +270,12 @@ export default {
       this.getProjects();
     }
   },
-  updated() {
-    this.colorVariants();
-    this.getArticles();
-    this.getProjects();
+  watch: {
+    skill() {
+      this.colorVariants();
+      this.getArticles();
+      this.getProjects();
+    }
   }
 };
 </script>
