@@ -2,46 +2,54 @@
   <div class="container px-5 mx-auto">
     <hr />
     <div class="py-6 flex justify-between text-lg">
-      <nuxt-link
-        v-if="prev"
-        :to="prev.path"
-        class="flex font-bold hover:underline"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          class="w-6 h-6"
+      <span class="shadow-sm rounded-md" v-if="prev">
+        <nuxt-link
+          :to="prev.path"
+          type="button"
+          class="mb-6 inline-flex items-center px-4 py-2 border border-transparent leading-5 font-medium rounded-md text-white bg-teal-600 hover:bg-teal-500 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 transition duration-150 ease-in-out"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M11 19l-7-7 7-7m8 14l-7-7 7-7"
-          />
-        </svg>
-        {{ prev.title }}
-      </nuxt-link>
-      <span v-else>&nbsp;</span>
-      <nuxt-link v-if="next" :to="next.path" class="flex font-bold hover:underline">
-        {{ next.title }}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          class="w-6 h-6"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-4 h-4 mr-2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            />
+          </svg>
+          {{ prev.title }}
+        </nuxt-link>
+      </span>
+      <span v-else></span>
+      <span class="shadow-sm rounded-md" v-if="next">
+        <nuxt-link
+          :to="next.path"
+          type="button"
+          class="mb-6 inline-flex items-center px-4 py-2 border border-transparent leading-5 font-medium rounded-md text-white bg-teal-600 hover:bg-teal-500 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 transition duration-150 ease-in-out"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M13 5l7 7-7 7M5 5l7 7-7 7"
-          />
-        </svg>
-      </nuxt-link>
-      <span v-else>&nbsp;</span>
+          {{ next.title }}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-4 h-4 ml-2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            />
+          </svg>
+        </nuxt-link>
+      </span>
+      <span v-else></span>
     </div>
   </div>
 </template>

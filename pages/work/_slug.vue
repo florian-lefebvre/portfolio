@@ -107,29 +107,47 @@ export default {
 </script>
 
 <style lang="scss">
-.nuxt-content h2 {
-  font-weight: bold;
-  font-size: 28px;
-}
-.nuxt-content h3 {
-  font-weight: bold;
-  font-size: 22px;
-}
-.nuxt-content p {
-  margin-bottom: 20px;
-}
-.nuxt-content-highlight {
-  @apply relative shadow-xs rounded;
-}
-.nuxt-content-highlight .filename {
-  @apply absolute right-0 text-gray-600 font-light z-10 mr-2 mt-1 text-sm;
-}
+.nuxt-content {
+  @apply text-gray-900;
 
-.icon.icon-link {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 20l4-16m2 16l4-16M6 9h14M4 15h14' /%3E%3C/svg%3E");
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-size: 20px 20px;
+  h2 {
+    @apply font-bold text-4xl;
+
+    .icon.icon-link {
+      @apply w-6 h-6;
+    }
+  }
+
+  h3 {
+    @apply font-bold text-2xl;
+
+    .icon.icon-link {
+      @apply w-5 h-5;
+    }
+  }
+
+  p {
+    @apply mb-6 text-justify;
+  }
+
+  a {
+    @apply text-teal-700;
+    &:hover {
+      @apply underline;
+    }
+  }
+
+  .icon.icon-link {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 20l4-16m2 16l4-16M6 9h14M4 15h14' /%3E%3C/svg%3E");
+    display: inline-block;
+  }
+
+  .nuxt-content-highlight {
+    @apply relative;
+
+    .filename {
+      @apply absolute right-0 text-gray-600 font-light z-10 mr-2 mt-1 text-sm;
+    }
+  }
 }
 </style>
