@@ -4,7 +4,7 @@ desc: blabla
 img: test.jpg
 alt: cool code
 tags:
-  - html5
+  - css3
   - tailwindcss
   - nuxtjs
   - vuejs

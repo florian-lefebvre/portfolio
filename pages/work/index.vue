@@ -26,7 +26,7 @@
 
       <div class="flex flex-wrap -m-4">
         <nuxt-link
-          class="p-4 md:w-1/3 transform hover:scale-105 transition duration-150 ease-out"
+          class="p-4 md:w-1/2 lg:w-1/3 transform hover:scale-105 transition duration-150 ease-out"
           v-for="project of projects"
           :key="project.slug"
           :to="project.path"

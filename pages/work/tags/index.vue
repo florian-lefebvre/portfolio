@@ -42,10 +42,6 @@
           <SearchInput directory="work" />
         </div>
       </div>
-
-      <!-- <ul v-if="tags.length !== 0">
-        <li v-for="(tag, index) in tags" :key="index">{{ tag }}</li>
-      </ul> -->
       <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
       >

@@ -40,7 +40,7 @@
       leave-to-class="transform opacity-0 scale-95"
     >
       <div
-        class="absolute mt-2 w-56 rounded-md shadow-lg"
+        class="absolute mt-2 w-56 rounded-md shadow-lg z-10"
         v-if="elements.length"
       >
         <div class="rounded-md bg-white shadow-xs">

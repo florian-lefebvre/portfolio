@@ -1,81 +1,70 @@
 <template>
   <div>
-    <div class="relative">
-      <div class="relative">
-        <img
-          v-if="project.img"
-          class="lg:h-64 md:h-36 w-full object-cover object-center"
-          :src="`/img/work/${project.img}`"
-          :alt="project.alt"
-        />
-        <div
-          class="absolute top-0 left-0 w-full h-full block bg-black bg-opacity-50"
-        >
-          <div class="container px-5 pt-10 mx-auto text-gray-100">
-            <h3>Last updated {{ updatedAt }}</h3>
-            <h1
-              class="text-2xl font-bold leading-7 sm:text-3xl sm:leading-9 sm:truncate"
-            >
-              {{ project.title }}
-            </h1>
-            <h2 class="mt-2 text-xl leading-7">{{ project.desc }}</h2>
-            <h3 class="mt-1">
-              <nuxt-link
-                v-for="(tag, index) in project.tags"
-                :key="index"
-                :to="`/work/tags/${tag}`"
-                class="text-gray-200 hover:text-gray-400"
-                >#{{ tag }}
-              </nuxt-link>
-            </h3>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container px-5 pt-6 mx-auto">
-      <span class="shadow-sm rounded-md">
-        <nuxt-link
-          to="/work"
-          type="button"
-          class="mb-6 inline-flex items-center px-4 py-2 border border-transparent leading-5 font-medium rounded-md text-white bg-teal-600 hover:bg-teal-500 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 transition duration-150 ease-in-out"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            class="w-4 h-4 mr-2"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M10 19l-7-7m0 0l7-7m-7 7h18"
-            />
-          </svg>
-          All projects
-        </nuxt-link>
-      </span>
-      <h2
-        class="text-xl text-gray-900 font-bold leading-7 sm:text-2xl sm:leading-9 sm:truncate"
+    <div class="container px-5 pt-24 mx-auto">
+      <nuxt-link
+        to="/work"
+        type="button"
+        class="mb-10 inline-flex items-center leading-5 font-medium text-gray-700 hover:text-teal-500 focus:outline-none transition duration-100 ease-out"
       >
-        Table of contents
-      </h2>
-      <nav class="mb-4">
-        <ul>
-          <li v-for="link of project.toc" :key="link.id">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          class="w-4 h-4 mr-2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+        Back to projects list
+      </nuxt-link>
+      <h1 class="text-4xl font-semibold mb-4 leading-tight">
+        {{ project.title }}
+      </h1>
+      <div class="flex justify-between flex-col sm:flex-row mb-10">
+        <h3 class="mt-1 space-x-1">
+          <nuxt-link
+            v-for="(tag, index) in project.tags"
+            :key="index"
+            :to="`/work/tags/${tag}`"
+            class="text-teal-600 font-semibold hover:underline"
+            >#{{ tag }}
+          </nuxt-link>
+        </h3>
+        <h3 class="mt-1">Last updated on {{ updatedAt }} • {{ readingTime }}</h3>
+      </div>
+      <light-box
+        class="mb-10"
+        :gallery="[
+          {
+            src: `/img/work/${project.img}`,
+            alt: project.alt
+          }
+        ]"
+      ></light-box>
+      <p class="mb-4">{{ project.desc }}</p>
+      <nav>
+        <ul class="list-disc ml-4">
+          <li
+            v-for="link of project.toc"
+            :key="link.id"
+            :class="{
+              'py-2': link.depth === 2,
+              'ml-4 pb-2': link.depth === 3
+            }"
+          >
             <nuxt-link
               :to="`#${link.id}`"
-              :class="{
-                'py-2': link.depth === 2,
-                'ml-2 pb-2': link.depth === 3
-              }"
+              class="text-teal-600 font-semibold hover:underline"
               >{{ link.text }}</nuxt-link
             >
           </li>
         </ul>
       </nav>
-      <hr />
     </div>
     <div class="container px-5 py-24 mx-auto">
       <nuxt-content :document="project" />
@@ -101,6 +90,21 @@ export default {
     updatedAt() {
       const options = { year: "numeric", month: "long", day: "numeric" };
       return new Date(this.project.updatedAt).toLocaleDateString("en", options);
+    },
+    readingTime() {
+      var milli = this.project.readingTime,
+        sec = milli / 1000,
+        min = sec / 60,
+        final = Number(min.toFixed(0)),
+        output = "";
+
+      if (milli <= 30000) {
+        output = "1 min read";
+      } else {
+        output = final + " min read";
+      }
+
+      return output;
     }
   }
 };
@@ -110,24 +114,48 @@ export default {
 .nuxt-content {
   @apply text-gray-900;
 
-  h2 {
-    @apply font-bold text-4xl;
+  h2,
+  h3 {
+    @apply relative table my-8;
 
-    .icon.icon-link {
-      @apply w-6 h-6;
+    &::after {
+      content: "";
+      @apply w-4/5 block mt-2 mb-1 rounded border-2;
+    }
+
+    .icon-link {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 20l4-16m2 16l4-16M6 9h14M4 15h14' /%3E%3C/svg%3E");
+      background-size: 1.5rem 1.5rem;
+      @apply w-6 h-6 mb-2 hidden;
+    }
+
+    a {
+      @apply mt-2 absolute top-0 left-0 -ml-6;
+    }
+
+    &:hover a .icon-link {
+      @apply inline-block;
+    }
+  }
+
+  h2 {
+    @apply text-2xl;
+
+    &::after {
+      @apply border-teal-600;
     }
   }
 
   h3 {
-    @apply font-bold text-2xl;
+    @apply text-xl;
 
-    .icon.icon-link {
-      @apply w-5 h-5;
+    &::after {
+      @apply border-gray-600;
     }
   }
 
   p {
-    @apply mb-6 text-justify;
+    @apply text-justify leading-7 pb-1 mb-2 font-medium;
   }
 
   a {
@@ -135,11 +163,6 @@ export default {
     &:hover {
       @apply underline;
     }
-  }
-
-  .icon.icon-link {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 20l4-16m2 16l4-16M6 9h14M4 15h14' /%3E%3C/svg%3E");
-    display: inline-block;
   }
 
   .nuxt-content-highlight {
