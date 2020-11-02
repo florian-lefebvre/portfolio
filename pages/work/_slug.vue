@@ -27,6 +27,11 @@
       </h1>
       <div class="flex justify-between flex-col sm:flex-row mb-10">
         <h3 class="mt-1 space-x-1">
+          <span
+            class="rounded-full uppercase px-2 py-1 font-semibold shadow"
+            :class="project.variant"
+            >{{ project.status }}</span
+          >
           <nuxt-link
             v-for="(tag, index) in project.tags"
             :key="index"
@@ -35,7 +40,9 @@
             >#{{ tag }}
           </nuxt-link>
         </h3>
-        <h3 class="mt-1">Last updated on {{ updatedAt }} • {{ readingTime }}</h3>
+        <h3 class="mt-1">
+          Last updated on {{ updatedAt }} • {{ readingTime }}
+        </h3>
       </div>
       <light-box
         class="mb-10"
@@ -83,6 +90,17 @@ export default {
       .sortBy("createdAt", "asc")
       .surround(params.slug)
       .fetch();
+
+    function colorVariants(value) {
+      return {
+        success: "bg-green-300 text-green-800 border-green-800",
+        warning: "bg-yellow-300 text-yellow-800 border-yellow-800",
+        danger: "bg-red-300 text-red-800 border-red-800",
+        info: "bg-blue-300 text-blue-800 border-blue-800"
+      }[value];
+    }
+
+    project.variant = colorVariants(project.variant);
 
     return { project, prev, next };
   },

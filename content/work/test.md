@@ -3,6 +3,8 @@ title: Test
 desc: blabla
 img: test.jpg
 alt: cool code
+status: Finished
+variant: success
 tags:
   - css3
   - tailwindcss

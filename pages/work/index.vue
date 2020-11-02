@@ -32,8 +32,13 @@
           :to="project.path"
         >
           <div
-            class="h-full border-2 border-gray-200 rounded-lg overflow-hidden"
+            class="h-full border-2 border-gray-200 rounded-lg overflow-hidden relative shadow"
           >
+            <span
+              class="absolute top-0 left-0 mt-1 ml-1 rounded-full uppercase px-2 py-1 text-xs font-semibold shadow"
+              :class="project.variant"
+              >{{ project.status }}</span
+            >
             <img
               class="lg:h-48 md:h-36 w-full object-cover object-center"
               :src="`/img/work/${project.img}`"
@@ -69,9 +74,22 @@
 export default {
   async asyncData({ $content, params }) {
     const projects = await $content("work", params.slug)
-      .only(["title", "desc", "slug", "img", "tags"])
+      .without(["body"])
       .sortBy("createdAt", "asc")
       .fetch();
+
+    function colorVariants(value) {
+      return {
+        success: "bg-green-300 text-green-800 border-green-800",
+        warning: "bg-yellow-300 text-yellow-800 border-yellow-800",
+        danger: "bg-red-300 text-red-800 border-red-800",
+        info: "bg-blue-300 text-blue-800 border-blue-800"
+      }[value];
+    }
+
+    projects.forEach(function(project) {
+      project.variant = colorVariants(project.variant);
+    });
 
     return {
       projects

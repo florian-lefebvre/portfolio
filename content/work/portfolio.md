@@ -3,6 +3,8 @@ title: My portfolio
 desc: Here is the breakdown of my portfolio, how I switched from Jekyll to Nuxt.js
 img: test.jpg
 alt: cool code
+status: In progress
+variant: warning
 tags:
   - html5
   - tailwindcss
