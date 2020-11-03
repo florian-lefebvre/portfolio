@@ -1,3 +1,8 @@
+import global from "./utils/global";
+import getSiteMeta from "./utils/getSiteMeta";
+
+const meta = getSiteMeta();
+
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
@@ -7,7 +12,10 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: "Portfolio",
+    htmlAttrs: {
+      lang: "en-GB"
+    },
+    title: global.siteBaseTitle,
     titleTemplate: titleChunk => {
       // If undefined or blank then we don't need the hyphen
       return titleChunk
@@ -15,9 +23,10 @@ export default {
         : "Florian LEFEBVRE";
     },
     meta: [
+      ...meta,
       { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" }
+      { name: "HandheldFriendly", content: "True" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
@@ -26,9 +35,7 @@ export default {
   css: ["@/assets/style/main"],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [
-    '~/plugins/vue-silentbox.js'
-  ],
+  plugins: ["~/plugins/vue-silentbox.js"],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,

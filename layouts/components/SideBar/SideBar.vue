@@ -1,16 +1,19 @@
 <template>
   <div
     class="h-full bg-teal-600 top-0 left-0 lg:translate-x-0 fixed block w-64 shadow-xl text-teal-100 transition transform duration-500 ease-out z-20 overflow-y-auto"
-    :class="$store.state.device.sideBarOpen ? 'translate-x-0' : '-translate-x-64'"
+    :class="
+      $store.state.device.sideBarOpen ? 'translate-x-0' : '-translate-x-64'
+    "
   >
     <div class="flex flex-col h-full">
       <div class="my-auto py-4">
         <div class="mb-4 px-8">
-          <h1
-            class="font-medium font-medium leading-none text-3xl text-white mb-2"
-          >
-            {{ $store.state.infos.firstName }}<br />
-            <span class="font-bold text-4xl">{{ $store.state.infos.lastName }}</span>
+          <h1 class="font-medium leading-none text-3xl text-white mb-2">
+            {{ $store.state.infos.firstName }}
+            <br />
+            <span class="font-bold text-4xl">{{
+              $store.state.infos.lastName
+            }}</span>
           </h1>
         </div>
         <div class="mb-4 px-8">
