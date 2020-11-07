@@ -9,13 +9,9 @@ export const state = () => ({
   email: global.email,
   linkedin: global.linkedin,
   siteUrl: global.url,
-  siteName: global.siteName,
   author: global.author,
-  gihtub: global.github,
-  githubURL: global.githubURL,
+  github: global.github,
   siteTitle: global.siteTitle,
   siteDesc: global.siteDesc,
   mainImage: global.mainImage,
-  siteType: global.siteType,
-  siteBaseTitle: global.siteBaseTitle
 });

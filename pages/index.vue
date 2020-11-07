@@ -1,5 +1,56 @@
 <template>
   <div>
+    <header class="h-screen">
+      <div class="container px-5 py-32 mx-auto text-center">
+        <h2
+          class="pt-24 text-4xl tracking-tight leading-10 font-bold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl"
+        >
+          Hi! I'm
+          <br class="xl:hidden" />
+          <span class="text-teal-600">{{ $store.state.infos.author }}</span>
+        </h2>
+        <p
+          class="mt-3 text-base text-gray-600 sm:mt-5 sm:text-lg sm:max-w-xl md:mt-5 md:text-xl mx-auto"
+        >
+          I am a French student who likes to program on his free time since
+          2018, when I discovered programming with
+          <strong>Unreal Engine 4</strong>. In December 2019, I started web
+          development and since then, I can't stop :
+          <strong>Tailwind Css</strong>, <strong>Laravel</strong>,
+          <strong>Vue.js</strong>... And many more to come!
+        </p>
+        <div class="mt-5 sm:mt-8 sm:flex justify-center">
+          <div class="rounded-md shadow">
+            <nuxt-link
+              to="work"
+              class="w-full flex items-center justify-center px-8 py-3 border-2 border-transparent text-base leading-6 font-semibold rounded-md text-white bg-teal-600 hover:bg-teal-500 focus:outline-none focus:border-teal-700 focus:shadow-outline-teal transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
+            >
+              Check out my work
+            </nuxt-link>
+          </div>
+          <div class="mt-3 sm:mt-0 sm:ml-3 rounded-md shadow">
+            <a
+              :href="`mailto:${$store.state.infos.email}`"
+              class="w-full flex items-center justify-center px-8 py-3 border-teal-600 border-2 text-base leading-6 font-semibold rounded-md text-teal-600 bg-transparent hover:bg-teal-600 hover:text-white focus:outline-none focus:border-teal-700 focus:shadow-outline-teal transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
+            >
+              Email me
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="bg-gray-200">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="bg-gray-100 rounded-xl -mt-48 shadow-xl">
+          <div class="pt-32">a</div>
+          <div class="pt-32">a</div>
+          <div class="pt-32">a</div>
+          <div class="pt-32">a</div>
+          <div class="pt-32">a</div>
+          <div class="pt-32">a</div>
+        </div>
+      </div>
+    </div>
     <div class="relative bg-white overflow-hidden shadow-lg">
       <div class="max-w-screen-xl mx-auto">
         <div
@@ -123,7 +174,7 @@
               :color="tech.data.color"
               :variant="tech.data.variant"
               :status="tech.data.status"
-              v-on:set-current-skill="currentSkill = tech"
+              v-on:set-current-skill="(currentSkill = tech), (showModal = true)"
             />
           </div>
           <h3
@@ -153,17 +204,82 @@
         </div>
       </section>
     </div>
+    <transition
+      enter-active-class="transition ease-out duration-100"
+      enter-class="opacity-0"
+      enter-to-class="opacity-100"
+      leave-active-class="transition ease-in duration-75"
+      leave-class="opacity-100"
+      leave-to-class="opacity-0"
+    >
+      <SkillZoom2
+        :skill="currentSkill"
+        v-if="showModal && currentSkill"
+        v-on:close="showModal = false"
+      />
+      <!-- <modal v-if="showModal && currentSkill">
+        <div class="p-5 text-gray-700">
+          <div class="flex justify-between">
+            <div class="font-semibold text-lg">
+              <slot name="header"></slot>
+            </div>
+            <button
+              type="button"
+              @click="showModal = false"
+              class="transform hover:scale-125 transition ease-out duration-100"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          {{ currentSkill.data.title }}
+        </div>
+      </modal> -->
+    </transition>
   </div>
 </template>
 
 <script>
+import getSiteMeta from "@/utils/getSiteMeta";
 export default {
-  head: {
-    title: "Home"
+  // head: {
+  //   title: "Home"
+  // },
+  head() {
+    return {
+      title: "Home",
+      meta: [...this.meta]
+    };
+  },
+  computed: {
+    meta() {
+      const metaData = {
+        // type: "article",
+        // title: this.article.title,
+        // description: this.article.description,
+        // url: `${this.$config.baseUrl}/articles/${this.$route.params.slug}`,
+        // mainImage: this.article.image
+        //description: "LOOK AT THAT"
+      };
+      return getSiteMeta(metaData);
+    }
   },
   data() {
     return {
       currentSkill: null,
+      showModal: true,
       knownTechnologies: [
         {
           name: "html5",

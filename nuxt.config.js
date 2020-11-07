@@ -15,13 +15,8 @@ export default {
     htmlAttrs: {
       lang: "en-GB"
     },
-    title: global.siteBaseTitle,
-    titleTemplate: titleChunk => {
-      // If undefined or blank then we don't need the hyphen
-      return titleChunk
-        ? `${titleChunk} - Florian LEFEBVRE`
-        : "Florian LEFEBVRE";
-    },
+    title: global.siteTitle,
+    titleTemplate: `%s - ${global.author}`,
     meta: [
       ...meta,
       { charset: "utf-8" },

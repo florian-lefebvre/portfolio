@@ -160,7 +160,7 @@ export default {
     @apply text-2xl;
 
     &::after {
-      @apply border-teal-600;
+      @apply border-teal-600 bg-teal-600;
     }
   }
 
@@ -168,7 +168,7 @@ export default {
     @apply text-xl;
 
     &::after {
-      @apply border-gray-600;
+      @apply border-gray-600 bg-gray-600;
     }
   }
 
