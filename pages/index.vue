@@ -1,26 +1,21 @@
 <template>
   <div>
-    <header class="h-screen">
+    <header class="h-screen bg-teal-700 shadow-inner">
       <div class="container px-5 py-32 mx-auto text-center">
         <h2
-          class="pt-24 text-4xl tracking-tight leading-10 font-bold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl"
+          class="pt-24 text-4xl tracking-tight leading-10 font-bold text-teal-200 sm:text-5xl sm:leading-none md:text-6xl"
         >
           Hi! I'm
           <br class="xl:hidden" />
-          <span class="text-teal-600">{{ $store.state.infos.author }}</span>
+          <span class="text-gray-200">{{ $store.state.infos.author }}</span>
         </h2>
         <p
-          class="mt-3 text-base text-gray-600 sm:mt-5 sm:text-lg sm:max-w-xl md:mt-5 md:text-xl mx-auto"
+          class="mt-3 text-base text-teal-200 sm:mt-5 sm:text-lg sm:max-w-xl md:mt-5 md:text-xl mx-auto"
         >
-          I am a French student who likes to program on his free time since
-          2018, when I discovered programming with
-          <strong>Unreal Engine 4</strong>. In December 2019, I started web
-          development and since then, I can't stop :
-          <strong>Tailwind Css</strong>, <strong>Laravel</strong>,
-          <strong>Vue.js</strong>... And many more to come!
+          {{ $store.state.infos.siteDesc }}
         </p>
         <div class="mt-5 sm:mt-8 sm:flex justify-center">
-          <div class="rounded-md shadow">
+          <div class="rounded-md shadow-lg">
             <nuxt-link
               to="work"
               class="w-full flex items-center justify-center px-8 py-3 border-2 border-transparent text-base leading-6 font-semibold rounded-md text-white bg-teal-600 hover:bg-teal-500 focus:outline-none focus:border-teal-700 focus:shadow-outline-teal transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
@@ -28,10 +23,10 @@
               Check out my work
             </nuxt-link>
           </div>
-          <div class="mt-3 sm:mt-0 sm:ml-3 rounded-md shadow">
+          <div class="mt-3 sm:mt-0 sm:ml-3 rounded-md shadow-lg">
             <a
               :href="`mailto:${$store.state.infos.email}`"
-              class="w-full flex items-center justify-center px-8 py-3 border-teal-600 border-2 text-base leading-6 font-semibold rounded-md text-teal-600 bg-transparent hover:bg-teal-600 hover:text-white focus:outline-none focus:border-teal-700 focus:shadow-outline-teal transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
+              class="w-full flex items-center justify-center px-8 py-3 border-teal-200 border-2 text-base leading-6 font-semibold rounded-md text-teal-600 bg-teal-200 hover:bg-teal-500 hover:border-teal-500 hover:text-white focus:outline-none focus:border-teal-700 focus:shadow-outline-teal transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
             >
               Email me
             </a>
@@ -41,17 +36,43 @@
     </header>
     <div class="bg-gray-200">
       <div class="container px-5 py-24 mx-auto">
-        <div class="bg-gray-100 rounded-xl -mt-48 shadow-xl">
-          <div class="pt-32">a</div>
-          <div class="pt-32">a</div>
-          <div class="pt-32">a</div>
-          <div class="pt-32">a</div>
-          <div class="pt-32">a</div>
-          <div class="pt-32">a</div>
+        <div
+          class="bg-gray-100 rounded-xl -mt-48 shadow-xl -mb-48 relative pt-10 px-4 pb-10 md:px-10 md:pt-15 md:pb-16"
+        >
+          <div class="text-center">
+            <h2 class="pt-15 font-bold text-3xl">
+              I know a lot of technologies and tools
+            </h2>
+            <p
+              class="text-gray-600 text-lg mt-5 px-4 md:px-10 lg:w-7/12 lg:mx-auto font-medium"
+            >
+              From Git to Vue.js through Bootstrap or Unreal Engine, I have
+              knowledge in many areas
+            </p>
+            <p
+              class="text-gray-600 mt-5 px-4 md:px-10 lg:w-7/12 lg:mx-auto"
+            >
+              Click on a skill to view more information such as projects and related articles
+            </p>
+          </div>
+          <div
+            class="flex flex-wrap justify-center mt-10 px-4 md:mt-15 md:px-0 lg:w-10/12 lg:mx-auto lg:mt-20"
+          >
+            <Skill
+              v-for="tech in knownTechnologies"
+              :key="tech.name"
+              :title="tech.data.title"
+              :icon="tech.data.icon"
+              :color="tech.data.color"
+              :variant="tech.data.variant"
+              :status="tech.data.status"
+              v-on:set-current-skill="(currentSkill = tech), (showModal = true)"
+            />
+          </div>
         </div>
       </div>
     </div>
-    <div class="relative bg-white overflow-hidden shadow-lg">
+    <!-- <div class="relative bg-white overflow-hidden shadow-lg">
       <div class="max-w-screen-xl mx-auto">
         <div
           class="relative pb-8 z-10 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32"
@@ -123,7 +144,7 @@
           alt="Hero image"
         />
       </div>
-    </div>
+    </div> -->
     <section class="bg-teal-200 text-teal-600 body-font shadow-lg">
       <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-wrap w-full flex-col items-center text-center">

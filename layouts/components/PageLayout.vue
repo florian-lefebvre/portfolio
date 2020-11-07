@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex flex-col md:flex-row text-teal-900 overflow-x-hidden">
+  <div class="min-h-screen flex flex-col md:flex-row text-gray-900 overflow-x-hidden">
     <MobileMenuToggle />
     <SideBar />
     <div class="w-full lg:ml-64">
