@@ -46,102 +46,132 @@
           ></span>
         </span>
       </div> -->
-      <div class="flex mb-5">
+      <div class="flex ml-10 mr-auto my-6 items-center flex-wrap">
         <div
-          class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-gray-100 shadow flex-shrink-0 relative"
+          class="bg-white rounded-lg border border-gray-100 shadow flex items-center mb-5 mr-5"
           :style="'color:' + skill.data.color"
         >
-          <component
-            :is="skill.data.icon"
-            size="2.5x"
-            fill="currentColor"
-          ></component>
-        </div>
-        <div class="pt-2 ml-4 flex flex-col items-start my-auto">
           <div
-            class="font-medium px-2 py-1 text-xs rounded-r border-l-4 uppercase inline-block"
+            class="-ml-5 bg-white shadow h-16 w-16 transform scale-150 rounded-full flex justify-center items-center"
+          >
+            <component
+              :is="skill.data.icon"
+              size="2x"
+              fill="currentColor"
+            ></component>
+          </div>
+          <a
+            :href="skill.data.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mx-10 text-3xl font-semibold hover:opacity-75"
+            >{{ skill.data.title }}</a
+          >
+        </div>
+        <div class="mb-5 text-left text-sm">
+          <div class="text-gray-600 font-semibold">Status</div>
+          <div
+            class="font-semibold text-lg px-4 py-2 rounded-r border-l-4 uppercase inline-block"
             :class="colorVariants()"
           >
             {{ skill.data.status }}
           </div>
-          <h2>
-            <a
-              :href="skill.data.url"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-3xl font-bold tracking-tight hover:opacity-75 inline-flex items-center leading-none"
-              :style="'color:' + skill.data.color"
-              >{{ skill.data.title
-              }}<svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                class="w-8 h-8 ml-2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                /></svg
-            ></a>
-          </h2>
         </div>
       </div>
-      <div class="flex-grow max-w-full text-gray-600 text-lg mt-2 px-4 md:px-10 lg:mx-auto">
-        <p class="leading-relaxed text-base">
-          {{ skill.data.desc }}
-        </p>
-        <div class="mt-4 mb-2" v-if="project !== null || article !== null">
+      <div class="text-gray-600 text-justify mb-8 mx-10">
+        <p class="leading-7">{{ skill.data.desc }}</p>
+      </div>
+      <div class="mb-5 w-full" v-if="projects !== null">
+        <div class="flex justify-between mx-10 mb-2">
+          <span class="font-semibold text-lg">Last projects</span>
           <nuxt-link
-            v-if="project !== null"
             :to="`/work/tags/${skill.name}`"
-            class="bg-gray-400 text-gray-800 px-4 py-2 whitespace-no-wrap inline-block mb-2 rounded shadow hover:bg-gray-600 hover:text-gray-100 transition duration-100 ease-out"
-            >All projects</nuxt-link
-          >
-          <nuxt-link
-            v-if="article !== null"
-            :to="`/articles/tags/${skill.name}`"
-            class="bg-gray-400 text-gray-800 px-4 py-2 whitespace-no-wrap inline-block mb-2 rounded shadow hover:bg-gray-600 hover:text-gray-100 transition duration-100 ease-out"
-            >All articles</nuxt-link
-          >
+            class="bg-white text-gray-800 rounded px-2 py-1 shadow-md font-semibold inline-flex items-center hover:text-gray-600"
+            >View all<svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="w-5 h-5 ml-2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              /></svg
+          ></nuxt-link>
         </div>
-        <div v-if="project !== null">
+        <div class="px-10 overflow-x-auto flex space-x-4 pb-5">
           <nuxt-link
             :to="project.path"
-            class="py-6 px-4 w-full bg-gray-100 inline-block mb-2 rounded shadow transform transition duration-100 ease-out hover:scale-105 relative"
+            class="bg-white rounded-xl shadow flex-none flex relative flex-col md:flex-row hover:shadow-lg transition duration-150 ease-out"
+            :class="projects.length == 1 ? 'w-full' : 'w-11/12'"
+            v-for="project in projects"
+            :key="project.name"
           >
-            <span
-              class="bg-teal-300 text-teal-800 text-xs px-2 py-1 pr-4 font-bold rounded-tl rounded-br-full shadow-xs absolute top-0 left-0"
-              >Last project</span
-            >
-            <h2 class="title-font text-xl font-medium text-gray-900 mb-2">
-              {{ project.title }}
-            </h2>
-            <p class="leading-relaxed">{{ project.desc }}</p>
+            <img
+              class="h-24 md:h-auto w-full md:w-32 lg:w-48 object-cover object-center rounded-t-lg md:rounded-l-lg md:rounded-none"
+              :src="`/img/work/${project.img}`"
+              :alt="project.alt"
+            />
+            <div class="p-5 text-left flex flex-col">
+              <h2 class="text-xl font-semibold leading-10">
+                {{ project.title }}
+              </h2>
+              <p class="leading-7 mb-2">{{ project.desc }}</p>
+              <div class="mt-auto">
+                {{ project.createdAt }} • {{ project.readingTime }}
+              </div>
+            </div>
           </nuxt-link>
         </div>
-        <div v-if="article !== null">
+      </div>
+      <div class="mb-5 w-full" v-if="articles !== null">
+        <div class="flex justify-between mx-10 mb-2">
+          <span class="font-semibold text-lg">Last articles</span>
+          <nuxt-link
+            :to="`/articles/tags/${skill.name}`"
+            class="bg-white text-gray-800 rounded px-2 py-1 shadow-md font-semibold inline-flex items-center hover:text-gray-600"
+            >View all<svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="w-5 h-5 ml-2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              /></svg
+          ></nuxt-link>
+        </div>
+        <div class="px-10 overflow-x-auto flex space-x-4 pb-5">
           <nuxt-link
             :to="article.path"
-            class="py-6 px-4 w-full bg-gray-100 inline-block mb-2 rounded shadow transform transition duration-100 ease-out hover:scale-105 relative"
+            class="bg-white rounded-xl shadow flex-none flex relative flex-col md:flex-row hover:shadow-lg transition duration-150 ease-out"
+            :class="articles.length == 1 ? 'w-full' : 'w-11/12'"
+            v-for="article in articles"
+            :key="article.name"
           >
-            <span
-              class="bg-teal-300 text-teal-800 text-xs px-2 py-1 pr-4 font-bold rounded-tl rounded-br-full shadow-xs absolute top-0 left-0"
-              >Last article</span
-            >
-            <h2 class="title-font text-xl font-medium text-gray-900 mb-2">
-              {{ article.title }}
-            </h2>
-            <p class="leading-relaxed">{{ article.desc }}</p>
+            <img
+              class="h-24 md:h-auto w-full md:w-32 lg:w-48 object-cover object-center rounded-t-lg md:rounded-l-lg md:rounded-none"
+              :src="`/img/work/${article.img}`"
+              :alt="article.alt"
+            />
+            <div class="p-5 text-left flex flex-col">
+              <h2 class="text-xl font-semibold leading-10">
+                {{ article.title }}
+              </h2>
+              <p class="leading-7 mb-2">{{ article.desc }}</p>
+              <div class="mt-auto">
+                {{ article.createdAt }} • {{ article.readingTime }}
+              </div>
+            </div>
           </nuxt-link>
         </div>
-        <!-- <div v-if="projects">
-          <div v-for="project in projects" :key="project.name">
-            {{ project }}
-          </div>
-        </div> -->
       </div>
     </div>
   </modal>
@@ -233,19 +263,11 @@ export default {
   },
   data() {
     return {
-      article: null,
-      project: null
+      articles: null,
+      projects: null
     };
   },
   methods: {
-    // colorVariants() {
-    //   return {
-    //     success: "bg-green-600",
-    //     warning: "bg-yellow-400",
-    //     danger: "bg-red-700",
-    //     info: "bg-blue-600"
-    //   }[this.skill.data.variant];
-    // },
     colorVariants() {
       return {
         success: "bg-green-300 text-green-800 border-green-800",
@@ -254,64 +276,64 @@ export default {
         info: "bg-blue-300 text-blue-800 border-blue-800"
       }[this.skill.data.variant];
     },
-    // formatDate(date) {
-    //   const options = [
-    //     { year: "numeric" },
-    //     { month: "short" },
-    //     { day: "numeric" }
-    //   ];
-    //   return {
-    //     y: new Date(date).toLocaleDateString("en", options[0]),
-    //     m: new Date(date).toLocaleDateString("en", options[1]),
-    //     d: new Date(date).toLocaleDateString("en", options[2])
-    //   };
-    // },
+    formatDate(date) {
+      const options = { year: "numeric", month: "long", day: "numeric" };
+      return new Date(date).toLocaleDateString("en", options);
+    },
+    readingTime(time) {
+      var milli = time,
+        sec = milli / 1000,
+        min = sec / 60,
+        final = Number(min.toFixed(0)),
+        output = "";
+
+      if (milli <= 30000) {
+        output = "1 min read";
+      } else {
+        output = final + " min read";
+      }
+
+      return output;
+    },
     async getArticles() {
       const articles = await this.$content("articles")
-        .only(["title", "desc"])
+        .without(["body", "status", "tags", "toc", "updatedAt", "variant"])
         .where({
           tags: { $contains: this.skill.name }
         })
         .sortBy("createdAt", "desc")
-        .limit(1)
+        .limit(3)
         .fetch();
 
       if (typeof articles[0] !== "undefined") {
-        articles[0].desc = this.shortenSentence(articles[0].desc, 50);
-        this.article = articles[0];
+        articles.forEach(function(article) {
+          article.createdAt = this.formatDate(article.createdAt);
+          article.readingTime = this.readingTime(article.readingTime);
+        }, this);
+        this.articles = articles;
       } else {
-        this.article = null;
+        this.articles = null;
       }
     },
     async getProjects() {
       const projects = await this.$content("work")
-        .only(["title", "desc"])
+        .without(["body", "status", "tags", "toc", "updatedAt", "variant"])
         .where({
           tags: { $contains: this.skill.name }
         })
         .sortBy("createdAt", "desc")
-        .limit(1)
+        .limit(3)
         .fetch();
 
       if (typeof projects[0] !== "undefined") {
-        projects[0].desc = this.shortenSentence(projects[0].desc, 50);
-        this.project = projects[0];
+        projects.forEach(function(project) {
+          project.createdAt = this.formatDate(project.createdAt);
+          project.readingTime = this.readingTime(project.readingTime);
+        }, this);
+        this.projects = projects;
       } else {
-        this.project = null;
+        this.projects = null;
       }
-    },
-    shortenSentence(string, maxLength) {
-      //   if (string.length > maxLength) {
-      //     var trimmedString = string.substr(0, maxLength);
-      //     trimmedString = trimmedString.substr(
-      //       0,
-      //       Math.min(trimmedString.length, trimmedString.lastIndexOf(" "))
-      //     );
-      //     return trimmedString + "...";
-      //   } else {
-      //     return string;
-      //   }
-      return string;
     }
   },
   mounted() {

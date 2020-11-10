@@ -1,0 +1,110 @@
+[
+  {
+    "name": "flutter",
+    "data": {
+      "title": "Flutter",
+      "icon": "FlutterIcon",
+      "color": "#1389FD",
+      "variant": "info",
+      "status": "Planned",
+      "desc": "Flutter is Google’s UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.",
+      "url": "https://flutter.dev/"
+    }
+  },
+  {
+    "name": "react",
+    "data": {
+      "title": "React",
+      "icon": "ReactIcon",
+      "color": "#61DBFB",
+      "variant": "info",
+      "status": "Planned",
+      "desc": "A JavaScript library for building user interfaces.",
+      "url": "https://reactjs.org/"
+    }
+  },
+  {
+    "name": "nodejs",
+    "data": {
+      "title": "Node.js",
+      "icon": "NodeJsIcon",
+      "color": "#3C873A",
+      "variant": "info",
+      "status": "Planned",
+      "desc": "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+      "url": "https://nodejs.org/"
+    }
+  },
+  {
+    "name": "docker",
+    "data": {
+      "title": "Docker",
+      "icon": "DockerIcon",
+      "color": "#0091e2",
+      "variant": "info",
+      "status": "Planned",
+      "desc": "Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers.",
+      "url": "https://nodejs.org/"
+    }
+  },
+  {
+    "name": "electron",
+    "data": {
+      "title": "Electron",
+      "icon": "ElectronIcon",
+      "color": "#2f3241",
+      "variant": "info",
+      "status": "Planned",
+      "desc": "Electron allows for the development of desktop GUI applications using web technologies: it combines the Chromium rendering engine and the Node.js runtime.",
+      "url": "https://www.electronjs.org/"
+    }
+  },
+  {
+    "name": "rubyonrails",
+    "data": {
+      "title": "Ruby on Rails",
+      "icon": "RubyOnRailsIcon",
+      "color": "#cc0000",
+      "variant": "info",
+      "status": "Planned",
+      "desc": "Ruby on Rails is a server-side web application framework written in Ruby that encourages and facilitates the use of web standards such as JSON or XML for data transfer and HTML, CSS and JavaScript for user interfacing.",
+      "url": "https://rubyonrails.org/"
+    }
+  },
+  {
+    "name": "django",
+    "data": {
+      "title": "Django",
+      "icon": "DjangoIcon",
+      "color": "#004d40",
+      "variant": "info",
+      "status": "Planned",
+      "desc": "Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.",
+      "url": "https://www.djangoproject.com/"
+    }
+  },
+  {
+    "name": "c++",
+    "data": {
+      "title": "C++",
+      "icon": "CPlusPlusIcon",
+      "color": "#2B538F",
+      "variant": "info",
+      "status": "Planned",
+      "desc": "C++ was designed with a bias toward system programming and embedded, resource-constrained software and large systems, with performance, efficiency, and flexibility of use as its design highlights but it has been found useful in many other contexts.",
+      "url": "https://isocpp.org/"
+    }
+  },
+  {
+    "name": "java",
+    "data": {
+      "title": "Java",
+      "icon": "JavaIcon",
+      "color": "#EB2D2F",
+      "variant": "info",
+      "status": "Planned",
+      "desc": "Java is a class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It is a general-purpose programming language intended to let application developers write once, run anywhere.",
+      "url": "https://www.java.com/"
+    }
+  }
+]
