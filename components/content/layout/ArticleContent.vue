@@ -17,31 +17,33 @@
     </div>
     <div class="bg-teal-100 pt-10">
       <div class="container px-5 py-24 mx-auto">
-        <div class="lg:w-1/2 w-full mb-6">
-          <h1 class="text-3xl font-semibold text-teal-800 text-left">
-            Table of contents
-          </h1>
-          <div class="h-1 w-20 bg-teal-500 rounded mt-2"></div>
-        </div>
-        <nav class="mb-32">
-          <ul>
-            <li
-              v-for="link of article.toc"
-              :key="link.id"
-              class="transform translate-x-0 hover:translate-x-6 transition duration-100 ease-in-out"
-              :class="{
-                'py-2': link.depth === 2,
-                'ml-4 pb-2': link.depth === 3
-              }"
-            >
-              <nuxt-link
-                :to="`#${link.id}`"
-                class="text-gray-600 font-semibold text-lg"
-                ># {{ link.text }}</nuxt-link
+        <div v-if="article.toc.length > 0">
+          <div class="lg:w-1/2 w-full mb-6">
+            <h1 class="text-3xl font-semibold text-teal-800 text-left">
+              Table of contents
+            </h1>
+            <div class="h-1 w-20 bg-teal-500 rounded mt-2"></div>
+          </div>
+          <nav class="mb-32">
+            <ul>
+              <li
+                v-for="link of article.toc"
+                :key="link.id"
+                class="transform translate-x-0 hover:translate-x-6 transition duration-100 ease-in-out"
+                :class="{
+                  'py-2': link.depth === 2,
+                  'ml-4 pb-2': link.depth === 3
+                }"
               >
-            </li>
-          </ul>
-        </nav>
+                <nuxt-link
+                  :to="`#${link.id}`"
+                  class="text-gray-600 font-semibold text-lg"
+                  ># {{ link.text }}</nuxt-link
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
         <nuxt-content :document="article" />
       </div>
     </div>

@@ -87,7 +87,7 @@
             Last updated on {{ updatedAt }} • {{ readingTime }}
           </span>
         </div>
-        <p class="text-justify text-teal-200 leading-7">{{ article.desc }}</p>
+        <p class="text-justify text-teal-200 leading-7 text-xl">{{ article.desc }}</p>
       </div>
     </div>
   </header>

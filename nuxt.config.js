@@ -38,8 +38,16 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
-    "@nuxtjs/tailwindcss"
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/google-analytics"
   ],
+
+  googleAnalytics: {
+    id: "UA-155020188-3",
+    autoTracking: {
+      screenview: true
+    }
+  },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
@@ -57,7 +65,7 @@ export default {
         document.readingTime = time;
         document.createdAt = document.slug.substring(0, 10);
         document.slug = document.slug.substring(11);
-        document.path = document.dir + "/" + document.slug
+        document.path = document.dir + "/" + document.slug;
       }
     }
   },
