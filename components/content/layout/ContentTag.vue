@@ -2,17 +2,7 @@
   <div>
     <div class="bg-teal-100">
       <div class="container px-5 py-24 mx-auto">
-        <div
-          v-if="featured"
-          class="bg-white rounded-xl -mt-48 shadow-xl -mb-40 relative hover:scale-95 transform transition duration-150 ease-out"
-        >
-          <ContentFeatured :featured="featured" :folder="folder"/>
-        </div>
-      </div>
-    </div>
-    <div class="bg-teal-100 pt-10">
-      <div class="container px-5 py-24 mx-auto">
-        <div class="flex flex-wrap -m-4">
+        <div class="flex flex-wrap -m-4 -mt-48 relative">
           <ContentCard
             v-for="element of elements"
             :key="element.slug"
@@ -27,11 +17,10 @@
 
 <script>
 export default {
-  props: ["folder"],
+  props: ["folder", "tag"],
   data() {
     return {
-      elements: null,
-      featured: null
+      elements: null
     };
   },
   methods: {
@@ -65,6 +54,9 @@ export default {
     async getElements() {
       const elements = await this.$content(this.folder)
         .without(["body"])
+        .where({
+          tags: { $contains: this.tag }
+        })
         .sortBy("createdAt", "desc")
         .fetch();
 
@@ -76,8 +68,6 @@ export default {
         }
       }, this);
 
-      this.featured = elements[0];
-      elements.splice(0, 1);
       this.elements = elements;
     }
   },

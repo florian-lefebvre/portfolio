@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col items-center py-5 mb-8 rounded-md w-36 hover:shadow-lg md:mx-4 md:w-44 skill cursor-pointer transition duration-150 ease-out w-32 h-32"
+    class="flex flex-col items-center py-5 mb-8 rounded-md w-36 hover:shadow-lg md:mx-4 skill cursor-pointer transition duration-150 ease-out w-32 h-32"
     @click="$emit('set-current-skill')"
   >
     <div class="w-10 h-10" :style="`--skill-color:${color};`">

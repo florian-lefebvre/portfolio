@@ -9,14 +9,15 @@
             {{ title }}
           </h1>
           <div class="h-1 w-20 bg-teal-500 rounded mt-2"></div>
+          <h2 class="font-semibold text-2xl text-teal-200 text-left mt-3" v-if="subtitle">{{ subtitle }}</h2>
         </div>
-        <div class="flex items-center flex-wrap">
-          <div class="rounded-md shadow-md mr-4">
+        <div class="flex items-center flex-wrap mt-5 md:mt-0">
+          <div class="rounded-md shadow-md mr-4" v-for="(button, index) in buttons" :key="index">
             <nuxt-link
-              :to="url"
+              :to="button.url"
               class="w-full flex items-center justify-center px-6 py-2 border-2 border-transparent text-base leading-6 font-semibold rounded-md text-white bg-teal-600 hover:bg-teal-500 focus:outline-none focus:border-teal-700 focus:shadow-outline-teal transition duration-150 ease-in-out"
             >
-              {{ text }}
+              {{ button.text }}
             </nuxt-link>
           </div>
           <SearchInput :directory="folder" />
@@ -28,7 +29,20 @@
 
 <script>
 export default {
-  props: ["title", "folder", "text", "url"]
+  props: {
+    title: {
+      type: String
+    },
+    subtitle: {
+      type: String
+    },
+    folder: {
+      type: String
+    },
+    buttons: {
+      type: Array
+    },
+  }
 };
 </script>
 

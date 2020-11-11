@@ -1,11 +1,6 @@
 <template>
   <div>
-    <ContentHeader
-      title="My work"
-      :folder="folder"
-      text="All tags"
-      :url="`${folder}/tags`"
-    />
+    <ContentHeader title="My work" :folder="folder" :buttons="buttons" />
     <ContentIndex :folder="folder" />
   </div>
 </template>
@@ -16,8 +11,15 @@ const meta = getSiteMeta();
 
 export default {
   data() {
+    let folder = "work";
     return {
-      folder: "work"
+      folder: folder,
+      buttons: [
+        {
+          text: "All Tags",
+          url: `/${folder}/tags`
+        }
+      ]
     };
   },
   head() {

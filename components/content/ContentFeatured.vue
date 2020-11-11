@@ -42,6 +42,9 @@ export default {
   props: {
     featured: {
       type: Object
+    },
+    folder: {
+        type: String
     }
   }
 };

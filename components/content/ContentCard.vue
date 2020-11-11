@@ -1,9 +1,9 @@
 <template>
   <nuxt-link
-    class="p-4 md:w-1/2 lg:w-1/3 transform hover:scale-95 transition duration-150 ease-out"
+    class="p-4 md:w-1/2 lg:w-1/3 transform hover:scale-95 transition duration-150 ease-out flex flex-col"
     :to="el.path"
   >
-    <div class="h-full rounded-lg overflow-hidden relative shadow bg-white">
+    <div class="h-full rounded-lg overflow-hidden relative shadow bg-white flex flex-col">
       <span
         class="absolute top-0 left-0 mt-1 ml-1 rounded-md uppercase px-2 py-1 text-xs font-semibold shadow"
         :class="el.variant"
@@ -14,7 +14,7 @@
         :src="`/img/work/${el.img}`"
         :alt="el.alt"
       />
-      <div class="p-6">
+      <div class="p-6 flex flex-col h-full">
         <span
           class="tracking-widest uppercase title-font font-semibold flex flex-wrap"
         >
@@ -44,6 +44,9 @@ export default {
   props: {
     el: {
       type: Object
+    },
+    folder: {
+        type: String
     }
   }
 };
