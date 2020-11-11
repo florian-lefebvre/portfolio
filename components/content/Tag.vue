@@ -3,7 +3,7 @@
     :to="`/${folder}/tags/${tag[0]}`"
     class="bg-white text-teal-600 flex flex-col items-center py-5 mb-8 shadow rounded-md w-36 hover:shadow-lg mx-4 cursor-pointer transition duration-150 ease-out w-40 h-40 skill"
   >
-    <div class="w-10 h-10" :style="`--skill-color:${color};`">
+    <div class="w-10 h-10 transition duration-150 ease-out" :style="`--skill-color:${color};`">
       <component
         :is="icon"
         size="3x"

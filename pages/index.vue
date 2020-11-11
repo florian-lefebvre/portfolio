@@ -100,7 +100,7 @@
       leave-class="opacity-100"
       leave-to-class="opacity-0"
     >
-      <SkillZoom2
+      <SkillZoom
         :skill="currentSkill"
         v-if="showModal && currentSkill"
         v-on:close="showModal = false"

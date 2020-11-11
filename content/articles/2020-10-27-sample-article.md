@@ -1,16 +1,10 @@
 ---
-title: Test
-desc: blabla
+title: Sample article
+desc: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 img: test.jpg
-alt: cool code
-status: Finished
-variant: success
+alt: A super cool image
 tags:
-  - css3
-  - tailwindcss
-  - nuxtjs
-  - vuejs
-  - jekyll
+  - html5
   - md
 ---
 

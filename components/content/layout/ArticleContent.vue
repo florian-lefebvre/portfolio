@@ -2,24 +2,47 @@
   <div>
     <div class="bg-teal-100">
       <div class="container px-5 py-24 mx-auto">
-        <div
-          v-if="featured"
-          class="bg-white rounded-xl -mt-48 shadow-xl -mb-40 relative hover:scale-95 transform transition duration-150 ease-out"
-        >
-          <ContentFeatured :featured="featured" :folder="folder"/>
+        <div class="-mt-48 lg:-mt-64 shadow-xl -mb-40 relative">
+          <light-box
+            class="mb-10"
+            :gallery="[
+              {
+                src: `/img${article.dir}/${article.img}`,
+                alt: article.alt
+              }
+            ]"
+          ></light-box>
         </div>
       </div>
     </div>
     <div class="bg-teal-100 pt-10">
       <div class="container px-5 py-24 mx-auto">
-        <div class="flex flex-wrap -m-4">
-          <ContentCard
-            v-for="element of elements"
-            :key="element.slug"
-            :el="element"
-            :folder="folder"
-          />
+        <div class="lg:w-1/2 w-full mb-6">
+          <h1 class="text-3xl font-semibold text-teal-800 text-left">
+            Table of contents
+          </h1>
+          <div class="h-1 w-20 bg-teal-500 rounded mt-2"></div>
         </div>
+        <nav class="mb-32">
+          <ul>
+            <li
+              v-for="link of article.toc"
+              :key="link.id"
+              class="transform translate-x-0 hover:translate-x-6 transition duration-100 ease-in-out"
+              :class="{
+                'py-2': link.depth === 2,
+                'ml-4 pb-2': link.depth === 3
+              }"
+            >
+              <nuxt-link
+                :to="`#${link.id}`"
+                class="text-gray-600 font-semibold text-lg"
+                ># {{ link.text }}</nuxt-link
+              >
+            </li>
+          </ul>
+        </nav>
+        <nuxt-content :document="article" />
       </div>
     </div>
   </div>
@@ -27,7 +50,11 @@
 
 <script>
 export default {
-  props: ["folder"],
+  props: {
+    article: {
+      type: Object
+    }
+  },
   data() {
     return {
       elements: null,
@@ -88,4 +115,4 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" src="~/assets/style/main.scss"></style>

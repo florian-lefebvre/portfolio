@@ -27,7 +27,7 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: ["@/assets/style/main"],
+  scss: ["@/assets/style/main"],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: ["~/plugins/vue-silentbox.js"],
@@ -55,6 +55,9 @@ export default {
         const { time } = require("reading-time")(document.text);
 
         document.readingTime = time;
+        document.createdAt = document.slug.substring(0, 10);
+        document.slug = document.slug.substring(11);
+        document.path = document.dir + "/" + document.slug
       }
     }
   },

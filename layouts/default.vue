@@ -15,6 +15,7 @@ export default {
 <style lang="scss">
 html {
   @apply bg-teal-100;
+  scroll-behavior: smooth;
 }
 button,
 a {

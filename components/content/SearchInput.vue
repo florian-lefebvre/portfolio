@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form class="w-full max-w-sm">
+    <form class="w-full max-w-sm" @submit.prevent>
       <div class="flex items-center py-2">
         <input
           v-model="searchQuery"
