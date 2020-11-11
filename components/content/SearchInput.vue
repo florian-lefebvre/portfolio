@@ -1,16 +1,16 @@
 <template>
   <div>
     <form class="w-full max-w-sm">
-      <div class="flex items-center border-b border-teal-500 py-2">
+      <div class="flex items-center py-2">
         <input
           v-model="searchQuery"
-          class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+          class="appearance-none bg-transparent border-b border-teal-400 pb-2 w-full text-teal-200 placeholder-teal-400 mr-3 py-1 px-2 leading-tight focus:outline-none focus:border-teal-200 transition ease-out duration-200"
           type="text"
-          placeholder="Search project by title"
-          aria-label="Search project"
+          placeholder="Search by title"
+          aria-label="Search"
         />
         <button
-          class="flex-shrink-0 border-transparent border-4 text-teal-500 hover:text-teal-800 text-sm py-1 px-2 rounded"
+          class="flex-shrink-0 border-transparent border-4 text-teal-400 hover:text-teal-200 text-sm py-1 px-2 rounded transform hover:scale-125 transition ease-out duration-100"
           type="button"
           @click="searchQuery = ''"
         >
@@ -43,7 +43,7 @@
         class="absolute mt-2 w-56 rounded-md shadow-lg z-10"
         v-if="elements.length"
       >
-        <div class="rounded-md bg-white shadow-xs">
+        <div class="rounded-md bg-teal-100 shadow-xs text-left truncate">
           <div
             class="py-1"
             role="menu"
@@ -54,7 +54,7 @@
               v-for="element of elements"
               :key="element.slug"
               :to="element.path"
-              class="truncate block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
+              class="truncate block px-4 py-2 text-sm leading-5 text-teal-800 hover:bg-teal-200 hover:text-teal-900 hover:font-semibold focus:outline-none focus:bg-teal-200 focus:text-teal-900 transition ease-out duration-150"
               role="menuitem"
               >{{ element.title }}</nuxt-link
             >
