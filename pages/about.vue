@@ -1,80 +1,313 @@
 <template>
-  <section class="text-gray-700 body-font">
-    <div class="container px-5 py-24 mx-auto flex flex-col">
-      <div class="lg:w-4/6 mx-auto">
-        <div class="rounded-lg h-64 overflow-hidden">
-          <img
-            alt="content"
-            class="object-cover object-center h-full w-full"
-            src="https://dummyimage.com/1200x500"
-          />
-        </div>
-        <div class="flex flex-col sm:flex-row mt-10">
-          <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
+  <div>
+    <div class="bg-teal-700 shadow-inner">
+      <div class="container px-5 mx-auto text-center">
+        <header class="pt-48 pb-32">
+          <h2
+            class="text-5xl tracking-tight leading-10 font-bold text-gray-200 sm:text-5xl sm:leading-none"
+          >
+            About me
+          </h2>
+        </header>
+      </div>
+      <div>
+        <div class="container px-5 py-24 mx-auto flex flex-wrap text-teal-200">
+          <h2
+            class="md:w-2/3 mx-auto mb-10 text-4xl tracking-tight leading-10 font-bold text-gray-200 sm:leading-none"
+          >
+            Education
+          </h2>
+          <div
+            class="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto"
+          >
             <div
-              class="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400"
+              class="h-full w-6 absolute inset-0 flex items-center justify-center"
             >
-              <svg
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-10 h-10"
-                viewBox="0 0 24 24"
-              >
-                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
+              <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
             </div>
-            <div class="flex flex-col items-center text-center justify-center">
-              <h2 class="font-medium title-font mt-4 text-gray-900 text-lg">
-                Phoebe Caulfield
-              </h2>
-              <div class="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
-              <p class="text-base text-gray-600">
-                Raclette knausgaard hella meggs normcore williamsburg enamel pin
-                sartorial venmo tbh hot chicken gentrify portland.
-              </p>
+            <div
+              class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-teal-500 text-white relative z-10 title-font font-medium text-sm"
+            ></div>
+            <div
+              class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row"
+            >
+              <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+                <span class="text-teal-300">2015 - 2019</span>
+                <h2
+                  class="font-semibold title-font text-teal-100 mb-1 text-3xl"
+                >
+                  Secondary school Sainte Geneviève at Saint Jory
+                </h2>
+                <ul class="list-disc leading-loose text-lg">
+                  <li>
+                    Bilingual English/Spanish class
+                  </li>
+                  <li>
+                    Diplôme National du Brevet mention Très Bien (G.C.S.E
+                    equivalent with honourable mention)
+                  </li>
+                  <li>
+                    Certificate PSC1 (First aid certificate)
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <div
-            class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-300 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left"
+            class="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto"
           >
-            <p class="leading-relaxed text-lg mb-4">
-              Meggings portland fingerstache lyft, post-ironic fixie man bun
-              banh mi umami everyday carry hexagon locavore direct trade art
-              party. Locavore small batch listicle gastropub farm-to-table
-              lumbersexual salvia messenger bag. Coloring book flannel truffaut
-              craft beer drinking vinegar sartorial, disrupt fashion axe
-              normcore meh butcher. Portland 90's scenester vexillologist forage
-              post-ironic asymmetrical, chartreuse disrupt butcher paleo
-              intelligentsia pabst before they sold out four loko. 3 wolf moon
-              brooklyn.
+            <div
+              class="h-full w-6 absolute inset-0 flex items-center justify-center"
+            >
+              <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+            </div>
+            <div
+              class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-teal-500 text-white relative z-10 title-font font-medium text-sm"
+            ></div>
+            <div
+              class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row"
+            >
+              <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+                <span class="text-teal-300">2019 - Today</span>
+                <h2
+                  class="font-semibold title-font text-teal-100 mb-1 text-3xl"
+                >
+                  High school Le Ferradou at Blagnac
+                </h2>
+                <ul class="list-disc leading-loose text-lg">
+                  <li>European English section</li>
+                  <li>
+                    High school diploma speciality teaching: mathematics,
+                    physics-chemistry and NSI (Numerical and Computer Science)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container px-5 py-24 mx-auto flex flex-wrap text-teal-200">
+          <h2
+            class="md:w-2/3 mx-auto mb-10 text-4xl tracking-tight leading-10 font-bold text-gray-200 sm:leading-none"
+          >
+            Experience
+          </h2>
+          <div
+            class="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto"
+          >
+            <div
+              class="h-full w-6 absolute inset-0 flex items-center justify-center"
+            >
+              <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+            </div>
+            <div
+              class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-teal-500 text-white relative z-10 title-font font-medium text-sm"
+            ></div>
+            <div
+              class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row"
+            >
+              <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+                <h2
+                  class="font-semibold title-font text-teal-100 mb-1 text-3xl"
+                >
+                  Secondary school Sainte Geneviève at Saint Jory
+                </h2>
+                <ul class="list-disc leading-loose text-lg">
+                  <li>
+                    For 2 years, help with the management of the school's IT
+                    (installation, configuration, and updating of computers and
+                    peripherals under Windows 10)
+                  </li>
+                  <li>Creation of a computer club</li>
+                  <li>
+                    Year 10 observation internship in the
+                    <a
+                      href="http://www.syn-architectures.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-teal-100 font-semibold underline hover:no-underline"
+                      >SYN ARCHITECTURES</a
+                    >
+                    architectural firm
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto"
+          >
+            <div
+              class="h-full w-6 absolute inset-0 flex items-center justify-center"
+            >
+              <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+            </div>
+            <div
+              class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-teal-500 text-white relative z-10 title-font font-medium text-sm"
+            ></div>
+            <div
+              class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row"
+            >
+              <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+                <h2
+                  class="font-semibold title-font text-teal-100 mb-1 text-3xl"
+                >
+                  High school Le Ferradou at Blagnac
+                </h2>
+
+                <ul class="list-disc leading-loose text-lg">
+                  <li>
+                    Year 11 observation internship in the IT company
+                    <a
+                      href="https://atos.net"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-teal-100 font-semibold underline hover:no-underline"
+                      >Atos</a
+                    >, at
+                    <a
+                      href="https://mundiwebservices.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-teal-100 font-semibold underline hover:no-underline"
+                      >Mundi Web Services</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto"
+          >
+            <div
+              class="h-full w-6 absolute inset-0 flex items-center justify-center"
+            >
+              <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+            </div>
+            <div
+              class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-teal-500 text-white relative z-10 title-font font-medium text-sm"
+            ></div>
+            <div
+              class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row"
+            >
+              <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+                <h2
+                  class="font-semibold title-font text-teal-100 mb-1 text-3xl"
+                >
+                  Extracurricular
+                </h2>
+                <p>
+                  Check out
+                  <nuxt-link
+                    to="/work"
+                    class="leading-loose text-lg text-teal-100 font-semibold underline hover:no-underline"
+                    >my work</nuxt-link
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container px-5 py-24 mx-auto flex flex-wrap text-teal-200">
+          <div class="md:w-2/3 mx-auto">
+            <h2
+              class="mb-10 text-4xl tracking-tight leading-10 font-bold text-gray-200 sm:leading-none"
+            >
+              Hobbies
+            </h2>
+            <p class="leading-loose text-lg text-justify">
+              As you can guess, I love programming.
             </p>
-            <a class="text-indigo-500 inline-flex items-center"
-              >Learn More
-              <svg
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-4 h-4 ml-2"
-                viewBox="0 0 24 24"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </a>
+            <p
+              class="leading-loose text-lg text-justify"
+              v-if="dates.length > 0"
+            >
+              But I also enjoy music. I play the drums ({{ dates[0] }}),
+              percussions ({{ dates[1] }}) and bass guitar ({{ dates[2] }}) in
+              several orchestras and groups:
+              <a
+                href="https://www.ohf31.fr"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="leading-loose text-lg text-teal-100 font-semibold underline hover:no-underline"
+                >the Frontonnais Concert Band</a
+              >, the symphonic orchestra of the intermunicipal music school of
+              the frontonnais and
+              <a
+                href="https://www.instagram.com/legrouperock/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="leading-loose text-lg text-teal-100 font-semibold underline hover:no-underline"
+                >the rock band</a
+              >.
+            </p>
+            <p class="leading-loose text-lg text-justify">
+              I also like reading and riding my bike.
+            </p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
-export default {};
+import getSiteMeta from "@/utils/getSiteMeta";
+import knownTechnologies from "@/assets/data/skills/knownTechnologies.json";
+import futureTechnologies from "@/assets/data/skills/futureTechnologies.json";
+
+export default {
+  // head: {
+  //   title: "Home"
+  // },
+  head() {
+    return {
+      title: "Home",
+      meta: [...this.meta]
+    };
+  },
+  computed: {
+    meta() {
+      const metaData = {
+        // type: "article",
+        // title: this.article.title,
+        // description: this.article.description,
+        // url: `${this.$config.baseUrl}/articles/${this.$route.params.slug}`,
+        // mainImage: this.article.image
+        //description: "LOOK AT THAT"
+      };
+      return getSiteMeta(metaData);
+    }
+  },
+  data() {
+    return {
+      currentSkill: null,
+      showModal: true,
+      knownTechnologies: knownTechnologies,
+      futureTechnologies: futureTechnologies,
+      dates: []
+    };
+  },
+  created() {
+    var output;
+    function checkYear(date) {
+      if (date == 1) {
+        output = date + " year";
+      } else {
+        output = date + " years";
+      }
+      return output;
+    }
+
+    var dates = [];
+
+    dates.push(checkYear(new Date().getFullYear() - 2010));
+    dates.push(checkYear(new Date().getFullYear() - 2018));
+    dates.push(checkYear(new Date().getFullYear() - 2019));
+
+    this.dates = dates;
+  }
+};
 </script>
 
 <style></style>
