@@ -11,7 +11,7 @@
     >
     <img
       class="w-full lg:w-64 xl:w-1/3 object-cover object-center rounded-t-lg lg:rounded-l-lg lg:rounded-none"
-      :src="`/img/work/${featured.img}`"
+      :src="`/img${featured.dir}/${featured.img}`"
       :alt="featured.alt"
     />
     <div class="p-10 flex flex-col">

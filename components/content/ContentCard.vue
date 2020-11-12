@@ -11,7 +11,7 @@
       >
       <img
         class="lg:h-48 md:h-36 w-full object-cover object-center"
-        :src="`/img/work/${el.img}`"
+        :src="`/img${el.dir}/${el.img}`"
         :alt="el.alt"
       />
       <div class="p-6 flex flex-col h-full">

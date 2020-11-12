@@ -1,8 +1,8 @@
 ---
 title: My portfolio
 desc: A detailed explanation of my portfolio, from Jekyll to Nuxt.js
-img: test.jpg
-alt: A super cool image
+img: my-portfolio-thumb.jpg
+alt: Photo by Anete Lūsiņa on Unsplash
 status: Finished
 variant: success
 link: https://florian-lefebvre.dev
@@ -19,9 +19,18 @@ tags:
   - js
 ---
 
-introduction
+accroche:
 
-Sed sollicitudin commodo lorem, eget viverra leo condimentum ut. Maecenas ullamcorper volutpat commodo. Proin ante libero, pulvinar nec cursus id, venenatis nec leo. Pellentesque condimentum dui ut enim euismod, a semper tortor fringilla. Vestibulum accumsan, magna a elementum interdum, mi felis feugiat velit, sed rhoncus quam est ac lectus. Sed pharetra ultricies ante, ac fringilla arcu. Nullam aliquet a turpis quis facilisis. Cras sit amet convallis odio.
+contexte et définitions:
+
+pbq:
+
+
+portfolio essential to showcase his talent
+
+how i did it after only 9 months of web dev
+
+annonce du plan
 
 <image-comparator :folder="dir" leftImage="my-portfolio-old.png" rightImage="my-portfolio-new.png" leftLabel="Old (Bootstrap)" rightLabel="New (Tailwind Css)" leftalt="Old Bootstrap design" rightalt="New Tailwind Css design"></image-comparator>
 

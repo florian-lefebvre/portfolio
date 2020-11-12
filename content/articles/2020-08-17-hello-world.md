@@ -1,8 +1,8 @@
 ---
 title: Hello world
 desc: I just created my porfolio!
-img: test.jpg
-alt: Javscript code, image from Unsplash
+img: hello-world-thumb.jpg
+alt: Photo by Ankhesenamun on Unsplash
 tags:
   - jekyll
   - news

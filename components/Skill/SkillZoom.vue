@@ -92,7 +92,7 @@
           >
             <img
               class="h-24 md:h-auto w-full md:w-32 lg:w-48 object-cover object-center rounded-t-lg md:rounded-l-lg md:rounded-none"
-              :src="`/img/work/${project.img}`"
+              :src="`/img${project.dir}/${project.img}`"
               :alt="project.alt"
             />
             <div class="p-5 text-left flex flex-col">
@@ -138,7 +138,7 @@
           >
             <img
               class="h-24 md:h-auto w-full md:w-32 lg:w-48 object-cover object-center rounded-t-lg md:rounded-l-lg md:rounded-none"
-              :src="`/img/work/${article.img}`"
+              :src="`/img${article.dir}/${article.img}`"
               :alt="article.alt"
             />
             <div class="p-5 text-left flex flex-col">
