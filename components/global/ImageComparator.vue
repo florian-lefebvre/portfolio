@@ -1,7 +1,7 @@
 <template>
   <VueCompareImage
-    :leftImage="`/img/articles/${leftimage}`"
-    :rightImage="`/img/articles/${rightimage}`"
+    :leftImage="`/img${folder}/${leftimage}`"
+    :rightImage="`/img${folder}/${rightimage}`"
     :leftImageAlt="leftalt"
     :rightImageAlt="rightalt"
     :leftLabel="leftlabel"
@@ -16,6 +16,7 @@ export default {
     VueCompareImage
   },
   props: [
+    "folder",
     "leftimage",
     "rightimage",
     "leftalt",

@@ -29,7 +29,7 @@
       <h2 class="text-4xl font-semibold mb-2">
         {{ featured.title }}
       </h2>
-      <p class="leading-7 mb-6 text-gray-700">{{ featured.desc }}</p>
+      <p class="leading-7 mb-6 text-gray-700 text-xl">{{ featured.desc }}</p>
       <span class="mt-auto text-gray-700"
         >{{ featured.createdAt }} • {{ featured.readingTime }}</span
       >

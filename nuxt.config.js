@@ -30,7 +30,7 @@ export default {
   scss: ["@/assets/style/main"],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ["~/plugins/vue-silentbox.js"],
+  plugins: ["~/plugins/vue-silentbox.js", "~/plugins/icons.js"],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -66,6 +66,7 @@ export default {
         document.createdAt = document.slug.substring(0, 10);
         document.slug = document.slug.substring(11);
         document.path = document.dir + "/" + document.slug;
+        document.tags = document.tags.sort();
       }
     }
   },

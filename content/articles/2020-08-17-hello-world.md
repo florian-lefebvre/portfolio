@@ -5,7 +5,6 @@ img: test.jpg
 alt: Javscript code, image from Unsplash
 tags:
   - jekyll
-  - md
   - news
 ---
 

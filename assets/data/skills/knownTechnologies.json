@@ -192,6 +192,18 @@
     }
   },
   {
+    "name": "plesk",
+    "data": {
+      "title": "Plesk",
+      "icon": "PleskIcon",
+      "color": "#52bde7",
+      "variant": "warning",
+      "status": "Learning",
+      "desc": "Plesk is a commercial web hosting and server data center automation software with a control panel developed for Linux and Windows-based retail hosting service providers. Plesk's user management model is suitable for dedicated and shared hosting, allowing server administrators to set up new websites, reseller accounts, email accounts, and edit and create DNS entries through a web-based interface.",
+      "url": "https://www.plesk.com/"
+    }
+  },
+  {
     "name": "trello",
     "data": {
       "title": "Trello",
