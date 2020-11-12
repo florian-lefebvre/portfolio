@@ -7,7 +7,7 @@
       "color": "#1389FD",
       "variant": "info",
       "status": "Planned",
-      "desc": "Flutter is Google’s UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.",
+      "desc": "Flutter is Google’s UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase. Flutter apps are written in the Dart language and make use of many of the language's more advanced features.",
       "url": "https://flutter.dev/"
     }
   },
@@ -19,7 +19,7 @@
       "color": "#61DBFB",
       "variant": "info",
       "status": "Planned",
-      "desc": "A JavaScript library for building user interfaces.",
+      "desc": "React is an open-source, front end, JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications. However, React is only concerned with rendering data to the DOM, and so creating React applications usually requires the use of additional libraries for state management and routing. Redux and React Router are respective examples of such libraries.",
       "url": "https://reactjs.org/"
     }
   },
@@ -31,7 +31,7 @@
       "color": "#3C873A",
       "variant": "info",
       "status": "Planned",
-      "desc": "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+      "desc": "Node.js is an open-source, cross-platform, back-end, JavaScript runtime environment that executes JavaScript code outside a web browser. Node.js lets developers use JavaScript to write command line tools and for server-side scripting—running scripts server-side to produce dynamic web page content before the page is sent to the user's web browser. Consequently, Node.js represents a \"JavaScript everywhere\" paradigm, unifying web-application development around a single programming language, rather than different languages for server- and client-side scripts.",
       "url": "https://nodejs.org/"
     }
   },

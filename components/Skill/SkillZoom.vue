@@ -51,7 +51,7 @@
         <div class="mb-5 text-left text-sm">
           <div class="text-gray-600 font-semibold">Status</div>
           <div
-            class="font-semibold text-lg px-4 py-2 rounded-r border-l-4 uppercase inline-block"
+            class="font-semibold text-lg px-4 py-2 rounded-r border-l-4 uppercase inline-block shadow"
             :class="colorVariants()"
           >
             {{ skill.data.status }}
@@ -59,7 +59,7 @@
         </div>
       </div>
       <div class="text-gray-600 text-justify mb-8 mx-10">
-        <p class="leading-7">{{ skill.data.desc }}</p>
+        <p class="leading-6">{{ skill.data.desc }}</p>
       </div>
       <div class="mb-5 w-full" v-if="projects !== null">
         <div class="flex justify-between mx-10 mb-2">
