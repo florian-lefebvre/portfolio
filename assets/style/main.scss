@@ -3,7 +3,7 @@
   
     h2,
     h3 {
-      @apply relative table my-8;
+      @apply relative table my-8 font-semibold;
 
       &:hover {
         @apply cursor-pointer;
@@ -30,7 +30,7 @@
     }
   
     h2 {
-      @apply text-2xl;
+      @apply text-2xl text-teal-700;
   
       &::after {
         @apply border-teal-600;
@@ -38,7 +38,7 @@
     }
   
     h3 {
-      @apply text-xl;
+      @apply text-xl text-gray-700;
   
       &::after {
         @apply border-gray-600;
@@ -46,13 +46,21 @@
     }
   
     p {
-      @apply text-justify leading-7 pb-1 mb-2 font-medium;
+      @apply text-justify text-lg leading-7 pb-1 mb-2 font-medium text-gray-700;
     }
   
     a {
-      @apply text-teal-700;
+      @apply text-teal-600 font-semibold;
       &:hover {
         @apply underline;
+      }
+    }
+
+    blockquote {
+      @apply bg-teal-200 border-l-8 border-teal-700 p-4 rounded-r-md;
+
+      * {
+        @apply text-teal-700 font-semibold m-0;
       }
     }
   

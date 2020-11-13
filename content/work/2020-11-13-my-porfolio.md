@@ -19,28 +19,28 @@ tags:
   - js
 ---
 
-accroche:
 
-contexte et définitions:
+Today, most developers have their portfolio to present their skills and projects. As an original person, that's exactly what I did, 9 months after discovering web development. In this project, I'll show you how I did mine. I will talk about my first version using Jekyll, then about the current version (November 2020) made with Nuxt.js. Enjoy reading!
 
-pbq:
-
-
-portfolio essential to showcase his talent
-
-how i did it after only 9 months of web dev
-
-annonce du plan
+You can see below a comparison of the two versions.
 
 <image-comparator :folder="dir" leftImage="my-portfolio-old.png" rightImage="my-portfolio-new.png" leftLabel="Old (Bootstrap)" rightLabel="New (Tailwind Css)" leftalt="Old Bootstrap design" rightalt="New Tailwind Css design"></image-comparator>
 
 ## v1 : Jekyll
 
+When I wanted to make my portfolio, I had to choose a technology. At that time I was very interested in Bootstrap. I read somewhere that their documentation had been made with Jekyll, so I decided to choose this one too (that's some selection criteria!). In addition to making my portfolio, I was able to learn something new. Perfect!
+
 ### How it works
+
+[Jekyll](https://jekyllrb.com/) is a static site generator. What does it mean ?
 
 static site generator, liquid syntax (Shopify)
 
-Sed sollicitudin commodo lorem, eget viverra leo condimentum ut. Maecenas ullamcorper volutpat commodo. Proin ante libero, pulvinar nec cursus id, venenatis nec leo. Pellentesque condimentum dui ut enim euismod, a semper tortor fringilla. Vestibulum accumsan, magna a elementum interdum, mi felis feugiat velit, sed rhoncus quam est ac lectus. Sed pharetra ultricies ante, ac fringilla arcu. Nullam aliquet a turpis quis facilisis. Cras sit amet convallis odio.
+> This is a blockquote
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+>
+> _Wow!_
 
 ### Design
 

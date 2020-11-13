@@ -30,8 +30,8 @@
         <h1 class="text-4xl font-bold mb-4 leading-tight text-white text-left">
           {{ article.title }}
         </h1>
-        <div class="flex mb-5 flex-wrap items-center" v-if="article.link">
-          <div>
+        <div class="flex flex-wrap items-center" v-if="article.link">
+          <div class="mb-5">
             <div
               class="rounded-md shadow-md mr-4"
               v-for="(button, index) in buttons"
@@ -61,7 +61,7 @@
               </a>
             </div>
           </div>
-          <div class="text-left text-sm">
+          <div class="text-left text-sm mr-4 mb-5">
             <div class="text-teal-300 font-semibold">Status</div>
             <div
               class="font-semibold text-lg px-3 py-1 rounded uppercase inline-block"
@@ -70,10 +70,13 @@
               {{ article.status }}
             </div>
           </div>
+          <div class="flex mb-5">
+            <ArticleTechPill :tag="tag" :index="index" v-for="(tag, index) in article.tags" :key="index"/>
+          </div>
         </div>
         <div class="flex justify-between flex-col sm:flex-row mb-16">
           <span
-            class="tracking-widest uppercase title-font font-semibold flex flex-wrap"
+            class="tracking-widest uppercase title-font font-semibold flex flex-wrap md:max-w-xl"
           >
             <nuxt-link
               v-for="(tag, index) in article.tags"
@@ -87,7 +90,9 @@
             Last updated on {{ updatedAt }} • {{ readingTime }}
           </span>
         </div>
-        <p class="text-justify text-teal-200 leading-7 text-xl">{{ article.desc }}</p>
+        <p class="text-justify text-teal-200 leading-7 text-xl">
+          {{ article.desc }}
+        </p>
       </div>
     </div>
   </header>

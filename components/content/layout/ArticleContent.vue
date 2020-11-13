@@ -37,7 +37,7 @@
               >
                 <nuxt-link
                   :to="`#${link.id}`"
-                  class="text-gray-600 font-semibold text-lg"
+                  class="text-teal-700 font-semibold text-lg"
                   ># {{ link.text }}</nuxt-link
                 >
               </li>
