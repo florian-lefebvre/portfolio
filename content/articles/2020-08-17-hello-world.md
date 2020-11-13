@@ -4,7 +4,6 @@ desc: I just created my porfolio!
 img: hello-world-thumb.jpg
 alt: Photo by Ankhesenamun on Unsplash
 tags:
-  - jekyll
   - news
 ---
 
