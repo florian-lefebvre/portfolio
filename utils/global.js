@@ -24,6 +24,6 @@ export default {
   siteTitle: siteTitle,
   siteDesc:
     "I am a French student who likes to program on his free time since 2018, when I discovered programming with Unreal Engine 4. In December 2019, I started web development and since then, I can't stop : Tailwind Css, Laravel, Vue.js... And many more to come!",
-  mainImage: "",
+  mainImage: `${url}/img/mainImage.PNG`,
   siteType: "website",
 };
