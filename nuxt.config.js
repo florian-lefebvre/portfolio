@@ -86,10 +86,25 @@ export default {
   generate: {
     async routes() {
       const { $content } = require("@nuxt/content");
-      const projects = await $content("work").only(["path"]).fetch();
-      const articles = await $content("articles").only(["path"]).fetch();
+      const projects = await $content("work")
+        .only(["path", "tags", "dir"])
+        .fetch();
+      const articles = await $content("articles")
+        .only(["path", "tags", "dir"])
+        .fetch();
       const files = projects.concat(articles);
-      return files.map((file) => (file.path === "/index" ? "/" : file.path));
+      var tags = [];
+      files.forEach((file) => {
+        file.tags.forEach((tag) => {
+          var filename = `${file.dir}/tags/${tag}`;
+          if (!tags.includes(filename)) {
+            tags.push(filename);
+          }
+        });
+      });
+      return files
+        .map((file) => (file.path === "/index" ? "/" : file.path))
+        .concat(tags);
     },
   },
 };
