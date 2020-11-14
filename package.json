@@ -11,7 +11,7 @@
   "dependencies": {
     "@nuxt/content": "^1.9.0",
     "@nuxtjs/pwa": "^3.0.2",
-    "core-js": "^3.6.5",
+    "core-js": "^3.7.0",
     "nuxt": "^2.14.6",
     "prism-themes": "^1.5.0",
     "reading-time": "^1.2.0",
@@ -21,9 +21,9 @@
   },
   "devDependencies": {
     "@nuxtjs/google-analytics": "^2.4.0",
-    "@nuxtjs/tailwindcss": "^3.1.0",
+    "@nuxtjs/tailwindcss": "^3.2.0",
     "node-sass": "^4.14.1",
-    "sass": "^1.27.0",
-    "sass-loader": "^10.0.3"
+    "sass": "^1.29.0",
+    "sass-loader": "^10.1.0"
   }
 }

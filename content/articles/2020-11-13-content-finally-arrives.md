@@ -7,10 +7,6 @@ tags:
   - news
 ---
 
-next projects :
+Hello everyone! I haven't been very active these last few months, but that's over! In the coming weeks, I will publish the breakdown of several projects: The rework of [the Frontonnais Concert Band](https://www.ohf31.fr)'s public website, the redesign of [Ynotes website](https://www.ynotes.fr), my mobile game [Glutton Runner](https://play.google.com/store/apps/details?id=com.GirofleStudio.GluttonRunner) and the Frontonnais Concert Band's private website (a.k.a Musicians's area) which is still under development.
 
-* ohf31.fr : public
-* ynotes.fr
-* python gif script
-* glutton runner
-* ohf31.fr : musician's area
+Stay tuned!

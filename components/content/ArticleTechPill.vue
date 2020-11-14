@@ -20,7 +20,7 @@ export default {
   },
   props: {
     tag: {
-      type: Object
+      type: String
     },
     index: {
       type: Number

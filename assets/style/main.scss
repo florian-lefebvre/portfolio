@@ -47,6 +47,10 @@
   
     p {
       @apply text-justify text-lg leading-7 pb-1 mb-2 font-medium text-gray-700;
+
+      code {
+        @apply bg-gray-200 px-2 py-1 rounded shadow;
+      }
     }
   
     a {
@@ -60,12 +64,16 @@
       @apply bg-teal-200 border-l-8 border-teal-700 p-4 rounded-r-md;
 
       * {
-        @apply text-teal-700 font-semibold m-0;
+        @apply text-teal-700 m-0;
       }
+    }
+
+    #silentbox-gallery {
+      @apply mb-5;
     }
   
     .nuxt-content-highlight {
-      @apply relative;
+      @apply relative mb-5;
   
       .filename {
         @apply absolute right-0 text-gray-600 font-light z-10 mr-2 mt-1 text-sm;
