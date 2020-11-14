@@ -78,10 +78,6 @@ And that's it!
 
 To deploy my website, I didn't want to pay for a domain and hosting at that time, so I decided to use [Github pages](https://pages.github.com/). The way it works is the following: you specify the folder you want to use for your website on push and github pages builds your project automatically! But as I was using a custom plugin with Ruby Gems (Github Pages only supports several of them, listed [here](https://pages.github.com/versions/)), I didn't want to build my project locally and push the build folder. So after some (not so fast) research on the web, I decided to choose [Travis CI](https://travis-ci.com/). Basically, after you have linked your Github repository to Travis CI, it clones your repo on push, does what you told him to do, in my case, he builds and then pushes to a branch of `gh_pages` on Github. And in this case, the Github pages only used my entire branch as the root of my portfolio!
 
-> **Small tip**
->
-> To access your Travis CI dashboard, login to [travis-ci.org](https://travis-ci.org) and not [travis-ci.com](https://travis-ci.com).
-
 ### Why I decided to change
 
 Even though Jekyll's features are great, I've had some problems with it. First of all, the development server was very slow to launch using the `jekyll serve` command. It's not encouraging to write content when you have to wait a minute and a half. Secondly, I was not very comfortable with the Liquid syntax, so most of the time I spent time on little things, just because of my misunderstanding. And I wasn't going to spend hours and hours debugging this just for my portfolio. Finally, I needed to learn Nuxt.js for bigger projects (working with the API, etc...), so this was the opportunity to drop Jekyll and go back to javascript.
