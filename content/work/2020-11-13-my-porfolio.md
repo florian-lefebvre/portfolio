@@ -340,12 +340,38 @@ Nuxt.js comes with [vue-meta](https://vue-meta.nuxtjs.org/). I don't want to get
 
 ### Design with Tailwind Css
 
-tailwind css
+Since a month, I'm a big fan of [Tailwind Css](https://tailwindcss.com/). It's a utility-first CSS framework which is highly customizable. A Nuxt.js module is available to setup Tailwind quickly, it's [@nuxt/tailwind](https://tailwindcss.nuxtjs.org/). Unlike Bootstrap, there is no predefined component, you have to create yours. So combined with Vue components, it's absolutely perfect. Here is an example from tailwind documentation:
+
+```html
+<div class="bg-indigo-900 text-center py-4 lg:px-4">
+  <div class="p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+    <span class="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3">New</span>
+    <span class="font-semibold mr-2 text-left flex-auto">Get the coolest t-shirts from our brand new store</span>
+    <svg class="fill-current opacity-75 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+      <path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/>
+    </svg>
+  </div>
+</div>
+```
+
+<div class="bg-indigo-900 text-center py-4 lg:px-4 mb-5">
+  <div class="p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+    <span class="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3">New</span>
+    <span class="font-semibold mr-2 text-left flex-auto">Get the coolest t-shirts from our brand new store</span>
+    <svg class="fill-current opacity-75 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/></svg>
+  </div>
+</div>
+
+It looks fantastic very quickly, it's absolutely worth a try.
 
 ### Deployment
 
-travis ci -> branch -> plesk
+> **Coming soon**
+>
+> Since the website hasn't been released yet, I can't say anything about it. All what I can say is that we will talk about **Github pages**, **Travis CI** and **Plesk**.
 
 ## Conclusion
 
-Sed sollicitudin commodo lorem, eget viverra leo condimentum ut. Maecenas ullamcorper volutpat commodo. Proin ante libero, pulvinar nec cursus id, venenatis nec leo. Pellentesque condimentum dui ut enim euismod, a semper tortor fringilla. Vestibulum accumsan, magna a elementum interdum, mi felis feugiat velit, sed rhoncus quam est ac lectus. Sed pharetra ultricies ante, ac fringilla arcu. Nullam aliquet a turpis quis facilisis. Cras sit amet convallis odio.
+> **Coming soon**
+>
+> Since the website hasn't been released yet, I prefer to wait.
