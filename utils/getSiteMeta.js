@@ -33,6 +33,16 @@ export default (meta) => {
       content: (meta && meta.mainImage) || global.mainImage,
     },
     {
+      hid: 'og:site_name',
+      property: 'og:site_name',
+      content: (meta && meta.siteName) || `${global.siteTitle} - ${global.author}`,
+    },
+    {
+      hid: 'apple-mobile-web-app-title',
+      property: 'apple-mobile-web-app-title',
+      content: (meta && meta.siteName) || `${global.siteTitle} - ${global.author}`,
+    },
+    {
       hid: 'twitter:url',
       name: 'twitter:url',
       content: (meta && meta.url) || global.siteUrl,

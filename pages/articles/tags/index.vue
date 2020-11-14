@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import getSiteMeta from "@/utils/getSiteMeta";
+
 export default {
   data() {
     let folder = "articles";
@@ -23,6 +25,22 @@ export default {
         }
       ]
     };
+  },
+  head() {
+    return {
+      title: "All tags - Articles",
+      meta: [...this.meta]
+    };
+  },
+  computed: {
+    meta() {
+      const metaData = {
+        title: "All tags - Articles",
+        description: "Search articles by tag.",
+        url: `${this.$store.state.infos.siteUrl}/articles/tags`
+      };
+      return getSiteMeta(metaData);
+    }
   }
 };
 </script>

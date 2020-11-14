@@ -257,24 +257,18 @@ import knownTechnologies from "@/assets/data/skills/knownTechnologies.json";
 import futureTechnologies from "@/assets/data/skills/futureTechnologies.json";
 
 export default {
-  // head: {
-  //   title: "Home"
-  // },
   head() {
     return {
-      title: "Home",
+      title: "About",
       meta: [...this.meta]
     };
   },
   computed: {
     meta() {
       const metaData = {
-        // type: "article",
-        // title: this.article.title,
-        // description: this.article.description,
-        // url: `${this.$config.baseUrl}/articles/${this.$route.params.slug}`,
-        // mainImage: this.article.image
-        //description: "LOOK AT THAT"
+        title: "About",
+        description: "Learn more about me, my education, my experience and my hobbies.",
+        url: "https://florian-lefebvre.dev/about",
       };
       return getSiteMeta(metaData);
     }

@@ -44,7 +44,9 @@
             </ul>
           </nav>
         </div>
-        <nuxt-content :document="article" />
+        <article>
+          <nuxt-content :document="article" />
+        </article>
       </div>
     </div>
   </div>

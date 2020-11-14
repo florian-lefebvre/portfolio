@@ -8,7 +8,7 @@ export const state = () => ({
   country: global.country,
   email: global.email,
   linkedin: global.linkedin,
-  siteUrl: global.url,
+  siteUrl: global.siteUrl,
   author: global.author,
   github: global.github,
   siteTitle: global.siteTitle,

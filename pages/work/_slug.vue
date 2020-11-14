@@ -2,12 +2,20 @@
   <div>
     <ArticleHeader type="Project" :buttons="buttons" :article="el" />
     <ArticleContent :article="el" />
-    <PrevNext :prev="prev" :next="next" v-if="prev || next"/>
+    <PrevNext :prev="prev" :next="next" v-if="prev || next" />
   </div>
 </template>
 
 <script>
+import getSiteMeta from "@/utils/getSiteMeta";
+
 export default {
+  head() {
+    return {
+      title: this.el.title,
+      meta: [...this.meta]
+    };
+  },
   data() {
     return {
       buttons: [
@@ -38,6 +46,18 @@ export default {
     el.variant = colorVariants(el.variant);
 
     return { el, prev, next };
+  },
+  computed: {
+    meta() {
+      const metaData = {
+        type: "article",
+        title: this.el.title,
+        description: this.el.desc,
+        url: `${this.$store.state.infos.siteUrl}${this.el.dir}/${this.$route.params.slug}`,
+        mainImage: `${this.$store.state.infos.siteUrl}/img${this.el.dir}/${this.el.img}`
+      };
+      return getSiteMeta(metaData);
+    }
   }
 };
 </script>

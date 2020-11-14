@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import getSiteMeta from "@/utils/getSiteMeta";
+
 export default {
   data() {
     let folder = "articles";
@@ -19,6 +21,22 @@ export default {
       ]
     };
   },
+  head() {
+    return {
+      title: "Articles",
+      meta: [...this.meta]
+    };
+  },
+  computed: {
+    meta() {
+      const metaData = {
+        title: "Articles",
+        description: "Articles about development, tips...",
+        url: `${this.$store.state.infos.siteUrl}/articles`
+      };
+      return getSiteMeta(metaData);
+    }
+  }
 };
 </script>
 

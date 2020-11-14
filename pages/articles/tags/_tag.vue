@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import getSiteMeta from "@/utils/getSiteMeta";
+
 export default {
   data() {
     let folder = "articles";
@@ -27,6 +29,23 @@ export default {
         }
       ]
     };
+  },
+  head() {
+    return {
+      title: `#${this.$route.params.tag} - Articles`,
+      meta: [...this.meta]
+    };
+  },
+  computed: {
+    meta() {
+      const metaData = {
+        title: `#${this.$route.params.tag} - Articles`,
+        description: `All articles related with #${this.$route.params.tag}`,
+        url: `${this.$store.state.infos.siteUrl}/articles/tags/${this.$route.params.tag}`
+      };
+      console.log(this.$route)
+      return getSiteMeta(metaData);
+    }
   }
 };
 </script>
