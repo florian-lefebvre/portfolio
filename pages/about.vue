@@ -177,7 +177,7 @@
             </div>
           </div>
           <div
-            class="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto"
+            class="flex relative pt-10 pb-20 sm:items-center w-full md:w-2/3 mx-auto"
           >
             <div
               class="h-full w-6 absolute inset-0 flex items-center justify-center"

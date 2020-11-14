@@ -362,12 +362,8 @@ It looks fantastic very quickly, it's absolutely worth a try.
 
 ### Deployment
 
-> **Coming soon**
->
-> Since the website hasn't been released yet, I can't say anything about it. All what I can say is that we will talk about **Github pages**, **Travis CI** and **Plesk**.
+To deploy my portfolio, I use Travis CI. Like with Jekyll, I setup Travis to build my app using `npm run generate` and to upload the generated `dist/` folder to the `plesk` branch on Github. You can find all the informations [here](https://nuxtjs.org/faq/github-pages). Then on [Plesk](https://www.plesk.com/) (an Hosting Control Panel), I link the branch with my folder on the server anf that's it!
 
 ## Conclusion
 
-> **Coming soon**
->
-> Since the website hasn't been released yet, I prefer to wait.
+Thanks to this project, I've learned a lot. I learned Jekyll and Liquid syntax as well as Nuxt.js. At the same time, I learned how to use Travis CI, Github Pages and Plesk to deploy automatically my portfolio using Git.

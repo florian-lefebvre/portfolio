@@ -1,9 +1,0 @@
-Options +FollowSymLinks +ExecCGI
-
-<IfModule mod_rewrite.c>
-
-RewriteEngine On
-RewriteCond %{REQUEST_URI}  !(\.png|\.jpg|\.gif|\.jpeg|\.bmp|\.css|\.js|\.js.map|\.ico|\.json)$
-RewriteRule (.*)  index.html [QSA]
-
-</IfModule>

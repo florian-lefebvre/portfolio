@@ -23,4 +23,11 @@ export default {
     @apply rounded-lg;
   }
 }
+
+#silentbox-overlay__embed {
+  width: 95% !important;
+  @media (min-width: 768px) {
+    width: 75% !important;
+  }
+}
 </style>

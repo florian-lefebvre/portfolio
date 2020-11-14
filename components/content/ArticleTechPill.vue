@@ -4,7 +4,7 @@
     :class="index == 0 ? '' : '-ml-3 md:-ml-5'"
     :style="`color:${color}`" v-if="icon"
   >
-    <component :is="icon" size="" class="h-5 w-5 md:w-8 md:h-8" fill="currentColor"></component>
+    <component :is="icon" class="h-5 w-5 md:w-8 md:h-8" fill="currentColor"></component>
   </div>
 </template>
 

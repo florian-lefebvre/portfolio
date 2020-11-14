@@ -1,31 +1,9 @@
 <template>
-  <modal>
+  <modal v-on:close="$emit('close')">
     <div
       v-if="skill"
-      class="p-4 md:mb-0 mb-6 flex w-full flex-col text-center items-center text-gray-700"
+      class="p-4 md:mb-0 mb-6 flex w-full flex-col text-center items-center text-gray-700 relative"
     >
-      <div class="flex w-full">
-        <button
-          type="button"
-          @click="$emit('close')"
-          class="transform hover:scale-125 transition ease-out duration-100 ml-auto"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            class="w-5 h-5"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
-      </div>
       <div class="flex ml-10 mr-auto my-6 items-center flex-wrap">
         <div
           class="bg-white rounded-lg border border-gray-100 shadow flex items-center mb-5 mr-5"
@@ -58,11 +36,11 @@
           </div>
         </div>
       </div>
-      <div class="text-gray-600 text-justify mb-8 mx-10">
+      <div class="text-gray-600 text-justify mb-8 mx-5 md:mx-10">
         <p class="leading-6">{{ skill.data.desc }}</p>
       </div>
       <div class="mb-5 w-full" v-if="projects !== null">
-        <div class="flex justify-between mx-10 mb-2">
+        <div class="flex justify-between mx-5 md:mx-10 mb-2">
           <span class="font-semibold text-lg">Last projects</span>
           <nuxt-link
             :to="`/work/tags/${skill.name}`"
@@ -82,7 +60,7 @@
               /></svg
           ></nuxt-link>
         </div>
-        <div class="px-10 overflow-x-auto flex space-x-4 pb-5">
+        <div class="px-5 md:px-10 overflow-x-auto flex space-x-4 pb-5">
           <nuxt-link
             :to="project.path"
             class="bg-white rounded-xl shadow flex-none flex relative flex-col md:flex-row hover:shadow-lg transition duration-150 ease-out"
@@ -108,7 +86,7 @@
         </div>
       </div>
       <div class="mb-5 w-full" v-if="articles !== null">
-        <div class="flex justify-between mx-10 mb-2">
+        <div class="flex justify-between mx-5 md:mx-10 mb-2">
           <span class="font-semibold text-lg">Last articles</span>
           <nuxt-link
             :to="`/articles/tags/${skill.name}`"

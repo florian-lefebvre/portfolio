@@ -33,7 +33,7 @@
       @apply text-2xl text-teal-700;
   
       &::after {
-        @apply border-teal-600;
+        @apply border-teal-600 bg-teal-600;
       }
     }
   
@@ -41,7 +41,7 @@
       @apply text-xl text-gray-700;
   
       &::after {
-        @apply border-gray-600;
+        @apply border-gray-600 bg-gray-600; 
       }
     }
   

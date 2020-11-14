@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <div class="mt-5 md:mt-auto">
     <form class="w-full max-w-sm" @submit.prevent>
       <div class="flex items-center py-2">
         <input
           v-model="searchQuery"
           class="appearance-none bg-transparent border-b border-teal-400 pb-2 w-full text-teal-200 placeholder-teal-400 mr-3 py-1 px-2 leading-tight focus:outline-none focus:border-teal-200 transition ease-out duration-200"
-          type="text"
+          type="search"
+          autocomplete="off"
           placeholder="Search by title"
           aria-label="Search"
         />
@@ -81,6 +82,8 @@ export default {
         return;
       }
       this.elements = await this.$content(this.directory)
+        .only(["title", "slug", "path"])
+        .sortBy("createdAt", "asc")
         .limit(6)
         .search(searchQuery)
         .fetch();
