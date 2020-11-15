@@ -119,7 +119,9 @@
                   </li>
                   <li>Creation of a computer club</li>
                   <li>
-                    Year 10 observation internship in the
+                    Internship of observation in the last year ("<i
+                      >année de 3<sup>ème</sup></i
+                    >") in the architectural firm
                     <a
                       href="http://www.syn-architectures.com/"
                       target="_blank"
@@ -127,7 +129,6 @@
                       class="text-teal-100 font-semibold underline hover:no-underline"
                       >SYN ARCHITECTURES</a
                     >
-                    architectural firm
                   </li>
                 </ul>
               </div>
@@ -156,7 +157,8 @@
 
                 <ul class="list-disc leading-loose text-lg">
                   <li>
-                    Year 11 observation internship in the IT company
+                    First year ("<i>année de 2<sup>nde</sup></i
+                    >") observation internship in the IT company
                     <a
                       href="https://atos.net"
                       target="_blank"
@@ -267,8 +269,9 @@ export default {
     meta() {
       const metaData = {
         title: "About",
-        description: "Learn more about me, my education, my experience and my hobbies.",
-        url: "https://florian-lefebvre.dev/about",
+        description:
+          "Learn more about me, my education, my experience and my hobbies.",
+        url: "https://florian-lefebvre.dev/about"
       };
       return getSiteMeta(metaData);
     }
