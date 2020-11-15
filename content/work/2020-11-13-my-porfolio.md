@@ -309,6 +309,7 @@ tags:
   - css3
   - js
 ---
+
 ```
 
 And now in my hooks, I only sort them:
@@ -322,10 +323,10 @@ export default {
         document.tags = document.tags.sort();
       }
     }
-  },
-}
+  }
+};
 
-// output: ["bootstrap", "css3", "git", "html5", "jekyll", "js", "nuxtjs", "plesk", "tailwindcss", "vuejs"] 
+// output: ["bootstrap", "css3", "git", "html5", "jekyll", "js", "nuxtjs", "plesk", "tailwindcss", "vuejs"]
 ```
 
 So you can see how powerful it is.
@@ -340,11 +341,25 @@ Since a month, I'm a big fan of [Tailwind Css](https://tailwindcss.com/). It's a
 
 ```html
 <div class="bg-indigo-900 text-center py-4 lg:px-4">
-  <div class="p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
-    <span class="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3">New</span>
-    <span class="font-semibold mr-2 text-left flex-auto">Get the coolest t-shirts from our brand new store</span>
-    <svg class="fill-current opacity-75 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-      <path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/>
+  <div
+    class="p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex"
+    role="alert"
+  >
+    <span
+      class="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3"
+      >New</span
+    >
+    <span class="font-semibold mr-2 text-left flex-auto"
+      >Get the coolest t-shirts from our brand new store</span
+    >
+    <svg
+      class="fill-current opacity-75 h-4 w-4"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+    >
+      <path
+        d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"
+      />
     </svg>
   </div>
 </div>
@@ -360,7 +375,44 @@ Since a month, I'm a big fan of [Tailwind Css](https://tailwindcss.com/). It's a
 
 It looks fantastic very quickly, it's absolutely worth a try.
 
-### Deployment
+### Static site generation
+
+When I released the project, I discovered problems with dynamic routes. Basically, if I reloaded a page like `/articles/my article`, there was a 404 error. In order to fix this, you need to specify where the content loaded by your dynamic routes is located. So in my `nuxt.config.js`, here is what I did:
+
+```js[nuxt.config.js]
+generate: {
+    async routes() {
+      // Specify content (from @nuxt/content module) location
+      const { $content } = require("@nuxt/content");
+      const projects = await $content("work")
+        .only(["path", "tags", "dir"])
+        .fetch();
+      const articles = await $content("articles")
+        .only(["path", "tags", "dir"])
+        .fetch();
+      // Combine all your content
+      const files = projects.concat(articles);
+      var tags = [];
+      // Get tags page
+      files.forEach((file) => {
+        file.tags.forEach((tag) => {
+          var filename = `${file.dir}/tags/${tag}`;
+          if (!tags.includes(filename)) {
+            tags.push(filename);
+          }
+        });
+      });
+      // Combine content and tags to output all routes
+      return files
+        .map((file) => (file.path === "/index" ? "/" : file.path))
+        .concat(tags);
+    },
+  },
+```
+
+I hope this will help, because I had a hard time fixing it.
+
+### Deployment with Travis CI and Plesk
 
 To deploy my portfolio, I use Travis CI. Like with Jekyll, I setup Travis to build my app using `npm run generate` and to upload the generated `dist/` folder to the `plesk` branch on Github. You can find all the informations [here](https://nuxtjs.org/faq/github-pages). Then on [Plesk](https://www.plesk.com/) (an Hosting Control Panel), I link the branch with my folder on the server anf that's it!
 

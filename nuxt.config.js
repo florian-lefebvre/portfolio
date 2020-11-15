@@ -13,7 +13,7 @@ export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     htmlAttrs: {
-      lang: "en-GB",
+      lang: "en-GB"
     },
     title: global.siteTitle,
     titleTemplate: `%s - ${global.author}`,
@@ -21,9 +21,9 @@ export default {
       ...meta,
       { charset: "utf-8" },
       { name: "HandheldFriendly", content: "True" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -39,14 +39,14 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
-    "@nuxtjs/google-analytics",
+    "@nuxtjs/google-analytics"
   ],
 
   googleAnalytics: {
     id: "UA-155020188-3",
     autoTracking: {
-      screenview: true,
-    },
+      screenview: true
+    }
   },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -54,11 +54,11 @@ export default {
     // https://go.nuxtjs.dev/pwa
     // "@nuxtjs/pwa",
     // https://go.nuxtjs.dev/content
-    "@nuxt/content",
+    "@nuxt/content"
   ],
 
   hooks: {
-    "content:file:beforeInsert": (document) => {
+    "content:file:beforeInsert": document => {
       if (document.extension === ".md") {
         const { time } = require("reading-time")(document.text);
 
@@ -68,22 +68,23 @@ export default {
         document.path = document.dir + "/" + document.slug;
         document.tags = document.tags.sort();
       }
-    },
+    }
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {
     markdown: {
       prism: {
-        theme: "prism-themes/themes/prism-material-oceanic.css",
-      },
-    },
+        theme: "prism-themes/themes/prism-material-oceanic.css"
+      }
+    }
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
 
   generate: {
+    fallback: "404.html",
     async routes() {
       const { $content } = require("@nuxt/content");
       const projects = await $content("work")
@@ -94,8 +95,8 @@ export default {
         .fetch();
       const files = projects.concat(articles);
       var tags = [];
-      files.forEach((file) => {
-        file.tags.forEach((tag) => {
+      files.forEach(file => {
+        file.tags.forEach(tag => {
           var filename = `${file.dir}/tags/${tag}`;
           if (!tags.includes(filename)) {
             tags.push(filename);
@@ -103,8 +104,8 @@ export default {
         });
       });
       return files
-        .map((file) => (file.path === "/index" ? "/" : file.path))
+        .map(file => (file.path === "/index" ? "/" : file.path))
         .concat(tags);
-    },
-  },
+    }
+  }
 };

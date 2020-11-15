@@ -11,5 +11,4 @@ After 8 months of web development, here is finally my porfolio! This article is 
 I will write articles about things I find useful, or fun, or whatever, but I will also write a detailed explanation of my projects.
 I will also update my skills as I go along.
 
-
 Well, see you soon!

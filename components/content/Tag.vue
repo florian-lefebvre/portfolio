@@ -3,14 +3,18 @@
     :to="`/${folder}/tags/${tag[0]}`"
     class="bg-white text-teal-600 flex flex-col items-center py-5 mb-8 shadow rounded-md w-36 hover:shadow-lg mx-4 cursor-pointer transition duration-150 ease-out w-40 h-40 skill"
   >
-    <div class="w-10 h-10 transition duration-150 ease-out" :style="`--skill-color:${color};`">
+    <div
+      class="w-10 h-10 transition duration-150 ease-out"
+      :style="`--skill-color:${color};`"
+    >
       <component
         :is="icon"
         size="3x"
         fill="currentColor"
         class="max-h-full max-w-full"
-        v-if="icon"
+        v-if="icon && tagFile === false"
       ></component>
+      <div v-else-if="icon" v-html="icon"></div>
       <svg
         v-else
         xmlns="http://www.w3.org/2000/svg"
@@ -41,6 +45,7 @@
 <script>
 import knownTechnologies from "@/assets/data/skills/knownTechnologies.json";
 import futureTechnologies from "@/assets/data/skills/futureTechnologies.json";
+import tags from "@/assets/data/tags.json";
 export default {
   props: {
     tag: {
@@ -53,7 +58,8 @@ export default {
   data() {
     return {
       icon: null,
-      color: null
+      color: null,
+      tagFile: false
     };
   },
   mounted() {
@@ -62,8 +68,13 @@ export default {
       tech = knownTechnologies.find(tech => tech.name == this.tag[0]);
     } else if (futureTechnologies.find(tech => tech.name == this.tag[0])) {
       tech = futureTechnologies.find(tech => tech.name == this.tag[0]);
+    } else if ((tech = tags.find(tech => tech.name == this.tag[0]))) {
+      tech = tags.find(tech => tech.name == this.tag[0]);
+      if (tech.data.icon.substring(0, 1) == "<") {
+        this.tagFile = true;
+      }
     }
-    if (tech !== null) {
+    if (tech != null) {
       this.icon = tech.data.icon;
       this.color = tech.data.color;
     }

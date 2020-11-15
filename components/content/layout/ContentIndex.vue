@@ -2,24 +2,51 @@
   <div>
     <div class="bg-teal-100">
       <div class="container px-5 py-24 mx-auto">
-        <div
-          v-if="featured"
-          class="bg-white rounded-xl -mt-48 shadow-xl -mb-40 relative hover:scale-95 transform transition duration-150 ease-out"
+        <transition
+          enter-active-class="transition ease-out duration-300"
+          enter-class="opacity-0"
+          enter-to-class="opacity-100"
+          leave-active-class="transition ease-in duration-300"
+          leave-class="opacity-100"
+          leave-to-class="opacity-0"
+          mode="out-in"
         >
-          <ContentFeatured :featured="featured" :folder="folder"/>
-        </div>
+          <div
+            v-if="featured"
+            key=""
+            class="bg-white rounded-xl -mt-48 shadow-xl -mb-40 relative hover:-translate-y-2 transform transition duration-150 ease-out"
+          >
+            <ContentFeatured :featured="featured" :folder="folder" />
+          </div>
+          <div v-else class="-mt-48 -mb-40 relative">
+            <LoadingFeatured />
+          </div>
+        </transition>
       </div>
     </div>
     <div class="bg-teal-100 pt-10">
       <div class="container px-5 py-24 mx-auto">
-        <div class="flex flex-wrap -m-4">
-          <ContentCard
-            v-for="element of elements"
-            :key="element.slug"
-            :el="element"
-            :folder="folder"
-          />
-        </div>
+        <transition
+          enter-active-class="transition ease-out duration-300"
+          enter-class="opacity-0"
+          enter-to-class="opacity-100"
+          leave-active-class="transition ease-in duration-300"
+          leave-class="opacity-100"
+          leave-to-class="opacity-0"
+          mode="out-in"
+        >
+          <div class="flex flex-wrap -m-4" v-if="elements" key="">
+            <ContentCard
+              v-for="element of elements"
+              :key="element.slug"
+              :el="element"
+              :folder="folder"
+            />
+          </div>
+          <div v-else class="flex flex-wrap -m-4">
+            <LoadingCard v-for="index in 3" :key="index" />
+          </div>
+        </transition>
       </div>
     </div>
   </div>

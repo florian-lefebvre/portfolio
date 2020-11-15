@@ -1,6 +1,6 @@
 <template>
   <nuxt-link
-    class="p-4 md:w-1/2 lg:w-1/3 transform hover:scale-95 transition duration-150 ease-out flex flex-col"
+    class="p-4 md:w-1/2 lg:w-1/3 transform hover:-translate-y-2 transition duration-150 ease-out flex flex-col"
     :to="el.path"
   >
     <div class="h-full rounded-lg overflow-hidden relative shadow bg-white flex flex-col">

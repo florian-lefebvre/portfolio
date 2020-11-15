@@ -37,7 +37,8 @@ import {
   AdobePhotoshopIcon,
   MuseScoreIcon,
   FlutterIcon,
-  PleskIcon
+  PleskIcon,
+  MarkdownIcon
 } from "vue-simple-icons";
 
 const icons = {
@@ -77,7 +78,8 @@ const icons = {
   AdobePhotoshopIcon,
   MuseScoreIcon,
   FlutterIcon,
-  PleskIcon
+  PleskIcon,
+  MarkdownIcon
 };
 
 Object.entries(icons).forEach(([name, component]) => {

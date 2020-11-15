@@ -5,8 +5,7 @@
         <input
           v-model="searchQuery"
           class="appearance-none bg-transparent border-b border-teal-400 pb-2 w-full text-teal-200 placeholder-teal-400 mr-3 py-1 px-2 leading-tight focus:outline-none focus:border-teal-200 transition ease-out duration-200"
-          type="search"
-          autocomplete="off"
+          type="text"
           placeholder="Search by title"
           aria-label="Search"
         />
