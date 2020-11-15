@@ -8,13 +8,13 @@
     <div class="flex flex-col h-full">
       <div class="my-auto py-4">
         <div class="mb-4 px-8">
-          <h1 class="font-medium leading-none text-3xl text-white mb-2">
+          <h2 class="font-medium leading-none text-3xl text-white mb-2">
             {{ $store.state.infos.firstName }}
             <br />
             <span class="font-bold text-4xl">{{
               $store.state.infos.lastName
             }}</span>
-          </h1>
+          </h2>
         </div>
         <div class="mb-4 px-8">
           <h3 class="text-lg leading-8">

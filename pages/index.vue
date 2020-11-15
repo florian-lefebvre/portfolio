@@ -2,13 +2,13 @@
   <div>
     <header class="h-screen bg-teal-700 shadow-inner">
       <div class="container px-5 py-32 mx-auto text-center">
-        <h2
+        <h1
           class="pt-24 text-4xl tracking-tight leading-10 font-bold text-teal-200 sm:text-5xl sm:leading-none md:text-6xl"
         >
           Hi! I'm
           <br class="xl:hidden" />
           <span class="text-gray-200">{{ $store.state.infos.author }}</span>
-        </h2>
+        </h1>
         <p
           class="mt-3 text-base text-teal-200 sm:mt-5 sm:text-lg sm:max-w-xl md:mt-5 md:text-xl mx-auto"
         >

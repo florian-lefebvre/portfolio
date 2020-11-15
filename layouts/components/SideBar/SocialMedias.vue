@@ -1,7 +1,7 @@
 <template>
   <div class="mb-10 px-8">
     <div class="flex">
-      <SocialLink :url="`mailto:${$store.state.infos.email}`">
+      <SocialLink :url="`mailto:${$store.state.infos.email}`" aria="Email">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -17,7 +17,7 @@
         </svg>
       </SocialLink>
       <SocialLink
-        :url="`https://www.linkedin.com/in/${$store.state.infos.linkedin}/`"
+        :url="`https://www.linkedin.com/in/${$store.state.infos.linkedin}/`" aria="LinkedIn"
       >
         <svg
           fill="currentColor"
@@ -34,7 +34,7 @@
           <circle cx="4" cy="4" r="2" stroke="none"></circle>
         </svg>
       </SocialLink>
-      <SocialLink :url="`https://github.com/${$store.state.infos.github}`">
+      <SocialLink :url="`https://github.com/${$store.state.infos.github}`" aria="Github">
         <svg
           viewBox="0 0 16 16"
           version="1.1"

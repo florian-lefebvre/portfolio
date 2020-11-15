@@ -38,7 +38,7 @@ When I wanted to make my portfolio, I had to choose a technology. At that time I
 Jekyll uses [Liquid](https://shopify.github.io/liquid/), a template language created by Shopify. Here is an example:
 
 ```yaml[_config.yml]
-email: john@doe.com
+twitter_username: johndoe
 ```
 
 ```html[footer.html]

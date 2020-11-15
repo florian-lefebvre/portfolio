@@ -2,6 +2,7 @@
   <div class="flex items-center fixed z-40" style="top: 20px;">
     <button
       type="button"
+      aria-label="Menu toggle"
       class="inline-flex items-center opacity-100 lg:opacity-0 justify-center p-2 rounded-r-md bg-teal-600 text-teal-100 shadow-lg hover:bg-teal-500 focus:outline-none transition transform duration-500 ease-out z-20"
       :class="
         $store.state.device.sideBarOpen ? 'translate-x-64' : 'translate-x-0'
