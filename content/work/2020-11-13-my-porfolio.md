@@ -90,7 +90,7 @@ Even though Jekyll's features are great, I've had some problems with it. First o
 
 [Nuxt.js](https://nuxtjs.org/) is an open-source framework built on top of [Vue.js](https://vuejs.org/). Vue.js is a progressive front-end javascript framework for building user interfaces. You will find below an introductory video to Vue.js from [Vue Mastery](https://www.vuemastery.com/), a Vue learning platform.
 
-<div style="padding:56.25% 0 0 0;" class="relative mb-5"><iframe src="https://player.vimeo.com/video/247494684" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<div style="padding:56.25% 0 0 0;" class="relative mb-5"><iframe src="https://player.vimeo.com/video/247494684" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Vue.js introduction by Vue Mastery"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 As said in the video, Vue files are separated in 3 parts: template, script and style.
 
@@ -127,7 +127,7 @@ I'm not a Vue expert so feel free to check official website for a better underst
 
 Coming back to Nuxt.js, he's a higher framework, so he takes all the advantages of Vue.js and solves the main problems you'll encounter with it. Same as before, You will find below an introductory video to Nuxt.js from Vue Mastery.
 
-<div style="padding:56.25% 0 0 0;" class="relative mb-5"><iframe src="https://player.vimeo.com/video/311756540" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<div style="padding:56.25% 0 0 0;" class="relative mb-5"><iframe src="https://player.vimeo.com/video/311756540" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Nuxt.js introduction by Vue Mastery"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 So, for example, Nuxt.js adds the `head` method by default, integrating vue-meta for SEO easy integration.
 

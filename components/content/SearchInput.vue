@@ -12,6 +12,7 @@
         <button
           class="flex-shrink-0 border-transparent border-4 text-teal-400 hover:text-teal-200 text-sm py-1 px-2 rounded transform hover:scale-125 transition ease-out duration-100"
           type="button"
+          aria-label="Clear search field"
           @click="searchQuery = ''"
         >
           <svg
