@@ -11,7 +11,8 @@
   "dependencies": {
     "@animxyz/vue": "^0.4.0",
     "core-js": "^3.6.5",
-    "nuxt": "^2.14.6"
+    "nuxt": "^2.14.6",
+    "vue-simple-icons": "^4.7.0"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^2.0.2",

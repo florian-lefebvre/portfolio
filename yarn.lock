@@ -1958,6 +1958,11 @@ aws4@^1.8.0:
   resolved "https://registry.npmjs.org/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
 
+babel-helper-vue-jsx-merge-props@^2.0.2:
+  version "2.0.3"
+  resolved "https://registry.npmjs.org/babel-helper-vue-jsx-merge-props/-/babel-helper-vue-jsx-merge-props-2.0.3.tgz#22aebd3b33902328e513293a8e4992b384f9f1b6"
+  integrity sha512-gsLiKK7Qrb7zYJNgiXKpXblxbV5ffSwR0f5whkPAaBAR4fhi6bwRZxX9wBlIc5M/v8CCkXUbXZL4N/nSE97cqg==
+
 babel-loader@^8.2.2:
   version "8.2.2"
   resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.2.2.tgz#9363ce84c10c9a40e6c753748e1441b60c8a0b81"
@@ -9004,6 +9009,13 @@ vue-server-renderer@^2.6.12:
     resolve "^1.2.0"
     serialize-javascript "^3.1.0"
     source-map "0.5.6"
+
+vue-simple-icons@^4.7.0:
+  version "4.7.0"
+  resolved "https://registry.npmjs.org/vue-simple-icons/-/vue-simple-icons-4.7.0.tgz#12d853307c870965811d6812f99b3ca9470556ec"
+  integrity sha512-UCbxNxgMDmP1immHfjeIpQtrsliddm6kf2mWSr9bS7rBJzz/20/qIxHQt/nBo7lD6SbXkLKJU4oz4HY65yC6CQ==
+  dependencies:
+    babel-helper-vue-jsx-merge-props "^2.0.2"
 
 vue-style-loader@^4.1.0:
   version "4.1.2"

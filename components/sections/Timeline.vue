@@ -83,77 +83,66 @@ export default {
         {
           title: "I discover Unreal Engine 4",
           content: "Such an amazing discovery: the world of coding...",
-          icon: "icon",
           date: "January 2018"
         },
         {
           title: "I publish Glutton Runner on the Play Store",
           content:
             "The first (and only) game I coded using UE4 was Glutton Runner, an endless game. Unfortunately, this engine was not adapted to my needs, so I paused the project.",
-          icon: "icon",
           date: "May 2019"
         },
         {
           title: "I build my first website",
           content:
             "My orchestra's website was pretty ugly, so I decided to rewrite it from scratch by taking the Traversy media HTML5 crash course. I did it in a month, and it was a great introduction to HTML and CSS.",
-          icon: "icon",
           date: "December 2019"
         },
         {
           title: "I learn PHP and jQuery",
           content:
             "After the public site of my orchestra, I wanted to make a private area with user authentication, dashboard, storage...I learned procedural PHP and jQuery, but it was really very tedious. I gave up while waiting to learn more adapted technologies.",
-          icon: "icon",
           date: "January - May 2020"
         },
         {
           title: "I discover Bootstrap",
           content:
             "Until now, I did everything by myself. Then I had the courage to get into Bootstrap, and I loved it.",
-          icon: "icon",
           date: "June 2020"
         },
         {
           title: "I build my portfolio using Jekyll",
           content:
             "I wanted to build my own portfolio because I thought I had enough to show. I wanted to learn something new by the way, so I chose the Jekyll static site generator.",
-          icon: "icon",
           date: "August - September 2020"
         },
         {
           title: "Exploring Laravel and GraphQL",
           content:
             "After the summer vacations, I spent some time looking for the next technologies to learn. I came to the conclusion that Laravel and GraphQL were what I wanted, but after taking care of the frontend.",
-          icon: "icon",
           date: "September 2020"
         },
         {
           title: "I learn Vue, Nuxt and Tailwind CSS",
           content:
             "Now that I knew what to learn for the backend, I had to figure out what technologies to use for the frontend. I chose Nuxt, based on Vue, as well as Tailwind CSS. These technologies are amazing.",
-          icon: "icon",
           date: "October 2020"
         },
         {
           title: "I join the yNotes project",
           content:
             "yNotes is a mobile application that retrieves data from the student life services used by most French schools. It reshapes and adds many features. I redesigned the website's home page with Tailwind CSS.",
-          icon: "icon",
           date: "October 2020"
         },
         {
           title: "I rework my portfolio using Nuxt and Tailwind CSS",
           content:
             "Now that I was familiar with modern technologies, I decided to use them in a real project, my portfolio, as a showcase for what I knew. It was very interesting, especially the use of a headless CMS, @nuxt/content.",
-          icon: "icon",
           date: "November 2020"
         },
         {
           title: "I release shortcuts-app 0.3.0",
           content:
             "I needed an application that would have shortcuts the same way Opera does, in the sidebar. So I coded it using Electron.js. It was really fun to do.",
-          icon: "icon",
           date: "December 2020 - January 2021"
         },
         {
@@ -161,14 +150,12 @@ export default {
             "I rework the yNotes website using Nuxt, Tailwind CSS and AnimXYZ",
           content:
             "We needed a support center and a more consistent website, so I remade everything. This allowed me to discover animation with AnimXYZ and learn how to make a more modern design.",
-          icon: "icon",
           date: "January 2021"
         },
         {
           title: "I rework my portfolio once again",
           content:
             "I was not satisfied with my portfolio, so I decided to redo it, but in a clearer, simpler way. I focus more on the content that really matters.",
-          icon: "icon",
           date: "February 2021"
         }
       ]
