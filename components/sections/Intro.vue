@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative bg-gray-300 dark:bg-gray-700 p-10 -mt-10 rounded-3xl shadow-inner sm:text-lg lg:text-xl text-justify mb-12"
+    class="relative bg-gray-300 dark:bg-gray-700 p-10 -mt-10 rounded-3xl sm:text-lg lg:text-xl text-justify mb-12"
   >
     <p>
       I am a French student who likes to program on his free time since 2018,

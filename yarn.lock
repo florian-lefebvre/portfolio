@@ -2,6 +2,20 @@
 # yarn lockfile v1
 
 
+"@animxyz/core@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.npmjs.org/@animxyz/core/-/core-0.4.0.tgz#d1be459cf9c265e1525523b252e2ea6e3a974412"
+  integrity sha512-Q4B5y/T+hjutRMmpMjXS+t5UkAapUZdFxfYEMY/IEGlLLEl/23pO8Z+bmQdB425zRDJYptlXrP04JAz3X8axEQ==
+
+"@animxyz/vue@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.npmjs.org/@animxyz/vue/-/vue-0.4.0.tgz#00c31dae580402ba4270d47cdba02248f1e53a56"
+  integrity sha512-217qx0PTxNuBXc3ukeYAQDnWCYaSF39MthymNbVstQ0FtOvOHsh2CROcWfvRfFWiIzyHFwvgEruwBruWQHsnxQ==
+  dependencies:
+    "@animxyz/core" "^0.4.0"
+    clsx "^1.1.1"
+    vue-functional-data-merge "^3.1.0"
+
 "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.12.11":
   version "7.12.11"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.11.tgz#f4ad435aa263db935b8f10f2c552d23fb716a63f"
@@ -2589,6 +2603,11 @@ clone-deep@^4.0.1:
     is-plain-object "^2.0.4"
     kind-of "^6.0.2"
     shallow-clone "^3.0.0"
+
+clsx@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/clsx/-/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
+  integrity sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
 
 co@^4.6.0:
   version "4.6.0"
@@ -8933,6 +8952,11 @@ vue-draggable-resizable@^2.2.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/vue-draggable-resizable/-/vue-draggable-resizable-2.3.0.tgz#94c433ca748bc1a4d0959ba1c5c0e1c3536cee5b"
   integrity sha512-77CLRj1TPwB30pwsjOf3pkd1UzYanCdKXbqhILJ0Oo5QQl50lvBfyQCXxMFzwWwTc3sbBbQH3FfWSV+BkoSElA==
+
+vue-functional-data-merge@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.npmjs.org/vue-functional-data-merge/-/vue-functional-data-merge-3.1.0.tgz#08a7797583b7f35680587f8a1d51d729aa1dc657"
+  integrity sha512-leT4kdJVQyeZNY1kmnS1xiUlQ9z1B/kdBFCILIjYYQDqZgLqCLa0UhjSSeRX6c3mUe6U5qYeM8LrEqkHJ1B4LA==
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"

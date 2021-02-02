@@ -9,6 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@animxyz/vue": "^0.4.0",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6"
   },
