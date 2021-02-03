@@ -1,7 +1,7 @@
 <template>
-  <div class="py-32">
+  <Section>
+    <h2 class="title">Journey</h2>
     <div class="flex flex-col grid-cols-9 p-2 mx-auto md:grid">
-      <!--  -->
       <div
         v-for="(e, i) in events"
         :key="i"
@@ -72,7 +72,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </Section>
 </template>
 
 <script>

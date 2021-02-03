@@ -22,8 +22,6 @@
     "autoprefixer": "9",
     "fibers": "^5.0.0",
     "postcss": "7",
-    "sass": "^1.32.0",
-    "sass-loader": "^10.1.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }
