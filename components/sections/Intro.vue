@@ -1,7 +1,7 @@
 <template>
   <XyzTransition :appear-visible="{threshold: 0.5}" duration="auto">
     <div
-      class="relative bg-gray-300 dark:bg-gray-700 p-10 -mt-10 rounded-3xl sm:text-lg lg:text-xl text-justify mb-12"
+      class="relative bg-gray-300 dark:bg-gray-900 p-10 -mt-10 rounded-3xl sm:text-lg lg:text-xl text-justify mb-12"
     >
       <p class="xyz-nested" xyz="fade duration-10">
         I am a French student who likes to program on his free time since 2018,

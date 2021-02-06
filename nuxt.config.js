@@ -19,7 +19,17 @@ export default {
         rel: "stylesheet",
         href: "https://rsms.me/inter/inter.css"
       }
-    ]
+    ],
+    script: [
+      {
+        hid: "websitecarbon",
+        src: "https://unpkg.com/website-carbon-badges@1.1.1/b.min.js",
+        defer: true
+      }
+    ],
+    htmlAttrs: {
+      lang: "en"
+    }
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)

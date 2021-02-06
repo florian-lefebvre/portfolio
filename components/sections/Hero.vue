@@ -40,7 +40,7 @@
       </div>
       <div
         class="w-64 h-64 mx-auto bg-gray-900 rounded-full shadow-xl dark:bg-white xyz-nested"
-        xyz="fade small-5 duration-10 delay-5"
+        xyz="fade small-5 duration-8 delay-10 ease-out-back"
       ></div>
     </div>
   </XyzTransition>

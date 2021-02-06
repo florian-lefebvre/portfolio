@@ -1,13 +1,6 @@
 <template>
   <Section>
-    <h2 class="title xyz-nested" xyz="fade left-1 stagger-1">
-      <div
-        v-for="(e, i) in 'Projects'.split('')"
-        :key="i"
-        class="xyz-nested"
-        v-html="e"
-      ></div>
-    </h2>
+    <Title title="Projects" />
     <div class="grid gap-6 mb-12 lg:grid-cols-2 2xl:grid-cols-3">
       <div
         v-for="(e, i) in projects"
@@ -15,10 +8,10 @@
         xyz="delay-8 small-1 fade stagger-4"
         class="flex flex-col p-6 transition-transform transform bg-gray-300 cursor-default dark:bg-gray-900 rounded-2xl md:hover:scale-105 xyz-nested"
       >
-        <div class="mb-2 text-2xl font-semibold">
+        <div class="mb-2 text-xl md:text-2xl font-semibold">
           {{ e.title }}
         </div>
-        <div class="mb-8 text-lg text-gray-700 dark:text-gray-300">
+        <div class="mb-8 md:text-lg text-gray-700 dark:text-gray-300 text-justify">
           {{ e.content }}
         </div>
         <div class="mt-auto space-y-3">
@@ -37,7 +30,7 @@
             <div
               v-for="(t, i2) in e.tags"
               :key="i2"
-              class="px-2 py-1 mb-1 mr-2 font-medium text-gray-800 transition-colors bg-gray-400 bg-opacity-40 dark:bg-opacity-100 dark:text-gray-400 dark:bg-gray-800 rounded-xl"
+              class="px-2 py-1 mb-1 mr-2 text-sm font-medium text-gray-800 transition-colors bg-gray-400 bg-opacity-40 dark:bg-opacity-100 dark:text-gray-400 dark:bg-gray-800 rounded-xl"
             >
               {{ t }}
             </div>
@@ -54,19 +47,8 @@ export default {
     return {
       projects: [
         {
-          title: "OHF31 website",
-          content: "My first real project.",
-          links: [
-            {
-              text: "Website",
-              url: "https://www.ohf31.fr"
-            }
-          ],
-          tags: ["PHP", "Bootstrap", "jQuery", "AOS", "video.js", "Scss"]
-        },
-        {
           title: "My portfolio",
-          content: "lorem ipsum",
+          content: "It's the showcase of my knowledge, I'm really proud of it.",
           links: [
             {
               text: "Website",
@@ -81,7 +63,7 @@ export default {
         },
         {
           title: "yNotes app",
-          content: "aaa",
+          content: "yNotes is a mobile application that retrieves data from the student life services used by most French schools. It reshapes and adds many features. I help the developers for the UI and UX design of the application.",
           links: [
             {
               text: "Website",
@@ -96,7 +78,7 @@ export default {
         },
         {
           title: "yNotes website",
-          content: "aaa",
+          content: "At yNotes, we needed a support center and a more consistent website, so I remade everything. This allowed me to discover animation with AnimXYZ and learn how to make a more modern design.",
           links: [
             {
               text: "Website",
@@ -110,31 +92,23 @@ export default {
           tags: ["Vue", "Nuxt", "Tailwind CSS", "AnimXYZ", "Github Pages", "Js"]
         },
         {
-          title: "GLutton Runner",
-          content: "aaa",
-          links: [
-            {
-              text: "Play Store",
-              url:
-                "https://play.google.com/store/apps/details?id=com.GirofleStudio.GluttonRunner"
-            }
-          ],
-          tags: ["Unreal Engine 4", "Mobile"]
-        },
-        {
           title: "shortcuts-app",
-          content: "aaa",
+          content: "I needed an application that would have shortcuts the same way Opera does, in the sidebar. So I coded it using Electron.js. It was really fun to do.",
           links: [
             {
               text: "Github",
               url: "https://github.com/florian-lefebvre/shortcuts-app"
+            },
+            {
+              text: "Releases",
+              url: "https://github.com/florian-lefebvre/shortcuts-app/releases"
             }
           ],
           tags: ["Electron", "Vue", "Tailwind CSS"]
         },
         {
           title: "vertical timeline component",
-          content: "aaa",
+          content: "The CSS grid timeline component of my journey through this portfolio can also be found on tailwindcomponents.com.",
           links: [
             {
               text: "View",
@@ -145,7 +119,7 @@ export default {
         },
         {
           title: "Instagram chat clone with Tailwind CSS",
-          content: "aaa",
+          content: "I did this for a school project. The repository includes examples such as gifs and audio messages.",
           links: [
             {
               text: "Github",
@@ -155,8 +129,20 @@ export default {
           tags: ["Tailwind CSS", "CSS grid"]
         },
         {
+          title: "OHF31 website",
+          content:
+            "This is the first website I've made. I've learned a lot since then, but I'm still proud of what I've achieved.",
+          links: [
+            {
+              text: "Website",
+              url: "https://www.ohf31.fr"
+            }
+          ],
+          tags: ["PHP", "Bootstrap", "jQuery", "AOS", "video.js", "Scss"]
+        },
+        {
           title: "Barcode generator",
-          content: "aaa",
+          content: "The name speaks for itself. I made this very small site for a friend of mine from high school.",
           links: [
             {
               text: "Website",
@@ -168,6 +154,18 @@ export default {
             }
           ],
           tags: ["Bootstrap", "Js", "Github Pages"]
+        },
+        {
+          title: "Glutton Runner",
+          content: "The first (and only) game I coded using UE4 was Glutton Runner, an endless game. Unfortunately, this engine was not adapted to my needs, so I paused the project.",
+          links: [
+            {
+              text: "Play Store",
+              url:
+                "https://play.google.com/store/apps/details?id=com.GirofleStudio.GluttonRunner"
+            }
+          ],
+          tags: ["Unreal Engine 4", "Mobile"]
         }
       ]
     };

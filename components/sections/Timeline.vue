@@ -1,16 +1,16 @@
 <template>
   <Section>
-    <h2 class="title">Journey</h2>
+    <Title title="Journey" />
     <div class="flex flex-col grid-cols-9 p-2 mx-auto md:grid">
       <div
         v-for="(e, i) in events"
         :key="i"
         class="flex md:contents"
-        :class="i % 2 === 0 ? 'flex-row-reverse' : null"
+        :class="{ 'flex-row-reverse': i % 2 === 0 }"
       >
         <div
           v-if="i % 2 !== 0"
-          class="relative col-start-5 col-end-6 mr-10 md:mx-auto"
+          class="relative col-start-5 col-end-6 mr-7 md:mx-auto"
         >
           <div class="flex items-center justify-center w-6 h-full">
             <div
@@ -31,18 +31,21 @@
           ></div>
         </div>
         <div
-          class="relative p-4 my-6 transition-transform transform bg-gray-300 dark:bg-gray-700 rounded-xl md:hover:scale-105"
+          xyz="fade down-1 delay-10 stagger-4"
+          :style="`--xyz-index: ${i};`"
+          class="relative p-4 my-6 transition-transform transform bg-gray-300 dark:bg-gray-700 rounded-xl md:hover:scale-105 xyz-nested"
           :class="
             i % 2 === 0
               ? 'col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto'
               : 'col-start-6 col-end-10 mr-auto'
           "
         >
-          <h3
-            class="mb-2 text-lg lg:text-xl font-semibold"
-            v-html="e.title"
-          ></h3>
-          <p class="leading-6 text-justify" v-html="e.content"></p>
+          <h3 class="text-lg lg:text-xl font-semibold" v-html="e.title"></h3>
+          <p
+            v-if="e.content !== ''"
+            class="mt-2 leading-6 text-justify"
+            v-html="e.content"
+          ></p>
           <span
             class="absolute text-sm text-gray-500 -top-5 left-2 whitespace-nowrap dark:text-gray-400"
             v-html="e.date"
@@ -50,7 +53,7 @@
         </div>
         <div
           v-if="i % 2 === 0"
-          class="relative col-start-5 col-end-6 mr-10 md:mx-auto"
+          class="relative col-start-5 col-end-6 mr-7 md:mx-auto"
         >
           <div class="flex items-center justify-center w-6 h-full">
             <div
@@ -87,8 +90,7 @@ export default {
         },
         {
           title: "I publish Glutton Runner on the Play Store",
-          content:
-            "The first (and only) game I coded using UE4 was Glutton Runner, an endless game. Unfortunately, this engine was not adapted to my needs, so I paused the project.",
+          content: "",
           date: "May 2019"
         },
         {
@@ -111,8 +113,7 @@ export default {
         },
         {
           title: "I build my portfolio using Jekyll",
-          content:
-            "I wanted to build my own portfolio because I thought I had enough to show. I wanted to learn something new by the way, so I chose the Jekyll static site generator.",
+          content: "",
           date: "August - September 2020"
         },
         {
@@ -129,33 +130,28 @@ export default {
         },
         {
           title: "I join the yNotes project",
-          content:
-            "yNotes is a mobile application that retrieves data from the student life services used by most French schools. It reshapes and adds many features. I redesigned the website's home page with Tailwind CSS.",
+          content: "",
           date: "October 2020"
         },
         {
           title: "I rework my portfolio using Nuxt and Tailwind CSS",
-          content:
-            "Now that I was familiar with modern technologies, I decided to use them in a real project, my portfolio, as a showcase for what I knew. It was very interesting, especially the use of a headless CMS, @nuxt/content.",
+          content: "",
           date: "November 2020"
         },
         {
           title: "I release shortcuts-app 0.3.0",
-          content:
-            "I needed an application that would have shortcuts the same way Opera does, in the sidebar. So I coded it using Electron.js. It was really fun to do.",
+          content: "",
           date: "December 2020 - January 2021"
         },
         {
           title:
             "I rework the yNotes website using Nuxt, Tailwind CSS and AnimXYZ",
-          content:
-            "We needed a support center and a more consistent website, so I remade everything. This allowed me to discover animation with AnimXYZ and learn how to make a more modern design.",
+          content: "",
           date: "January 2021"
         },
         {
           title: "I rework my portfolio once again",
-          content:
-            "I was not satisfied with my portfolio, so I decided to redo it, but in a clearer, simpler way. I focus more on the content that really matters.",
+          content: "",
           date: "February 2021"
         }
       ]

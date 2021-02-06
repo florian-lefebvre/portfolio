@@ -11,7 +11,7 @@
   @apply mb-6 text-5xl font-extrabold leading-8 tracking-tight sm:text-6xl md:text-7xl inline-flex items-center;
 }
 ::-webkit-scrollbar {
-  @apply w-3;
+  @apply w-2;
 }
 ::-webkit-scrollbar-thumb {
   @apply rounded-full border-2 border-gray-500 bg-gray-500 transition-colors;

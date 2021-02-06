@@ -6,14 +6,9 @@
       <Intro />
       <Skillset />
       <Projects />
-      <div class="space-y-8">
-        <h2 class="title">Education</h2>
-        <Timeline />
-        <div>
-          <h2 class="title">Music</h2>
-        </div>
-        <h2 class="title">Contact</h2>
-      </div>
+      <Education />
+      <Timeline />
+      <Music />
     </div>
     <Footer />
   </div>

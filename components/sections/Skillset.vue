@@ -1,23 +1,13 @@
 <template>
   <Section>
-    <h2
-      class="title xyz-nested"
-      xyz="fade left-1 stagger-1"
-    >
-      <div
-        v-for="(e, i) in 'Skillset'.split('')"
-        :key="i"
-        class="xyz-nested"
-        v-html="e"
-      ></div>
-    </h2>
+    <Title title="Skillset" />
     <div
       class="grid grid-cols-2 gap-6 mb-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 2xl:grid-cols-6"
     >
       <div
         v-for="(e, i) in skills"
         :key="i"
-        xyz="delay-8 small fade stagger-2"
+        xyz="delay-8 small fade stagger-2 ease-out-back"
         class="flex justify-center px-6 py-8 transition-transform transform bg-gray-300 cursor-default md:py-10 dark:bg-gray-900 rounded-2xl md:hover:scale-105 xyz-nested"
       >
         <div class="flex flex-col items-center space-y-2">
@@ -44,7 +34,7 @@
         <div
           v-for="(e, i) in next"
           :key="i"
-          xyz="delay-30 small-1 fade stagger-2"
+          xyz="delay-30 small-1 fade stagger-2 ease-out-back"
           class="flex justify-center px-4 py-6 text-gray-300 transition-all transform bg-gray-500 cursor-default md:py-6 dark:bg-gray-700 rounded-2xl md:hover:scale-105 dark:text-gray-400 hover:text-gray-200 dark:hover:text-gray-300 xyz-nested"
         >
           <div class="flex flex-col items-center space-y-2">
