@@ -2,11 +2,12 @@
   <Section>
     <Title title="Education" />
     <div class="gap-6 mb-10 grid">
-      <div
+      <HoverableAnimated
         v-for="(s, i) in education"
         :key="i"
         xyz="delay-8 small-1 fade stagger-6"
-        class="bg-gray-300 dark:bg-gray-900 p-8 rounded-xl transition-transform transform md:hover:scale-105 xyz-nested"
+        class="bg-gray-300 dark:bg-gray-900 p-8 rounded-xl transition-transform transform"
+        endClass="md:hover:scale-105"
       >
         <div>
           <div
@@ -20,7 +21,9 @@
         </div>
         <div class="grid lg:grid-cols-2 gap-4">
           <div>
-            <div class="text-xl lg:text-2xl font-medium mb-2">Diplomas & curriculum</div>
+            <div class="text-xl lg:text-2xl font-medium mb-2">
+              Diplomas & curriculum
+            </div>
             <div class="space-y-2 lg:space-y-3">
               <div
                 v-for="(e, i1) in s.elements"
@@ -57,7 +60,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </HoverableAnimated>
     </div>
   </Section>
 </template>

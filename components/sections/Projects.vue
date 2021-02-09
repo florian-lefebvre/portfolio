@@ -2,16 +2,19 @@
   <Section>
     <Title title="Projects" />
     <div class="grid gap-6 mb-12 lg:grid-cols-2 2xl:grid-cols-3">
-      <div
+      <HoverableAnimated
         v-for="(e, i) in projects"
         :key="i"
         xyz="delay-8 small-1 fade stagger-4"
-        class="flex flex-col p-6 transition-transform transform bg-gray-300 cursor-default dark:bg-gray-900 rounded-2xl md:hover:scale-105 xyz-nested"
+        class="flex flex-col p-6 transition-transform transform bg-gray-300 cursor-default dark:bg-gray-900 rounded-2xl"
+        endClass="md:hover:scale-105"
       >
         <div class="mb-2 text-xl md:text-2xl font-semibold">
           {{ e.title }}
         </div>
-        <div class="mb-8 md:text-lg text-gray-700 dark:text-gray-300 text-justify">
+        <div
+          class="mb-8 md:text-lg text-gray-700 dark:text-gray-300 text-justify"
+        >
           {{ e.content }}
         </div>
         <div class="mt-auto space-y-3">
@@ -36,7 +39,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </HoverableAnimated>
     </div>
   </Section>
 </template>
@@ -63,7 +66,8 @@ export default {
         },
         {
           title: "yNotes app",
-          content: "yNotes is a mobile application that retrieves data from the student life services used by most French schools. It reshapes and adds many features. I help the developers for the UI and UX design of the application.",
+          content:
+            "yNotes is a mobile application that retrieves data from the student life services used by most French schools. It reshapes and adds many features. I help the developers for the UI and UX design of the application.",
           links: [
             {
               text: "Website",
@@ -78,7 +82,8 @@ export default {
         },
         {
           title: "yNotes website",
-          content: "At yNotes, we needed a support center and a more consistent website, so I remade everything. This allowed me to discover animation with AnimXYZ and learn how to make a more modern design.",
+          content:
+            "At yNotes, we needed a support center and a more consistent website, so I remade everything. This allowed me to discover animation with AnimXYZ and learn how to make a more modern design.",
           links: [
             {
               text: "Website",
@@ -93,7 +98,8 @@ export default {
         },
         {
           title: "shortcuts-app",
-          content: "I needed an application that would have shortcuts the same way Opera does, in the sidebar. So I coded it using Electron.js. It was really fun to do.",
+          content:
+            "I needed an application that would have shortcuts the same way Opera does, in the sidebar. So I coded it using Electron.js. It was really fun to do.",
           links: [
             {
               text: "Github",
@@ -107,8 +113,9 @@ export default {
           tags: ["Electron", "Vue", "Tailwind CSS"]
         },
         {
-          title: "vertical timeline component",
-          content: "The CSS grid timeline component of my journey through this portfolio can also be found on tailwindcomponents.com.",
+          title: "Vertical timeline component",
+          content:
+            "The CSS grid timeline component of my journey through this portfolio can also be found on tailwindcomponents.com.",
           links: [
             {
               text: "View",
@@ -119,7 +126,8 @@ export default {
         },
         {
           title: "Instagram chat clone with Tailwind CSS",
-          content: "I did this for a school project. The repository includes examples such as gifs and audio messages.",
+          content:
+            "I did this for a school project. The repository includes examples such as gifs and audio messages.",
           links: [
             {
               text: "Github",
@@ -142,7 +150,8 @@ export default {
         },
         {
           title: "Barcode generator",
-          content: "The name speaks for itself. I made this very small site for a friend of mine from high school.",
+          content:
+            "The name speaks for itself. I made this very small site for a friend of mine from high school.",
           links: [
             {
               text: "Website",
@@ -157,7 +166,8 @@ export default {
         },
         {
           title: "Glutton Runner",
-          content: "The first (and only) game I coded using UE4 was Glutton Runner, an endless game. Unfortunately, this engine was not adapted to my needs, so I paused the project.",
+          content:
+            "The first (and only) game I coded using UE4 was Glutton Runner, an endless game. Unfortunately, this engine was not adapted to my needs, so I paused the project.",
           links: [
             {
               text: "Play Store",

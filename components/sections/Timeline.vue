@@ -30,27 +30,33 @@
             class="absolute w-6 h-6 -mt-3 bg-gray-500 border-4 border-gray-200 rounded-full top-1/2 dark:bg-gray-300 dark:border-gray-800"
           ></div>
         </div>
-        <div
-          xyz="fade down-1 delay-10 stagger-4"
+        <XyzTransition
+          :appear-visible="{ threshold: 0.5 }"
+          duration="auto"
           :style="`--xyz-index: ${i};`"
-          class="relative p-4 my-6 transition-transform transform bg-gray-300 dark:bg-gray-700 rounded-xl md:hover:scale-105 xyz-nested"
-          :class="
-            i % 2 === 0
-              ? 'col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto'
-              : 'col-start-6 col-end-10 mr-auto'
-          "
         >
-          <h3 class="text-lg lg:text-xl font-semibold" v-html="e.title"></h3>
-          <p
-            v-if="e.content !== ''"
-            class="mt-2 leading-6 text-justify"
-            v-html="e.content"
-          ></p>
-          <span
-            class="absolute text-sm text-gray-500 -top-5 left-2 whitespace-nowrap dark:text-gray-400"
-            v-html="e.date"
-          ></span>
-        </div>
+          <HoverableAnimated
+            xyz="fade down-1 stagger-4"
+            class="relative p-4 my-6 transition-transform transform bg-gray-300 dark:bg-gray-700 rounded-xl"
+            endClass="md:hover:scale-105"
+            :class="
+              i % 2 === 0
+                ? 'col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto'
+                : 'col-start-6 col-end-10 mr-auto'
+            "
+          >
+            <h3 class="text-lg lg:text-xl font-semibold" v-html="e.title"></h3>
+            <p
+              v-if="e.content !== ''"
+              class="mt-2 leading-6 text-justify"
+              v-html="e.content"
+            ></p>
+            <span
+              class="absolute text-sm text-gray-500 -top-5 left-2 whitespace-nowrap dark:text-gray-400"
+              v-html="e.date"
+            ></span>
+          </HoverableAnimated>
+        </XyzTransition>
         <div
           v-if="i % 2 === 0"
           class="relative col-start-5 col-end-6 mr-7 md:mx-auto"
