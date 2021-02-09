@@ -8,14 +8,11 @@
         v-for="(e, i) in skills"
         :key="i"
         xyz="delay-8 small fade stagger-2 ease-out-back"
-        class="flex justify-center px-6 py-8 transition-transform transform bg-gray-300 cursor-default md:py-10 dark:bg-gray-900 rounded-2xl"
-        endClass="md:hover:scale-105"
+        class="flex justify-center px-6 py-8 transition-all transform cursor-default md:py-10 rounded-2xl card-color"
+        endClass="md:hover:-translate-y-2"
       >
         <div class="flex flex-col items-center space-y-2">
-          <component
-            :is="e.icon"
-            class="w-8 h-8 text-gray-600 fill-current dark:text-gray-400"
-          ></component>
+          <component :is="e.icon" class="w-8 h-8 fill-current"></component>
           <div class="text-lg font-semibold text-center">
             {{ e.name }}
           </div>
@@ -36,8 +33,8 @@
           v-for="(e, i) in next"
           :key="i"
           xyz="delay-30 small-1 fade stagger-2 ease-out-back"
-          class="flex justify-center px-4 py-6 text-gray-300 transition-all transform bg-gray-500 cursor-default md:py-6 dark:bg-gray-700 rounded-2xl dark:text-gray-400 hover:text-gray-200 dark:hover:text-gray-300"
-          endClass="md:hover:scale-105"
+          class="flex justify-center px-4 py-6 transition-all transform cursor-default md:py-6 rounded-2xl card-color"
+          endClass="md:hover:-translate-y-2"
         >
           <div class="flex flex-col items-center space-y-2">
             <component :is="e.icon" class="w-8 h-8 fill-current"></component>
@@ -48,6 +45,12 @@
     </div>
   </Section>
 </template>
+
+<style scoped>
+.card-color {
+  @apply text-gray-600 bg-gray-300 dark:bg-gray-900 dark:text-gray-400 dark:hover:text-gray-200 hover:text-gray-800;
+}
+</style>
 
 <script>
 import {

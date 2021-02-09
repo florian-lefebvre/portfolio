@@ -7,7 +7,7 @@
         :key="i"
         xyz="delay-8 small-1 fade stagger-4"
         class="flex flex-col p-6 transition-transform transform bg-gray-300 cursor-default dark:bg-gray-900 rounded-2xl"
-        endClass="md:hover:scale-105"
+        endClass="md:hover:-translate-y-2"
       >
         <div class="mb-2 text-xl md:text-2xl font-semibold">
           {{ e.title }}

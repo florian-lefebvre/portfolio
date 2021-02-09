@@ -36,9 +36,9 @@
           :style="`--xyz-index: ${i};`"
         >
           <HoverableAnimated
-            xyz="fade down-1 stagger-4"
+            xyz="fade down-1 stagger-4 duration-8"
             class="relative p-4 my-6 transition-transform transform bg-gray-300 dark:bg-gray-700 rounded-xl"
-            endClass="md:hover:scale-105"
+            endClass="md:hover:-translate-y-2"
             :class="
               i % 2 === 0
                 ? 'col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto'
