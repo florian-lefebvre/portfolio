@@ -49,7 +49,6 @@ export default {
     "@nuxtjs/tailwindcss",
     // https://github.com/teamnovu/nuxt-breaky
     // "@teamnovu/nuxt-breaky"
-    // "@teamnovu/nuxt-breaky": "^1.2.2",
   ],
 
   // tailwindcss: {
@@ -65,5 +64,9 @@ export default {
   // https://color-mode.nuxtjs.org/
   colorMode: {
     classSuffix: ""
+  },
+
+  generate: {
+    fallback: "404.html"
   }
 };
