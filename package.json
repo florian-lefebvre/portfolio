@@ -6,7 +6,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "generate:modern": "nuxt generate --modern"
   },
   "dependencies": {
     "@animxyz/vue": "^0.4.0",
