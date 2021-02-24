@@ -11,7 +11,7 @@ export default {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" }
+      { hid: "description", name: "description", content: "I am a French student who likes to program on his free time since 2018, when I discovered programming with Unreal Engine 4. In December 2019, I started web development and since then, I can't stop: Tailwind CSS, Vue.js, Laravel... I have already done several projects but I still have a lot to learn. Feel free to check my Github page and contact me!" }
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
@@ -48,12 +48,13 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
     // https://github.com/teamnovu/nuxt-breaky
-    "@teamnovu/nuxt-breaky"
+    // "@teamnovu/nuxt-breaky"
+    // "@teamnovu/nuxt-breaky": "^1.2.2",
   ],
 
-  tailwindcss: {
-    exposeConfig: true
-  },
+  // tailwindcss: {
+  //   exposeConfig: true
+  // },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [],

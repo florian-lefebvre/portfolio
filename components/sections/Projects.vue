@@ -2,7 +2,7 @@
   <Section>
     <Title title="Projects" />
     <div class="grid gap-6 mb-12 lg:grid-cols-2 2xl:grid-cols-3">
-      <HoverableAnimated
+      <XyzConflict
         v-for="(e, i) in projects"
         :key="i"
         xyz="delay-8 small-1 fade stagger-4"
@@ -39,7 +39,7 @@
             </div>
           </div>
         </div>
-      </HoverableAnimated>
+      </XyzConflict>
     </div>
   </Section>
 </template>

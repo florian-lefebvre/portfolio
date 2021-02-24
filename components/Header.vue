@@ -11,6 +11,7 @@
         <HeaderButton
           link="mailto:florian.lefebvre3184@orange.fr"
           :external="true"
+          label="Send me an email"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -30,6 +31,7 @@
         <HeaderButton
           link="https://github.com/florian-lefebvre"
           :external="true"
+          label="Check out my Github"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -46,6 +48,7 @@
         <HeaderButton
           link="https://www.linkedin.com/in/florian-lefebvre31/"
           :external="true"
+          label="Check out my LinkedIn"
         >
           <svg
             fill="currentColor"

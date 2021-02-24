@@ -11,7 +11,9 @@ export default {
     let el = this.$refs.el;
     el.addEventListener("animationend", () => {
       el.classList.remove("xyz-nested");
-      el.classList.add(this.$props.endClass);
+      setTimeout(() => {
+        el.classList.add(this.$props.endClass);
+      }, 0);
     });
   }
 };

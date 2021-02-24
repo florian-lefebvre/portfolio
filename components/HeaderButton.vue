@@ -5,7 +5,8 @@
     :target="external ? '_blank' : null"
     :rel="external ? 'noopener noreferrer' : null"
     @click="!external ? $emit('click') : null"
-    class="hover:bg-gray-300 dark:hover:bg-gray-600 rounded-full p-1 transition duration-150 ease-in-out focus:outline-none"
+    :aria-label="label"
+    class="hover:bg-gray-200 dark:hover:bg-gray-600 rounded-full p-1 transition duration-150 ease-in-out focus:outline-none"
   >
     <slot />
   </component>
@@ -15,7 +16,8 @@
 export default {
   props: {
     external: Boolean,
-    link: String
+    link: String,
+    label: String
   }
 };
 </script>

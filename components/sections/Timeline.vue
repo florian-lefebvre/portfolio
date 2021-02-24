@@ -35,7 +35,7 @@
           duration="auto"
           :style="`--xyz-index: ${i};`"
         >
-          <HoverableAnimated
+          <XyzConflict
             xyz="fade down-1 stagger-4 duration-8"
             class="relative p-4 my-6 transition-transform transform bg-gray-300 dark:bg-gray-700 rounded-xl"
             endClass="md:hover:-translate-y-2"
@@ -55,7 +55,7 @@
               class="absolute text-sm text-gray-500 -top-5 left-2 whitespace-nowrap dark:text-gray-400"
               v-html="e.date"
             ></span>
-          </HoverableAnimated>
+          </XyzConflict>
         </XyzTransition>
         <div
           v-if="i % 2 === 0"

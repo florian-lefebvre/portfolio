@@ -1,10 +1,10 @@
 <template>
   <Section>
-    <Title title="Skillset" />
+    <Title title="Techs..." />
     <div
       class="grid grid-cols-2 gap-6 mb-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 2xl:grid-cols-6"
     >
-      <HoverableAnimated
+      <XyzConflict
         v-for="(e, i) in skills"
         :key="i"
         xyz="delay-8 small fade stagger-2 ease-out-back"
@@ -17,19 +17,19 @@
             {{ e.name }}
           </div>
         </div>
-      </HoverableAnimated>
+      </XyzConflict>
     </div>
     <div>
       <h3
         class="mb-6 text-4xl font-extrabold leading-8 tracking-tight xyz-nested"
         xyz="fade left-1 delay-25 duration-10"
       >
-        Next technologies on my list
+        ...and what's next
       </h3>
       <div
         class="grid grid-cols-2 gap-6 mb-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"
       >
-        <HoverableAnimated
+        <XyzConflict
           v-for="(e, i) in next"
           :key="i"
           xyz="delay-30 small-1 fade stagger-2 ease-out-back"
@@ -40,7 +40,7 @@
             <component :is="e.icon" class="w-8 h-8 fill-current"></component>
             <div class="font-light text-center">{{ e.name }}</div>
           </div>
-        </HoverableAnimated>
+        </XyzConflict>
       </div>
     </div>
   </Section>
@@ -61,8 +61,6 @@ import {
   NuxtJsIcon,
   TailwindCssIcon,
   GitIcon,
-  PhpIcon,
-  SassIcon,
   ElectronIcon,
   LaravelIcon,
   GraphQlIcon,
@@ -71,7 +69,8 @@ import {
   TypeScriptIcon,
   SocketIoIcon,
   FigmaIcon,
-  JestIcon
+  JestIcon,
+  StrapiIcon
 } from "vue-simple-icons";
 export default {
   components: {
@@ -82,8 +81,6 @@ export default {
     NuxtJsIcon,
     TailwindCssIcon,
     GitIcon,
-    PhpIcon,
-    SassIcon,
     ElectronIcon,
     LaravelIcon,
     GraphQlIcon,
@@ -92,7 +89,8 @@ export default {
     TypeScriptIcon,
     SocketIoIcon,
     FigmaIcon,
-    JestIcon
+    JestIcon,
+    StrapiIcon
   },
   data() {
     return {
@@ -128,14 +126,6 @@ export default {
         {
           name: "Git",
           icon: "GitIcon"
-        },
-        {
-          name: "PHP",
-          icon: "PhpIcon"
-        },
-        {
-          name: "SCSS",
-          icon: "SassIcon"
         }
       ],
       next: [
@@ -144,12 +134,16 @@ export default {
           icon: "FigmaIcon"
         },
         {
-          name: "Laravel",
-          icon: "LaravelIcon"
+          name: "Strapi",
+          icon: "StrapiIcon"
         },
         {
           name: "GraphQL",
           icon: "GraphQlIcon"
+        },
+        {
+          name: "Flutter",
+          icon: "FlutterIcon"
         },
         {
           name: "Typescript",
@@ -166,10 +160,6 @@ export default {
         {
           name: "Jest",
           icon: "JestIcon"
-        },
-        {
-          name: "Flutter",
-          icon: "FlutterIcon"
         }
       ]
     };

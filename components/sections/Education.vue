@@ -2,12 +2,11 @@
   <Section>
     <Title title="Education" />
     <div class="gap-6 mb-10 grid">
-      <HoverableAnimated
+      <div
         v-for="(s, i) in education"
         :key="i"
         xyz="delay-8 small-1 fade stagger-6"
-        class="bg-gray-300 dark:bg-gray-900 p-8 rounded-xl transition-transform transform"
-        endClass="md:hover:-translate-y-2"
+        class="bg-gray-300 dark:bg-gray-900 p-8 rounded-xl transition-transform transform xyz-nested"
       >
         <div>
           <div
@@ -60,7 +59,7 @@
             </div>
           </div>
         </div>
-      </HoverableAnimated>
+      </div>
     </div>
   </Section>
 </template>
