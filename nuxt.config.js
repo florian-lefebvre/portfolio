@@ -20,13 +20,6 @@ export default {
         href: "https://rsms.me/inter/inter.css"
       }
     ],
-    script: [
-      {
-        hid: "websitecarbon",
-        src: "https://unpkg.com/website-carbon-badges@1.1.1/b.min.js",
-        defer: true
-      }
-    ],
     htmlAttrs: {
       lang: "en"
     }

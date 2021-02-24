@@ -38,10 +38,14 @@
           Web developer since 2019
         </div>
       </div>
-      <div
-        class="w-64 h-64 mx-auto bg-gray-900 rounded-full shadow-xl dark:bg-white xyz-nested"
+      <img
+        class="w-72 h-72 mx-auto rounded-full shadow-xl xyz-nested object-cover bg-gray-400 bg-opacity-60 dark:bg-gray-200 dark:bg-opacity-100"
+        src="@/assets/pp.png"
+        width="288"
+        height="288"
+        alt="Profile picture"
         xyz="fade small-5 duration-8 delay-10 ease-out-back"
-      ></div>
+      />
     </div>
   </XyzTransition>
 </template>
