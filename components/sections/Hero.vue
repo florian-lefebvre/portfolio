@@ -39,8 +39,8 @@
         </div>
       </div>
       <img
-        class="w-72 h-72 mx-auto rounded-full shadow-xl xyz-nested object-cover bg-gray-400 bg-opacity-60 dark:bg-gray-200 dark:bg-opacity-100"
-        src="@/assets/pp.png"
+        class="w-72 h-72 mx-auto rounded-full shadow-xl xyz-nested object-cover"
+        src="@/assets/pp.jpg"
         width="288"
         height="288"
         alt="Profile picture"
