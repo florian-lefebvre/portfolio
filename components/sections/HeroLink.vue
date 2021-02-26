@@ -6,7 +6,7 @@
     :rel="external ? 'noopener noreferrer' : null"
     @click="!external ? $emit('click') : null"
     :aria-label="label"
-    class="hover:bg-gray-200 dark:hover:bg-gray-600 rounded-full p-2 transition-colors duration-150 ease-in-out focus:outline-none"
+    class="opacity-75 hover:opacity-100 rounded-full p-2 transition-opacity duration-150 ease-in-out focus:outline-none xyz-nested wrapper"
   >
     <slot />
   </component>
@@ -22,4 +22,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.wrapper svg {
+  @apply w-6 h-6 md:w-10 md:h-10;
+}
+</style>
