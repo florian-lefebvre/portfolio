@@ -112,9 +112,7 @@ export default {
   data() {
     return {
       profile: process.env.profile
-    }
+    };
   }
 };
 </script>
-
-<style></style>

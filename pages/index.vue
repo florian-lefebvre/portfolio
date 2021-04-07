@@ -2,13 +2,13 @@
   <div>
     <Header />
     <div class="container px-4 mx-auto">
-      <Hero />
-      <Intro />
-      <Skillset />
-      <Projects />
-      <Education />
-      <Timeline />
-      <Music />
+      <SectionsHero />
+      <SectionsIntro />
+      <SectionsSkillset />
+      <SectionsProjects />
+      <SectionsEducation />
+      <SectionsTimeline />
+      <SectionsMusic />
     </div>
     <Footer />
   </div>
