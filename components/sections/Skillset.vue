@@ -13,7 +13,7 @@
       >
         <div class="flex flex-col items-center space-y-2">
           <component :is="e.icon" class="w-8 h-8 fill-current"></component>
-          <div class="text-lg font-semibold text-center">
+          <div class="text-lg font-semibold text-center mt-auto">
             {{ e.name }}
           </div>
         </div>
@@ -38,7 +38,7 @@
         >
           <div class="flex flex-col items-center space-y-2">
             <component :is="e.icon" class="w-8 h-8 fill-current"></component>
-            <div class="font-light text-center">{{ e.name }}</div>
+            <div class="font-light text-center mt-auto">{{ e.name }}</div>
           </div>
         </XyzConflict>
       </div>
@@ -124,6 +124,14 @@ export default {
           icon: "ElectronIcon"
         },
         {
+          name: "Strapi",
+          icon: "StrapiIcon"
+        },
+        {
+          name: "GraphQL",
+          icon: "GraphQlIcon"
+        },
+        {
           name: "Git",
           icon: "GitIcon"
         }
@@ -134,12 +142,12 @@ export default {
           icon: "FigmaIcon"
         },
         {
-          name: "Strapi",
-          icon: "StrapiIcon"
+          name: "Laravel",
+          icon: "LaravelIcon"
         },
         {
-          name: "GraphQL",
-          icon: "GraphQlIcon"
+          name: "Supabase",
+          icon: ""
         },
         {
           name: "Flutter",

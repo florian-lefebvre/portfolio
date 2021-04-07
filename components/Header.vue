@@ -19,7 +19,7 @@
           xyz="delay-25 fade small-1 duration-8"
         >
           <HeaderButton
-            link="mailto:florian.lefebvre3184@orange.fr"
+            :link="`mailto:${profile.email}`"
             :external="true"
             label="Send me an email"
           >
@@ -39,7 +39,7 @@
             </svg>
           </HeaderButton>
           <HeaderButton
-            link="https://github.com/florian-lefebvre"
+            :link="profile.github"
             :external="true"
             label="Check out my Github"
           >
@@ -56,7 +56,7 @@
             </svg>
           </HeaderButton>
           <HeaderButton
-            link="https://www.linkedin.com/in/florian-lefebvre31/"
+            :link="profile.linkedin"
             :external="true"
             label="Check out my LinkedIn"
           >
@@ -82,6 +82,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      profile: process.env.profile
+    };
+  },
   methods: {
     toggle() {
       console.log("toggle");

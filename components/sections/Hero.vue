@@ -42,7 +42,7 @@
           xyz="fade delay-20 stagger-5 duration-20"
         >
           <HeroLink
-            link="mailto:florian.lefebvre3184@orange.fr"
+            :link="`mailto:${profile.email}`"
             :external="true"
             label="Send me an email"
           >
@@ -61,7 +61,7 @@
             </svg>
           </HeroLink>
           <HeroLink
-            link="https://github.com/florian-lefebvre"
+            :link="profile.github"
             :external="true"
             label="Check out my Github"
           >
@@ -77,7 +77,7 @@
             </svg>
           </HeroLink>
           <HeroLink
-            link="https://www.linkedin.com/in/florian-lefebvre31/"
+            :link="profile.linkedin"
             :external="true"
             label="Check out my LinkedIn"
           >
@@ -108,7 +108,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      profile: process.env.profile
+    }
+  }
+};
 </script>
 
 <style></style>
