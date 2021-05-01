@@ -1,6 +1,6 @@
 <template>
   <Section>
-    <Title title="Journey" />
+    <SectionsTitle title="Journey" />
     <div class="flex flex-col grid-cols-9 p-2 mx-auto md:grid">
       <div
         v-for="(e, i) in events"

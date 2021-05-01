@@ -1,6 +1,6 @@
 <template>
   <Section>
-    <Title title="Education" />
+    <SectionsTitle title="Education" />
     <div class="gap-6 mb-10 grid">
       <div
         v-for="(s, i) in education"

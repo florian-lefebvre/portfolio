@@ -1,6 +1,6 @@
 <template>
   <Section>
-    <Title title="Music" />
+    <SectionsTitle title="Music" />
     <div
       xyz="fade delay-6"
       class="bg-gray-300 dark:bg-gray-900 p-10 rounded-3xl sm:text-lg lg:text-xl text-justify xyz-nested"

@@ -1,6 +1,6 @@
 <template>
   <Section>
-    <Title title="Projects" />
+    <SectionsTitle title="Projects" />
     <div class="grid gap-6 mb-12 lg:grid-cols-2 2xl:grid-cols-3">
       <XyzConflict
         v-for="(e, i) in projects"
