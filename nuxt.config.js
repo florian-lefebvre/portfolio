@@ -53,6 +53,7 @@ export default {
   },
   ackee: {
     server: "https://analytics.florian-lefebvre.vercel.app",
-    domainId: "58f547ca-1cf5-4a0f-8013-2a7a74c0af46"
+    domainId: "58f547ca-1cf5-4a0f-8013-2a7a74c0af46",
+    detailed: true
   }
 };
