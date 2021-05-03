@@ -1321,6 +1321,15 @@
     webpack-node-externals "^2.5.2"
     webpackbar "^4.0.0"
 
+"@nuxtjs/ackee@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.npmjs.org/@nuxtjs/ackee/-/ackee-3.0.1.tgz#1b4a3ffb80564507beb2e7ffdfb3eaf94a4d1222"
+  integrity sha512-atcg/yWANMgJfj9bsnSB/3XvjR7SEsSD4A33QMnBCUwolQaeHDCJ1+kHOE5svIag4Lh2+1eesWYElhKKOviziQ==
+  dependencies:
+    ackee-tracker "^5.0.1"
+    consola "^2.15.3"
+    defu "^2.0.4"
+
 "@nuxtjs/color-mode@^2.0.5":
   version "2.0.5"
   resolved "https://registry.npmjs.org/@nuxtjs/color-mode/-/color-mode-2.0.5.tgz#79a5c70384bd245ebc9c6499e9dac5ded301c54b"
@@ -1703,6 +1712,13 @@ accepts@^1.3.5, accepts@~1.3.5:
   dependencies:
     mime-types "~2.1.24"
     negotiator "0.6.2"
+
+ackee-tracker@^5.0.1:
+  version "5.1.0"
+  resolved "https://registry.npmjs.org/ackee-tracker/-/ackee-tracker-5.1.0.tgz#6c41ea5357973347c7c67a26009053bcc0345def"
+  integrity sha512-A7iKkGyUnEXuOzxultQB7hnm4bStYCo1c38MYRRihBfqUP8AImhtZOODb00t9xrXs/BTsg06bz1MKpXeMs9sYw==
+  dependencies:
+    platform "^1.3.6"
 
 acorn-node@^1.6.1:
   version "1.8.2"
@@ -6171,6 +6187,11 @@ pkg-dir@^4.1.0:
   integrity sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==
   dependencies:
     find-up "^4.0.0"
+
+platform@^1.3.6:
+  version "1.3.6"
+  resolved "https://registry.npmjs.org/platform/-/platform-1.3.6.tgz#48b4ce983164b209c2d45a107adb31f473a6e7a7"
+  integrity sha512-fnWVljUchTro6RiCFvCXBbNhJc2NijN7oIQxbwsyL0buWJPG85v81ehlHI9fXrJsMNgTofEoWIQeClKpgxFLrg==
 
 pnp-webpack-plugin@^1.6.4:
   version "1.6.4"

@@ -37,7 +37,9 @@ export default {
     // https://color-mode.nuxtjs.org/
     "@nuxtjs/color-mode",
     // https://go.nuxtjs.dev/tailwindcss
-    "@nuxtjs/tailwindcss"
+    "@nuxtjs/tailwindcss",
+    // https://ackee.nuxtjs.org/
+    "@nuxtjs/ackee"
   ],
   tailwindcss: {
     jit: true,
@@ -48,5 +50,9 @@ export default {
   },
   generate: {
     fallback: "404.html"
+  },
+  ackee: {
+    server: "https://analytics.florian-lefebvre.vercel.app",
+    domainId: "58f547ca-1cf5-4a0f-8013-2a7a74c0af46"
   }
 };

@@ -16,6 +16,7 @@
     "vue-simple-icons": "^4.7.0"
   },
   "devDependencies": {
+    "@nuxtjs/ackee": "^3.0.1",
     "@nuxtjs/color-mode": "^2.0.5",
     "@nuxtjs/tailwindcss": "^4.0.3",
     "fibers": "^5.0.0",
