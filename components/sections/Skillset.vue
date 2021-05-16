@@ -11,18 +11,38 @@
         class="flex justify-center px-6 py-8 transition-all transform cursor-default md:py-10 rounded-2xl card-color"
         endClass="md:hover:-translate-y-2"
       >
-        <div class="flex flex-col items-center space-y-2">
-          <component :is="e.icon" class="w-8 h-8 fill-current"></component>
-          <div class="text-lg font-semibold text-center mt-auto">
-            {{ e.name }}
-          </div>
-        </div>
+        <Icon
+          :iconSlug="e"
+          textClasses="text-lg font-semibold text-center mt-auto"
+        />
       </XyzConflict>
+    </div>
+    <div class="mb-12">
+      <h3
+        class="mb-6 text-4xl font-extrabold leading-8 tracking-tight xyz-nested"
+        xyz="fade left-1 delay-25 duration-10"
+      >
+        Tools
+      </h3>
+      <div
+        class="grid grid-cols-2 gap-6 mb-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"
+      >
+        <XyzConflict
+          v-for="(e, i) in tools"
+          :key="i"
+          xyz="delay-30 small-1 fade stagger-2 ease-out-back"
+          class="flex justify-center px-4 py-6 transition-all transform cursor-default md:py-6 rounded-2xl card-color"
+          endClass="md:hover:-translate-y-2"
+        >
+          <Icon :iconSlug="e" textClasses="font-light text-center mt-auto" />
+        </XyzConflict>
+      </div>
     </div>
     <div>
       <h3
         class="mb-6 text-4xl font-extrabold leading-8 tracking-tight xyz-nested"
-        xyz="fade left-1 delay-25 duration-10"
+        style="--xyz-delay: 4s;"
+        xyz="fade left-1 delay duration-10"
       >
         ...and what's next
       </h3>
@@ -32,14 +52,12 @@
         <XyzConflict
           v-for="(e, i) in next"
           :key="i"
-          xyz="delay-30 small-1 fade stagger-2 ease-out-back"
+          xyz="delay small-1 fade stagger-2 ease-out-back"
           class="flex justify-center px-4 py-6 transition-all transform cursor-default md:py-6 rounded-2xl card-color"
+          style="--xyz-delay: 4.5s;"
           endClass="md:hover:-translate-y-2"
         >
-          <div class="flex flex-col items-center space-y-2">
-            <component :is="e.icon" class="w-8 h-8 fill-current"></component>
-            <div class="font-light text-center mt-auto">{{ e.name }}</div>
-          </div>
+          <Icon :iconSlug="e" textClasses="font-light text-center mt-auto" />
         </XyzConflict>
       </div>
     </div>
@@ -53,122 +71,30 @@
 </style>
 
 <script>
-import {
-  Html5Icon,
-  Css3Icon,
-  JavaScriptIcon,
-  VueJsIcon,
-  NuxtJsIcon,
-  TailwindCssIcon,
-  GitIcon,
-  ElectronIcon,
-  LaravelIcon,
-  GraphQlIcon,
-  DockerIcon,
-  FlutterIcon,
-  TypeScriptIcon,
-  SocketIoIcon,
-  FigmaIcon,
-  JestIcon,
-  StrapiIcon
-} from "vue-simple-icons";
 export default {
-  components: {
-    Html5Icon,
-    Css3Icon,
-    JavaScriptIcon,
-    VueJsIcon,
-    NuxtJsIcon,
-    TailwindCssIcon,
-    GitIcon,
-    ElectronIcon,
-    LaravelIcon,
-    GraphQlIcon,
-    DockerIcon,
-    FlutterIcon,
-    TypeScriptIcon,
-    SocketIoIcon,
-    FigmaIcon,
-    JestIcon,
-    StrapiIcon
-  },
   data() {
     return {
       skills: [
-        {
-          name: "HTML5",
-          icon: "Html5Icon"
-        },
-        {
-          name: "CSS3",
-          icon: "Css3Icon"
-        },
-        {
-          name: "Javascript",
-          icon: "JavaScriptIcon"
-        },
-        {
-          name: "Vue",
-          icon: "VueJsIcon"
-        },
-        {
-          name: "Nuxt",
-          icon: "NuxtJsIcon"
-        },
-        {
-          name: "Tailwind CSS",
-          icon: "TailwindCssIcon"
-        },
-        {
-          name: "Electron",
-          icon: "ElectronIcon"
-        },
-        {
-          name: "Strapi",
-          icon: "StrapiIcon"
-        },
-        {
-          name: "GraphQL",
-          icon: "GraphQlIcon"
-        },
-        {
-          name: "Git",
-          icon: "GitIcon"
-        }
+        "html5",
+        "css3",
+        "javascript",
+        "typescript",
+        "vue.js",
+        "nuxt.js",
+        "tailwindcss",
+        "graphql",
+        "strapi",
+        "electron"
       ],
+      tools: ["figma", "visualstudiocode", "git", "vercel", "github", "gitlab"],
       next: [
-        {
-          name: "Figma",
-          icon: "FigmaIcon"
-        },
-        {
-          name: "Laravel",
-          icon: "LaravelIcon"
-        },
-        {
-          name: "Supabase",
-          icon: ""
-        },
-        {
-          name: "Flutter",
-          icon: "FlutterIcon"
-        },
-        {
-          name: "Typescript",
-          icon: "TypeScriptIcon"
-        },
-        {
-          name: "Docker",
-          icon: "DockerIcon"
-        },
-        {
-          name: "Socket.io",
-          icon: "SocketIoIcon"
-        },
-        {
-          name: "Jest",
-          icon: "JestIcon"
-        }
+        "laravel",
+        "supabase",
+        "flutter",
+        "dart",
+        "docker",
+        "socket.io",
+        "jest"
       ]
     };
   }
