@@ -18,9 +18,9 @@
             class="text-2xl lg:text-3xl font-semibold mb-2"
           ></div>
         </div>
-        <div class="grid lg:grid-cols-2 gap-4">
+        <div class="grid lg:grid-cols-2 gap-4 mt-5">
           <div>
-            <div class="text-xl lg:text-2xl font-medium mb-2">
+            <div class="text-xl lg:text-2xl font-normal mb-2 text-gray-600 dark:text-gray-300">
               Diplomas & curriculum
             </div>
             <div class="space-y-2 lg:space-y-3">
@@ -33,7 +33,7 @@
             </div>
           </div>
           <div>
-            <div class="text-xl lg:text-2xl font-medium mb-2">Activities</div>
+            <div class="text-xl lg:text-2xl font-normal mb-2 text-gray-600 dark:text-gray-300">Activities</div>
             <div class="space-y-2 lg:space-y-3">
               <div
                 v-for="(x, i1) in s.activities"
@@ -73,7 +73,7 @@ export default {
           date: "2015 - 2019",
           school: "Secondary school Sainte Geneviève at Saint Jory",
           elements: [
-            "Bilingual English/Spanish class",
+            "Spanish option",
             "Diplôme National du Brevet mention Très Bien (G.C.S.E equivalent with honourable mention)",
             "Certificate PSC1 (First aid certificate)"
           ],

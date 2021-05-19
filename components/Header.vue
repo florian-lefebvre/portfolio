@@ -2,7 +2,7 @@
   <XyzTransition appear-visible duration="auto">
     <header
       xyz="delay-15 up-100% fade duration-10"
-      class="fixed top-0 left-0 z-10 w-full bg-gray-300 dark:bg-gray-700 shadow-md h-17"
+      class="fixed top-0 left-0 z-50 w-full bg-gray-300 dark:bg-gray-700 shadow-md h-17"
     >
       <div class="container p-4 mx-auto flex items-center">
         <h2

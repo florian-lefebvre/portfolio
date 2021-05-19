@@ -8,10 +8,10 @@
       height="24px"
       class="w-8 h-8 fill-current"
     >
-      <title data-v-37dd54dc="">{{ icon.title }} icon</title>
+      <title>{{ icon.title }} icon</title>
       <path :d="icon.path"></path>
     </svg>
-    <div :class="textClasses">{{ icon.title }}</div>
+    <div :class="textClasses">{{ title ? title : icon.title }}</div>
   </div>
 </template>
 
@@ -19,12 +19,10 @@
 import simpleIcons from "simple-icons";
 
 export default {
-  props: ["iconSlug", "textClasses"],
+  props: ["iconSlug", "textClasses", "title"],
   computed: {
     icon() {
-      const a = simpleIcons.get(this.iconSlug);
-      console.log(this.iconSlug, a);
-      return a;
+      return simpleIcons.get(this.iconSlug);
     }
   }
 };
