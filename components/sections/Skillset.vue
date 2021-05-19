@@ -38,14 +38,14 @@
           :popperContent="e.text"
         >
           <XyzConflict
-            xyz="delay-30 small-1 fade stagger-2 ease-out-back"
+            xyz="delay-30 small fade stagger-2 ease-out-back"
             class="flex justify-center px-4 py-6 transition-all transform cursor-default md:py-6 rounded-2xl card-color"
             endClass="md:hover:-translate-y-2"
           >
             <Icon
               :iconSlug="e.icon"
               :title="e.title ? e.title : null"
-              textClasses="font-light text-center mt-auto"
+              textClasses="font-normal text-center mt-auto"
             />
           </XyzConflict>
         </SectionsSkillsetPopper>
@@ -68,7 +68,7 @@
           :popperContent="e.text"
         >
           <XyzConflict
-            xyz="delay small-1 fade stagger-2 ease-out-back"
+            xyz="delay small fade stagger-2 ease-out-back"
             class="flex justify-center px-4 py-6 transition-all transform cursor-default md:py-6 rounded-2xl card-color"
             style="--xyz-delay: 4.5s;"
             endClass="md:hover:-translate-y-2"
@@ -76,7 +76,7 @@
             <Icon
               :iconSlug="e.icon"
               :title="e.title ? e.title : null"
-              textClasses="font-light text-center mt-auto"
+              textClasses="font-normal text-center mt-auto"
             />
           </XyzConflict>
         </SectionsSkillsetPopper>

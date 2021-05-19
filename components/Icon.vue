@@ -8,7 +8,6 @@
       height="24px"
       class="w-8 h-8 fill-current"
     >
-      <title>{{ icon.title }} icon</title>
       <path :d="icon.path"></path>
     </svg>
     <div :class="textClasses">{{ title ? title : icon.title }}</div>

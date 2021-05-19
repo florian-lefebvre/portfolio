@@ -28,7 +28,8 @@ export default {
       }
     ],
     htmlAttrs: {
-      lang: "en"
+      lang: "en",
+      class: "overflow-x-hidden"
     }
   },
   plugins: ["~/plugins/animxyz.js"],
