@@ -21,13 +21,6 @@
         stroke-width="2"
         d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
       />
-      <path
-        v-if="$colorMode.preference === 'system'"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-      />
     </svg>
   </HeaderButton>
 </template>
@@ -37,14 +30,8 @@ export default {
   methods: {
     setCurrentTheme() {
       this.$colorMode.preference =
-        this.$colorMode.preference === "system"
-          ? "light"
-          : this.$colorMode.preference === "light"
-          ? "dark"
-          : "system";
+        this.$colorMode.preference === "light" ? "dark" : "light";
     }
   }
 };
 </script>
-
-<style></style>

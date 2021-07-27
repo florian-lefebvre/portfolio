@@ -29,7 +29,6 @@ export default {
     ],
     htmlAttrs: {
       lang: "en",
-      class: "overflow-x-hidden"
     }
   },
   plugins: ["~/plugins/animxyz.js"],
@@ -47,6 +46,8 @@ export default {
     viewer: false
   },
   colorMode: {
+    preference: "system",
+    fallback: "light",
     classSuffix: ""
   },
   generate: {

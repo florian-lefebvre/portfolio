@@ -6,6 +6,14 @@
   </div>
 </template>
 
+<script>
+export default {
+  mounted() {
+    this.$colorMode.preference = this.$colorMode.value;
+  }
+};
+</script>
+
 <style>
 .title {
   @apply mb-6 text-5xl font-extrabold leading-8 tracking-tight sm:text-6xl md:text-7xl inline-flex items-center;
