@@ -1,6 +1,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
+  mode: "jit",
   purge: [
     "./components/**/*.{vue,js}",
     "./layouts/**/*.vue",
@@ -18,9 +19,6 @@ module.exports = {
         "17": "4.25rem"
       }
     }
-  },
-  variants: {
-    extend: {}
   },
   plugins: []
 };

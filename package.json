@@ -13,15 +13,14 @@
     "@animxyz/vue": "^0.5.0",
     "core-js": "^3.10.0",
     "nuxt": "^2.15.4",
-    "simple-icons": "^4.23.0",
-    "vue-popperjs": "^2.3.0"
+    "simple-icons": "^5.8.0"
   },
   "devDependencies": {
     "@nuxtjs/ackee": "^3.0.1",
-    "@nuxtjs/color-mode": "^2.0.5",
-    "@nuxtjs/tailwindcss": "^4.0.3",
+    "@nuxtjs/color-mode": "^2.0.10",
+    "@nuxtjs/tailwindcss": "^4.2.1",
     "fibers": "^5.0.0",
-    "postcss": "^8.2.9",
-    "tailwindcss": "2.0.4"
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.7"
   }
 }
