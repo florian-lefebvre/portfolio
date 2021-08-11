@@ -18,31 +18,43 @@
             class="text-2xl lg:text-3xl font-semibold mb-2"
           ></div>
         </div>
-        <div class="grid lg:grid-cols-2 gap-4 mt-5">
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 mt-5">
           <div>
-            <div class="text-xl lg:text-2xl font-normal mb-2 text-gray-600 dark:text-gray-300">
+            <div
+              class="text-xl lg:text-2xl font-medium text-gray-600 dark:text-gray-300"
+            >
               Diplomas & curriculum
             </div>
-            <div class="space-y-2 lg:space-y-3">
+            <div
+              class="h-px bg-gray-600 dark:bg-gray-300 w-full mb-3 lg:mb-6"
+            ></div>
+            <div class="space-y-1 ml-4">
               <div
                 v-for="(e, i1) in s.elements"
                 :key="i1"
                 v-html="e"
-                class="lg:text-lg text-justify leading-6 bg-gray-400 bg-opacity-40 dark:bg-opacity-100 dark:bg-gray-800 p-4 rounded-xl"
+                class="lg:text-lg text-justify leading-6 list-item"
               ></div>
             </div>
           </div>
           <div>
-            <div class="text-xl lg:text-2xl font-normal mb-2 text-gray-600 dark:text-gray-300">Activities</div>
-            <div class="space-y-2 lg:space-y-3">
+            <div
+              class="text-xl lg:text-2xl font-medium text-gray-600 dark:text-gray-300"
+            >
+              Activities
+            </div>
+            <div
+              class="h-px bg-gray-600 dark:bg-gray-300 w-full mb-3 lg:mb-6"
+            ></div>
+            <div class="space-y-1 ml-4">
               <div
                 v-for="(x, i1) in s.activities"
                 :key="i1"
-                class="bg-gray-400 bg-opacity-40 dark:bg-opacity-100 dark:bg-gray-800 p-4 rounded-xl"
+                class=" rounded-xl"
               >
                 <div
                   v-html="x.text"
-                  class="lg:text-lg leading-6 text-justify"
+                  class="lg:text-lg leading-6 text-justify list-item"
                 ></div>
                 <div class="flex flex-wrap mt-2" v-if="x.links.length !== 0">
                   <a

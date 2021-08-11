@@ -50,24 +50,25 @@ export default {
     return {
       projects: [
         {
-          title: "My portfolio",
-          content: "It's the showcase of my knowledge, I'm really proud of it.",
+          title: "Supabase",
+          content:
+            "Supabase is an awesome open source project. I already contributed several times to the public website.",
           links: [
             {
               text: "Website",
-              url: "/"
+              url: "https://supabase.com"
             },
             {
-              text: "Github",
-              url: "https://github.com/florian-lefebvre/portfolio"
+              text: "GitHub",
+              url: "https://github.com/supabase"
             }
           ],
-          tags: ["Vue", "Nuxt", "Tailwind CSS", "Github Pages", "AnimXYZ", "Js"]
+          tags: ["Open Source", "Supabase", "React", "Js", "Tailwind CSS"]
         },
         {
           title: "yNotes app",
           content:
-            "yNotes is a mobile application that retrieves data from the student life services used by most French schools. It reshapes and adds many features. I help the developers for the UI and UX design of the application.",
+            "yNotes is a mobile application that retrieves data from the student life services used by most French schools. It reshapes and adds many features. I'm involved in the development and the design of the app.",
           links: [
             {
               text: "Website",
@@ -78,7 +79,7 @@ export default {
               url: "https://github.com/ModernChocolate/ynotes"
             }
           ],
-          tags: ["UI/UX design", "Dart", "Flutter"]
+          tags: ["UI/UX design", "Dart", "Flutter", "Figma"]
         },
         {
           title: "yNotes website",
@@ -95,6 +96,71 @@ export default {
             }
           ],
           tags: ["Vue", "Nuxt", "Tailwind CSS", "AnimXYZ", "Github Pages", "Js"]
+        },
+        {
+          title: "ynotes-packages",
+          content:
+            "I'm making Flutter libraries for the yNotes app to make its development easier: theming, components and more.",
+          links: [
+            {
+              text: "Github",
+              url: "https://github.com/EduWireApps/ynotes-packages"
+            }
+          ],
+          tags: ["Dart", "Flutter"]
+        },
+        {
+          title: "flutter_responsive_breakpoints",
+          content:
+            "I love Tailwind CSS and how easy it is to achieve great responsive designs quickly. I made this package to make my life easier with Flutter using the Tailwind CSS breakpoints.",
+          links: [
+            {
+              text: "Pub.dev",
+              url: "https://pub.dev/packages/flutter_responsive_breakpoints"
+            },
+            {
+              text: "Github",
+              url:
+                "https://github.com/florian-lefebvre/flutter_responsive_breakpoints"
+            }
+          ],
+          tags: ["Dart", "Flutter", "Pub package"]
+        },
+        {
+          title: "Special characters",
+          content:
+            "Writing special characters such as ¿ is often (if not always) a headache, especially with foreign languages. This website aims to make it easier. I'm not done with this project yet, which is on hold for the moment.",
+          links: [
+            {
+              text: "Website",
+              url: "https://special-characters.vercel.app"
+            }
+          ],
+          tags: [
+            "Vue",
+            "Nuxt",
+            "Tailwind CSS",
+            "Vercel",
+            "Strapi",
+            "GraphQL",
+            "Typescript"
+          ]
+        },
+        {
+          title: "My portfolio",
+          content:
+            "Not much to say except that I am quite satisfied with the result.",
+          links: [
+            {
+              text: "Website",
+              url: "/"
+            },
+            {
+              text: "Github",
+              url: "https://github.com/florian-lefebvre/portfolio"
+            }
+          ],
+          tags: ["Vue", "Nuxt", "Tailwind CSS", "Github Pages", "AnimXYZ", "Js"]
         },
         {
           title: "shortcuts-app",
@@ -167,7 +233,7 @@ export default {
         {
           title: "Glutton Runner",
           content:
-            "The first (and only) game I coded using UE4 was Glutton Runner, an endless game. Unfortunately, this engine was not adapted to my needs, so I paused the project.",
+            "The first (and only) game I coded using UE4 was Glutton Runner, an endless game. Unfortunately, this engine was not adapted to my needs, so I paused the project. (It is unplayable)",
           links: [
             {
               text: "Play Store",

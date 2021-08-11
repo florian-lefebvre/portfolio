@@ -21,13 +21,13 @@
                   ? 'rounded-b-full bg-gradient-to-t'
                   : '',
                 i === 0 || i === events.length - 1
-                  ? 'from-gray-200 via-gray-400 to-gray-400 dark:from-gray-800 dark:via-gray-600 dark:to-gray-600'
-                  : 'bg-gray-400 dark:bg-gray-600'
+                  ? 'from-gray-200 via-gray-400 to-gray-400 dark:from-gray-800 dark:via-gray-900 dark:to-gray-900'
+                  : 'bg-gray-400 dark:bg-gray-900'
               ]"
             ></div>
           </div>
           <div
-            class="absolute w-6 h-6 -mt-3 bg-gray-500 border-4 border-gray-200 rounded-full top-1/2 dark:bg-gray-300 dark:border-gray-800"
+            class="absolute w-6 h-6 -mt-3 bg-gray-500 border-4 border-gray-200 rounded-full top-1/2 dark:bg-gray-600 dark:border-gray-800"
           ></div>
         </div>
         <XyzTransition
@@ -37,7 +37,7 @@
         >
           <XyzConflict
             xyz="fade down-1 stagger-4 duration-8"
-            class="relative p-4 my-6 transition-transform transform bg-gray-300 dark:bg-gray-700 rounded-xl"
+            class="relative p-4 my-6 transition-transform transform bg-gray-300 dark:bg-gray-900 rounded-xl"
             endClass="md:hover:-translate-y-2"
             :class="
               i % 2 === 0
@@ -48,7 +48,7 @@
             <h3 class="text-lg lg:text-xl font-semibold" v-html="e.title"></h3>
             <p
               v-if="e.content !== ''"
-              class="mt-2 leading-6 text-justify"
+              class="mt-2 leading-6 text-justify text-gray-300"
               v-html="e.content"
             ></p>
             <span
@@ -63,20 +63,20 @@
         >
           <div class="flex items-center justify-center w-6 h-full">
             <div
-              class="w-1 h-full bg-gray-400 dark:bg-gray-600"
+              class="w-1 h-full"
               :class="[
                 i === 0 ? 'rounded-t-full bg-gradient-to-b' : '',
                 i === events.length - 1
                   ? 'rounded-b-full bg-gradient-to-t'
                   : '',
                 i === 0 || i === events.length - 1
-                  ? 'from-gray-200 via-gray-400 to-gray-400 dark:from-gray-800 dark:via-gray-600 dark:to-gray-600'
-                  : 'bg-gray-400 dark:bg-gray-600'
+                  ? 'from-gray-200 via-gray-400 to-gray-400 dark:from-gray-800 dark:via-gray-900 dark:to-gray-900'
+                  : 'bg-gray-400 dark:bg-gray-900'
               ]"
             ></div>
           </div>
           <div
-            class="absolute w-6 h-6 -mt-3 bg-gray-500 border-4 border-gray-200 rounded-full top-1/2 dark:bg-gray-300 dark:border-gray-800"
+            class="absolute w-6 h-6 -mt-3 bg-gray-500 border-4 border-gray-200 rounded-full top-1/2 dark:bg-gray-600 dark:border-gray-800"
           ></div>
         </div>
       </div>
@@ -159,6 +159,12 @@ export default {
           title: "I rework my portfolio once again",
           content: "",
           date: "February 2021"
+        },
+        {
+          title: "I start Flutter development",
+          content:
+            "Until now, I only helped for the design at yNotes. So I took the time to learn Dart and Flutter, and I find them really great to use.",
+          date: "June 2021"
         }
       ]
     };
