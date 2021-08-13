@@ -48,7 +48,7 @@
             <h3 class="text-lg lg:text-xl font-semibold" v-html="e.title"></h3>
             <p
               v-if="e.content !== ''"
-              class="mt-2 leading-6 text-justify text-gray-300"
+              class="mt-2 leading-6 text-justify text-gray-700 dark:text-gray-300"
               v-html="e.content"
             ></p>
             <span
