@@ -6,7 +6,7 @@ export default {
       github: "https://github.com/florian-lefebvre"
     }
   },
-  ssr: false,
+  ssr: true,
   target: "static",
   head: {
     title: "Florian LEFEBVRE's portfolio",
