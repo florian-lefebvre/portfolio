@@ -220,6 +220,11 @@ export default {
           icon: "dart",
           text:
             "Dart is a client-optimized language for fast apps on any platform"
+        },
+        {
+          icon: "supabase",
+          text:
+            "Supabase is the open source Firebase alternative. It features Postgres database, authentication, instant APIs, realtime subscriptions and storage."
         }
       ],
       tools: [
@@ -269,11 +274,6 @@ export default {
           icon: "materialui",
           text:
             "Material-UI is a set of React components that implement Google's Material Design."
-        },
-        {
-          icon: "supabase",
-          text:
-            "Supabase is the open source Firebase alternative. It features Postgres database, authentication, instant APIs, realtime subscriptions and storage."
         },
         {
           icon: "docker",
