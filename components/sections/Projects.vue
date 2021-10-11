@@ -50,6 +50,27 @@ export default {
     return {
       projects: [
         {
+          title: "RégioLangues",
+          content:
+            "RégioLangues is a website for my brother. Its goal: gather resources around the web on the topic of French regional languages. It uses Supabase for the backend.",
+          links: [
+            {
+              text: "Website",
+              url: "https://www.regiolangues.fr"
+            }
+          ],
+          tags: [
+            "Vue",
+            "Nuxt",
+            "Js",
+            "Tailwind CSS",
+            "SSR",
+            "Supabase",
+            "Vercel",
+            "Typescript"
+          ]
+        },
+        {
           title: "Supabase",
           content:
             "Supabase is an awesome open source project. I already contributed several times to the public website.",
