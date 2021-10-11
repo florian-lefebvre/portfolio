@@ -20,6 +20,7 @@
         >&#8203;</span
       >
       <div
+      @click.stop
         class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-gray-300 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
       >
         <div

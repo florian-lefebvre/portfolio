@@ -6,7 +6,6 @@ export default {
       github: "https://github.com/florian-lefebvre"
     }
   },
-  ssr: true,
   target: "static",
   head: {
     title: "Florian LEFEBVRE's portfolio",
@@ -28,10 +27,11 @@ export default {
       }
     ],
     htmlAttrs: {
-      lang: "en",
+      lang: "en"
     }
   },
   plugins: ["~/plugins/animxyz.js"],
+  css: ["@animxyz/core"],
   components: true,
   buildModules: [
     // https://color-mode.nuxtjs.org/
@@ -42,7 +42,6 @@ export default {
     "@nuxtjs/ackee"
   ],
   tailwindcss: {
-    jit: true,
     viewer: false
   },
   colorMode: {
