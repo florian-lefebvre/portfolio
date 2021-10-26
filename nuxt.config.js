@@ -38,8 +38,6 @@ export default {
     "@nuxtjs/color-mode",
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
-    // https://ackee.nuxtjs.org/
-    "@nuxtjs/ackee",
     "vue-plausible"
   ],
   tailwindcss: {

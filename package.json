@@ -17,7 +17,6 @@
     "vue-plausible": "^1.2.1"
   },
   "devDependencies": {
-    "@nuxtjs/ackee": "^3.0.1",
     "@nuxtjs/color-mode": "^2.0.10",
     "@nuxtjs/tailwindcss": "^4.2.1",
     "fibers": "^5.0.0",
