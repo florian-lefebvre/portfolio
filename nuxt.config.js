@@ -39,7 +39,8 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
     // https://ackee.nuxtjs.org/
-    "@nuxtjs/ackee"
+    "@nuxtjs/ackee",
+    "vue-plausible"
   ],
   tailwindcss: {
     viewer: false
@@ -52,9 +53,9 @@ export default {
   generate: {
     fallback: "404.html"
   },
-  ackee: {
-    server: "https://analytics.florian-lefebvre.vercel.app",
-    domainId: "58f547ca-1cf5-4a0f-8013-2a7a74c0af46",
-    detailed: true
+  publicRuntimeConfig: {
+    plausible: {
+      domain: "florian-lefebvre.dev",
+    }
   }
 };
