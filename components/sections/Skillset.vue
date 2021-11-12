@@ -257,33 +257,9 @@ export default {
       ],
       next: [
         {
-          icon: "nestjs",
-          text:
-            "Nest is a modern JavaScript framework for building efficient and scalable web applications."
-        },
-        {
-          icon: "react",
-          text: "React is a JavaScript library for building user interfaces."
-        },
-        {
-          icon: "nextdotjs",
-          text:
-            "Next.js is a framework for server-rendered React apps. It makes it easy to set up a production server that renders Next.js apps."
-        },
-        {
-          icon: "materialui",
-          text:
-            "Material-UI is a set of React components that implement Google's Material Design."
-        },
-        {
           icon: "docker",
           text:
             "Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers."
-        },
-        {
-          icon: "socketdotio",
-          text:
-            "Socket.IO enables real-time, bidirectional and event-based communication."
         },
         {
           icon: "jest",
