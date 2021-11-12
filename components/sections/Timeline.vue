@@ -165,6 +165,18 @@ export default {
           content:
             "Until now, I only helped for the design at yNotes. So I took the time to learn Dart and Flutter, and I find them really great to use.",
           date: "June 2021"
+        },
+        {
+          title: "I become the yNotes' maintainer",
+          content: "",
+          date: "September 2021"
+        },
+        {
+          title: "I released the v3 of the OHF31 website",
+          content: `I just released the new version of my orchestra's website, powered by Nuxt 3 🎉, Tailwind CSS, VueUse and Vercel.
+This website is the first one I made almost 2 years ago and I have to say it has evolved a lot.
+I started with simple HTML and CSS files, then I used PHP (just for the includes!) and Bootstrap.`,
+          date: "November 2021"
         }
       ]
     };

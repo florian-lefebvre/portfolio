@@ -66,7 +66,8 @@ export default {
             "Tailwind CSS",
             "Typescript",
             "Vercel",
-            "SSR"
+            "SSR",
+            "VueUse"
           ]
         },
         {
