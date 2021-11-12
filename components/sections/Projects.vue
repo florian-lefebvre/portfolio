@@ -50,9 +50,29 @@ export default {
     return {
       projects: [
         {
+          title: "OHF31 website",
+          content:
+            "I finally finished v3 of the 1st site I made! That's a basic showcase site but I think it looks really great. And it runs on Nuxt 3 🎉",
+          links: [
+            {
+              text: "Website",
+              url: "https://www.ohf31.fr"
+            }
+          ],
+          tags: [
+            "Js",
+            "Nuxt 3",
+            "Vue 3",
+            "Tailwind CSS",
+            "Typescript",
+            "Vercel",
+            "SSR"
+          ]
+        },
+        {
           title: "RégioLangues",
           content:
-            "RégioLangues is a website for my brother. Its goal: gather resources around the web on the topic of French regional languages. It uses Supabase for the backend.",
+            "RégioLangues is a website I made for my brother. I was only involved in the coding, not the data. Its goal: gather resources around the web on the topic of French regional languages. It uses Supabase for the backend.",
           links: [
             {
               text: "Website",
@@ -222,18 +242,6 @@ export default {
             }
           ],
           tags: ["Tailwind CSS", "CSS grid"]
-        },
-        {
-          title: "OHF31 website",
-          content:
-            "This is the first website I've made. I've learned a lot since then, but I'm still proud of what I've achieved.",
-          links: [
-            {
-              text: "Website",
-              url: "https://www.ohf31.fr"
-            }
-          ],
-          tags: ["PHP", "Bootstrap", "jQuery", "AOS", "video.js", "Scss"]
         },
         {
           title: "Barcode generator",
