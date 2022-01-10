@@ -1,4 +1,9 @@
 {
+  "name": "portfolio",
+  "version": "0.0.1",
+  "description": "A portfolio site for Florian LEFEBVRE.",
+  "license": "MIT",
+  "author": "Florian LEFEBVRE",
   "private": true,
   "scripts": {
     "dev": "nuxi dev",
@@ -6,6 +11,15 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "nuxt3": "latest"
+    "@types/marked": "^4.0.1",
+    "@vueuse/nuxt": "^7.5.3",
+    "autoprefixer": "^10.4.2",
+    "nuxt3": "3.0.0-27356801.e9128f3",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.12",
+    "typescript": "4.3.2"
+  },
+  "dependencies": {
+    "marked": "^4.0.9"
   }
 }
