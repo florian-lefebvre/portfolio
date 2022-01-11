@@ -1,8 +1,4 @@
-const getTitle = (title: string): string =>
-  `${title} - Florian LEFEBVRE`;
-
-const description =
-  "TBD";
+const description = "TBD";
 
 const url = (path: string): string => `https://florian-lefebvre${path}`;
 
@@ -13,6 +9,10 @@ interface Props {
 const imagePath = url("/og.png");
 
 export default function ({ title }: Props) {
+  const { fullName } = useMe();
+
+  const getTitle = (title: string): string => `${title} - ${fullName}`;
+
   const { currentRoute: route } = useRouter();
   const facebookMetaTags = [
     {
