@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    @apply scroll-smooth scroll-pt-16;
+html {
+    @apply scroll-smooth scroll-pt-16 selection:bg-primary-500 selection:text-white;
 }

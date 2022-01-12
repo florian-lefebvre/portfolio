@@ -1,8 +1,13 @@
 <template>
-  <div class="min-h-screen flex flex-col bg-gradient-to-tr from-gray-800 to-gray-900">
+  <div
+    class="relative flex flex-col min-h-screen bg-gradient-to-tr from-gray-900 to-gray-800"
+  >
+    <div
+      class="absolute inset-0 bg-[url(https://snippets.alexandru.so/grid.svg)]"
+    ></div>
     <!-- <Banner /> -->
     <Header />
-    <NuxtPage />
+    <NuxtPage class="z-10 overflow-x-hidden"/>
     <Footer />
   </div>
 </template>

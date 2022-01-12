@@ -1,11 +1,15 @@
 <template>
-  <div class="mt-auto backdrop-blur-md bg-gray-900/75">
+  <div class="z-0 mt-auto backdrop-blur-md bg-gray-900/100">
     <Container class="pt-16">
       <div ref="container">
-        <div class="flex flex-col justify-center md:justify-between md:flex-row">
+        <div
+          class="flex flex-col justify-center md:justify-between md:flex-row"
+        >
           <div class="flex flex-col justify-start">
             <div class="flex items-center justify-start mb-6 space-x-4">
-              <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400"></div>
+              <div
+                class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400"
+              ></div>
               <div
                 class="flex flex-col items-start justify-center font-semibold leading-5 text-gray-400"
               >
@@ -14,7 +18,7 @@
               </div>
             </div>
             <div class="max-w-lg mb-4 text-gray-400">
-              A {{ age }} year old web and mobile developer from France.
+              {{ data.introduction.quick }}
             </div>
             <div class="flex items-center space-x-6">
               <a
@@ -44,7 +48,7 @@
             </div>
           </div>
         </div>
-        <div class="h-0.5 bg-gray-600 my-6"></div>
+        <div class="h-px my-6 bg-gray-600"></div>
         <p class="mx-auto text-center text-gray-400">
           &copy; {{ new Date().getFullYear() }} {{ fullName }}. All rights
           reserved.
@@ -57,7 +61,8 @@
 
 <script setup lang="ts">
 import { FooterCategory } from "~/types";
-const { age, firstName, lastName, fullName } = useMe();
+import data from "~/data";
+const { firstName, lastName, fullName } = useMe();
 
 const container = ref<HTMLElement>();
 onMounted(() => {
