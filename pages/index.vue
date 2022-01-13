@@ -118,7 +118,7 @@
         </div>
       </Container>
     </div>
-    <Container class="py-16 md:py-20" id="about">
+    <Container class="py-16 md:py-20">
       <div class="">
         <h1
           class="max-w-lg mb-8 text-5xl text-white md:mb-12 md:text-7xl md:max-w-none"
@@ -131,10 +131,10 @@
         </h1>
         <div class="max-w-3xl text-gray-200 md:text-lg">
           <p class="mb-10">
-            I sold a website that helped gamers track the value of in-game
-            items. Now, I'm going full-time building an innovative solution for
-            tracking game server performance, how much time they spend there,
-            and other metrics.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur
+            maxime libero officiis iusto provident eum, facere labore beatae
+            recusandae optio cum. Minima in modi ea culpa eum, hic
+            necessitatibus neque.
           </p>
         </div>
         <div class="block">

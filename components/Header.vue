@@ -70,13 +70,13 @@
 <script setup lang="ts">
 import { PopoverButton, PopoverPanel, Popover } from "@headlessui/vue";
 import { MenuIcon, XIcon } from "@heroicons/vue/outline";
-import { Link } from "~~/types";
+import { Link } from "~/types";
 
-const links = ref<Link[]>([
+const links: Link[] = [
   { name: "Home", url: "/" },
   { name: "About me", url: "/about" },
   { name: "Projects", url: "/projects" },
   { name: "Blog", url: "/blog" },
   { name: "Github", url: "/github", external: true },
-]);
+];
 </script>

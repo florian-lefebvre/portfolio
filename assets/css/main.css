@@ -3,5 +3,26 @@
 @tailwind utilities;
 
 html {
-    @apply scroll-smooth scroll-pt-16 selection:bg-primary-500 selection:text-white;
+  @apply scroll-smooth scroll-pt-16 selection:bg-primary-500 selection:text-white;
+}
+
+* {
+  scrollbar-color: theme("colors.gray.400") theme("colors.gray.900");
+}
+
+*::-webkit-scrollbar {
+  @apply bg-gray-900;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 hover:bg-gray-500;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
 }

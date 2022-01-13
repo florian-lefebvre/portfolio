@@ -7,26 +7,24 @@
     ></div>
     <!-- <Banner /> -->
     <Header />
-    <NuxtPage class="z-10 overflow-x-hidden"/>
+    <NuxtPage class="z-10 overflow-x-hidden" />
     <Footer />
   </div>
 </template>
 
 <script setup lang="ts">
 const route = useRoute();
+const firstVisit = ref(true);
+
 watch(
   route,
   (n) => {
     if (process.client) {
-      if (n.params.savePosition) {
-        const isString: boolean = typeof n.params.savePosition === "string";
-        window.scrollTo({
-          top: parseInt(
-            isString ? (n.params.position as string) : n.params.position[0]
-          ),
-          behavior: "smooth",
-        });
+      if (firstVisit.value) {
+        firstVisit.value = false;
+        return;
       }
+      window.scrollTo({top:0, behavior: "smooth"});
     }
   },
   { deep: true, immediate: true }
