@@ -3,10 +3,7 @@
     <Popover class="relative" v-slot="{ close }">
       <div class="h-16 backdrop-blur-md bg-gray-900/90">
         <Container class="flex items-center justify-between h-full py-4">
-          <nuxt-link
-            to="/"
-            class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400 focus:ring focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-primary-600"
-          ></nuxt-link>
+          <ProfilePicture />
           <div class="flex items-center space-x-4 sm:space-x-6">
             <div class="items-center hidden space-x-6 sm:flex">
               <nuxt-link
@@ -72,20 +69,7 @@
 
 <script setup lang="ts">
 import { PopoverButton, PopoverPanel, Popover } from "@headlessui/vue";
-import {
-  BookmarkAltIcon,
-  CalendarIcon,
-  ChartBarIcon,
-  CursorClickIcon,
-  MenuIcon,
-  PhoneIcon,
-  PlayIcon,
-  RefreshIcon,
-  ShieldCheckIcon,
-  SupportIcon,
-  ViewGridIcon,
-  XIcon,
-} from "@heroicons/vue/outline";
+import { MenuIcon, XIcon } from "@heroicons/vue/outline";
 import { Link } from "~~/types";
 
 const links = ref<Link[]>([
@@ -95,69 +79,4 @@ const links = ref<Link[]>([
   { name: "Blog", url: "/blog" },
   { name: "Github", url: "/github", external: true },
 ]);
-
-const solutions = [
-  {
-    name: "Analytics",
-    description:
-      "Get a better understanding of where your traffic is coming from.",
-    href: "#",
-    icon: ChartBarIcon,
-  },
-  {
-    name: "Engagement",
-    description: "Speak directly to your customers in a more meaningful way.",
-    href: "#",
-    icon: CursorClickIcon,
-  },
-  {
-    name: "Security",
-    description: "Your customers' data will be safe and secure.",
-    href: "#",
-    icon: ShieldCheckIcon,
-  },
-  {
-    name: "Integrations",
-    description: "Connect with third-party tools that you're already using.",
-    href: "#",
-    icon: ViewGridIcon,
-  },
-  {
-    name: "Automations",
-    description:
-      "Build strategic funnels that will drive your customers to convert",
-    href: "#",
-    icon: RefreshIcon,
-  },
-];
-
-const resources = [
-  {
-    name: "Help Center",
-    description:
-      "Get all of your questions answered in our forums or contact support.",
-    href: "#",
-    icon: SupportIcon,
-  },
-  {
-    name: "Guides",
-    description:
-      "Learn how to maximize our platform to get the most out of it.",
-    href: "#",
-    icon: BookmarkAltIcon,
-  },
-  {
-    name: "Events",
-    description:
-      "See what meet-ups and other events we might be planning near you.",
-    href: "#",
-    icon: CalendarIcon,
-  },
-  {
-    name: "Security",
-    description: "Understand how we take your privacy seriously.",
-    href: "#",
-    icon: ShieldCheckIcon,
-  },
-];
 </script>

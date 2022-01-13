@@ -38,9 +38,7 @@
         >
           <div class="flex flex-col justify-start">
             <div class="flex items-center justify-start mb-6 space-x-4">
-              <div
-                class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400"
-              ></div>
+              <ProfilePicture />
               <div
                 class="flex flex-col items-start justify-center font-semibold leading-5 text-gray-400"
               >

@@ -14,7 +14,7 @@ module.exports = {
       colors: {
         primary: colors.red,
         secondary: colors.rose,
-        tertiary: colors.emerald,
+        tertiary: colors.amber,
         gray: colors.slate
       },
       fontFamily: {

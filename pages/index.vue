@@ -43,7 +43,7 @@
           <div>Scroll down</div>
         </a>
       </div>
-      <div class="hidden ml-16 md:block">
+      <div class="hidden ml-24 lg:ml-16 md:block shrink-0">
         <HeroParallax />
       </div>
     </Container>
