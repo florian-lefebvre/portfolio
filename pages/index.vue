@@ -3,11 +3,11 @@
     <Container class="flex items-center py-16 md:py-20">
       <div class="">
         <h1
-          class="max-w-lg mb-8 text-5xl text-white md:mb-12 md:text-7xl md:max-w-none"
+          class="mb-8 max-w-lg text-5xl text-white md:mb-12 md:max-w-none md:text-7xl"
         >
           Hi, I'm
           <span
-            class="block font-semibold text-transparent md:inline-block bg-clip-text bg-gradient-to-tr from-primary-600 to-secondary-400"
+            class="block bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent md:inline-block"
             >{{ fullName }}</span
           >
         </h1>
@@ -21,7 +21,7 @@
             <a
               target="_blank"
               href="https://ynotes.fr"
-              class="relative hover:text-white transition-colors duration-300 font-semibold text-transparent bg-clip-text bg-gradient-to-tr from-primary-600 to-secondary-400 after:absolute after:bg-gradient-to-tr after:from-primary-600 after:rounded-full after:to-secondary-400 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
+              class="relative bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:rounded-full after:bg-gradient-to-tr after:from-primary-600 after:to-secondary-400 after:transition-transform after:duration-300 after:ease-in-out hover:text-white hover:after:origin-bottom-left hover:after:scale-x-100"
               >yNotes</a
             >, a school life mobile application that connects French students to
             their school services.
@@ -30,20 +30,20 @@
         <div class="block">
           <a
             href="#about"
-            class="inline-flex px-6 py-2 font-medium text-white transition-all duration-300 rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400 hover:scale-95"
+            class="inline-flex rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400 px-6 py-2 font-medium text-white transition-all duration-300 hover:scale-95"
           >
             Learn more
           </a>
         </div>
         <a
           href="#about"
-          class="inline-flex items-center mt-12 space-x-2 text-gray-400 transition-all rounded-full animate-pulse hover:text-white hover:animate-none focus:ring focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-white"
+          class="mt-12 inline-flex animate-pulse items-center space-x-2 rounded-full text-gray-400 transition-all hover:animate-none hover:text-white focus:ring focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900"
         >
-          <ArrowCircleDownIcon class="w-10 h-10" />
+          <ArrowCircleDownIcon class="h-10 w-10" />
           <div>Scroll down</div>
         </a>
       </div>
-      <div class="hidden ml-24 lg:ml-16 md:block shrink-0">
+      <div class="ml-24 hidden shrink-0 md:block lg:ml-16">
         <HeroParallax />
       </div>
     </Container>
@@ -51,11 +51,11 @@
       <Container class="py-16 md:py-20" id="about">
         <div class="">
           <h1
-            class="max-w-lg mb-8 text-5xl text-white md:mb-12 md:text-7xl md:max-w-none"
+            class="mb-8 max-w-lg text-5xl text-white md:mb-12 md:max-w-none md:text-7xl"
           >
             About
             <span
-              class="block font-semibold text-transparent md:inline-block bg-clip-text bg-gradient-to-tr from-primary-600 to-secondary-400"
+              class="block bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent md:inline-block"
               >me</span
             >
           </h1>
@@ -69,20 +69,20 @@
           <div class="block">
             <nuxt-link
               to="/about"
-              class="inline-flex px-6 py-2 font-medium text-white transition-all duration-300 rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400 hover:scale-95"
+              class="inline-flex rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400 px-6 py-2 font-medium text-white transition-all duration-300 hover:scale-95"
             >
               Learn more
             </nuxt-link>
           </div>
           <div class="relative">
             <div
-              class="inset-y-0 hidden w-full h-0 my-auto border-t-2 border-gray-500 border-dashed xl:block xl:absolute"
+              class="inset-y-0 my-auto hidden h-0 w-full border-t-2 border-dashed border-gray-500 xl:absolute xl:block"
             ></div>
             <div
-              class="absolute inset-x-0 block w-0 h-full mx-auto border-l-2 border-gray-500 border-dashed sm:hidden"
+              class="absolute inset-x-0 mx-auto block h-full w-0 border-l-2 border-dashed border-gray-500 sm:hidden"
             ></div>
             <div
-              class="relative grid gap-6 mt-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+              class="relative mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             >
               <div
                 v-for="e in [
@@ -100,12 +100,12 @@
                     'I know all the tools needed to build apps: frontend, backend and mobile.',
                   ],
                 ]"
-                class="p-6 text-white bg-gray-800 rounded-lg"
+                class="rounded-lg bg-gray-800 p-6 text-white"
               >
                 <div class="mb-4 text-lg font-semibold">
                   At
                   <span
-                    class="text-transparent bg-clip-text bg-gradient-to-tr from-primary-600 to-secondary-400"
+                    class="bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text text-transparent"
                     >{{ e[0] }}</span
                   >...
                 </div>
@@ -121,11 +121,11 @@
     <Container class="py-16 md:py-20">
       <div class="">
         <h1
-          class="max-w-lg mb-8 text-5xl text-white md:mb-12 md:text-7xl md:max-w-none"
+          class="mb-8 max-w-lg text-5xl text-white md:mb-12 md:max-w-none md:text-7xl"
         >
           A few
           <span
-            class="block font-semibold text-transparent md:inline-block bg-clip-text bg-gradient-to-tr from-primary-600 to-secondary-400"
+            class="block bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent md:inline-block"
             >projects</span
           >
         </h1>
@@ -139,7 +139,7 @@
         <div class="block">
           <nuxt-link
             to="/projects"
-            class="inline-flex px-6 py-2 font-medium text-white transition-all duration-300 rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400 hover:scale-95"
+            class="inline-flex rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400 px-6 py-2 font-medium text-white transition-all duration-300 hover:scale-95"
           >
             View all
           </nuxt-link>

@@ -3,11 +3,11 @@
     <Container class="py-16 md:py-20" v-for="e in 3">
       <div class="">
         <h1
-          class="max-w-lg mb-8 text-5xl text-white md:mb-12 md:text-7xl md:max-w-none"
+          class="mb-8 max-w-lg text-5xl text-white md:mb-12 md:max-w-none md:text-7xl"
         >
           Another
           <span
-            class="block font-semibold text-transparent md:inline-block bg-clip-text bg-gradient-to-tr from-primary-600 to-secondary-400"
+            class="block bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent md:inline-block"
             >section</span
           >
         </h1>
@@ -22,7 +22,7 @@
         <div class="block">
           <nuxt-link
             to="/projects"
-            class="inline-flex px-6 py-2 font-medium text-white transition-all duration-300 rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400 hover:scale-95"
+            class="inline-flex rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400 px-6 py-2 font-medium text-white transition-all duration-300 hover:scale-95"
           >
             Learn more
           </nuxt-link>
