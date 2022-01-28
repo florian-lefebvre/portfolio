@@ -24,9 +24,12 @@
               class="relative bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:rounded-full after:bg-gradient-to-tr after:from-primary-600 after:to-secondary-400 after:transition-transform after:duration-300 after:ease-in-out hover:text-white hover:after:origin-bottom-left hover:after:scale-x-100"
               >yNotes</a
             >, a school life mobile application that connects French students to
-            their school services.
+            their school services. {{ $t("test") }}
           </p>
         </div>
+        <button @click="$i18n.locale = $i18n.locale === 'en' ? 'fr' : 'en'">
+          {{ $i18n.locale }}
+        </button>
         <div class="block">
           <a
             href="#about"
@@ -149,18 +152,10 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import data from "~/data";
 import { ArrowCircleDownIcon } from "@heroicons/vue/outline";
-
 const { fullName } = useMe();
-
-export default {
-  scrollToTop: true,
-};
-</script>
-
-<script setup lang="ts">
 useSeo({
   title: "Home",
 });
