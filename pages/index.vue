@@ -147,6 +147,9 @@
             View all
           </nuxt-link>
         </div>
+        <div class="mt-10">
+          <AppSwiper/>
+        </div>
       </div>
     </Container>
   </div>
