@@ -7,20 +7,15 @@
         @swiper="onSwiper"
       >
         <slot></slot>
-        <SwiperSlide
-          v-for="i in 10"
-          class="cursor-pointer rounded-lg bg-gray-700 p-2 text-white shadow"
-          >Slide {{ i }}</SwiperSlide
-        >
       </Swiper>
     </div>
     <div class="mt-6 flex justify-between">
       <button
         type="button"
         @click="swiper.slidePrev()"
-        class="transition-transform hover:scale-90"
+        class="transition-all hover:scale-90"
         :class="
-          swiper?.isBeginning ?? false ? 'opacity-50 hover:scale-100' : ''
+          swiper?.isBeginning ?? false ? 'opacity-30 hover:scale-100' : ''
         "
       >
         <ArrowNarrowLeftIcon class="h-8 w-8 text-white" />
@@ -28,8 +23,8 @@
       <button
         type="button"
         @click="swiper.slideNext()"
-        class="transition-transform hover:scale-90"
-        :class="swiper?.isEnd ?? false ? 'opacity-50 hover:scale-100' : ''"
+        class="transition-all hover:scale-90"
+        :class="swiper?.isEnd ?? false ? 'opacity-30 hover:scale-100' : ''"
       >
         <ArrowNarrowRightIcon class="h-8 w-8 text-white" />
       </button>
@@ -39,7 +34,7 @@
 
 <script setup lang="ts">
 import { Swiper as S } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/vue";
+import { Swiper } from "swiper/vue";
 import "swiper/css";
 import {
   ArrowNarrowLeftIcon,
