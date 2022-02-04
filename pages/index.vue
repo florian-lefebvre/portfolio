@@ -3,11 +3,11 @@
     <Container class="flex items-center py-16 md:py-20">
       <div class="">
         <h1
-          class="max-w-lg mb-8 text-5xl text-white md:mb-12 md:max-w-none md:text-7xl"
+          class="mb-8 max-w-lg text-5xl text-white md:mb-12 md:max-w-none md:text-7xl"
         >
           Hi, I'm
           <span
-            class="block font-semibold text-transparent bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text md:inline-block"
+            class="block bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent md:inline-block"
             >{{ fullName }}</span
           >
         </h1>
@@ -33,20 +33,20 @@
         <div class="block">
           <a
             href="#about"
-            class="inline-flex px-6 py-2 font-medium text-white transition-all duration-300 rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400 hover:scale-95"
+            class="inline-flex rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400 px-6 py-2 font-medium text-white transition-all duration-300 hover:scale-95"
           >
             Learn more
           </a>
         </div>
         <a
           href="#about"
-          class="inline-flex items-center mt-12 space-x-2 text-gray-400 transition-all rounded-full animate-pulse hover:animate-none hover:text-white focus:ring focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900"
+          class="mt-12 inline-flex animate-pulse items-center space-x-2 rounded-full text-gray-400 transition-all hover:animate-none hover:text-white focus:ring focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900"
         >
-          <ArrowCircleDownIcon class="w-10 h-10" />
+          <ArrowCircleDownIcon class="h-10 w-10" />
           <div>Scroll down</div>
         </a>
       </div>
-      <div class="hidden ml-24 shrink-0 md:block lg:ml-16">
+      <div class="ml-24 hidden shrink-0 md:block lg:ml-16">
         <HeroParallax />
       </div>
     </Container>
@@ -54,11 +54,11 @@
       <Container class="py-16 md:py-20" id="about">
         <div class="">
           <h1
-            class="max-w-lg mb-8 text-5xl text-white md:mb-12 md:max-w-none md:text-7xl"
+            class="mb-8 max-w-lg text-5xl text-white md:mb-12 md:max-w-none md:text-7xl"
           >
             About
             <span
-              class="block font-semibold text-transparent bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text md:inline-block"
+              class="block bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent md:inline-block"
               >me</span
             >
           </h1>
@@ -72,20 +72,20 @@
           <div class="block">
             <nuxt-link
               to="/about"
-              class="inline-flex px-6 py-2 font-medium text-white transition-all duration-300 rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400 hover:scale-95"
+              class="inline-flex rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400 px-6 py-2 font-medium text-white transition-all duration-300 hover:scale-95"
             >
               Learn more
             </nuxt-link>
           </div>
           <div class="relative">
             <div
-              class="inset-y-0 hidden w-full h-0 my-auto border-t-2 border-gray-500 border-dashed xl:absolute xl:block"
+              class="inset-y-0 my-auto hidden h-0 w-full border-t-2 border-dashed border-gray-500 xl:absolute xl:block"
             ></div>
             <div
-              class="absolute inset-x-0 block w-0 h-full mx-auto border-l-2 border-gray-500 border-dashed sm:hidden"
+              class="absolute inset-x-0 mx-auto block h-full w-0 border-l-2 border-dashed border-gray-500 sm:hidden"
             ></div>
             <div
-              class="relative grid gap-6 mt-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+              class="relative mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             >
               <div
                 v-for="e in [
@@ -103,12 +103,12 @@
                     'I know all the tools needed to build apps: frontend, backend and mobile.',
                   ],
                 ]"
-                class="p-6 text-white bg-gray-800 rounded-lg"
+                class="rounded-lg bg-gray-800 p-6 text-white"
               >
-                <div class="mb-4 text-lg font-semibold">
+                <div class="mb-4 text-xl font-semibold">
                   At
                   <span
-                    class="text-transparent bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text"
+                    class="bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text text-transparent"
                     >{{ e[0] }}</span
                   >...
                 </div>
@@ -124,25 +124,25 @@
     <Container class="py-16 md:py-20">
       <div class="">
         <h1
-          class="max-w-lg mb-8 text-5xl text-white md:mb-12 md:max-w-none md:text-7xl"
+          class="mb-8 max-w-lg text-5xl text-white md:mb-12 md:max-w-none md:text-7xl"
         >
           A few
           <span
-            class="block font-semibold text-transparent bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text md:inline-block"
+            class="block bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent md:inline-block"
             >projects</span
           >
         </h1>
         <div class="max-w-3xl text-gray-200 md:text-lg">
           <p class="mb-10">
             Since I started to learn web development, I've already built several
-            websites and mobile apps using modern technologies. Here are some of
-            them.
+            websites and mobile apps using modern technologies. Here is an
+            overview.
           </p>
         </div>
         <div class="block">
           <nuxt-link
             to="/projects"
-            class="inline-flex px-6 py-2 font-medium text-white transition-all duration-300 rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400 hover:scale-95"
+            class="inline-flex rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400 px-6 py-2 font-medium text-white transition-all duration-300 hover:scale-95"
           >
             View all
           </nuxt-link>
@@ -152,11 +152,23 @@
             <SwiperSlide v-for="project in projects"
               ><NuxtLink
                 :to="`/projects/${project.slug}`"
-                class="block text-white bg-gray-700 rounded-lg shadow-md transition-all hover:shadow hover:scale-95"
+                class="group relative block h-full overflow-hidden rounded-xl bg-gray-800 text-white shadow-lg transition-all hover:scale-95 hover:shadow"
               >
-                <div class="rounded-t-lg bg-cover bg-center w-full h-48" :style="{backgroundImage: `url(${project.imageUrl})`}"></div>
+                <div
+                  class="absolute top-4 right-4 scale-75 rounded-lg border border-gray-700 bg-gray-800 p-2 opacity-0 transition-all group-hover:scale-100 group-hover:opacity-100"
+                >
+                  <ArrowUpIcon class="h-6 w-6 rotate-45 text-gray-300" />
+                </div>
+                <div class="p-1">
+                  <div
+                    class="h-48 w-full rounded-lg bg-cover bg-center"
+                    :style="{ backgroundImage: `url(${project.imageUrl})` }"
+                  ></div>
+                </div>
                 <div class="p-4">
-                  <div class="text-xl text-white font-semibold">{{ project.title }}</div>
+                  <div class="mb-2 text-xl font-semibold text-white">
+                    {{ project.title }}
+                  </div>
                   <div class="text-gray-300">{{ project.description }}</div>
                 </div>
               </NuxtLink></SwiperSlide
@@ -171,7 +183,7 @@
 <script setup lang="ts">
 import data from "~/data";
 import { SwiperSlide } from "swiper/vue";
-import { ArrowCircleDownIcon } from "@heroicons/vue/outline";
+import { ArrowCircleDownIcon, ArrowUpIcon } from "@heroicons/vue/outline";
 import { Project } from "~/types";
 const { fullName } = useMe();
 useSeo({
@@ -180,40 +192,43 @@ useSeo({
 
 const projects: Project[] = [
   {
-    title: "Project 1",
-    imageUrl: "https://picsum.photos/id/1/400/300",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, aliquam atque porro nulla soluta recusandae.",
-    slug: "project-1",
+    title: "yNotes app",
+    imageUrl:
+      "https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2",
+    description:
+      "yNotes is a mobile application that retrieves data from the student life services used by most French schools. It reshapes and adds many features. I'm involved in the development and the design of the app.",
+    slug: "ynotes-app",
   },
   {
-    title: "Project 2",
-    imageUrl: "https://picsum.photos/id/2/400/300",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, aliquam atque porro nulla soluta recusandae.",
-    slug: "project-2",
+    title: "RégioLangues",
+    imageUrl:
+      "https://res.cloudinary.com/af68d22a-2043-4078-857c-f2db1a1406ec/image/upload/c_scale/v1641930868/Regiolangues/og_sup891.jpg",
+    description:
+      "RégioLangues is a website I made for my brother. I was only involved in the coding, not the data. Its goal: gather resources around the web on the topic of French regional languages. It uses Supabase for the backend.",
+    slug: "regiolangues",
   },
   {
-    title: "Project 3",
+    title: "Portfolio",
     imageUrl: "https://picsum.photos/id/3/400/300",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, aliquam atque porro nulla soluta recusandae.",
-    slug: "project-3",
+    description:
+      "Not much to say except that I am quite satisfied with the result.",
+    slug: "portfolio",
   },
   {
-    title: "Project 4",
-    imageUrl: "https://picsum.photos/id/4/400/300",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, aliquam atque porro nulla soluta recusandae.",
-    slug: "project-4",
+    title: "OHF31 website",
+    imageUrl:
+      "https://res.cloudinary.com/af68d22a-2043-4078-857c-f2db1a1406ec/image/upload/c_scale,w_1000/v1636657520/OHF31/ohf31-public-website/images/shared/og_image_bsrjhr.png",
+    description:
+      "I finally finished v3 of the 1st site I made! That's a basic showcase site but I think it looks really great. And it runs on Nuxt 3 🎉",
+    slug: "ohf31-website",
   },
   {
-    title: "Project 5",
-    imageUrl: "https://picsum.photos/id/5/400/300",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, aliquam atque porro nulla soluta recusandae.",
-    slug: "project-5",
-  },
-  {
-    title: "Project 6",
-    imageUrl: "https://picsum.photos/id/6/400/300",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, aliquam atque porro nulla soluta recusandae.",
-    slug: "project-6",
+    title: "yNotes website",
+    imageUrl:
+      "https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2",
+    description:
+      "At yNotes, we needed a support center and a more consistent website, so I remade everything. This allowed me to discover animation with AnimXYZ and learn how to make a more modern design.",
+    slug: "ynotes-website",
   },
 ];
 </script>

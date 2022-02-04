@@ -67,3 +67,9 @@ const slidesPerView = computed<number>(() => {
 //     }
 // });
 </script>
+
+<style>
+.swiper-slide {
+  height: auto;
+}
+</style>

@@ -13,6 +13,7 @@
 </template>
 
 <script setup lang="ts">
+import "highlight.js/styles/atom-one-dark.css";
 const route = useRoute();
 const firstVisit = ref(true);
 

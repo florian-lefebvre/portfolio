@@ -15,12 +15,20 @@ module.exports = {
         primary: colors.red,
         secondary: colors.rose,
         tertiary: colors.amber,
-        gray: colors.slate
+        gray: colors.slate,
       },
       fontFamily: {
         sans: ["DM Sans", "sans-serif"],
+        mono: ['DM Mono', 'monospace'],
       },
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            "--tw-prose-invert-pre-bg": theme("colors.gray[900]"),
+          },
+        },
+      }),
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
