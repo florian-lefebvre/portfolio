@@ -17,6 +17,7 @@ useSeo({
   title: "Home",
 });
 
+// An awesome comment
 const projects: Project[] = [
   {
     title: "yNotes app",
@@ -59,7 +60,7 @@ const projects: Project[] = [
   },
 ];
 ```
-<!--
+
 ```dart
 import 'package:flutter/material.dart';
 
@@ -99,4 +100,31 @@ class MyWidget extends StatelessWidget {
   }
 }
 ```
--->
+
+```html
+<div class="bg-red-500">A test element</div>
+```
+
+```py
+x = False
+```
+
+### A sub title
+
+Does HMR work? **looks like it**.
+
+---
+
+_incredible_
+
+- test
+- 2
+- 3
+- 4
+
+---
+
+1. a
+2. b
+3. c
+4. d

@@ -1,7 +1,7 @@
 <template>
   <div class="sticky top-0 z-40">
     <Popover class="relative" v-slot="{ close }">
-      <div class="h-16 backdrop-blur-md bg-gray-900/90">
+      <div class="h-16 backdrop-blur-md bg-gray-900/90 border-b border-gray-800">
         <Container class="flex items-center justify-between h-full py-4">
           <ProfilePicture />
           <div class="flex items-center space-x-4 sm:space-x-6">

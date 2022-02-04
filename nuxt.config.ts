@@ -18,7 +18,7 @@ export default defineNuxtConfig({
       { rel: "icon", type: "image/png", href: "/pp.png" },
     ],
   },
-  css: ["@/assets/css/main.css"],
+  css: ["@/assets/css/main.css", "@/assets/css/highlight.css"],
   buildModules: ["@vueuse/nuxt"],
   build: {
     postcss: {
@@ -38,7 +38,12 @@ export default defineNuxtConfig({
       Markdown({
         markdownItOptions: {
           html: true,
+          xhtmlOut: false,
+          breaks: false,
+          langPrefix: "language-",
+          linkify: true,
           typographer: true,
+          quotes: "“”‘’",
           highlight: function (str: string, lang: string) {
             if (lang && hljs.getLanguage(lang)) {
               try {
