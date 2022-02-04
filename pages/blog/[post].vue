@@ -1,6 +1,5 @@
 <template>
-  <div class="max-w-[100vw] m-0 px-0 py-16">
-    <!-- <pre class="bg-primary-900 text-white p-2 rounded-lg">{{ JSON.stringify(posts, null, 2) }}</pre> -->
+  <div class="m-0 max-w-[100vw] px-0 py-16">
     <Container>
       <div class="prose prose-invert max-w-none">
         <component :is="posts[0].default" />
