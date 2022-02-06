@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  @apply scroll-smooth scroll-pt-16 selection:bg-primary-500 selection:text-white;
+  @apply scroll-pt-16 scroll-smooth selection:bg-primary-500 selection:text-white;
 }
 
 * {
@@ -28,5 +28,25 @@ html {
 }
 
 code {
-  @apply block;
+  display: block;
+}
+
+.title {
+  @apply mb-8 max-w-lg text-5xl text-white md:mb-12 md:max-w-none md:text-7xl;
+}
+
+.bg-gradient {
+  @apply bg-gradient-to-tr from-primary-600 to-secondary-400;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent;
+}
+
+.animated-underline {
+  @apply transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:rounded-full after:bg-gradient-to-tr after:from-primary-600 after:to-secondary-400 after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100;
+}
+
+.button-primary {
+  @apply bg-gradient inline-flex rounded-full px-6 py-2 font-medium text-white transition-all duration-300 hover:scale-95;
 }

@@ -2,14 +2,13 @@
   <div>
     <Container class="flex items-center py-16 md:py-20">
       <div class="">
-        <h1
-          class="mb-8 max-w-lg text-5xl text-white md:mb-12 md:max-w-none md:text-7xl"
-        >
+        <h1 class="title">
           {{ $t("pages.home.introduction.title") }}
           <span
-            class="block bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent md:inline-block"
-            >{{ $t("global.name") }}</span
+            class="bg-gradient text-gradient block font-semibold md:inline-block"
           >
+            {{ $t("global.name") }}
+          </span>
         </h1>
         <div class="max-w-xl text-gray-200 md:text-lg">
           <p class="mb-6">
@@ -23,16 +22,13 @@
             <a
               target="_blank"
               href="https://ynotes.fr"
-              class="relative bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:rounded-full after:bg-gradient-to-tr after:from-primary-600 after:to-secondary-400 after:transition-transform after:duration-300 after:ease-in-out hover:text-white hover:after:origin-bottom-left hover:after:scale-x-100"
-              >{{ $t("pages.home.introduction.descriptionLink") }}</a
-            >
+              class="bg-gradient animated-underline text-gradient relative font-semibold hover:text-white"
+              >{{ $t("pages.home.introduction.descriptionLink") }}
+            </a>
           </i18n-t>
         </div>
         <div class="block">
-          <a
-            href="#about"
-            class="inline-flex rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400 px-6 py-2 font-medium text-white transition-all duration-300 hover:scale-95"
-          >
+          <a href="#about" class="button-primary">
             {{ $t("pages.home.introduction.learnMore") }}
           </a>
         </div>
@@ -50,56 +46,49 @@
     </Container>
     <div class="bg-gray-900/50">
       <Container class="py-16 md:py-20" id="about">
-        <div class="">
-          <h2
-            class="mb-8 max-w-lg text-5xl text-white md:mb-12 md:max-w-none md:text-7xl"
+        <h2 class="title">
+          {{ $t("pages.home.about.title1") }}
+          <span
+            class="bg-gradient text-gradient block font-semibold md:inline-block"
           >
-            {{ $t("pages.home.about.title1") }}
-            <span
-              class="block bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent md:inline-block"
-              >{{ $t("pages.home.about.title2") }}</span
-            >
-          </h2>
-          <div class="max-w-3xl text-gray-200 md:text-lg">
-            <p class="mb-10">
-              {{ $t("pages.home.about.description") }}
-            </p>
-          </div>
-          <div class="block">
-            <nuxt-link
-              to="/about"
-              class="inline-flex rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400 px-6 py-2 font-medium text-white transition-all duration-300 hover:scale-95"
-            >
-              {{ $t("pages.home.about.learnMore") }}
-            </nuxt-link>
-          </div>
-          <div class="relative">
+            {{ $t("pages.home.about.title2") }}
+          </span>
+        </h2>
+        <div class="max-w-3xl text-gray-200 md:text-lg">
+          <p class="mb-10">
+            {{ $t("pages.home.about.description") }}
+          </p>
+        </div>
+        <div class="block">
+          <nuxt-link to="/about" class="button-primary">
+            {{ $t("pages.home.about.learnMore") }}
+          </nuxt-link>
+        </div>
+        <div class="relative">
+          <div
+            class="inset-y-0 my-auto hidden h-0 w-full border-t-2 border-dashed border-gray-500 xl:absolute xl:block"
+          ></div>
+          <div
+            class="absolute inset-x-0 mx-auto block h-full w-0 border-l-2 border-dashed border-gray-500 sm:hidden"
+          ></div>
+          <div
+            class="relative mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+          >
             <div
-              class="inset-y-0 my-auto hidden h-0 w-full border-t-2 border-dashed border-gray-500 xl:absolute xl:block"
-            ></div>
-            <div
-              class="absolute inset-x-0 mx-auto block h-full w-0 border-l-2 border-dashed border-gray-500 sm:hidden"
-            ></div>
-            <div
-              class="relative mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+              v-for="card in $tm('pages.home.about.cards')"
+              class="rounded-lg bg-gray-800 p-6 text-white"
             >
-              <div
-                v-for="card in $tm('pages.home.about.cards')"
-                class="rounded-lg bg-gray-800 p-6 text-white"
+              <i18n-t
+                tag="div"
+                class="mb-4 text-xl font-semibold"
+                keypath="pages.home.about.cardsTitle"
               >
-                <i18n-t
-                  tag="div"
-                  class="mb-4 text-xl font-semibold"
-                  keypath="pages.home.about.cardsTitle"
-                >
-                  <span
-                    class="bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text text-transparent"
-                    >{{ $rt(card.age) }}</span
-                  >
-                </i18n-t>
-                <div class="">
-                  {{ $rt(card.description) }}
-                </div>
+                <span class="bg-gradient text-gradient">
+                  {{ $rt(card.age) }}
+                </span>
+              </i18n-t>
+              <div>
+                {{ $rt(card.description) }}
               </div>
             </div>
           </div>
@@ -107,72 +96,61 @@
       </Container>
     </div>
     <Container class="py-16 md:py-20">
-      <div class="">
-        <h1
-          class="mb-8 max-w-lg text-5xl text-white md:mb-12 md:max-w-none md:text-7xl"
+      <h1 class="title">
+        A few
+        <span
+          class="bg-gradient text-gradient block font-semibold md:inline-block"
+          >projects</span
         >
-          A few
-          <span
-            class="block bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent md:inline-block"
-            >projects</span
-          >
-        </h1>
-        <div class="max-w-3xl text-gray-200 md:text-lg">
-          <p class="mb-10">
-            Since I started to learn web development, I've already built several
-            websites and mobile apps using modern technologies. Here is an
-            overview.
-          </p>
-        </div>
-        <div class="block">
-          <nuxt-link
-            to="/projects"
-            class="inline-flex rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400 px-6 py-2 font-medium text-white transition-all duration-300 hover:scale-95"
-          >
-            View all
-          </nuxt-link>
-        </div>
-        <div class="mt-10">
-          <AppSwiper>
-            <SwiperSlide v-for="project in projects"
-              ><NuxtLink
-                :to="`/projects/${project.slug}`"
-                class="group relative block h-full overflow-hidden rounded-xl bg-gray-800 text-white shadow-lg transition-all hover:scale-95 hover:shadow"
-              >
-                <div
-                  class="absolute top-4 right-4 scale-75 rounded-lg border border-gray-700 bg-gray-800 p-2 opacity-0 transition-all group-hover:scale-100 group-hover:opacity-100"
-                >
-                  <ArrowUpIcon class="h-6 w-6 rotate-45 text-gray-300" />
-                </div>
-                <div class="p-1">
-                  <div
-                    class="h-48 w-full rounded-lg bg-cover bg-center"
-                    :style="{ backgroundImage: `url(${project.imageUrl})` }"
-                  ></div>
-                </div>
-                <div class="p-4">
-                  <div class="mb-2 text-xl font-semibold text-white">
-                    {{ project.title }}
-                  </div>
-                  <div class="text-gray-300">{{ project.description }}</div>
-                </div>
-              </NuxtLink></SwiperSlide
+      </h1>
+      <div class="max-w-3xl text-gray-200 md:text-lg">
+        <p class="mb-10">
+          Since I started to learn web development, I've already built several
+          websites and mobile apps using modern technologies. Here is an
+          overview.
+        </p>
+      </div>
+      <div class="block">
+        <NuxtLink to="/projects" class="button-primary">View all</NuxtLink>
+      </div>
+      <div class="mt-10">
+        <AppSwiper>
+          <SwiperSlide v-for="project in projects"
+            ><NuxtLink
+              :to="`/projects/${project.slug}`"
+              class="group relative block h-full overflow-hidden rounded-xl bg-gray-800 text-white shadow-lg transition-all hover:scale-95 hover:shadow"
             >
-          </AppSwiper>
-        </div>
+              <div
+                class="absolute top-4 right-4 scale-75 rounded-lg border border-gray-700 bg-gray-800 p-2 opacity-0 transition-all group-hover:scale-100 group-hover:opacity-100"
+              >
+                <ArrowUpIcon class="h-6 w-6 rotate-45 text-gray-300" />
+              </div>
+              <div class="p-1">
+                <div
+                  class="h-48 w-full rounded-lg bg-cover bg-center"
+                  :style="{ backgroundImage: `url(${project.imageUrl})` }"
+                ></div>
+              </div>
+              <div class="p-4">
+                <div class="mb-2 text-xl font-semibold text-white">
+                  {{ project.title }}
+                </div>
+                <div class="text-gray-300">{{ project.description }}</div>
+              </div>
+            </NuxtLink></SwiperSlide
+          >
+        </AppSwiper>
       </div>
     </Container>
   </div>
 </template>
 
 <script setup lang="ts">
-import data from "~/data";
 import { SwiperSlide } from "swiper/vue";
 import { ArrowCircleDownIcon, ArrowUpIcon } from "@heroicons/vue/outline";
 import { Project } from "~/types";
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
-const { fullName } = useMe();
 useSeo({
   title: "Home",
 });

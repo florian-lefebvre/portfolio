@@ -1,15 +1,13 @@
 <template>
   <div class="z-10 bg-gray-800/50 py-16 md:py-20" id="contact">
     <Container>
-      <h1
-        class="mb-8 max-w-lg text-5xl text-white md:mb-12 md:max-w-none md:text-7xl"
-      >
+      <h2 class="title">
         Get in
         <span
-          class="block bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent md:inline-block"
+          class="bg-gradient text-gradient block font-semibold md:inline-block"
           >touch</span
         >
-      </h1>
+      </h2>
       <div class="max-w-3xl text-gray-200 md:text-lg">
         <p class="mb-10">
           If you wish to talk, or chat about an existing / upcoming project,
@@ -47,7 +45,7 @@
               </div>
             </div>
             <div class="mb-4 max-w-lg text-gray-400">
-              {{ data.introduction.quick }}
+              {{ $t("global.meta.description") }}
             </div>
             <div class="flex items-center space-x-6">
               <a
@@ -90,7 +88,6 @@
 
 <script setup lang="ts">
 import { FooterCategory } from "~/types";
-import data from "~/data";
 const { firstName, lastName, fullName, social } = useMe();
 
 const container = ref<HTMLElement>();

@@ -9,9 +9,10 @@
     <Header />
     <NuxtPage class="z-10 overflow-x-hidden" />
     <Footer />
-    <button 
-    class="fixed bottom-4 right-4 z-50 bg-white px-4 py-2 rounded-full shadow-md font-semibold hover:scale-95 transition-transform"
-    @click="$i18n.locale = $i18n.locale === 'en' ? 'fr' : 'en'">
+    <button
+      class="fixed bottom-4 right-4 z-50 rounded-full bg-white px-4 py-2 font-semibold shadow-md transition-transform hover:scale-95"
+      @click="$i18n.locale = $i18n.locale === 'en' ? 'fr' : 'en'"
+    >
       {{ $i18n.locale }}
     </button>
   </div>
