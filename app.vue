@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative flex flex-col min-h-screen bg-gradient-to-tr from-gray-900 to-gray-800"
+    class="relative flex min-h-screen flex-col bg-gradient-to-tr from-gray-900 to-gray-800"
   >
     <div
       class="absolute inset-0 bg-[url(https://snippets.alexandru.so/grid.svg)]"
@@ -9,6 +9,11 @@
     <Header />
     <NuxtPage class="z-10 overflow-x-hidden" />
     <Footer />
+    <button 
+    class="fixed bottom-4 right-4 z-50 bg-white px-4 py-2 rounded-full shadow-md font-semibold hover:scale-95 transition-transform"
+    @click="$i18n.locale = $i18n.locale === 'en' ? 'fr' : 'en'">
+      {{ $i18n.locale }}
+    </button>
   </div>
 </template>
 
@@ -24,7 +29,7 @@ watch(
         firstVisit.value = false;
         return;
       }
-      window.scrollTo({top:0, behavior: "smooth"});
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   },
   { deep: true, immediate: true }

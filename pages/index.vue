@@ -5,37 +5,35 @@
         <h1
           class="mb-8 max-w-lg text-5xl text-white md:mb-12 md:max-w-none md:text-7xl"
         >
-          Hi, I'm
+          {{ $t("pages.home.introduction.title") }}
           <span
             class="block bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent md:inline-block"
-            >{{ fullName }}</span
+            >{{ $t("global.name") }}</span
           >
         </h1>
         <div class="max-w-xl text-gray-200 md:text-lg">
           <p class="mb-6">
-            {{ data.introduction.quick }}
+            {{ $t("pages.home.introduction.short") }}
           </p>
-          <p class="mb-10">
-            I enjoy creating beautiful and functional websites as well as mobile
-            apps. I'm currently working on
+          <i18n-t
+            tag="p"
+            class="mb-10"
+            keypath="pages.home.introduction.description"
+          >
             <a
               target="_blank"
               href="https://ynotes.fr"
               class="relative bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:rounded-full after:bg-gradient-to-tr after:from-primary-600 after:to-secondary-400 after:transition-transform after:duration-300 after:ease-in-out hover:text-white hover:after:origin-bottom-left hover:after:scale-x-100"
-              >yNotes</a
-            >, a school life mobile application that connects French students to
-            their school services. {{ $t("test") }}
-          </p>
+              >{{ $t("pages.home.introduction.descriptionLink") }}</a
+            >
+          </i18n-t>
         </div>
-        <button @click="$i18n.locale = $i18n.locale === 'en' ? 'fr' : 'en'">
-          {{ $i18n.locale }}
-        </button>
         <div class="block">
           <a
             href="#about"
             class="inline-flex rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400 px-6 py-2 font-medium text-white transition-all duration-300 hover:scale-95"
           >
-            Learn more
+            {{ $t("pages.home.introduction.learnMore") }}
           </a>
         </div>
         <a
@@ -43,7 +41,7 @@
           class="mt-12 inline-flex animate-pulse items-center space-x-2 rounded-full text-gray-400 transition-all hover:animate-none hover:text-white focus:ring focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900"
         >
           <ArrowCircleDownIcon class="h-10 w-10" />
-          <div>Scroll down</div>
+          <div>{{ $t("pages.home.introduction.scrollDown") }}</div>
         </a>
       </div>
       <div class="ml-24 hidden shrink-0 md:block lg:ml-16">
@@ -185,19 +183,22 @@ import data from "~/data";
 import { SwiperSlide } from "swiper/vue";
 import { ArrowCircleDownIcon, ArrowUpIcon } from "@heroicons/vue/outline";
 import { Project } from "~/types";
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
 const { fullName } = useMe();
 useSeo({
   title: "Home",
 });
 
-const projects: Project[] = [
+const projects = ref<Project[]>([
   {
     title: "yNotes app",
     imageUrl:
       "https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2",
-    description:
-      "yNotes is a mobile application that retrieves data from the student life services used by most French schools. It reshapes and adds many features. I'm involved in the development and the design of the app.",
+    // description:
+    // "yNotes is a mobile application that retrieves data from the student life services used by most French schools. It reshapes and adds many features. I'm involved in the development and the design of the app.",
     slug: "ynotes-app",
+    description: computed(() => t("test")),
   },
   {
     title: "RégioLangues",
@@ -230,5 +231,5 @@ const projects: Project[] = [
       "At yNotes, we needed a support center and a more consistent website, so I remade everything. This allowed me to discover animation with AnimXYZ and learn how to make a more modern design.",
     slug: "ynotes-website",
   },
-];
+]);
 </script>

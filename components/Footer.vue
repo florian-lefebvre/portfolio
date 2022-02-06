@@ -1,12 +1,12 @@
 <template>
-  <div class="z-10 py-16 bg-gray-800/50 md:py-20" id="contact">
+  <div class="z-10 bg-gray-800/50 py-16 md:py-20" id="contact">
     <Container>
       <h1
-        class="max-w-lg mb-8 text-5xl text-white md:mb-12 md:text-7xl md:max-w-none"
+        class="mb-8 max-w-lg text-5xl text-white md:mb-12 md:max-w-none md:text-7xl"
       >
         Get in
         <span
-          class="block font-semibold text-transparent md:inline-block bg-clip-text bg-gradient-to-tr from-primary-600 to-secondary-400"
+          class="block bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent md:inline-block"
           >touch</span
         >
       </h1>
@@ -22,22 +22,22 @@
           :href="link.url(link.username)"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex text-gray-400 transition-colors hover:text-white space-x-4 items-center"
+          class="inline-flex items-center space-x-4 text-gray-400 transition-colors hover:text-white"
         >
-          <div class="w-8 h-8" v-html="link.icon"></div>
+          <div class="h-8 w-8" v-html="link.icon"></div>
           <div>{{ link.username }}</div>
         </a>
       </div>
     </Container>
   </div>
-  <div class="z-0 mt-auto backdrop-blur-md bg-gray-900/50">
+  <div class="z-0 mt-auto bg-gray-900/50 backdrop-blur-md">
     <Container class="pt-16">
       <div ref="container">
         <div
-          class="flex flex-col justify-center md:justify-between md:flex-row"
+          class="flex flex-col justify-center md:flex-row md:justify-between"
         >
           <div class="flex flex-col justify-start">
-            <div class="flex items-center justify-start mb-6 space-x-4">
+            <div class="mb-6 flex items-center justify-start space-x-4">
               <ProfilePicture />
               <div
                 class="flex flex-col items-start justify-center font-semibold leading-5 text-gray-400"
@@ -46,7 +46,7 @@
                 <div>{{ lastName }}</div>
               </div>
             </div>
-            <div class="max-w-lg mb-4 text-gray-400">
+            <div class="mb-4 max-w-lg text-gray-400">
               {{ data.introduction.quick }}
             </div>
             <div class="flex items-center space-x-6">
@@ -55,14 +55,14 @@
                 :href="link.url(link.username)"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="w-5 h-5 text-gray-400 transition-colors hover:text-white"
+                class="h-5 w-5 text-gray-400 transition-colors hover:text-white"
                 v-html="link.icon"
               ></a>
             </div>
           </div>
-          <div class="flex mt-12 space-x-16 md:ml-8 md:mt-0">
+          <div class="mt-12 flex space-x-16 md:ml-8 md:mt-0">
             <div v-for="category in categories">
-              <div class="mb-2 font-semibold text-gray-600 uppercase">
+              <div class="mb-2 font-semibold uppercase text-gray-600">
                 {{ category.name }}
               </div>
               <div class="space-y-1">
@@ -77,12 +77,12 @@
             </div>
           </div>
         </div>
-        <div class="h-px my-6 bg-gray-600"></div>
-        <p class="mx-auto text-center text-gray-400">
-          &copy; {{ new Date().getFullYear() }} {{ fullName }}. All rights
-          reserved.
-        </p>
-        <div id="wcb" class="my-6 carbonbadge wcb-d"></div>
+        <div class="my-6 h-px bg-gray-600"></div>
+        <p
+          class="mx-auto text-center text-gray-400"
+          v-html="$t('global.footer', { date: new Date().getFullYear() })"
+        ></p>
+        <div id="wcb" class="carbonbadge wcb-d my-6"></div>
       </div>
     </Container>
   </div>
