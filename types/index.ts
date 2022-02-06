@@ -42,6 +42,7 @@ export interface MessageSchema {
       about: {
         title1: string;
         title2: string;
+        description: string;
         learnMore: string;
         cardsTitle: string;
         cards: Array<{

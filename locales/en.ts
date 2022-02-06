@@ -27,6 +27,7 @@ const message: MessageSchema = {
       about: {
         title1: "About",
         title2: "me",
+        description: "I am a French student in my last year of high school. I've been coding since 2019 on my free time and I've already accomplished several things.",
         learnMore: "Learn more",
         cardsTitle: "At {0}...",
         cards: [

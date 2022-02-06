@@ -28,10 +28,11 @@ const message: MessageSchema = {
         scrollDown: "Faites défiler vers le bas",
       },
       about: {
-        title1: "A propos de",
+        title1: "À propos de",
         title2: "moi",
+        description: "Je suis un étudiant français en Terminale. Je code depuis 2019 sur mon temps libre et j'ai déjà accompli plusieurs choses.",
         learnMore: "En savoir plus",
-        cardsTitle: "À {0}...",
+        cardsTitle: "À {0} ans...",
         cards: [
           {
             age: 13,

@@ -51,20 +51,18 @@
     <div class="bg-gray-900/50">
       <Container class="py-16 md:py-20" id="about">
         <div class="">
-          <h1
+          <h2
             class="mb-8 max-w-lg text-5xl text-white md:mb-12 md:max-w-none md:text-7xl"
           >
-            About
+            {{ $t("pages.home.about.title1") }}
             <span
               class="block bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent md:inline-block"
-              >me</span
+              >{{ $t("pages.home.about.title2") }}</span
             >
-          </h1>
+          </h2>
           <div class="max-w-3xl text-gray-200 md:text-lg">
             <p class="mb-10">
-              I am a French student in my last year of high school. I've been
-              coding since 2019 on my free time and I've already accomplished
-              several things.
+              {{ $t("pages.home.about.description") }}
             </p>
           </div>
           <div class="block">
@@ -72,7 +70,7 @@
               to="/about"
               class="inline-flex rounded-full bg-gradient-to-tr from-primary-600 to-secondary-400 px-6 py-2 font-medium text-white transition-all duration-300 hover:scale-95"
             >
-              Learn more
+              {{ $t("pages.home.about.learnMore") }}
             </nuxt-link>
           </div>
           <div class="relative">
@@ -86,32 +84,21 @@
               class="relative mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             >
               <div
-                v-for="e in [
-                  [
-                    13,
-                    'I started to learn how to code with Unreal Engine 4 using blueprints.',
-                  ],
-                  [15, 'I started to learn web development.'],
-                  [
-                    16,
-                    'I started working on yNotes, a mobile app made with Flutter with already more than 4k users.',
-                  ],
-                  [
-                    17,
-                    'I know all the tools needed to build apps: frontend, backend and mobile.',
-                  ],
-                ]"
+                v-for="card in $tm('pages.home.about.cards')"
                 class="rounded-lg bg-gray-800 p-6 text-white"
               >
-                <div class="mb-4 text-xl font-semibold">
-                  At
+                <i18n-t
+                  tag="div"
+                  class="mb-4 text-xl font-semibold"
+                  keypath="pages.home.about.cardsTitle"
+                >
                   <span
                     class="bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text text-transparent"
-                    >{{ e[0] }}</span
-                  >...
-                </div>
+                    >{{ $rt(card.age) }}</span
+                  >
+                </i18n-t>
                 <div class="">
-                  {{ e[1] }}
+                  {{ $rt(card.description) }}
                 </div>
               </div>
             </div>
