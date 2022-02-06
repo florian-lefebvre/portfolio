@@ -1,31 +1,39 @@
 <template>
   <div class="sticky top-0 z-40">
     <Popover class="relative" v-slot="{ close }">
-      <div class="h-16 backdrop-blur-md bg-gray-900/90 border-b border-gray-800">
-        <Container class="flex items-center justify-between h-full py-4">
+      <div
+        class="h-16 border-b border-gray-800 bg-gray-900/90 backdrop-blur-md"
+      >
+        <Container class="flex h-full items-center justify-between py-4">
           <ProfilePicture />
           <div class="flex items-center space-x-4 sm:space-x-6">
-            <div class="items-center hidden space-x-6 sm:flex">
-              <nuxt-link
+            <div class="hidden items-center space-x-6 sm:flex">
+              <component
+                :is="link.external ? 'a' : 'nuxt-link'"
                 v-for="link in links"
                 :to="link.url"
-                class="text-white relative after:absolute after:bg-gradient-to-tr after:from-primary-600 after:rounded-full after:to-secondary-400 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
-                active-class="font-semibold text-transparent bg-clip-text bg-gradient-to-tr from-primary-600 to-secondary-400"
+                :href="link.url"
+                :target="link.external ? '_blank' : undefined"
+                class="relative text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:rounded-full after:bg-gradient-to-tr after:from-primary-600 after:to-secondary-400 after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100"
+                :class="{
+                  'bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent':
+                    link.url === '/' ? $route.path === '/' : $route.path.startsWith(link.url),
+                }"
               >
                 {{ link.name }}
-              </nuxt-link>
+              </component>
             </div>
             <a
               href="#contact"
-              class="px-6 py-2 font-medium text-gray-900 duration-300 bg-white rounded-full hover:scale-95 focus:outline-none"
+              class="rounded-full bg-white px-6 py-2 font-medium text-gray-900 duration-300 hover:scale-95 focus:outline-none"
             >
               Contact
             </a>
             <PopoverButton
-              class="inline-flex items-center justify-center p-2 text-gray-200 transition-all bg-gray-800 rounded-md hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 sm:hidden focus:ring-offset-gray-900"
+              class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-200 transition-all hover:bg-gray-700 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 sm:hidden"
             >
               <span class="sr-only">Open menu</span>
-              <MenuIcon class="w-6 h-6" aria-hidden="true" />
+              <MenuIcon class="h-6 w-6" aria-hidden="true" />
             </PopoverButton>
           </div>
         </Container>
@@ -40,13 +48,13 @@
       >
         <PopoverPanel
           focus
-          class="fixed inset-0 z-50 flex items-center justify-center p-4 transition origin-center transform bg-gray-900 sm:hidden"
+          class="fixed inset-0 z-50 flex origin-center transform items-center justify-center bg-gray-900 p-4 transition sm:hidden"
         >
           <PopoverButton
-            class="absolute inline-flex items-center justify-center p-2 text-gray-200 transition-all bg-gray-800 rounded-md top-4 right-4 hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 sm:hidden focus:ring-offset-gray-900"
+            class="absolute top-4 right-4 inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-200 transition-all hover:bg-gray-700 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 sm:hidden"
           >
             <span class="sr-only">Open menu</span>
-            <XIcon class="w-6 h-6" aria-hidden="true" />
+            <XIcon class="h-6 w-6" aria-hidden="true" />
           </PopoverButton>
           <div
             class="flex flex-col items-center justify-center space-y-6 text-xl"
@@ -55,7 +63,7 @@
               v-for="link in links"
               :to="link.url"
               @click.native="() => close()"
-              class="text-white relative after:absolute after:bg-gradient-to-tr after:from-primary-600 after:rounded-full after:to-secondary-400 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
+              class="relative text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:rounded-full after:bg-gradient-to-tr after:from-primary-600 after:to-secondary-400 after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100"
               active-class="font-semibold text-transparent bg-clip-text bg-gradient-to-tr from-primary-600 to-secondary-400"
             >
               {{ link.name }}
@@ -77,6 +85,10 @@ const links: Link[] = [
   { name: "About me", url: "/about" },
   { name: "Projects", url: "/projects" },
   { name: "Blog", url: "/blog" },
-  { name: "Github", url: "/github", external: true },
+  {
+    name: "Github",
+    url: "https://github.com/florian-lefebvre",
+    external: true,
+  },
 ];
 </script>
