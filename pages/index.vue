@@ -18,6 +18,7 @@
             tag="p"
             class="mb-10"
             keypath="pages.home.introduction.description"
+            scope="global"
           >
             <a
               target="_blank"
@@ -82,6 +83,7 @@
                 tag="div"
                 class="mb-4 text-xl font-semibold"
                 keypath="pages.home.about.cardsTitle"
+                scope="global"
               >
                 <span class="bg-gradient text-gradient">
                   {{ $rt(card.age) }}

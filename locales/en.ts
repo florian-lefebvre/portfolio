@@ -24,15 +24,15 @@ const message: MessageSchema = {
       legal: [
         {
           name: "Terms",
-          url: "/terms",
+          url: "/legal/terms",
         },
         {
           name: "Privacy",
-          url: "/privacy",
+          url: "/legal/privacy",
         },
         {
           name: "Credits",
-          url: "/credits",
+          url: "/legal/credits",
         },
       ],
     },
