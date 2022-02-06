@@ -17,7 +17,9 @@
                 class="relative text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:rounded-full after:bg-gradient-to-tr after:from-primary-600 after:to-secondary-400 after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100"
                 :class="{
                   'bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent':
-                    link.url === '/' ? $route.path === '/' : $route.path.startsWith(link.url),
+                    link.url === '/'
+                      ? $route.path === '/'
+                      : $route.path.startsWith(link.url),
                 }"
               >
                 {{ link.name }}

@@ -12,12 +12,12 @@
 <script setup lang="ts">
 const posts = Object.values(import.meta.globEager("../../content/en/*.md"));
 const articles = posts.map((post) => {
-    return {
-        path: post.default.__file.split('/').at(-1).split('.')[0],
-        metadata: {
-            title: post.title,
-            description: post.desc
-        }
-    }
+  return {
+    path: post.default.__file.split("/").at(-1).split(".")[0],
+    metadata: {
+      title: post.title,
+      description: post.desc,
+    },
+  };
 });
 </script>
