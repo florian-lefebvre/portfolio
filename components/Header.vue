@@ -9,14 +9,14 @@
           <div class="flex items-center space-x-4 sm:space-x-6">
             <div class="hidden items-center space-x-6 sm:flex">
               <component
-                :is="link.external ? 'a' : 'nuxt-link'"
                 v-for="link in links"
+                :is="link.external ? 'a' : 'nuxt-link'"
                 :to="link.url"
                 :href="link.url"
                 :target="link.external ? '_blank' : undefined"
-                class="relative text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:rounded-full after:bg-gradient-to-tr after:from-primary-600 after:to-secondary-400 after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100"
+                class="animated-underline relative text-white"
                 :class="{
-                  'bg-gradient-to-tr from-primary-600 to-secondary-400 bg-clip-text font-semibold text-transparent':
+                  'bg-gradient text-gradient font-semibold':
                     link.url === '/'
                       ? $route.path === '/'
                       : $route.path.startsWith(link.url),
@@ -61,15 +61,23 @@
           <div
             class="flex flex-col items-center justify-center space-y-6 text-xl"
           >
-            <nuxt-link
+            <component
+              :is="link.external ? 'a' : 'nuxt-link'"
               v-for="link in links"
               :to="link.url"
+              :href="link.url"
+              :target="link.external ? '_blank' : undefined"
               @click.native="() => close()"
-              class="relative text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:rounded-full after:bg-gradient-to-tr after:from-primary-600 after:to-secondary-400 after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100"
-              active-class="font-semibold text-transparent bg-clip-text bg-gradient-to-tr from-primary-600 to-secondary-400"
+              class="animated-underline relative text-white"
+              :class="{
+                'bg-gradient text-gradient font-semibold':
+                  link.url === '/'
+                    ? $route.path === '/'
+                    : $route.path.startsWith(link.url),
+              }"
             >
               {{ link.name }}
-            </nuxt-link>
+            </component>
           </div>
         </PopoverPanel>
       </transition>
@@ -80,17 +88,10 @@
 <script setup lang="ts">
 import { PopoverButton, PopoverPanel, Popover } from "@headlessui/vue";
 import { MenuIcon, XIcon } from "@heroicons/vue/outline";
+import { useI18n } from "vue-i18n";
 import { Link } from "~/types";
 
-const links: Link[] = [
-  { name: "Home", url: "/" },
-  { name: "About me", url: "/about" },
-  { name: "Projects", url: "/projects" },
-  { name: "Blog", url: "/blog" },
-  {
-    name: "Github",
-    url: "https://github.com/florian-lefebvre",
-    external: true,
-  },
-];
+const { tm } = useI18n();
+
+const links = computed(() => tm("global.links.navigation") as Link[]);
 </script>

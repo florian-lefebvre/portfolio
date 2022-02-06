@@ -30,115 +30,77 @@
   </div>
   <div class="z-0 mt-auto bg-gray-900/50 backdrop-blur-md">
     <Container class="pt-16">
-      <div ref="container">
-        <div
-          class="flex flex-col justify-center md:flex-row md:justify-between"
-        >
-          <div class="flex flex-col justify-start">
-            <div class="mb-6 flex items-center justify-start space-x-4">
-              <ProfilePicture />
-              <div
-                class="flex flex-col items-start justify-center font-semibold leading-5 text-gray-400"
-              >
-                <div>{{ firstName }}</div>
-                <div>{{ lastName }}</div>
-              </div>
-            </div>
-            <div class="mb-4 max-w-lg text-gray-400">
-              {{ $t("global.meta.description") }}
-            </div>
-            <div class="flex items-center space-x-6">
-              <a
-                v-for="link in social"
-                :href="link.url(link.username)"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="h-5 w-5 text-gray-400 transition-colors hover:text-white"
-                v-html="link.icon"
-              ></a>
+      <div class="flex flex-col justify-center md:flex-row md:justify-between">
+        <div class="flex flex-col justify-start">
+          <div class="mb-6 flex items-center justify-start space-x-4">
+            <ProfilePicture />
+            <div
+              class="flex flex-col items-start justify-center font-semibold leading-5 text-gray-400"
+            >
+              <div>{{ firstName }}</div>
+              <div>{{ lastName }}</div>
             </div>
           </div>
-          <div class="mt-12 flex space-x-16 md:ml-8 md:mt-0">
-            <div v-for="category in categories">
-              <div class="mb-2 font-semibold uppercase text-gray-600">
-                {{ category.name }}
-              </div>
-              <div class="space-y-1">
-                <nuxt-link
-                  :to="link.url"
-                  class="block text-gray-400 transition-colors hover:text-white"
-                  v-for="link in category.links"
-                >
-                  {{ link.name }}
-                </nuxt-link>
-              </div>
+          <div class="mb-4 max-w-lg text-gray-400">
+            {{ $t("global.meta.description") }}
+          </div>
+          <div class="flex items-center space-x-6">
+            <a
+              v-for="link in social"
+              :href="link.url(link.username)"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="h-5 w-5 text-gray-400 transition-colors hover:text-white"
+              v-html="link.icon"
+            ></a>
+          </div>
+        </div>
+        <div class="mt-12 flex space-x-16 md:ml-8 md:mt-0">
+          <div v-for="category in categories">
+            <div class="mb-2 font-semibold uppercase text-gray-600">
+              {{ category.name }}
+            </div>
+            <div class="space-y-1">
+              <nuxt-link
+                :to="link.url"
+                class="block text-gray-400 transition-colors hover:text-white"
+                v-for="link in category.links"
+              >
+                {{ link.name }}
+              </nuxt-link>
             </div>
           </div>
         </div>
-        <div class="my-6 h-px bg-gray-600"></div>
-        <p
-          class="mx-auto text-center text-gray-400"
-          v-html="$t('global.footer', { date: new Date().getFullYear() })"
-        ></p>
-        <div id="wcb" class="carbonbadge wcb-d my-6"></div>
       </div>
+      <div class="my-6 h-px bg-gray-600"></div>
+      <p
+        class="mx-auto text-center text-gray-400"
+        v-html="$t('global.footer.rights', { date: new Date().getFullYear() })"
+      ></p>
+      <div id="wcb" class="carbonbadge wcb-d my-6"></div>
+      <Script
+        src="https://unpkg.com/website-carbon-badges@1.1.1/b.min.js"
+        defer
+      ></Script>
     </Container>
   </div>
 </template>
 
 <script setup lang="ts">
-import { FooterCategory } from "~/types";
+import { ComputedRef } from "nuxt3/dist/app/compat/capi";
+import { useI18n } from "vue-i18n";
+import { FooterCategory, Link } from "~/types";
 const { firstName, lastName, fullName, social } = useMe();
+const { t, tm } = useI18n();
 
-const container = ref<HTMLElement>();
-onMounted(() => {
-  let badgeScript = document.createElement("script");
-  badgeScript.setAttribute(
-    "src",
-    "https://unpkg.com/website-carbon-badges@1.1.1/b.min.js"
-  );
-  badgeScript.setAttribute("defer", "true");
-  container.value?.appendChild(badgeScript);
-});
-
-const categories: FooterCategory[] = [
+const categories: ComputedRef<FooterCategory[]> = computed(() => [
   {
-    name: "Navigation",
-    links: [
-      {
-        name: "Home",
-        url: "/",
-      },
-      {
-        name: "About me",
-        url: "/about",
-      },
-      {
-        name: "Projects",
-        url: "/projects",
-      },
-      {
-        name: "Blog",
-        url: "/blog",
-      },
-    ],
+    name: t("global.footer.categories.navigation"),
+    links: (tm("global.links.navigation") as Link[]).filter((e) => !e.external),
   },
   {
-    name: "Legal",
-    links: [
-      {
-        name: "Terms",
-        url: "/terms",
-      },
-      {
-        name: "Privacy",
-        url: "/privacy",
-      },
-      {
-        name: "Credits",
-        url: "/credits",
-      },
-    ],
+    name: t("global.footer.categories.legal"),
+    links: (tm("global.links.legal") as Link[]).filter((e) => !e.external),
   },
-];
+]);
 </script>

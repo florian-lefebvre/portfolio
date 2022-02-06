@@ -1,4 +1,4 @@
-import { MessageSchema } from "~/types";
+import { MessageSchema } from "~/types/i18n";
 
 const { age } = useMe();
 
@@ -9,9 +9,37 @@ const message: MessageSchema = {
     meta: {
       description: `A ${age} year old self-taught fullstack developer from France.`,
     },
-    navigation: [],
-    legal: [],
-    footer: "&copy {date} @:global.name{'.'} All rights reserved.",
+    links: {
+      navigation: [
+        { name: "Home", url: "/" },
+        { name: "About me", url: "/about" },
+        { name: "Projects", url: "/projects" },
+        { name: "Blog", url: "/blog" },
+        {
+          name: "Github",
+          url: "https://github.com/florian-lefebvre",
+          external: true,
+        },
+      ],
+      legal: [
+        {
+          name: "Terms",
+          url: "/terms",
+        },
+        {
+          name: "Privacy",
+          url: "/privacy",
+        },
+        {
+          name: "Credits",
+          url: "/credits",
+        },
+      ],
+    },
+    footer: {
+      rights: "&copy {date} @:global.name{'.'} All rights reserved.",
+      categories: { navigation: "Navigation", legal: "Legal" },
+    },
   },
   pages: {
     home: {
@@ -27,7 +55,8 @@ const message: MessageSchema = {
       about: {
         title1: "About",
         title2: "me",
-        description: "I am a French student in my last year of high school. I've been coding since 2019 on my free time and I've already accomplished several things.",
+        description:
+          "I am a French student in my last year of high school. I've been coding since 2019 on my free time and I've already accomplished several things.",
         learnMore: "Learn more",
         cardsTitle: "At {0}...",
         cards: [

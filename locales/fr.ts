@@ -1,4 +1,4 @@
-import { MessageSchema } from "~/types";
+import { MessageSchema } from "~/types/i18n";
 
 const { age } = useMe();
 
@@ -12,9 +12,37 @@ const message: MessageSchema = {
     meta: {
       description: `Un développeur fullstack autodidacte de ${age} ans, originaire de France.`,
     },
-    navigation: [],
-    legal: [],
-    footer: "&copy; {date} @:global.name{'.'} Tous droits réservés.",
+    links: {
+      navigation: [
+        { name: "Accueil", url: "/" },
+        { name: "A propos", url: "/about" },
+        { name: "Projets", url: "/projects" },
+        { name: "Blog", url: "/blog" },
+        {
+          name: "Github",
+          url: "https://github.com/florian-lefebvre",
+          external: true,
+        },
+      ],
+      legal: [
+        {
+          name: "Conditions",
+          url: "/terms",
+        },
+        {
+          name: "Confidentialité",
+          url: "/privacy",
+        },
+        {
+          name: "Crédits",
+          url: "/credits",
+        },
+      ],
+    },
+    footer: {
+      rights: "&copy; {date} @:global.name{'.'} Tous droits réservés.",
+      categories: { navigation: "Navigation", legal: "Légal" },
+    },
   },
   pages: {
     home: {
@@ -30,7 +58,8 @@ const message: MessageSchema = {
       about: {
         title1: "À propos de",
         title2: "moi",
-        description: "Je suis un étudiant français en Terminale. Je code depuis 2019 sur mon temps libre et j'ai déjà accompli plusieurs choses.",
+        description:
+          "Je suis un étudiant français en Terminale. Je code depuis 2019 sur mon temps libre et j'ai déjà accompli plusieurs choses.",
         learnMore: "En savoir plus",
         cardsTitle: "À {0} ans...",
         cards: [
