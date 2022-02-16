@@ -17,7 +17,7 @@
     "@vitejs/plugin-vue": "^2.1.0",
     "@vueuse/nuxt": "^7.5.3",
     "autoprefixer": "^10.4.2",
-    "nuxt3": "3.0.0-27356801.e9128f3",
+    "nuxt3": "^3.0.0-27417251.289d54e",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.5",

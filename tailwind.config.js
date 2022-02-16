@@ -7,7 +7,7 @@ module.exports = {
     "./layouts/**/*.vue",
     "./pages/**/*.vue",
     "./plugins/**/*.{js,ts}",
-    "./nuxt.config.{js,ts}",
+    // "./nuxt.config.{js,ts}",
   ],
   theme: {
     extend: {
@@ -19,7 +19,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["DM Sans", "sans-serif"],
-        mono: ['DM Mono', 'monospace'],
+        mono: ["DM Mono", "monospace"],
       },
       typography: ({ theme }) => ({
         DEFAULT: {
