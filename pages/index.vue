@@ -1,5 +1,87 @@
 <template>
   <div>
+    <div class="">
+      <div class="flex h-96 items-center justify-center bg-gray-700">
+        <div class="relative h-16 w-16 rounded-full bg-primary-500">
+          <div
+            v-for="i in 10"
+            class="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 animate-atom p-24"
+            :style="{ 'animation-delay': `${(8 / 10) * i}s` }"
+          >
+            <div
+              class="absolute m-11 flex h-8 w-8 animate-atom2 select-none items-center justify-center rounded-full bg-tertiary-500"
+              :style="{ 'animation-delay': `${(8 / 10) * i}s` }"
+            >
+              {{ i }}
+            </div>
+          </div>
+          <!-- <div
+            class="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 animate-atom p-24"
+          >
+            <div
+              class="absolute m-11 flex h-8 w-8 animate-atom2 items-center justify-center rounded-full bg-tertiary-500"
+            >
+              A
+            </div>
+          </div>
+          <div
+            class="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 animate-atom p-24"
+            style="animation-delay: 1.33s"
+          >
+            <div
+              class="absolute m-11 flex h-8 w-8 animate-atom2 items-center justify-center rounded-full bg-tertiary-500"
+              style="animation-delay: 1.33s"
+            >
+              B
+            </div>
+          </div>
+          <div
+            class="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 animate-atom p-24"
+            style="animation-delay: 2.66s"
+          >
+            <div
+              class="absolute m-11 flex h-8 w-8 animate-atom2 items-center justify-center rounded-full bg-tertiary-500"
+              style="animation-delay: 2.66s"
+            >
+              C
+            </div>
+          </div>
+          <div
+            class="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 animate-atom p-24"
+            style="animation-delay: 4s"
+          >
+            <div
+              class="absolute m-11 flex h-8 w-8 animate-atom2 items-center justify-center rounded-full bg-tertiary-500"
+              style="animation-delay: 4s"
+            >
+              D
+            </div>
+          </div>
+          <div
+            class="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 animate-atom p-24"
+            style="animation-delay: 5.33s"
+          >
+            <div
+              class="absolute m-11 flex h-8 w-8 animate-atom2 items-center justify-center rounded-full bg-tertiary-500"
+              style="animation-delay: 5.33s"
+            >
+              E
+            </div>
+          </div>
+          <div
+            class="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 animate-atom p-24"
+            style="animation-delay: 6.66s"
+          >
+            <div
+              class="absolute m-11 flex h-8 w-8 animate-atom2 items-center justify-center rounded-full bg-tertiary-500"
+              style="animation-delay: 6.66s"
+            >
+              F
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
     <Container class="flex items-center py-16 md:py-20">
       <div class="">
         <h1 class="title">
