@@ -1,7 +1,8 @@
 <template>
   <div>
-    <HeroAtomAnimation />
-    <Container class="flex items-center py-16 md:py-20">
+    <Container
+      class="flex flex-col-reverse items-center py-16 md:py-20 lg:flex-row"
+    >
       <div class="">
         <h1 class="title">
           {{ $t("pages.home.introduction.title") }}
@@ -42,8 +43,8 @@
           <div>{{ $t("pages.home.introduction.scrollDown") }}</div>
         </a>
       </div>
-      <div class="ml-24 hidden shrink-0 md:block lg:ml-16">
-        <HeroParallax />
+      <div class="mb-16 block shrink-0 lg:mb-0 lg:ml-10">
+        <HeroAtomAnimation />
       </div>
     </Container>
     <div class="bg-gray-900/50">
