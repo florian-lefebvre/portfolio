@@ -2,6 +2,7 @@ import { defineNuxtConfig } from "nuxt3";
 import Vue from "@vitejs/plugin-vue";
 import Markdown from "vite-plugin-md";
 import hljs from "highlight.js";
+import vueJsx from "@vitejs/plugin-vue-jsx";
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
@@ -32,6 +33,7 @@ export default defineNuxtConfig({
   },
   vite: {
     plugins: [
+      vueJsx({}),
       Vue({
         include: [/\.md$/],
       }),
