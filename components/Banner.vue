@@ -4,8 +4,8 @@
     tabindex="0"
   >
     <Container class="space-x-2">
-      <span class="">Sponsor me on Github !</span>
-      <span class="font-bold">Check out</span>
+      <span class="">French translation coming soon!</span>
+      <!-- <span class="font-bold">Check out</span> -->
     </Container>
   </div>
 </template>

@@ -5,16 +5,16 @@
     <div
       class="absolute inset-0 bg-[url(https://snippets.alexandru.so/grid.svg)]"
     ></div>
-    <!-- <Banner /> -->
+    <Banner />
     <Header />
     <NuxtPage class="z-10 overflow-x-hidden" />
     <Footer />
-    <button
+    <!-- <button
       class="fixed bottom-4 right-4 z-50 rounded-full bg-white px-4 py-2 font-semibold shadow-md transition-transform hover:scale-95"
       @click="$i18n.locale = $i18n.locale === 'en' ? 'fr' : 'en'"
     >
       {{ $i18n.locale }}
-    </button>
+    </button> -->
   </div>
 </template>
 
