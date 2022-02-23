@@ -101,21 +101,22 @@
     </div>
     <Container class="py-16 md:py-20">
       <h1 class="title">
-        A few
+        {{ $t("pages.home.projects.title1") }}
         <span
           class="bg-gradient text-gradient block font-semibold md:inline-block"
-          >projects</span
         >
+          {{ $t("pages.home.projects.title2") }}
+        </span>
       </h1>
       <div class="max-w-3xl text-gray-200 md:text-lg">
         <p class="mb-10">
-          Since I started to learn web development, I've already built several
-          websites and mobile apps using modern technologies. Here is an
-          overview.
+          {{ $t("pages.home.projects.description") }}
         </p>
       </div>
       <div class="block">
-        <NuxtLink to="/projects" class="button-primary">View all</NuxtLink>
+        <NuxtLink to="/projects" class="button-primary">{{
+          $t("pages.home.projects.viewAll")
+        }}</NuxtLink>
       </div>
       <div class="mt-10">
         <AppSwiper>

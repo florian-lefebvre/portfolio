@@ -81,6 +81,13 @@ const message: MessageSchema = {
           },
         ],
       },
+      projects: {
+        title1: "A few",
+        title2: "projects",
+        description:
+          "Since I started to learn web development, I've already built several websites and mobile apps using modern technologies. Here is an overview.",
+        viewAll: "View all",
+      },
     },
     about: {},
     projects: {},

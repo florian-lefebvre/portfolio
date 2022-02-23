@@ -40,6 +40,12 @@ export interface MessageSchema {
           description: string;
         }>;
       };
+      projects: {
+        title1: string;
+        title2: string;
+        description: string;
+        viewAll: string;
+      };
     };
     about: {};
     projects: {};

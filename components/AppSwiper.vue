@@ -12,20 +12,20 @@
     <div class="mt-6 flex justify-between">
       <button
         type="button"
-        @click="swiper.slidePrev()"
+        @click="swiper?.slidePrev()"
         class="transition-all hover:scale-90"
-        :class="
-          swiper?.isBeginning ?? false ? 'opacity-30 hover:scale-100' : ''
-        "
+        :class="swiper?.isBeginning ? 'opacity-30 hover:scale-100' : ''"
       >
+        {{ swiper?.isBeginning }}
         <ArrowNarrowLeftIcon class="h-8 w-8 text-white" />
       </button>
       <button
         type="button"
-        @click="swiper.slideNext()"
+        @click="swiper?.slideNext()"
         class="transition-all hover:scale-90"
-        :class="swiper?.isEnd ?? false ? 'opacity-30 hover:scale-100' : ''"
+        :class="swiper?.isEnd ? 'opacity-30 hover:scale-100' : ''"
       >
+        {{ swiper?.isEnd }}
         <ArrowNarrowRightIcon class="h-8 w-8 text-white" />
       </button>
     </div>
@@ -40,10 +40,11 @@ import {
   ArrowNarrowLeftIcon,
   ArrowNarrowRightIcon,
 } from "@heroicons/vue/outline";
-import { PropType, Ref } from "nuxt3/dist/app/compat/vue-demi";
 import { useMq } from "vue3-mq";
+
 const mq = useMq();
 const swiper = ref<S>(null);
+
 const onSwiper = (s: S) => {
   swiper.value = s;
 };
