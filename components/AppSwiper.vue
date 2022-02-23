@@ -45,6 +45,8 @@ import { useMq } from "vue3-mq";
 const mq = useMq();
 const swiper = ref<S>(null);
 
+// TODO: load after mounted
+
 const onSwiper = (s: S) => {
   swiper.value = s;
 };
