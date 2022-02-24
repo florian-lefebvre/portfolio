@@ -14,18 +14,16 @@
         type="button"
         @click="swiper?.slidePrev()"
         class="transition-all hover:scale-90"
-        :class="swiper?.isBeginning ? 'opacity-30 hover:scale-100' : ''"
+        :class="beginning ? 'opacity-30 hover:scale-100' : ''"
       >
-        {{ swiper?.isBeginning }}
         <ArrowNarrowLeftIcon class="h-8 w-8 text-white" />
       </button>
       <button
         type="button"
         @click="swiper?.slideNext()"
         class="transition-all hover:scale-90"
-        :class="swiper?.isEnd ? 'opacity-30 hover:scale-100' : ''"
+        :class="end ? 'opacity-30 hover:scale-100' : ''"
       >
-        {{ swiper?.isEnd }}
         <ArrowNarrowRightIcon class="h-8 w-8 text-white" />
       </button>
     </div>
@@ -45,11 +43,21 @@ import { useMq } from "vue3-mq";
 const mq = useMq();
 const swiper = ref<S>(null);
 
-// TODO: load after mounted
-
 const onSwiper = (s: S) => {
   swiper.value = s;
+  setTimeout(() => {
+    swiper.value.slideTo(1);
+    swiper.value.slideTo(0);
+  }, 1000);
 };
+
+const beginning = computed<boolean | undefined>(() => {
+  return swiper.value?.isBeginning;
+});
+
+const end = computed<boolean | undefined>(() => {
+  return swiper.value?.isEnd;
+});
 
 const slidesPerView = computed<number>(() => {
   switch (mq.current as string) {
