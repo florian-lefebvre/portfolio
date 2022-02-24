@@ -90,7 +90,7 @@
 import { ComputedRef } from "nuxt3/dist/app/compat/capi";
 import { useI18n } from "vue-i18n";
 import { FooterCategory, Link } from "~/types";
-const { firstName, lastName, fullName, social } = useMe();
+const { firstName, lastName, social } = useMe();
 const { t, tm } = useI18n();
 
 const categories: ComputedRef<FooterCategory[]> = computed(() => [

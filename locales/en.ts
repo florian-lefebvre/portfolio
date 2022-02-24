@@ -89,11 +89,25 @@ const message: MessageSchema = {
         viewAll: "View all",
       },
     },
-    about: {},
+    about: {
+      introduction: {
+        title1: "About",
+        title2: "me",
+        shortDescription:
+          "I am a French student in my last year of high school. I've been coding since 2019 on my free time and I've already accomplished several things.",
+        longDescription: Object.values(
+          import.meta.globEager("../content/en/about.md")
+        )[0].default,
+      },
+    },
     projects: {},
     blog: {},
     contact: {},
   },
 };
+
+console.log(
+  Object.values(import.meta.globEager("../content/en/about.md"))[0].default
+);
 
 export default message;

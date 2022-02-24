@@ -47,7 +47,14 @@ export interface MessageSchema {
         viewAll: string;
       };
     };
-    about: {};
+    about: {
+      introduction: {
+        title1: string;
+        title2: string;
+        shortDescription: string;
+        longDescription: Object;
+      };
+    };
     projects: {};
     blog: {};
     contact: {};

@@ -9,5 +9,7 @@
 </template>
 
 <script setup lang="ts">
-const posts = Object.values(import.meta.globEager("../../content/en/*.md"));
+const posts = Object.values(
+  import.meta.globEager("../../content/en/blog/*.md")
+);
 </script>
