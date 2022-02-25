@@ -17,3 +17,9 @@ export interface Project {
   description: string | ComputedRef<string>;
   slug: string;
 }
+
+export interface Technology {
+  color: string;
+  title: string;
+  path: string;
+}

@@ -51,9 +51,7 @@
       <Container class="py-16 md:py-20" id="about">
         <h2 class="title">
           {{ $t("pages.home.about.title1") }}
-          <span
-            class="bg-gradient text-gradient block font-semibold md:inline-block"
-          >
+          <span class="bg-gradient text-gradient inline-block font-semibold">
             {{ $t("pages.home.about.title2") }}
           </span>
         </h2>

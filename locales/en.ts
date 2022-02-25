@@ -3,7 +3,6 @@ import { MessageSchema } from "~/types/i18n";
 const { age } = useMe();
 
 const message: MessageSchema = {
-  test: "a test in english",
   global: {
     name: "Florian LEFEBVRE",
     meta: {
@@ -14,7 +13,6 @@ const message: MessageSchema = {
         { name: "Home", url: "/" },
         { name: "About me", url: "/about" },
         { name: "Projects", url: "/projects" },
-        { name: "Blog", url: "/blog" },
         {
           name: "Github",
           url: "https://github.com/florian-lefebvre",
@@ -98,9 +96,16 @@ const message: MessageSchema = {
         longDescription:
           "I've always been interested in technology. In secondary school, I was already in charge of the school's computers. I started learning to code with Unreal Engine 4 using blueprints in 2018. I did that for about a year, then decided to learn web development. I started with a simple HTML + CSS website (which looked horrible), then I tried PHP, then Bootstrap and so on.... I am now a fullstack developer with a modern technology stack that you can see below.",
       },
+      stack: {
+        title1: "Tech",
+        title2: "stack",
+        description:
+          "I know all the tools needed to build apps: frontend, backend and mobile...",
+        otherTechnologies: "...but I also know...",
+        tools: "...and use those tools:",
+      },
     },
     projects: {},
-    blog: {},
     contact: {},
   },
 };

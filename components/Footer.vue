@@ -3,8 +3,7 @@
     <Container>
       <h2 class="title">
         Get in
-        <span
-          class="bg-gradient text-gradient block font-semibold md:inline-block"
+        <span class="bg-gradient text-gradient inline-block font-semibold"
           >touch</span
         >
       </h2>

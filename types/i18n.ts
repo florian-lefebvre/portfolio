@@ -1,7 +1,11 @@
-import { Link } from ".";
+import { Link, Technology } from ".";
+
+interface _Card {
+  age: number;
+  description: string;
+}
 
 export interface MessageSchema {
-  test: string;
   global: {
     name: string;
     meta: {
@@ -35,10 +39,7 @@ export interface MessageSchema {
         description: string;
         learnMore: string;
         cardsTitle: string;
-        cards: Array<{
-          age: number;
-          description: string;
-        }>;
+        cards: _Card[];
       };
       projects: {
         title1: string;
@@ -54,9 +55,15 @@ export interface MessageSchema {
         shortDescription: string;
         longDescription: string;
       };
+      stack: {
+        title1: string;
+        title2: string;
+        description: string;
+        otherTechnologies: string;
+        tools: string;
+      };
     };
     projects: {};
-    blog: {};
     contact: {};
   };
 }
