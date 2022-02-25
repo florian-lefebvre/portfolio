@@ -22,23 +22,16 @@
         <p class="mb-10 max-w-3xl">
           {{ $t("pages.about.introduction.shortDescription") }}
         </p>
-        <p class="max-w-5xl">
-          <!-- <component :is="$t('pages.about.introduction.longDescription')" /> -->
+        <div class="max-w-5xl">
           {{ $t("pages.about.introduction.longDescription") }}
-          {{ x }}
-        </p>
+        </div>
       </div>
     </Container>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-
 useSeo({
   title: "About me",
 });
-
-const { t } = useI18n();
-const x = t("pages.about.introduction.longDescription");
 </script>

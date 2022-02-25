@@ -95,9 +95,8 @@ const message: MessageSchema = {
         title2: "me",
         shortDescription:
           "I am a French student in my last year of high school. I've been coding since 2019 on my free time and I've already accomplished several things.",
-        longDescription: Object.values(
-          import.meta.globEager("../content/en/about.md")
-        )[0].default,
+        longDescription:
+          "I've always been interested in technology. In secondary school, I was already in charge of the school's computers. I started learning to code with Unreal Engine 4 using blueprints in 2018. I did that for about a year, then decided to learn web development. I started with a simple HTML + CSS website (which looked horrible), then I tried PHP, then Bootstrap and so on.... I am now a fullstack developer with a modern technology stack that you can see below.",
       },
     },
     projects: {},
@@ -105,9 +104,5 @@ const message: MessageSchema = {
     contact: {},
   },
 };
-
-console.log(
-  Object.values(import.meta.globEager("../content/en/about.md"))[0].default
-);
 
 export default message;

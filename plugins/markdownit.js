@@ -1,4 +1,4 @@
-import hljs from "highlight.js";
+import hljs from "../utils/hljs";
 import mdit from "markdown-it";
 
 import sub from "markdown-it-sub";
@@ -49,6 +49,6 @@ export default defineNuxtPlugin((nuxtApp) => {
   return {
     provide: {
       mdit: markdownit,
-    }
-  }
+    },
+  };
 });

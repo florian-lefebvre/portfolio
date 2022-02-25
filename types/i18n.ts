@@ -52,7 +52,7 @@ export interface MessageSchema {
         title1: string;
         title2: string;
         shortDescription: string;
-        longDescription: Object;
+        longDescription: string;
       };
     };
     projects: {};
