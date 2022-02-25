@@ -76,18 +76,12 @@
     </div>
     <Container class="py-16 md:py-20">
       <h2 class="title">
-        {{ $t("pages.about.introduction.title1") }}
-        <span class="bg-gradient text-gradient inline-block font-semibold">
-          {{ $t("pages.about.introduction.title2") }}
-        </span>
+        {{ $t("pages.about.education.title") }}
       </h2>
       <div class="text-gray-200 md:text-lg">
         <p class="mb-10 max-w-3xl">
-          {{ $t("pages.about.introduction.shortDescription") }}
+          {{ $t("pages.about.education.description") }}
         </p>
-        <div class="max-w-5xl">
-          {{ $t("pages.about.introduction.longDescription") }}
-        </div>
       </div>
     </Container>
   </div>

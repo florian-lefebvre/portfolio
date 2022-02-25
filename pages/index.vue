@@ -44,7 +44,20 @@
         </a>
       </div>
       <div class="mb-16 block shrink-0 lg:mb-0 lg:ml-10">
-        <HeroAtomAnimation />
+        <HeroAtomAnimation
+          v-motion
+          :initial="{
+            opacity: 0,
+            y: 50,
+          }"
+          :visible="{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 750,
+            },
+          }"
+        />
       </div>
     </Container>
     <div class="bg-gray-900/50">

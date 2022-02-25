@@ -1,5 +1,8 @@
 <template>
-  <div class="flex h-[330px] w-[330px] items-center justify-center">
+  <div
+    class="flex h-[330px] w-[330px] items-center justify-center"
+    :class="mounted ? 'opacity-100' : 'opacity-0'"
+  >
     <div class="relative flex items-center justify-center">
       <img
         src="/pp.jpg"
@@ -30,6 +33,11 @@
 
 <script setup lang="ts">
 import { technologies } from "~/data/technologies";
+
+const mounted = ref(false);
+onMounted(() => {
+  mounted.value = true;
+});
 
 const duration: number = 12;
 const animation = (animationName: string, d: number = duration): string =>

@@ -1,8 +1,23 @@
-import { Link, Technology } from ".";
+import { Link } from ".";
 
 interface _Card {
   age: number;
   description: string;
+}
+
+interface _TrainingCourse {
+  dates: string;
+  name: string;
+  level: string;
+  location: string;
+  diplomas: string[];
+  activities: Array<
+    | {
+        description: string;
+        links: Link[];
+      }
+    | string
+  >;
 }
 
 export interface MessageSchema {
@@ -61,6 +76,11 @@ export interface MessageSchema {
         description: string;
         otherTechnologies: string;
         tools: string;
+      };
+      education: {
+        title: string;
+        description: string;
+        courses: _TrainingCourse[];
       };
     };
     projects: {};
