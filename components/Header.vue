@@ -2,7 +2,12 @@
   <div class="sticky top-0 z-40">
     <Popover class="relative" v-slot="{ close }">
       <div
-        class="h-16 border-b border-gray-800 bg-gray-900/90 backdrop-blur-md"
+        :class="
+          top
+            ? 'border-transparent bg-gray-900/0'
+            : 'border-gray-800 bg-gray-900/90'
+        "
+        class="h-16 border-b backdrop-blur transition-all duration-300"
       >
         <Container class="flex h-full items-center justify-between py-4">
           <ProfilePicture />
@@ -55,7 +60,7 @@
           <PopoverButton
             class="absolute top-4 right-4 inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-200 transition-all hover:bg-gray-700 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 sm:hidden"
           >
-            <span class="sr-only">Open menu</span>
+            <span class="sr-only">Close menu</span>
             <XIcon class="h-6 w-6" aria-hidden="true" />
           </PopoverButton>
           <div
@@ -94,4 +99,18 @@ import { Link } from "~/types";
 const { tm } = useI18n();
 
 const links = computed(() => tm("global.links.navigation") as Link[]);
+
+const top = ref(true);
+
+const handleScroll = () => {
+  top.value = window.scrollY < 100;
+};
+
+onBeforeMount(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
 </script>
