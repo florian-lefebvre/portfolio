@@ -30,6 +30,7 @@ export default defineNuxtConfig({
         },
       },
     },
+    transpile: ["@heroicons/vue"],
   },
   vite: {
     plugins: [

@@ -37,6 +37,25 @@ html {
   @apply opacity-0;
 }
 
+.loading-enter-active {
+  @apply transition duration-700 ease-out;
+}
+.loading-enter-from {
+  @apply opacity-0;
+}
+.loading-enter-to {
+  @apply opacity-100;
+}
+.loading-leave-active {
+  @apply transition duration-700 ease-in;
+}
+.loading-leave-from {
+  @apply opacity-100;
+}
+.loading-leave-to {
+  @apply opacity-0;
+}
+
 code {
   display: block;
 }

@@ -4,7 +4,21 @@
       class="flex flex-col-reverse items-center py-16 md:py-20 lg:flex-row"
     >
       <div class="">
-        <h1 class="title">
+        <h1
+          class="title"
+          v-motion
+          :initial="{
+            opacity: 0,
+            y: 20,
+          }"
+          :visible="{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 500,
+            },
+          }"
+        >
           {{ $t("pages.home.introduction.title") }}
           <span
             class="bg-gradient text-gradient block font-semibold md:inline-block"
