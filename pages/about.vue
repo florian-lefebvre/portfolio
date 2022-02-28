@@ -34,7 +34,7 @@
             v-for="e in technologies"
             class="flex flex-col items-center justify-center rounded-lg bg-gray-800 p-6 text-white"
           >
-            <TechIcon :technology="e" class="h-12 w-12" />
+            <Icon :icon="e" class="h-12 w-12" />
             <div class="mt-2 text-center font-semibold sm:text-xl">
               {{ e.title }}
             </div>
@@ -50,7 +50,7 @@
             v-for="e in otherTechnologies"
             class="flex flex-col items-center justify-center rounded-lg bg-gray-800 p-6 text-white"
           >
-            <TechIcon :technology="e" class="h-12 w-12" />
+            <Icon :icon="e" class="h-12 w-12" />
             <div class="mt-2 text-center font-semibold sm:text-xl">
               {{ e.title }}
             </div>
@@ -66,7 +66,7 @@
             v-for="e in tools"
             class="flex flex-col items-center justify-center rounded-lg bg-gray-800 p-6 text-white"
           >
-            <TechIcon :technology="e" class="h-12 w-12" />
+            <Icon :icon="e" class="h-12 w-12" />
             <div class="mt-2 text-center font-semibold sm:text-xl">
               {{ e.title }}
             </div>

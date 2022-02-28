@@ -24,7 +24,7 @@
           class="animate-atom2 absolute -m-8 flex h-14 w-14 select-none items-center justify-center rounded-full bg-gray-700 p-3.5 shadow"
           :style="style(i)"
         >
-          <TechIcon :technology="e" />
+          <Icon :icon="e" />
         </div>
       </div>
     </div>

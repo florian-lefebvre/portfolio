@@ -1,6 +1,6 @@
-import { Technology } from "~/types";
+import { Icon } from "~/types";
 
-export const technologies: Technology[] = [
+export const technologies: Icon[] = [
   {
     color: "#00dc82",
     title: "Nuxt",
@@ -33,7 +33,7 @@ export const technologies: Technology[] = [
   },
 ];
 
-export const otherTechnologies: Technology[] = [
+export const otherTechnologies: Icon[] = [
   {
     color: "#E34F26",
     title: "HTML5",
@@ -71,7 +71,7 @@ export const otherTechnologies: Technology[] = [
   },
 ];
 
-export const tools: Technology[] = [
+export const tools: Icon[] = [
   {
     color: "#fff",
     title: "Github",

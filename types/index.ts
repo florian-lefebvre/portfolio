@@ -18,7 +18,7 @@ export interface Project {
   slug: string;
 }
 
-export interface Technology {
+export interface Icon {
   color: string;
   title: string;
   path: string;

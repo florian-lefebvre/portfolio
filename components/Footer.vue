@@ -13,7 +13,21 @@
           feel free to reach out with any of the below methods.
         </p>
       </div>
-      <div class="flex flex-col items-start space-y-6">
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <a
+          v-for="link in social"
+          :href="link.url(link.username)"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex flex-col items-center justify-center rounded-lg bg-gray-800 p-6 text-white transition-colors hover:bg-gray-700"
+        >
+          <Icon :icon="link.icon" class="h-12 w-12" />
+          <div class="mt-2 text-center font-semibold sm:text-xl">
+            {{ link.username }}
+          </div>
+        </a>
+      </div>
+      <!-- <div class="flex flex-col items-start space-y-6">
         <a
           v-for="link in social"
           :href="link.url(link.username)"
@@ -24,7 +38,7 @@
           <div class="h-8 w-8" v-html="link.icon"></div>
           <div>{{ link.username }}</div>
         </a>
-      </div>
+      </div> -->
     </Container>
   </div>
   <div class="z-0 mt-auto bg-gray-900/50 backdrop-blur-md">
@@ -49,9 +63,10 @@
               :href="link.url(link.username)"
               target="_blank"
               rel="noopener noreferrer"
-              class="h-5 w-5 text-gray-400 transition-colors hover:text-white"
-              v-html="link.icon"
-            ></a>
+              class="text-gray-400 transition-colors hover:text-white"
+            >
+              <Icon :icon="link.icon" class="h-5 w-5" monochrome />
+            </a>
           </div>
         </div>
         <div class="mt-12 flex space-x-16 md:ml-8 md:mt-0">
