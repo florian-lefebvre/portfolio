@@ -26,7 +26,22 @@
             {{ $t("global.name") }}
           </span>
         </h1>
-        <div class="max-w-xl text-gray-200 md:text-lg">
+        <div
+          class="max-w-xl text-gray-200 md:text-lg"
+          v-motion
+          :initial="{
+            opacity: 0,
+            y: 20,
+          }"
+          :visible="{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 500,
+              delay: 300,
+            },
+          }"
+        >
           <p class="mb-6">
             {{ $t("pages.home.introduction.short") }}
           </p>
@@ -45,17 +60,47 @@
           </i18n-t>
         </div>
         <div class="block">
-          <a href="#about" class="button-primary">
-            {{ $t("pages.home.introduction.learnMore") }}
+          <div
+            v-motion
+            :initial="{
+              opacity: 0,
+              y: 20,
+            }"
+            :visible="{
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 500,
+                delay: 600,
+              },
+            }"
+          >
+            <a href="#about" class="button-primary">
+              {{ $t("pages.home.introduction.learnMore") }}
+            </a>
+          </div>
+        </div>
+        <div
+          v-motion
+          :initial="{
+            opacity: 0,
+          }"
+          :visible="{
+            opacity: 1,
+            transition: {
+              duration: 700,
+              delay: 1000,
+            },
+          }"
+        >
+          <a
+            href="#about"
+            class="mt-12 inline-flex animate-pulse items-center space-x-2 rounded-full text-gray-400 transition-all hover:animate-none hover:text-white focus:ring focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900"
+          >
+            <ArrowCircleDownIcon class="h-10 w-10" />
+            <div>{{ $t("pages.home.introduction.scrollDown") }}</div>
           </a>
         </div>
-        <a
-          href="#about"
-          class="mt-12 inline-flex animate-pulse items-center space-x-2 rounded-full text-gray-400 transition-all hover:animate-none hover:text-white focus:ring focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900"
-        >
-          <ArrowCircleDownIcon class="h-10 w-10" />
-          <div>{{ $t("pages.home.introduction.scrollDown") }}</div>
-        </a>
       </div>
       <div class="mb-16 block shrink-0 lg:mb-0 lg:ml-10">
         <HeroAtomAnimation
