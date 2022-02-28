@@ -18,13 +18,23 @@ html {
   @apply bg-gray-400 hover:bg-gray-500;
 }
 
-.page-enter-active,
-.page-leave-active {
-  transition: opacity 0.5s;
+.page-enter-active {
+  @apply transition duration-300 ease-out;
 }
-.page-enter,
+.page-enter-from {
+  @apply opacity-0;
+}
+.page-enter-to {
+  @apply opacity-100;
+}
+.page-leave-active {
+  @apply transition duration-300 ease-in;
+}
+.page-leave-from {
+  @apply opacity-100;
+}
 .page-leave-to {
-  opacity: 0;
+  @apply opacity-0;
 }
 
 code {
