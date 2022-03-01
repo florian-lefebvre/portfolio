@@ -1,6 +1,6 @@
 <template>
   <div
-    class="absolute inset-0 flex flex-col items-center justify-center space-y-4 bg-gradient-to-tr from-gray-900 to-gray-800"
+    class="fixed inset-0 z-[999] flex flex-col items-center justify-center space-y-4 bg-gradient-to-tr from-gray-900 to-gray-800"
   >
     <div
       class="absolute inset-0 bg-[url(https://snippets.alexandru.so/grid.svg)] opacity-60"
