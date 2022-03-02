@@ -16,6 +16,7 @@
         >
           {{ $i18n.locale }}
         </button> -->
+      <BackToTop />
     </div>
     <transition name="loading">
       <LoadingScreen v-if="!mounted" />

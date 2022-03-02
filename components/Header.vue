@@ -100,7 +100,7 @@ const { tm } = useI18n();
 
 const links = computed(() => tm("global.links.navigation") as Link[]);
 
-const top = ref(true);
+const top = ref<boolean>();
 
 const handleScroll = () => {
   top.value = window.scrollY < 100;
@@ -108,6 +108,10 @@ const handleScroll = () => {
 
 onBeforeMount(() => {
   window.addEventListener("scroll", handleScroll);
+});
+
+onMounted(() => {
+  handleScroll();
 });
 
 onBeforeUnmount(() => {
