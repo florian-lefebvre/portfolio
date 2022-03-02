@@ -15,7 +15,7 @@
             opacity: 1,
             y: 0,
             transition: {
-              duration: 500,
+              duration: 400,
             },
           }"
         >
@@ -37,8 +37,8 @@
             opacity: 1,
             y: 0,
             transition: {
-              duration: 500,
-              delay: 300,
+              duration: 400,
+              delay: 200,
             },
           }"
         >
@@ -70,8 +70,8 @@
               opacity: 1,
               y: 0,
               transition: {
-                duration: 500,
-                delay: 600,
+                duration: 400,
+                delay: 400,
               },
             }"
           >
@@ -89,7 +89,7 @@
             opacity: 1,
             transition: {
               duration: 700,
-              delay: 1000,
+              delay: 600,
             },
           }"
         >
@@ -121,18 +121,62 @@
     </Container>
     <div class="bg-gray-900/50">
       <Container class="py-16 md:py-20" id="about">
-        <h2 class="title">
+        <h2
+          class="title"
+          v-motion
+          :initial="{
+            opacity: 0,
+            y: 20,
+          }"
+          :visible="{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 400,
+            },
+          }"
+        >
           {{ $t("pages.home.about.title1") }}
           <span class="bg-gradient text-gradient inline-block font-semibold">
             {{ $t("pages.home.about.title2") }}
           </span>
         </h2>
         <div class="max-w-3xl text-gray-200 md:text-lg">
-          <p class="mb-10">
+          <p
+            class="mb-10"
+            v-motion
+            :initial="{
+              opacity: 0,
+              y: 20,
+            }"
+            :visible="{
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 400,
+                delay: 200,
+              },
+            }"
+          >
             {{ $t("pages.home.about.description") }}
           </p>
         </div>
-        <div class="block">
+        <div
+          class="block"
+          v-motion
+          :initial="{
+            opacity: 0,
+            y: 20,
+          }"
+          :visible="{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 400,
+              delay: 400,
+            },
+          }"
+        >
           <nuxt-link to="/about" class="button-primary">
             {{ $t("pages.home.about.learnMore") }}
           </nuxt-link>
@@ -140,16 +184,51 @@
         <div class="relative">
           <div
             class="inset-y-0 my-auto hidden h-0 w-full border-t-2 border-dashed border-gray-500 xl:absolute xl:block"
+            v-motion
+            :initial="{
+              opacity: 0,
+            }"
+            :visible="{
+              opacity: 1,
+              transition: {
+                duration: 600,
+                delay: 800,
+              },
+            }"
           ></div>
           <div
             class="absolute inset-x-0 mx-auto block h-full w-0 border-l-2 border-dashed border-gray-500 sm:hidden"
+            v-motion
+            :initial="{
+              opacity: 0,
+            }"
+            :visible="{
+              opacity: 1,
+              transition: {
+                duration: 600,
+                delay: 800,
+              },
+            }"
           ></div>
           <div
             class="relative mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
           >
             <div
-              v-for="card in $tm('pages.home.about.cards')"
               class="rounded-lg bg-gray-800 p-6 text-white"
+              v-motion
+              :initial="{
+                opacity: 0,
+                y: 20,
+              }"
+              :visible="{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 400,
+                  delay: 500 + (i as number) * 50,
+                },
+              }"
+              v-for="(card, i) in $tm('pages.home.about.cards')"
             >
               <i18n-t
                 tag="div"

@@ -4,8 +4,8 @@
       <div
         :class="
           top
-            ? 'border-transparent bg-gray-900/0'
-            : 'border-gray-800 bg-gray-900/90'
+            ? 'border-transparent bg-gray-900/0 backdrop-opacity-0'
+            : 'border-gray-800 bg-gray-900/90 backdrop-opacity-100'
         "
         class="h-16 border-b backdrop-blur transition-all duration-300"
       >

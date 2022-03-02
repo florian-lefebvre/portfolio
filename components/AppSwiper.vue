@@ -71,12 +71,6 @@ const slidesPerView = computed<number>(() => {
       return 1;
   }
 });
-
-// const props = defineProps({
-//     items: {
-//         type: Array as PropType<String[]>
-//     }
-// });
 </script>
 
 <style>
