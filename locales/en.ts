@@ -106,59 +106,17 @@ const message: MessageSchema = {
       },
       education: {
         title: "Education",
-        description: "Here is an overview of my education.",
+        description: "Here is an overview of my education:",
         courses: [
           {
             dates: "2015 - 2019",
-            name: "Sainte Geneviève",
-            level: "Secondary school",
-            location: "Saint Jory",
-            diplomas: [
-              "Spanish option",
-              "Diplôme National du Brevet mention Très Bien (G.C.S.E equivalent with honourable mention)",
-              "Certificate PSC1 (First aid certificate)",
-            ],
-            activities: [
-              "For 2 years, help with the management of the school's IT (installation, configuration, and updating of computers and peripherals under Windows 10)",
-              ,
-              "Creation of a computer club",
-              {
-                description:
-                  "'Internship of observation in the last year (\"année de 3ème\") in the architectural firm SYN ARCHITECTURES'",
-                links: [
-                  {
-                    name: "SYN ARCHITECTURES",
-                    url: "http://www.syn-architectures.com/",
-                  },
-                ],
-              },
-            ],
+            name: "Secondary school Sainte Geneviève",
+            topic: "G.C.S.E equivalent with honourable mention",
           },
           {
             dates: "2019 - 2022",
-            name: "Le Ferradou",
-            level: "High school",
-            location: "Blagnac",
-            diplomas: [
-              "European English section",
-              "High school diploma speciality teaching: mathematics, NCS (Numerical and Computer Science) and physics-chemistry",
-            ],
-            activities: [
-              {
-                description:
-                  'First year ("année de 2nde") observation internship in the IT company Atos, at Mundi Web Services',
-                links: [
-                  {
-                    name: "Atos",
-                    url: "https://atos.net/",
-                  },
-                  {
-                    name: "Mundi Web Services",
-                    url: "https://mundiwebservices.com/",
-                  },
-                ],
-              },
-            ],
+            name: "High school Le Ferradou",
+            topic: "Computer science and mathematics",
           },
         ],
       },

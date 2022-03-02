@@ -5,19 +5,10 @@ interface _Card {
   description: string;
 }
 
-interface _TrainingCourse {
+export interface TrainingCourse {
   dates: string;
   name: string;
-  level: string;
-  location: string;
-  diplomas: string[];
-  activities: Array<
-    | {
-        description: string;
-        links: Link[];
-      }
-    | string
-  >;
+  topic: string;
 }
 
 export interface MessageSchema {
@@ -80,7 +71,7 @@ export interface MessageSchema {
       education: {
         title: string;
         description: string;
-        courses: _TrainingCourse[];
+        courses: TrainingCourse[];
       };
     };
     projects: {};
