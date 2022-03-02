@@ -70,7 +70,6 @@ export interface MessageSchema {
       };
       education: {
         title: string;
-        description: string;
         courses: TrainingCourse[];
       };
     };

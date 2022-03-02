@@ -165,26 +165,6 @@
       >
         {{ $t("pages.about.education.title") }}
       </h2>
-      <div
-        class="text-gray-200 md:text-lg"
-        v-motion
-        :initial="{
-          opacity: 0,
-          y: 20,
-        }"
-        :visible="{
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 400,
-            delay: 200,
-          },
-        }"
-      >
-        <p class="mb-10 max-w-3xl">
-          {{ $t("pages.about.education.description") }}
-        </p>
-      </div>
       <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
         <div
           v-for="(course, i) in $tm('pages.about.education.courses')"

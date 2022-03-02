@@ -106,7 +106,6 @@ const message: MessageSchema = {
       },
       education: {
         title: "Education",
-        description: "Here is an overview of my education:",
         courses: [
           {
             dates: "2015 - 2019",
