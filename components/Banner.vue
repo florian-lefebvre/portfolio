@@ -4,7 +4,7 @@
     href="https://text.npr.org/1082992947"
     target="_blank"
     rel="noopener noreferrer"
-    class="relative py-2 text-left text-white transition-all duration-300 hover:opacity-90 sm:text-center"
+    class="relative py-2 text-left text-white transition-all duration-300 hover:opacity-80 sm:text-center"
     tabindex="0"
   >
     <div class="absolute top-0 left-0 z-[1] h-1/2 w-full bg-[#0066cc]"></div>

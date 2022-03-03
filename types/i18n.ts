@@ -11,6 +11,8 @@ export interface TrainingCourse {
   topic: string;
 }
 
+export type AvailableLocales = "en" | "fr";
+
 export interface MessageSchema {
   global: {
     name: string;

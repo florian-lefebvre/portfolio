@@ -1,7 +1,4 @@
 import { defineNuxtConfig } from "nuxt3";
-import Vue from "@vitejs/plugin-vue";
-import Markdown from "vite-plugin-md";
-import hljs from "./utils/hljs";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
@@ -30,33 +27,9 @@ export default defineNuxtConfig({
         },
       },
     },
-    transpile: ["@heroicons/vue"],
+    transpile: ["@headlessui/vue", "@heroicons/vue"],
   },
   vite: {
-    plugins: [
-      Vue({
-        include: [/\.md$/],
-      }),
-      Markdown({
-        markdownItOptions: {
-          html: true,
-          xhtmlOut: false,
-          breaks: false,
-          langPrefix: "language-",
-          linkify: true,
-          typographer: true,
-          quotes: "“”‘’",
-          highlight: function (str: string, lang: string) {
-            if (lang && hljs.getLanguage(lang)) {
-              try {
-                return hljs.highlight(str, { language: lang }).value;
-              } catch (__) {}
-            }
-            return "";
-          },
-        },
-      }),
-      vueJsx({}),
-    ],
+    plugins: [vueJsx({})],
   },
 });

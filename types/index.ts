@@ -1,4 +1,5 @@
 import { ComputedRef } from "nuxt3/dist/app/compat/vue-demi";
+import { AvailableLocales } from "./i18n";
 
 export interface Link {
   name: string;
@@ -11,15 +12,27 @@ export interface FooterCategory {
   links: Link[];
 }
 
-export interface Project {
-  title: string;
-  imageUrl: string;
-  description: string | ComputedRef<string>;
-  slug: string;
-}
-
 export interface Icon {
   color: string;
   title: string;
   path: string;
+}
+
+export interface Project {
+  global: {
+    technologies: string[];
+    imageUrl: string;
+    links: Link[];
+  };
+  locales: {
+    [locale in AvailableLocales]: ProjectLocale;
+  };
+}
+
+export interface ProjectLocale {
+  name: string;
+  description: string;
+  links: Link[];
+  slug: string;
+  content: string;
 }

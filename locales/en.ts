@@ -110,7 +110,7 @@ const message: MessageSchema = {
           {
             dates: "2015 - 2019",
             name: "Secondary school Sainte Geneviève",
-            topic: "G.C.S.E equivalent with honourable mention",
+            topic: "GCSE equivalent with honourable mention",
           },
           {
             dates: "2019 - 2022",

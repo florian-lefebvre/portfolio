@@ -268,87 +268,15 @@
         }}</NuxtLink>
       </div>
       <div class="mt-10">
-        <AppSwiper>
-          <SwiperSlide v-for="project in projects"
-            ><NuxtLink
-              :to="`/projects/${project.slug}`"
-              class="group relative block h-full overflow-hidden rounded-xl bg-gray-800 text-white shadow-lg transition-all hover:scale-95 hover:shadow"
-            >
-              <div
-                class="absolute top-4 right-4 scale-75 rounded-lg border border-gray-700 bg-gray-800 p-2 opacity-0 transition-all group-hover:scale-100 group-hover:opacity-100"
-              >
-                <ArrowUpIcon class="h-6 w-6 rotate-45 text-gray-300" />
-              </div>
-              <div class="p-1">
-                <div
-                  class="h-48 w-full rounded-lg bg-cover bg-center"
-                  :style="{ backgroundImage: `url(${project.imageUrl})` }"
-                ></div>
-              </div>
-              <div class="p-4">
-                <div class="mb-2 text-xl font-semibold text-white">
-                  {{ project.title }}
-                </div>
-                <div class="text-gray-300">{{ project.description }}</div>
-              </div>
-            </NuxtLink></SwiperSlide
-          >
-        </AppSwiper>
+        <ProjectsSwiper />
       </div>
     </Container>
   </div>
 </template>
 
 <script setup lang="ts">
-import { SwiperSlide } from "swiper/vue";
-import { ArrowCircleDownIcon, ArrowUpIcon } from "@heroicons/vue/outline";
-import { Project } from "~/types";
-import { useI18n } from "vue-i18n";
-const { t } = useI18n();
+import { ArrowCircleDownIcon } from "@heroicons/vue/outline";
 useSeo({
   title: "Home",
 });
-
-const projects = ref<Project[]>([
-  {
-    title: "yNotes app",
-    imageUrl:
-      "https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2",
-    // description:
-    // "yNotes is a mobile application that retrieves data from the student life services used by most French schools. It reshapes and adds many features. I'm involved in the development and the design of the app.",
-    slug: "ynotes-app",
-    description: computed(() => t("test")),
-  },
-  {
-    title: "RégioLangues",
-    imageUrl:
-      "https://res.cloudinary.com/af68d22a-2043-4078-857c-f2db1a1406ec/image/upload/c_scale/v1641930868/Regiolangues/og_sup891.jpg",
-    description:
-      "RégioLangues is a website I made for my brother. I was only involved in the coding, not the data. Its goal: gather resources around the web on the topic of French regional languages. It uses Supabase for the backend.",
-    slug: "regiolangues",
-  },
-  {
-    title: "Portfolio",
-    imageUrl: "https://picsum.photos/id/3/400/300",
-    description:
-      "Not much to say except that I am quite satisfied with the result.",
-    slug: "portfolio",
-  },
-  {
-    title: "OHF31 website",
-    imageUrl:
-      "https://res.cloudinary.com/af68d22a-2043-4078-857c-f2db1a1406ec/image/upload/c_scale,w_1000/v1636657520/OHF31/ohf31-public-website/images/shared/og_image_bsrjhr.png",
-    description:
-      "I finally finished v3 of the 1st site I made! That's a basic showcase site but I think it looks really great. And it runs on Nuxt 3 🎉",
-    slug: "ohf31-website",
-  },
-  {
-    title: "yNotes website",
-    imageUrl:
-      "https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2",
-    description:
-      "At yNotes, we needed a support center and a more consistent website, so I remade everything. This allowed me to discover animation with AnimXYZ and learn how to make a more modern design.",
-    slug: "ynotes-website",
-  },
-]);
 </script>
