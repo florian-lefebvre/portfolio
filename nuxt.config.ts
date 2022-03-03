@@ -13,7 +13,7 @@ export default defineNuxtConfig({
       { rel: "preconnect", href: "https://fonts.gstatic.com" },
       { rel: "preconnect", href: "https://api.websitecarbon.com" },
       { rel: "preconnect", href: "https://unpkg.com" },
-      { rel: "icon", type: "image/png", href: "/pp.png" },
+      { rel: "icon", type: "image/jpeg", href: "/pp.jpg" },
     ],
   },
   css: ["@/assets/css/main.css", "@/assets/css/highlight.css"],
