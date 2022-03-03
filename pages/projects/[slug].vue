@@ -104,6 +104,6 @@ const header = ref<HTMLElement>();
 useWindowEventListener(
   "scroll",
   () =>
-    (show.value = window.scrollY > 200 && !useElementVisibility(header).value)
+    (show.value = window.scrollY > 500 && !useElementVisibility(header).value)
 );
 </script>
