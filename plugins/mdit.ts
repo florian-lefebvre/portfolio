@@ -7,11 +7,3 @@ export default defineNuxtPlugin((nuxtApp) => {
     },
   };
 });
-
-// export default defineNuxtPlugin((nuxtApp) => {
-// return {
-//   provide: {
-//     mdit,
-//   },
-// };
-// });

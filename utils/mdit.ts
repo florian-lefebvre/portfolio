@@ -1,4 +1,4 @@
-import hljs from "~/utils/hljs";
+import hljs from "highlight.js";
 import MarkdownIt from "markdown-it";
 import sub from "markdown-it-sub";
 import sup from "markdown-it-sup";
@@ -21,25 +21,6 @@ const options: MarkdownIt.Options = {
     }
     return "";
   },
-  // highlight: function (str, lang) {
-  //   if (lang && hljs.getLanguage(lang)) {
-  //     try {
-  //       return (
-  //         '<pre class="hljs"><code>' +
-  //         hljs.highlight(str, { language: lang, ignoreIllegals: true }).value +
-  //         "</code></pre>"
-  //       );
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
-
-  //   return (
-  //     '<pre class="hljs"><code>' +
-  //     MarkdownIt().utils.escapeHtml(str) +
-  //     "</code></pre>"
-  //   );
-  // },
 };
 
 const mdit: MarkdownIt = new MarkdownIt(options)
