@@ -27,18 +27,6 @@
           </div>
         </a>
       </div>
-      <!-- <div class="flex flex-col items-start space-y-6">
-        <a
-          v-for="link in social"
-          :href="link.url(link.username)"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center space-x-4 text-gray-400 transition-colors hover:text-white"
-        >
-          <div class="h-8 w-8" v-html="link.icon"></div>
-          <div>{{ link.username }}</div>
-        </a>
-      </div> -->
     </Container>
   </div>
   <div class="z-0 mt-auto bg-gray-900/50 backdrop-blur-md">

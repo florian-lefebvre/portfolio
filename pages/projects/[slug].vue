@@ -14,7 +14,7 @@
             {{ details.name }}
           </h1>
         </div>
-        <div class="mt-2 text-lg text-gray-400 lg:hidden">
+        <div class="mt-2 text-lg text-gray-400">
           {{ details.description }}
         </div>
       </div>
@@ -33,8 +33,12 @@
             class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto rounded-lg bg-gray-900 p-4 shadow-md"
           >
             <div
-              class="linear hidden overflow-hidden transition-all duration-1000 lg:block"
-              :class="show ? 'max-h-96' : 'max-h-0'"
+              class="hidden overflow-hidden transition-all lg:block"
+              :class="
+                show
+                  ? 'max-h-96 duration-1000 ease-in-out'
+                  : 'linear max-h-0 duration-500'
+              "
             >
               <div class="bg-gradient text-gradient text-2xl font-semibold">
                 {{ details.name }}
@@ -93,7 +97,10 @@ const project = projects.find(
   (project) => project.locales[locale.value].slug === route.params.slug
 );
 const error = project === undefined;
-const details: ProjectLocale = project.locales[locale.value];
+let details: ProjectLocale;
+try {
+  details = project.locales[locale.value];
+} catch (_) {}
 
 useSeo({
   title: error ? "Page not found" : details.name,
