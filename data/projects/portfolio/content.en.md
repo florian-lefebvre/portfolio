@@ -11,7 +11,7 @@ As a developer, having a portfolio online is a great to way to showcase my skill
 
 ## v1: Jekyll and Bootstrap
 
-![v1](../../../assets/images/projects/portfolio/portfolio-v1.png)
+![v1](/images/projects/portfolio/portfolio-v1.png)
 
 Back in August 2020, I had to choose technologies to build my portfolio. At the time, I knew HTML5, CSS & SCSS, PHP and Bootstrap.
 
@@ -21,11 +21,11 @@ It uses the [Liquid syntax](https://github.com/Shopify/liquid/wiki) and relies o
 
 ## v2: Nuxt 2 and Tailwind CSS 1.0
 
-![v2](../../../assets/images/projects/portfolio/portfolio-v2.png)
+![v2](/images/projects/portfolio/portfolio-v2.png)
 
 ## v3: Nuxt 2 and Tailwind CSS 2.0
 
-![v3](../../../assets/images/projects/portfolio/portfolio-v3.png)
+![v3](/images/projects/portfolio/portfolio-v3.png)
 
 ## v4: Nuxt 3 and Tailwind CSS 3.0
 

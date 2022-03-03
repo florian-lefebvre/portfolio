@@ -4,7 +4,7 @@
   >
     <div class="relative flex items-center justify-center">
       <img
-        src="/pp.jpg"
+        src="/images/pp.jpg"
         alt="Profile picture"
         class="h-44 w-44 select-none rounded-full border-2 border-gray-700/50 shadow-md"
       />
