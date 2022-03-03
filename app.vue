@@ -8,7 +8,7 @@
       ></div>
       <Banner />
       <Header />
-      <NuxtPage class="z-10 overflow-x-hidden" />
+      <NuxtPage class="z-10" />
       <Footer />
       <!-- <button
           class="fixed bottom-4 right-4 z-50 rounded-full bg-white px-4 py-2 font-semibold shadow-md transition-transform hover:scale-95"

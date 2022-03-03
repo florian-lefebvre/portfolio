@@ -32,23 +32,7 @@
 </template>
 
 <script setup lang="ts">
-const top = ref<boolean>();
-
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
-
-const handleScroll = () => {
-  top.value = window.scrollY < 300;
-};
-
-onBeforeMount(() => {
-  window.addEventListener("scroll", handleScroll);
-});
-
-onMounted(() => {
-  handleScroll();
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener("scroll", handleScroll);
-});
+const top = ref<boolean>();
+useWindowEventListener("scroll", () => (top.value = window.scrollY < 300));
 </script>

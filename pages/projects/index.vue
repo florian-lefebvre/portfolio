@@ -1,8 +1,5 @@
 <template>
-  <Container class="">
-    <code class="bg-blue-600 text-white">
-      {{ projects }}
-    </code>
+  <Container class="w-full py-16">
     <ProjectsSwiper />
   </Container>
 </template>

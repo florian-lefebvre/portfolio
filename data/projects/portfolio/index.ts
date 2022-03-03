@@ -20,7 +20,6 @@ const project: Project = {
       {
         name: "GitHub",
         url: "https://github.com/florian-lefebvre/portfolio",
-        external: true,
       },
     ],
   },
@@ -35,7 +34,6 @@ const project: Project = {
         {
           name: "Website",
           url: "https://florian-lefebvre.dev",
-          external: true,
         },
       ],
     },

@@ -101,20 +101,5 @@ const { tm } = useI18n();
 const links = computed(() => tm("global.links.navigation") as Link[]);
 
 const top = ref<boolean>();
-
-const handleScroll = () => {
-  top.value = window.scrollY < 100;
-};
-
-onBeforeMount(() => {
-  window.addEventListener("scroll", handleScroll);
-});
-
-onMounted(() => {
-  handleScroll();
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener("scroll", handleScroll);
-});
+useWindowEventListener("scroll", () => (top.value = window.scrollY < 100));
 </script>

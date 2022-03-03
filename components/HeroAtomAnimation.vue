@@ -1,5 +1,7 @@
 <template>
-  <div class="flex h-[330px] w-[330px] items-center justify-center">
+  <div
+    class="flex h-[330px] w-[330px] items-center justify-center overflow-hidden"
+  >
     <div class="relative flex items-center justify-center">
       <img
         src="/pp.jpg"
