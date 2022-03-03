@@ -28,7 +28,7 @@ const project: Project = {
       name: "Portfolio",
       content: render(contentEn),
       description:
-        "Not much to say except that I am quite satisfied with the result.",
+        "The developer's portfolio acts as a showcase of his skills and projects. And I think the one you're currently on is a great example.",
       slug: "portfolio",
       links: [
         {

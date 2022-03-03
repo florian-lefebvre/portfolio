@@ -23,10 +23,7 @@
       >
         <div class="col-span-12 lg:col-span-8 xl:col-span-9">
           <img :src="project.global.imageUrl" class="rounded-lg" />
-          <div
-            class="prose prose-invert mt-10 max-w-none"
-            v-html="details.content"
-          ></div>
+          <Prose class="mt-10" :content="details.content" />
         </div>
         <div class="col-span-12 mb-8 lg:col-span-4 lg:mb-0 xl:col-start-10">
           <div

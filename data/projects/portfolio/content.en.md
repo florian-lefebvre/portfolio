@@ -1,125 +1,34 @@
-## test en anglais
+- [Motivation](#motivation)
+- [v1: Jekyll and Bootstrap](#v1-jekyll-and-bootstrap)
+- [v2: Nuxt 2 and Tailwind CSS 1.0](#v2-nuxt-2-and-tailwind-css-10)
+- [v3: Nuxt 2 and Tailwind CSS 2.0](#v3-nuxt-2-and-tailwind-css-20)
+- [v4: Nuxt 3 and Tailwind CSS 3.0](#v4-nuxt-3-and-tailwind-css-30)
+- [Wrapping up](#wrapping-up)
 
-this is some markdown wow
+## Motivation
 
-```ts
-import data from "~/data";
-import { SwiperSlide } from "swiper/vue";
-import { ArrowCircleDownIcon, ArrowUpIcon } from "@heroicons/vue/outline";
-import { Project } from "~/types";
-const { fullName } = useMe();
-useSeo({
-  title: "Home",
-});
+As a developer, having a portfolio online is a great to way to showcase my skills and experience, as well as learning new things along the way. 9 months after starting to learn web development, I wanted to build mine. I had done quite a lot of experiments but lacked real projects so it was a good exercise too. In the following, I'll go through the iterations of my website, explain choices I made and issues I faced. Enjoy reading!
 
-// An awesome comment
-const projects: Project[] = [
-  {
-    title: "yNotes app",
-    imageUrl:
-      "https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2",
-    description:
-      "yNotes is a mobile application that retrieves data from the student life services used by most French schools. It reshapes and adds many features. I'm involved in the development and the design of the app.",
-    slug: "ynotes-app",
-  },
-  {
-    title: "RégioLangues",
-    imageUrl:
-      "https://res.cloudinary.com/af68d22a-2043-4078-857c-f2db1a1406ec/image/upload/c_scale/v1641930868/Regiolangues/og_sup891.jpg",
-    description:
-      "RégioLangues is a website I made for my brother. I was only involved in the coding, not the data. Its goal: gather resources around the web on the topic of French regional languages. It uses Supabase for the backend.",
-    slug: "regiolangues",
-  },
-  {
-    title: "Portfolio",
-    imageUrl: "https://picsum.photos/id/3/400/300",
-    description:
-      "Not much to say except that I am quite satisfied with the result.",
-    slug: "portfolio",
-  },
-  {
-    title: "OHF31 website",
-    imageUrl:
-      "https://res.cloudinary.com/af68d22a-2043-4078-857c-f2db1a1406ec/image/upload/c_scale,w_1000/v1636657520/OHF31/ohf31-public-website/images/shared/og_image_bsrjhr.png",
-    description:
-      "I finally finished v3 of the 1st site I made! That's a basic showcase site but I think it looks really great. And it runs on Nuxt 3 🎉",
-    slug: "ohf31-website",
-  },
-  {
-    title: "yNotes website",
-    imageUrl:
-      "https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2",
-    description:
-      "At yNotes, we needed a support center and a more consistent website, so I remade everything. This allowed me to discover animation with AnimXYZ and learn how to make a more modern design.",
-    slug: "ynotes-website",
-  },
-];
-```
+## v1: Jekyll and Bootstrap
 
-```dart
-import 'package:flutter/material.dart';
+![v1](../../../assets/images/projects/portfolio/portfolio-v1.png)
 
-const Color primaryColor = Color(0xfffed7aa);
+Back in August 2020, I had to choose technologies to build my portfolio. At the time, I knew HTML5, CSS & SCSS, PHP and Bootstrap.
 
-void main() {
-  runApp(MyApp());
-}
+Because I spent a lot of time on [Bootstrap docs](https://getbootstrap.com/docs) in the previous months, I knew that static site generators existed (since Bootstrap docs use Hugo). So I searched for the best fit for me and eventually found [Jekyll](https://jekyllrb.com/).
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(
-              seedColor: primaryColor, brightness: Brightness.dark)),
-      debugShowCheckedModeBanner: false,
-      home: Builder(
-          builder: (context) => Scaffold(
-                backgroundColor: Theme.of(context).colorScheme.tertiary,
-                appBar: AppBar(title: const Text("Title")),
-                body: Center(
-                  child: MyWidget(),
-                ),
-              )),
-    );
-  }
-}
+It uses the [Liquid syntax](https://github.com/Shopify/liquid/wiki) and relies on [Ruby](https://www.ruby-lang.org/). I knew nothing about both of them so and it made it harder to build my portfolio.
 
-class MyWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      'Hello, World!',
-      style: Theme.of(context).textTheme.headline4,
-    );
-  }
-}
-```
+## v2: Nuxt 2 and Tailwind CSS 1.0
 
-```html
-<div class="bg-red-500">A test element</div>
-```
+![v2](../../../assets/images/projects/portfolio/portfolio-v2.png)
 
-```py
-x = False
-```
+## v3: Nuxt 2 and Tailwind CSS 2.0
 
-### A sub title
+![v3](../../../assets/images/projects/portfolio/portfolio-v3.png)
 
-Does HMR work? **looks like it**.
+## v4: Nuxt 3 and Tailwind CSS 3.0
 
----
+Well, I think no screenshot is required...
 
-_incredible_
-
-- test
-- 2
-- 3
-- 4
-
----
-
-1. a
-2. b
-3. c
-4. d
+## Wrapping up

@@ -4,6 +4,8 @@ import sub from "markdown-it-sub";
 import sup from "markdown-it-sup";
 import fn from "markdown-it-footnote";
 import emo from "markdown-it-emoji";
+import mdnh from "markdown-it-named-headers";
+import mila from "markdown-it-link-attributes";
 
 const options: MarkdownIt.Options = {
   html: true,
@@ -27,7 +29,14 @@ const mdit: MarkdownIt = new MarkdownIt(options)
   .use(sub)
   .use(sup)
   .use(fn)
-  .use(emo);
+  .use(emo)
+  .use(mdnh)
+  .use(mila, {
+    attrs: {
+      target: "_blank",
+      rel: "noopener noreferrer",
+    },
+  });
 
 mdit.linkify.set({ fuzzyEmail: false });
 
