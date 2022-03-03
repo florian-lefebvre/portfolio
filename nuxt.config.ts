@@ -17,16 +17,11 @@ export default defineNuxtConfig({
     ],
   },
   css: ["@/assets/css/main.css", "@/assets/css/highlight.css"],
-  buildModules: ["@vueuse/nuxt"],
+  buildModules: ["@vueuse/nuxt", "@nuxtjs/tailwindcss"],
+  tailwindcss: {
+    viewer: false,
+  },
   build: {
-    postcss: {
-      postcssOptions: {
-        plugins: {
-          tailwindcss: {},
-          autoprefixer: {},
-        },
-      },
-    },
     transpile: ["@headlessui/vue", "@heroicons/vue"],
   },
   vite: {

@@ -28,26 +28,7 @@ module.exports = {
           },
         },
       }),
-      animation: {
-        // atom: "atom 8s infinite linear",
-        // atom2: "atom2 8s infinite linear",
-      },
-      keyframes: {
-        // atom: {
-        //   "0%": {
-        //     transform: "translate(-50%, -50%) rotate(-360deg)",
-        //   },
-        // },
-        // atom2: {
-        //   "0%": {
-        //     transform: "rotate(360deg)",
-        //   },
-        // },
-      },
     },
   },
-  plugins: [
-    require("@tailwindcss/typography"),
-    require("tailwindcss-textshadow"),
-  ],
+  plugins: [require("@tailwindcss/typography")],
 };
