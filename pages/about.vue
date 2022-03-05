@@ -199,9 +199,12 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
 import { technologies, otherTechnologies, tools } from "~/data/technologies";
+const { t } = useI18n();
 
 useSeo({
-  title: "About me",
+  title: t("pages.about.seo.title"),
+  description: t("pages.about.seo.description"),
 });
 </script>

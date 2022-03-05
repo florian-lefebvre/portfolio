@@ -1,17 +1,19 @@
-const description = "TBD";
+import { useI18n } from "vue-i18n";
 
 const url = (path: string): string => `https://florian-lefebvre${path}`;
 
 interface Props {
   title: string;
+  description: string;
 }
 
 const imagePath = url("/og.png");
 
-export default function ({ title }: Props) {
-  const { fullName } = useMe();
+export default function ({ title, description }: Props) {
+  const { t } = useI18n();
 
-  const getTitle = (title: string): string => `${title} - ${fullName}`;
+  const getTitle = (title: string): string =>
+    t("global.seo.titleTemplate", { title });
 
   const { currentRoute: route } = useRouter();
   const facebookMetaTags = [

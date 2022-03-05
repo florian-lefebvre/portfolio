@@ -5,8 +5,12 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
 import projects from "~/data/projects";
+const { t } = useI18n();
+
 useSeo({
-  title: "Projects",
+  title: t("pages.projects.seo.title"),
+  description: t("pages.projects.seo.description"),
 });
 </script>

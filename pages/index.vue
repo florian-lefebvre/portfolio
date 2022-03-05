@@ -275,8 +275,14 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
 import { ArrowCircleDownIcon } from "@heroicons/vue/outline";
+const { t } = useI18n();
+
 useSeo({
-  title: "Home",
+  title: t("pages.home.seo.title"),
+  description: t("pages.home.seo.description", [
+    t("pages.home.introduction.descriptionLink"),
+  ]),
 });
 </script>

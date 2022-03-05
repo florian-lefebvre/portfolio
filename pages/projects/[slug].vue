@@ -101,6 +101,9 @@ try {
 
 useSeo({
   title: error ? "Page not found" : details.name,
+  description: error
+    ? "The page you are looking for does not exist."
+    : details.description,
 });
 
 const show = ref<boolean>();

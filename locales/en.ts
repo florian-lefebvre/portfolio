@@ -8,6 +8,10 @@ const message: MessageSchema = {
     meta: {
       description: `A ${age} year old self-taught fullstack developer from France.`,
     },
+    seo: {
+      titleTemplate:
+        "{title} - @:global.name{','} @.lower:global.meta.description",
+    },
     links: {
       navigation: [
         { name: "Home", url: "/" },
@@ -41,6 +45,11 @@ const message: MessageSchema = {
   },
   pages: {
     home: {
+      seo: {
+        title: "Home",
+        description:
+          "@:pages.home.introduction.title @:global.name{'.'} @:pages.home.introduction.description",
+      },
       introduction: {
         title: "Hi, I'm",
         short: "@:global.meta.description",
@@ -88,6 +97,11 @@ const message: MessageSchema = {
       },
     },
     about: {
+      seo: {
+        title: "About me",
+        description:
+          "Learn more about me. @:pages.about.introduction.shortDescription",
+      },
       introduction: {
         title1: "About",
         title2: "me",
@@ -120,8 +134,33 @@ const message: MessageSchema = {
         ],
       },
     },
-    projects: {},
+    projects: {
+      seo: {
+        title: "Projects",
+        description: "TODO",
+      },
+    },
     contact: {},
+    legal: {
+      credits: {
+        seo: {
+          title: "TODO",
+          description: "TODO",
+        },
+      },
+      privacy: {
+        seo: {
+          title: "TODO",
+          description: "TODO",
+        },
+      },
+      terms: {
+        seo: {
+          title: "TODO",
+          description: "TODO",
+        },
+      },
+    },
   },
 };
 

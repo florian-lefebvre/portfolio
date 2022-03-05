@@ -13,7 +13,14 @@ export interface TrainingCourse {
 
 export type AvailableLocales = "en" | "fr";
 
-export interface MessageSchema {
+type _Page = {
+  seo: {
+    title: string;
+    description: string;
+  };
+};
+
+export type MessageSchema = {
   global: {
     name: string;
     meta: {
@@ -30,9 +37,12 @@ export interface MessageSchema {
         legal: string;
       };
     };
+    seo: {
+      titleTemplate: string;
+    };
   };
   pages: {
-    home: {
+    home: _Page & {
       introduction: {
         title: string;
         short: string;
@@ -56,7 +66,7 @@ export interface MessageSchema {
         viewAll: string;
       };
     };
-    about: {
+    about: _Page & {
       introduction: {
         title1: string;
         title2: string;
@@ -75,7 +85,12 @@ export interface MessageSchema {
         courses: TrainingCourse[];
       };
     };
-    projects: {};
+    projects: _Page & {};
     contact: {};
+    legal: {
+      credits: _Page & {};
+      privacy: _Page & {};
+      terms: _Page & {};
+    };
   };
-}
+};
