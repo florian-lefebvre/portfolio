@@ -2,84 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  @apply scroll-pt-16 scroll-smooth selection:bg-primary-500 selection:text-white;
+@layer base {
+  html {
+    @apply scroll-pt-16 scroll-smooth selection:bg-primary-500 selection:text-white;
+  }
+
+  * {
+    scrollbar-color: theme("colors.gray.400") theme("colors.gray.900");
+  }
+
+  *::-webkit-scrollbar {
+    @apply bg-gray-900;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 hover:bg-gray-500;
+  }
+
+  pre code {
+    display: block;
+  }
 }
 
-* {
-  scrollbar-color: theme("colors.gray.400") theme("colors.gray.900");
+@layer components {
+  .page-enter-active {
+    @apply transition duration-300 ease-out;
+  }
+  .page-enter-from {
+    @apply opacity-0;
+  }
+  .page-enter-to {
+    @apply opacity-100;
+  }
+  .page-leave-active {
+    @apply transition duration-300 ease-in;
+  }
+  .page-leave-from {
+    @apply opacity-100;
+  }
+  .page-leave-to {
+    @apply opacity-0;
+  }
+
+  .loading-enter-active {
+    @apply transition duration-700 ease-out;
+  }
+  .loading-enter-from {
+    @apply opacity-0;
+  }
+  .loading-enter-to {
+    @apply opacity-100;
+  }
+  .loading-leave-active {
+    @apply transition duration-700 ease-in;
+  }
+  .loading-leave-from {
+    @apply opacity-100;
+  }
+  .loading-leave-to {
+    @apply opacity-0;
+  }
+
+  .title {
+    @apply mb-8 max-w-lg text-5xl text-white md:mb-12 md:max-w-none md:text-7xl;
+  }
+
+  .animated-underline {
+    @apply transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:rounded-full after:bg-gradient-to-tr after:from-primary-600 after:to-secondary-400 after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100;
+  }
+
+  .button-primary {
+    @apply bg-gradient inline-flex rounded-full px-6 py-2 font-medium text-white transition-all duration-300 hover:scale-95;
+  }
+
+  .prose a {
+    @apply animated-underline text-gradient bg-gradient relative font-semibold no-underline hover:text-white;
+  }
+
+  .prose a code {
+    @apply animated-underline text-gradient bg-gradient relative font-semibold no-underline hover:text-white;
+  }
 }
 
-*::-webkit-scrollbar {
-  @apply bg-gray-900;
-}
+@layer utilities {
+  .bg-gradient {
+    @apply bg-gradient-to-tr from-primary-600 to-secondary-400;
+  }
 
-*::-webkit-scrollbar-thumb {
-  @apply bg-gray-400 hover:bg-gray-500;
-}
-
-.page-enter-active {
-  @apply transition duration-300 ease-out;
-}
-.page-enter-from {
-  @apply opacity-0;
-}
-.page-enter-to {
-  @apply opacity-100;
-}
-.page-leave-active {
-  @apply transition duration-300 ease-in;
-}
-.page-leave-from {
-  @apply opacity-100;
-}
-.page-leave-to {
-  @apply opacity-0;
-}
-
-.loading-enter-active {
-  @apply transition duration-700 ease-out;
-}
-.loading-enter-from {
-  @apply opacity-0;
-}
-.loading-enter-to {
-  @apply opacity-100;
-}
-.loading-leave-active {
-  @apply transition duration-700 ease-in;
-}
-.loading-leave-from {
-  @apply opacity-100;
-}
-.loading-leave-to {
-  @apply opacity-0;
-}
-
-code {
-  display: block;
-}
-
-.title {
-  @apply mb-8 max-w-lg text-5xl text-white md:mb-12 md:max-w-none md:text-7xl;
-}
-
-.bg-gradient {
-  @apply bg-gradient-to-tr from-primary-600 to-secondary-400;
-}
-
-.text-gradient {
-  @apply bg-clip-text text-transparent;
-}
-
-.animated-underline {
-  @apply transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:rounded-full after:bg-gradient-to-tr after:from-primary-600 after:to-secondary-400 after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100;
-}
-
-.button-primary {
-  @apply bg-gradient inline-flex rounded-full px-6 py-2 font-medium text-white transition-all duration-300 hover:scale-95;
-}
-
-.prose a {
-  @apply bg-gradient animated-underline text-gradient relative font-semibold no-underline hover:text-white;
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+  }
 }

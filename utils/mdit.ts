@@ -32,6 +32,9 @@ const mdit: MarkdownIt = new MarkdownIt(options)
   .use(emo)
   .use(mdnh)
   .use(mila, {
+    matcher(href: string, config) {
+      return !href.startsWith("/") && !href.startsWith("#");
+    },
     attrs: {
       target: "_blank",
       rel: "noopener noreferrer",

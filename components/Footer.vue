@@ -3,7 +3,7 @@
     <Container>
       <h2 class="title">
         Get in
-        <span class="bg-gradient text-gradient inline-block font-semibold"
+        <span class="text-gradient bg-gradient inline-block font-semibold"
           >touch</span
         >
       </h2>
@@ -106,3 +106,24 @@ const categories: ComputedRef<FooterCategory[]> = computed(() => [
   },
 ]);
 </script>
+
+<style>
+#wcb {
+  --b1: theme("colors.white") !important;
+  --b2: theme("colors.primary.500") !important;
+}
+
+#wcb_g {
+  @apply !bg-gray-800;
+}
+
+#wcb_2,
+#wcb_a,
+#wcb_g {
+  font-family: unset !important;
+}
+
+#wcb_a {
+  @apply transition-all hover:scale-105 hover:rounded-md hover:shadow;
+}
+</style>

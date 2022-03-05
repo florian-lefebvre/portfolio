@@ -20,6 +20,7 @@ export default defineNuxtConfig({
   buildModules: ["@vueuse/nuxt", "@nuxtjs/tailwindcss"],
   tailwindcss: {
     viewer: false,
+    cssPath: "~/assets/css/main.css",
   },
   build: {
     transpile: ["@headlessui/vue", "@heroicons/vue"],

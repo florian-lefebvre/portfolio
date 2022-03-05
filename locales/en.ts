@@ -14,7 +14,7 @@ const message: MessageSchema = {
         { name: "About me", url: "/about" },
         { name: "Projects", url: "/projects" },
         {
-          name: "Github",
+          name: "GitHub",
           url: "https://github.com/florian-lefebvre",
           external: true,
         },
