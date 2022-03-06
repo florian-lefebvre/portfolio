@@ -275,7 +275,6 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
 import { ArrowCircleDownIcon } from "@heroicons/vue/outline";
 const { t } = useI18n();
 

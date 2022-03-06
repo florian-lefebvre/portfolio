@@ -93,7 +93,6 @@
 <script setup lang="ts">
 import { PopoverButton, PopoverPanel, Popover } from "@headlessui/vue";
 import { MenuIcon, XIcon } from "@heroicons/vue/outline";
-import { useI18n } from "vue-i18n";
 import { Link } from "~/types";
 
 const { tm } = useI18n();

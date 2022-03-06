@@ -416,12 +416,35 @@
   resolved "https://registry.npmjs.org/@nuxt/devalue/-/devalue-2.0.0.tgz#c7bd7e9a516514e612d5d2e511ffc399e0eac322"
   integrity sha512-YBI/6o2EBz02tdEJRBK8xkt3zvOFOWlLBf7WKYGBsSYSRtjjgrqPe2skp6VLLmKx5WbHHDNcW+6oACaurxGzeA==
 
-"@nuxt/kit@npm:@nuxt/kit-edge@3.0.0-27437402.494f85a", "@nuxt/kit@npm:@nuxt/kit-edge@latest":
+"@nuxt/kit@npm:@nuxt/kit-edge@3.0.0-27437402.494f85a":
   version "3.0.0-27437402.494f85a"
   resolved "https://registry.npmjs.org/@nuxt/kit-edge/-/kit-edge-3.0.0-27437402.494f85a.tgz#c98e6f6016443b057363de4625c039a449f6ab29"
   integrity sha512-8qzSbkkfl1QlLECfI94kkwYhy1i4Pgn/bpeaWEu/OrnKSvrQgbXZyCKL6FaxF9GTpT3DrQmXaIkF84DgSI2fGg==
   dependencies:
     "@nuxt/schema" "npm:@nuxt/schema-edge@3.0.0-27437402.494f85a"
+    c12 "^0.1.3"
+    consola "^2.15.3"
+    defu "^5.0.1"
+    globby "^13.1.1"
+    hash-sum "^2.0.0"
+    ignore "^5.2.0"
+    jiti "^1.13.0"
+    knitwork "^0.1.0"
+    lodash.template "^4.5.0"
+    mlly "^0.4.3"
+    pathe "^0.2.0"
+    pkg-types "^0.3.2"
+    scule "^0.2.1"
+    semver "^7.3.5"
+    unctx "^1.0.2"
+    untyped "^0.3.0"
+
+"@nuxt/kit@npm:@nuxt/kit-edge@latest":
+  version "3.0.0-27439932.78761c2"
+  resolved "https://registry.npmjs.org/@nuxt/kit-edge/-/kit-edge-3.0.0-27439932.78761c2.tgz#bd105b9cfa528cd4e5e7c6b24963c17e721dbd32"
+  integrity sha512-taclC+QxtFlo8KsFinkM7aGFhpCP6zKCuPcbdLZc0TwFyPzEa+akvC8X/e6QyjNL/7sCegDEUKlHrDJPtvYoYQ==
+  dependencies:
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.0.0-27439932.78761c2"
     c12 "^0.1.3"
     consola "^2.15.3"
     defu "^5.0.1"
@@ -521,6 +544,21 @@
   version "3.0.0-27437402.494f85a"
   resolved "https://registry.npmjs.org/@nuxt/schema-edge/-/schema-edge-3.0.0-27437402.494f85a.tgz#7fddbbce92e29ab9331b5fb2d351665f76628497"
   integrity sha512-TotMYtuPJTJPrVApK/694kSQsSJkD4P3g4tAPMe/0f2K4x0akldJQSdzemSpjhbqvoeb6z7G5Mw3OEVP23Dkyg==
+  dependencies:
+    c12 "^0.1.3"
+    create-require "^1.1.1"
+    defu "^5.0.1"
+    jiti "^1.13.0"
+    pathe "^0.2.0"
+    postcss-import-resolver "^2.0.0"
+    scule "^0.2.1"
+    std-env "^3.0.1"
+    ufo "^0.7.11"
+
+"@nuxt/schema@npm:@nuxt/schema-edge@3.0.0-27439932.78761c2":
+  version "3.0.0-27439932.78761c2"
+  resolved "https://registry.npmjs.org/@nuxt/schema-edge/-/schema-edge-3.0.0-27439932.78761c2.tgz#82f63f2070ac436ff7112bc5f7b8488af20fc247"
+  integrity sha512-z6JK1Fx2FfNvNUOqgeqk0dH35lJeayvZxYdU9IJ8yyLzYpWCW/hsZYLflzo+76lnEMxo6ZKLLSjaDBPV/kBuHQ==
   dependencies:
     c12 "^0.1.3"
     create-require "^1.1.1"

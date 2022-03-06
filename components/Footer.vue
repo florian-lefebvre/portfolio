@@ -90,7 +90,6 @@
 
 <script setup lang="ts">
 import { ComputedRef } from "nuxt3/dist/app/compat/capi";
-import { useI18n } from "vue-i18n";
 import { FooterCategory, Link } from "~/types";
 const { firstName, lastName, social } = useMe();
 const { t, tm } = useI18n();

@@ -18,6 +18,7 @@ export default defineNuxtConfig({
   },
   css: ["@/assets/css/main.css", "@/assets/css/highlight.css"],
   buildModules: ["@vueuse/nuxt", "@nuxtjs/tailwindcss"],
+  modules: ["~/modules/i18n"],
   tailwindcss: {
     viewer: false,
     cssPath: "~/assets/css/main.css",

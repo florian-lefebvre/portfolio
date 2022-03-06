@@ -81,7 +81,6 @@
 
 <script setup lang="ts">
 import { ArrowUpIcon, ArrowSmLeftIcon } from "@heroicons/vue/outline";
-import { useI18n } from "vue-i18n";
 import { ProjectLocale } from "~/types";
 import projects from "~/data/projects";
 
