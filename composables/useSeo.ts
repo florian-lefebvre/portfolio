@@ -1,13 +1,17 @@
 import { useI18n } from "vue-i18n";
+import { useCloudinary } from "./useCloudinary";
 
-const url = (path: string): string => `https://florian-lefebvre${path}`;
+const url = (path: string): string => `https://florian-lefebvre.dev${path}`;
 
 interface Props {
   title: string;
   description: string;
 }
 
-const imagePath = url("/og.png");
+const imagePath = useCloudinary({
+  path: "og.jpg",
+  id: "fyfvkm",
+});
 
 export default function ({ title, description }: Props) {
   const { t } = useI18n();

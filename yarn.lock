@@ -279,6 +279,11 @@
   dependencies:
     mime "^3.0.0"
 
+"@cloudinary/url-gen@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.npmjs.org/@cloudinary/url-gen/-/url-gen-1.6.0.tgz#0810b4e00193737e336d43f29073b1fce0910a6f"
+  integrity sha512-Ir7IloApze7tUmLxDUjFw3GOcs7/Hrh47p4U3CCtC6wI59ZGMHQe3l3aNhMtdYrJxCVIs2jYp6obWetcfTf3GQ==
+
 "@headlessui/vue@^1.4.2":
   version "1.5.0"
   resolved "https://registry.npmjs.org/@headlessui/vue/-/vue-1.5.0.tgz#8cd4877d3d344e482073a04ae8e3b7f987bb267c"
