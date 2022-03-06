@@ -14,8 +14,7 @@ const project: Project = {
       "Vercel",
       "SSR",
     ],
-    imageUrl:
-      "https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2",
+    imageUrl: "https://picsum.photos/id/3/1920/1080",
     links: [
       {
         name: "GitHub",

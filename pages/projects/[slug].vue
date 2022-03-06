@@ -22,7 +22,11 @@
         class="flex grid-cols-12 flex-col-reverse lg:grid lg:gap-16 xl:gap-8"
       >
         <div class="col-span-12 lg:col-span-8 xl:col-span-9">
-          <img :src="project.global.imageUrl" class="rounded-lg" />
+          <img
+            :src="project.global.imageUrl"
+            class="w-full rounded-lg"
+            :alt="details.description"
+          />
           <Prose class="mt-10" :content="details.content" />
         </div>
         <div class="col-span-12 mb-8 lg:col-span-4 lg:mb-0 xl:col-start-10">

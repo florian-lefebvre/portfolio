@@ -1,20 +1,13 @@
 import { Project } from "~/types";
 
 import p0 from "./portfolio";
+import p1 from "./ynotesApp";
 
-const projects: Project[] = [p0];
+const projects: Project[] = [p0, p1];
 export default projects;
 
 // const projects = ref<ProjectTMP[]>([
-//   {
-//     title: "yNotes app",
-//     imageUrl:
-//       "https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2",
-//     // description:
-//     // "yNotes is a mobile application that retrieves data from the student life services used by most French schools. It reshapes and adds many features. I'm involved in the development and the design of the app.",
-//     slug: "ynotes-app",
-//     description: computed(() => t("test")),
-//   },
+
 //   {
 //     title: "RégioLangues",
 //     imageUrl:
@@ -22,13 +15,6 @@ export default projects;
 //     description:
 //       "RégioLangues is a website I made for my brother. I was only involved in the coding, not the data. Its goal: gather resources around the web on the topic of French regional languages. It uses Supabase for the backend.",
 //     slug: "regiolangues",
-//   },
-//   {
-//     title: "Portfolio",
-//     imageUrl: "https://picsum.photos/id/3/400/300",
-//     description:
-//       "Not much to say except that I am quite satisfied with the result.",
-//     slug: "portfolio",
 //   },
 //   {
 //     title: "OHF31 website",
