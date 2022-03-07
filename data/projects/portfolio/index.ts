@@ -14,7 +14,11 @@ const project: Project = {
       "Vercel",
       "SSR",
     ],
-    imageUrl: "https://picsum.photos/id/3/1920/1080",
+    imageUrl: useCloudinary({
+      path: "global/og.jpg",
+      id: "fyfvkm",
+      quality: 80,
+    }),
     links: [
       {
         name: "GitHub",
