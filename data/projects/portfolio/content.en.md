@@ -7,6 +7,10 @@
 
 ## Motivation
 
+{{ 2 + 2 }}
+
+![test image]({{ useCloudinary({path: "global/og.jpg", id: "fyfvkm"}) }})
+
 As a developer, having a portfolio online is a great to way to showcase my skills and experience, as well as learning new things along the way. 9 months after starting to learn web development, I wanted to build mine. I had done quite a lot of experiments but lacked real projects so it was a good exercise too. In the following, I'll go through the iterations of my website, explain choices I made and issues I faced. Enjoy reading!
 
 ## v1: Jekyll and Bootstrap

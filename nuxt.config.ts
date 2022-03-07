@@ -43,6 +43,5 @@ export default defineNuxtConfig({
   },
   unlighthouse: {
     site: config.url,
-    debug: true,
   },
 });

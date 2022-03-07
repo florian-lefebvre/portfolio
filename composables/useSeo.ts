@@ -10,7 +10,7 @@ interface Props {
 }
 
 const imagePath = useCloudinary({
-  path: "og.jpg",
+  path: "global/og.jpg",
   id: "fyfvkm",
 });
 
