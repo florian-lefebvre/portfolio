@@ -1,5 +1,6 @@
 import { defineNuxtConfig } from "nuxt3";
 import vueJsx from "@vitejs/plugin-vue-jsx";
+import config from "./utils/config";
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
@@ -18,12 +19,13 @@ export default defineNuxtConfig({
     ],
   },
   css: ["@/assets/css/main.css", "@/assets/css/highlight.css"],
-  buildModules: ["@vueuse/nuxt", "@nuxtjs/tailwindcss", "vue-plausible"],
+  buildModules: [
+    "@vueuse/nuxt",
+    "@nuxtjs/tailwindcss",
+    "vue-plausible",
+    "@unlighthouse/nuxt",
+  ],
   modules: ["~/modules/i18n"],
-  tailwindcss: {
-    viewer: false,
-    cssPath: "~/assets/css/main.css",
-  },
   build: {
     transpile: ["@headlessui/vue", "@heroicons/vue", "vue-plausible"],
   },
@@ -34,5 +36,13 @@ export default defineNuxtConfig({
     plausible: {
       domain: "florian-lefebvre.dev",
     },
+  },
+  tailwindcss: {
+    viewer: false,
+    cssPath: "~/assets/css/main.css",
+  },
+  unlighthouse: {
+    site: config.url,
+    debug: true,
   },
 });

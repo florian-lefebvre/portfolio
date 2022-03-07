@@ -1,7 +1,8 @@
 import { useI18n } from "vue-i18n";
+import config from "~/utils/config";
 import { useCloudinary } from "./useCloudinary";
 
-const url = (path: string): string => `https://florian-lefebvre.dev${path}`;
+const url = (path: string): string => config.url + path;
 
 interface Props {
   title: string;
