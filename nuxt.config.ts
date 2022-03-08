@@ -15,10 +15,10 @@ export default defineNuxtConfig({
       { rel: "preconnect", href: "https://fonts.gstatic.com" },
       { rel: "preconnect", href: "https://api.websitecarbon.com" },
       { rel: "preconnect", href: "https://unpkg.com" },
-      { rel: "icon", type: "image/jpeg", href: "/images/pp.jpg" },
+      { rel: "icon", type: "image/png", href: "/images/favicon.png" },
     ],
   },
-  css: ["@/assets/css/main.css", "@/assets/css/highlight.css"],
+  css: ["swiper/css", "@/assets/css/main.css", "@/assets/css/highlight.css"],
   buildModules: [
     "@vueuse/nuxt",
     "@nuxtjs/tailwindcss",
@@ -31,6 +31,9 @@ export default defineNuxtConfig({
   },
   vite: {
     plugins: [vueJsx({})],
+    optimizeDeps: {
+      include: ["highlight.js"],
+    },
   },
   publicRuntimeConfig: {
     plausible: {

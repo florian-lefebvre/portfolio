@@ -6,5 +6,4 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(Vue3Mq, {
     preset: "tailwind",
   });
-  consola.success("[VUE3-MQ] Setup plugin done");
 });

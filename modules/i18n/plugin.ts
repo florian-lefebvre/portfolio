@@ -23,5 +23,4 @@ export default defineNuxtPlugin((nuxtApp) => {
     });
     return { t, n };
   });
-  consola.success("[I18N] Setup plugin done");
 });

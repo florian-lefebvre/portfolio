@@ -1,5 +1,6 @@
 import mdit from "~/utils/mdit";
 import { useCloudinary } from "~/composables/useCloudinary";
+import consola from "consola";
 
 export const render = (page: string) => {
   const regex = /{{.*}}/gm;
@@ -13,7 +14,9 @@ export const render = (page: string) => {
         } else {
           page = page.replace(match, eval(match.slice(2, -2)));
         }
-      } catch (e) {}
+      } catch (e) {
+        consola.error(e);
+      }
     }
   }
   return mdit.render(page);

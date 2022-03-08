@@ -31,6 +31,5 @@
 
 <script setup lang="ts">
 import projects from "~/data/projects";
-import { SwiperSlide } from "swiper/vue";
 import { ArrowUpIcon } from "@heroicons/vue/outline";
 </script>

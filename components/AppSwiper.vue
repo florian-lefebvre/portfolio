@@ -32,8 +32,6 @@
 
 <script setup lang="ts">
 import { Swiper as S } from "swiper";
-import { Swiper } from "swiper/vue";
-import "swiper/css";
 import {
   ArrowNarrowLeftIcon,
   ArrowNarrowRightIcon,
