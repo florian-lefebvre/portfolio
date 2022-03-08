@@ -7,15 +7,11 @@
 
 ## Motivation
 
-{{ 2 + 2 }}
-
-![test image]({{ useCloudinary({path: "global/og.jpg", id: "fyfvkm"}) }})
-
 As a developer, having a portfolio online is a great to way to showcase my skills and experience, as well as learning new things along the way. 9 months after starting to learn web development, I wanted to build mine. I had done quite a lot of experiments but lacked real projects so it was a good exercise too. In the following, I'll go through the iterations of my website, explain choices I made and issues I faced. Enjoy reading!
 
 ## v1: Jekyll and Bootstrap
 
-![v1](/images/projects/portfolio/portfolio-v1.png)
+![Screenshot of the porfolio v1]({{ useCloudinary({path: "projects/portfolio/portfolio-v1.png", id: "amiq7d"}) }})
 
 Back in August 2020, I had to choose technologies to build my portfolio. At the time, I knew HTML5, CSS & SCSS, PHP and Bootstrap.
 
@@ -31,7 +27,7 @@ So as I was learning more about frontend development and in particular JavaScrip
 
 ## v2: Nuxt 2 and Tailwind CSS 1.0
 
-![v2](/images/projects/portfolio/portfolio-v2.png)
+![Screenshot of the porfolio v2]({{ useCloudinary({path: "projects/portfolio/portfolio-v2.png", id: "dpjraf"}) }})
 
 I learnt a lot of things since August 2020, so I decided to go with [Nuxt](https://nuxtjs.org) and [Tailwind CSS](https://tailwindcss.com/).
 
@@ -45,7 +41,7 @@ But as always, I wasn't satisfied of my work and thought it wasn't good enough a
 
 ## v3: Nuxt 2 and Tailwind CSS 2.0
 
-![v3](/images/projects/portfolio/portfolio-v3.png)
+![Screenshot of the porfolio v3]({{ useCloudinary({path: "projects/portfolio/portfolio-v3.png", id: "jfptik"}) }})
 
 I'm not crazy, I don't use a new technology every day so I kept using Nuxt and Tailwind CSS. I decided to so something more simple: only one ppage with all informations. I chose some kind of minimalistic design with only gray shades and no primary color. I also implemented a dark mode. I discovered animations using [AnimXYZ](https://animxyz.com/) but I've got to say that it wasn't that easy to do animations with it.
 
