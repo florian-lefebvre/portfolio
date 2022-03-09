@@ -1,5 +1,4 @@
 <template>
-  <a href="http://" target="_blank" rel="noopener noreferrer"></a>
   <a
     href="https://text.npr.org/1082992947"
     target="_blank"

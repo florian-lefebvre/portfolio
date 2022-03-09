@@ -15,7 +15,7 @@ const imagePath = useCloudinary({
 });
 
 export default function ({ title, description }: Props) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   const getTitle = (title: string): string =>
     t("global.seo.titleTemplate", { title });
@@ -84,6 +84,9 @@ export default function ({ title, description }: Props) {
 
   useMeta({
     title: getTitle(title),
+    htmlAttrs: {
+      lang: locale,
+    },
     meta: [
       {
         hid: "description",

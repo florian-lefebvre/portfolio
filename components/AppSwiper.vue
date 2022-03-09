@@ -15,6 +15,7 @@
         @click="swiper?.slidePrev()"
         class="transition-all hover:scale-90"
         :class="beginning ? 'opacity-30 hover:scale-100' : ''"
+        aria-label="Previous slide"
       >
         <ArrowNarrowLeftIcon class="h-8 w-8 text-white" />
       </button>
@@ -23,6 +24,7 @@
         @click="swiper?.slideNext()"
         class="transition-all hover:scale-90"
         :class="end ? 'opacity-30 hover:scale-100' : ''"
+        aria-label="Next slide"
       >
         <ArrowNarrowRightIcon class="h-8 w-8 text-white" />
       </button>
