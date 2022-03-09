@@ -11,10 +11,12 @@
           <ArrowUpIcon class="h-6 w-6 rotate-45 text-gray-300" />
         </div>
         <div class="p-1">
-          <div
-            class="h-48 w-full rounded-lg bg-cover bg-center"
-            :style="{ backgroundImage: `url(${imageUrl})` }"
-          ></div>
+          <img
+            :src="imageUrl"
+            class="h-48 w-full overflow-hidden rounded-lg object-cover object-center"
+            :alt="`${locales[$i18n.locale].name} thumbnail`"
+            loading="lazy"
+          />
         </div>
         <div class="p-4">
           <div class="mb-2 text-xl font-semibold text-white">
