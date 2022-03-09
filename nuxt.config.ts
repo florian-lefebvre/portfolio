@@ -40,6 +40,9 @@ export default defineNuxtConfig({
     // optimizeDeps: {
     //   exclude: ["highlight.js"],
     // },
+    build: {
+      target: "ESNext",
+    },
   },
   publicRuntimeConfig: {
     plausible: {
