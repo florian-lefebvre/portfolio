@@ -4,7 +4,7 @@
   >
     <div class="relative flex items-center justify-center">
       <img
-        src="/images/pp.jpg"
+        :src="url"
         alt="Profile picture"
         class="h-44 w-44 select-none rounded-full border-2 border-gray-700/50 shadow-md"
       />
@@ -32,6 +32,11 @@
 
 <script setup lang="ts">
 import { technologies } from "~/data/technologies";
+
+const url = useCloudinary({
+  path: "global/pp.jpg",
+  id: "qx3inv",
+});
 
 const duration: number = 12;
 const animation = (animationName: string, d: number = duration): string =>

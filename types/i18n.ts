@@ -85,7 +85,10 @@ export type MessageSchema = {
         courses: TrainingCourse[];
       };
     };
-    projects: _Page & {};
+    projects: _Page & {
+      title: string;
+      description: string;
+    };
     contact: {};
     legal: {
       credits: _Page & {};

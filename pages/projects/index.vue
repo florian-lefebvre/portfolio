@@ -1,11 +1,71 @@
 <template>
-  <Container class="w-full py-16">
-    <ProjectsSwiper />
-  </Container>
+  <div>
+    <Container class="py-16 md:py-20">
+      <h2
+        class="title bg-gradient text-gradient inline-block font-semibold"
+        v-motion
+        :initial="{
+          opacity: 0,
+          y: 20,
+        }"
+        :visible="{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 400,
+          },
+        }"
+      >
+        {{ $t("pages.projects.title") }}
+      </h2>
+      <div class="text-gray-200 md:text-lg">
+        <p
+          class="max-w-3xl"
+          v-motion
+          :initial="{
+            opacity: 0,
+            y: 20,
+          }"
+          :visible="{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 400,
+              delay: 200,
+            },
+          }"
+        >
+          {{ $t("pages.projects.description") }}
+        </p>
+      </div>
+    </Container>
+    <div class="bg-gray-900/50">
+      <Container
+        class="py-16 md:py-20"
+        v-motion
+        :initial="{
+          opacity: 0,
+          y: 20,
+        }"
+        :visible="{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 400,
+            delay: 400,
+          },
+        }"
+      >
+        <ProjectsSwiper />
+      </Container>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 import projects from "~/data/projects";
+import { useI18n } from "vue-i18n";
+
 const { t } = useI18n();
 
 useSeo({

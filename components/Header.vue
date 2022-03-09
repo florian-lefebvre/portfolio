@@ -94,6 +94,7 @@
 import { PopoverButton, PopoverPanel, Popover } from "@headlessui/vue";
 import { MenuIcon, XIcon } from "@heroicons/vue/outline";
 import { Link } from "~/types";
+import { useI18n } from "vue-i18n";
 
 const { tm } = useI18n();
 

@@ -90,8 +90,19 @@ export default function ({ title, description }: Props) {
         name: "description",
         content: description,
       },
+
       ...facebookMetaTags,
       ...twitterMetaTags,
+    ],
+    link: [
+      {
+        rel: "icon",
+        type: "image/png",
+        href: useCloudinary({
+          path: "global/favicon.png",
+          id: "alleti",
+        }),
+      },
     ],
   });
 }

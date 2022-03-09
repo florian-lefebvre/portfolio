@@ -1,4 +1,3 @@
-import hljs from "highlight.js";
 import MarkdownIt from "markdown-it";
 import sub from "markdown-it-sub";
 import sup from "markdown-it-sup";
@@ -6,6 +5,11 @@ import fn from "markdown-it-footnote";
 import emo from "markdown-it-emoji";
 import mdnh from "markdown-it-named-headers";
 import mila from "markdown-it-link-attributes";
+import { HLJSApi } from "highlight.js";
+// @ts-ignore
+const hljs: HLJSApi = await import("highlight.js").then(
+  (lib) => lib.default || lib
+);
 
 const options: MarkdownIt.Options = {
   html: true,

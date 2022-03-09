@@ -249,25 +249,84 @@
       </Container>
     </div>
     <Container class="py-16 md:py-20">
-      <h1 class="title">
+      <h2
+        class="title"
+        v-motion
+        :initial="{
+          opacity: 0,
+          y: 20,
+        }"
+        :visible="{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 400,
+          },
+        }"
+      >
         {{ $t("pages.home.projects.title1") }}
         <span
           class="bg-gradient text-gradient block font-semibold md:inline-block"
         >
           {{ $t("pages.home.projects.title2") }}
         </span>
-      </h1>
-      <div class="max-w-3xl text-gray-200 md:text-lg">
+      </h2>
+      <div
+        class="max-w-3xl text-gray-200 md:text-lg"
+        v-motion
+        :initial="{
+          opacity: 0,
+          y: 20,
+        }"
+        :visible="{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 400,
+            delay: 200,
+          },
+        }"
+      >
         <p class="mb-10">
           {{ $t("pages.home.projects.description") }}
         </p>
       </div>
-      <div class="block">
+      <div
+        class="block"
+        v-motion
+        :initial="{
+          opacity: 0,
+          y: 20,
+        }"
+        :visible="{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 400,
+            delay: 400,
+          },
+        }"
+      >
         <NuxtLink to="/projects" class="button-primary">{{
           $t("pages.home.projects.viewAll")
         }}</NuxtLink>
       </div>
-      <div class="mt-10">
+      <div
+        class="mt-10"
+        v-motion
+        :initial="{
+          opacity: 0,
+          y: 20,
+        }"
+        :visible="{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 400,
+            delay: 600,
+          },
+        }"
+      >
         <ProjectsSwiper />
       </div>
     </Container>
@@ -276,6 +335,8 @@
 
 <script setup lang="ts">
 import { ArrowCircleDownIcon } from "@heroicons/vue/outline";
+import { useI18n } from "vue-i18n";
+
 const { t } = useI18n();
 
 useSeo({

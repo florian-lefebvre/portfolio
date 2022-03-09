@@ -15,34 +15,36 @@ export default defineNuxtConfig({
       { rel: "preconnect", href: "https://fonts.gstatic.com" },
       { rel: "preconnect", href: "https://api.websitecarbon.com" },
       { rel: "preconnect", href: "https://unpkg.com" },
-      { rel: "icon", type: "image/png", href: "/images/favicon.png" },
     ],
   },
-  css: ["swiper/css", "@/assets/css/main.css", "@/assets/css/highlight.css"],
-  buildModules: [
-    "@vueuse/nuxt",
-    "@nuxtjs/tailwindcss",
-    "vue-plausible",
-    "@unlighthouse/nuxt",
+  css: [
+    "swiper/css",
+    "@/assets/css/tailwind.css",
+    "@/assets/css/main.css",
+    "@/assets/css/highlight.css",
   ],
-  modules: ["~/modules/i18n"],
+  buildModules: ["@vueuse/nuxt", "vue-plausible", "@unlighthouse/nuxt"],
   build: {
+    postcss: {
+      postcssOptions: {
+        plugins: {
+          tailwindcss: {},
+          autoprefixer: {},
+        },
+      },
+    },
     transpile: ["@headlessui/vue", "@heroicons/vue", "vue-plausible"],
   },
   vite: {
     plugins: [vueJsx({})],
-    optimizeDeps: {
-      include: ["highlight.js"],
-    },
+    // optimizeDeps: {
+    //   exclude: ["highlight.js"],
+    // },
   },
   publicRuntimeConfig: {
     plausible: {
       domain: "florian-lefebvre.dev",
     },
-  },
-  tailwindcss: {
-    viewer: false,
-    cssPath: "~/assets/css/main.css",
   },
   unlighthouse: {
     site: config.url,

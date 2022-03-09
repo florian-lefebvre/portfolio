@@ -1,7 +1,7 @@
 <template>
   <div>
     <Error404 v-if="error" />
-    <Container v-else class="py-16">
+    <Container v-else class="py-16 md:py-20">
       <div class="mb-6" ref="header">
         <div
           class="flex flex-col items-start space-y-2 md:flex-row md:items-center md:space-x-6 md:space-y-0"
@@ -87,6 +87,7 @@
 import { ArrowUpIcon, ArrowSmLeftIcon } from "@heroicons/vue/outline";
 import { ProjectLocale } from "~/types";
 import projects from "~/data/projects";
+import { useI18n } from "vue-i18n";
 
 const { social } = useMe();
 

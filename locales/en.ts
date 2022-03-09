@@ -137,8 +137,10 @@ const message: MessageSchema = {
     projects: {
       seo: {
         title: "Projects",
-        description: "TODO",
+        description: "@:pages.projects.description",
       },
+      title: "Projects",
+      description: "@:pages.home.projects.description",
     },
     contact: {},
     legal: {

@@ -149,7 +149,7 @@
     </div>
     <Container class="py-16 md:py-20">
       <h2
-        class="title bg-gradient text-gradient font-semibold"
+        class="title bg-gradient text-gradient inline-block font-semibold"
         v-motion
         :initial="{
           opacity: 0,
@@ -200,6 +200,8 @@
 
 <script setup lang="ts">
 import { technologies, otherTechnologies, tools } from "~/data/technologies";
+import { useI18n } from "vue-i18n";
+
 const { t } = useI18n();
 
 useSeo({
