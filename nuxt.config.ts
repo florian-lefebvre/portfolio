@@ -23,7 +23,12 @@ export default defineNuxtConfig({
     "@/assets/css/main.css",
     "@/assets/css/highlight.css",
   ],
-  buildModules: ["@vueuse/nuxt", "vue-plausible", "@unlighthouse/nuxt"],
+  buildModules: [
+    "@vueuse/nuxt",
+    "vue-plausible",
+    "@unlighthouse/nuxt",
+    "~/modules/sitemap",
+  ],
   build: {
     postcss: {
       postcssOptions: {
@@ -51,5 +56,8 @@ export default defineNuxtConfig({
   },
   unlighthouse: {
     site: config.url,
+  },
+  router: {
+    trailingSlash: true,
   },
 });
