@@ -60,4 +60,8 @@ export default defineNuxtConfig({
   router: {
     trailingSlash: true,
   },
+  sitemap: {
+    hostname: config.url,
+    dynamicRoutes: ["/projects/portfolio", "/projects/ynotes-app"],
+  },
 });
