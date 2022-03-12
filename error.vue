@@ -34,6 +34,8 @@ const props = defineProps({
   error: Object,
 });
 
+const { go } = useRouter();
+
 useSeo({
   title: `Error ${props.error.statusCode}`,
   description: `An error occured: ${props.error.statusMessage}`,
@@ -42,10 +44,7 @@ useSeo({
 const handleError = () => {
   clearError({ redirect: "/" });
   setTimeout(() => {
-    window.scrollTo(0, document.body.scrollHeight);
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 100);
+    go(0);
   }, 100);
 };
 </script>
