@@ -45,7 +45,7 @@ const handleError = () => {
     window.scrollTo(0, document.body.scrollHeight);
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 1000);
-  }, 1000);
+    }, 100);
+  }, 100);
 };
 </script>
