@@ -56,13 +56,18 @@ export default defineNuxtModule({
       };
 
       const stream = new SitemapStream(sitemapConfig);
-      const sitemap = await streamToPromise(
-        Readable.from(sitemapConfig.urls).pipe(stream)
-      ).then((data) => data.toString());
+      try {
+        const sitemap = await streamToPromise(
+          Readable.from(sitemapConfig.urls).pipe(stream)
+        ).then((data) => data.toString());
 
-      await fsp.writeFile(filePath, sitemap);
+        await fsp.writeFile(filePath, sitemap);
 
-      consola.success(`Sitemap generated at ${filePath}`);
+        consola.success(`Sitemap generated at ${filePath}`);
+      } catch (e) {
+        consola.error("Error generating sitemap");
+        consola.error(e);
+      }
     });
   },
 });
