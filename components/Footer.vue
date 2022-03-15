@@ -7,11 +7,22 @@
           >touch</span
         >
       </h2>
-      <div class="max-w-3xl text-gray-200 md:text-lg">
-        <p class="mb-10">
-          If you wish to talk, or chat about an existing / upcoming project,
-          feel free to reach out with any of the below methods.
-        </p>
+      <div class="flex flex-col justify-between sm:flex-row sm:space-x-6">
+        <div class="max-w-3xl text-gray-200 md:text-lg">
+          <p class="mb-10">
+            If you wish to talk, or chat about an existing / upcoming project,
+            feel free to reach out with any of the below methods.
+          </p>
+        </div>
+        <div
+          class="bg-gradient mb-10 flex shrink-0 items-center rounded-lg py-2 px-4 text-white sm:inline-flex"
+        >
+          <InformationCircleIcon class="mr-6 h-8 w-8" />
+          <div>
+            <div class="mr-4 text-lg font-bold">Information</div>
+            <div>I'm not open for work right now.</div>
+          </div>
+        </div>
       </div>
       <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
         <a
@@ -92,6 +103,7 @@
 import { ComputedRef } from "nuxt3/dist/app/compat/capi";
 import { FooterCategory, Link } from "~/types";
 import { useI18n } from "vue-i18n";
+import { InformationCircleIcon } from "@heroicons/vue/outline";
 
 const { firstName, lastName, social } = useMe();
 const { t, tm } = useI18n();
