@@ -4,6 +4,8 @@ import { NuxtPage } from "~/node_modules/@nuxt/kit/node_modules/@nuxt/schema/dis
 import { SitemapStream, streamToPromise } from "sitemap";
 import { Readable } from "stream";
 import consola from "consola";
+import { join, dirname } from "path";
+import serveStatic from "serve-static";
 
 interface Options {
   hostname: string;
@@ -26,23 +28,9 @@ export default defineNuxtModule({
   },
   defaults: DEFAULTS,
   async setup(options, nuxt) {
-    if (nuxt.options.dev) {
-      consola.warn("Sitemap module is not compatible with dev mode");
-      return;
-    }
-
     let routes: NuxtPage[];
 
-    nuxt.hook("pages:extend", async (pages) => {
-      routes = pages;
-    });
-
-    nuxt.hook("build:done", async (builder) => {
-      const resolver = createResolver(import.meta.url);
-      const filePath = await resolver.resolvePath(
-        "~/.output/public/sitemap.xml"
-      );
-
+    const generateSitemp = async (path: string): Promise<void> => {
       const sitemapRoutes: string[] = [
         ...routes
           .filter((route) => !route.path.includes(":"))
@@ -56,18 +44,48 @@ export default defineNuxtModule({
       };
 
       const stream = new SitemapStream(sitemapConfig);
+      const sitemap = await streamToPromise(
+        Readable.from(sitemapConfig.urls).pipe(stream)
+      ).then((data) => data.toString());
+
+      const dirPath = dirname(path);
+      await fsp.mkdir(dirPath, { recursive: true });
+
+      await fsp.writeFile(path, sitemap);
+    };
+
+    const handleSitemapGeneration = async (fn: Function): Promise<void> => {
       try {
-        const sitemap = await streamToPromise(
-          Readable.from(sitemapConfig.urls).pipe(stream)
-        ).then((data) => data.toString());
-
-        await fsp.writeFile(filePath, sitemap);
-
-        consola.success(`Sitemap generated at ${filePath}`);
+        await fn();
+        consola.success(`Sitemap generated`);
       } catch (e) {
         consola.error("Error generating sitemap");
-        consola.error(e);
       }
+    };
+
+    nuxt.hook("pages:extend", async (pages) => {
+      routes = pages;
     });
+
+    if (nuxt.options.dev) {
+      nuxt.hook("build:done", async (builder) => {
+        await handleSitemapGeneration(async () => {
+          const resolver = createResolver(import.meta.url);
+          const filePath = await resolver.resolvePath("~/.sitemap/sitemap.xml");
+          await generateSitemp(filePath);
+          nuxt.options.serverMiddleware.push({
+            path: filePath,
+            handler: serveStatic(filePath),
+          });
+        });
+      });
+    } else {
+      nuxt.hook("nitro:generate", async (ctx) => {
+        await handleSitemapGeneration(async () => {
+          const filePath = join(ctx.output.publicDir, "sitemap.xml");
+          await generateSitemp(filePath);
+        });
+      });
+    }
   },
 });

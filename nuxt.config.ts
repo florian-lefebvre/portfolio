@@ -1,6 +1,10 @@
 import { defineNuxtConfig } from "nuxt3";
 import vueJsx from "@vitejs/plugin-vue-jsx";
-import config from "./utils/config";
+
+const config = {
+  domain: process.env.DOMAIN,
+  url: `https://${process.env.DOMAIN}`,
+};
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
@@ -50,8 +54,10 @@ export default defineNuxtConfig({
     },
   },
   publicRuntimeConfig: {
+    domain: config.domain,
+    url: config.url,
     plausible: {
-      domain: "florian-lefebvre.dev",
+      domain: config.domain,
     },
   },
   unlighthouse: {

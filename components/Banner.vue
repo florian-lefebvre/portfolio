@@ -1,6 +1,6 @@
 <template>
   <a
-    href="https://text.npr.org/1082992947"
+    href="https://ukrainewar.carrd.co/"
     target="_blank"
     rel="noopener noreferrer"
     class="relative py-2 text-left text-white transition-all duration-300 hover:opacity-80 sm:text-center"

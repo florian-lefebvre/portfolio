@@ -1,24 +1,21 @@
 import { useI18n } from "vue-i18n";
-import config from "~/utils/config";
 import { useCloudinary } from "./useCloudinary";
-
-const url = (path: string): string => config.url + path;
 
 interface Props {
   title: string;
   description: string;
 }
 
-const imagePath = useCloudinary({
-  path: "global/og.jpg",
-  id: "fyfvkm",
-});
-
 export default function ({ title, description }: Props) {
   const { t, locale } = useI18n();
-
+  const config = useRuntimeConfig();
+  const url = (path: string): string => config.url + path;
   const getTitle = (title: string): string =>
     t("global.seo.titleTemplate", { title });
+  const imagePath = useCloudinary({
+    path: "global/og.jpg",
+    id: "fyfvkm",
+  });
 
   const { currentRoute: route } = useRouter();
   const facebookMetaTags = [
