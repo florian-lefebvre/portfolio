@@ -73,10 +73,10 @@ export default defineNuxtModule({
           const resolver = createResolver(import.meta.url);
           const filePath = await resolver.resolvePath("~/.sitemap/sitemap.xml");
           await generateSitemp(filePath);
-          nuxt.options.serverMiddleware.push({
-            path: filePath,
-            handler: serveStatic(filePath),
-          });
+          // nuxt.options.serverMiddleware.push({
+          //   path: "/",
+          //   handler: serveStatic(dirname(filePath)),
+          // });
         });
       });
     } else {
