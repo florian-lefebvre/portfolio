@@ -78,7 +78,7 @@
       <div class="my-6 h-px bg-gray-600"></div>
       <p
         class="mx-auto text-center text-gray-400"
-        v-html="$t('global.footer.rights', { date: new Date().getFullYear() })"
+        v-html="$t('global.footer.rights')"
       ></p>
       <div id="wcb" class="carbonbadge wcb-d my-6"></div>
       <Script

@@ -1,12 +1,12 @@
 import { MessageSchema } from "~/types/i18n";
 
-const { age } = useMe();
+const { fullName } = useMe();
 
 const message: MessageSchema = {
   global: {
-    name: "Florian LEFEBVRE",
+    name: fullName,
     meta: {
-      description: `A ${age} year old self-taught fullstack developer from France.`,
+      description: `French self-taught fullstack developer.`,
     },
     seo: {
       titleTemplate:
@@ -39,7 +39,7 @@ const message: MessageSchema = {
       ],
     },
     footer: {
-      rights: "&copy {date} @:global.name{'.'} All rights reserved.",
+      rights: `&copy ${new Date().getFullYear()} @:global.name{'.'} All rights reserved.`,
       categories: { navigation: "Navigation", legal: "Legal" },
     },
   },
