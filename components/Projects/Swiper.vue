@@ -3,12 +3,12 @@
     <SwiperSlide v-for="{ global: { imageUrl }, locales } in projects"
       ><NuxtLink
         :to="`/projects/${locales[$i18n.locale].slug}`"
-        class="group relative block h-full overflow-hidden rounded-xl bg-gray-800 text-white shadow-lg transition-all hover:scale-95 hover:shadow"
+        class="relative block h-full overflow-visible rounded-xl bg-gray-800 text-white shadow-lg transition-all hover:scale-95 hover:shadow"
       >
-        <div
-          class="absolute top-4 right-4 scale-75 rounded-lg border border-gray-700 bg-gray-800 p-2 opacity-0 transition-all group-hover:scale-100 group-hover:opacity-100"
-        >
-          <ArrowUpIcon class="h-6 w-6 rotate-45 text-gray-300" />
+        <div class="absolute top-3 left-3">
+          <div class="bg-gradient rounded-full px-3 py-1 text-sm text-white">
+            {{ locales[$i18n.locale].type }}
+          </div>
         </div>
         <div class="p-1">
           <img

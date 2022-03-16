@@ -1,9 +1,7 @@
 import { Project } from "~/types";
+import * as p from "./projects";
 
-import p0 from "./portfolio";
-import p1 from "./ynotesApp";
-
-const projects: Project[] = [p0, p1];
+const projects: Project[] = Object.values(p);
 export default projects;
 
 // const projects = ref<ProjectTMP[]>([

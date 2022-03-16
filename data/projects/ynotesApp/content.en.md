@@ -1,42 +1,33 @@
-- [What is yNotes?](#what-is-ynotes)
-- [Technical overview](#technical-overview)
+- [Story](#story)
+  - [Concept](#concept)
+  - [Why creating yNotes](#why-creating-ynotes)
+  - [Why using yNotes](#why-using-ynotes)
+- [Timeline](#timeline)
+- [Challenges](#challenges)
+- [Technical details](#technical-details)
   - [Unkown APIS](#unkown-apis)
   - [Flutter and cross-platform](#flutter-and-cross-platform)
-  - [Deploying](#deploying)
-- [Designing](#designing)
-- [Story](#story)
-  - [Wrapping up](#wrapping-up)
+  - [Deploying via fastlane](#deploying-via-fastlane)
+- [Wrapping up](#wrapping-up)
 
-# What is yNotes?
+## Story
 
-In France, a few school services exist to manage schools (grades, schedules...). But to be honest, they are not the best. Interfaces often suck: not intuitive, not responsive, too many steps, and ugly.
+### Concept
 
-yNotes aims to fix those issues py providing a mobile app with a simple, modern and intuitive interface, while adding useful features. Since the beggining of the project in January 2020, yNotes is in beta but has already convinced 4k users to use it.
+### Why creating yNotes
 
-# Technical overview
+### Why using yNotes
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis egestas luctus. Ut egestas nec arcu id vestibulum. Proin porttitor nulla et venenatis varius. Nullam sit amet risus fermentum, congue nisi quis, ullamcorper nisi. Donec feugiat nibh nisi, at consectetur libero tempus efficitur. Duis in congue est, quis pharetra libero. Vestibulum auctor ultrices eros at interdum. Nulla felis ex, malesuada sit amet dolor eget, viverra eleifend lorem. Curabitur urna arcu, gravida non tortor venenatis, cursus scelerisque quam. Etiam ut tempus metus, et sagittis odio. Sed placerat, leo sagittis scelerisque rhoncus, odio augue pretium leo, ut mollis tellus arcu nec turpis. Praesent tristique in lorem a gravida. Nulla tempus vulputate felis, ultricies dictum sem. Duis massa libero, dignissim eu egestas non, pretium eu arcu.
+## Timeline
 
-## Unkown APIS
+## Challenges
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis egestas luctus. Ut egestas nec arcu id vestibulum. Proin porttitor nulla et venenatis varius. Nullam sit amet risus fermentum, congue nisi quis, ullamcorper nisi. Donec feugiat nibh nisi, at consectetur libero tempus efficitur. Duis in congue est, quis pharetra libero. Vestibulum auctor ultrices eros at interdum. Nulla felis ex, malesuada sit amet dolor eget, viverra eleifend lorem. Curabitur urna arcu, gravida non tortor venenatis, cursus scelerisque quam. Etiam ut tempus metus, et sagittis odio. Sed placerat, leo sagittis scelerisque rhoncus, odio augue pretium leo, ut mollis tellus arcu nec turpis. Praesent tristique in lorem a gravida. Nulla tempus vulputate felis, ultricies dictum sem. Duis massa libero, dignissim eu egestas non, pretium eu arcu.
+## Technical details
 
-## Flutter and cross-platform
+### Unkown APIS
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis egestas luctus. Ut egestas nec arcu id vestibulum. Proin porttitor nulla et venenatis varius. Nullam sit amet risus fermentum, congue nisi quis, ullamcorper nisi. Donec feugiat nibh nisi, at consectetur libero tempus efficitur. Duis in congue est, quis pharetra libero. Vestibulum auctor ultrices eros at interdum. Nulla felis ex, malesuada sit amet dolor eget, viverra eleifend lorem. Curabitur urna arcu, gravida non tortor venenatis, cursus scelerisque quam. Etiam ut tempus metus, et sagittis odio. Sed placerat, leo sagittis scelerisque rhoncus, odio augue pretium leo, ut mollis tellus arcu nec turpis. Praesent tristique in lorem a gravida. Nulla tempus vulputate felis, ultricies dictum sem. Duis massa libero, dignissim eu egestas non, pretium eu arcu.
+### Flutter and cross-platform
 
-## Deploying
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis egestas luctus. Ut egestas nec arcu id vestibulum. Proin porttitor nulla et venenatis varius. Nullam sit amet risus fermentum, congue nisi quis, ullamcorper nisi. Donec feugiat nibh nisi, at consectetur libero tempus efficitur. Duis in congue est, quis pharetra libero. Vestibulum auctor ultrices eros at interdum. Nulla felis ex, malesuada sit amet dolor eget, viverra eleifend lorem. Curabitur urna arcu, gravida non tortor venenatis, cursus scelerisque quam. Etiam ut tempus metus, et sagittis odio. Sed placerat, leo sagittis scelerisque rhoncus, odio augue pretium leo, ut mollis tellus arcu nec turpis. Praesent tristique in lorem a gravida. Nulla tempus vulputate felis, ultricies dictum sem. Duis massa libero, dignissim eu egestas non, pretium eu arcu.
-
-# Designing
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis egestas luctus. Ut egestas nec arcu id vestibulum. Proin porttitor nulla et venenatis varius. Nullam sit amet risus fermentum, congue nisi quis, ullamcorper nisi. Donec feugiat nibh nisi, at consectetur libero tempus efficitur. Duis in congue est, quis pharetra libero. Vestibulum auctor ultrices eros at interdum. Nulla felis ex, malesuada sit amet dolor eget, viverra eleifend lorem. Curabitur urna arcu, gravida non tortor venenatis, cursus scelerisque quam. Etiam ut tempus metus, et sagittis odio. Sed placerat, leo sagittis scelerisque rhoncus, odio augue pretium leo, ut mollis tellus arcu nec turpis. Praesent tristique in lorem a gravida. Nulla tempus vulputate felis, ultricies dictum sem. Duis massa libero, dignissim eu egestas non, pretium eu arcu.
-
-# Story
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis egestas luctus. Ut egestas nec arcu id vestibulum. Proin porttitor nulla et venenatis varius. Nullam sit amet risus fermentum, congue nisi quis, ullamcorper nisi. Donec feugiat nibh nisi, at consectetur libero tempus efficitur. Duis in congue est, quis pharetra libero. Vestibulum auctor ultrices eros at interdum. Nulla felis ex, malesuada sit amet dolor eget, viverra eleifend lorem. Curabitur urna arcu, gravida non tortor venenatis, cursus scelerisque quam. Etiam ut tempus metus, et sagittis odio. Sed placerat, leo sagittis scelerisque rhoncus, odio augue pretium leo, ut mollis tellus arcu nec turpis. Praesent tristique in lorem a gravida. Nulla tempus vulputate felis, ultricies dictum sem. Duis massa libero, dignissim eu egestas non, pretium eu arcu.
+### Deploying via fastlane
 
 ## Wrapping up
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis egestas luctus. Ut egestas nec arcu id vestibulum. Proin porttitor nulla et venenatis varius. Nullam sit amet risus fermentum, congue nisi quis, ullamcorper nisi. Donec feugiat nibh nisi, at consectetur libero tempus efficitur. Duis in congue est, quis pharetra libero. Vestibulum auctor ultrices eros at interdum. Nulla felis ex, malesuada sit amet dolor eget, viverra eleifend lorem. Curabitur urna arcu, gravida non tortor venenatis, cursus scelerisque quam. Etiam ut tempus metus, et sagittis odio. Sed placerat, leo sagittis scelerisque rhoncus, odio augue pretium leo, ut mollis tellus arcu nec turpis. Praesent tristique in lorem a gravida. Nulla tempus vulputate felis, ultricies dictum sem. Duis massa libero, dignissim eu egestas non, pretium eu arcu.

@@ -35,4 +35,5 @@ export interface ProjectLocale {
   links: Link[];
   slug: string;
   content: string;
+  type: string;
 }

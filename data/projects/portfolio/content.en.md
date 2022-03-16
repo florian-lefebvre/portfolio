@@ -55,6 +55,8 @@ I upgraded Nuxt to its 3rd version (in beta) as well as Tailwind CSS (no majors 
 
 Concerning animations, I switch to [`@vueuse/motion`](https://motion.vueuse.org/) and it's really better.
 
+In fact, because ecosystem isn't compatible yet, I had to dive a bit deeper in Nuxt and learnt how to build modules (for generating a sitemap for instance) and that was really enriching.
+
 Since only SSR is available (as of the beginning of March 2022), I deploy my portfolio on Vercel, the process is way simpler than on GitHub Actions or any other CI since Nuxt has first class inegrations for deployments.
 
 ## Wrapping up

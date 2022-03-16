@@ -1,6 +1,5 @@
 import { defineNuxtConfig } from "nuxt3";
 import vueJsx from "@vitejs/plugin-vue-jsx";
-import serveStatic from "serve-static";
 
 const config = {
   domain: process.env.DOMAIN,
@@ -69,6 +68,11 @@ export default defineNuxtConfig({
   },
   sitemap: {
     hostname: config.url,
-    dynamicRoutes: ["/projects/portfolio", "/projects/ynotes-app"],
+    // dynamicRoutes: projects.map(
+    //   (project) => `/projects/${project.locales.en.slug}`
+    // ),
+    dynamicRoutes: ["portfolio", "ynotes-app"].map(
+      (project) => `/projects/${project}`
+    ),
   },
 });

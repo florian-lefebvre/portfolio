@@ -14,29 +14,21 @@ const project: Project = {
       "Vercel",
       "SSR",
     ],
-    imageUrl: useCloudinary({
-      path: "global/og.jpg",
-      id: "fyfvkm",
-      quality: 80,
-    }),
-    links: [
-      {
-        name: "GitHub",
-        url: "https://github.com/florian-lefebvre/portfolio",
-      },
-    ],
+    imageUrl:
+      "https://res.cloudinary.com/af68d22a-2043-4078-857c-f2db1a1406ec/image/upload/c_scale,w_1000/v1636657520/OHF31/ohf31-public-website/images/shared/og_image_bsrjhr.png",
+    links: [],
   },
   locales: {
     en: {
-      name: "Portfolio",
+      name: "OHF31",
       content: render(contentEn),
       description:
-        "The developer's portfolio acts as a showcase of his skills and projects. And I think the one you're currently on is a great example.",
-      slug: "portfolio",
+        "I finally finished v3 of the 1st site I made! That's a basic showcase site but I think it looks really great.",
+      slug: "ohf31-website",
       links: [
         {
           name: "Website",
-          url: "https://florian-lefebvre.dev",
+          url: "https://www.ohf31.fr",
         },
       ],
       type: "Website",
@@ -45,7 +37,7 @@ const project: Project = {
       name: "Portfolio",
       content: render(contentFr),
       description: "une description",
-      slug: "portfolio",
+      slug: "site-web-ohf31",
       links: [],
       type: "Site web",
     },

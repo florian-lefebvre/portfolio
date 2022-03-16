@@ -38,6 +38,7 @@ const project: Project = {
           url: "https://ynotes.fr",
         },
       ],
+      type: "Mobile app",
     },
     fr: {
       name: "Application yNotes",
@@ -45,6 +46,7 @@ const project: Project = {
       description: "une description",
       slug: "application-ynotes",
       links: [],
+      type: "Application mobile",
     },
   },
 };

@@ -53,6 +53,12 @@
             </div>
             <div class="grid gap-4">
               <div class="">
+                <div class="text-lg font-semibold text-white">Project type</div>
+                <div class="mb-4 text-gray-400">
+                  {{ details.type }}
+                </div>
+              </div>
+              <div class="">
                 <div class="text-lg font-semibold text-white">Technologies</div>
                 <div class="mb-4 text-gray-400">
                   {{ project.global.technologies.join(", ") }}
