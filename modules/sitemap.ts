@@ -68,15 +68,15 @@ export default defineNuxtModule({
     });
 
     if (nuxt.options.dev) {
-      nuxt.hook("build:done", async (builder) => {
-        await handleSitemapGeneration(async () => {
-          const resolver = createResolver(import.meta.url);
-          const filePath = await resolver.resolvePath("~/.sitemap/sitemap.xml");
+      await handleSitemapGeneration(async () => {
+        const resolver = createResolver(import.meta.url);
+        const filePath = await resolver.resolvePath("~/.sitemap/sitemap.xml");
+        nuxt.hook("build:done", async (builder) => {
           await generateSitemp(filePath);
-          // nuxt.options.serverMiddleware.push({
-          //   path: "/",
-          //   handler: serveStatic(dirname(filePath)),
-          // });
+        });
+        nuxt.options.serverMiddleware.push({
+          path: "/",
+          handler: serveStatic(dirname(filePath)),
         });
       });
     } else {

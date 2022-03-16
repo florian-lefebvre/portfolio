@@ -71,10 +71,4 @@ export default defineNuxtConfig({
     hostname: config.url,
     dynamicRoutes: ["/projects/portfolio", "/projects/ynotes-app"],
   },
-  serverMiddleware: [
-    {
-      path: "/",
-      handler: serveStatic(__dirname + "/.sitemap"),
-    },
-  ],
 });
