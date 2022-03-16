@@ -25,24 +25,8 @@
 </template>
 
 <script setup lang="ts">
-const route = useRoute();
-const firstVisit = ref(true);
 const mounted = ref(false);
 onMounted(() => {
   mounted.value = true;
 });
-
-watch(
-  route,
-  (n) => {
-    if (process.client) {
-      if (firstVisit.value) {
-        firstVisit.value = false;
-        return;
-      }
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  },
-  { deep: true, immediate: true }
-);
 </script>
