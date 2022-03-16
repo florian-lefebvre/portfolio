@@ -14,15 +14,7 @@
             feel free to reach out with any of the below methods.
           </p>
         </div>
-        <div
-          class="bg-gradient mb-10 flex shrink-0 items-center rounded-lg py-2 px-4 text-white sm:inline-flex"
-        >
-          <InformationCircleIcon class="mr-6 h-8 w-8" />
-          <div>
-            <div class="mr-4 text-lg font-bold">Information</div>
-            <div>I'm not open for work right now.</div>
-          </div>
-        </div>
+        <Alert>I'm not open for work right now.</Alert>
       </div>
       <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
         <NuxtLink
@@ -101,7 +93,6 @@
 import { ComputedRef } from "nuxt3/dist/app/compat/capi";
 import { FooterCategory, Link } from "~/types";
 import { useI18n } from "vue-i18n";
-import { InformationCircleIcon } from "@heroicons/vue/outline";
 
 const { firstName, lastName, social } = useMe();
 const { t, tm } = useI18n();

@@ -26,7 +26,13 @@
             class="w-full rounded-lg"
             :alt="details.description"
           />
-          <Prose class="mt-10" :content="details.content" />
+          <Alert title="Work in progress" class="mt-10 w-full"
+            >I am currently working on the content. The final version will be
+            available in the coming weeks.</Alert
+          >
+          <article>
+            <Prose class="mt-10" :content="details.content" />
+          </article>
         </div>
         <div class="col-span-12 mb-8 lg:col-span-4 lg:mb-0 xl:col-start-10">
           <div
