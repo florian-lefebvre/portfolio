@@ -1,8 +1,7 @@
 <template>
-  <a
-    href="https://ukrainewar.carrd.co/"
+  <NuxtLink
+    to="https://ukrainewar.carrd.co/"
     target="_blank"
-    rel="noopener noreferrer"
     class="relative py-2 text-left text-white transition-all duration-300 hover:opacity-80 sm:text-center"
     tabindex="0"
   >
@@ -19,5 +18,5 @@
       <!-- <span class="">French translation coming soon!</span> -->
       <!-- <span class="font-bold">Check out</span> -->
     </Container>
-  </a>
+  </NuxtLink>
 </template>

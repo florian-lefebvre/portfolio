@@ -3,9 +3,6 @@
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
     "jsx": "preserve",
-    "target": "ESNext",
-    "paths": {
-      "~": ["."]
-    }
+    "target": "ESNext"
   }
 }

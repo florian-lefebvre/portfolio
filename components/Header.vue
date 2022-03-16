@@ -13,11 +13,9 @@
           <ProfilePicture />
           <div class="flex items-center space-x-4 sm:space-x-6">
             <div class="hidden items-center space-x-6 sm:flex">
-              <component
+              <NuxtLink
                 v-for="link in links"
-                :is="link.external ? 'a' : 'nuxt-link'"
                 :to="link.url"
-                :href="link.url"
                 :target="link.external ? '_blank' : undefined"
                 class="animated-underline relative text-white"
                 :class="{
@@ -28,7 +26,7 @@
                 }"
               >
                 {{ link.name }}
-              </component>
+              </NuxtLink>
             </div>
             <a
               href="#contact"
@@ -66,11 +64,9 @@
           <div
             class="flex flex-col items-center justify-center space-y-6 text-xl"
           >
-            <component
-              :is="link.external ? 'a' : 'nuxt-link'"
+            <NuxtLink
               v-for="link in links"
               :to="link.url"
-              :href="link.url"
               :target="link.external ? '_blank' : undefined"
               @click.native="() => close()"
               class="animated-underline relative text-white"
@@ -82,7 +78,7 @@
               }"
             >
               {{ link.name }}
-            </component>
+            </NuxtLink>
           </div>
         </PopoverPanel>
       </transition>

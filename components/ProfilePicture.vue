@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link
+  <NuxtLink
     to="/"
     class="rounded-full focus:ring focus:ring-primary-600 focus:ring-offset-2 focus:ring-offset-gray-900"
   >
@@ -10,7 +10,7 @@
       width="40px"
       height="40px"
     />
-  </nuxt-link>
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">

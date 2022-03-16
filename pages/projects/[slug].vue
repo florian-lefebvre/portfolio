@@ -54,13 +54,12 @@
               </div>
               <div class="">
                 <div class="mb-1 text-lg font-semibold text-white">Links</div>
-                <a
+                <NuxtLink
                   v-for="{ name, url } in project.global.links.concat(
                     details.links
                   )"
-                  :href="url"
+                  :to="url"
                   target="_blank"
-                  rel="noopener noreferrer"
                   class="flex space-x-4 rounded-lg px-4 py-2 text-gray-400 transition-colors hover:bg-gray-800 hover:text-white"
                 >
                   <Icon
@@ -72,7 +71,7 @@
                   />
                   <ArrowUpIcon class="-ml-2 h-6 w-6 rotate-45" v-else />
                   <span>{{ name }}</span>
-                </a>
+                </NuxtLink>
               </div>
             </div>
           </div>

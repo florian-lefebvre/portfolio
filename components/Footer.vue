@@ -25,18 +25,17 @@
         </div>
       </div>
       <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
-        <a
+        <NuxtLink
           v-for="link in social"
-          :href="link.url(link.username)"
+          :to="link.url(link.username)"
           target="_blank"
-          rel="noopener noreferrer"
           class="flex flex-col items-center justify-center rounded-lg bg-gray-800 p-6 text-white transition-colors hover:bg-gray-700"
         >
           <Icon :icon="link.icon" class="h-12 w-12" />
           <div class="mt-2 text-center font-semibold sm:text-xl">
             {{ link.username }}
           </div>
-        </a>
+        </NuxtLink>
       </div>
     </Container>
   </div>
@@ -57,15 +56,14 @@
             {{ $t("global.meta.description") }}
           </div>
           <div class="flex items-center space-x-6">
-            <a
+            <NuxtLink
               v-for="link in social"
-              :href="link.url(link.username)"
+              :to="link.url(link.username)"
               target="_blank"
-              rel="noopener noreferrer"
               class="text-gray-400 transition-colors hover:text-white"
             >
               <Icon :icon="link.icon" class="h-5 w-5" monochrome />
-            </a>
+            </NuxtLink>
           </div>
         </div>
         <div class="mt-12 flex space-x-16 md:ml-8 md:mt-0">
@@ -74,13 +72,13 @@
               {{ category.name }}
             </div>
             <div class="space-y-1">
-              <nuxt-link
+              <NuxtLink
                 :to="link.url"
                 class="block text-gray-400 transition-colors hover:text-white"
                 v-for="link in category.links"
               >
                 {{ link.name }}
-              </nuxt-link>
+              </NuxtLink>
             </div>
           </div>
         </div>

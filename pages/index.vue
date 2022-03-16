@@ -51,12 +51,13 @@
             keypath="pages.home.introduction.description"
             scope="global"
           >
-            <a
+            <NuxtLink
               target="_blank"
+              no-rel
               href="https://ynotes.fr"
               class="bg-gradient animated-underline text-gradient relative font-semibold hover:text-white"
               >{{ $t("pages.home.introduction.descriptionLink") }}
-            </a>
+            </NuxtLink>
           </i18n-t>
         </div>
         <div class="block">
@@ -177,9 +178,9 @@
             },
           }"
         >
-          <nuxt-link to="/about" class="button-primary">
+          <NuxtLink to="/about" class="button-primary">
             {{ $t("pages.home.about.learnMore") }}
-          </nuxt-link>
+          </NuxtLink>
         </div>
         <div class="relative">
           <div
