@@ -22,7 +22,7 @@
           <div class="mb-2 text-xl font-semibold text-white">
             {{ locales[$i18n.locale].name }}
           </div>
-          <div class="text-gray-300">
+          <div class="text-gray-300 line-clamp-3">
             {{ locales[$i18n.locale].description }}
           </div>
         </div>
@@ -33,5 +33,4 @@
 
 <script setup lang="ts">
 import projects from "~/data/projects";
-import { ArrowUpIcon } from "@heroicons/vue/outline";
 </script>
