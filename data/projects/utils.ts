@@ -1,6 +1,7 @@
 import mdit from "~/utils/mdit";
 import { useCloudinary } from "~/composables/useCloudinary";
 import consola from "consola";
+import { Project } from "~~/types";
 
 export const render = (page: string) => {
   const regex = /{{.*}}/gm;
@@ -20,4 +21,12 @@ export const render = (page: string) => {
     }
   }
   return mdit.render(page);
+};
+
+export const defineProject = (project: Project): Project => {
+  project.global.technologies.sort();
+  for (const locale of Object.values(project.locales)) {
+    locale.content = render(locale.content);
+  }
+  return project;
 };

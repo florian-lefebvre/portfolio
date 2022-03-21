@@ -3,7 +3,7 @@
     <div>
       <Swiper
         :slides-per-view="slidesPerView"
-        :space-between="50"
+        :space-between="spaceBetween"
         @swiper="onSwiper"
       >
         <slot></slot>
@@ -69,6 +69,17 @@ const slidesPerView = computed<number>(() => {
       return 3;
     default:
       return 1;
+  }
+});
+
+const spaceBetween = computed<number>(() => {
+  switch (mq.current as string) {
+    // case "lg":
+    // case "xl":
+    // case "xxl":
+    //   return 48;
+    default:
+      return 24;
   }
 });
 </script>

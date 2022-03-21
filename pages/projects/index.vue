@@ -37,26 +37,28 @@
         >
           {{ $t("pages.projects.description") }}
         </p>
+        <div
+          v-motion
+          :initial="{
+            opacity: 0,
+            y: 20,
+          }"
+          :visible="{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 400,
+              delay: 400,
+            },
+          }"
+        >
+          <ProjectsFeatured :project="projects[0]" />
+        </div>
       </div>
     </Container>
     <div class="bg-gray-900/50">
-      <Container
-        class="py-16 md:py-20"
-        v-motion
-        :initial="{
-          opacity: 0,
-          y: 20,
-        }"
-        :visible="{
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 400,
-            delay: 400,
-          },
-        }"
-      >
-        <ProjectsSwiper />
+      <Container class="py-16 md:py-20">
+        <ProjectsGrid />
       </Container>
     </div>
   </div>

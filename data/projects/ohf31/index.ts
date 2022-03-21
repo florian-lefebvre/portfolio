@@ -1,9 +1,8 @@
-import { Project } from "~/types";
-import { render } from "../utils";
+import { defineProject } from "../utils";
 import contentEn from "./content.en.md?raw";
 import contentFr from "./content.fr.md?raw";
 
-const project: Project = {
+export default defineProject({
   global: {
     technologies: [
       "TypeScript",
@@ -21,7 +20,7 @@ const project: Project = {
   locales: {
     en: {
       name: "OHF31",
-      content: render(contentEn),
+      content: contentEn,
       description:
         "I finally finished v3 of the 1st site I made! That's a basic showcase site but I think it looks really great.",
       slug: "ohf31-website",
@@ -35,13 +34,11 @@ const project: Project = {
     },
     fr: {
       name: "Portfolio",
-      content: render(contentFr),
+      content: contentFr,
       description: "une description",
       slug: "site-web-ohf31",
       links: [],
       type: "Site web",
     },
   },
-};
-
-export default project;
+});

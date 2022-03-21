@@ -6,36 +6,28 @@ export default defineProject({
   global: {
     technologies: [
       "TypeScript",
-      "Vue 3",
-      "Nuxt 3",
+      "Vue 2",
+      "Nuxt 2",
       "Tailwind CSS",
-      "VueUse",
       "Vercel",
-      "SSR",
+      "SSG",
+      "Supabase",
     ],
-    imageUrl: useCloudinary({
-      path: "global/og.jpg",
-      id: "fyfvkm",
-      quality: 80,
-    }),
-    links: [
-      {
-        name: "GitHub",
-        url: "https://github.com/florian-lefebvre/portfolio",
-      },
-    ],
+    imageUrl:
+      "https://res.cloudinary.com/af68d22a-2043-4078-857c-f2db1a1406ec/image/upload/c_scale/v1641930868/Regiolangues/og_sup891.jpg",
+    links: [],
   },
   locales: {
     en: {
-      name: "Portfolio",
+      name: "Régiolangues",
       content: contentEn,
       description:
-        "The developer's portfolio acts as a showcase of his skills and projects. And I think the one you're currently on is a great example.",
-      slug: "portfolio",
+        "RégioLangues is a website I made for my brother. I was only involved in the coding, not the data. Its goal: gather resources around the web on the topic of French regional languages. It uses Supabase for the backend.",
+      slug: "regiolangues",
       links: [
         {
           name: "Website",
-          url: "https://florian-lefebvre.dev",
+          url: "https://regiolangues.fr",
         },
       ],
       type: "Website",
@@ -44,7 +36,7 @@ export default defineProject({
       name: "Portfolio",
       content: contentFr,
       description: "une description",
-      slug: "portfolio",
+      slug: "site-web-ohf31",
       links: [],
       type: "Site web",
     },

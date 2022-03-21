@@ -23,7 +23,7 @@
         <div class="col-span-12 lg:col-span-8 xl:col-span-9">
           <img
             :src="project.global.imageUrl"
-            class="w-full rounded-lg"
+            class="w-full rounded-lg border-2 border-gray-700/25"
             :alt="details.description"
           />
           <Alert title="Work in progress" class="mt-10 w-full"

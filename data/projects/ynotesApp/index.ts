@@ -1,19 +1,8 @@
-import { Project } from "~/types";
-import { render } from "../utils";
+import { defineProject } from "../utils";
 import contentEn from "./content.en.md?raw";
 import contentFr from "./content.fr.md?raw";
 
-//   {
-//     title: "yNotes app",
-//     imageUrl:
-//       "https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2",
-//     // description:
-//     // "yNotes is a mobile application that retrieves data from the student life services used by most French schools. It reshapes and adds many features. I'm involved in the development and the design of the app.",
-//     slug: "ynotes-app",
-//     description: computed(() => t("test")),
-//   },
-
-const project: Project = {
+export default defineProject({
   global: {
     technologies: ["Dart", "Flutter", "Figma"],
     imageUrl:
@@ -28,7 +17,7 @@ const project: Project = {
   locales: {
     en: {
       name: "yNotes app",
-      content: render(contentEn),
+      content: contentEn,
       description:
         "yNotes is a mobile application that retrieves data from the student life services used by most French schools. It reshapes and adds many features.",
       slug: "ynotes-app",
@@ -42,13 +31,11 @@ const project: Project = {
     },
     fr: {
       name: "Application yNotes",
-      content: render(contentFr),
+      content: contentFr,
       description: "une description",
       slug: "application-ynotes",
       links: [],
       type: "Application mobile",
     },
   },
-};
-
-export default project;
+});
