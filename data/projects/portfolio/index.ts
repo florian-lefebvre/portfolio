@@ -15,7 +15,7 @@ export default defineProject({
     ],
     imageUrl: useCloudinary({
       path: "global/og.jpg",
-      id: "fyfvkm",
+      id: "ekzloe",
       quality: 80,
     }),
     links: [
