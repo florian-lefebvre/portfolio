@@ -59,6 +59,7 @@ pre code {
 .title {
   @apply mb-6 max-w-lg text-5xl text-white md:mb-12 md:max-w-none md:text-7xl;
   line-height: normal;
+  overflow-wrap: anywhere;
 }
 
 .animated-underline {
@@ -68,10 +69,6 @@ pre code {
 .button-primary {
   @apply bg-gradient inline-flex rounded-full px-6 py-2 font-medium text-white transition-all duration-300 hover:scale-95;
 }
-
-/* .prose a {
-  @apply animated-underline text-gradient bg-gradient relative font-semibold no-underline hover:text-white;
-} */
 
 .prose :where(a):not(:where([class~="not-prose"] *)) {
   @apply animated-underline text-gradient bg-gradient relative font-semibold no-underline hover:text-white;

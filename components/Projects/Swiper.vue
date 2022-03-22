@@ -1,6 +1,6 @@
 <template>
   <AppSwiper>
-    <SwiperSlide v-for="project in projects">
+    <SwiperSlide v-for="project in projects.slice(0, 5)">
       <ProjectsCard :project="project" />
     </SwiperSlide>
   </AppSwiper>
