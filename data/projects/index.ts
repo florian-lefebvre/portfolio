@@ -1,5 +1,8 @@
 import { Project } from "~/types";
 import * as p from "./projects";
+import portfolio from "./portfolio";
+
+export const featured = computed(() => portfolio);
 
 const projects: Project[] = Object.values(p);
 export default projects;

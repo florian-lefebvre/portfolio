@@ -53,7 +53,7 @@
             },
           }"
         >
-          <ProjectsFeatured :project="projects[0]" />
+          <ProjectsFeatured :project="featured" />
         </div>
       </div>
     </Container>
@@ -66,7 +66,7 @@
 </template>
 
 <script setup lang="ts">
-import projects from "~/data/projects";
+import projects, { featured } from "~/data/projects";
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
