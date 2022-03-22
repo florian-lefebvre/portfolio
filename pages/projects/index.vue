@@ -38,6 +38,7 @@
           {{ $t("pages.projects.description") }}
         </p>
         <div
+          class="mt-16"
           v-motion
           :initial="{
             opacity: 0,
