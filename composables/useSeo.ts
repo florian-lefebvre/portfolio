@@ -14,7 +14,7 @@ export default function ({ title, description }: Props) {
     t("global.seo.titleTemplate", { title });
   const imagePath = useCloudinary({
     path: "global/og.jpg",
-    id: "fyfvkm",
+    id: "ekzloe",
   });
 
   const { currentRoute: route } = useRouter();
