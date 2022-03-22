@@ -58,7 +58,21 @@
       </div>
     </Container>
     <div class="bg-gray-900/50">
-      <Container class="py-16 md:py-20">
+      <Container
+        class="py-16 md:py-20"
+        v-motion
+        :initial="{
+          opacity: 0,
+          y: 20,
+        }"
+        :visible="{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 400,
+          },
+        }"
+      >
         <div class="relative rounded-lg">
           <div
             class="absolute top-0 left-0 bottom-0 z-20 w-4 bg-gradient-to-r from-gray-900/75 to-gray-900/0"
