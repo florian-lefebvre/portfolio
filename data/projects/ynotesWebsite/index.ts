@@ -10,7 +10,7 @@ export default defineProject({
       "Github Pages",
       "SSG",
       "AnimXYZ",
-      "Taiwind CSS",
+      "Tailwind CSS",
     ],
     imageUrl:
       "https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2",

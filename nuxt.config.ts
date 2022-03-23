@@ -27,7 +27,7 @@ export default defineNuxtConfig({
     "@/assets/css/main.css",
     "@/assets/css/highlight.css",
   ],
-  buildModules: [
+  modules: [
     "@vueuse/nuxt",
     "vue-plausible",
     "@unlighthouse/nuxt",
@@ -71,8 +71,18 @@ export default defineNuxtConfig({
     // dynamicRoutes: projects.map(
     //   (project) => `/projects/${project.locales.en.slug}`
     // ),
-    dynamicRoutes: ["portfolio", "ynotes-app"].map(
-      (project) => `/projects/${project}`
-    ),
+    dynamicRoutes: [
+      "portfolio",
+      "ynotes-app",
+      "ohf31-website",
+      "regiolangues",
+      "supabase",
+      "ynotes-website",
+      "ynotes-packages",
+      "flutter-responsive-breakpoints",
+      "shortcuts-app",
+      "vertical-timeline",
+      "barcode-generator",
+    ].map((project) => `/projects/${project}`),
   },
 });
