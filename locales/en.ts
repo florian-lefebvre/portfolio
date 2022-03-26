@@ -106,34 +106,68 @@ const message: MessageSchema = {
       introduction: {
         title1: "About",
         title2: "me",
-        shortDescription:
-          "I am a French student in my last year of high school. I've been coding since 2019 on my free time and I've already accomplished several things.",
+        shortDescription: "@:pages.home.about.description",
         longDescription:
-          "I've always been interested in technology. In secondary school, I was already in charge of the school's computers. I started learning to code with Unreal Engine 4 using blueprints in 2018. I did that for about a year, then decided to learn web development. I started with a simple HTML + CSS website (which looked horrible), then I tried PHP, then Bootstrap and so on.... I am now a fullstack developer with a modern technology stack that you can see below.",
+          "I've always been interested in technology. In secondary school, I was already in charge of the school's computers. I started learning to code with Unreal Engine 4 using blueprints in 2018. I did that for about a year, then decided to learn web development. I started with a simple HTML and CSS website , then I tried PHP, then Bootstrap and so on.... I am now a fullstack developer with a modern technology stack that you can see below.",
+        music: {
+          description: `I also enjoy playing music. I have been playing drums for ${
+            currentYear - 2010
+          } years, percussion for ${
+            currentYear - 2018
+          } years and bass guitar for ${
+            currentYear - 2019
+          } years in several orchestras and bands: {ohf}, the symphonic orchestra of the intermunicipal music school of Fronton and {rockBand}.`,
+          ohf: {
+            name: "l'Orchestre d'Harmonie du Frontonnais",
+            url: "https://ohf31.fr",
+          },
+          rockBand: {
+            name: "le groupe rock",
+            url: "https://www.instagram.com/legrouperock/",
+          },
+        },
       },
       stack: {
         title1: "Tech",
         title2: "stack",
         description:
-          "I know all the tools needed to build apps: frontend, backend and mobile...",
-        otherTechnologies: "...but I also know...",
-        tools: "...and use those tools:",
+          "I know all the tools needed to build apps: frontend, backend and mobile. Here is my current teck stack:",
+        otherTechnologies:
+          "But I also know the languages they use, as well as other technologies:",
+        tools: "And I use the following tools to boost my productivity:",
       },
-      education: {
-        title: "Education",
-        courses: [
-          {
-            dates: "2015 - 2019",
-            name: "Secondary school Sainte Geneviève",
-            topic: "GCSE equivalent with honourable mention",
-          },
-          {
-            dates: "2019 - 2022",
-            name: "High school Le Ferradou",
-            topic: "Computer science and mathematics",
-          },
-        ],
-      },
+      sections: [
+        {
+          title: "Education",
+          cards: [
+            {
+              dates: "2015 - 2019",
+              name: "Secondary school Sainte Geneviève",
+              topic: "GCSE equivalent with honourable mention",
+            },
+            {
+              dates: "2019 - 2022",
+              name: "High school Le Ferradou",
+              topic: "Computer science and mathematics",
+            },
+          ],
+        },
+        {
+          title: "Certifications",
+          cards: [
+            {
+              dates: "2022",
+              name: "Cambridge B2",
+              topic: "Awaiting results",
+            },
+            {
+              dates: "March 10th 2022",
+              name: "Reply Code Challenge - Teen Edition",
+              topic: "Team WhyNot ranked 156th",
+            },
+          ],
+        },
+      ],
     },
     projects: {
       seo: {

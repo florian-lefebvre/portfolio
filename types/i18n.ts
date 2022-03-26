@@ -5,7 +5,7 @@ interface _Card {
   description: string;
 }
 
-export interface TrainingCourse {
+export interface AboutCard {
   dates: string;
   name: string;
   topic: string;
@@ -71,6 +71,11 @@ export type MessageSchema = {
         title2: string;
         shortDescription: string;
         longDescription: string;
+        music: {
+          description: string;
+          ohf: Link;
+          rockBand: Link;
+        };
       };
       stack: {
         title1: string;
@@ -79,10 +84,10 @@ export type MessageSchema = {
         otherTechnologies: string;
         tools: string;
       };
-      education: {
+      sections: Array<{
         title: string;
-        courses: TrainingCourse[];
-      };
+        cards: AboutCard[];
+      }>;
     };
     projects: _Page & {
       title: string;
