@@ -111,7 +111,7 @@ const categories: ComputedRef<FooterCategory[]> = computed(() => [
 <style>
 #wcb {
   --b1: theme("colors.white") !important;
-  --b2: theme("colors.primary.500") !important;
+  --b2: theme("colors.primary.600") !important;
 }
 
 #wcb_g {
