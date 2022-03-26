@@ -12,6 +12,7 @@
       type="button"
       class="bg-gradient fixed right-4 bottom-4 z-10 rounded-full p-3 text-white shadow-md transition-all duration-300 hover:scale-95"
       @click="scrollToTop()"
+      :aria-label="$t('global.accessibility.backToTop')"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

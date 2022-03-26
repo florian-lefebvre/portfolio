@@ -40,6 +40,11 @@ const message: MessageSchema = {
       rights: `&copy ${currentYear} @:global.name{'.'} All rights reserved.`,
       categories: { navigation: "Navigation", legal: "Legal" },
     },
+    accessibility: {
+      previousSlide: "Previous slide",
+      nextSlide: "Next slide",
+      backToTop: "Back to top",
+    },
   },
   pages: {
     home: {

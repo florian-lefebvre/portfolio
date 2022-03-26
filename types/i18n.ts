@@ -40,6 +40,11 @@ export type MessageSchema = {
     seo: {
       titleTemplate: string;
     };
+    accessibility: {
+      previousSlide: string;
+      nextSlide: string;
+      backToTop: string;
+    };
   };
   pages: {
     home: _Page & {
