@@ -7,10 +7,12 @@
       class="relative z-10 grid gap-6 transition-all group-hover:scale-95 md:grid-cols-2"
     >
       <img
+        ref="image"
         :src="project.global.imageUrl"
         class="max-h-full min-h-full min-w-full max-w-full overflow-hidden rounded-lg border-2 border-gray-700/25 object-cover object-center"
         :alt="`${project.locales[$i18n.locale].name} thumbnail`"
-        loading="lazy"
+        :height="height"
+        :width="width"
       />
       <div class="flex h-full flex-col">
         <div class="inline-block">
@@ -40,4 +42,17 @@
 <script lang="ts" setup>
 import { Project } from "~/types";
 defineProps<{ project: Project }>();
+
+const image = ref<HTMLImageElement>();
+const height = ref<number>();
+const width = ref<number>();
+
+const update = (): void => {
+  height.value = image.value.height;
+  width.value = image.value.width;
+};
+
+useWindowEventListener("resize", update);
+
+onMounted(update);
 </script>
