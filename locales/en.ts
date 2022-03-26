@@ -168,7 +168,7 @@ const message: MessageSchema = {
             {
               dates: "March 10th 2022",
               name: "Reply Code Challenge - Teen Edition",
-              topic: "Team WhyNot ranked 156th",
+              topic: "Team WhyNot ranked 156th out of 1150",
             },
           ],
         },
