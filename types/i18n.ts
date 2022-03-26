@@ -45,9 +45,8 @@ export type MessageSchema = {
     home: _Page & {
       introduction: {
         title: string;
-        short: string;
         description: string;
-        descriptionLink: string;
+        descriptionLink: Link;
         learnMore: string;
         scrollDown: string;
       };
@@ -89,9 +88,13 @@ export type MessageSchema = {
       title: string;
       description: string;
     };
-    contact: {};
+    contact: {
+      title1: string;
+      title2: string;
+      description: string;
+      warning: string;
+    };
     legal: {
-      credits: _Page & {};
       privacy: _Page & {};
       terms: _Page & {};
     };

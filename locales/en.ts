@@ -1,6 +1,8 @@
 import { MessageSchema } from "~/types/i18n";
+import projects from "~/data/projects";
 
 const { fullName } = useMe();
+const currentYear: number = new Date().getFullYear();
 
 const message: MessageSchema = {
   global: {
@@ -32,14 +34,10 @@ const message: MessageSchema = {
           name: "Privacy",
           url: "/legal/privacy",
         },
-        {
-          name: "Credits",
-          url: "/legal/credits",
-        },
       ],
     },
     footer: {
-      rights: `&copy ${new Date().getFullYear()} @:global.name{'.'} All rights reserved.`,
+      rights: `&copy ${currentYear} @:global.name{'.'} All rights reserved.`,
       categories: { navigation: "Navigation", legal: "Legal" },
     },
   },
@@ -52,18 +50,20 @@ const message: MessageSchema = {
       },
       introduction: {
         title: "Hi, I'm",
-        short: "@:global.meta.description",
-        description:
-          "I enjoy creating beautiful and functional websites as well as mobile apps. I'm currently working on {0}, a school life mobile application that connects French students to their school services.",
-        descriptionLink: "yNotes",
+        description: `I'm a @:global.meta.description I enjoy designing and creating beautiful, functional websites as well as mobile apps. I've been coding for more than ${
+          currentYear - 2020
+        } years now. I've been working on {0} lately, a school life mobile application that connects French students to their school services.`,
+        descriptionLink: {
+          name: "yNotes",
+          url: "https://ynotes.fr",
+        },
         learnMore: "Learn more",
         scrollDown: "Scroll down",
       },
       about: {
         title1: "About",
         title2: "me",
-        description:
-          "I am a French student in my last year of high school. I've been coding since 2019 on my free time and I've already accomplished several things.",
+        description: `I am a French student in my last year of high school and I'm about to study web development next year. I've been coding since late 2019 on my own time and have already completed ${projects.length} projects. One of my hobbies is playing drums and percussions in several bands.`,
         learnMore: "Learn more",
         cardsTitle: "At {0}...",
         cards: [
@@ -74,7 +74,8 @@ const message: MessageSchema = {
           },
           {
             age: 15,
-            description: "I started to learn web development.",
+            description:
+              "I got into web development by making my first website using simple HTML and CSS.",
           },
           {
             age: 16,
@@ -92,7 +93,7 @@ const message: MessageSchema = {
         title1: "A few",
         title2: "projects",
         description:
-          "Since I started to learn web development, I've already built several websites and mobile apps using modern technologies. Here is an overview.",
+          "Since I started to learn web development, I've already built several websites and mobile apps using modern technologies. Here is an overview:",
         viewAll: "View all",
       },
     },
@@ -142,14 +143,14 @@ const message: MessageSchema = {
       title: "Projects",
       description: "@:pages.home.projects.description",
     },
-    contact: {},
+    contact: {
+      title1: "Get in",
+      title2: "touch",
+      description:
+        "If you wish to talk, or chat about an existing / upcoming project, feel free to reach out with any of the below methods.",
+      warning: "I'm not open for work right now.",
+    },
     legal: {
-      credits: {
-        seo: {
-          title: "TODO",
-          description: "TODO",
-        },
-      },
       privacy: {
         seo: {
           title: "TODO",

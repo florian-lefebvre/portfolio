@@ -42,9 +42,6 @@
             },
           }"
         >
-          <p class="mb-6">
-            {{ $t("pages.home.introduction.short") }}
-          </p>
           <i18n-t
             tag="p"
             class="mb-10"
@@ -54,9 +51,9 @@
             <NuxtLink
               target="_blank"
               no-rel
-              href="https://ynotes.fr"
+              :to="$t('pages.home.introduction.descriptionLink.url')"
               class="bg-gradient animated-underline text-gradient relative font-semibold hover:text-white"
-              >{{ $t("pages.home.introduction.descriptionLink") }}
+              >{{ $t("pages.home.introduction.descriptionLink.name") }}
             </NuxtLink>
           </i18n-t>
         </div>
@@ -343,7 +340,7 @@ const { t } = useI18n();
 useSeo({
   title: t("pages.home.seo.title"),
   description: t("pages.home.seo.description", [
-    t("pages.home.introduction.descriptionLink"),
+    t("pages.home.introduction.descriptionLink.name"),
   ]),
 });
 </script>

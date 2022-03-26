@@ -2,19 +2,18 @@
   <div class="z-10 bg-gray-800/50 py-16 md:py-20" id="contact">
     <Container>
       <h2 class="title">
-        Get in
-        <span class="text-gradient bg-gradient inline-block font-semibold"
-          >touch</span
-        >
+        {{ $t("pages.contact.title1") }}
+        <span class="text-gradient bg-gradient inline-block font-semibold">{{
+          $t("pages.contact.title2")
+        }}</span>
       </h2>
       <div class="flex flex-col justify-between sm:flex-row sm:space-x-6">
         <div class="max-w-3xl text-gray-200 md:text-lg">
           <p class="mb-10">
-            If you wish to talk, or chat about an existing / upcoming project,
-            feel free to reach out with any of the below methods.
+            {{ $t("pages.contact.description") }}
           </p>
         </div>
-        <Alert>I'm not open for work right now.</Alert>
+        <Alert>{{ $t("pages.contact.warning") }}</Alert>
       </div>
       <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
         <NuxtLink
