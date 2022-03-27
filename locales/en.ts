@@ -27,8 +27,8 @@ const message: MessageSchema = {
       ],
       legal: [
         {
-          name: "Terms",
-          url: "/legal/terms",
+          name: "Notices",
+          url: "/legal/notices",
         },
         {
           name: "Privacy",
@@ -176,7 +176,7 @@ const message: MessageSchema = {
     },
     projects: {
       seo: {
-        title: "Projects",
+        title: "@:pages.projects.title",
         description: "@:pages.projects.description",
       },
       title: "Projects",
@@ -192,15 +192,21 @@ const message: MessageSchema = {
     legal: {
       privacy: {
         seo: {
-          title: "TODO",
-          description: "TODO",
+          title: "Privacy policy",
+          description:
+            "The purpose of the privacy policy is to explain in a transparent manner how data, especially personal data, is collected and processed. This includes the reasons for the collection, the legal basis and the purposes for the processing of personal data, as well as the rights and requests you can make.",
         },
+        title1: "Privacy",
+        title2: "policy",
       },
-      terms: {
+      notices: {
         seo: {
-          title: "TODO",
-          description: "TODO",
+          title: "Legal notices",
+          description:
+            "Please read these terms carefully before using this site. By accessing this site, you accept these terms and conditions without reservation.",
         },
+        title1: "Legal",
+        title2: "notices",
       },
     },
   },

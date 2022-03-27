@@ -105,8 +105,14 @@ export type MessageSchema = {
       warning: string;
     };
     legal: {
-      privacy: _Page & {};
-      terms: _Page & {};
+      privacy: _Page & {
+        title1: string;
+        title2: string;
+      };
+      notices: _Page & {
+        title1: string;
+        title2: string;
+      };
     };
   };
 };

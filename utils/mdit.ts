@@ -6,6 +6,8 @@ import emo from "markdown-it-emoji";
 import mdnh from "markdown-it-named-headers";
 import mila from "markdown-it-link-attributes";
 import { HLJSApi } from "highlight.js";
+import consola from "consola";
+import { useCloudinary } from "~/composables/useCloudinary";
 // @ts-ignore
 const hljs: HLJSApi = await import("highlight.js").then(
   (lib) => lib.default || lib
@@ -48,3 +50,23 @@ const mdit: MarkdownIt = new MarkdownIt(options)
 mdit.linkify.set({ fuzzyEmail: false });
 
 export default mdit;
+
+export const render = (page: string) => {
+  const regex = /{{.*}}/gm;
+  const matches: RegExpMatchArray | null = page.match(regex);
+  if (matches != null) {
+    for (const match of matches) {
+      try {
+        if (match.includes("useCloudinary")) {
+          const props = eval("(" + match.slice(17, -4) + ")");
+          page = page.replace(match, useCloudinary(props));
+        } else {
+          page = page.replace(match, eval(match.slice(2, -2)));
+        }
+      } catch (e) {
+        consola.error(e);
+      }
+    }
+  }
+  return mdit.render(page);
+};

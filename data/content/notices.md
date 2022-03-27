@@ -1,0 +1,82 @@
+Please read these terms carefully before using this site. By accessing this site, you accept these terms and conditions without reservation.
+
+## 1. Presentation of the site
+
+In accordance with article 6 of the law n° 2004-575 of June 21, 2004 for the confidence in the digital economy, it is specified to the users of the site florian-lefebvre.dev the identity of the various speakers within the framework of its realization and its follow-up:
+
+- **Owner**: Florian LEFEBVRE
+- **Responsible for publication**: Florian LEFEBVRE. The person responsible for publication is a natural person.
+- **Webmaster**: Florian LEFEBVRE
+- **Hosting company**:
+  - Name: OVHCloud
+  - Company type: SAS
+  - Address: 2 rue Kellermann - 59100 Roubaix - France
+  - Website: https://ovh.com
+
+## 2. General conditions of use of the site and the services offered
+
+The use of the site florian-lefebvre.dev implies the full acceptance of the general conditions of use described below. These conditions of use are likely to be modified or completed at any time, the users of the florian-lefebvre.dev site are thus invited to consult them regularly.
+
+This site is normally accessible to users at all times. An interruption for reason of technical maintenance can be however decided by florian-lefebvre.dev, which will endeavor then to communicate beforehand to the users the dates and hours of the intervention.
+
+The florian-lefebvre.dev website is updated regularly. In the same way, the legal mentions can be modified at any time: they are nevertheless imposed to the user who is invited to refer to them as often as possible in order to read them.
+
+## 3. Contractual limitations on technical data
+
+The site uses the following technologies:
+
+- Nuxt
+- Vue.js
+- Tailwind CSS
+- Supabase
+
+The website cannot be held responsible for material damage related to the use of the site. Moreover, the user of the site undertakes to access the site using recent equipment, free of viruses and with a last generation updated browser.
+
+## 4. Intellectual property and counterfeiting
+
+TBD
+
+## 5. Limitations of liability
+
+florian-lefebvre.dev cannot be held responsible for direct and indirect damages caused to the user's equipment when accessing the florian-lefebvre.dev website, and resulting either from the use of equipment that does not meet the specifications indicated in point 3, or from the appearance of a bug or an incompatibility.
+
+florian-lefebvre.dev cannot be held responsible for any direct or indirect damage resulting from the use of the florian-lefebvre.dev website and the hypertext links proposed for discovery purposes.
+
+## 6. Personal data
+
+I do not collect or share any personal data.
+
+## 7. Data processing
+
+**I do not collect or share any personal data..**
+
+Only anonymous data of a non-personal nature are collected via [Plausible Analytics](https://plausible.io) for purely statistical purposes (daily traffic, most visited pages...).
+
+For more information, you can consult our [privacy policy](/legal/privacy).
+
+## 8. Hyperlinks and cookies
+
+The florian-lefebvre.dev site contains a certain number of hypertext links to other sites. However, florian-lefebvre.dev does not have the possibility of checking the contents of the sites thus visited, and consequently will not assume any responsibility of this fact.
+
+A cookie is a small file, which does not allow the identification of the user, but which records information relating to the navigation of a computer on a site. The data thus obtained is intended to facilitate subsequent navigation on the site, and is also intended to allow various measures of frequentation.
+
+florian-lefebvre.dev does not use any cookies.
+
+## 9. Applicable law and jurisdiction
+
+Any dispute relating to the use of the florian-lefebvre.dev website is subject to French law. The competent courts of Toulouse have exclusive jurisdiction.
+
+## 10. Main laws concerned
+
+Law no. 78-17 of January 6, 1978, as amended by Law no. 2004-801 of August 6, 2004 on information technology, files and freedoms.
+
+Law n° 2004-575 of June 21, 2004 for confidence in the digital economy.
+
+## 11. Lexicon
+
+- **User**: Internet user connecting, using the above-mentioned site.
+- **Personal information**: "information that allows, in any form whatsoever, directly or not, the identification of the natural persons to whom it applies" (Article 4 of Law No. 78-17 of 6 January 1978).
+
+## 12. Litigation
+
+The present conditions are governed by French law and any dispute or litigation which could arise from the interpretation or the execution of these will be of the exclusive competence of the courts of which depends the residence of the person in charge of the site. The language of reference, for the settlement of any disputes, is French.

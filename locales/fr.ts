@@ -27,7 +27,7 @@ const message: MessageSchema = {
       legal: [
         {
           name: "Conditions",
-          url: "/legal/terms",
+          url: "/legal/notices",
         },
         {
           name: "Confidentialité",
