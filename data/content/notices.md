@@ -34,7 +34,7 @@ The website cannot be held responsible for material damage related to the use of
 
 ## 4. Intellectual property and counterfeiting
 
-TBD
+This website uses a [GNU General Public License v3.0](https://github.com/florian-lefebvre/portfolio/blob/v4/nuxt/LICENSE).
 
 ## 5. Limitations of liability
 
