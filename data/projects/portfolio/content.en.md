@@ -57,6 +57,8 @@ Concerning animations, I switch to [`@vueuse/motion`](https://motion.vueuse.org/
 
 In fact, because ecosystem isn't compatible yet, I had to dive a bit deeper in Nuxt and learnt how to build modules (for generating a sitemap for instance) and that was really enriching.
 
+If you're curious about it, I created a custom sitemap module, [check it out](https://github.com/florian-lefebvre/portfolio/blob/c513428dea912a19ffb684b8b571b08b8882158c/modules/sitemap.ts).
+
 Since only SSR is available (as of the beginning of March 2022), I deploy my portfolio on Vercel, the process is way simpler than on GitHub Actions or any other CI since Nuxt has first class inegrations for deployments.
 
 ## Wrapping up

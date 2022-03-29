@@ -22,7 +22,7 @@ export default defineProject({
       name: "OHF31",
       content: contentEn,
       description:
-        "I finally finished v3 of the 1st site I made! That's a basic showcase site but I think it looks really great.",
+        "This website is a basic showcase site I made for my orchestra. It's already its 3rd version and probabaly not the last. That's actually the one that got me started with web development.",
       slug: "ohf31-website",
       links: [
         {
