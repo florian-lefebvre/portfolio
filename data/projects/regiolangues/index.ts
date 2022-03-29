@@ -13,8 +13,12 @@ export default defineProject({
       "SSG",
       "Supabase",
     ],
-    imageUrl:
-      "https://res.cloudinary.com/af68d22a-2043-4078-857c-f2db1a1406ec/image/upload/c_scale/v1641930868/Regiolangues/og_sup891.jpg",
+    imageUrl: useCloudinary({
+      path: "projects/regiolangues/thumbnail.png",
+      id: "ewniqz",
+      dpr: "2.0",
+      quality: 80,
+    }),
     links: [],
   },
   locales: {
@@ -22,7 +26,7 @@ export default defineProject({
       name: "Régiolangues",
       content: contentEn,
       description:
-        "RégioLangues is a website I made for my brother. I was only involved in the coding, not the data. Its goal: gather resources around the web on the topic of French regional languages. It uses Supabase for the backend.",
+        "RégioLangues is a website I made, on the technical side (i.e. he takes care of the content), for my brother. Its aim is to gather resources around the web on the topic of French regional languages.",
       slug: "regiolangues",
       links: [
         {

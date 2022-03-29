@@ -1,5 +1,4 @@
-import { client, namespace } from "~/utils/cloudinary";
-import { Resize } from "@cloudinary/url-gen/actions/resize";
+import { CLOUD_NAME, NAMESPACE } from "~/utils/cloudinary";
 
 interface Props {
   path: string;
@@ -7,23 +6,23 @@ interface Props {
   quality?: number;
   width?: number;
   height?: number;
+  dpr?: string;
 }
 
-export const useCloudinary = ({ path, id, quality, width, height }: Props) => {
+export const useCloudinary = ({
+  path,
+  id,
+  quality,
+  width,
+  height,
+  dpr,
+}: Props): string => {
   const [fileName, extension] = path.split(".");
-  const image = client.image(`${namespace}/${fileName}_${id}.${extension}`);
-  if (quality) {
-    image.quality(quality);
-  }
-  if (width || height) {
-    const scale = Resize.scale();
-    if (width) {
-      scale.width(width);
-    }
-    if (height) {
-      scale.height(height);
-    }
-    image.resize(scale);
-  }
-  return image.toURL();
+  const q = quality ? `,q_${quality}` : "";
+  const w = width ? `,w_${width}` : "";
+  const h = height ? `,h_${height}` : "";
+  const d = dpr ? `,dpr_${dpr}` : "";
+  return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/c_scale${
+    q + w + h + d
+  }/v1636657520/${NAMESPACE}/${fileName}_${id}.${extension}`;
 };

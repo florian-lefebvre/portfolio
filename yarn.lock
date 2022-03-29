@@ -369,11 +369,6 @@
   dependencies:
     mime "^3.0.0"
 
-"@cloudinary/url-gen@^1.6.0":
-  version "1.6.0"
-  resolved "https://registry.npmjs.org/@cloudinary/url-gen/-/url-gen-1.6.0.tgz#0810b4e00193737e336d43f29073b1fce0910a6f"
-  integrity sha512-Ir7IloApze7tUmLxDUjFw3GOcs7/Hrh47p4U3CCtC6wI59ZGMHQe3l3aNhMtdYrJxCVIs2jYp6obWetcfTf3GQ==
-
 "@harlanzw/nuxt-kit-extras@^0.3.1":
   version "0.3.1"
   resolved "https://registry.npmjs.org/@harlanzw/nuxt-kit-extras/-/nuxt-kit-extras-0.3.1.tgz#c9530952e35f9511b37d33d6b676455058c79345"

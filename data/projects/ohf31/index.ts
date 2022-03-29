@@ -13,8 +13,12 @@ export default defineProject({
       "Vercel",
       "SSR",
     ],
-    imageUrl:
-      "https://res.cloudinary.com/af68d22a-2043-4078-857c-f2db1a1406ec/image/upload/c_scale,w_1000/v1636657520/OHF31/ohf31-public-website/images/shared/og_image_bsrjhr.png",
+    imageUrl: useCloudinary({
+      path: "projects/ohf31-website/thumbnail.png",
+      id: "wptmjq",
+      dpr: "2.0",
+      quality: 80,
+    }),
     links: [],
   },
   locales: {

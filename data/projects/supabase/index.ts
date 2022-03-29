@@ -14,14 +14,23 @@ export default defineProject({
       "Next.js",
     ],
     imageUrl: "https://supabase.com/images/og/og-image.jpg",
-    links: [],
+    links: [
+      {
+        name: "GitHub",
+        url: "https://github.com/supabase/supabase",
+      },
+      {
+        name: "Pull Requests",
+        url: "https://github.com/supabase/supabase/pulls?q=is%3Apr+author%3Aflorian-lefebvre",
+      },
+    ],
   },
   locales: {
     en: {
       name: "Supabase",
       content: contentEn,
       description:
-        "Supabase is an awesome open source project. I already contributed several times to the public website.",
+        "Supabase is the open source Firebase alternative. It allows to create a backend in less than 2 minutes with a Postgres database, authentication, instant APIs, realtime subscriptions, storage and serverless functions.",
       slug: "supabase",
       links: [
         {

@@ -13,7 +13,7 @@
             {{ details.name }}
           </h1>
         </div>
-        <div class="mt-2 text-lg text-gray-400">
+        <div class="mt-2 text-lg text-gray-300">
           {{ details.description }}
         </div>
       </div>
@@ -28,9 +28,9 @@
           />
           <Alert title="Work in progress" class="mt-10 w-full"
             >I am currently working on the content. The final version will be
-            available in the coming weeks.</Alert
+            available soon.</Alert
           >
-          <div class="text-gray-400 md:text-lg">
+          <div class="font-semibold text-gray-300">
             Estimated reading time: {{ details.readingTime }} min
           </div>
           <article>

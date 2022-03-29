@@ -7,14 +7,19 @@ export default defineProject({
     technologies: ["Dart", "Flutter"],
     imageUrl:
       "https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2",
-    links: [],
+    links: [
+      {
+        name: "GitHub",
+        url: "https://github.com/EduWireApps/ynotes-packages",
+      },
+    ],
   },
   locales: {
     en: {
       name: "ynotes-packages",
       content: contentEn,
       description:
-        "I'm making Flutter libraries for the yNotes app to make its development easier: theming, components and more.",
+        "As yNotes was getting bigger and bigger, it became hard to keep a consistent design across the whole app. So I made a Flutter package to help with that. It features components, theming and more.",
       slug: "ynotes-packages",
       links: [
         {
