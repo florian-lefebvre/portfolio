@@ -30,6 +30,9 @@
             >I am currently working on the content. The final version will be
             available in the coming weeks.</Alert
           >
+          <div class="text-gray-400 md:text-lg">
+            Estimated reading time: {{ details.readingTime }} min
+          </div>
           <article>
             <Prose class="mt-10" :content="details.content" />
           </article>
