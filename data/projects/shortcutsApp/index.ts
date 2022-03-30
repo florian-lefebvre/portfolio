@@ -5,23 +5,25 @@ import contentFr from "./content.fr.md?raw";
 export default defineProject({
   global: {
     technologies: ["Electron", "Vue 2", "Tailwind CSS"],
-    imageUrl:
-      "https://opengraph.githubassets.com/4353f1efd328b1d86c9e5982260e2f5bb98a0ade5a361bbda9445fb2395072f4/florian-lefebvre/shortcuts-app",
-    links: [],
+    imageUrl: useCloudinary({
+      path: "projects/shortcuts-app/thumbnail.jpg",
+      id: "quyaiq",
+    }),
+    links: [
+      {
+        name: "GitHub",
+        url: "https://github.com/florian-lefebvre/shortcuts-app",
+      },
+    ],
   },
   locales: {
     en: {
       name: "Shortcuts App",
       content: contentEn,
       description:
-        "I needed an application that would have shortcuts the same way Opera does, in the sidebar. So I coded it using Electron.js. It was really fun to do.",
+        "At the time, I was using Opera GX as my main browser and I really liked the website shortcuts that lived in the sidebar. And actually, I thought it would be useful to have an app dedicated to this feature so guess what? I did it of course!",
       slug: "shortcuts-app",
-      links: [
-        {
-          name: "Website",
-          url: "https://supabase.com",
-        },
-      ],
+      links: [],
       type: "Desktop app",
     },
     fr: {

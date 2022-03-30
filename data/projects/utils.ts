@@ -10,3 +10,16 @@ export const defineProject = (project: Project): Project => {
   }
   return project;
 };
+
+export const generateHash = (length: number = 64): string => {
+  let result = "";
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * length));
+  }
+  return result;
+};
+
+export const githubOgImage = (owner: string, repo: string): string =>
+  `https://opengraph.githubassets.com/${generateHash()}/${owner}/${repo}`;

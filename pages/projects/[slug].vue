@@ -46,14 +46,17 @@
                   : 'linear max-h-0 duration-500'
               "
             >
-              <div class="bg-gradient text-gradient text-2xl font-semibold">
+              <div
+                class="bg-gradient text-gradient text-2xl font-semibold"
+                style="overflow-wrap: anywhere"
+              >
                 {{ details.name }}
               </div>
               <div class="mb-8 text-gray-400">{{ details.description }}</div>
             </div>
             <div class="grid gap-4">
               <div class="">
-                <div class="text-lg font-semibold text-white">Project type</div>
+                <div class="text-lg font-semibold text-white">Type</div>
                 <div class="mb-4 text-gray-400">
                   {{ details.type }}
                 </div>
@@ -81,6 +84,13 @@
                     v-if="url.includes('github')"
                     class="-ml-2 h-6 w-6 fill-current"
                   />
+                  <Icon
+                    :icon="
+                      otherTechnologies.find((e) => e.title.includes('Dart'))
+                    "
+                    v-else-if="url.toLowerCase().includes('pub.dev')"
+                    class="-ml-2 h-6 w-6 fill-current"
+                  />
                   <ArrowUpIcon class="-ml-2 h-6 w-6 rotate-45" v-else />
                   <span>{{ name }}</span>
                 </NuxtLink>
@@ -98,6 +108,7 @@ import { ArrowUpIcon, ArrowSmLeftIcon } from "@heroicons/vue/outline";
 import { ProjectLocale } from "~/types";
 import projects from "~/data/projects";
 import { useI18n } from "vue-i18n";
+import { otherTechnologies } from "~/data/technologies";
 
 const { social } = useMe();
 

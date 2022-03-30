@@ -14,8 +14,8 @@ export default defineProject({
     ],
     imageUrl: useCloudinary({
       path: "projects/ynotes-website/thumbnail.png",
-      id: "pvkehl",
-      dpr: "3.0",
+      id: "z2sdkb",
+      dpr: "2.0",
     }),
     links: [
       {

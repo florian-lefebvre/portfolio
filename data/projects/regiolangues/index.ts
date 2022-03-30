@@ -15,9 +15,8 @@ export default defineProject({
     ],
     imageUrl: useCloudinary({
       path: "projects/regiolangues/thumbnail.png",
-      id: "ewniqz",
+      id: "fpu59m",
       dpr: "2.0",
-      quality: 80,
     }),
     links: [],
   },

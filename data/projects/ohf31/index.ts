@@ -15,9 +15,8 @@ export default defineProject({
     ],
     imageUrl: useCloudinary({
       path: "projects/ohf31-website/thumbnail.png",
-      id: "wptmjq",
+      id: "jfngnd",
       dpr: "2.0",
-      quality: 80,
     }),
     links: [],
   },
