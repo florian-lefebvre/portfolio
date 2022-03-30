@@ -34,8 +34,6 @@ const props = defineProps({
   error: Object,
 });
 
-const { go } = useRouter();
-
 useSeo({
   title: `Error ${props.error.statusCode}`,
   description: `An error occured: ${props.error.statusMessage}`,
@@ -43,8 +41,5 @@ useSeo({
 
 const handleError = () => {
   clearError({ redirect: "/" });
-  setTimeout(() => {
-    go(0);
-  }, 100);
 };
 </script>
