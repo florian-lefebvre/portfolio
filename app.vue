@@ -28,6 +28,6 @@
 const mounted = ref(false);
 
 onMounted(() => {
-  // mounted.value = true;
+  mounted.value = true;
 });
 </script>
