@@ -36,5 +36,4 @@ export interface ProjectLocale {
   slug: string;
   content: string;
   type: string;
-  readingTime?: number;
 }
