@@ -10,5 +10,3 @@ export { default as p008 } from "./shortcutsApp";
 export { default as p009 } from "./verticalTimeline";
 export { default as p010 } from "./barcodeGenerator";
 export { default as p011 } from "./gluttonRunner";
-
-// TODO: Add instagram chat clone + special characters
