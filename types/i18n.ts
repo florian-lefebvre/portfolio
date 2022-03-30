@@ -45,6 +45,11 @@ export type MessageSchema = {
       nextSlide: string;
       backToTop: string;
     };
+    loading: {
+      loading: string;
+      notLoading: string;
+      openAnIssue: string;
+    };
   };
   pages: {
     home: _Page & {

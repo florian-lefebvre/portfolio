@@ -45,6 +45,11 @@ const message: MessageSchema = {
       nextSlide: "Next slide",
       backToTop: "Back to top",
     },
+    loading: {
+      loading: "Loading...",
+      notLoading: "Not loading properly?",
+      openAnIssue: "Open an issue on GitHub",
+    },
   },
   pages: {
     home: {
