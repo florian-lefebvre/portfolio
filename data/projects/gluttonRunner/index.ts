@@ -7,21 +7,21 @@ export default defineProject({
     technologies: ["UE4"],
     imageUrl:
       "https://play-lh.googleusercontent.com/QumqIA38lrkP-gyWGtI46XFtPtkbkFqogqO5jXogs8YwPLN2c2d8USs6B42b_ViVU2k=w1440-h620-rw",
-    links: [],
+    links: [
+      {
+        name: "Play Store",
+        url: "https://play.google.com/store/apps/details?id=com.GirofleStudio.GluttonRunner",
+      },
+    ],
   },
   locales: {
     en: {
       name: "Glutton Runner",
       content: contentEn,
       description:
-        "The first (and only) game I coded using UE4 was Glutton Runner, an endless game. Unfortunately, this engine was not adapted to my needs, so I paused the project. (It is unplayable)",
+        "I started to code by doing games with Unreal Engine 4. For my first game (and only one sadly), I decided to go with something not to complex and chose to do an endless runner like Subway Surfers. It turned out to be more complicated than I thought",
       slug: "glutton-runner",
-      links: [
-        {
-          name: "Website",
-          url: "https://www.ohf31.fr",
-        },
-      ],
+      links: [],
       type: "Game",
     },
     fr: {

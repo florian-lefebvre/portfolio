@@ -11,7 +11,7 @@
     <div class="p-1">
       <img
         :src="project.global.imageUrl"
-        class="h-48 w-full overflow-hidden rounded-lg object-cover object-center"
+        class="h-48 w-full overflow-hidden rounded-lg object-cover object-center sm:h-64 md:h-48"
         :alt="`${project.locales[$i18n.locale].name} thumbnail`"
         loading="lazy"
       />
