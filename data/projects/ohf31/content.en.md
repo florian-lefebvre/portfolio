@@ -27,7 +27,7 @@ Like a lot of devs out there, I decided I wanted to build my own CMS instead of 
 
 So I started to learn PHP, I mean not a framework but really procedural PHP. The code was an absolute mess, absolutely not secure, duplications everywhere and so on. To be able to refresh some parts of the Ui without the whole page, I used AJAX with [JQuery](https://jquery.com/) so I a way, I was building some kind of small APIs. **BUT** I was returning HTML, not JSON, stored in a **string**. It was an absolute nightmare to debug.
 
-But still, I learnt a lot along the way, espcially about [MySQL](https://www.mysql.com/) and CSS.
+But still, I learnt a lot along the way, especially about [MySQL](https://www.mysql.com/) and CSS.
 
 _I don't have any screenshot for you as I took the website down because of security issue and I don't have the right setup to make it run locally for now._
 
