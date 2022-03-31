@@ -13,7 +13,7 @@ Made with an old [Drupal](https://www.drupal.org/) template, I was looking for a
 
 ## v1: HTML and CSS
 
-> screenshot of v1
+![Screenshot of the website v1]({{ useCloudinary({path: "projects/ohf31-website/v1.png", id: "gcehwe", dpr: "2.0"}) }})
 
 I never really coded before, I mean I coded in Unreal Engine 4 with blueprints but it was a visual editor, not lines of code. So to start I followed [this tutorial](https://www.youtube.com/watch?v=UB1O30fR-EE) from Traversy Media and it taught a lot of thing. I wasn't understanding the half of the CSS I was writing (and I was using `float`...) but still, I managed to get this first website done.
 
@@ -33,7 +33,7 @@ _I don't have any screenshot for you as I took the website down because of secur
 
 ## v2: Bootstrap 5 and PHP
 
-> screenshot of v2 (wayback machine ?)
+_I don't have a screenshot either._
 
 As I was coding the musicians space at the same time, I discovered [Bootstrap 5](https://getbootstrap.com/) and was really enjoying it. So, to train and because the first version of the website wasn't looking that great after all, I decided to rebuild it from scratch. I was still using PHP for imports (html meta tags or stuff like this) but in hindsight it wasn't useful.
 
