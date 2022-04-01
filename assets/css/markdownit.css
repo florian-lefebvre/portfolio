@@ -1,0 +1,11 @@
+.named-fence-block {
+  @apply relative;
+}
+
+.named-fence-block:hover .named-fence-filename {
+  @apply opacity-0;
+}
+
+.named-fence-filename {
+  @apply absolute top-0 right-0 m-2 select-none rounded bg-gray-800 px-2 py-1 text-sm text-gray-400 transition-opacity;
+}

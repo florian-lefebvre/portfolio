@@ -27,6 +27,7 @@ export default defineNuxtConfig({
     "@/assets/css/tailwind.css",
     "@/assets/css/main.css",
     "@/assets/css/highlight.css",
+    "@/assets/css/markdownit.css",
   ],
   modules: [
     "@vueuse/nuxt",

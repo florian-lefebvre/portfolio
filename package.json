@@ -42,6 +42,7 @@
     "markdown-it-emoji": "^2.0.0",
     "markdown-it-footnote": "^3.0.3",
     "markdown-it-link-attributes": "^4.0.0",
+    "markdown-it-named-code-blocks": "^0.1.0",
     "markdown-it-named-headers": "^0.0.4",
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",

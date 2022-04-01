@@ -5,6 +5,7 @@ import fn from "markdown-it-footnote";
 import emo from "markdown-it-emoji";
 import mdnh from "markdown-it-named-headers";
 import mila from "markdown-it-link-attributes";
+import ncb from "markdown-it-named-code-blocks";
 import { HLJSApi } from "highlight.js";
 import consola from "consola";
 import { useCloudinary } from "~/composables/useCloudinary";
@@ -45,7 +46,8 @@ const mdit: MarkdownIt = new MarkdownIt(options)
       target: "_blank",
       rel: "noopener noreferrer",
     },
-  });
+  })
+  .use(ncb);
 
 mdit.linkify.set({ fuzzyEmail: false });
 
