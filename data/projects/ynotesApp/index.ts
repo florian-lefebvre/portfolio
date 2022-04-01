@@ -4,7 +4,7 @@ import contentFr from "./content.fr.md?raw";
 
 export default defineProject({
   global: {
-    technologies: ["Dart", "Flutter", "Figma"],
+    technologies: ["Dart", "Flutter", "Figma", "Fastlane", "HiveDB"],
     imageUrl:
       "https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2",
     links: [
