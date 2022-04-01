@@ -2,6 +2,9 @@
 - [Requirements](#requirements)
 - [Tech stack](#tech-stack)
 - [Challenges](#challenges)
+  - [Category hierarchy](#category-hierarchy)
+  - [SSR ==> SSG](#ssr--ssg)
+  - [Count](#count)
 - [Wrapping up](#wrapping-up)
 
 ## Motivation
@@ -20,9 +23,11 @@ As for the backend, I decided to use [Supabase](https://supabase.com) because it
 
 ## Challenges
 
-I needed to build a breadcrumb navigation. But since the categories are structured as `categories/:id-slugified-name` on the website, i couldn't use the url to build the breadcrumb. Instead, I wrote an rpc to get the hierarchy of categories given a category id. Here is the code:
+### Category hierarchy
 
-```sql:test.sql
+I needed to build a breadcrumb navigation. But since the categories are structured as `categories/:id-slugified-title` on the website, i couldn't use the url to build the breadcrumb. Instead, I wrote an rpc to get the hierarchy of categories given a category id. Here is the code:
+
+```sql:category_hierarchy.sql
 create or replace function public.category_hierarchy(id_param bigint)
 returns categories[]
 as $$
@@ -47,8 +52,10 @@ And here is a quick schema of the `categories` table:
 | ---- | ------ | --------- | ----- |
 | int8 | string | int8 (fk) | int2  |
 
-- recursion and rpc performances
-- SSR -> SSG
-- count
+This is actually the 2nd version of the version, I had to rewrite for performances reasons.
+
+### SSR ==> SSG
+
+### Count
 
 ## Wrapping up
