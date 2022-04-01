@@ -16,7 +16,7 @@ Those services provide web interfaces as well as mobile apps. But they kind of s
 
 So yNotes acts as an official replacement for the official ENT mobile apps, by providing already present features and adding new ones.
 
-What's my role in this project you may ask. I joined in October 2020 as a front-end developer and reworked the website, as well as working on mockups and designs using [Figma](https://www.figma.com/). I was also giving advices on project architecture and management. At this time, I didn't want to get involved in coding the app itself as I didn't now [Dart](https://dart.dev) nor [Flutter](https://flutter.dev). In July, I started to learn those technologies and wrote a component library ([Read more](/projects/ynotes-packages)). In September, I became the maintainer.
+What's my role in this project you may ask. I joined in October 2020 as a front-end developer and reworked the website, as well as working on mockups and designs using [Figma](https://www.figma.com/). I was also giving advices on project architecture and management. At this time, I didn't want to get involved in coding the app itself as I didn't now [Dart](https://dart.dev) nor [Flutter](https://flutter.dev). In July, I started to learn those technologies and wrote a component library ([see related project](/projects/ynotes-packages)). In September, I became the maintainer.
 
 ## Challenges and technical details
 
