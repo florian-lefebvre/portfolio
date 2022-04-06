@@ -25,9 +25,9 @@ export default defineNuxtConfig({
   css: [
     "swiper/css",
     "@/assets/css/tailwind.css",
-    "@/assets/css/main.css",
+    "@/assets/css/main.scss",
     "@/assets/css/highlight.css",
-    "@/assets/css/markdownit.css",
+    "@/assets/css/markdownit.scss",
   ],
   modules: [
     "@vueuse/nuxt",

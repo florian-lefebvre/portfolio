@@ -4,18 +4,14 @@ html {
 
 * {
   scrollbar-color: theme("colors.gray.400") theme("colors.gray.900");
-}
 
-*::-webkit-scrollbar {
-  @apply bg-gray-900;
-}
+  &::-webkit-scrollbar {
+    @apply bg-gray-900;
+  }
 
-*::-webkit-scrollbar-thumb {
-  @apply bg-gray-400 hover:bg-gray-500;
-}
-
-pre code {
-  display: block;
+  &::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 hover:bg-gray-500;
+  }
 }
 
 .page-enter-active {
@@ -70,10 +66,6 @@ pre code {
   @apply bg-gradient inline-flex rounded-full px-6 py-2 font-medium text-white transition-all duration-300 hover:scale-95;
 }
 
-.prose :where(a):not(:where([class~="not-prose"] *)) {
-  @apply animated-underline text-gradient bg-gradient relative font-semibold no-underline hover:text-white;
-}
-
 .bg-gradient {
   @apply bg-gradient-to-tr from-primary-600 to-secondary-400;
 }
@@ -82,11 +74,25 @@ pre code {
   @apply bg-clip-text text-transparent;
 }
 
-.prose :where(a code):not(:where([class~="not-prose"] *)) {
-  @apply text-transparent;
+.prose {
+  pre {
+    @apply overflow-x-hidden p-0;
+
+    code {
+      @apply block overflow-x-auto px-4 py-2;
+    }
+  }
+
+  :where(a code):not(:where([class~="not-prose"] *)) {
+    @apply text-transparent;
+
+    &::before,
+    &::after {
+      content: "" !important;
+    }
+  }
 }
 
-.prose :where(a code):not(:where([class~="not-prose"] *))::before,
-.prose :where(a code):not(:where([class~="not-prose"] *))::after {
-  content: "" !important;
+.prose :where(a):not(:where([class~="not-prose"] *)) {
+  @apply animated-underline text-gradient bg-gradient relative font-semibold no-underline hover:text-white;
 }

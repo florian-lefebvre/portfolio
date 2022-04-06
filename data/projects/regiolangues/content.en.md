@@ -3,7 +3,7 @@
 - [Tech stack](#tech-stack)
 - [Challenges](#challenges)
   - [Category hierarchy](#category-hierarchy)
-  - [SSR ==> SSG](#ssr--ssg)
+  - [From SSR to SSG](#from-ssr-to-ssg)
   - [Count](#count)
 - [Wrapping up](#wrapping-up)
 
@@ -54,7 +54,31 @@ And here is a quick schema of the `categories` table:
 
 This is actually the 2nd version of the version, I had to rewrite for performances reasons.
 
-### SSR ==> SSG
+### From SSR to SSG
+
+When I started working on this website, I planned to deploy it using SSR since all its content was user provided data based. But I encountered performances issues when heading to a specific category. Indeed, I had to fetch 3 things:
+
+- The category hierarchy as explained above
+- All categories whose parent is the current category
+- All resources whose parent is the current category
+
+It was taking too much time to navigate between pages, which is the essence of the website. Instead I decided to go with SSG using cron jobs.
+
+Paul Copplestone, CEO and Co-Founder of [Supabase](https://supabase.com), wrote [an article](https://supabase.com/blog/2021/03/05/postgres-as-a-cron-server) about using Postgres as a CRON server. So every 20 minutes, I redeploy the app using [Vercel deply hooks](https://vercel.com/docs/concepts/git/deploy-hooks).
+
+Here is the code:
+
+```sql:cron_job.sql
+select
+   cron.schedule(
+     'deploy-website-each-20-minutes', -- name of the cron job
+     '*/20 * * * *', -- every 20 minutes
+     $$
+     select *
+     from http_post('https://api.vercel.com/v1/integrations/deploy/ID_1/ID_2', '', '')
+     $$
+   );
+```
 
 ### Count
 

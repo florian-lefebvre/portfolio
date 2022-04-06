@@ -1,9 +1,9 @@
 .named-fence-block {
   @apply relative;
-}
 
-.named-fence-block:hover .named-fence-filename {
-  @apply opacity-0;
+  &:hover .named-fence-filename {
+    @apply opacity-0;
+  }
 }
 
 .named-fence-filename {
