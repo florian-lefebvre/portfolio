@@ -68,7 +68,7 @@ export default function ({ title, description }: Props) {
     },
   ];
 
-  useMeta({
+  useHead({
     title: getTitle(title),
     htmlAttrs: {
       lang: locale,
