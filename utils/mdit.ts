@@ -6,6 +6,7 @@ import emo from "markdown-it-emoji";
 import mdnh from "markdown-it-named-headers";
 import mila from "markdown-it-link-attributes";
 import ncb from "markdown-it-named-code-blocks";
+import toc from "markdown-it-table-of-contents";
 import { HLJSApi } from "highlight.js";
 import consola from "consola";
 import { useCloudinary } from "~/composables/useCloudinary";
@@ -47,7 +48,10 @@ const mdit: MarkdownIt = new MarkdownIt(options)
       rel: "noopener noreferrer",
     },
   })
-  .use(ncb);
+  .use(ncb)
+  .use(toc, {
+    includeLevel: [1, 2, 3, 4, 5, 6],
+  });
 
 mdit.linkify.set({ fuzzyEmail: false });
 
@@ -70,5 +74,6 @@ export const render = (page: string) => {
       }
     }
   }
+  page = "[[toc]]\n\n" + page;
   return mdit.render(page);
 };

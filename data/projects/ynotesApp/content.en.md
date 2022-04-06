@@ -1,11 +1,3 @@
-- [Concept and story](#concept-and-story)
-- [Challenges and technical details](#challenges-and-technical-details)
-  - [Unkown APIS](#unkown-apis)
-  - [Flutter and cross-platform](#flutter-and-cross-platform)
-  - [Storing data](#storing-data)
-  - [Deploying via fastlane](#deploying-via-fastlane)
-- [Wrapping up](#wrapping-up)
-
 ## Concept and story
 
 In France, secondary, high schools and colleges must have an _ENT_ (digital workspace) for their students and teachers to communicate and have access to informations. For example, grades, homeworks, schedule, documents and more.

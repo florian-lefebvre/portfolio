@@ -1,12 +1,3 @@
-- [Motivation](#motivation)
-- [Requirements](#requirements)
-- [Tech stack](#tech-stack)
-- [Challenges](#challenges)
-  - [Category hierarchy](#category-hierarchy)
-  - [From SSR to SSG](#from-ssr-to-ssg)
-  - [Counting](#counting)
-- [Wrapping up](#wrapping-up)
-
 ## Motivation
 
 My brother enjoys Provençal (a French regional language) but felt that it was difficult to learn it online, that there were not really websites concentrating learning content and resources. So he asked me to build a website for this. The goal was to be able to have many languages so that people can contribute.

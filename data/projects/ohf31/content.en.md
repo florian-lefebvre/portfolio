@@ -1,10 +1,3 @@
-- [Motivation](#motivation)
-- [v1: HTML and CSS](#v1-html-and-css)
-- [The musicians space](#the-musicians-space)
-- [v2: Bootstrap 5 and PHP](#v2-bootstrap-5-and-php)
-- [v3: Nuxt 3 and Tailwind CSS](#v3-nuxt-3-and-tailwind-css)
-- [Wrapping up](#wrapping-up)
-
 ## Motivation
 
 At the end of 2019, I was getting involved more and more in my orchestra's ([OHF31](/projects/ohf31-website)) online presence. Indeed, I was filming concerts with several cameras and editing videos to publish on social medias (nothing crazy, only fades in and out). But one thing was still not looking great: the website.

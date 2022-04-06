@@ -1,10 +1,3 @@
-- [Motivation](#motivation)
-- [v1: Jekyll and Bootstrap](#v1-jekyll-and-bootstrap)
-- [v2: Nuxt 2 and Tailwind CSS 1.0](#v2-nuxt-2-and-tailwind-css-10)
-- [v3: Nuxt 2 and Tailwind CSS 2.0](#v3-nuxt-2-and-tailwind-css-20)
-- [v4: Nuxt 3 and Tailwind CSS 3.0](#v4-nuxt-3-and-tailwind-css-30)
-- [Wrapping up](#wrapping-up)
-
 ## Motivation
 
 As a developer, having a portfolio online is a great to way to showcase my skills and experience, as well as learning new things along the way. 9 months after starting to learn web development, I wanted to build mine. I had done quite a lot of experiments but lacked real projects so it was a good exercise too. In the following, I'll go through the iterations of my website, explain choices I made and issues I faced. Enjoy reading!
