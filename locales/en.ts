@@ -50,6 +50,9 @@ const message: MessageSchema = {
       notLoading: "Not loading properly?",
       openAnIssue: "Open an issue on GitHub",
     },
+    projects: {
+      view: "View",
+    },
   },
   pages: {
     home: {

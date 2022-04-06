@@ -50,6 +50,9 @@ export type MessageSchema = {
       notLoading: string;
       openAnIssue: string;
     };
+    projects: {
+      view: string;
+    };
   };
   pages: {
     home: _Page & {

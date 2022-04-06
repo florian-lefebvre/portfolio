@@ -1,9 +1,19 @@
 <template>
   <NuxtLink
     :to="`/projects/${project.locales[$i18n.locale].slug}`"
-    class="relative flex h-full flex-col overflow-visible rounded-xl bg-gray-800 text-white shadow-lg transition-all hover:scale-95 hover:shadow"
+    class="group relative flex h-full flex-col overflow-hidden rounded-xl bg-gray-800 text-white shadow-lg transition-all hover:scale-95 hover:shadow"
   >
-    <div class="absolute top-3 left-3">
+    <div
+      class="bg-gradient absolute inset-0 z-[15] flex translate-y-full items-center justify-center rounded-xl !bg-opacity-40 transition-all group-hover:translate-y-0"
+    >
+      <div class="flex flex-col items-center">
+        <EyeIcon class="h-16 w-16 text-white/80" />
+        <div class="text-2xl font-semibold">
+          {{ $t("global.projects.view") }}
+        </div>
+      </div>
+    </div>
+    <div class="absolute top-3 left-3 z-[14]">
       <div class="bg-gradient rounded-full px-3 py-1 text-sm text-white">
         {{ project.locales[$i18n.locale].type }}
       </div>
@@ -32,5 +42,6 @@
 
 <script lang="ts" setup>
 import { Project } from "~/types";
+import { EyeIcon } from "@heroicons/vue/solid";
 defineProps<{ project: Project; detailed?: boolean }>();
 </script>
