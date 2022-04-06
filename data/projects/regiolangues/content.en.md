@@ -4,7 +4,7 @@
 - [Challenges](#challenges)
   - [Category hierarchy](#category-hierarchy)
   - [From SSR to SSG](#from-ssr-to-ssg)
-  - [Count](#count)
+  - [Counting](#counting)
 - [Wrapping up](#wrapping-up)
 
 ## Motivation
@@ -80,6 +80,99 @@ select
    );
 ```
 
-### Count
+### Counting
+
+To minimize the amount of requests made for a single category, I had to know the count of sub resources and sub categories of a given category. I took an imperative approach by listening to modifications and updating the right values (snippet below) but I'm sure there is a declarative way of doing it, using views. If you have any tips, feel free to reach out.
+
+First of all, I added a `count` column to my `categories` table.
+
+Here are a few examples of how I made it :
+
+```sql:update_category_count.sql
+create or replace function update_category_count(cat_id bigint)
+returns void
+language plpgsql
+as
+$$
+declare
+  categories_count integer;
+  resources_count integer;
+  total integer;
+begin
+  select count(*)
+  into categories_count
+  from categories
+  where parent_id = cat_id;
+
+  select count(*)
+  into resources_count
+  from categories_to_resources
+  where category_id = cat_id;
+
+  total = categories_count + resources_count;
+
+  update categories
+  set count = total
+  where id = cat_id;
+end;
+$$;
+
+create or replace function on_categories_insert()
+  returns trigger
+  language plpgsql
+  as
+$$
+begin
+  if new.parent_id is not null then perform update_category_count(new.parent_id);
+  end if;
+  return new;
+end;
+$$;
+
+create trigger categories_insert
+  after insert
+  on categories
+  for each row
+  execute procedure on_categories_insert();
+
+create or replace function on_categories_update()
+  returns trigger
+  language plpgsql
+  as
+$$
+begin
+  if old.parent_id <> new.parent_id then
+    if old.parent_id is not null then
+      perform update_category_count(old.parent_id);
+    end if;
+
+    if new.parent_id is not null then
+      perform update_category_count(new.parent_id);
+    end if;
+  end if;
+  return new;
+end;
+$$;
+
+create trigger categories_update
+  after update
+  on categories
+  for each row
+  execute procedure on_categories_update();
+
+create or replace function on_categories_delete()
+  returns trigger
+  language plpgsql
+  as
+$$
+begin
+  if old.parent_id is not null then perform update_category_count(old.parent_id);
+  end if;
+  return old;
+end;
+$$;
+```
 
 ## Wrapping up
+
+This project has taught me a lot of things, especially about performances and recursive usage of relational databases.
