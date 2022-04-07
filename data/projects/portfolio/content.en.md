@@ -22,7 +22,7 @@ So as I was learning more about frontend development and in particular JavaScrip
 
 ![Screenshot of the porfolio v2]({{ useCloudinary({path: "projects/portfolio/portfolio-v2.png", id: "dpjraf"}) }})
 
-I learnt a lot of things since August 2020, so I decided to go with [Nuxt](https://nuxtjs.org) and [Tailwind CSS](https://tailwindcss.com/).
+I learned a lot of things since August 2020, so I decided to go with [Nuxt](https://nuxtjs.org) and [Tailwind CSS](https://tailwindcss.com/).
 
 I chose to use a sidebar for navigation and now I think that wasn't a good choice. The space I was loosing for only a few infos was too much. But anyway, I chose the color teal as a primary color. I also used the official Nuxt modules such as [`@nuxt/content`](https://content.nuxtjs.org/) but I struggled with the layout on some specific screen widths with weird horizontal overflow, caused by code blocks.
 
@@ -48,7 +48,7 @@ I upgraded Nuxt to its 3rd version (in beta) as well as Tailwind CSS (no majors 
 
 Concerning animations, I switch to [`@vueuse/motion`](https://motion.vueuse.org/) and it's really better.
 
-In fact, because ecosystem isn't compatible yet, I had to dive a bit deeper in Nuxt and learnt how to build modules (for generating a sitemap for instance) and that was really enriching.
+In fact, because ecosystem isn't compatible yet, I had to dive a bit deeper in Nuxt and learned how to build modules (for generating a sitemap for instance) and that was really enriching.
 
 If you're curious about it, I created a custom sitemap module, [check it out](https://github.com/florian-lefebvre/portfolio/blob/c513428dea912a19ffb684b8b571b08b8882158c/modules/sitemap.ts).
 

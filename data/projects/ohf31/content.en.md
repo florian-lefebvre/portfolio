@@ -20,7 +20,7 @@ Like a lot of devs out there, I decided I wanted to build my own CMS instead of 
 
 So I started to learn PHP, I mean not a framework but really procedural PHP. The code was an absolute mess, absolutely not secure, duplications everywhere and so on. To be able to refresh some parts of the Ui without the whole page, I used AJAX with [JQuery](https://jquery.com/) so I a way, I was building some kind of small APIs. **BUT** I was returning HTML, not JSON, stored in a **string**. It was an absolute nightmare to debug.
 
-But still, I learnt a lot along the way, especially about [MySQL](https://www.mysql.com/) and CSS.
+But still, I learned a lot along the way, especially about [MySQL](https://www.mysql.com/) and CSS.
 
 _I don't have any screenshot for you as I took the website down because of security issue and I don't have the right setup to make it run locally for now._
 
@@ -38,7 +38,7 @@ The 2nd version had been released for more than a year and then... _"We need to 
 
 The deadline was the 10th of November and at the time I was looking for a way to try out Nuxt 3 now that beta was released since October. Well, it was instable and I had quite a lot of issues (of which HMR which is really painful) but eventually I managed to get it working. That was also the opportunity to try [VueUse motion](https://motion.vueuse.org/) for animations.
 
-I used Tailwind CSS for styling, Github for versioning (after all that time!), [Cloudinary](https://cloudinary.com/) as a CDN for my images and [Vercel](https://vercel.com) for deployments.
+I used Tailwind CSS for styling, GitHub for versioning (after all that time!), [Cloudinary](https://cloudinary.com/) as a CDN for my images and [Vercel](https://vercel.com) for deployments.
 
 Apart from the technical side, I didn't really change the whole layouts or content.
 

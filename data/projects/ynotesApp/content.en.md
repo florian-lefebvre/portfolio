@@ -30,7 +30,7 @@ Because of its unofficial nature, data had to be stored locally. For configurati
 
 ### Deploying via fastlane
 
-At the beggining, APKs were built locally and manually uploaded to the Google Play Console. It wasn't that great so we (well Josselin did it) automated deployments to stores using Github Actions and [fastlane](https://fastlane.tools/). As far as I know, it was hard to setup because of certificate, keys and App Store way of doing things.
+At the beggining, APKs were built locally and manually uploaded to the Google Play Console. It wasn't that great so we (well Josselin did it) automated deployments to stores using GitHub Actions and [fastlane](https://fastlane.tools/). As far as I know, it was hard to setup because of certificate, keys and App Store way of doing things.
 
 ## Wrapping up
 

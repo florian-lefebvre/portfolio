@@ -31,7 +31,7 @@ export default defineProject({
       name: "yNotes app",
       content: contentEn,
       description:
-        "yNotes is a school life mobile application that connects French students to their school services. I've been its maintainer for around 7 months, and I learnt a lot of things along the way.",
+        "yNotes is a school life mobile application that connects French students to their school services. I've been its maintainer for around 7 months, and I learned a lot of things along the way.",
       slug: "ynotes-app",
       links: [
         {
