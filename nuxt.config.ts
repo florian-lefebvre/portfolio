@@ -85,6 +85,7 @@ export default defineNuxtConfig({
       "shortcuts-app",
       "vertical-timeline",
       "barcode-generator",
+      "glutton-runner",
     ].map((project) => `/projects/${project}`),
   },
 });
