@@ -1,10 +1,10 @@
 <template>
   <NuxtLink
     :to="`/projects/${project.locales[$i18n.locale].slug}`"
-    class="group relative flex h-full flex-col overflow-hidden rounded-xl bg-gray-800 text-white shadow-lg transition-all hover:scale-95 hover:shadow"
+    class="group relative flex h-full flex-col overflow-hidden rounded-xl bg-gray-800 text-white shadow-lg transition-all duration-300 ease-in-out hover:scale-95 hover:shadow"
   >
     <div
-      class="bg-gradient absolute inset-0 z-[15] flex translate-y-full items-center justify-center rounded-xl !bg-opacity-40 transition-all group-hover:translate-y-0"
+      class="bg-gradient absolute inset-0 z-[15] flex translate-y-full items-center justify-center rounded-xl !bg-opacity-40 opacity-0 transition-all duration-300 ease-in-out group-hover:translate-y-0 group-hover:opacity-100"
     >
       <div class="flex flex-col items-center">
         <EyeIcon class="h-16 w-16 text-white/80" />
