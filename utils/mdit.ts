@@ -9,6 +9,7 @@ import ncb from "markdown-it-named-code-blocks";
 import toc from "markdown-it-table-of-contents";
 import { HLJSApi } from "highlight.js";
 import consola from "consola";
+import string from "string";
 import { useCloudinary } from "~/composables/useCloudinary";
 // @ts-ignore
 const hljs: HLJSApi = await import("highlight.js").then(
@@ -51,6 +52,9 @@ const mdit: MarkdownIt = new MarkdownIt(options)
   .use(ncb)
   .use(toc, {
     includeLevel: [1, 2, 3, 4, 5, 6],
+    slugify(str: string) {
+      return string(str).slugify().toString();
+    },
   });
 
 mdit.linkify.set({ fuzzyEmail: false });
