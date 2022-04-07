@@ -23,6 +23,7 @@ export default defineProject({
       slug: "glutton-runner",
       links: [],
       type: "Game",
+      wip: true,
     },
     fr: {
       name: "Portfolio",

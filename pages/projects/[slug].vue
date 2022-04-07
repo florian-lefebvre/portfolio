@@ -26,7 +26,10 @@
             class="w-full rounded-lg border-2 border-gray-700/25"
             :alt="details.description"
           />
-          <Alert title="Work in progress" class="mt-10 w-full"
+          <Alert
+            v-if="details.wip"
+            title="Work in progress"
+            class="mt-10 w-full"
             >I am currently working on the content. The final version will be
             available soon.</Alert
           >

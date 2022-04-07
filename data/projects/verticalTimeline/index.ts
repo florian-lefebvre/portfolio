@@ -27,6 +27,7 @@ export default defineProject({
       slug: "vertical-timeline",
       links: [],
       type: "Component",
+      wip: true,
     },
     fr: {
       name: "Portfolio",

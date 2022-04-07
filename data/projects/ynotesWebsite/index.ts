@@ -38,6 +38,7 @@ export default defineProject({
         },
       ],
       type: "Website",
+      wip: true,
     },
     fr: {
       name: "Portfolio",

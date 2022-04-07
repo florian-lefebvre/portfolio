@@ -29,6 +29,7 @@ export default defineProject({
       slug: "flutter-responsive-breakpoints",
       links: [],
       type: "Package",
+      wip: true,
     },
     fr: {
       name: "Portfolio",

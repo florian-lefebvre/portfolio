@@ -36,4 +36,5 @@ export interface ProjectLocale {
   slug: string;
   content: string;
   type: string;
+  wip?: boolean;
 }
