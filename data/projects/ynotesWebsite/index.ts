@@ -36,6 +36,10 @@ export default defineProject({
           name: "Website",
           url: "https://ynotes.fr",
         },
+        {
+          name: "Website (archived)",
+          url: "https://archive.ynotes.fr",
+        },
       ],
       type: "Website",
       wip: true,

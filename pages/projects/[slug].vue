@@ -34,7 +34,12 @@
             available soon.</Alert
           >
           <article>
-            <Prose class="mt-10" :content="details.content" />
+            <Prose
+              class="mt-10"
+              :content="`<h2>${$t('global.projects.toc')}</h2>\n${
+                details.content
+              }`"
+            />
           </article>
         </div>
         <div class="col-span-12 mb-8 lg:col-span-4 lg:mb-0 xl:col-start-10">

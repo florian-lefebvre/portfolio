@@ -52,6 +52,7 @@ const message: MessageSchema = {
     },
     projects: {
       view: "View",
+      toc: "Table of contents",
     },
   },
   pages: {

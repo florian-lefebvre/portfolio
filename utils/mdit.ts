@@ -74,6 +74,6 @@ export const render = (page: string) => {
       }
     }
   }
-  page = "[[toc]]\n\n" + page;
+  page = "[[toc]]\n\n<hr />\n\n" + page;
   return mdit.render(page);
 };

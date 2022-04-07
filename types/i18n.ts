@@ -52,6 +52,7 @@ export type MessageSchema = {
     };
     projects: {
       view: string;
+      toc: string;
     };
   };
   pages: {
