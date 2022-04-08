@@ -48,12 +48,6 @@ export default defineNuxtConfig({
   },
   vite: {
     plugins: [vueJsx({})],
-    // optimizeDeps: {
-    //   exclude: ["highlight.js"],
-    // },
-    build: {
-      target: "ESNext",
-    },
   },
   publicRuntimeConfig: {
     domain: config.domain,
