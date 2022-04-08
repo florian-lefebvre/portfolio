@@ -1,10 +1,15 @@
-import type { RouterOptions } from "vue-router";
+import type { RouterConfig } from "@nuxt/schema";
 
 // https://router.vuejs.org/api/#routeroptions
-export default <Partial<RouterOptions>>{
+export default <RouterConfig>{
   scrollBehavior: (to, from, savedPosition) => {
     if (savedPosition) {
       return savedPosition;
+    }
+    if (to.hash) {
+      return {
+        el: to.hash,
+      };
     }
     return { top: 0 };
   },
