@@ -17,7 +17,7 @@
                 v-for="link in links"
                 :to="link.url"
                 :target="link.external ? '_blank' : undefined"
-                class="animated-underline relative text-white"
+                class="animated-underline relative inline-flex items-center space-x-1 text-white"
                 :class="{
                   'bg-gradient text-gradient font-semibold':
                     link.url === '/'
@@ -25,7 +25,11 @@
                       : $route.path.startsWith(link.url),
                 }"
               >
-                {{ link.name }}
+                <span>{{ link.name }}</span>
+                <ExternalLinkIcon
+                  v-if="link.external"
+                  class="h-4 w-4 text-white/70"
+                />
               </NuxtLink>
             </div>
             <a
@@ -69,7 +73,7 @@
               :to="link.url"
               :target="link.external ? '_blank' : undefined"
               @click.native="() => close()"
-              class="animated-underline relative text-white"
+              class="animated-underline relative inline-flex items-center space-x-1 text-white"
               :class="{
                 'bg-gradient text-gradient font-semibold':
                   link.url === '/'
@@ -77,7 +81,11 @@
                     : $route.path.startsWith(link.url),
               }"
             >
-              {{ link.name }}
+              <span>{{ link.name }}</span>
+              <ExternalLinkIcon
+                v-if="link.external"
+                class="h-4 w-4 text-white/70"
+              />
             </NuxtLink>
           </div>
         </PopoverPanel>
@@ -88,7 +96,7 @@
 
 <script setup lang="ts">
 import { PopoverButton, PopoverPanel, Popover } from "@headlessui/vue";
-import { MenuIcon, XIcon } from "@heroicons/vue/outline";
+import { MenuIcon, XIcon, ExternalLinkIcon } from "@heroicons/vue/outline";
 import { Link } from "~/types";
 import { useI18n } from "vue-i18n";
 
