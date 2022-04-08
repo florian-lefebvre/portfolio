@@ -38,7 +38,7 @@ const url = useCloudinary({
   id: "qx3inv",
 });
 
-const duration: number = 12;
+const duration: number = 20;
 const animation = (animationName: string, d: number = duration): string =>
   `${animationName} ${d}s infinite linear`;
 const style = (index: number) => ({
@@ -73,10 +73,10 @@ const style = (index: number) => ({
 }
 
 .animate-atom3 {
-  animation: v-bind(animation("atom2", 16));
+  animation: v-bind(animation("atom2", 22));
 }
 
 .animate-atom4 {
-  animation: v-bind(animation("atom4", 22));
+  animation: v-bind(animation("atom4", 24));
 }
 </style>
