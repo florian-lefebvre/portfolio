@@ -22,7 +22,6 @@ export default defineProject({
       slug: "ynotes-packages",
       links: [],
       type: "Package",
-      wip: true,
     },
     fr: {
       name: "Portfolio",
