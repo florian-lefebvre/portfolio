@@ -89,14 +89,13 @@
 </template>
 
 <script setup lang="ts">
-import { ComputedRef } from "nuxt3/dist/app/compat/capi";
 import { FooterCategory, Link } from "~/types";
 import { useI18n } from "vue-i18n";
 
 const { firstName, lastName, social } = useMe();
 const { t, tm } = useI18n();
 
-const categories: ComputedRef<FooterCategory[]> = computed(() => [
+const categories = computed<FooterCategory[]>(() => [
   {
     name: t("global.footer.categories.navigation"),
     links: (tm("global.links.navigation") as Link[]).filter((e) => !e.external),

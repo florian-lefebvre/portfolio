@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from "nuxt3/dist/app/compat/capi";
+import { PropType } from "vue";
 import { Icon as I } from "~/types";
 
 defineProps({

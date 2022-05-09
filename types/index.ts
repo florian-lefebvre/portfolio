@@ -1,4 +1,3 @@
-import { ComputedRef } from "nuxt3/dist/app/compat/vue-demi";
 import { AvailableLocales } from "./i18n";
 
 export interface Link {
