@@ -1,8 +1,8 @@
 import { Project } from "~/types";
 import * as p from "./projects";
-import portfolio from "./portfolio";
+import nuxt3StarterMedusa from "./nuxt3StarterMedusa";
 
-export const featured = computed(() => portfolio);
+export const featured = computed(() => nuxt3StarterMedusa);
 
 const projects: Project[] = Object.values(p);
 export default projects;
