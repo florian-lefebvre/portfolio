@@ -49,11 +49,12 @@
             scope="global"
           >
             <NuxtLink
+              v-for="(_, i) in $tm('pages.home.introduction.descriptionLinks')"
               target="_blank"
               no-rel
-              :to="$t('pages.home.introduction.descriptionLink.url')"
+              :to="$t(`pages.home.introduction.descriptionLinks[${i as number}].url`)"
               class="bg-gradient animated-underline text-gradient relative font-semibold hover:text-white"
-              >{{ $t("pages.home.introduction.descriptionLink.name") }}
+              >{{ $t(`pages.home.introduction.descriptionLinks[${i as number}].name`) }}
             </NuxtLink>
           </i18n-t>
         </div>
@@ -340,7 +341,8 @@ const { t } = useI18n();
 useSeo({
   title: t("pages.home.seo.title"),
   description: t("pages.home.seo.description", [
-    t("pages.home.introduction.descriptionLink.name"),
+    t("pages.home.introduction.descriptionLinks[0].name"),
+    t("pages.home.introduction.descriptionLinks[1].name"),
   ]),
 });
 </script>

@@ -60,7 +60,7 @@ export type MessageSchema = {
       introduction: {
         title: string;
         description: string;
-        descriptionLink: Link;
+        descriptionLinks: Link[];
         learnMore: string;
         scrollDown: string;
       };

@@ -66,11 +66,17 @@ const message: MessageSchema = {
         title: "Hi, I'm",
         description: `I'm a @:global.meta.description I enjoy designing and creating beautiful, functional websites as well as mobile apps. I've been coding for more than ${
           currentYear - 2020
-        } years now. I've been working on {0} lately, a school life mobile application that connects French students to their school services.`,
-        descriptionLink: {
-          name: "yNotes",
-          url: "https://ynotes.fr",
-        },
+        } years now. I've been working on a {0} for {1} lately, an headless Open Source Shopify alternative.`,
+        descriptionLinks: [
+          {
+            name: "Nuxt3 starter template",
+            url: "https://github.com/florian-lefebvre/nuxt3-starter-medusa",
+          },
+          {
+            name: "Medusa",
+            url: "https://medusajs.com/",
+          },
+        ],
         learnMore: "Learn more",
         scrollDown: "Scroll down",
       },
