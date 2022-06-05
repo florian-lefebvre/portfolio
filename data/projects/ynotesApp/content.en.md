@@ -14,7 +14,7 @@ What's my role in this project you may ask. I joined in October 2020 as a front-
 
 The development of yNotes has been challenging for several reasons. Here are a few of them.
 
-### Unkown APIS
+### Unknown APIS
 
 Since yNotes is an unofficial ENT app, it relies on APIs that are not documented. The only way to know how to interact with them is by looking at the requests made in the `Network` tab of the browser. Definitely not the easiest way to build an app that is already complex in itself.
 
