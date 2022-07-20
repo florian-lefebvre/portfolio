@@ -170,6 +170,12 @@ const message: MessageSchema = {
               name: "High school Le Ferradou",
               topic: "Computer science and mathematics",
             },
+            {
+              dates: "2022 - 2025",
+              name: "BUT MMI",
+              topic:
+                '"University Bachelor of Technology in Multimedia and Internet Professions"',
+            },
           ],
         },
         {
@@ -184,6 +190,11 @@ const message: MessageSchema = {
               dates: "March 10th 2022",
               name: "Reply Code Challenge - Teen Edition",
               topic: "Team WhyNot ranked 156th out of 1150",
+            },
+            {
+              dates: "July 5th 2022",
+              name: "High school diploma",
+              topic: "Honourable mention, European section (english)",
             },
           ],
         },
