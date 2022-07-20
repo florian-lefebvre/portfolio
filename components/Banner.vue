@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    to="https://ukrainewar.carrd.co/"
+    to="https://war.ukraine.ua/"
     target="_blank"
     class="relative py-2 text-left text-white transition-all duration-300 hover:opacity-80 sm:text-center"
     tabindex="0"
