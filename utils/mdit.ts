@@ -8,7 +8,6 @@ import mila from "markdown-it-link-attributes";
 import ncb from "markdown-it-named-code-blocks";
 import toc from "markdown-it-table-of-contents";
 import hljs from "highlight.js";
-import consola from "consola";
 import string from "string";
 import { useCloudinary } from "~/composables/useCloudinary";
 
@@ -70,7 +69,7 @@ export const render = (page: string) => {
           page = page.replace(match, eval(match.slice(2, -2)));
         }
       } catch (e) {
-        consola.error(e);
+        console.error(e);
       }
     }
   }

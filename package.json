@@ -25,7 +25,6 @@
     "@vueuse/motion": "2.0.0-beta.9",
     "@vueuse/nuxt": "^7.5.3",
     "autoprefixer": "^10.4.2",
-    "consola": "^2.15.3",
     "highlight.js": "^11.4.0",
     "markdown-it": "^12.3.2",
     "markdown-it-emoji": "^2.0.0",
