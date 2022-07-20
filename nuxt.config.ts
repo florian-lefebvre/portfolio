@@ -29,7 +29,7 @@ export default defineNuxtConfig({
     "@/assets/css/highlight.css",
     "@/assets/css/markdownit.scss",
   ],
-  modules: ["@vueuse/nuxt", "vue-plausible", "~/modules/sitemap"],
+  modules: ["@vueuse/nuxt", "~/modules/sitemap"],
   build: {
     postcss: {
       postcssOptions: {
