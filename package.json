@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "description": "A portfolio site for Florian LEFEBVRE.",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "author": "Florian LEFEBVRE",
   "scripts": {
     "build": "nuxi build",
