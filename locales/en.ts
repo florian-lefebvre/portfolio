@@ -66,7 +66,7 @@ const message: MessageSchema = {
         title: "Hi, I'm",
         description: `I'm a @:global.meta.description I enjoy designing and creating beautiful, functional websites as well as mobile apps. I've been coding for more than ${
           currentYear - 2020
-        } years now. I've been working on {0} lately, a Frencg open-source school management system.`,
+        } years now. I've been working on {0} lately, a French open-source school management system.`,
         descriptionLinks: [
           {
             name: "op-ent",
