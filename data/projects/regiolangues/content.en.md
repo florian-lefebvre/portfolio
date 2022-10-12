@@ -43,7 +43,7 @@ And here is a quick schema of the `categories` table:
 | ---- | ------ | --------- | ----- |
 | int8 | string | int8 (fk) | int2  |
 
-This is actually the 2nd version of the version, I had to rewrite for performances reasons.
+This is actually the 2nd version of the function, I had to rewrite it for performances reasons.
 
 ### From SSR to SSG
 
