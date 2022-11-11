@@ -79,7 +79,7 @@ const message: MessageSchema = {
       about: {
         title1: "About",
         title2: "me",
-        description: `I am a French student in my last year of high school and I'm about to study web development next year. I've been coding since late 2019 on my own time and have already completed ${projects.length} projects. One of my hobbies is playing drums and percussions in several bands.`,
+        description: `I am a French student in my first year of university, studying web development, design and communication. I've been coding since late 2019 on my own time and have already completed ${projects.length} projects. One of my hobbies is playing drums and percussions in several bands.`,
         learnMore: "Learn more",
         cardsTitle: "At {0}...",
         cards: [
