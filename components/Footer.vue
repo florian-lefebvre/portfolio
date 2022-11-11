@@ -13,7 +13,7 @@
             {{ $t("pages.contact.description") }}
           </p>
         </div>
-        <Alert>{{ $t("pages.contact.warning") }}</Alert>
+        <!-- <Alert>{{ $t("pages.contact.warning") }}</Alert> -->
       </div>
       <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
         <NuxtLink
