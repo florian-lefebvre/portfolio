@@ -96,7 +96,7 @@ const message: MessageSchema = {
           {
             age: 16,
             description:
-              "I started working on yNotes, a mobile app made with Flutter with already more than 4k users.",
+              "I started working on yNotes, a mobile app made with Flutter with already more than 7k users.",
           },
           {
             age: 17,
