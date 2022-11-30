@@ -1,0 +1,17 @@
+---
+export interface Props {
+  enabled?: boolean;
+}
+
+const { enabled = true } = Astro.props;
+---
+
+{
+  enabled ? (
+    <div class="bg-primary-5 text-primary-11">
+      <div class="custom-container px-4 py-2">Banner</div>
+    </div>
+  ) : (
+    <div class="h-10" />
+  )
+}

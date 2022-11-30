@@ -1,0 +1,10 @@
+@import url("./colors.css");
+@import url("./fonts.css");
+
+.custom-container {
+  @apply max-w-6xl mx-auto;
+}
+
+.dark {
+  color-scheme: dark;
+}
