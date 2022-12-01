@@ -10,15 +10,15 @@ export default function ThemeToggler() {
     localStorage.setItem("theme", theme);
     const html = document.querySelector("html");
     if (theme === "light") {
-      html.classList.add("dark");
+      html?.classList.remove("dark");
     } else {
-      html.classList.remove("dark");
+      html?.classList.add("dark");
     }
   }
 
   function getTheme(): Theme {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme") as "light" | "dark";
+      return localStorage.getItem("theme") as Theme;
     } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       return "dark";
     } else {
@@ -36,9 +36,10 @@ export default function ThemeToggler() {
   }
 
   useEffect(() => {
-    setTheme(getTheme());
-    applyTheme(theme);
-  });
+    const localStorageTheme = getTheme();
+    setTheme(localStorageTheme);
+    applyTheme(localStorageTheme);
+  }, []);
   return (
     <button
       className="bg-neutral-12 text-neutral-2 rounded-full p-4 transition-colors hover:bg-primary-10 focus:outline-none focus:ring-[3px] focus:ring-primary-10"
@@ -53,9 +54,9 @@ export default function ThemeToggler() {
           className="w-4 h-4"
         >
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
-            clip-rule="evenodd"
+            clipRule="evenodd"
           />
         </svg>
       ) : (
