@@ -59,7 +59,30 @@ module.exports = {
     fontFamily: {
       sans: ["Mona-Sans", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      animation: {
+        test: "test 1000ms ease-in-out",
+      },
+      keyframes: {
+        test: {
+          "0%": {
+            left: "auto",
+            right: 0,
+            width: 0,
+          },
+          "25%": {
+            width: "100%",
+          },
+          "50%": {
+            left: 0,
+            right: "auto",
+          },
+          "100%": {
+            width: 0,
+          },
+        },
+      },
+    },
   },
   plugins: [],
 };

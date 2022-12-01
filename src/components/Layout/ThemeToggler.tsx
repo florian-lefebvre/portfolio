@@ -1,52 +1,21 @@
-import { useEffect, useState } from "react";
-
-type Theme = "light" | "dark";
+import { useStore } from "@nanostores/react";
+import { useEffect } from "react";
+import themeStore from "~/stores/theme";
 
 export default function ThemeToggler() {
-  const [theme, setTheme] = useState<Theme>("dark");
-
-  function applyTheme(theme: Theme) {
-    setTheme(theme);
-    localStorage.setItem("theme", theme);
-    const html = document.querySelector("html");
-    if (theme === "light") {
-      html?.classList.remove("dark");
-    } else {
-      html?.classList.add("dark");
-    }
-  }
-
-  function getTheme(): Theme {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme") as Theme;
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    } else {
-      return "light";
-    }
-  }
-
-  function switchTheme() {
-    setTheme(getTheme());
-    if (theme === "light") {
-      applyTheme("dark");
-    } else {
-      applyTheme("light");
-    }
-  }
+  const $themeStore = useStore(themeStore.state);
 
   useEffect(() => {
-    const localStorageTheme = getTheme();
-    setTheme(localStorageTheme);
-    applyTheme(localStorageTheme);
+    themeStore.apply(themeStore.get());
   }, []);
   return (
     <button
-      className="bg-neutral-12 text-neutral-2 rounded-full p-4 transition-colors hover:bg-primary-10 focus:outline-none focus:ring-[3px] focus:ring-primary-10"
-      onClick={() => switchTheme()}
+      className="bg-neutral-12 text-neutral-2 rounded-full p-4 transition-all hover:bg-primary-10 focus:outline-none focus:ring-[3px] focus:ring-primary-10 disabled:opacity-60"
+      onClick={() => themeStore.toggle()}
+      disabled={$themeStore.running}
     >
       <span className="sr-only">Switch theme</span>
-      {theme === "dark" ? (
+      {$themeStore.theme === "dark" ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
