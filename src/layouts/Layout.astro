@@ -22,7 +22,9 @@ const { title } = Astro.props;
   <body class="bg-neutral-2 text-neutral-12">
     <Banner enabled={false} />
     <Header pathname={Astro.url.pathname} client:load />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <ThemeTransition client:load />
   </body>
 </html>
