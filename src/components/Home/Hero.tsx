@@ -1,3 +1,5 @@
+import Button from '../Button'
+
 export default function Hero() {
     return (
         <div className="custom-container flex flex-col gap-16 py-24 px-4 lg:flex-row">
@@ -17,19 +19,17 @@ export default function Hero() {
                     sed, dictum egestas est. Aenean.
                 </p>
                 <div className="mt-16 flex gap-8">
-                    <a
-                        href="#content"
-                        className="translate-x-2 -translate-y-2 bg-primary-9 px-6 py-2 text-sm font-medium text-white shadow-square shadow-neutral-12 transition-all hover:translate-x-0 hover:translate-y-0 hover:bg-primary-10 hover:shadow-none focus:translate-x-0 focus:translate-y-0 focus:shadow-none focus:outline-none focus:ring-[3px] focus:ring-primary-7 sm:text-base"
-                    >
+                    <Button as="a" href="#content">
                         Learn more
-                    </a>
-                    <a
+                    </Button>
+                    <Button
+                        as="a"
                         href="https://github.com/florian-lefebvre"
                         target="_blank"
-                        className="translate-x-2 -translate-y-2 bg-neutral-9 px-6 py-2 text-sm font-medium text-white shadow-square shadow-neutral-12 transition-all hover:translate-x-0 hover:translate-y-0 hover:bg-neutral-10 hover:shadow-none focus:translate-x-0 focus:translate-y-0 focus:shadow-none focus:outline-none focus:ring-[3px] focus:ring-neutral-7 sm:text-base"
+                        color="secondary"
                     >
                         GitHub
-                    </a>
+                    </Button>
                 </div>
             </div>
             <div className="max-w-64 relative mx-auto flex max-w-lg lg:max-w-none lg:flex-1">
