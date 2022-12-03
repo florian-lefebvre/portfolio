@@ -10,7 +10,7 @@ export default function ThemeToggler() {
     }, [])
     return (
         <button
-            className="rounded-full bg-neutral-12 p-4 text-neutral-2 transition-all hover:bg-primary-10 focus:outline-none focus:ring-[3px] focus:ring-primary-10 disabled:opacity-60"
+            className="rounded-full bg-neutral-12 p-3 text-neutral-2 transition-all hover:bg-primary-10 focus:outline-none focus:ring-[3px] focus:ring-primary-10 disabled:opacity-60 sm:p-4"
             onClick={() => themeStore.toggle()}
             disabled={$themeStore.running}
         >

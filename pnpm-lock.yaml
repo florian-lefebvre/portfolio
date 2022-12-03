@@ -3,6 +3,8 @@ lockfileVersion: 5.4
 specifiers:
   '@astrojs/react': ^1.2.2
   '@astrojs/tailwind': ^2.1.3
+  '@headlessui/react': ^1.7.4
+  '@heroicons/react': ^2.0.13
   '@nanostores/react': ^0.4.0
   '@types/react': ^18.0.21
   '@types/react-dom': ^18.0.6
@@ -18,6 +20,8 @@ specifiers:
 dependencies:
   '@astrojs/react': 1.2.2_cn3ejhfta5lq2dae4xucvtkwvu
   '@astrojs/tailwind': 2.1.3_tailwindcss@3.2.4
+  '@headlessui/react': 1.7.4_biqbaboplfbrettd7655fr4n2y
+  '@heroicons/react': 2.0.13_react@18.2.0
   '@nanostores/react': 0.4.0_l7qgfzs3f7fslbs5zoobn4ovy4
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.9
@@ -440,6 +444,26 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@headlessui/react/1.7.4_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-D8n5yGCF3WIkPsjEYeM8knn9jQ70bigGGb5aUvN6y4BGxcT3OcOQOKcM3zRGllRCZCFxCZyQvYJF6ZE7bQUOyQ==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^16 || ^17 || ^18
+      react-dom: ^16 || ^17 || ^18
+    dependencies:
+      client-only: 0.0.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@heroicons/react/2.0.13_react@18.2.0:
+    resolution: {integrity: sha512-iSN5XwmagrnirWlYEWNPdCDj9aRYVD/lnK3JlsC9/+fqGF80k8C7rl+1HCvBX0dBoagKqOFBs6fMhJJ1hOg1EQ==}
+    peerDependencies:
+      react: '>= 16'
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /@jridgewell/gen-mapping/0.1.1:
     resolution: {integrity: sha512-sQXCasFk+U8lWYEe66WxRDOE9PjVz4vSM51fTu3Hw+ClTpUSQb718772vH3pyS5pShp6lvQM7SxgIDXXXmOX7w==}
@@ -1035,6 +1059,10 @@ packages:
   /cli-spinners/2.7.0:
     resolution: {integrity: sha512-qu3pN8Y3qHNgE2AFweciB1IfMnmZ/fsNTEE+NOFjmGB2F/7rLhnhzppvpCnN4FovtP26k8lHyy9ptEbNwWFLzw==}
     engines: {node: '>=6'}
+    dev: false
+
+  /client-only/0.0.1:
+    resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
     dev: false
 
   /clone/1.0.4:

@@ -1,7 +1,9 @@
 import ThemeToggler from './ThemeToggler'
 import clsx from 'clsx'
-import { useState } from 'react'
+import { useState, Fragment } from 'react'
 import useWindowEventListener from '~/hooks/useWindowEventListener'
+import { Dialog, Transition } from '@headlessui/react'
+import { XMarkIcon, Bars3BottomLeftIcon } from '@heroicons/react/24/outline'
 
 const links: { name: string; href: string }[] = [
     {
@@ -26,19 +28,124 @@ const links: { name: string; href: string }[] = [
     },
 ]
 
+function MobileMenu({
+    open,
+    onClose,
+    pathname,
+}: {
+    open: boolean
+    onClose: () => void
+    pathname: string
+}) {
+    return (
+        <Transition.Root show={open} as={Fragment}>
+            <Dialog
+                as="div"
+                className="relative z-50 sm:hidden"
+                onClose={onClose}
+            >
+                <Transition.Child
+                    as={Fragment}
+                    enter="ease-in-out duration-500"
+                    enterFrom="opacity-0"
+                    enterTo="opacity-100"
+                    leave="ease-in-out duration-500"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
+                >
+                    <div className="fixed inset-0 bg-neutralDark-3 bg-opacity-75 transition-opacity" />
+                </Transition.Child>
+
+                <div className="fixed inset-0 overflow-hidden">
+                    <div className="absolute inset-0 overflow-hidden">
+                        <div className="pointer-events-none fixed inset-x-0 bottom-0 flex max-h-full pt-10">
+                            <Transition.Child
+                                as={Fragment}
+                                enter="transform transition ease-in-out duration-500 sm:duration-700"
+                                enterFrom="translate-y-full"
+                                enterTo="translate-y-0"
+                                leave="transform transition ease-in-out duration-500 sm:duration-700"
+                                leaveFrom="translate-y-0"
+                                leaveTo="translate-y-full"
+                            >
+                                <Dialog.Panel className="pointer-events-auto mx-auto w-screen max-w-md">
+                                    <div className="flex h-full flex-col overflow-y-auto rounded-t-xl bg-neutral-4 py-6 shadow-xl">
+                                        <div className="px-4 sm:px-6">
+                                            <div className="flex items-start justify-between">
+                                                <Dialog.Title className="ml-4 text-xl font-semibold">
+                                                    Menu
+                                                </Dialog.Title>
+                                                <div className="ml-3 flex h-7 items-center">
+                                                    <button
+                                                        className="p-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7"
+                                                        onClick={() =>
+                                                            onClose()
+                                                        }
+                                                    >
+                                                        <span className="sr-only">
+                                                            Close menu
+                                                        </span>
+                                                        <XMarkIcon
+                                                            className="h-6 w-6"
+                                                            aria-hidden="true"
+                                                        />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="relative mt-6 flex-1 px-4 sm:px-6">
+                                            <div className="flex flex-col items-center space-y-2">
+                                                {links.map(({ name, href }) => (
+                                                    <a
+                                                        key={href}
+                                                        className={clsx(
+                                                            'w-full px-4 py-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7',
+                                                            pathname === href
+                                                                ? 'font-bold'
+                                                                : 'font-medium'
+                                                        )}
+                                                        href={href}
+                                                    >
+                                                        {name}
+                                                    </a>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Dialog.Panel>
+                            </Transition.Child>
+                        </div>
+                    </div>
+                </div>
+            </Dialog>
+        </Transition.Root>
+    )
+}
+
 export default function Header({ pathname }: { pathname: string }) {
     const [isTop, setIsTop] = useState(true)
+    const [open, setOpen] = useState(false)
     useWindowEventListener('scroll', () => setIsTop(window.scrollY < 100), {
         passive: true,
     })
     return (
         <header
             className={clsx(
-                'sticky top-0 z-40 border-b bg-neutral-2 transition-[border]',
-                isTop ? 'border-transparent' : 'border-neutral-5'
+                'sticky top-0 z-40 border-b bg-neutral-2 transition-[border,_box-shadow]',
+                isTop ? 'border-transparent' : 'border-neutral-5 shadow-sm'
             )}
         >
-            <nav className="custom-container flex items-center justify-between p-4">
+            <nav className="custom-container relative flex items-center justify-center p-4 sm:justify-between">
+                <button
+                    className="absolute left-4 p-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7 sm:hidden"
+                    onClick={() => setOpen(true)}
+                >
+                    <span className="sr-only">Open menu</span>
+                    <Bars3BottomLeftIcon
+                        className="h-6 w-6"
+                        aria-hidden="true"
+                    />
+                </button>
                 <a
                     href="/"
                     className="p-1 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7"
@@ -65,7 +172,7 @@ export default function Header({ pathname }: { pathname: string }) {
                     </svg>
                 </a>
                 <div className="flex items-center space-x-4">
-                    <div className="flex items-center">
+                    <div className="hidden items-center sm:flex">
                         {links.map(({ name, href }) => (
                             <a
                                 key={href}
@@ -81,11 +188,16 @@ export default function Header({ pathname }: { pathname: string }) {
                             </a>
                         ))}
                     </div>
-                    <div>
+                    <div className="absolute right-4 sm:static">
                         <ThemeToggler />
                     </div>
                 </div>
             </nav>
+            <MobileMenu
+                open={open}
+                onClose={() => setOpen(false)}
+                pathname={pathname}
+            />
         </header>
     )
 }
