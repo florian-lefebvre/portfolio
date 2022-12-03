@@ -53,7 +53,7 @@ function MobileMenu({
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                 >
-                    <div className="fixed inset-0 bg-neutralDark-3 bg-opacity-75 transition-opacity" />
+                    <div className="fixed inset-0 bg-neutralDark-3 bg-opacity-80 transition-opacity" />
                 </Transition.Child>
 
                 <div className="fixed inset-0 overflow-hidden">
@@ -131,8 +131,10 @@ export default function Header({ pathname }: { pathname: string }) {
     return (
         <header
             className={clsx(
-                'sticky top-0 z-40 border-b bg-neutral-2 transition-[border,_box-shadow] dark:bg-neutralDark-3',
-                isTop ? 'border-transparent' : 'border-neutral-5 shadow-sm'
+                'sticky top-0 z-40 border-b bg-neutral-2 transition-[border,_box-shadow] dark:bg-neutralDark-4',
+                isTop
+                    ? 'border-transparent'
+                    : 'border-neutral-5 shadow-sm dark:border-neutral-7'
             )}
         >
             <nav className="custom-container relative flex items-center justify-center p-4 sm:justify-between">

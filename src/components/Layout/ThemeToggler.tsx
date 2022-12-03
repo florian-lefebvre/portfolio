@@ -15,7 +15,7 @@ export default function ThemeToggler() {
             disabled={$themeStore.running}
         >
             <span className="sr-only">Switch theme</span>
-            {$themeStore.theme === 'dark' ? (
+            {$themeStore.theme === 'light' ? (
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
