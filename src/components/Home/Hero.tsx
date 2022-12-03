@@ -17,12 +17,19 @@ export default function Hero() {
                     sed, dictum egestas est. Aenean.
                 </p>
                 <div className="mt-16 flex gap-8">
-                    <button className="translate-x-2 -translate-y-2 bg-primary-9 px-6 py-2 text-sm font-medium text-white shadow-square shadow-neutral-12 transition-all hover:translate-x-0 hover:translate-y-0 hover:bg-primary-10 hover:shadow-none focus:translate-x-0 focus:translate-y-0 focus:shadow-none focus:outline-none focus:ring-[3px] focus:ring-primary-7 sm:text-base">
+                    <a
+                        href="#content"
+                        className="translate-x-2 -translate-y-2 bg-primary-9 px-6 py-2 text-sm font-medium text-white shadow-square shadow-neutral-12 transition-all hover:translate-x-0 hover:translate-y-0 hover:bg-primary-10 hover:shadow-none focus:translate-x-0 focus:translate-y-0 focus:shadow-none focus:outline-none focus:ring-[3px] focus:ring-primary-7 sm:text-base"
+                    >
                         Learn more
-                    </button>
-                    <button className="translate-x-2 -translate-y-2 bg-neutral-9 px-6 py-2 text-sm font-medium text-white shadow-square shadow-neutral-12 transition-all hover:translate-x-0 hover:translate-y-0 hover:bg-neutral-10 hover:shadow-none focus:translate-x-0 focus:translate-y-0 focus:shadow-none focus:outline-none focus:ring-[3px] focus:ring-neutral-7 sm:text-base">
+                    </a>
+                    <a
+                        href="https://github.com/florian-lefebvre"
+                        target="_blank"
+                        className="translate-x-2 -translate-y-2 bg-neutral-9 px-6 py-2 text-sm font-medium text-white shadow-square shadow-neutral-12 transition-all hover:translate-x-0 hover:translate-y-0 hover:bg-neutral-10 hover:shadow-none focus:translate-x-0 focus:translate-y-0 focus:shadow-none focus:outline-none focus:ring-[3px] focus:ring-neutral-7 sm:text-base"
+                    >
                         GitHub
-                    </button>
+                    </a>
                 </div>
             </div>
             <div className="max-w-64 relative mx-auto flex max-w-lg lg:max-w-none lg:flex-1">

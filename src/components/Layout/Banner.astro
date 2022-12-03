@@ -8,9 +8,18 @@ const { enabled = true } = Astro.props
 
 {
     enabled ? (
-        <div class="bg-primary-5 text-primary-11">
-            <div class="custom-container px-4 py-2">Banner</div>
-        </div>
+        <a
+            href="https://florian-lefebvre.dev"
+            target="_blank"
+            class="block bg-primary-5 text-primary-11 font-medium group hover:bg-primary-6 transition-colors border-4 border-transparent focus:border-primary-8"
+        >
+            <div class="custom-container px-4 py-2 text-sm">
+                Miss the previous version ?{' '}
+                <span class="group-hover:underline font-semibold">
+                    Check it out!
+                </span>
+            </div>
+        </a>
     ) : (
         <div class="lg:h-10" />
     )

@@ -131,7 +131,7 @@ export default function Header({ pathname }: { pathname: string }) {
     return (
         <header
             className={clsx(
-                'sticky top-0 z-40 border-b bg-neutral-2 transition-[border,_box-shadow]',
+                'sticky top-0 z-40 border-b bg-neutral-2 transition-[border,_box-shadow] dark:bg-neutralDark-3',
                 isTop ? 'border-transparent' : 'border-neutral-5 shadow-sm'
             )}
         >

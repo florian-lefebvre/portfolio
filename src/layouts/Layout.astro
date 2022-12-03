@@ -1,30 +1,30 @@
 ---
-import "~/assets/css/main.css";
-import Banner from "~/components/Layout/Banner.astro";
-import Header from "~/components/Layout/Header";
-import ThemeTransition from "~/components/Layout/ThemeTransition";
+import '~/assets/css/main.css'
+import Banner from '~/components/Layout/Banner.astro'
+import Header from '~/components/Layout/Header'
+import ThemeTransition from '~/components/Layout/ThemeTransition'
 
 export interface Props {
-  title: string;
+    title: string
 }
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <!DOCTYPE html>
 <html lang="en" class="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body class="bg-neutral-2 text-neutral-12">
-    <Banner enabled={false} />
-    <Header pathname={Astro.url.pathname} client:load />
-    <main>
-      <slot />
-    </main>
-    <ThemeTransition client:load />
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body class="bg-neutral-2 text-neutral-12 dark:bg-neutralDark-3">
+        <Banner enabled={true} />
+        <Header pathname={Astro.url.pathname} client:load />
+        <main>
+            <slot />
+        </main>
+        <ThemeTransition client:load />
+    </body>
 </html>
