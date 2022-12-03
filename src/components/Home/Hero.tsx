@@ -1,7 +1,7 @@
 export default function Hero() {
     return (
-        <div className="custom-container flex items-center gap-16 py-24 px-4">
-            <div className="flex-1">
+        <div className="custom-container flex flex-col gap-16 py-24 px-4 lg:flex-row">
+            <div className="flex-1 flex-shrink-0 py-12">
                 <h1 className="text-4xl font-light">
                     <span className="block">Florian LEFEBVRE,</span>
                     <span className="block">
@@ -25,9 +25,40 @@ export default function Hero() {
                     </button>
                 </div>
             </div>
-            <div className="flex flex-1">
-                <div className="h-[500px] w-64 bg-primary-9"></div>
-                <div className="h-80 w-56">
+            <div className="relative flex flex-1">
+                <svg
+                    className="my-auto -mr-[50%] text-neutral-7"
+                    width={240}
+                    height={392}
+                    fill="none"
+                    viewBox="0 0 240 392"
+                >
+                    <defs>
+                        <pattern
+                            id="837c3e70-6c3a-44e6-8854-cc48c737b659"
+                            x={0}
+                            y={0}
+                            width={26}
+                            height={26}
+                            patternUnits="userSpaceOnUse"
+                        >
+                            <rect
+                                x={0}
+                                y={0}
+                                width={6}
+                                height={6}
+                                fill="currentColor"
+                            />
+                        </pattern>
+                    </defs>
+                    <rect
+                        width={240}
+                        height={392}
+                        fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"
+                    />
+                </svg>
+                <div className="absolute right-0 isolate h-full w-1/2 bg-primary-9"></div>
+                <div className="static isolate m-auto h-80 w-56">
                     <img
                         src="/images/pp_wide.jpg"
                         className="h-full w-full object-cover"
