@@ -3,21 +3,27 @@ import '~/assets/css/main.css'
 import Banner from '~/components/Layout/Banner.astro'
 import Header from '~/components/Layout/Header'
 import ThemeTransition from '~/components/Layout/ThemeTransition'
+import i18next, { t } from 'i18next'
+import { HeadHrefLangs } from 'astro-i18next/components'
 
 export interface Props {
     title: string
 }
 const { title } = Astro.props
+// const computedTitle = t('global.titleTemplate').replaceAll('%s', title)
+const computedTitle = t('global.titleTemplate')
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang={i18next.language} class="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
+        <!-- <title>{title}</title> -->
+        <title>{computedTitle}</title>
+        <HeadHrefLangs />
     </head>
     <body class="bg-neutral-2 text-neutral-12 dark:bg-neutralDark-4">
         <Banner enabled={true} />
