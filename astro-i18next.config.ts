@@ -5,13 +5,19 @@ const config: AstroI18nextConfig = {
     locales: ['en', 'fr'],
     routes: {
         fr: {
-            about: 'a-propos',
-            projects: {
-                index: 'projets',
-            },
-            blog: {
-                index: 'blog',
-            },
+            // about: 'a-propos',
+            // projects: {
+            //     index: 'projets',
+            // },
+            // blog: {
+            //     index: 'blog',
+            // },
+        },
+    },
+    i18nextServer: {
+        debug: true,
+        backend: {
+            loadPath: './public/locales/{{lng}}/{{ns}}.json',
         },
     },
 }
