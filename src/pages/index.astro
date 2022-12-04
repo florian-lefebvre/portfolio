@@ -1,14 +1,16 @@
 ---
-import { changeLanguage, t } from "i18next";
-import About from "~/components/Home/About";
-import Hero from "~/components/Home/Hero";
-import Layout from "../layouts/Layout.astro";
+import { changeLanguage, t, setDefaultNamespace } from 'i18next'
+import About from '~/components/Home/About'
+import Hero from '~/components/Home/Hero'
+import Layout from '../layouts/Layout.astro'
 
-changeLanguage("en");
+const pageNamespace = 'pages.index'
+
+changeLanguage('en')
+setDefaultNamespace(pageNamespace)
 ---
 
-<Layout title={t('pages.index.meta.title')}>
-    {t('test')}
+<Layout pageNamespace={pageNamespace}>
     <Hero />
     <div id="content">
         <About client:load />

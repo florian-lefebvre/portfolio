@@ -5,15 +5,17 @@ const config: AstroI18nextConfig = {
     locales: ['en', 'fr'],
     routes: {
         fr: {
-            // about: 'a-propos',
-            // projects: {
-            //     index: 'projets',
-            // },
-            // blog: {
-            //     index: 'blog',
-            // },
+            about: 'a-propos',
+            projects: {
+                index: 'projets',
+            },
+            blog: {
+                index: 'blog',
+            },
         },
     },
+    defaultNamespace: 'translation',
+    namespaces: ['translation', 'common', 'pages.index'],
     i18nextServer: {
         debug: true,
         backend: {

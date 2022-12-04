@@ -3,15 +3,18 @@ import '~/assets/css/main.css'
 import Banner from '~/components/Layout/Banner.astro'
 import Header from '~/components/Layout/Header'
 import ThemeTransition from '~/components/Layout/ThemeTransition'
-import i18next, { t } from 'i18next'
+import i18next, { t, setDefaultNamespace } from 'i18next'
 import { HeadHrefLangs } from 'astro-i18next/components'
-
+setDefaultNamespace('translation')
 export interface Props {
-    title: string
+    pageNamespace: string
 }
-const { title } = Astro.props
-// const computedTitle = t('global.titleTemplate').replaceAll('%s', title)
-const computedTitle = t('global.titleTemplate')
+const { pageNamespace } = Astro.props
+const pageT = (key: string) => t(key, { ns: pageNamespace })
+const computedTitle = t('global.titleTemplate').replaceAll(
+    '%s',
+    pageT('seo.title')
+)
 ---
 
 <!DOCTYPE html>
@@ -21,7 +24,6 @@ const computedTitle = t('global.titleTemplate')
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
-        <!-- <title>{title}</title> -->
         <title>{computedTitle}</title>
         <HeadHrefLangs />
     </head>

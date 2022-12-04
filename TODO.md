@@ -1,0 +1,6 @@
+-   [ ] seo
+-   [ ] i18n
+-   [ ] semantic
+-   [ ] color mode
+-   [ ] image optimization
+-   [ ] redirects

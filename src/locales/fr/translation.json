@@ -1,12 +1,11 @@
 {
-    "test": "FR",
     "global": {
         "titleTemplate": "%s | Florian Lefebvre"
     },
     "pages": {
         "index": {
             "meta": {
-                "title": "FR Portfolio"
+                "title": "Portfolio"
             }
         }
     }

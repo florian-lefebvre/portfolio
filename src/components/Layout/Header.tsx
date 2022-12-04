@@ -77,7 +77,7 @@ function MobileMenu({
                                                 </Dialog.Title>
                                                 <div className="ml-3 flex h-7 items-center">
                                                     <button
-                                                        className="p-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7"
+                                                        className="dark: p-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7 dark:hover:bg-neutralDark-6"
                                                         onClick={() =>
                                                             onClose()
                                                         }
@@ -100,7 +100,7 @@ function MobileMenu({
                                                     <a
                                                         key={href}
                                                         className={clsx(
-                                                            'w-full px-4 py-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7',
+                                                            'dark: w-full px-4 py-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7 dark:hover:bg-neutralDark-6',
                                                             pathname === href
                                                                 ? 'font-bold'
                                                                 : 'font-medium'
@@ -140,7 +140,7 @@ export default function Header({ pathname }: { pathname: string }) {
         >
             <nav className="custom-container relative flex items-center justify-center p-4 sm:justify-between">
                 <button
-                    className="absolute left-4 p-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7 sm:hidden"
+                    className="dark: absolute left-4 p-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7 dark:hover:bg-neutralDark-6 sm:hidden"
                     onClick={() => setOpen(true)}
                 >
                     <span className="sr-only">Open menu</span>
@@ -152,7 +152,7 @@ export default function Header({ pathname }: { pathname: string }) {
                 </button>
                 <a
                     href="/"
-                    className="p-1 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7"
+                    className="dark: p-1 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7 dark:hover:bg-neutralDark-6"
                 >
                     <svg
                         className="h-8 w-8"
@@ -181,7 +181,7 @@ export default function Header({ pathname }: { pathname: string }) {
                             <a
                                 key={href}
                                 className={clsx(
-                                    'px-4 py-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7',
+                                    'dark: px-4 py-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7 dark:hover:bg-neutralDark-6',
                                     pathname === href
                                         ? 'font-bold'
                                         : 'font-medium'
