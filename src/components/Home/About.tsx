@@ -5,7 +5,7 @@ export default function About() {
     return (
         <div className="custom-container flex flex-col gap-16 py-24 px-4 md:flex-row md:items-center">
             <div className="flex-1">
-                <h1 className="text-2xl font-light sm:text-4xl">
+                <h2 className="text-2xl font-light sm:text-4xl">
                     <span className="block">
                         From <span className="font-bold">selt-taught</span> to{' '}
                     </span>
@@ -15,7 +15,7 @@ export default function About() {
                     <span className="block">
                         Still <span className="font-bold">passionate</span>.
                     </span>
-                </h1>
+                </h2>
                 <div className="mt-8 flex max-w-sm flex-wrap gap-4 sm:gap-6">
                     {[
                         'nextjs-icon',

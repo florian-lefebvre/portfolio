@@ -2,6 +2,7 @@
 import { changeLanguage, t, setDefaultNamespace } from 'i18next'
 import About from '~/components/Home/About'
 import Hero from '~/components/Home/Hero'
+import Featured from '~/components/Projects/Featured'
 import Layout from '../layouts/Layout.astro'
 
 const pageNamespace = 'pages.index'
@@ -14,5 +15,6 @@ setDefaultNamespace(pageNamespace)
     <Hero />
     <div id="content">
         <About client:load />
+        <Featured client:load />
     </div>
 </Layout>

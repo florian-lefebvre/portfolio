@@ -17,7 +17,6 @@ const config: AstroI18nextConfig = {
     defaultNamespace: 'translation',
     namespaces: ['translation', 'common', 'pages.index'],
     i18nextServer: {
-        debug: true,
         backend: {
             loadPath: './src/locales/{{lng}}/{{ns}}.json',
         },
