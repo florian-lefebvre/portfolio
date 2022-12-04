@@ -4,7 +4,6 @@ specifiers:
   '@astrojs/react': ^1.2.2
   '@astrojs/tailwind': ^2.1.3
   '@headlessui/react': ^1.7.4
-  '@heroicons/react': ^2.0.13
   '@iconify/react': ^4.0.1
   '@nanostores/react': ^0.4.0
   '@types/react': ^18.0.21
@@ -24,7 +23,6 @@ dependencies:
   '@astrojs/react': 1.2.2_cn3ejhfta5lq2dae4xucvtkwvu
   '@astrojs/tailwind': 2.1.3_tailwindcss@3.2.4
   '@headlessui/react': 1.7.4_biqbaboplfbrettd7655fr4n2y
-  '@heroicons/react': 2.0.13_react@18.2.0
   '@iconify/react': 4.0.1_react@18.2.0
   '@nanostores/react': 0.4.0_l7qgfzs3f7fslbs5zoobn4ovy4
   '@types/react': 18.0.25
@@ -468,14 +466,6 @@ packages:
       client-only: 0.0.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-    dev: false
-
-  /@heroicons/react/2.0.13_react@18.2.0:
-    resolution: {integrity: sha512-iSN5XwmagrnirWlYEWNPdCDj9aRYVD/lnK3JlsC9/+fqGF80k8C7rl+1HCvBX0dBoagKqOFBs6fMhJJ1hOg1EQ==}
-    peerDependencies:
-      react: '>= 16'
-    dependencies:
-      react: 18.2.0
     dev: false
 
   /@iconify/react/4.0.1_react@18.2.0:

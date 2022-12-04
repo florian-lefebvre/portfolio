@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import { useState, Fragment } from 'react'
 import useWindowEventListener from '~/hooks/useWindowEventListener'
 import { Dialog, Transition } from '@headlessui/react'
-import { XMarkIcon, Bars3BottomLeftIcon } from '@heroicons/react/24/outline'
+import { Icon } from '@iconify/react'
 
 const links: { name: string; href: string }[] = [
     {
@@ -85,7 +85,8 @@ function MobileMenu({
                                                         <span className="sr-only">
                                                             Close menu
                                                         </span>
-                                                        <XMarkIcon
+                                                        <Icon
+                                                            icon="heroicons:x-mark"
                                                             className="h-6 w-6"
                                                             aria-hidden="true"
                                                         />
@@ -143,7 +144,8 @@ export default function Header({ pathname }: { pathname: string }) {
                     onClick={() => setOpen(true)}
                 >
                     <span className="sr-only">Open menu</span>
-                    <Bars3BottomLeftIcon
+                    <Icon
+                        icon="heroicons:bars-3-bottom-left"
                         className="h-6 w-6"
                         aria-hidden="true"
                     />
