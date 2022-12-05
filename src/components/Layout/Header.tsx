@@ -4,6 +4,7 @@ import { useState, Fragment } from 'react'
 import useWindowEventListener from '~/hooks/useWindowEventListener'
 import { Dialog, Transition } from '@headlessui/react'
 import { Icon } from '@iconify/react'
+import { localizePath } from 'astro-i18next'
 
 const links: { name: string; href: string }[] = [
     {
@@ -105,7 +106,9 @@ function MobileMenu({
                                                                 ? 'font-bold'
                                                                 : 'font-medium'
                                                         )}
-                                                        href={href}
+                                                        href={localizePath(
+                                                            href
+                                                        )}
                                                     >
                                                         {name}
                                                     </a>
@@ -151,7 +154,7 @@ export default function Header({ pathname }: { pathname: string }) {
                     />
                 </button>
                 <a
-                    href="/"
+                    href={localizePath('/')}
                     className="p-1 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7 dark:hover:bg-neutralDark-6"
                 >
                     <svg
@@ -186,7 +189,7 @@ export default function Header({ pathname }: { pathname: string }) {
                                         ? 'font-bold'
                                         : 'font-medium'
                                 )}
-                                href={href}
+                                href={localizePath(href)}
                             >
                                 {name}
                             </a>

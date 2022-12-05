@@ -9,6 +9,7 @@ type Props = {
     img: string
     alt: string
     variant: 'small' | 'medium'
+    localizedRootUrl: string
 }
 
 export default function ProjectCard({
@@ -18,6 +19,7 @@ export default function ProjectCard({
     img,
     alt,
     variant,
+    localizedRootUrl,
 }: Props) {
     function getClass(
         className: string,
@@ -55,14 +57,16 @@ export default function ProjectCard({
         }
     )
     return (
-        <a href={`/projects/${slug}`} className={wrapperClass}>
+        <a href={`${localizedRootUrl}${slug}`} className={wrapperClass}>
             <div className="overflow-hidden">
                 <LazyLoadImage
                     src={img}
                     alt={alt}
                     className={imgClass}
                     loading="lazy"
-                    placeholder={<span className="bg-primary-5"></span>}
+                    placeholder={
+                        <div className={clsx('bg-primary-5', imgClass)}></div>
+                    }
                 />
             </div>
             <h3 className={titleClass}>{title}</h3>
