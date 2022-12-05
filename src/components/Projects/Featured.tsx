@@ -4,12 +4,12 @@ export default function Featured() {
     return (
         <div className="custom-container flex flex-col gap-16 py-24 px-4">
             <div>
-                <h2 className="text-2xl font-light sm:text-4xl">
+                <h2 className="text-center text-2xl font-light sm:text-left sm:text-4xl">
                     <span className="block">
                         Featured <span className="font-bold">work</span>
                     </span>
                 </h2>
-                <p className="mt-8 max-w-lg text-sm font-medium sm:text-base">
+                <p className="mx-auto mt-8 max-w-lg text-sm font-medium sm:ml-0 sm:text-base">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Praesent urna enim, commodo eget tortor non, imperdiet
                     condimentum justo. Fusce justo diam, blandit sit amet mi

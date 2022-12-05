@@ -2,7 +2,7 @@ import Button from '../Button'
 
 export default function Hero() {
     return (
-        <div className="custom-container flex flex-col gap-16 py-24 px-4 lg:flex-row">
+        <div className="custom-container flex flex-col gap-16 py-24 px-4 text-center sm:text-left lg:flex-row">
             <div className="flex-1 flex-shrink-0 pb-12 sm:py-12">
                 <h1 className="text-2xl font-light sm:text-4xl">
                     <span className="block">Florian LEFEBVRE,</span>
@@ -12,13 +12,13 @@ export default function Hero() {
                     </span>
                     <span className="italic">& more</span>
                 </h1>
-                <p className="mt-8 max-w-lg text-sm font-medium sm:text-base lg:max-w-none">
+                <p className="mx-auto mt-8 max-w-lg text-sm font-medium sm:ml-0 sm:text-base lg:max-w-none">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Praesent urna enim, commodo eget tortor non, imperdiet
                     condimentum justo. Fusce justo diam, blandit sit amet mi
                     sed, dictum egestas est. Aenean.
                 </p>
-                <div className="mt-16 flex gap-8">
+                <div className="mt-16 flex justify-center gap-8 sm:justify-start">
                     <Button as="a" href="#content">
                         Learn more
                     </Button>

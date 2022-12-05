@@ -3,9 +3,9 @@ import { Icon } from '@iconify/react'
 
 export default function About() {
     return (
-        <div className="custom-container flex flex-col gap-16 py-24 px-4 md:flex-row md:items-center">
+        <div className="custom-container mx-auto flex flex-col gap-16 py-24 px-4 md:flex-row md:items-center">
             <div className="flex-1">
-                <h2 className="text-2xl font-light sm:text-4xl">
+                <h2 className="text-center text-2xl font-light sm:text-left sm:text-4xl">
                     <span className="block">
                         From <span className="font-bold">selt-taught</span> to{' '}
                     </span>
@@ -16,7 +16,7 @@ export default function About() {
                         Still <span className="font-bold">passionate</span>.
                     </span>
                 </h2>
-                <div className="mt-8 flex max-w-sm flex-wrap gap-4 sm:gap-6">
+                <div className="mt-8 flex flex-wrap justify-center gap-4 sm:max-w-sm sm:justify-start sm:gap-6">
                     {[
                         'nextjs-icon',
                         'react',
@@ -37,29 +37,31 @@ export default function About() {
                 </div>
             </div>
             <div className="flex-1">
-                <div className="space-y-4 md:space-y-8">
-                    <p className="max-w-lg text-sm font-medium sm:text-base lg:max-w-none">
+                <div className="mx-auto max-w-lg space-y-4 text-sm font-medium sm:ml-0 sm:text-base md:space-y-8 lg:max-w-none">
+                    <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Praesent urna enim, commodo eget tortor non, imperdiet
                         condimentum justo. Fusce justo diam, blandit sit amet mi
                         sed, dictum egestas est. Aenean.
                     </p>
-                    <p className="max-w-lg text-sm font-medium sm:text-base lg:max-w-none">
+                    <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Praesent urna enim, commodo eget tortor non, imperdiet
                         condimentum justo. Fusce justo diam, blandit sit amet mi
                         sed, dictum egestas est. Aenean.
                     </p>
-                    <p className="max-w-lg text-sm font-medium sm:text-base lg:max-w-none">
+                    <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Praesent urna enim, commodo eget tortor non, imperdiet
                         condimentum justo. Fusce justo diam, blandit sit amet mi
                         sed, dictum egestas est. Aenean.
                     </p>
                 </div>
-                <Button as="a" href="/about" className="mt-16">
-                    Learn more
-                </Button>
+                <div className="flex justify-center sm:justify-start">
+                    <Button as="a" href="/about" className="mt-16">
+                        Learn more
+                    </Button>
+                </div>
             </div>
         </div>
     )
