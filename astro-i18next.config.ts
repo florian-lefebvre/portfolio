@@ -12,6 +12,10 @@ const config: AstroI18nextConfig = {
             blog: {
                 index: 'blog',
             },
+            legal: {
+                'legal-notices': 'mentions-legales',
+                'privacy-policy': 'politique-de-confidentialite',
+            },
         },
     },
     defaultNamespace: 'translation',

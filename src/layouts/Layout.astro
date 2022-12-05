@@ -5,6 +5,7 @@ import Header from '~/components/Layout/Header'
 import ThemeTransition from '~/components/Layout/ThemeTransition'
 import i18next, { t, setDefaultNamespace } from 'i18next'
 import { HeadHrefLangs } from 'astro-i18next/components'
+import Footer from '~/components/Layout/Footer.astro'
 setDefaultNamespace('translation')
 export interface Props {
     pageNamespace: string
@@ -49,6 +50,7 @@ const computedTitle = t('global.titleTemplate').replaceAll(
         <main>
             <slot />
         </main>
+        <Footer />
         <ThemeTransition client:load />
     </body>
 </html>

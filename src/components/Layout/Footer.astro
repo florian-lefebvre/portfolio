@@ -1,0 +1,70 @@
+---
+import { localizePath } from 'astro-i18next'
+import { LanguageSelector } from 'astro-i18next/components'
+import SocialLinks from './Footer/SocialLinks'
+---
+
+<div class="bg-neutral-3">
+    <div id="contact" class="custom-container flex flex-col gap-16 py-24 px-4">
+        <div>
+            <h2 class="text-2xl font-light sm:text-4xl">
+                <span class="block">
+                    Get in <span class="font-bold">touch</span>
+                </span>
+            </h2>
+            <p class="mt-8 max-w-lg text-sm font-medium sm:text-base">
+                Feel free to reach out if you're looking for a developer, have a
+                question or just want to connect.
+            </p>
+            <a
+                href="mailto:contact@florian-lefebvre.dev"
+                class="font-semibold text-sm sm:text-base mt-8 inline-block pb-0.5 border-b-2 border-current hover:pb-0 transition-all hover:mb-0.5 focus:outline-none focus:ring-[3px] focus:ring-primary-7"
+                >contact@florian-lefebvre.dev</a
+            >
+            <SocialLinks client:visible />
+        </div>
+    </div>
+    <footer
+        class="custom-container flex gap-16 pb-24 px-4 justify-between items-center font-medium"
+    >
+        <div class="flex gap-8 items-center">
+            <svg
+                class="h-8 w-8"
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M14.0656 19.9999L16.2822 11.7273C17.3175 7.8636 21.0574 4.72459 24.1483 5.55281L20.2037 20.2744C23.3482 21.0541 26 23.3944 26 25.9999H18.6696L15.8661 36.4624C14.8308 40.3262 11.091 43.4652 8.00002 42.6369L12.4925 25.8707C9.05343 25.2863 6 22.7958 6 19.9999H14.0656Z"
+                    fill="currentColor"></path>
+                <path
+                    d="M30.0781 40.5293C29.1418 41.2807 28.1646 41.6974 27.27 41.7612L35.2482 11.9862C35.7088 10.267 36.7795 8.69644 38.0703 7.66062C39.0065 6.90929 39.9838 6.49257 40.8784 6.42879L32.9002 36.2037C32.4395 37.9229 31.3689 39.4935 30.0781 40.5293Z"
+                    fill="currentColor"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linejoin="round"></path>
+            </svg>
+            <div class="text-neutral-11">
+                &copy; {new Date().getFullYear()} Florian Lefebvre. All rights reserved.
+            </div>
+        </div>
+        <div class="flex items-center gap-8">
+            {
+                [
+                    { href: '/legal/legal-notices', name: 'Legal notices' },
+                    { href: '/legal/privacy-policy', name: 'Privacy policy' },
+                ].map(({ href, name }) => (
+                    <a href={localizePath(href)} class="hover:underline">
+                        {name}
+                    </a>
+                ))
+            }
+            <LanguageSelector
+                showFlag={false}
+                class="border-0 bg-neutral-12 text-neutral-2 focus:ring-primary-7 focus:ring-[3px]"
+            />
+        </div>
+    </footer>
+</div>
