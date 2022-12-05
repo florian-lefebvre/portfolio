@@ -7,15 +7,9 @@ export default function ThemeTransition() {
     return (
         <div
             className={clsx(
-                'fixed inset-0 z-50',
+                'fixed inset-y-0 z-50 animate-test bg-neutralDark-2 transition-all dark:bg-neutralLight-2',
                 $themeStore.running ? 'block' : 'hidden'
             )}
-        >
-            <div
-                className={clsx(
-                    'absolute inset-y-0 animate-test bg-neutralDark-2 transition-all dark:bg-neutralLight-2'
-                )}
-            ></div>
-        </div>
+        ></div>
     )
 }
