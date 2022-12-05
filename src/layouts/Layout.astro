@@ -26,7 +26,7 @@ const computedTitle = t('global.titleTemplate').replaceAll(
         <meta name="generator" content={Astro.generator} />
         <title>{computedTitle}</title>
         <HeadHrefLangs />
-        <script is:inline>
+        <script>
             ;(function () {
                 try {
                     var mode = localStorage.getItem('theme')

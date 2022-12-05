@@ -34,18 +34,21 @@ export default function ProjectCard({
     )
     const imgClass = getClass(
         'object-cover group-hover:scale-105 transition-transform w-full',
-        { small: 'h-48', medium: 'h-72' }
+        { small: 'h-72 md:h-48', medium: 'h-72' }
     )
-    const titleClass = getClass('font-semibold', {
-        small: 'text-2xl',
-        medium: 'text-3xl',
-    })
-    const descClass = getClass('font-medium text-neutral-11', {
+    const titleClass = getClass('font-semibold text-xl sm:text-2xl', {
         small: '',
-        medium: '',
+        medium: 'md:text-3xl',
     })
+    const descClass = getClass(
+        'font-medium text-neutral-11 text-xs sm:text-base',
+        {
+            small: '',
+            medium: '',
+        }
+    )
     const linkClass = getClass(
-        'inline-flex mr-auto items-center space-x-2 font-semibold pb-1 border-b-2 border-transparent group-hover:border-current transition-colors',
+        'inline-flex mr-auto items-center space-x-2 font-semibold pb-1 border-b-2 border-transparent group-hover:border-current transition-colors text-sm sm:text-base',
         {
             small: '',
             medium: '',
