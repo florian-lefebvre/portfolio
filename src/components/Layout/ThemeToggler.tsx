@@ -7,7 +7,8 @@ export default function ThemeToggler() {
     const $themeStore = useStore(themeStore.state)
 
     useEffect(() => {
-        themeStore.apply(themeStore.get())
+        themeStore.state.setKey('theme', themeStore.get())
+        // themeStore.apply(themeStore.get())
     }, [])
     return (
         <button

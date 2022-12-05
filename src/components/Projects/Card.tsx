@@ -58,6 +58,7 @@ export default function ProjectCard({
                     src={img}
                     alt={alt}
                     className={imgClass}
+                    loading="lazy"
                     placeholder={<span className="bg-primary-5"></span>}
                 />
             </div>

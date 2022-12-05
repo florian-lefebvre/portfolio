@@ -18,7 +18,7 @@ const computedTitle = t('global.titleTemplate').replaceAll(
 ---
 
 <!DOCTYPE html>
-<html lang={i18next.language} class="dark">
+<html lang={i18next.language}>
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
@@ -26,6 +26,22 @@ const computedTitle = t('global.titleTemplate').replaceAll(
         <meta name="generator" content={Astro.generator} />
         <title>{computedTitle}</title>
         <HeadHrefLangs />
+        <script is:inline>
+            ;(function () {
+                try {
+                    var mode = localStorage.getItem('theme')
+                    var supportDarkMode =
+                        window.matchMedia('(prefers-color-scheme: dark)')
+                            .matches === true
+                    const html = document.querySelector('html')
+                    if (!mode && supportDarkMode) html?.classList.add('dark')
+                    if (!mode) return
+                    if (mode === 'dark') {
+                        html?.classList.add('dark')
+                    }
+                } catch (e) {}
+            })()
+        </script>
     </head>
     <body class="bg-neutral-2 text-neutral-12 dark:bg-neutralDark-4">
         <Banner enabled={true} />

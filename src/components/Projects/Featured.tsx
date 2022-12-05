@@ -1,5 +1,3 @@
-import Button from '../Button'
-import { Icon } from '@iconify/react'
 import ProjectCard from './Card'
 
 export default function Featured() {
@@ -31,7 +29,7 @@ export default function Featured() {
                         {
                             title: 'yNotes',
                             desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, labore.',
-                            slug: 'op-ent',
+                            slug: 'ynotes',
                             img: 'https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2',
                             alt: 'logo',
                         },
@@ -55,14 +53,14 @@ export default function Featured() {
                         {
                             title: 'yNotes',
                             desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, labore.',
-                            slug: 'op-ent',
+                            slug: 'ynotes',
                             img: 'https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2',
                             alt: 'logo',
                         },
                         {
                             title: 'yNotes',
                             desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, labore.',
-                            slug: 'op-ent',
+                            slug: 'xxx',
                             img: 'https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2',
                             alt: 'logo',
                         },
