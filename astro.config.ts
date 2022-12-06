@@ -12,9 +12,10 @@ export default defineConfig({
     integrations: [tailwind(), react(), astroI18next()],
     vite: {
         ssr: {
-            noExternal: import.meta.env.PROD
-                ? ['react-lazy-load-image-component']
-                : [],
+            noExternal:
+                process.env.MODE === 'production'
+                    ? ['react-lazy-load-image-component']
+                    : [],
         },
     },
 })

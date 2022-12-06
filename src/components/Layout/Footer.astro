@@ -8,14 +8,14 @@ import SocialLinks from './Footer/SocialLinks'
     <div id="contact" class="custom-container flex flex-col gap-16 py-24 px-4">
         <div>
             <h2
-                class="text-2xl font-light sm:text-4xl text-center sm:text-left"
+                class="text-center text-2xl font-light sm:text-left sm:text-4xl"
             >
                 <span class="block">
                     Get in <span class="font-bold">touch</span>
                 </span>
             </h2>
             <p
-                class="mt-8 max-w-lg text-sm font-medium sm:text-base mx-auto sm:ml-0"
+                class="mx-auto mt-8 max-w-lg text-sm font-medium sm:ml-0 sm:text-base"
             >
                 Feel free to reach out if you're looking for a developer, have a
                 question or just want to connect.
@@ -23,7 +23,7 @@ import SocialLinks from './Footer/SocialLinks'
             <div class="mt-8 flex justify-center sm:justify-start">
                 <a
                     href="mailto:contact@florian-lefebvre.dev"
-                    class="font-semibold text-sm sm:text-base inline-block pb-0.5 border-b-2 border-current hover:pb-0 transition-all hover:mb-0.5 focus:outline-none focus:ring-[3px] focus:ring-primary-7"
+                    class="inline-block border-b-2 border-current pb-0.5 text-sm font-semibold transition-all hover:mb-0.5 hover:pb-0 focus:outline-none focus:ring-[3px] focus:ring-primary-7 sm:text-base"
                 >
                     contact@florian-lefebvre.dev</a
                 >
@@ -32,9 +32,9 @@ import SocialLinks from './Footer/SocialLinks'
         </div>
     </div>
     <footer
-        class="custom-container flex gap-16 pb-24 px-4 justify-between items-center font-medium flex-col lg:flex-row"
+        class="custom-container flex flex-col items-center justify-between gap-16 px-4 pb-24 font-medium lg:flex-row"
     >
-        <div class="flex gap-8 items-center flex-col lg:flex-row">
+        <div class="flex flex-col items-center gap-8 lg:flex-row">
             <svg
                 class="h-8 w-8"
                 viewBox="0 0 48 48"
@@ -53,11 +53,11 @@ import SocialLinks from './Footer/SocialLinks'
                     stroke-width="2"
                     stroke-linejoin="round"></path>
             </svg>
-            <div class="text-neutral-11 text-center sm:text-left">
+            <div class="text-center text-neutral-11 sm:text-left">
                 &copy; {new Date().getFullYear()} Florian Lefebvre. All rights reserved.
             </div>
         </div>
-        <div class="flex items-center gap-8 flex-col sm:flex-row">
+        <div class="flex flex-col items-center gap-8 sm:flex-row">
             {
                 [
                     { href: '/legal/legal-notices', name: 'Legal notices' },
