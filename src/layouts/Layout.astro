@@ -1,11 +1,11 @@
 ---
 import '~/assets/css/main.css'
 import Banner from '~/components/Layout/Banner.astro'
-import Header from '~/components/Layout/Header'
 import ThemeTransition from '~/components/Layout/ThemeTransition'
 import i18next, { t, setDefaultNamespace } from 'i18next'
 import { HeadHrefLangs } from 'astro-i18next/components'
-import Footer from '~/components/Layout/Footer.astro'
+import Footer from '~/components/Layout/Footer/Footer.astro'
+import Header from '~/components/Layout/Header/Header.astro'
 setDefaultNamespace('translation')
 export interface Props {
     pageNamespace: string
@@ -28,10 +28,20 @@ const computedTitle = t('global.titleTemplate').replaceAll(
         <title>{computedTitle}</title>
         <HeadHrefLangs />
         <script>
+            console.log('Hi there!')
+            console.log('What are you looking for?')
+            console.log('Just have a look at the source code ;)')
+            console.log(
+                'https://github.com/florian-lefebvre/portfolio/tree/v5/astro'
+            )
+            console.log('Built with Astro and Tailwind CSS')
+            console.log('--------')
+        </script>
+        <script>
             ;(function () {
                 try {
-                    var mode = localStorage.getItem('theme')
-                    var supportDarkMode =
+                    let mode = localStorage.getItem('theme')
+                    let supportDarkMode =
                         window.matchMedia('(prefers-color-scheme: dark)')
                             .matches === true
                     const html = document.querySelector('html')
@@ -46,7 +56,7 @@ const computedTitle = t('global.titleTemplate').replaceAll(
     </head>
     <body class="bg-neutral-2 text-neutral-12 dark:bg-neutralDark-4">
         <Banner enabled={true} />
-        <Header pathname={Astro.url.pathname} client:load />
+        <Header />
         <main>
             <slot />
         </main>

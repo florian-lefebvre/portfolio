@@ -1,0 +1,32 @@
+---
+import { localizePath } from 'astro-i18next'
+import Header from './Header'
+
+const links: { name: string; href: string }[] = [
+    {
+        name: 'Home',
+        href: '/',
+    },
+    {
+        name: 'About me',
+        href: '/about',
+    },
+    {
+        name: 'Projects',
+        href: '/projects',
+    },
+    {
+        name: 'Blog',
+        href: '/blog',
+    },
+    {
+        name: 'Get in touch',
+        href: '#contact',
+    },
+].map((e) => {
+    e.href = localizePath(e.href)
+    return e
+})
+---
+
+<Header pathname={Astro.url.pathname} links={links} client:load />

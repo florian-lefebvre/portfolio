@@ -2,6 +2,7 @@ import type { AstroI18nextConfig } from 'astro-i18next'
 
 const config: AstroI18nextConfig = {
     defaultLocale: 'en',
+    showDefaultLocale: false,
     locales: ['en', 'fr'],
     routes: {
         fr: {
@@ -26,4 +27,5 @@ const config: AstroI18nextConfig = {
         },
     },
 }
+
 export default config
