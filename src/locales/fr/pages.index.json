@@ -1,0 +1,18 @@
+{
+    "seo": {
+        "title": "Portfolio",
+        "description": "lorem ipsum"
+    },
+    "hero": {
+        "title": "Florian Lefebvre,\n\ndéveloppeur web **fullstack**\n\n*& plus*",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo. Fusce justo diam, blandit sit amet mi sed, dictum egestas est. Aenean.",
+        "ctas": {
+            "learnMore": {
+                "name": "En savoir plus"
+            }
+        }
+    },
+    "about": {
+        "title": "D'**autodidacte** à\n\n**diplômé**.\n\nToujours **passionné**."
+    }
+}

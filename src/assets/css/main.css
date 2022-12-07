@@ -12,3 +12,7 @@
 html {
     @apply scroll-pt-20 scroll-smooth;
 }
+
+strong {
+    @apply font-bold;
+}

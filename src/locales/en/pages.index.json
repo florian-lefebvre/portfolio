@@ -1,6 +1,32 @@
 {
-    "test": "test again",
     "seo": {
-        "title": "Portfolio"
+        "title": "Portfolio",
+        "description": "lorem ipsum"
+    },
+    "hero": {
+        "title": "Florian Lefebvre,\n\n**fullstack** web developer\n\n*& more*",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo. Fusce justo diam, blandit sit amet mi sed, dictum egestas est. Aenean.",
+        "ctas": {
+            "learnMore": {
+                "href": "#content",
+                "name": "Learn more"
+            },
+            "github": {
+                "href": "https://github.com/florian-lefebvre",
+                "name": "GitHub"
+            }
+        }
+    },
+    "about": {
+        "title": "From **self-taught** to\n\n**graduate**.\n\nStill **passionate**.",
+        "content": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo. Fusce justo diam, blandit sit amet mi sed, dictum egestas est. Aenean.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo. Fusce justo diam, blandit sit amet mi sed, dictum egestas est. Aenean.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo. Fusce justo diam, blandit sit amet mi sed, dictum egestas est. Aenean."
+        ],
+        "cta": {
+            "href": "/about",
+            "name": "Learn more"
+        }
     }
 }

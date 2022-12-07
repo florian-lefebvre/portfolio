@@ -4,6 +4,13 @@ const config: AstroI18nextConfig = {
     defaultLocale: 'en',
     showDefaultLocale: false,
     locales: ['en', 'fr'],
+    load: ['server', 'client'],
+    i18nextServerPlugins: {
+        '{initReactI18next}': 'react-i18next',
+    },
+    i18nextClientPlugins: {
+        '{initReactI18next}': 'react-i18next',
+    },
     routes: {
         fr: {
             about: 'a-propos',
@@ -20,8 +27,13 @@ const config: AstroI18nextConfig = {
         },
     },
     defaultNamespace: 'translation',
-    namespaces: ['translation', 'common', 'pages.index'],
+    namespaces: ['translation', 'common', 'pages.index', 'pages.projects'],
     i18nextServer: {
+        backend: {
+            loadPath: './src/locales/{{lng}}/{{ns}}.json',
+        },
+    },
+    i18nextClient: {
         backend: {
             loadPath: './src/locales/{{lng}}/{{ns}}.json',
         },
