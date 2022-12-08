@@ -1,0 +1,46 @@
+{
+    "seo": {
+        "title": "",
+        "description": ""
+    },
+    "techStack": {
+        "techs": [
+            {
+                "icon": "logos:nextjs-icon",
+                "name": "Next.js"
+            },
+            {
+                "icon": "logos:react",
+                "name": "React"
+            },
+            {
+                "icon": "logos:typescript-icon",
+                "name": "TypeScript"
+            },
+            {
+                "icon": "logos:tailwindcss-icon",
+                "name": "Tailwind CSS"
+            },
+            {
+                "icon": "logos:adonisjs-icon",
+                "name": "AdonisJS"
+            },
+            {
+                "icon": "logos:flutter",
+                "name": "Flutter"
+            },
+            {
+                "icon": "logos:figma",
+                "name": "Figma"
+            },
+            {
+                "icon": "logos:nuxt-icon",
+                "name": "Nuxt"
+            },
+            {
+                "icon": "logos:rails",
+                "name": "Rails"
+            }
+        ]
+    }
+}

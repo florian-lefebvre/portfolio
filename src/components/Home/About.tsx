@@ -15,7 +15,7 @@ export default function About() {
                 <div className="mt-8 flex flex-wrap justify-center gap-4 sm:max-w-sm sm:justify-start sm:gap-6">
                     {(
                         t('techStack.techs', {
-                            ns: 'pages.projects',
+                            ns: 'pages.about',
                             returnObjects: true,
                         }) as { icon: string; name: string }[]
                     ).map(({ icon }) => (

@@ -3,44 +3,46 @@
         "title": "",
         "description": ""
     },
-    "techStack": {
-        "techs": [
-            {
-                "icon": "logos:nextjs-icon",
-                "name": "Next.js"
-            },
-            {
-                "icon": "logos:react",
-                "name": "React"
-            },
-            {
-                "icon": "logos:typescript-icon",
-                "name": "TypeScript"
-            },
-            {
-                "icon": "logos:tailwindcss-icon",
-                "name": "Tailwind CSS"
-            },
-            {
-                "icon": "logos:adonisjs-icon",
-                "name": "AdonisJS"
-            },
-            {
-                "icon": "logos:flutter",
-                "name": "Flutter"
-            },
-            {
-                "icon": "logos:figma",
-                "name": "Figma"
-            },
-            {
-                "icon": "logos:nuxt-icon",
-                "name": "Nuxt"
-            },
-            {
-                "icon": "logos:rails",
-                "name": "Rails"
-            }
-        ]
+    "projects": [
+        {
+            "title": "op-ent",
+            "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, labore.",
+            "slug": "op-ent",
+            "img": "https://res.cloudinary.com/af68d22a-2043-4078-857c-f2db1a1406ec/image/upload/c_scale,q_80/v1636657520/Portfolio/global/og_ekzloe.jpg",
+            "alt": "logo"
+        },
+        {
+            "title": "yNotes",
+            "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, labore.",
+            "slug": "ynotes",
+            "img": "https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2",
+            "alt": "logo"
+        },
+        {
+            "title": "OSS @ Novu",
+            "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, labore.",
+            "slug": "oss-at-novu",
+            "img": "https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2",
+            "alt": "logo"
+        },
+        {
+            "title": "Régiolangues",
+            "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, labore.",
+            "slug": "regiolangues",
+            "img": "https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2",
+            "alt": "logo"
+        },
+        {
+            "title": "OHF31",
+            "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, labore.",
+            "slug": "ohf31",
+            "img": "https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2",
+            "alt": "logo"
+        }
+    ],
+    "featured": {
+        "title": "Featured **work**",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo. Fusce justo diam, blandit sit amet mi sed, dictum egestas est. Aenean.",
+        "projects": ["op-ent", "ynotes", "oss-at-novu", "regiolangues", "ohf31"]
     }
 }

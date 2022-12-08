@@ -1,43 +1,38 @@
 ---
 import ProjectCard from './Card'
 import { localizePath } from 'astro-i18next'
+import Markdown from '../Markdown'
+import { t } from 'i18next'
+const projects = t('projects', {
+    ns: 'pages.projects',
+    returnObjects: true,
+}) as Record<'title' | 'desc' | 'slug' | 'img' | 'alt', string>[]
+const slugs = t('featured.projects', {
+    ns: 'pages.projects',
+    returnObjects: true,
+}) as string[]
+const featuredProjects = projects.filter(({ slug }) => slugs.includes(slug))
+const firstProjects = featuredProjects.slice(0, 2)
+const lastProjects = featuredProjects.slice(-3)
 ---
 
 <div class="custom-container flex flex-col gap-16 py-24 px-4">
     <div>
         <h2 class="text-center text-2xl font-light sm:text-left sm:text-4xl">
-            <span class="block">
-                Featured <span class="font-bold">work</span>
-            </span>
+            <Markdown source={t('featured.title', { ns: 'pages.projects' })} />
         </h2>
         <p
             class="mx-auto mt-8 max-w-lg text-sm font-medium sm:ml-0 sm:text-base"
         >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            urna enim, commodo eget tortor non, imperdiet condimentum justo.
-            Fusce justo diam, blandit sit amet mi sed, dictum egestas est.
-            Aenean.
+            <Markdown
+                source={t('featured.description', { ns: 'pages.projects' })}
+            />
         </p>
     </div>
     <div>
         <div class="grid gap-16 md:grid-cols-2">
             {
-                [
-                    {
-                        title: 'op-ent',
-                        desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, labore.',
-                        slug: 'op-ent',
-                        img: 'https://res.cloudinary.com/af68d22a-2043-4078-857c-f2db1a1406ec/image/upload/c_scale,q_80/v1636657520/Portfolio/global/og_ekzloe.jpg',
-                        alt: 'logo',
-                    },
-                    {
-                        title: 'yNotes',
-                        desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, labore.',
-                        slug: 'ynotes',
-                        img: 'https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2',
-                        alt: 'logo',
-                    },
-                ].map((project: any) => (
+                firstProjects.map((project: any) => (
                     <ProjectCard
                         client:visible
                         {...project}
@@ -49,29 +44,7 @@ import { localizePath } from 'astro-i18next'
         </div>
         <div class="mt-16 grid gap-16 md:grid-cols-2 lg:grid-cols-3">
             {
-                [
-                    {
-                        title: 'op-ent',
-                        desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, labore.',
-                        slug: 'op-ent',
-                        img: 'https://res.cloudinary.com/af68d22a-2043-4078-857c-f2db1a1406ec/image/upload/c_scale,q_80/v1636657520/Portfolio/global/og_ekzloe.jpg',
-                        alt: 'logo',
-                    },
-                    {
-                        title: 'yNotes',
-                        desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, labore.',
-                        slug: 'ynotes',
-                        img: 'https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2',
-                        alt: 'logo',
-                    },
-                    {
-                        title: 'yNotes',
-                        desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, labore.',
-                        slug: 'xxx',
-                        img: 'https://repository-images.githubusercontent.com/235597003/0d48eb00-1076-11eb-8768-bfb0e49462b2',
-                        alt: 'logo',
-                    },
-                ].map((project: any) => (
+                lastProjects.map((project: any) => (
                     <ProjectCard
                         client:visible
                         {...project}
