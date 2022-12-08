@@ -1,1 +1,53 @@
-{}
+{
+    "header": {
+        "a11y": {
+            "openMenu": "Ouvrir le menu",
+            "closeMenu": "Fermer le menu",
+            "switchTheme": "Changer de thème"
+        },
+        "links": [
+            {
+                "name": "Accueil"
+            },
+            {
+                "name": "A propos"
+            },
+            {
+                "name": "Projets"
+            },
+            {
+                "name": "Blog"
+            },
+            {
+                "name": "Me contacter"
+            }
+        ]
+    },
+    "footer": {
+        "title": "Me **contacter**",
+        "description": "Feel free to reach out if you're looking for a developer, have a question or just want to connect.",
+        "email": "contact@florian-lefebvre.dev",
+        "socialLinks": [
+            {
+                "href": "https://github.com/florian-lefebvre",
+                "name": "GitHub",
+                "icon": "simple-icons:github"
+            },
+            {
+                "href": "https://www.linkedin.com/in/florian-lefebvre31",
+                "name": "LinkedIn",
+                "icon": "simple-icons:linkedin"
+            },
+            {
+                "href": "https://twitter.com/LfbvrFlo",
+                "name": "Twitter",
+                "icon": "simple-icons:twitter"
+            }
+        ],
+        "copyright": "&copy; {{date}} Florian Lefebvre. Tous droits réservés.",
+        "legalLinks": [
+            { "name": "Mentions légales" },
+            { "name": "Politique de confidentialité" }
+        ]
+    }
+}

@@ -4,3 +4,4 @@
 -   [ ] color mode
 -   [ ] image optimization
 -   [ ] redirects
+-   [ ] 404

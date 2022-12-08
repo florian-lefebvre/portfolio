@@ -2,8 +2,8 @@
     "seo": {
         "title": "Portfolio",
         "description": "lorem ipsum",
-        "ogImage": null,
-        "ogImageAlt": null
+        "ogImage": "",
+        "ogImageAlt": ""
     },
     "hero": {
         "title": "Florian Lefebvre,\n\n**fullstack** web developer\n\n*& more*",

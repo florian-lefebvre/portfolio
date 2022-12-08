@@ -3,10 +3,24 @@ import ProjectCard from './Card'
 import { localizePath } from 'astro-i18next'
 import Markdown from '../Markdown'
 import { t } from 'i18next'
-const projects = t('projects', {
-    ns: 'pages.projects',
-    returnObjects: true,
-}) as Record<'title' | 'desc' | 'slug' | 'img' | 'alt', string>[]
+const projects = (
+    t('projects', {
+        ns: 'pages.projects',
+        returnObjects: true,
+    }) as any[]
+).map((_, i) => {
+    const get = (property: string) =>
+        t(`projects.${i}.${property}`, {
+            ns: 'pages.projects',
+        })
+    return {
+        title: get('title'),
+        desc: get('desc'),
+        slug: get('slug'),
+        img: get('img'),
+        alt: get('alt'),
+    }
+})
 const slugs = t('featured.projects', {
     ns: 'pages.projects',
     returnObjects: true,

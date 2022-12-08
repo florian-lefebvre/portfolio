@@ -62,24 +62,30 @@ import SocialLinks from './SocialLinks'
                 />
             </div>
         </div>
-        <div class="flex flex-col items-center gap-8 sm:gap-0 sm:flex-row">
+        <div class="flex flex-col items-center gap-8 sm:flex-row sm:gap-0">
             {
                 (
                     t('footer.legalLinks', {
                         ns: 'common',
                         returnObjects: true,
-                    }) as {
-                        href: string
-                        name: string
-                    }[]
-                ).map(({ href, name }) => (
-                    <a
-                        href={localizePath(href)}
-                        class="hover:underline focus:outline-none focus:ring-3 focus:ring-primary-7 py-2 px-4"
-                    >
-                        {name}
-                    </a>
-                ))
+                    }) as any[]
+                )
+                    .map((_, i) => ({
+                        name: t(`footer.legalLinks.${i}.name`, {
+                            ns: 'common',
+                        }),
+                        href: t(`footer.legalLinks.${i}.href`, {
+                            ns: 'common',
+                        }),
+                    }))
+                    .map(({ href, name }) => (
+                        <a
+                            href={localizePath(href)}
+                            class="py-2 px-4 hover:underline focus:outline-none focus:ring-3 focus:ring-primary-7"
+                        >
+                            {name}
+                        </a>
+                    ))
             }
             <LanguageSelector
                 showFlag={false}

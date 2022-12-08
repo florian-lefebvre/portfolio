@@ -4,14 +4,14 @@ import { t } from 'i18next'
 import Header from './Header'
 
 const links = (
-    t('header.links', { ns: 'common', returnObjects: true }) as {
-        name: string
-        href: string
-    }[]
-).map((e) => {
-    e.href = localizePath(e.href)
-    return e
-})
+    t('header.links', { ns: 'common', returnObjects: true }) as any[]
+).map((_, i) => ({
+    name: t(`header.links.${i}.name`, { ns: 'common' }),
+    href: (() => {
+        const href = t(`header.links.${i}.href`, { ns: 'common' }) as string
+        return href.startsWith('#') ? href : localizePath(href)
+    })(),
+}))
 ---
 
 <Header pathname={Astro.url.pathname} links={links} client:load />
