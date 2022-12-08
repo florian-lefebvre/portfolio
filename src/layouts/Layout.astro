@@ -6,6 +6,7 @@ import i18next, { t, setDefaultNamespace } from 'i18next'
 import { HeadHrefLangs } from 'astro-i18next/components'
 import Footer from '~/components/Layout/Footer/Footer.astro'
 import Header from '~/components/Layout/Header/Header.astro'
+import HeadSEO from '~/components/HeadSEO.astro'
 setDefaultNamespace('translation')
 export interface Props {
     pageNamespace: string
@@ -25,6 +26,7 @@ const pageT = (key: string) => t(key, { ns: pageNamespace })
             {t('titleTemplate', { ns: 'common', title: pageT('seo.title') })}
         </title>
         <HeadHrefLangs />
+        <HeadSEO pageNamespace={pageNamespace} />
         <script>
             console.log('Hi there!')
             console.log('What are you looking for?')

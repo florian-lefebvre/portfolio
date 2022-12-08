@@ -14,6 +14,7 @@ specifiers:
   '@types/react-lazy-load-image-component': ^1.5.2
   astro: ^1.6.13
   astro-i18next: 1.0.0-beta.14
+  astro-seo: ^0.6.0
   clsx: ^1.2.1
   cross-env: ^7.0.3
   html-react-parser: ^3.0.4
@@ -39,6 +40,7 @@ dependencies:
   '@nanostores/react': 0.4.0_l7qgfzs3f7fslbs5zoobn4ovy4
   astro: 1.6.13_@types+node@18.11.10
   astro-i18next: 1.0.0-beta.14_astro@1.6.13
+  astro-seo: 0.6.0
   clsx: 1.2.1
   cross-env: 7.0.3
   html-react-parser: 3.0.4_react@18.2.0
@@ -879,6 +881,10 @@ packages:
       locale-emoji: 0.3.0
     transitivePeerDependencies:
       - encoding
+    dev: false
+
+  /astro-seo/0.6.0:
+    resolution: {integrity: sha512-nR+dJlAyQhX6s0oAmbBqPq3KCZax/zVAerFsclGiJQ2znOkS/7L+RGjziS4M9Q3OQxm3FMfqIKHp9Ns73Q81ww==}
     dev: false
 
   /astro/1.6.13_@types+node@18.11.10:

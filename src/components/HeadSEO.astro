@@ -1,0 +1,44 @@
+---
+import { SEO } from 'astro-seo'
+import { t } from 'i18next'
+
+export interface Props {
+    pageNamespace: string
+}
+const { pageNamespace } = Astro.props
+const pageT = (key: string, defaultValue?: string) =>
+    t(key, defaultValue, { ns: pageNamespace })
+
+const { href: canonicalUrl } = Astro.url
+---
+
+<SEO
+    title={pageT('seo.title')}
+    description={pageT('seo.description')}
+    canonical={canonicalUrl}
+    openGraph={{
+        basic: {
+            title: pageT('seo.title'),
+            type: 'website',
+            image: pageT(
+                'seo.ogImage',
+                'https://res.cloudinary.com/af68d22a-2043-4078-857c-f2db1a1406ec/image/upload/c_scale,q_80/v1636657520/Portfolio/global/og_ekzloe.jpg'
+            ),
+            url: canonicalUrl,
+        },
+        image: {
+            alt: pageT('seo.ogImageAlt', 'OG IMAGE'),
+        },
+        optional: {
+            description: pageT('seo.description'),
+            siteName: t('titleTemplate', {
+                ns: 'common',
+                title: pageT('seo.title'),
+            }) as string,
+        },
+    }}
+    twitter={{
+        card: 'summary_large_image',
+        creator: '@LfbvrFlo',
+    }}
+/>
