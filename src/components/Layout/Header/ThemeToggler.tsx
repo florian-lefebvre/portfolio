@@ -1,5 +1,6 @@
 import { Icon } from '@iconify/react'
 import { useStore } from '@nanostores/react'
+import { t } from 'i18next'
 import { useEffect } from 'react'
 import themeStore from '~/stores/theme'
 
@@ -15,7 +16,9 @@ export default function ThemeToggler() {
             onClick={() => themeStore.toggle()}
             disabled={$themeStore.running}
         >
-            <span className="sr-only">Switch theme</span>
+            <span className="sr-only">
+                {t('header.a11y.switchTheme', { ns: 'common' })}
+            </span>
             <Icon
                 className="h-4 w-4"
                 icon={`heroicons:${

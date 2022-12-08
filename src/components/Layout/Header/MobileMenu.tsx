@@ -1,6 +1,7 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Icon } from '@iconify/react'
 import clsx from 'clsx'
+import { t } from 'i18next'
 import { Fragment } from 'react'
 
 export default function MobileMenu({
@@ -60,7 +61,10 @@ export default function MobileMenu({
                                                         }
                                                     >
                                                         <span className="sr-only">
-                                                            Close menu
+                                                            {t(
+                                                                'header.a11y.closeMenu',
+                                                                { ns: 'common' }
+                                                            )}
                                                         </span>
                                                         <Icon
                                                             icon="heroicons:x-mark"

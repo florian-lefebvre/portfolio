@@ -57,20 +57,23 @@ import SocialLinks from './SocialLinks'
                 &copy; {new Date().getFullYear()} Florian Lefebvre. All rights reserved.
             </div>
         </div>
-        <div class="flex flex-col items-center gap-8 sm:flex-row">
+        <div class="flex flex-col items-center gap-8 sm:gap-0 sm:flex-row">
             {
                 [
                     { href: '/legal/legal-notices', name: 'Legal notices' },
                     { href: '/legal/privacy-policy', name: 'Privacy policy' },
                 ].map(({ href, name }) => (
-                    <a href={localizePath(href)} class="hover:underline">
+                    <a
+                        href={localizePath(href)}
+                        class="hover:underline focus:outline-none focus:ring-[3px] focus:ring-primary-7 py-2 px-4"
+                    >
                         {name}
                     </a>
                 ))
             }
             <LanguageSelector
                 showFlag={false}
-                class="border-0 bg-neutral-12 text-neutral-2 focus:ring-primary-7 focus:ring-[3px]"
+                class="border-0 bg-neutral-12 text-neutral-2 focus:ring-primary-7 focus:ring-[3px] ml-0 sm:ml-4"
             />
         </div>
     </footer>

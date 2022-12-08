@@ -4,6 +4,7 @@ import { useState } from 'react'
 import useWindowEventListener from '~/hooks/useWindowEventListener'
 import ThemeToggler from './ThemeToggler'
 import MobileMenu from './MobileMenu'
+import { t } from 'i18next'
 
 export default function Header({
     pathname,
@@ -31,7 +32,9 @@ export default function Header({
                     className="absolute left-4 p-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7 dark:hover:bg-neutralDark-6 sm:hidden"
                     onClick={() => setOpen(true)}
                 >
-                    <span className="sr-only">Open menu</span>
+                    <span className="sr-only">
+                        {t('header.a11y.openMenu', { ns: 'common' })}
+                    </span>
                     <Icon
                         icon="heroicons:bars-3-bottom-left"
                         className="h-6 w-6"
@@ -48,6 +51,7 @@ export default function Header({
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                     >
+                        <title>{t('header.logoAlt', { ns: 'common' })}</title>
                         <path
                             fillRule="evenodd"
                             clipRule="evenodd"

@@ -1,3 +1,34 @@
 {
-    "test2": "x x test"
+    "titleTemplate": "%s | Florian Lefebvre",
+    "header": {
+        "logoAlt": "Logo",
+        "a11y": {
+            "openMenu": "Open menu",
+            "closeMenu": "Close menu",
+            "switchTheme": "Switch theme"
+        },
+        "links": [
+            {
+                "name": "Home",
+                "href": "/"
+            },
+            {
+                "name": "About me",
+                "href": "/about"
+            },
+            {
+                "name": "Projects",
+                "href": "/projects"
+            },
+            {
+                "name": "Blog",
+                "href": "/blog"
+            },
+            {
+                "name": "Get in touch",
+                "href": "#contact"
+            }
+        ]
+    },
+    "footer": {}
 }
