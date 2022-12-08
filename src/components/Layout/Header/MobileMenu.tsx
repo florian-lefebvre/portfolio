@@ -55,7 +55,7 @@ export default function MobileMenu({
                                                 </Dialog.Title>
                                                 <div className="ml-3 flex h-7 items-center">
                                                     <button
-                                                        className="p-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7 dark:hover:bg-neutralDark-6"
+                                                        className="p-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-3 focus:ring-primary-7 dark:hover:bg-neutralDark-6"
                                                         onClick={() =>
                                                             onClose()
                                                         }
@@ -81,7 +81,7 @@ export default function MobileMenu({
                                                     <a
                                                         key={href}
                                                         className={clsx(
-                                                            'w-full px-4 py-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7 dark:hover:bg-neutralDark-6',
+                                                            'w-full px-4 py-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-3 focus:ring-primary-7 dark:hover:bg-neutralDark-6',
                                                             pathname === href
                                                                 ? 'font-bold'
                                                                 : 'font-medium'

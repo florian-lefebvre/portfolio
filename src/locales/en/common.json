@@ -1,5 +1,5 @@
 {
-    "titleTemplate": "%s | Florian Lefebvre",
+    "titleTemplate": "{{title}} | Florian Lefebvre",
     "header": {
         "logoAlt": "Logo",
         "a11y": {
@@ -30,5 +30,31 @@
             }
         ]
     },
-    "footer": {}
+    "footer": {
+        "title": "Get in **touch**",
+        "description": "Feel free to reach out if you're looking for a developer, have a question or just want to connect.",
+        "email": "contact@florian-lefebvre.dev",
+        "socialLinks": [
+            {
+                "href": "https://github.com/florian-lefebvre",
+                "name": "GitHub",
+                "icon": "simple-icons:github"
+            },
+            {
+                "href": "https://www.linkedin.com/in/florian-lefebvre31",
+                "name": "LinkedIn",
+                "icon": "simple-icons:linkedin"
+            },
+            {
+                "href": "https://twitter.com/LfbvrFlo",
+                "name": "Twitter",
+                "icon": "simple-icons:twitter"
+            }
+        ],
+        "copyright": "&copy; {{date}} Florian Lefebvre. All rights reserved.",
+        "legalLinks": [
+            { "href": "/legal/legal-notices", "name": "Legal notices" },
+            { "href": "/legal/privacy-policy", "name": "Privacy policy" }
+        ]
+    }
 }

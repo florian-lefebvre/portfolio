@@ -29,7 +29,7 @@ export default function Header({
         >
             <nav className="custom-container relative flex items-center justify-center p-4 sm:justify-between">
                 <button
-                    className="absolute left-4 p-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7 dark:hover:bg-neutralDark-6 sm:hidden"
+                    className="absolute left-4 p-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-3 focus:ring-primary-7 dark:hover:bg-neutralDark-6 sm:hidden"
                     onClick={() => setOpen(true)}
                 >
                     <span className="sr-only">
@@ -43,7 +43,7 @@ export default function Header({
                 </button>
                 <a
                     href={links[0].href}
-                    className="p-1 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7 dark:hover:bg-neutralDark-6"
+                    className="p-1 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-3 focus:ring-primary-7 dark:hover:bg-neutralDark-6"
                 >
                     <svg
                         className="h-8 w-8"
@@ -73,7 +73,7 @@ export default function Header({
                             <a
                                 key={href}
                                 className={clsx(
-                                    'px-4 py-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-[3px] focus:ring-primary-7 dark:hover:bg-neutralDark-6',
+                                    'px-4 py-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-3 focus:ring-primary-7 dark:hover:bg-neutralDark-6',
                                     pathname === href
                                         ? 'font-bold'
                                         : 'font-medium'

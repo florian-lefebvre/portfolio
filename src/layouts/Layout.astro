@@ -12,10 +12,6 @@ export interface Props {
 }
 const { pageNamespace } = Astro.props
 const pageT = (key: string) => t(key, { ns: pageNamespace })
-const computedTitle = t('global.titleTemplate').replaceAll(
-    '%s',
-    pageT('seo.title')
-)
 ---
 
 <!DOCTYPE html>
@@ -25,7 +21,9 @@ const computedTitle = t('global.titleTemplate').replaceAll(
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
-        <title>{computedTitle}</title>
+        <title>
+            {t('titleTemplate', { ns: 'common', title: pageT('seo.title') })}
+        </title>
         <HeadHrefLangs />
         <script>
             console.log('Hi there!')

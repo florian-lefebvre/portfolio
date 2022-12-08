@@ -63,6 +63,9 @@ module.exports = {
             boxShadow: {
                 square: '-4px 4px 0px rgb(0, 0, 0)',
             },
+            ringWidth: {
+                3: '3px',
+            },
             animation: {
                 test: 'test 1500ms ease-in-out',
             },

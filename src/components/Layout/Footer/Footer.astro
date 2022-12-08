@@ -1,6 +1,8 @@
 ---
 import { localizePath } from 'astro-i18next'
 import { LanguageSelector } from 'astro-i18next/components'
+import { t } from 'i18next'
+import Markdown from '~/components/Markdown'
 import SocialLinks from './SocialLinks'
 ---
 
@@ -10,23 +12,20 @@ import SocialLinks from './SocialLinks'
             <h2
                 class="text-center text-2xl font-light sm:text-left sm:text-4xl"
             >
-                <span class="block">
-                    Get in <span class="font-bold">touch</span>
-                </span>
+                <Markdown source={t('footer.title', { ns: 'common' })} />
             </h2>
             <p
                 class="mx-auto mt-8 max-w-lg text-sm font-medium sm:ml-0 sm:text-base"
             >
-                Feel free to reach out if you're looking for a developer, have a
-                question or just want to connect.
+                <Markdown source={t('footer.description', { ns: 'common' })} />
             </p>
             <div class="mt-8 flex justify-center sm:justify-start">
                 <a
-                    href="mailto:contact@florian-lefebvre.dev"
-                    class="inline-block border-b-2 border-current pb-0.5 text-sm font-semibold transition-all hover:mb-0.5 hover:pb-0 focus:outline-none focus:ring-[3px] focus:ring-primary-7 sm:text-base"
+                    href={`mailto:${t('footer.email', { ns: 'common' })}`}
+                    class="inline-block border-b-2 border-current pb-0.5 text-sm font-semibold transition-all hover:mb-0.5 hover:pb-0 focus:outline-none focus:ring-3 focus:ring-primary-7 sm:text-base"
                 >
-                    contact@florian-lefebvre.dev</a
-                >
+                    <Markdown source={t('footer.email', { ns: 'common' })} />
+                </a>
             </div>
             <SocialLinks client:visible />
         </div>
@@ -41,6 +40,7 @@ import SocialLinks from './SocialLinks'
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
             >
+                <title>{t('header.logoAlt', { ns: 'common' })}</title>
                 <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
@@ -54,18 +54,28 @@ import SocialLinks from './SocialLinks'
                     stroke-linejoin="round"></path>
             </svg>
             <div class="text-center text-neutral-11 sm:text-left">
-                &copy; {new Date().getFullYear()} Florian Lefebvre. All rights reserved.
+                <Markdown
+                    source={t('footer.copyright', {
+                        ns: 'common',
+                        date: new Date().getFullYear(),
+                    })}
+                />
             </div>
         </div>
         <div class="flex flex-col items-center gap-8 sm:gap-0 sm:flex-row">
             {
-                [
-                    { href: '/legal/legal-notices', name: 'Legal notices' },
-                    { href: '/legal/privacy-policy', name: 'Privacy policy' },
-                ].map(({ href, name }) => (
+                (
+                    t('footer.legalLinks', {
+                        ns: 'common',
+                        returnObjects: true,
+                    }) as {
+                        href: string
+                        name: string
+                    }[]
+                ).map(({ href, name }) => (
                     <a
                         href={localizePath(href)}
-                        class="hover:underline focus:outline-none focus:ring-[3px] focus:ring-primary-7 py-2 px-4"
+                        class="hover:underline focus:outline-none focus:ring-3 focus:ring-primary-7 py-2 px-4"
                     >
                         {name}
                     </a>
@@ -73,7 +83,7 @@ import SocialLinks from './SocialLinks'
             }
             <LanguageSelector
                 showFlag={false}
-                class="border-0 bg-neutral-12 text-neutral-2 focus:ring-primary-7 focus:ring-[3px] ml-0 sm:ml-4"
+                class="border-0 bg-neutral-12 text-neutral-2 focus:ring-primary-7 focus:ring-3 ml-0 sm:ml-4"
             />
         </div>
     </footer>
