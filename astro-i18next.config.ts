@@ -30,12 +30,12 @@ const config: AstroI18nextConfig = {
     namespaces: ['common', 'pages.index', 'pages.about', 'pages.projects'],
     i18nextServer: {
         backend: {
-            loadPath: './src/locales/{{lng}}/{{ns}}.json',
+            loadPath: './public/locales/{{lng}}/{{ns}}.json',
         },
     },
     i18nextClient: {
         backend: {
-            loadPath: './src/locales/{{lng}}/{{ns}}.json',
+            loadPath: '/locales/{{lng}}/{{ns}}.json',
         },
     },
 }
