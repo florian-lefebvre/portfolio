@@ -1,5 +1,5 @@
 ---
-import Button from '../Button'
+import clsx from 'clsx'
 import { Icon } from '@iconify/react'
 import Markdown from '../Markdown'
 import { t } from 'i18next'
@@ -35,7 +35,12 @@ import { t } from 'i18next'
                         <div class="">
                             <Icon
                                 client:visible
-                                className="h-6 w-6"
+                                className={clsx(
+                                    'h-6 w-6',
+                                    ['logos:html-5', 'logos:css-3'].includes(
+                                        icon
+                                    ) && 'dark:[&_path:nth-child(4)]:fill-white'
+                                )}
                                 icon={icon}
                             />
                         </div>
