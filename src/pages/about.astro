@@ -1,5 +1,9 @@
 ---
 import { changeLanguage, setDefaultNamespace } from 'i18next'
+import Education from '~/components/About/Education.astro'
+import Hero from '~/components/About/Hero.astro'
+import MoreSkills from '~/components/About/MoreSkills.astro'
+import Skills from '~/components/About/Skills.astro'
 import Layout from '../layouts/Layout.astro'
 
 changeLanguage('en')
@@ -8,4 +12,9 @@ const pageNamespace = 'pages.about'
 setDefaultNamespace(pageNamespace)
 ---
 
-<Layout pageNamespace={pageNamespace}>About</Layout>
+<Layout pageNamespace={pageNamespace}>
+    <Hero />
+    <Skills />
+    <MoreSkills />
+    <Education />
+</Layout>

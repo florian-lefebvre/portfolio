@@ -1,0 +1,62 @@
+---
+import { localizePath } from 'astro-i18next'
+import Markdown from '../Markdown'
+import { t } from 'i18next'
+import Badge from '../Badge'
+---
+
+<div class="custom-container flex flex-col gap-16 py-24 px-4">
+    <div>
+        <h2 class="text-center text-2xl font-light sm:text-left sm:text-4xl">
+            <Markdown source={t('education.title', { ns: 'pages.about' })} />
+        </h2>
+        <p
+            class="mx-auto mt-8 max-w-lg text-sm font-medium sm:ml-0 sm:text-base"
+        >
+            <Markdown
+                source={t('education.description', { ns: 'pages.about' })}
+            />
+        </p>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-16">
+        {
+            (
+                t('education.elements', {
+                    ns: 'pages.about',
+                    returnObjects: true,
+                }) as any[]
+            )
+                .map((_, i) => {
+                    const get = (property: string) =>
+                        t(`education.elements.${i}.${property}`, {
+                            ns: 'pages.about',
+                        })
+                    return {
+                        title: get('title'),
+                        date: get('date'),
+                        location: get('location') as any as string | null,
+                        description: get('description'),
+                        soon: get('soon') as any as boolean,
+                    }
+                })
+                .map(({ title, date, location, description, soon }) => (
+                    <div class="space-y-2">
+                        <h3 class="text-lg sm:text-2xl font-semibold items-center inline-flex">
+                            {title}
+                            {soon && (
+                                <Badge className="ml-2" color="warning">
+                                    Soon
+                                </Badge>
+                            )}
+                        </h3>
+                        <p class="text-neutral-11 text-xs sm:text-sm">
+                            {date} {location && `· ${location}`}
+                        </p>
+                        <p class="text-sm sm:text-base">
+                            <Markdown source={description} />
+                        </p>
+                    </div>
+                ))
+        }
+    </div>
+</div>

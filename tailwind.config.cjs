@@ -1,5 +1,5 @@
 function generateColors() {
-    const _colors = ['primary', 'neutral']
+    const _colors = ['primary', 'neutral', 'warning']
 
     const output = {}
 

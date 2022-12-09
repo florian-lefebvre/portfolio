@@ -1,9 +1,29 @@
 {
     "seo": {
-        "title": "",
+        "title": "About me",
         "description": ""
     },
-    "techStack": {
+    "hero": {
+        "title": "**About** me",
+        "content": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo. Fusce justo diam, blandit sit amet mi sed, dictum egestas est. Aenean.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo. Fusce justo diam, blandit sit amet mi sed, dictum egestas est. Aenean.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo. Fusce justo diam, blandit sit amet mi sed, dictum egestas est. Aenean."
+        ],
+        "images": [
+            {
+                "url": "/images/pp_wide.jpg",
+                "alt": "Photo of Florian Lefebvre"
+            },
+            {
+                "url": "/images/pp_wide.jpg",
+                "alt": "Photo of Florian Lefebvre"
+            }
+        ]
+    },
+    "skills": {
+        "title": "My **skills**",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo.",
         "techs": [
             {
                 "icon": "logos:nextjs-icon",
@@ -19,7 +39,7 @@
             },
             {
                 "icon": "logos:tailwindcss-icon",
-                "name": "Tailwind CSS"
+                "name": "Tailwind"
             },
             {
                 "icon": "logos:adonisjs-icon",
@@ -38,8 +58,92 @@
                 "name": "Nuxt"
             },
             {
-                "icon": "logos:rails",
-                "name": "Rails"
+                "icon": "logos:astro",
+                "name": "Astro"
+            }
+        ]
+    },
+    "moreSkills": {
+        "title": "And much **more!**",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo.",
+        "techs": [
+            {
+                "icon": "logos:html-5",
+                "name": "HTML 5"
+            },
+            {
+                "icon": "logos:css-3",
+                "name": "CSS3"
+            },
+            {
+                "icon": "logos:javascript",
+                "name": "JavaScript"
+            },
+            {
+                "icon": "logos:dart",
+                "name": "Dart"
+            },
+            {
+                "icon": "logos:nodejs-icon",
+                "name": "Node.js"
+            },
+            {
+                "icon": "logos:vue",
+                "name": "Vue.js"
+            },
+            {
+                "icon": "logos:supabase-icon",
+                "name": "Supabase"
+            },
+            {
+                "icon": "logos:graphql",
+                "name": "GraphQL"
+            },
+            {
+                "icon": "logos:strapi-icon",
+                "name": "Strapi"
+            },
+            {
+                "icon": "logos:postgresql",
+                "name": "PostgreSQL"
+            },
+            {
+                "icon": "logos:docker-icon",
+                "name": "Docker"
+            }
+        ]
+    },
+    "education": {
+        "title": "**Education** & certifications",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo.",
+        "elements": [
+            {
+                "title": "High School Diploma",
+                "date": "2019-2022",
+                "location": "Le Ferradou",
+                "description": "Honourable mention, European section (English)",
+                "soon": false
+            },
+            {
+                "title": "Bachelor's degree",
+                "date": "2023",
+                "location": "Le Wagon",
+                "description": "Web application designer and developer",
+                "soon": true
+            },
+            {
+                "title": "Cambridge B2",
+                "date": "2022",
+                "location": "Le Ferradou",
+                "description": "Awaiting results",
+                "soon": true
+            },
+            {
+                "title": "Reply Code Challenge",
+                "date": "10/03/2022",
+                "location": null,
+                "description": "Teen Edition. Team *WhyNot* ranked 156/1150",
+                "soon": false
             }
         ]
     }

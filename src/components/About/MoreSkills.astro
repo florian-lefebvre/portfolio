@@ -1,0 +1,48 @@
+---
+import Button from '../Button'
+import { Icon } from '@iconify/react'
+import Markdown from '../Markdown'
+import { t } from 'i18next'
+---
+
+<div
+    class="custom-container mx-auto flex flex-col gap-16 py-24 px-4 md:flex-row md:items-center"
+>
+    <div class="flex-1">
+        <h2 class="text-center text-2xl font-light sm:text-left sm:text-4xl">
+            <Markdown source={t('moreSkills.title', { ns: 'pages.about' })} />
+        </h2>
+        <p
+            class="mx-auto mt-8 max-w-lg text-sm font-medium sm:ml-0 sm:text-base lg:max-w-none"
+        >
+            <Markdown
+                source={t('moreSkills.description', { ns: 'pages.about' })}
+            />
+        </p>
+    </div>
+    <div class="flex-1">
+        <div
+            class="mt-8 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-4 gap-y-4"
+        >
+            {
+                (
+                    t('moreSkills.techs', {
+                        ns: 'pages.about',
+                        returnObjects: true,
+                    }) as { icon: string; name: string }[]
+                ).map(({ icon, name }) => (
+                    <div class="flex flex-col justify-center items-center p-4">
+                        <div class="">
+                            <Icon
+                                client:visible
+                                className="h-6 w-6"
+                                icon={icon}
+                            />
+                        </div>
+                        <div class="mt-4 text-sm">{name}</div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</div>

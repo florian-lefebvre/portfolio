@@ -17,6 +17,10 @@
                 "href": "https://github.com/florian-lefebvre",
                 "name": "GitHub"
             }
+        },
+        "image": {
+            "url": "/images/pp_wide.jpg",
+            "alt": "Photo of Florian Lefebvre"
         }
     },
     "about": {

@@ -45,9 +45,7 @@ import Markdown from '../Markdown'
             </Button>
         </div>
     </div>
-    <div
-        class="max-w-64 relative mx-auto flex max-w-lg lg:max-w-none lg:flex-1"
-    >
+    <div class="relative mx-auto flex max-w-lg lg:max-w-none lg:flex-1">
         <svg
             class="my-auto -mr-[50%] hidden text-neutral-7 sm:block"
             width={240}
@@ -81,9 +79,9 @@ import Markdown from '../Markdown'
             class="static isolate m-auto w-full sm:h-[360px] sm:w-64 lg:h-80 lg:w-56"
         >
             <img
-                src="/images/pp_wide.jpg"
+                src={t('hero.image.url', { ns: 'pages.index' })}
                 class="h-full w-full object-cover"
-                alt="Photo of Florian LEFEBVRE"
+                alt={t('hero.image.alt', { ns: 'pages.index' })}
             />
         </div>
     </div>
