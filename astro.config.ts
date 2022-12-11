@@ -12,20 +12,24 @@ import mdx from '@astrojs/mdx'
 // https://astro.build/config
 import prefetch from '@astrojs/prefetch'
 
+import fsp from 'fs/promises'
+
 function projectsRemarkPlugin() {
-    return function (tree: any, file: any) {
+    return async function (tree: any, file: any) {
         const filePath: string = file.history[0]
         if (!filePath.includes('/projects/')) return
         const fileName = filePath.split('/').at(-1)!
         const order = Number(fileName.split('.')[0])
         const slug = fileName.split('.')[1]
         const language = filePath.split('/content/').at(-1)!.split('/')[0]
+        const { mtime: modifiedTime } = await fsp.stat(filePath)
         file.data.astro.frontmatter = {
             ...file.data.astro.frontmatter,
             slug,
             language,
             type: 'project',
             order,
+            modifiedTime,
         }
     }
 }

@@ -1,37 +1,57 @@
 ---
-import { Icon } from "@iconify/react";
-import { localizePath } from "astro-i18next";
-import i18next, { changeLanguage } from "i18next";
-import PageProgressBar from "~/components/Layout/PageProgressBar";
-import Image from "~/components/mdx/Image";
-import Link from "~/components/mdx/Link";
-import Layout from "~/layouts/Layout.astro";
-import type { ProjectFrontmatter } from "~/types/mdx";
+import { Icon } from '@iconify/react'
+import { localizePath } from 'astro-i18next'
+import i18next, { changeLanguage } from 'i18next'
+import PageProgressBar from '~/components/Layout/PageProgressBar'
+import Image from '~/components/mdx/Image'
+import Link from '~/components/mdx/Link'
+import ContentLayout from '~/layouts/Content.astro'
+import type { ProjectFrontmatter } from '~/types/mdx'
 
-changeLanguage("en");
+changeLanguage('en')
 
 const components = {
     a: Link,
     img: Image,
-};
+}
 export async function getStaticPaths() {
-    const projects = await Astro.glob<ProjectFrontmatter>(`../../content/**/*.mdx`);
-    const filteredProjects = projects.filter(({ frontmatter }) => frontmatter.language === i18next.language &&
-        frontmatter.type === "project");
+    const projects = await Astro.glob<ProjectFrontmatter>(
+        `../../content/**/*.mdx`
+    )
+    const filteredProjects = projects.filter(
+        ({ frontmatter }) =>
+            frontmatter.language === i18next.language &&
+            frontmatter.type === 'project'
+    )
     return filteredProjects.map(({ frontmatter: { slug } }) => ({
         params: { slug },
-    }));
+    }))
 }
-const projects = await Astro.glob<ProjectFrontmatter>(`../../content/**/*.mdx`);
-const filteredProjects = projects.filter(({ frontmatter }) => frontmatter.language === i18next.language &&
-    frontmatter.type === "project");
-const project = filteredProjects.find(({ frontmatter }) => frontmatter.slug === Astro.params.slug)!;
-const { Content } = project;
-const pageNamespace = "pages.index";
+const projects = await Astro.glob<ProjectFrontmatter>(`../../content/**/*.mdx`)
+const filteredProjects = projects.filter(
+    ({ frontmatter }) =>
+        frontmatter.language === i18next.language &&
+        frontmatter.type === 'project'
+)
+const project = filteredProjects.find(
+    ({ frontmatter }) => frontmatter.slug === Astro.params.slug
+)!
+const { Content } = project
 ---
 
-<!-- TODO: custom layout for mdx powered pages -->
-<Layout pageNamespace={pageNamespace}>
+<ContentLayout
+    head={{
+        title: project.frontmatter.title,
+        description: project.frontmatter.description,
+        image: project.frontmatter.thumbnail,
+        article: {
+            section: project.frontmatter.category,
+            tags: project.frontmatter.tags,
+            authors: ['Florian Lefebvre'],
+            modifiedTime: project.frontmatter.modifiedTime,
+        },
+    }}
+>
     <div
         class="custom-container relative grid gap-6 px-4 py-24 sm:grid-cols-3 lg:grid-cols-4"
     >
@@ -48,7 +68,7 @@ const pageNamespace = "pages.index";
                 <span>Back</span>
             </a>
         </div>
-        <div
+        <article
             class="prose prose-sm order-3 max-w-none sm:order-none sm:col-span-2 md:prose-base"
         >
             <h1>{project.frontmatter.title}</h1>
@@ -63,7 +83,7 @@ const pageNamespace = "pages.index";
                 </figcaption>
             </figure>
             <Content components={components} />
-        </div>
+        </article>
         <div class="order-2 sm:order-none">
             <div
                 class="sm:sticky sm:top-24 sm:max-h-[calc(100vh-120px)] sm:overflow-y-auto"
@@ -92,4 +112,4 @@ const pageNamespace = "pages.index";
         </div>
     </div>
     <PageProgressBar client:load />
-</Layout>
+</ContentLayout>

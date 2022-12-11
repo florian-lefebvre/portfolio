@@ -1,0 +1,28 @@
+---
+import { t } from 'i18next'
+import HeadSEO from '~/components/HeadSEO.astro'
+import { HeadHrefLangs } from 'astro-i18next/components'
+import Layout from '~/components/Layout/Layout.astro'
+
+export interface Props {
+    pageNamespace: string
+}
+
+const { pageNamespace } = Astro.props
+const pageT = (key: string) => t(key, { ns: pageNamespace })
+---
+
+<Layout>
+    <Fragment slot="head">
+        <HeadHrefLangs />
+        <HeadSEO
+            title={pageT('seo.title')}
+            description={pageT('seo.description')}
+            image={{
+                url: pageT('seo.ogImage'),
+                alt: pageT('seo.ogImageAlt'),
+            }}
+        />
+    </Fragment>
+    <slot />
+</Layout>

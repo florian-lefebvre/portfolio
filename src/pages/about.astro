@@ -4,14 +4,14 @@ import Education from '~/components/About/Education.astro'
 import Hero from '~/components/About/Hero.astro'
 import MoreSkills from '~/components/About/MoreSkills.astro'
 import Skills from '~/components/About/Skills.astro'
-import Layout from '~/layouts/Layout.astro'
+import BaseLayout from '~/layouts/Base.astro'
 
 changeLanguage('en')
 ---
 
-<Layout pageNamespace={'pages.about'}>
+<BaseLayout pageNamespace={'pages.about'}>
     <Hero />
     <Skills />
     <MoreSkills />
     <Education />
-</Layout>
+</BaseLayout>

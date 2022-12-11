@@ -2,22 +2,10 @@
 import '~/assets/css/main.css'
 import Banner from '~/components/Layout/Banner.astro'
 import ThemeTransition from '~/components/Layout/ThemeTransition'
-import i18next, { t } from 'i18next'
+import i18next from 'i18next'
 import Footer from '~/components/Layout/Footer/Footer.astro'
 import Header from '~/components/Layout/Header/Header.astro'
-import HeadSEO from '~/components/HeadSEO.astro'
 import BackToTop from '~/components/Layout/BackToTop'
-import { localizeUrl } from 'astro-i18next'
-export interface Props {
-    pageNamespace: string
-}
-
-// Copied from HeadHrefLangs
-const supportedLanguages = i18next.languages
-const currentUrl = Astro.url.href
-
-const { pageNamespace } = Astro.props
-const pageT = (key: string) => t(key, { ns: pageNamespace })
 ---
 
 <!DOCTYPE html>
@@ -27,28 +15,7 @@ const pageT = (key: string) => t(key, { ns: pageNamespace })
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
-        <title>
-            {t('titleTemplate', { ns: 'common', title: pageT('seo.title') })}
-        </title>
-        {
-            !Astro.params.slug &&
-                // Copied from HeadHrefLangs
-                supportedLanguages.map((supportedLanguage) => (
-                    <link
-                        rel="alternate"
-                        hreflang={supportedLanguage}
-                        href={localizeUrl(currentUrl, supportedLanguage)}
-                    />
-                ))
-        }
-        <HeadSEO
-            title={pageT('seo.title')}
-            description={pageT('seo.description')}
-            image={{
-                url: pageT('seo.ogImage'),
-                alt: pageT('seo.ogImageAlt'),
-            }}
-        />
+        <slot name="head" />
         <script>
             console.log('Hi there!')
             console.log('What are you looking for?')

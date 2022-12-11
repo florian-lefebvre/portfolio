@@ -3,15 +3,15 @@ import { changeLanguage } from 'i18next'
 import About from '~/components/Home/About.astro'
 import Hero from '~/components/Home/Hero.astro'
 import Featured from '~/components/Projects/Featured.astro'
-import Layout from '~/layouts/Layout.astro'
+import BaseLayout from '~/layouts/Base.astro'
 
 changeLanguage('en')
 ---
 
-<Layout pageNamespace={'pages.index'}>
+<BaseLayout pageNamespace={'pages.index'}>
     <Hero />
     <div id="content">
         <About />
         <Featured />
     </div>
-</Layout>
+</BaseLayout>

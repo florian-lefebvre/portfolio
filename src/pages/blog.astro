@@ -1,8 +1,8 @@
 ---
 import { changeLanguage } from 'i18next'
-import Layout from '~/layouts/Layout.astro'
+import BaseLayout from '~/layouts/Base.astro'
 
 changeLanguage('en')
 ---
 
-<Layout pageNamespace={'pages.blog'}>BLOG</Layout>
+<BaseLayout pageNamespace={'pages.blog'}>BLOG</BaseLayout>

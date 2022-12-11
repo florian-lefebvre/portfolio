@@ -1,0 +1,17 @@
+---
+import HeadSEO from '~/components/HeadSEO.astro'
+import Layout from '~/components/Layout/Layout.astro'
+
+export type Props = {
+    head: Parameters<typeof HeadSEO>[0]
+}
+
+//
+---
+
+<Layout>
+    <Fragment slot="head">
+        <HeadSEO {...Astro.props.head} />
+    </Fragment>
+    <slot />
+</Layout>

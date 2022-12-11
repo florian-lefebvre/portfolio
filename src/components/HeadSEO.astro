@@ -10,9 +10,9 @@ export interface Props {
         alt: string
     }
     article?: {
-        publishedTime: string
-        modifiedTime: string
-        author: string[]
+        publishedTime?: string
+        modifiedTime?: string
+        authors: string[]
         section: string
         tags: string[]
     }
@@ -20,10 +20,14 @@ export interface Props {
 const { title, description, image, article } = Astro.props
 
 const { href: canonicalUrl } = Astro.url
+const computedTitle = t('titleTemplate', {
+    ns: 'common',
+    title,
+}) as string
 ---
 
 <SEO
-    title={title}
+    title={computedTitle}
     description={description}
     canonical={canonicalUrl}
     openGraph={{
@@ -38,10 +42,7 @@ const { href: canonicalUrl } = Astro.url
         },
         optional: {
             description,
-            siteName: t('titleTemplate', {
-                ns: 'common',
-                title,
-            }) as string,
+            siteName: computedTitle,
             locale: i18next.language,
             localeAlternate: (() => {
                 const alternates = [...i18next.languages]

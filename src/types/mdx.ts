@@ -9,4 +9,7 @@ export type ProjectFrontmatter = {
         alt: string
     }
     type: 'project' | 'article'
+    category: string
+    tags: string[]
+    modifiedTime: string
 }
