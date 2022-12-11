@@ -36,11 +36,13 @@ const pageNamespace = 'pages.index'
 ---
 
 <Layout pageNamespace={pageNamespace}>
-    <div class="custom-container relative grid grid-cols-4 gap-6 px-4 py-24">
-        <div>
+    <div
+        class="custom-container relative grid sm:grid-cols-3 lg:grid-cols-4 gap-6 px-4 py-24"
+    >
+        <div class="sm:col-span-3 lg:col-span-1 order-1 sm:order-none">
             <a
                 href={localizePath('/projects')}
-                class="sticky top-24 inline-flex items-center justify-center space-x-1 px-2 py-2 font-semibold leading-none text-primary-9 transition-all hover:bg-neutral-5 focus:outline-none focus:ring-3 focus:ring-primary-7 dark:hover:bg-neutralDark-6 sm:justify-start"
+                class="lg:sticky lg:top-24 inline-flex items-center justify-center space-x-1 px-2 py-2 font-semibold leading-none text-primary-9 transition-colors hover:bg-neutral-5 focus:outline-none focus:ring-3 focus:ring-primary-7 dark:hover:bg-neutralDark-6 sm:justify-start"
             >
                 <Icon
                     client:load
@@ -50,7 +52,9 @@ const pageNamespace = 'pages.index'
                 <span>Back</span>
             </a>
         </div>
-        <div class="prose col-span-2 max-w-none">
+        <div
+            class="prose prose-sm md:prose-base sm:col-span-2 max-w-none order-3 sm:order-none"
+        >
             <h1>{projectMetadata.frontmatter.title}</h1>
             <p class="lead">{projectMetadata.frontmatter.description}</p>
             <figure>
@@ -64,12 +68,14 @@ const pageNamespace = 'pages.index'
             </figure>
             <MDX components={components} />
         </div>
-        <div>
+        <div class="order-2 sm:order-none">
             <div
-                class="sticky top-24 max-h-[calc(100vh-120px)] overflow-y-auto"
+                class="sm:sticky sm:top-24 sm:max-h-[calc(100vh-120px)] sm:overflow-y-auto"
             >
-                <div class="mb-4 text-lg">Table of contents</div>
-                <ul class="space-y-2 font-medium text-neutral-11">
+                <div class="mb-4 md:text-lg">Table of contents</div>
+                <ul
+                    class="space-y-2 font-medium text-neutral-11 text-sm md:text-base"
+                >
                     {
                         projectMetadata
                             .getHeadings()
@@ -78,7 +84,7 @@ const pageNamespace = 'pages.index'
                                 <li>
                                     <a
                                         href={`#${slug}`}
-                                        class="transition-colors hover:text-neutral-12 hover:underline"
+                                        class="transition-colors hover:text-neutral-12 hover:underline focus:ring-3 focus:outline-none focus:ring-primary-7 ml-2"
                                     >
                                         {text}
                                     </a>

@@ -24,3 +24,7 @@ strong {
 .astro-code *[style='color:#DBD7CAEE'] {
     @apply !text-[#393A34] dark:!text-current;
 }
+
+.prose *:focus {
+    @apply focus:outline-none focus:ring-3 focus:ring-primary-7;
+}

@@ -28,7 +28,7 @@ export default function ProjectCard({
         return clsx(className, map[variant])
     }
     const wrapperClass = getClass(
-        'flex flex-col gap-4 group focus:outline-none focus:ring-3 focus:ring-primary-6',
+        'flex flex-col gap-4 group focus:outline-none focus:ring-3 focus:ring-primary-7',
         {
             small: '',
             medium: '',
