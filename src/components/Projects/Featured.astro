@@ -3,6 +3,12 @@ import ProjectCard from './Card'
 import { localizePath } from 'astro-i18next'
 import Markdown from '../Markdown'
 import { t } from 'i18next'
+
+const TEMP = await Astro.glob(`../../content/projects/*.mdx`)
+// const filteredProjects = projects.filter((project) =>
+//     project.file.endsWith(`${i18next.language}.mdx`)
+// )
+
 const projects = (
     t('projects', {
         ns: 'pages.projects',
@@ -30,6 +36,7 @@ const firstProjects = featuredProjects.slice(0, 2)
 const lastProjects = featuredProjects.slice(-3)
 ---
 
+<pre>{JSON.stringify(TEMP, null, 2)}</pre>
 <div class="custom-container flex flex-col gap-16 py-24 px-4">
     <div>
         <h2 class="text-center text-2xl font-light sm:text-left sm:text-4xl">

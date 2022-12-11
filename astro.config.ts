@@ -12,6 +12,21 @@ import mdx from '@astrojs/mdx'
 // https://astro.build/config
 import prefetch from '@astrojs/prefetch'
 
+function projectsRemarkPlugin() {
+    return function (tree: any, file: any) {
+        const filePath: string = file.history[0]
+        if (!filePath.includes('/content/projects')) return
+        const fileName = filePath.split('/').at(-1)!
+        const slug = fileName.split('.')[0]
+        const language = fileName.split('.')[1]
+        file.data.astro.frontmatter = {
+            ...file.data.astro.frontmatter,
+            slug,
+            language,
+        }
+    }
+}
+
 // https://astro.build/config
 export default defineConfig({
     output: 'static',
@@ -19,7 +34,9 @@ export default defineConfig({
         tailwind(),
         react(),
         astroI18next(),
-        mdx(),
+        mdx({
+            remarkPlugins: [projectsRemarkPlugin],
+        }),
         prefetch({ selector: 'a:not([target="_blank"])' }),
     ],
     markdown: {

@@ -6,6 +6,7 @@ import PageProgressBar from '~/components/Layout/PageProgressBar'
 import Image from '~/components/mdx/Image'
 import Link from '~/components/mdx/Link'
 import Layout from '~/layouts/Layout.astro'
+import type { ProjectFrontmatter } from '~/types/mdx'
 
 changeLanguage('en')
 
@@ -13,28 +14,32 @@ const components = {
     a: Link,
     img: Image,
 }
+
 export async function getStaticPaths() {
-    const projects = await Astro.glob(`../../content/projects/*.mdx`)
-    const filteredProjects = projects.filter((project) =>
-        project.file.endsWith(`${i18next.language}.mdx`)
+    const projects = await Astro.glob<ProjectFrontmatter>(
+        `../../content/projects/*.mdx`
     )
-    return filteredProjects.map(({ file }) => ({
-        params: { slug: file.split('/').at(-1)!.split('.')[0] },
+    const filteredProjects = projects.filter(
+        ({ frontmatter }) => frontmatter.language === i18next.language
+    )
+    return filteredProjects.map(({ frontmatter: { slug } }) => ({
+        params: { slug },
     }))
 }
-const projects = await Astro.glob(`../../content/projects/*.mdx`)
-const filteredProjects = projects.filter((project) =>
-    project.file.endsWith(`${i18next.language}.mdx`)
+const projects = await Astro.glob<ProjectFrontmatter>(
+    `../../content/projects/*.mdx`
 )
-const projectMetadata = filteredProjects.find(({ file }) =>
-    file.endsWith(`${Astro.params.slug}.${i18next.language}.mdx`)
+const filteredProjects = projects.filter(
+    ({ frontmatter }) => frontmatter.language === i18next.language
+)
+const project = filteredProjects.find(
+    ({ frontmatter }) => frontmatter.slug === Astro.params.slug
 )!
-const { default: MDX } = await import(
-    `../../content/projects/${Astro.params.slug}.${i18next.language}.mdx`
-)
+const { Content } = project
 const pageNamespace = 'pages.index'
 ---
 
+<!-- TODO: custom layout for mdx powered pages -->
 <Layout pageNamespace={pageNamespace}>
     <div
         class="custom-container relative grid gap-6 px-4 py-24 sm:grid-cols-3 lg:grid-cols-4"
@@ -55,18 +60,18 @@ const pageNamespace = 'pages.index'
         <div
             class="prose prose-sm order-3 max-w-none sm:order-none sm:col-span-2 md:prose-base"
         >
-            <h1>{projectMetadata.frontmatter.title}</h1>
-            <p class="lead">{projectMetadata.frontmatter.description}</p>
+            <h1>{project.frontmatter.title}</h1>
+            <p class="lead">{project.frontmatter.description}</p>
             <figure>
                 <img
-                    src={projectMetadata.frontmatter.thumbnail.url}
-                    alt={projectMetadata.frontmatter.thumbnail.alt}
+                    src={project.frontmatter.thumbnail.url}
+                    alt={project.frontmatter.thumbnail.alt}
                 />
                 <figcaption>
-                    {projectMetadata.frontmatter.thumbnail.alt}
+                    {project.frontmatter.thumbnail.alt}
                 </figcaption>
             </figure>
-            <MDX components={components} />
+            <Content components={components} />
         </div>
         <div class="order-2 sm:order-none">
             <div
@@ -77,14 +82,14 @@ const pageNamespace = 'pages.index'
                     class="space-y-2 text-sm font-medium text-neutral-11 md:text-base"
                 >
                     {
-                        projectMetadata
+                        project
                             .getHeadings()
                             .filter(({ depth }) => depth === 2)
                             .map(({ slug, text }) => (
                                 <li>
                                     <a
                                         href={`#${slug}`}
-                                        class="ml-2 transition-colors hover:text-neutral-12 hover:underline focus:outline-none focus:ring-3 focus:ring-primary-7"
+                                        class="hover:text-neutral-12 focus:ring-3 focus:ring-primary-7 ml-2 transition-colors hover:underline focus:outline-none"
                                     >
                                         {text}
                                     </a>
