@@ -6,6 +6,12 @@ import i18next, { t } from 'i18next'
 import type { ProjectFrontmatter } from '~/types/mdx'
 import { normalizeProjectCardProps } from '~/utils'
 
+export type Props = {
+    simple?: boolean
+}
+
+const { simple = false } = Astro.props
+
 const projects = await Astro.glob<ProjectFrontmatter>(
     `../../content/projects/*.mdx`
 )
@@ -32,13 +38,17 @@ const lastProjects = featuredProjects.slice(-3)
         <h2 class="text-center text-2xl font-light sm:text-left sm:text-4xl">
             <Markdown source={t('featured.title', { ns: 'pages.projects' })} />
         </h2>
-        <p
-            class="mx-auto mt-8 max-w-lg text-sm font-medium sm:ml-0 sm:text-base"
-        >
-            <Markdown
-                source={t('featured.description', { ns: 'pages.projects' })}
-            />
-        </p>
+        {
+            !simple && (
+                <p class="mx-auto mt-8 max-w-lg text-sm font-medium sm:ml-0 sm:text-base">
+                    <Markdown
+                        source={t('featured.description', {
+                            ns: 'pages.projects',
+                        })}
+                    />
+                </p>
+            )
+        }
     </div>
     <div>
         <div class="grid gap-16 md:grid-cols-2">

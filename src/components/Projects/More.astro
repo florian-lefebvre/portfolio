@@ -1,0 +1,42 @@
+---
+import ProjectCard from './Card'
+import { localizePath } from 'astro-i18next'
+import Markdown from '../Markdown'
+import i18next, { t } from 'i18next'
+import type { ProjectFrontmatter } from '~/types/mdx'
+import { normalizeProjectCardProps } from '~/utils'
+
+const projects = await Astro.glob<ProjectFrontmatter>(
+    `../../content/projects/*.mdx`
+)
+const filteredProjects = projects.filter(
+    ({ frontmatter }) => frontmatter.language === i18next.language
+)
+
+const slugs = t('featured.projects', {
+    ns: 'pages.projects',
+    returnObjects: true,
+}) as string[]
+
+const moreProjects = filteredProjects.filter(
+    ({ frontmatter }) => !slugs.includes(frontmatter.slug)
+)
+---
+
+<div class="custom-container flex flex-col gap-16 py-24 px-4">
+    <h2 class="text-center text-2xl font-light sm:text-left sm:text-4xl">
+        <Markdown source={t('more', { ns: 'pages.projects' })} />
+    </h2>
+    <div class="mt-16 grid gap-16 md:grid-cols-2 lg:grid-cols-3">
+        {
+            moreProjects.map(({ frontmatter }) => (
+                <ProjectCard
+                    client:visible
+                    {...normalizeProjectCardProps(frontmatter)}
+                    variant="small"
+                    localizedRootUrl={localizePath('/projects')}
+                />
+            ))
+        }
+    </div>
+</div>
