@@ -1,14 +1,14 @@
 ---
-import { changeLanguage, setDefaultNamespace } from 'i18next'
-import Featured from '~/components/Projects/Featured.astro'
-import Hero from '~/components/Projects/Hero.astro'
-import More from '~/components/Projects/More.astro'
-import Layout from '~/layouts/Layout.astro'
+import { changeLanguage, setDefaultNamespace } from "i18next";
+import Featured from "~/components/Projects/Featured.astro";
+import Hero from "~/components/Projects/Hero.astro";
+import More from "~/components/Projects/More.astro";
+import Layout from "~/layouts/Layout.astro";
 
-changeLanguage('en')
+changeLanguage("en");
 
-const pageNamespace = 'pages.projects'
-setDefaultNamespace(pageNamespace)
+const pageNamespace = "pages.projects";
+setDefaultNamespace(pageNamespace);
 ---
 
 <Layout pageNamespace={pageNamespace}>

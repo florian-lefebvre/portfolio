@@ -1,0 +1,11 @@
+---
+import { changeLanguage, setDefaultNamespace } from "i18next";
+import Layout from "~/layouts/Layout.astro";
+
+changeLanguage("en");
+
+const pageNamespace = "pages.blog";
+setDefaultNamespace(pageNamespace);
+---
+
+<Layout pageNamespace={pageNamespace}>BLOG</Layout>
