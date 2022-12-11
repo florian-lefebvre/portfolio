@@ -6,3 +6,4 @@
 -   [ ] redirects
 -   [ ] 404
 -   [ ] [Sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
+-   [ ] Plausible
