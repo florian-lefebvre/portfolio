@@ -4,7 +4,7 @@ import useEventListener from '~/hooks/useEventListener'
 
 export default function PageProgressBar() {
     const [init, setInit] = useState(false)
-    const [width, setWidth] = useState<string | null>(null)
+    const [width, setWidth] = useState<number | null>(null)
     useEventListener({
         event: 'scroll',
         listener: () => {
@@ -14,7 +14,7 @@ export default function PageProgressBar() {
                 document.documentElement.clientHeight
             const scrolled = (winScroll / height) * 100
             if (height > 0) {
-                setWidth(`${scrolled}%`)
+                setWidth(scrolled)
             } else {
                 setWidth(null)
             }
@@ -29,14 +29,14 @@ export default function PageProgressBar() {
     return (
         <div
             className={clsx(
-                'sticky bottom-0 z-20 h-2 bg-primary-5 transition-opacity',
-                init ? 'opacity-100' : 'opacity-0'
+                'sticky bottom-0 z-20 h-2 bg-primary-5 transition-opacity duration-700',
+                init && width && width !== 0 ? 'opacity-100' : 'opacity-0'
             )}
         >
             <div
                 className="absolute inset-0 right-auto bg-primary-9 transition-[width] duration-500 ease-in-out"
                 style={{
-                    width: `${width}`,
+                    width: `${width || 0}%`,
                 }}
             ></div>
         </div>
