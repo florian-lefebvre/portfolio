@@ -36,6 +36,7 @@ function projectsRemarkPlugin() {
 
 // https://astro.build/config
 export default defineConfig({
+    site: 'https://v5.florian-lefebvre.netlify.app',
     output: 'static',
     integrations: [
         tailwind(),
