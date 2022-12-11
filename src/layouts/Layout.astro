@@ -2,16 +2,20 @@
 import '~/assets/css/main.css'
 import Banner from '~/components/Layout/Banner.astro'
 import ThemeTransition from '~/components/Layout/ThemeTransition'
-import i18next, { t, setDefaultNamespace } from 'i18next'
-import { HeadHrefLangs } from 'astro-i18next/components'
+import i18next, { t } from 'i18next'
 import Footer from '~/components/Layout/Footer/Footer.astro'
 import Header from '~/components/Layout/Header/Header.astro'
 import HeadSEO from '~/components/HeadSEO.astro'
 import BackToTop from '~/components/Layout/BackToTop'
-setDefaultNamespace('translation')
+import { localizeUrl } from 'astro-i18next'
 export interface Props {
     pageNamespace: string
 }
+
+// Copied from HeadHrefLangs
+const supportedLanguages = i18next.languages
+const currentUrl = Astro.url.href
+
 const { pageNamespace } = Astro.props
 const pageT = (key: string) => t(key, { ns: pageNamespace })
 ---
@@ -26,8 +30,25 @@ const pageT = (key: string) => t(key, { ns: pageNamespace })
         <title>
             {t('titleTemplate', { ns: 'common', title: pageT('seo.title') })}
         </title>
-        <HeadHrefLangs />
-        <HeadSEO pageNamespace={pageNamespace} />
+        {
+            !Astro.params.slug &&
+                // Copied from HeadHrefLangs
+                supportedLanguages.map((supportedLanguage) => (
+                    <link
+                        rel="alternate"
+                        hreflang={supportedLanguage}
+                        href={localizeUrl(currentUrl, supportedLanguage)}
+                    />
+                ))
+        }
+        <HeadSEO
+            title={pageT('seo.title')}
+            description={pageT('seo.description')}
+            image={{
+                url: pageT('seo.ogImage'),
+                alt: pageT('seo.ogImageAlt'),
+            }}
+        />
         <script>
             console.log('Hi there!')
             console.log('What are you looking for?')

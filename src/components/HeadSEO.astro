@@ -1,41 +1,58 @@
 ---
 import { SEO } from 'astro-seo'
-import { t } from 'i18next'
+import i18next, { t } from 'i18next'
 
 export interface Props {
-    pageNamespace: string
+    title: string
+    description: string
+    image: {
+        url: string
+        alt: string
+    }
+    article?: {
+        publishedTime: string
+        modifiedTime: string
+        author: string[]
+        section: string
+        tags: string[]
+    }
 }
-const { pageNamespace } = Astro.props
-const pageT = (key: string, defaultValue?: string) =>
-    t(key, defaultValue, { ns: pageNamespace })
+const { title, description, image, article } = Astro.props
 
 const { href: canonicalUrl } = Astro.url
 ---
 
 <SEO
-    title={pageT('seo.title')}
-    description={pageT('seo.description')}
+    title={title}
+    description={description}
     canonical={canonicalUrl}
     openGraph={{
         basic: {
-            title: pageT('seo.title'),
+            title,
             type: 'website',
-            image: pageT(
-                'seo.ogImage',
-                'https://res.cloudinary.com/af68d22a-2043-4078-857c-f2db1a1406ec/image/upload/c_scale,q_80/v1636657520/Portfolio/global/og_ekzloe.jpg'
-            ),
+            image: image.url,
             url: canonicalUrl,
         },
         image: {
-            alt: pageT('seo.ogImageAlt', 'OG IMAGE'),
+            alt: image.alt,
         },
         optional: {
-            description: pageT('seo.description'),
+            description,
             siteName: t('titleTemplate', {
                 ns: 'common',
-                title: pageT('seo.title'),
+                title,
             }) as string,
+            locale: i18next.language,
+            localeAlternate: (() => {
+                const alternates = [...i18next.languages]
+                alternates.splice(
+                    i18next.languages.indexOf(i18next.language),
+                    1
+                )
+                return alternates
+            })(),
         },
+        article,
     }}
     twitter={{
         card: 'summary_large_image',
