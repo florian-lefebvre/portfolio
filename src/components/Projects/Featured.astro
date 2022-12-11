@@ -2,41 +2,31 @@
 import ProjectCard from './Card'
 import { localizePath } from 'astro-i18next'
 import Markdown from '../Markdown'
-import { t } from 'i18next'
+import i18next, { t } from 'i18next'
+import type { ProjectFrontmatter } from '~/types/mdx'
+import { normalizeProjectCardProps } from '~/utils'
 
-const TEMP = await Astro.glob(`../../content/projects/*.mdx`)
-// const filteredProjects = projects.filter((project) =>
-//     project.file.endsWith(`${i18next.language}.mdx`)
-// )
+const projects = await Astro.glob<ProjectFrontmatter>(
+    `../../content/projects/*.mdx`
+)
+const filteredProjects = projects.filter(
+    ({ frontmatter }) => frontmatter.language === i18next.language
+)
 
-const projects = (
-    t('projects', {
-        ns: 'pages.projects',
-        returnObjects: true,
-    }) as any[]
-).map((_, i) => {
-    const get = (property: string) =>
-        t(`projects.${i}.${property}`, {
-            ns: 'pages.projects',
-        })
-    return {
-        title: get('title'),
-        desc: get('desc'),
-        slug: get('slug'),
-        img: get('img'),
-        alt: get('alt'),
-    }
-})
 const slugs = t('featured.projects', {
     ns: 'pages.projects',
     returnObjects: true,
 }) as string[]
-const featuredProjects = projects.filter(({ slug }) => slugs.includes(slug))
+const featuredProjects: typeof projects = []
+for (const slug of slugs) {
+    featuredProjects.push(
+        filteredProjects.find(({ frontmatter }) => frontmatter.slug === slug)!
+    )
+}
 const firstProjects = featuredProjects.slice(0, 2)
 const lastProjects = featuredProjects.slice(-3)
 ---
 
-<pre>{JSON.stringify(TEMP, null, 2)}</pre>
 <div class="custom-container flex flex-col gap-16 py-24 px-4">
     <div>
         <h2 class="text-center text-2xl font-light sm:text-left sm:text-4xl">
@@ -53,10 +43,10 @@ const lastProjects = featuredProjects.slice(-3)
     <div>
         <div class="grid gap-16 md:grid-cols-2">
             {
-                firstProjects.map((project: any) => (
+                firstProjects.map(({ frontmatter }) => (
                     <ProjectCard
                         client:visible
-                        {...project}
+                        {...normalizeProjectCardProps(frontmatter)}
                         variant="medium"
                         localizedRootUrl={localizePath('/projects')}
                     />
@@ -65,10 +55,10 @@ const lastProjects = featuredProjects.slice(-3)
         </div>
         <div class="mt-16 grid gap-16 md:grid-cols-2 lg:grid-cols-3">
             {
-                lastProjects.map((project: any) => (
+                lastProjects.map(({ frontmatter }) => (
                     <ProjectCard
                         client:visible
-                        {...project}
+                        {...normalizeProjectCardProps(frontmatter)}
                         variant="small"
                         localizedRootUrl={localizePath('/projects')}
                     />

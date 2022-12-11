@@ -4,7 +4,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 type Props = {
     title: string
-    desc: string
+    description: string
     slug: string
     img: string
     alt: string
@@ -14,7 +14,7 @@ type Props = {
 
 export default function ProjectCard({
     title,
-    desc,
+    description,
     slug,
     img,
     alt,
@@ -63,14 +63,14 @@ export default function ProjectCard({
                     src={img}
                     alt={alt}
                     className={imgClass}
-                    loading="lazy"
+                    loading={variant === 'medium' ? 'eager' : 'lazy'}
                     placeholder={
                         <div className={clsx('bg-primary-5', imgClass)}></div>
                     }
                 />
             </div>
             <h3 className={titleClass}>{title}</h3>
-            <p className={descClass}>{desc}</p>
+            <p className={descClass}>{description}</p>
             <div className={linkClass}>
                 <span>View project</span>
                 <Icon
