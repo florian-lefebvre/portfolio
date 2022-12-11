@@ -1,4 +1,5 @@
 export type ProjectFrontmatter = {
+    order: number
     slug: string
     language: string
     title: string
@@ -7,4 +8,5 @@ export type ProjectFrontmatter = {
         url: string
         alt: string
     }
+    type: 'project' | 'article'
 }

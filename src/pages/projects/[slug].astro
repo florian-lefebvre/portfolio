@@ -15,14 +15,16 @@ const components = {
     img: Image,
 };
 export async function getStaticPaths() {
-    const projects = await Astro.glob<ProjectFrontmatter>(`../../content/projects/*.mdx`);
-    const filteredProjects = projects.filter(({ frontmatter }) => frontmatter.language === i18next.language);
+    const projects = await Astro.glob<ProjectFrontmatter>(`../../content/**/*.mdx`);
+    const filteredProjects = projects.filter(({ frontmatter }) => frontmatter.language === i18next.language &&
+        frontmatter.type === "project");
     return filteredProjects.map(({ frontmatter: { slug } }) => ({
         params: { slug },
     }));
 }
-const projects = await Astro.glob<ProjectFrontmatter>(`../../content/projects/*.mdx`);
-const filteredProjects = projects.filter(({ frontmatter }) => frontmatter.language === i18next.language);
+const projects = await Astro.glob<ProjectFrontmatter>(`../../content/**/*.mdx`);
+const filteredProjects = projects.filter(({ frontmatter }) => frontmatter.language === i18next.language &&
+    frontmatter.type === "project");
 const project = filteredProjects.find(({ frontmatter }) => frontmatter.slug === Astro.params.slug)!;
 const { Content } = project;
 const pageNamespace = "pages.index";
@@ -78,7 +80,7 @@ const pageNamespace = "pages.index";
                                 <li>
                                     <a
                                         href={`#${slug}`}
-                                        class="ml-2 transition-colors hover:text-neutral-12 hover:underline focus:outline-none focus:ring-3 focus:ring-primary-7"
+                                        class="hover:text-neutral-12 focus:ring-3 focus:ring-primary-7 ml-2 transition-colors hover:underline focus:outline-none"
                                     >
                                         {text}
                                     </a>

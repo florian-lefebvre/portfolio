@@ -12,11 +12,11 @@ export type Props = {
 
 const { simple = false } = Astro.props
 
-const projects = await Astro.glob<ProjectFrontmatter>(
-    `../../content/projects/*.mdx`
-)
+const projects = await Astro.glob<ProjectFrontmatter>(`../../content/**/*.mdx`)
 const filteredProjects = projects.filter(
-    ({ frontmatter }) => frontmatter.language === i18next.language
+    ({ frontmatter }) =>
+        frontmatter.language === i18next.language &&
+        frontmatter.type === 'project'
 )
 
 const slugs = t('featured.projects', {

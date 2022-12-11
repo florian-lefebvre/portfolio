@@ -6,12 +6,14 @@ import i18next, { t } from 'i18next'
 import type { ProjectFrontmatter } from '~/types/mdx'
 import { normalizeProjectCardProps } from '~/utils'
 
-const projects = await Astro.glob<ProjectFrontmatter>(
-    `../../content/projects/*.mdx`
-)
-const filteredProjects = projects.filter(
-    ({ frontmatter }) => frontmatter.language === i18next.language
-)
+const projects = await Astro.glob<ProjectFrontmatter>(`../../content/**/*.mdx`)
+const filteredProjects = projects
+    .filter(
+        ({ frontmatter }) =>
+            frontmatter.language === i18next.language &&
+            frontmatter.type === 'project'
+    )
+    .sort((a, b) => a.frontmatter.order - b.frontmatter.order)
 
 const slugs = t('featured.projects', {
     ns: 'pages.projects',

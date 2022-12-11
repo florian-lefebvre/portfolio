@@ -15,14 +15,17 @@ import prefetch from '@astrojs/prefetch'
 function projectsRemarkPlugin() {
     return function (tree: any, file: any) {
         const filePath: string = file.history[0]
-        if (!filePath.includes('/content/projects')) return
+        if (!filePath.includes('/projects/')) return
         const fileName = filePath.split('/').at(-1)!
-        const slug = fileName.split('.')[0]
-        const language = fileName.split('.')[1]
+        const order = Number(fileName.split('.')[0])
+        const slug = fileName.split('.')[1]
+        const language = filePath.split('/content/').at(-1)!.split('/')[0]
         file.data.astro.frontmatter = {
             ...file.data.astro.frontmatter,
             slug,
             language,
+            type: 'project',
+            order,
         }
     }
 }
