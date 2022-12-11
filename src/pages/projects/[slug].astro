@@ -37,12 +37,12 @@ const pageNamespace = 'pages.index'
 
 <Layout pageNamespace={pageNamespace}>
     <div
-        class="custom-container relative grid sm:grid-cols-3 lg:grid-cols-4 gap-6 px-4 py-24"
+        class="custom-container relative grid gap-6 px-4 py-24 sm:grid-cols-3 lg:grid-cols-4"
     >
-        <div class="sm:col-span-3 lg:col-span-1 order-1 sm:order-none">
+        <div class="order-1 sm:order-none sm:col-span-3 lg:col-span-1">
             <a
                 href={localizePath('/projects')}
-                class="lg:sticky lg:top-24 inline-flex items-center justify-center space-x-1 px-2 py-2 font-semibold leading-none text-primary-9 transition-colors hover:bg-neutral-5 focus:outline-none focus:ring-3 focus:ring-primary-7 dark:hover:bg-neutralDark-6 sm:justify-start"
+                class="inline-flex items-center justify-center space-x-1 px-2 py-2 font-semibold leading-none text-primary-9 transition-colors hover:bg-neutral-5 focus:outline-none focus:ring-3 focus:ring-primary-7 dark:hover:bg-neutralDark-6 sm:justify-start lg:sticky lg:top-24"
             >
                 <Icon
                     client:load
@@ -53,7 +53,7 @@ const pageNamespace = 'pages.index'
             </a>
         </div>
         <div
-            class="prose prose-sm md:prose-base sm:col-span-2 max-w-none order-3 sm:order-none"
+            class="prose prose-sm order-3 max-w-none sm:order-none sm:col-span-2 md:prose-base"
         >
             <h1>{projectMetadata.frontmatter.title}</h1>
             <p class="lead">{projectMetadata.frontmatter.description}</p>
@@ -74,7 +74,7 @@ const pageNamespace = 'pages.index'
             >
                 <div class="mb-4 md:text-lg">Table of contents</div>
                 <ul
-                    class="space-y-2 font-medium text-neutral-11 text-sm md:text-base"
+                    class="space-y-2 text-sm font-medium text-neutral-11 md:text-base"
                 >
                     {
                         projectMetadata
@@ -84,7 +84,7 @@ const pageNamespace = 'pages.index'
                                 <li>
                                     <a
                                         href={`#${slug}`}
-                                        class="transition-colors hover:text-neutral-12 hover:underline focus:ring-3 focus:outline-none focus:ring-primary-7 ml-2"
+                                        class="ml-2 transition-colors hover:text-neutral-12 hover:underline focus:outline-none focus:ring-3 focus:ring-primary-7"
                                     >
                                         {text}
                                     </a>
