@@ -18,7 +18,7 @@ import Badge from '../Badge'
             />
         </p>
     </div>
-    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-16">
+    <div class="grid gap-x-8 gap-y-16 sm:grid-cols-2">
         {
             (
                 t('education.elements', {
@@ -41,7 +41,7 @@ import Badge from '../Badge'
                 })
                 .map(({ title, date, location, description, soon }) => (
                     <div class="space-y-2">
-                        <h3 class="text-lg sm:text-2xl font-semibold items-center inline-flex">
+                        <h3 class="inline-flex items-center text-lg font-semibold sm:text-2xl">
                             {title}
                             {soon && (
                                 <Badge className="ml-2" color="warning">
@@ -49,7 +49,7 @@ import Badge from '../Badge'
                                 </Badge>
                             )}
                         </h3>
-                        <p class="text-neutral-11 text-xs sm:text-sm">
+                        <p class="text-xs text-neutral-11 sm:text-sm">
                             {date} {location && `· ${location}`}
                         </p>
                         <p class="text-sm sm:text-base">

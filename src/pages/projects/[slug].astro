@@ -1,0 +1,93 @@
+---
+import { Icon } from '@iconify/react'
+import { localizePath } from 'astro-i18next'
+import i18next, { changeLanguage } from 'i18next'
+import PageProgressBar from '~/components/Layout/PageProgressBar'
+import Image from '~/components/mdx/Image'
+import Link from '~/components/mdx/Link'
+import Layout from '~/layouts/Layout.astro'
+
+changeLanguage('en')
+
+const components = {
+    a: Link,
+    img: Image,
+}
+export async function getStaticPaths() {
+    const projects = await Astro.glob(`../../content/projects/*.mdx`)
+    const filteredProjects = projects.filter((project) =>
+        project.file.endsWith(`${i18next.language}.mdx`)
+    )
+    return filteredProjects.map(({ file }) => ({
+        params: { slug: file.split('/').at(-1)!.split('.')[0] },
+    }))
+}
+const projects = await Astro.glob(`../../content/projects/*.mdx`)
+const filteredProjects = projects.filter((project) =>
+    project.file.endsWith(`${i18next.language}.mdx`)
+)
+const projectMetadata = filteredProjects.find(({ file }) =>
+    file.endsWith(`${Astro.params.slug}.${i18next.language}.mdx`)
+)!
+const { default: MDX } = await import(
+    `../../content/projects/${Astro.params.slug}.${i18next.language}.mdx`
+)
+const pageNamespace = 'pages.index'
+---
+
+<Layout pageNamespace={pageNamespace}>
+    <div class="custom-container relative grid grid-cols-4 gap-6 px-4 py-24">
+        <div>
+            <a
+                href={localizePath('/projects')}
+                class="sticky top-24 inline-flex items-center justify-center space-x-1 px-2 py-2 font-semibold leading-none text-primary-9 transition-all hover:bg-neutral-5 focus:outline-none focus:ring-3 focus:ring-primary-7 dark:hover:bg-neutralDark-6 sm:justify-start"
+            >
+                <Icon
+                    client:load
+                    icon="heroicons:chevron-left-solid"
+                    className="h-4 w-4 -ml-1"
+                />
+                <span>Back</span>
+            </a>
+        </div>
+        <div class="prose col-span-2 max-w-none">
+            <h1>{projectMetadata.frontmatter.title}</h1>
+            <p class="lead">{projectMetadata.frontmatter.description}</p>
+            <figure>
+                <img
+                    src={projectMetadata.frontmatter.thumbnail.url}
+                    alt={projectMetadata.frontmatter.thumbnail.alt}
+                />
+                <figcaption>
+                    {projectMetadata.frontmatter.thumbnail.alt}
+                </figcaption>
+            </figure>
+            <MDX components={components} />
+        </div>
+        <div>
+            <div
+                class="sticky top-24 max-h-[calc(100vh-120px)] overflow-y-auto"
+            >
+                <div class="mb-4 text-lg">Table of contents</div>
+                <ul class="space-y-2 font-medium text-neutral-11">
+                    {
+                        projectMetadata
+                            .getHeadings()
+                            .filter(({ depth }) => depth === 2)
+                            .map(({ slug, text }) => (
+                                <li>
+                                    <a
+                                        href={`#${slug}`}
+                                        class="transition-colors hover:text-neutral-12 hover:underline"
+                                    >
+                                        {text}
+                                    </a>
+                                </li>
+                            ))
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <PageProgressBar client:load />
+</Layout>

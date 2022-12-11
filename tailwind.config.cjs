@@ -58,6 +58,7 @@ module.exports = {
         },
         fontFamily: {
             sans: ['Mona-Sans', 'sans-serif'],
+            mono: ['Jetbrains Mono', 'monospace'],
         },
         extend: {
             boxShadow: {
@@ -88,6 +89,50 @@ module.exports = {
                     },
                 },
             },
+            typography: ({ theme }) => ({
+                DEFAULT: {
+                    css: {
+                        ...Object.fromEntries(
+                            Object.entries({
+                                '--tw-prose-body': 'colors.neutral[11]',
+                                '--tw-prose-headings': 'colors.neutral[12]',
+                                '--tw-prose-lead': 'colors.neutral[12]',
+                                '--tw-prose-links': 'colors.primary[9]',
+                                '--tw-prose-bold': 'colors.neutral[12]',
+                                '--tw-prose-counters': 'colors.primary[9]',
+                                '--tw-prose-bullets': 'colors.primary[9]',
+                                '--tw-prose-hr': 'colors.neutral[8]',
+                                '--tw-prose-quotes': 'colors.neutral[10]',
+                                '--tw-prose-quote-borders': 'colors.neutral[7]',
+                                '--tw-prose-captions': 'colors.neutral[10]',
+                                '--tw-prose-code': 'colors.neutral[12]',
+                                '--tw-prose-pre-code': 'colors.neutral[11]',
+                                '--tw-prose-pre-bg': 'colors.neutral[2]',
+                                '--tw-prose-th-borders': 'colors.neutral[11]',
+                                '--tw-prose-td-borders': 'colors.neutral[10]',
+                            }).map(([k, v], i) => [
+                                k,
+                                theme(v).replaceAll('<alpha-value>', 1),
+                            ])
+                        ),
+                        'h1,h2,h3,h4,h5,h6': {
+                            fontWeight: 300,
+                        },
+                        p: {
+                            fontWeight: 500,
+                        },
+                        a: {
+                            '&:hover': {
+                                '--tw-prose-links':
+                                    'hsl(var(--color-primary-auto-10))',
+                            },
+                        },
+                        pre: {
+                            borderRadius: 0,
+                        },
+                    },
+                },
+            }),
         },
     },
     corePlugins: {
@@ -96,5 +141,6 @@ module.exports = {
     plugins: [
         require('@tailwindcss/aspect-ratio'),
         require('@tailwindcss/forms'),
+        require('@tailwindcss/typography'),
     ],
 }

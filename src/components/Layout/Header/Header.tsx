@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react'
 import clsx from 'clsx'
 import { useState } from 'react'
-import useWindowEventListener from '~/hooks/useWindowEventListener'
+import useEventListener from '~/hooks/useEventListener'
 import ThemeToggler from './ThemeToggler'
 import MobileMenu from './MobileMenu'
 import { t } from 'i18next'
@@ -15,8 +15,12 @@ export default function Header({
 }) {
     const [isTop, setIsTop] = useState(true)
     const [open, setOpen] = useState(false)
-    useWindowEventListener('scroll', () => setIsTop(window.scrollY < 100), {
-        passive: true,
+    useEventListener({
+        event: 'scroll',
+        listener: () => setIsTop(window.scrollY < 100),
+        opts: {
+            passive: true,
+        },
     })
     return (
         <header
