@@ -27,7 +27,7 @@ const moreProjects = filteredProjects.filter(
     <h2 class="text-center text-2xl font-light sm:text-left sm:text-4xl">
         <Markdown source={t('more', { ns: 'pages.projects' })} />
     </h2>
-    <div class="mt-16 grid gap-16 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-16 md:grid-cols-2 lg:grid-cols-3">
         {
             moreProjects.map(({ frontmatter }) => (
                 <ProjectCard
