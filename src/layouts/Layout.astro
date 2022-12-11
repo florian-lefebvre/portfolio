@@ -7,6 +7,7 @@ import { HeadHrefLangs } from 'astro-i18next/components'
 import Footer from '~/components/Layout/Footer/Footer.astro'
 import Header from '~/components/Layout/Header/Header.astro'
 import HeadSEO from '~/components/HeadSEO.astro'
+import BackToTop from '~/components/Layout/BackToTop'
 setDefaultNamespace('translation')
 export interface Props {
     pageNamespace: string
@@ -59,6 +60,7 @@ const pageT = (key: string) => t(key, { ns: pageNamespace })
         <Header />
         <main>
             <slot />
+            <BackToTop client:load />
         </main>
         <Footer />
         <ThemeTransition client:load />
