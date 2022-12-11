@@ -1,19 +1,18 @@
 import { defineConfig } from 'astro/config'
-// https://astro.build/config
+// https://docs.astro.build/en/guides/integrations-guide/tailwind
 import tailwind from '@astrojs/tailwind'
-// https://astro.build/config
+// https://docs.astro.build/en/guides/integrations-guide/react
 import react from '@astrojs/react'
 // https://github.com/yassinedoghri/astro-i18next
 import astroI18next from 'astro-i18next'
-
-// https://astro.build/config
+// https://docs.astro.build/en/guides/integrations-guide/mdx
 import mdx from '@astrojs/mdx'
-
-// https://astro.build/config
+// https://docs.astro.build/en/guides/integrations-guide/prefetch
 import prefetch from '@astrojs/prefetch'
+// https://docs.astro.build/en/guides/integrations-guide/sitemap
+import sitemap from '@astrojs/sitemap'
 
 import fsp from 'fs/promises'
-
 function projectsRemarkPlugin() {
     return async function (tree: any, file: any) {
         const filePath: string = file.history[0]
@@ -45,7 +44,10 @@ export default defineConfig({
         mdx({
             remarkPlugins: [projectsRemarkPlugin],
         }),
-        prefetch({ selector: 'a:not([target="_blank"])' }),
+        prefetch({
+            selector: 'a:not([target="_blank"])',
+        }),
+        sitemap(),
     ],
     markdown: {
         shikiConfig: {

@@ -10,7 +10,7 @@
         "preview": "astro preview",
         "astro": "astro",
         "format": "prettier --write \"./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}\"",
-        "i18n:generate": "pnpm script:clean-pages && astro-i18next generate && pnpm script:rename-pages && pnpm script:fix-pages-imports && prettier --write \"./src/pages/fr/**/*.astro\"",
+        "i18n:generate": "pnpm script:clean-pages && astro-i18next generate && pnpm script:rename-pages && pnpm script:fix-pages-imports && prettier --write \"./src/pages/**/*.astro\"",
         "script:rename-pages": "node ./scripts/rename-pages.js",
         "script:clean-pages": "node ./scripts/clean-pages.js",
         "script:fix-pages-imports": "node ./scripts/fix-pages-imports.js"
@@ -19,6 +19,7 @@
         "@astrojs/mdx": "^0.12.1",
         "@astrojs/prefetch": "^0.1.1",
         "@astrojs/react": "^1.2.2",
+        "@astrojs/sitemap": "^1.0.0",
         "@astrojs/tailwind": "^2.1.3",
         "@headlessui/react": "^1.7.4",
         "@iconify/react": "^4.0.1",
