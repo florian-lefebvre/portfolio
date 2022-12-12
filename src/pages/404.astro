@@ -1,0 +1,44 @@
+---
+import { t, changeLanguage } from 'i18next'
+import Button from '~/components/Button'
+import Markdown from '~/components/Markdown'
+import BaseLayout from '~/layouts/Base.astro'
+
+changeLanguage('en')
+---
+
+<BaseLayout pageNamespace="pages.404">
+    <div class="custom-container px-4 py-24 md:py-48">
+        <div class="mx-auto max-w-max">
+            <div class="text-center sm:flex sm:text-left">
+                <p
+                    class="text-4xl font-bold tracking-tight text-primary-9 sm:text-5xl"
+                >
+                    404
+                </p>
+                <div class="sm:ml-6">
+                    <div class="sm:border-l-2 sm:border-neutral-8 sm:pl-6">
+                        <h1 class="text-4xl text-neutral-12 sm:text-5xl">
+                            <Markdown
+                                source={t('title', { ns: 'pages.404' })}
+                            />
+                        </h1>
+                        <p class="mt-4 text-base text-neutral-11">
+                            <Markdown source={t('hint', { ns: 'pages.404' })} />
+                        </p>
+                    </div>
+                    <div
+                        class="mt-10 flex justify-center space-x-6 sm:justify-start sm:border-l sm:border-transparent sm:pl-6"
+                    >
+                        <Button as="a" href="/" color="primary">
+                            {t('goBackHome', { ns: 'pages.404' })}
+                        </Button>
+                        <Button as="a" href="#contact" color="secondary">
+                            {t('report', { ns: 'pages.404' })}
+                        </Button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</BaseLayout>

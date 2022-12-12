@@ -1,0 +1,10 @@
+{
+    "seo": {
+        "title": "Page not found",
+        "description": "lorem ipsum"
+    },
+    "title": "Page **not found**",
+    "hint": "Please check the URL in the address bar and try again.",
+    "goBackHome": "Go back home",
+    "report": "Report"
+}

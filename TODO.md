@@ -3,10 +3,10 @@
 -   [x] [Sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
 -   [x] Plausible
 -   [x] semantic
--   [ ] 404
--   [ ] https://motion.dev/dom/in-view
+-   [x] 404
 -   [ ] logo
 -   [ ] content
+-   [ ] https://motion.dev/dom/in-view
 -   [ ] image optimization
 -   [ ] seo + meta defaults
 -   [ ] check for TODOs

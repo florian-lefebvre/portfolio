@@ -34,6 +34,7 @@ const config: AstroI18nextConfig = {
         'pages.about',
         'pages.projects',
         'pages.blog',
+        'pages.404',
     ],
     i18nextServer: {
         backend: {
