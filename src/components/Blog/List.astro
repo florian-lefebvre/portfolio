@@ -1,0 +1,26 @@
+---
+import i18next from 'i18next'
+import type { ArticleFrontmatter } from '~/types/mdx'
+import ArticleCard from './Card'
+import { normalizeArticleCardProps } from '~/utils'
+import { localizePath } from 'astro-i18next'
+
+const articles = await Astro.glob<ArticleFrontmatter>('../../content/**/*.mdx')
+const filteredArticles = articles.filter(
+    ({ frontmatter }) =>
+        frontmatter.language === i18next.language &&
+        frontmatter.type === 'article'
+)
+---
+
+<div class="custom-container grid gap-16 py-24 px-4 md:grid-cols-2">
+    {
+        filteredArticles.map(({ frontmatter }) => (
+            <ArticleCard
+                client:visible
+                {...normalizeArticleCardProps(frontmatter)}
+                localizedRootUrl={localizePath('/blog')}
+            />
+        ))
+    }
+</div>

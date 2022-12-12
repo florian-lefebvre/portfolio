@@ -23,12 +23,9 @@ const slugs = t('featured.projects', {
     ns: 'pages.projects',
     returnObjects: true,
 }) as string[]
-const featuredProjects: typeof projects = []
-for (const slug of slugs) {
-    featuredProjects.push(
-        filteredProjects.find(({ frontmatter }) => frontmatter.slug === slug)!
-    )
-}
+const featuredProjects = filteredProjects
+    .filter(({ frontmatter }) => slugs.includes(frontmatter.slug))
+    .sort((a, b) => a.frontmatter.order - b.frontmatter.order)
 const firstProjects = featuredProjects.slice(0, 2)
 const lastProjects = featuredProjects.slice(-3)
 ---
