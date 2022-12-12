@@ -2,28 +2,28 @@
 import i18next, { changeLanguage } from 'i18next'
 import SharedSlug from '~/components/SharedSlug.astro'
 import ContentLayout from '~/layouts/Content.astro'
-import type { ProjectFrontmatter } from '~/types/mdx'
+import type { ArticleFrontmatter } from '~/types/mdx'
 
 changeLanguage('en')
 
 export async function getStaticPaths() {
-    const projects = await Astro.glob<ProjectFrontmatter>(
+    const projects = await Astro.glob<ArticleFrontmatter>(
         `../../content/**/*.mdx`
     )
     const filteredProjects = projects.filter(
         ({ frontmatter }) =>
             frontmatter.language === i18next.language &&
-            frontmatter.type === 'project'
+            frontmatter.type === 'article'
     )
     return filteredProjects.map(({ frontmatter: { slug } }) => ({
         params: { slug },
     }))
 }
-const projects = await Astro.glob<ProjectFrontmatter>(`../../content/**/*.mdx`)
+const projects = await Astro.glob<ArticleFrontmatter>(`../../content/**/*.mdx`)
 const filteredProjects = projects.filter(
     ({ frontmatter }) =>
         frontmatter.language === i18next.language &&
-        frontmatter.type === 'project'
+        frontmatter.type === 'article'
 )
 const project = filteredProjects.find(
     ({ frontmatter }) => frontmatter.slug === Astro.params.slug
@@ -41,6 +41,7 @@ const { Content, frontmatter } = project
             tags: frontmatter.tags,
             authors: ['Florian Lefebvre'],
             modifiedTime: frontmatter.modifiedTime,
+            publishedTime: frontmatter.publishedTime,
         },
     }}
 >

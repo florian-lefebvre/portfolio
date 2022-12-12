@@ -1,5 +1,4 @@
-export type ProjectFrontmatter = {
-    order: number
+export type BaseFrontmatter = {
     slug: string
     language: string
     title: string
@@ -12,4 +11,12 @@ export type ProjectFrontmatter = {
     category: string
     tags: string[]
     modifiedTime: string
+}
+
+export type ProjectFrontmatter = BaseFrontmatter & {
+    order: number
+}
+
+export type ArticleFrontmatter = BaseFrontmatter & {
+    publishedTime: string
 }

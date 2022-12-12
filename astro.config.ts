@@ -13,22 +13,30 @@ import prefetch from '@astrojs/prefetch'
 import sitemap from '@astrojs/sitemap'
 
 import fsp from 'fs/promises'
-function projectsRemarkPlugin() {
+function contentRemarkPlugin() {
     return async function (tree: any, file: any) {
         const filePath: string = file.history[0]
-        if (!filePath.includes('/projects/')) return
         const fileName = filePath.split('/').at(-1)!
-        const order = Number(fileName.split('.')[0])
         const slug = fileName.split('.')[1]
         const language = filePath.split('/content/').at(-1)!.split('/')[0]
         const { mtime: modifiedTime } = await fsp.stat(filePath)
+
+        const specificOpts: Record<string, any> = {}
+        if (filePath.includes('/projects/')) {
+            specificOpts.order = Number(fileName.split('.')[0])
+            specificOpts.type = 'project'
+        } else if (filePath.includes('/blog/')) {
+            const publishedDate = fileName.split('.')[0]
+            specificOpts.publishedTime = new Date(publishedDate).toISOString()
+            specificOpts.type = 'article'
+        }
+
         file.data.astro.frontmatter = {
             ...file.data.astro.frontmatter,
             slug,
             language,
-            type: 'project',
-            order,
             modifiedTime,
+            ...specificOpts,
         }
     }
 }
@@ -42,7 +50,7 @@ export default defineConfig({
         react(),
         astroI18next(),
         mdx({
-            remarkPlugins: [projectsRemarkPlugin],
+            remarkPlugins: [contentRemarkPlugin],
         }),
         prefetch({
             selector: 'a:not([target="_blank"])',

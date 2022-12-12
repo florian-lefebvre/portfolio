@@ -23,6 +23,7 @@
         "@astrojs/tailwind": "^2.1.3",
         "@headlessui/react": "^1.7.4",
         "@iconify/react": "^4.0.1",
+        "@mdx-js/react": "^2.1.5",
         "@nanostores/react": "^0.4.0",
         "astro": "^1.6.13",
         "astro-i18next": "1.0.0-beta.14",

@@ -2,5 +2,9 @@
     "seo": {
         "title": "Blog",
         "description": ""
+    },
+    "hero": {
+        "title": "**Blog**",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo."
     }
 }

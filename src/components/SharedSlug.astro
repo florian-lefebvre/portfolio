@@ -1,0 +1,100 @@
+---
+import { Icon } from '@iconify/react'
+import { localizePath } from 'astro-i18next'
+import i18next, { t } from 'i18next'
+import PageProgressBar from '~/components/Layout/PageProgressBar'
+import Image from '~/components/mdx/Image'
+import Link from '~/components/mdx/Link'
+import { MDXProvider } from '@mdx-js/react'
+import type { ArticleFrontmatter, ProjectFrontmatter } from '~/types/mdx'
+import type { MarkdownHeading } from 'astro'
+
+const components = {
+    a: Link,
+    img: Image,
+}
+
+export type Props = {
+    frontmatter: ProjectFrontmatter | ArticleFrontmatter
+    headings: MarkdownHeading[]
+}
+const { frontmatter, headings } = Astro.props
+const isArticle = 'publishedTime' in frontmatter
+---
+
+<div
+    class="custom-container relative grid gap-6 px-4 py-24 sm:grid-cols-3 lg:grid-cols-4"
+>
+    <div class="order-1 sm:order-none sm:col-span-3 lg:col-span-1">
+        <a
+            href={localizePath(isArticle ? '/blog' : '/projects')}
+            class="inline-flex items-center justify-center space-x-1 px-2 py-2 font-semibold leading-none text-primary-9 transition-colors hover:bg-neutral-5 focus:outline-none focus:ring-3 focus:ring-primary-7 dark:hover:bg-neutralDark-6 sm:justify-start lg:sticky lg:top-24"
+        >
+            <Icon
+                client:load
+                icon="heroicons:chevron-left-solid"
+                className="h-4 w-4 -ml-1"
+            />
+            <span>{t('[slug].back', { ns: 'pages.projects' })}</span>
+        </a>
+    </div>
+    <article
+        class="prose prose-sm order-3 max-w-none sm:order-none sm:col-span-2 md:prose-base"
+    >
+        {
+            isArticle && (
+                <p>
+                    {frontmatter.category} ·{' '}
+                    {new Date(frontmatter.publishedTime).toLocaleDateString(
+                        i18next.language,
+                        {
+                            dateStyle: 'medium',
+                        }
+                    )}
+                </p>
+            )
+        }
+        <h1>{frontmatter.title}</h1>
+        <p class="lead">{frontmatter.description}</p>
+        <figure>
+            <img
+                src={frontmatter.thumbnail.url}
+                alt={frontmatter.thumbnail.alt}
+            />
+            <figcaption>
+                {frontmatter.thumbnail.alt}
+            </figcaption>
+        </figure>
+        <MDXProvider components={components}>
+            <slot />
+        </MDXProvider>
+    </article>
+    <div class="order-2 sm:order-none">
+        <div
+            class="sm:sticky sm:top-24 sm:max-h-[calc(100vh-120px)] sm:overflow-y-auto"
+        >
+            <div class="mb-4 md:text-lg">
+                {t('[slug].toc', { ns: 'pages.projects' })}
+            </div>
+            <ul
+                class="space-y-2 text-sm font-medium text-neutral-11 md:text-base"
+            >
+                {
+                    headings
+                        .filter(({ depth }) => depth === 2)
+                        .map(({ slug, text }) => (
+                            <li>
+                                <a
+                                    href={`#${slug}`}
+                                    class="hover:text-neutral-12 focus:ring-3 focus:ring-primary-7 ml-2 transition-colors hover:underline focus:outline-none"
+                                >
+                                    {text}
+                                </a>
+                            </li>
+                        ))
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+<PageProgressBar client:load />

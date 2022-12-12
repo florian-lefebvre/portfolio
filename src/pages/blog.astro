@@ -1,8 +1,11 @@
 ---
 import { changeLanguage } from 'i18next'
+import Hero from '~/components/Blog/Hero.astro'
 import BaseLayout from '~/layouts/Base.astro'
 
 changeLanguage('en')
 ---
 
-<BaseLayout pageNamespace={'pages.blog'}>BLOG</BaseLayout>
+<BaseLayout pageNamespace={'pages.blog'}>
+    <Hero />
+</BaseLayout>
