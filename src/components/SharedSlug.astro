@@ -3,16 +3,9 @@ import { Icon } from '@iconify/react'
 import { localizePath } from 'astro-i18next'
 import i18next, { t } from 'i18next'
 import PageProgressBar from '~/components/Layout/PageProgressBar'
-import Image from '~/components/mdx/Image'
-import Link from '~/components/mdx/Link'
-import { MDXProvider } from '@mdx-js/react'
 import type { ArticleFrontmatter, ProjectFrontmatter } from '~/types/mdx'
 import type { MarkdownHeading } from 'astro'
-
-const components = {
-    a: Link,
-    img: Image,
-}
+import MDXProvider from './mdx/MDXProvider'
 
 export type Props = {
     frontmatter: ProjectFrontmatter | ArticleFrontmatter
@@ -65,7 +58,7 @@ const isArticle = 'publishedTime' in frontmatter
                 {frontmatter.thumbnail.alt}
             </figcaption>
         </figure>
-        <MDXProvider components={components}>
+        <MDXProvider>
             <slot />
         </MDXProvider>
     </article>
