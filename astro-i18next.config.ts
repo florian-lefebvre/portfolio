@@ -27,7 +27,13 @@ const config: AstroI18nextConfig = {
         },
     },
     defaultNamespace: 'common',
-    namespaces: ['common', 'pages.index', 'pages.about', 'pages.projects'],
+    namespaces: [
+        'common',
+        'pages.index',
+        'pages.about',
+        'pages.projects',
+        'pages.blog',
+    ],
     i18nextServer: {
         backend: {
             loadPath: './public/locales/{{lng}}/{{ns}}.json',

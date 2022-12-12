@@ -12,5 +12,9 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo. Fusce justo diam, blandit sit amet mi sed, dictum egestas est. Aenean.",
         "projects": ["op-ent", "ynotes", "oss-at-novu", "regiolangues", "ohf31"]
     },
-    "more": "**More** projects"
+    "more": "**More** projects",
+    "[slug]": {
+        "back": "Back",
+        "toc": "Table of contents"
+    }
 }

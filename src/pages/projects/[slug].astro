@@ -1,7 +1,7 @@
 ---
 import { Icon } from '@iconify/react'
 import { localizePath } from 'astro-i18next'
-import i18next, { changeLanguage } from 'i18next'
+import i18next, { t, changeLanguage } from 'i18next'
 import PageProgressBar from '~/components/Layout/PageProgressBar'
 import Image from '~/components/mdx/Image'
 import Link from '~/components/mdx/Link'
@@ -65,7 +65,7 @@ const { Content } = project
                     icon="heroicons:chevron-left-solid"
                     className="h-4 w-4 -ml-1"
                 />
-                <span>Back</span>
+                <span>{t('[slug].back', { ns: 'pages.projects' })}</span>
             </a>
         </div>
         <article
@@ -88,7 +88,9 @@ const { Content } = project
             <div
                 class="sm:sticky sm:top-24 sm:max-h-[calc(100vh-120px)] sm:overflow-y-auto"
             >
-                <div class="mb-4 md:text-lg">Table of contents</div>
+                <div class="mb-4 md:text-lg">
+                    {t('[slug].toc', { ns: 'pages.projects' })}
+                </div>
                 <ul
                     class="space-y-2 text-sm font-medium text-neutral-11 md:text-base"
                 >
@@ -100,7 +102,7 @@ const { Content } = project
                                 <li>
                                     <a
                                         href={`#${slug}`}
-                                        class="ml-2 transition-colors hover:text-neutral-12 hover:underline focus:outline-none focus:ring-3 focus:ring-primary-7"
+                                        class="hover:text-neutral-12 focus:ring-3 focus:ring-primary-7 ml-2 transition-colors hover:underline focus:outline-none"
                                     >
                                         {text}
                                     </a>

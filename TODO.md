@@ -7,3 +7,4 @@
 -   [ ] 404
 -   [ ] [Sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
 -   [ ] Plausible
+-   [ ] https://motion.dev/dom/in-view
