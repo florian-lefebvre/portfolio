@@ -6,7 +6,7 @@ function removeExtremeTags(str: string) {
     return str
         .replaceAll('<p>', '')
         .replaceAll('</p>', '')
-        .replaceAll('LINERETURN', '<br />')
+        .replaceAll('LINERETURN', '<br>')
 }
 
 export default function Markdown({ source }: { source: string }): any {

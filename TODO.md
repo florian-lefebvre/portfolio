@@ -2,13 +2,14 @@
 -   [x] color mode
 -   [x] [Sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
 -   [x] Plausible
--   [ ] semantic
+-   [x] semantic
 -   [ ] 404
 -   [ ] https://motion.dev/dom/in-view
 -   [ ] logo
 -   [ ] content
 -   [ ] image optimization
--   [ ] seo
+-   [ ] seo + meta defaults
+-   [ ] check for TODOs
 -   [ ] Netlify redirects file
 -   [ ] remove robots.txt
 -   [ ] Reroute v4 to v4.florian-lefebvre.dev
