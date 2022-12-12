@@ -8,10 +8,13 @@ async function main() {
         data = data.replaceAll('../../', '../../../')
         await fsp.writeFile(filePath, data, { encoding: 'utf-8' })
     }
-    for (const dirName of ['projets', 'blog']) {
-        await fix(
-            path.join(__dirname, `./src/pages/fr/${dirName}/[slug].astro`)
-        )
+    for (const filePath of [
+        'projets/[slug]',
+        'blog/[slug]',
+        'legal/mentions-legales',
+        'legal/politique-de-confidentialite',
+    ]) {
+        await fix(path.join(__dirname, `./src/pages/fr/${filePath}.astro`))
     }
 }
 

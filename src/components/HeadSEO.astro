@@ -5,7 +5,7 @@ import i18next, { t } from 'i18next'
 export interface Props {
     title: string
     description: string
-    image: {
+    image?: {
         url: string
         alt: string
     }
@@ -26,6 +26,7 @@ const computedTitle = t('titleTemplate', {
 }) as string
 ---
 
+<!-- TODO: set defaults -->
 <SEO
     title={computedTitle}
     description={description}
@@ -34,11 +35,11 @@ const computedTitle = t('titleTemplate', {
         basic: {
             title,
             type: 'website',
-            image: image.url,
+            image: image?.url || '',
             url: canonicalUrl,
         },
         image: {
-            alt: image.alt,
+            alt: image?.alt || '',
         },
         optional: {
             description,

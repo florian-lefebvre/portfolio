@@ -1,0 +1,27 @@
+---
+import MDXProvider from '~/components/mdx/MDXProvider'
+import ContentLayout from '~/layouts/Content.astro'
+import i18next, { changeLanguage } from 'i18next'
+
+changeLanguage('en')
+
+const MdxFile = await import(
+    `../../content/${i18next.language}/legal/legal-notices.mdx`
+)
+const { Content, frontmatter } = MdxFile
+---
+
+<ContentLayout
+    head={{
+        title: frontmatter.title,
+        description: frontmatter.description,
+    }}
+>
+    <div class="prose prose-sm mx-auto px-4 py-24 sm:prose-base lg:prose-lg">
+        <h1>{frontmatter.title}</h1>
+        <p class="lead">{frontmatter.description}</p>
+        <MDXProvider>
+            <Content />
+        </MDXProvider>
+    </div>
+</ContentLayout>
