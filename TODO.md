@@ -1,10 +1,10 @@
 -   [ ] seo
 -   [ ] i18n
 -   [ ] semantic
--   [ ] color mode
+-   [x] color mode
 -   [ ] image optimization
 -   [ ] redirects
 -   [ ] 404
--   [ ] [Sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
--   [ ] Plausible
+-   [x] [Sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
+-   [x] Plausible
 -   [ ] https://motion.dev/dom/in-view
