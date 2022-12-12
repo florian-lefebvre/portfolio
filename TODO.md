@@ -1,10 +1,15 @@
--   [ ] seo
--   [ ] i18n
--   [ ] semantic
+-   [x] i18n
 -   [x] color mode
--   [ ] image optimization
--   [ ] redirects
--   [ ] 404
 -   [x] [Sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
 -   [x] Plausible
+-   [ ] semantic
+-   [ ] 404
 -   [ ] https://motion.dev/dom/in-view
+-   [ ] logo
+-   [ ] content
+-   [ ] image optimization
+-   [ ] seo
+-   [ ] Netlify redirects file
+-   [ ] remove robots.txt
+-   [ ] Reroute v4 to v4.florian-lefebvre.dev
+-   [ ] Update Netlify settings
