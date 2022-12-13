@@ -52,11 +52,12 @@ import BackToTop from '~/components/Layout/BackToTop'
     <body class="bg-neutral-2 text-neutral-12 dark:bg-neutralDark-4">
         <Banner enabled={true} />
         <Header />
-        <main>
+        <main id="swup">
             <slot />
             <BackToTop client:load />
         </main>
         <Footer />
         <ThemeTransition client:load />
+        <script src="../../assets/scripts/swup.ts"></script>
     </body>
 </html>

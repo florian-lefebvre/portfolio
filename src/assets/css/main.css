@@ -28,3 +28,7 @@ strong {
 .prose *:focus {
     @apply focus:outline-none focus:ring-3 focus:ring-primary-7;
 }
+
+main[tabindex='-1'] {
+    outline: none;
+}

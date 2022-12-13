@@ -3,6 +3,7 @@ import Button from '../Button'
 import { Icon } from '@iconify/react'
 import Markdown from '../Markdown'
 import { t } from 'i18next'
+import { localizePath } from 'astro-i18next'
 ---
 
 <div
@@ -51,9 +52,11 @@ import { t } from 'i18next'
         <div class="flex justify-center sm:justify-start">
             <Button
                 as="a"
-                href={t('about.cta.href', {
-                    ns: 'pages.index',
-                })}
+                href={localizePath(
+                    t('about.cta.href', {
+                        ns: 'pages.index',
+                    }) as string
+                )}
                 className="mt-16"
             >
                 {
