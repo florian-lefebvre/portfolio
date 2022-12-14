@@ -5,7 +5,7 @@
 -   [x] semantic
 -   [x] 404
 -   [x] BUG: when no match last header item is selected
--   [ ] BUG: mobile menu : close on click
+-   [x] BUG: mobile menu : close on click
 -   [ ] BUG: make swup work with mobile menu
 -   [ ] logo
 -   [ ] content

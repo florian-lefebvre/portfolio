@@ -1,4 +1,3 @@
-import { Icon } from '@iconify/react'
 import clsx from 'clsx'
 import { useState } from 'react'
 import useEventListener from '~/hooks/useEventListener'
@@ -39,11 +38,19 @@ export default function Header({
                     <span className="sr-only">
                         {t('header.a11y.openMenu', { ns: 'common' })}
                     </span>
-                    <Icon
-                        icon="heroicons:bars-3-bottom-left"
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
                         className="h-6 w-6"
                         aria-hidden="true"
-                    />
+                    >
+                        <path
+                            fillRule="evenodd"
+                            d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75H12a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+                            clipRule="evenodd"
+                        />
+                    </svg>
                 </button>
                 <a
                     href={links[0].href}

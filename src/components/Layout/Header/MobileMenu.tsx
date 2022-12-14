@@ -17,11 +17,7 @@ export default function MobileMenu({
 }) {
     return (
         <Transition.Root show={open} as={Fragment}>
-            <Dialog
-                as="div"
-                className="relative z-50 sm:hidden"
-                onClose={onClose}
-            >
+            <Dialog as="div" className="relative z-50" onClose={onClose}>
                 <Transition.Child
                     as={Fragment}
                     enter="ease-in-out duration-500"
@@ -87,6 +83,9 @@ export default function MobileMenu({
                                                                 : 'font-medium'
                                                         )}
                                                         href={href}
+                                                        onClick={() =>
+                                                            onClose()
+                                                        }
                                                     >
                                                         {name}
                                                     </a>
