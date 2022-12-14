@@ -1,18 +1,29 @@
 {
     "seo": {
-        "title": "Portfolio",
-        "description": "lorem ipsum"
+        "title": "Accueil",
+        "description": "Découvrez le portfolio de Florian Lefebvre, avec ses compétences, ses projets, ses articles et bien plus encore. Jetez-y un coup d'œil !"
     },
     "hero": {
         "title": "Florian Lefebvre,\n\ndéveloppeur web **fullstack**\n\n*& plus*",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo. Fusce justo diam, blandit sit amet mi sed, dictum egestas est. Aenean.",
+        "description": "Hey ! Je suis un développeur web français, impliqué dans l'**open-source** et intéressé par le **design UI/UX**, la **gestion de projet** et plus... Faites défiler pour en savoir plus sur moi !",
         "ctas": {
             "learnMore": {
                 "name": "En savoir plus"
             }
+        },
+        "image": {
+            "alt": "Photo de Florian Lefebvre"
         }
     },
     "about": {
-        "title": "D'**autodidacte** à\n\n**diplômé**.\n\nToujours **passionné**."
+        "title": "D'**autodidacte** à\n\n**diplômé**.\n\nToujours **passionné**.",
+        "content": [
+            "Tout a commencé à 13 ans avec une vidéo de [Nico](https://www.youtube.com/@user-bn6hi6eq1s) qui m'a donné envie de développer des jeux avec Unreal Engine 4. Au début du lycée, je me suis ensuite tourné vers le développement web. Je suis maintenant sur le point de suivre une formation chez [Le Wagon](https://www.lewagon.com/web-development-course) et d'obtenir le diplôme de concepteur et développeur web.",
+            "J'ai appris beaucoup de choses tout au long de mon apprentissage, et pas seulement en développement web ! J'ai des compétences en design UI/UX (j'ai travaillé sur des *design systems*), en gestion de projet (avec des outils incroyables comme [Linear](https://linear.app)) et j'ai continué à apprendre de nouvelles technologies et à améliorer mes compétences.",
+            "Même si je suis passionné par le développement web, ce n'est pas la seule chose dans ma vie. Je suis également musicien depuis plus de 10 ans ! Cliquez sur le lien ci-dessous pour en savoir plus."
+        ],
+        "cta": {
+            "name": "En savoir plus"
+        }
     }
 }
