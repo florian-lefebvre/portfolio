@@ -1,0 +1,6 @@
+# Plausible proxy
+
+/js/script.js https://plausible.io/js/script.js 200
+/api/event https://plausible.io/api/event 200
+
+# v4 portfolio
