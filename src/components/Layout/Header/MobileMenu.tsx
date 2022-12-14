@@ -2,12 +2,13 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Icon } from '@iconify/react'
 import clsx from 'clsx'
 import { t } from 'i18next'
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
+import useEventListener from '~/hooks/useEventListener'
 
 export default function MobileMenu({
     open,
     onClose,
-    pathname,
+    pathname: initialPathname,
     links,
 }: {
     open: boolean
@@ -15,6 +16,28 @@ export default function MobileMenu({
     pathname: string
     links: { name: string; href: string }[]
 }) {
+    const [pathname, setPathname] = useState(initialPathname)
+
+    function onLinkClicked(
+        e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+        href: string
+    ) {
+        if (!href.startsWith('#')) {
+            e.preventDefault()
+            window.swup.loadPage({
+                url: href,
+            })
+        }
+        onClose()
+    }
+
+    useEventListener({
+        event: 'swup:contentReplaced',
+        listener: () => {
+            setPathname(window.location.pathname)
+        },
+    })
+
     return (
         <Transition.Root show={open} as={Fragment}>
             <Dialog as="div" className="relative z-50" onClose={onClose}>
@@ -83,8 +106,11 @@ export default function MobileMenu({
                                                                 : 'font-medium'
                                                         )}
                                                         href={href}
-                                                        onClick={() =>
-                                                            onClose()
+                                                        onClick={(e) =>
+                                                            onLinkClicked(
+                                                                e,
+                                                                href
+                                                            )
                                                         }
                                                     >
                                                         {name}

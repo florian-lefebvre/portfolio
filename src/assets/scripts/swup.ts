@@ -11,7 +11,7 @@ import SwupScriptsPlugin from '@swup/scripts-plugin'
 // @ts-ignore
 import SwupFadeTheme from '@swup/fade-theme'
 
-const swup = new Swup({
+const swup: typeof Swup = new Swup({
     plugins: [
         new SwupA11yPlugin(),
         new SwupHeadPlugin(),
@@ -25,6 +25,8 @@ const swup = new Swup({
         new SwupFadeTheme(),
     ],
 })
+
+window.swup = swup
 
 document.addEventListener('swup:samePage', (event) => {
     history.replaceState(

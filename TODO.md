@@ -6,7 +6,7 @@
 -   [x] 404
 -   [x] BUG: when no match last header item is selected
 -   [x] BUG: mobile menu : close on click
--   [ ] BUG: make swup work with mobile menu
+-   [x] BUG: make swup work with mobile menu
 -   [ ] logo
 -   [ ] content
 -   [ ] https://motion.dev/dom/in-view
