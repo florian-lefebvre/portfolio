@@ -1,12 +1,12 @@
 import clsx from 'clsx'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import useEventListener from '~/hooks/useEventListener'
 import ThemeToggler from './ThemeToggler'
 import MobileMenu from './MobileMenu'
 import { t } from 'i18next'
 
 export default function Header({
-    pathname,
+    pathname: initialPathname,
     links,
 }: {
     pathname: string
@@ -14,6 +14,14 @@ export default function Header({
 }) {
     const [isTop, setIsTop] = useState(true)
     const [open, setOpen] = useState(false)
+    const [pathname, setPathname] = useState(initialPathname)
+
+    useEffect(() => {
+        document.addEventListener('swup:contentReplaced', () => {
+            setPathname(window.location.pathname)
+        })
+    })
+
     useEventListener({
         event: 'scroll',
         listener: () => setIsTop(window.scrollY < 100),
@@ -21,6 +29,7 @@ export default function Header({
             passive: true,
         },
     })
+
     return (
         <header
             className={clsx(
