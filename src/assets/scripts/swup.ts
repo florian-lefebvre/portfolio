@@ -46,6 +46,7 @@ document.addEventListener('swup:contentReplaced', (event) => {
         window.location.pathname === '' ? '/' : window.location.pathname
 
     links.shift()
+    links.pop()
     const selectedLink = links.find((link) => link.pathname === pathname)
     selectedLink?.classList.remove('font-medium')
     selectedLink?.classList.add('font-bold')
