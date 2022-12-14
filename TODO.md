@@ -7,7 +7,7 @@
 -   [x] BUG: when no match last header item is selected
 -   [x] BUG: mobile menu : close on click
 -   [x] BUG: make swup work with mobile menu
--   [ ] logo
+-   [x] logo
 -   [ ] content
 -   [ ] https://motion.dev/dom/in-view
 -   [ ] image optimization

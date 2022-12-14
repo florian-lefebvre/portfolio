@@ -35,23 +35,16 @@ import SocialLinks from './SocialLinks'
     >
         <div class="flex flex-col items-center gap-8 lg:flex-row">
             <svg
-                class="h-8 w-8"
-                viewBox="0 0 48 48"
-                fill="none"
+                fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="h-8 w-8"
+                aria-hidden="true"
             >
                 <title>{t('header.logoAlt', { ns: 'common' })}</title>
                 <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M14.0656 19.9999L16.2822 11.7273C17.3175 7.8636 21.0574 4.72459 24.1483 5.55281L20.2037 20.2744C23.3482 21.0541 26 23.3944 26 25.9999H18.6696L15.8661 36.4624C14.8308 40.3262 11.091 43.4652 8.00002 42.6369L12.4925 25.8707C9.05343 25.2863 6 22.7958 6 19.9999H14.0656Z"
-                    fill="currentColor"></path>
-                <path
-                    d="M30.0781 40.5293C29.1418 41.2807 28.1646 41.6974 27.27 41.7612L35.2482 11.9862C35.7088 10.267 36.7795 8.69644 38.0703 7.66062C39.0065 6.90929 39.9838 6.49257 40.8784 6.42879L32.9002 36.2037C32.4395 37.9229 31.3689 39.4935 30.0781 40.5293Z"
-                    fill="currentColor"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linejoin="round"></path>
+                    d="m13.1294 20.8356 4.0117-14.97189c.4635-1.72957 2.0108-3.1687 3.4388-3.15394.2762.00285.4363.28293.3649.54966L16.9331 18.2313c-.4635 1.7296-2.0108 3.1687-3.4389 3.1539-.2761-.0028-.4363-.2829-.3648-.5496ZM6.85594 10.2862l1.11075-4.14531c.46343-1.72957 2.0108-3.16871 3.43881-3.15395.034.00035.0662.00489.0964.01308.8275.00102 1.4981.6722 1.4981 1.5 0 .82843-.6716 1.5-1.5 1.5-.1302 0-.2565-.01659-.3769-.04776L9.93352 10.3917c1.42748.3099 2.68058 1.2674 2.97148 2.3999.0688.2675-.1603.4946-.4365.4946H9.15792l-1.39929 5.2223c-.46343 1.7295-2.0108 3.1687-3.43883 3.1539-.27612-.0029-.43628-.2829-.36481-.5497l2.12129-7.9167c-1.45745-.2927-2.74838-1.2634-3.04426-2.4151-.06871-.2675.16037-.4947.43651-.4947h3.38741Z"
+                ></path>
             </svg>
             <div class="text-center text-neutral-11 sm:text-left">
                 <Markdown
@@ -81,7 +74,7 @@ import SocialLinks from './SocialLinks'
                     .map(({ href, name }) => (
                         <a
                             href={localizePath(href)}
-                            class="py-2 px-4 hover:underline focus:outline-none focus:ring-3 focus:ring-primary-7"
+                            class="focus:ring-3 focus:ring-primary-7 py-2 px-4 hover:underline focus:outline-none"
                         >
                             {name}
                         </a>
