@@ -15,5 +15,5 @@
 -   [ ] check for TODOs
 -   [ ] Netlify redirects file
 -   [ ] remove robots.txt
--   [ ] Reroute v4 to v4.florian-lefebvre.dev
+-   [ ] Reroute v4 to v4.florian-lefebvre.dev + update banner link
 -   [ ] Update Netlify settings

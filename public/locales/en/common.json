@@ -1,11 +1,15 @@
 {
-    "titleTemplate": "{{title}} | Florian Lefebvre",
+    "titleTemplate": "{{title}} | Florian Lefebvre's Portfolio",
     "header": {
-        "logoAlt": "Logo",
+        "logoAlt": "Logo representing initials of Florian Lefebvre",
+        "themes": {
+            "light": "light",
+            "dark": "dark"
+        },
         "a11y": {
-            "openMenu": "Open menu",
+            "openMenu": "Open navigation menu",
             "closeMenu": "Close menu",
-            "switchTheme": "Switch theme",
+            "switchTheme": "Switch to {{theme}} theme",
             "backToTop": "Back to top"
         },
         "links": [

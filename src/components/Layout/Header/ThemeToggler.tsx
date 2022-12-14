@@ -16,7 +16,17 @@ export default function ThemeToggler() {
             disabled={$themeStore.running}
         >
             <span className="sr-only">
-                {t('header.a11y.switchTheme', { ns: 'common' })}
+                {t('header.a11y.switchTheme', {
+                    ns: 'common',
+                    theme: t(
+                        `header.themes.${
+                            $themeStore.theme === 'light' ? 'dark' : 'light'
+                        }`,
+                        {
+                            ns: 'common',
+                        }
+                    ),
+                })}
             </span>
             {$themeStore.theme === 'light' ? (
                 <svg
