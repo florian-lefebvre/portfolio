@@ -1,7 +1,3 @@
-# Config
-
-/fr/\* /fr/404.html 404
-
 # Plausible proxy
 
 /js/script.js https://plausible.io/js/script.js 200

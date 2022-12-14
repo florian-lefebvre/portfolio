@@ -1,3 +1,8 @@
 [build]
 command = "pnpm build"
 publish = "dist"
+
+[[redirects]]
+from = "/fr/*"
+to = "/fr/404.html"
+status = 404
