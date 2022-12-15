@@ -2,13 +2,12 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Icon } from '@iconify/react'
 import clsx from 'clsx'
 import { t } from 'i18next'
-import { Fragment, useState } from 'react'
-import useEventListener from '~/hooks/useEventListener'
+import { Fragment } from 'react'
 
 export default function MobileMenu({
     open,
     onClose,
-    pathname: initialPathname,
+    pathname,
     links,
 }: {
     open: boolean
@@ -16,8 +15,6 @@ export default function MobileMenu({
     pathname: string
     links: { name: string; href: string }[]
 }) {
-    const [pathname, setPathname] = useState(initialPathname)
-
     function onLinkClicked(
         e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
         href: string
@@ -30,13 +27,6 @@ export default function MobileMenu({
         }
         onClose()
     }
-
-    useEventListener({
-        event: 'swup:contentReplaced',
-        listener: () => {
-            setPathname(window.location.pathname)
-        },
-    })
 
     return (
         <Transition.Root show={open} as={Fragment}>

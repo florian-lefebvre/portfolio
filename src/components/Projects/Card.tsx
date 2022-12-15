@@ -43,7 +43,7 @@ export default function ProjectCard({
         medium: 'md:text-3xl',
     })
     const descClass = getClass(
-        'font-medium text-neutral-11 text-xs sm:text-base',
+        'font-medium text-neutral-11 text-base',
         {
             small: '',
             medium: '',
