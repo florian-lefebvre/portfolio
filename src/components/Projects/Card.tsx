@@ -42,15 +42,12 @@ export default function ProjectCard({
         small: '',
         medium: 'md:text-3xl',
     })
-    const descClass = getClass(
-        'font-medium text-neutral-11 text-base',
-        {
-            small: '',
-            medium: '',
-        }
-    )
+    const descClass = getClass('font-medium text-neutral-11 text-base', {
+        small: '',
+        medium: '',
+    })
     const linkClass = getClass(
-        'inline-flex mr-auto items-center space-x-2 font-semibold pb-1 border-b-2 border-transparent group-hover:border-current transition-colors text-sm sm:text-base',
+        'inline-flex mr-auto mt-auto items-center space-x-2 font-semibold pb-1 border-b-2 border-transparent group-hover:border-current transition-colors text-sm sm:text-base',
         {
             small: '',
             medium: '',

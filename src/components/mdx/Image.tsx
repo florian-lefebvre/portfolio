@@ -4,5 +4,10 @@ export default function Image(
         HTMLImageElement
     >
 ) {
-    return <img loading="lazy" {...props} />
+    return (
+        <figure>
+            <img loading="lazy" {...props} />
+            <figcaption>{props.alt}</figcaption>
+        </figure>
+    )
 }

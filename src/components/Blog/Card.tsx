@@ -45,7 +45,7 @@ export default function ArticleCard({
             <h3 className="text-xl font-semibold sm:text-2xl md:text-3xl">
                 {title}
             </h3>
-            <p className="text-xs font-medium text-neutral-11 sm:text-base">
+            <p className="text-base font-medium text-neutral-11">
                 {description}
             </p>
         </a>
