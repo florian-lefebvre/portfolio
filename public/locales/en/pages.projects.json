@@ -1,20 +1,17 @@
 {
     "seo": {
         "title": "Projects",
-        "description": ""
+        "description": "Florian Lefebvre has already worked on many projects and it's far from being over... Discover them !"
     },
     "hero": {
         "title": "**Projects**",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo. Fusce justo diam, blandit sit amet mi sed, dictum egestas est. Aenean."
+        "description": "I have so many ideas, somewhere in the back of my brain, that I am always busy working on one project or another. And there are some good ones in the bunch, see for yourself!"
     },
     "featured": {
-        "title": "Featured **work**",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo. Fusce justo diam, blandit sit amet mi sed, dictum egestas est. Aenean.",
+        "title": "**Featured** work",
+        "description": "$t(hero.description)",
         "projects": ["op-ent", "ynotes", "oss-at-novu", "regiolangues", "ohf31"]
     },
     "more": "**More** projects",
-    "[slug]": {
-        "back": "Back",
-        "toc": "Table of contents"
-    }
+    "viewProject": "View project"
 }

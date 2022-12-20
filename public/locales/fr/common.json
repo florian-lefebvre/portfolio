@@ -37,5 +37,9 @@
             { "name": "Mentions légales" },
             { "name": "Politique de confidentialité" }
         ]
+    },
+    "[slug]": {
+        "back": "Retour",
+        "toc": "Table des matières"
     }
 }

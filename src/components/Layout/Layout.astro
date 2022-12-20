@@ -42,12 +42,16 @@ import BackToTop from '~/components/Layout/BackToTop'
                 } catch (e) {}
             })()
         </script>
-        <script
-            is:inline
-            defer
-            data-domain="florian-lefebvre.dev"
-            src="/js/script.js"
-        ></script>
+        {
+            process.env.MODE === 'production' && (
+                <script
+                    is:inline
+                    defer
+                    data-domain="florian-lefebvre.dev"
+                    src="/js/script.js"
+                />
+            )
+        }
     </head>
     <body class="bg-neutral-2 text-neutral-12 dark:bg-neutralDark-4">
         <Banner />

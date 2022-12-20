@@ -1,1 +1,15 @@
-{}
+{
+    "seo": {
+        "title": "Projets",
+        "description": "Florian Lefebvre a déjà travaillé sur de nombreux projets et c'est loin d'être fini... Découvrez-les !"
+    },
+    "hero": {
+        "title": "**Projets**",
+        "description": "J'ai tellement d'idées, quelque part au fond de mon cerveau, que je suis toujours occupée à travailler sur un projet ou un autre. Et il y en a de bonnes dans le lot, voyez par vous-même !"
+    },
+    "featured": {
+        "title": "**Meilleurs** projets"
+    },
+    "more": "**Plus** de projets",
+    "viewProject": "Voir le projet"
+}

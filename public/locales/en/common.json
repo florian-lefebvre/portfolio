@@ -67,5 +67,9 @@
             { "href": "/legal/legal-notices", "name": "Legal notices" },
             { "href": "/legal/privacy-policy", "name": "Privacy policy" }
         ]
+    },
+    "[slug]": {
+        "back": "Back",
+        "toc": "Table of contents"
     }
 }

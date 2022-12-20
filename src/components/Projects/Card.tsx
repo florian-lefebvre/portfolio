@@ -1,5 +1,6 @@
 import { Icon } from '@iconify/react'
 import clsx from 'clsx'
+import { t } from 'i18next'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 type Props = {
@@ -69,7 +70,7 @@ export default function ProjectCard({
             <h3 className={titleClass}>{title}</h3>
             <p className={descClass}>{description}</p>
             <div className={linkClass}>
-                <span>View project</span>
+                <span>{t('viewProject', { ns: 'pages.projects' })}</span>
                 <Icon
                     icon="heroicons:chevron-right-20-solid"
                     className="h-4 w-4"

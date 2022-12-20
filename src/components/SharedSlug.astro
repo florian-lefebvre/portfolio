@@ -28,7 +28,7 @@ const isArticle = 'publishedTime' in frontmatter
                 icon="heroicons:chevron-left-solid"
                 className="h-4 w-4 -ml-1"
             />
-            <span>{t('[slug].back', { ns: 'pages.projects' })}</span>
+            <span>{t('[slug].back', { ns: 'common' })}</span>
         </a>
     </div>
     <article
@@ -67,7 +67,7 @@ const isArticle = 'publishedTime' in frontmatter
             class="sm:sticky sm:top-24 sm:max-h-[calc(100vh-120px)] sm:overflow-y-auto"
         >
             <div class="mb-4 md:text-lg">
-                {t('[slug].toc', { ns: 'pages.projects' })}
+                {t('[slug].toc', { ns: 'common' })}
             </div>
             <ul
                 class="space-y-2 text-sm font-medium text-neutral-11 md:text-base"
