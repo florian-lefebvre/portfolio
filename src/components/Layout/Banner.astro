@@ -1,23 +1,24 @@
 ---
-export interface Props {
-    enabled?: boolean
-}
+import { t } from 'i18next'
 
-const { enabled = true } = Astro.props
+const enabled = t('banner.enabled', { ns: 'common' })
+const title = t('banner.title', { ns: 'common' })
+const cta = t('banner.cta', { ns: 'common' })
+const url = t('banner.url', { ns: 'common' })
 ---
 
 {
     enabled ? (
         <a
-            href="https://florian-lefebvre.dev"
-            target="_blank"
-            class="group block border-4 border-transparent bg-primary-5 font-medium text-primary-11 transition-colors hover:bg-primary-6 focus:border-primary-8 focus:outline-none"
+            href={url}
+            target={
+                url.startsWith('/') || url.startsWith('#') ? null : '_blank'
+            }
+            class="bg-primary-5 text-primary-11 hover:bg-primary-6 focus:border-primary-8 group block border-4 border-transparent font-medium transition-colors focus:outline-none"
         >
             <div class="custom-container px-4 py-2 text-sm">
-                Miss the previous version ?{' '}
-                <span class="font-semibold group-hover:underline">
-                    Check it out!
-                </span>
+                {title}{' '}
+                <span class="font-semibold group-hover:underline">{cta}</span>
             </div>
         </a>
     ) : (
