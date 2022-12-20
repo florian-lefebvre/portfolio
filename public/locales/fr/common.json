@@ -1,5 +1,9 @@
 {
     "titleTemplate": "{{title}} | Portfolio de Florian Lefebvre",
+    "banner": {
+        "title": "La version précédente vous manque ?",
+        "cta": "Elle est encore disponible !"
+    },
     "header": {
         "a11y": {
             "openMenu": "Ouvrir le menu de navigation",
