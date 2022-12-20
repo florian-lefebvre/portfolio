@@ -1,1 +1,65 @@
-{}
+{
+    "seo": {
+        "title": "A propos",
+        "description": "Vous voulez en savoir plus sur Florian Lefebvre ? Découvrez comment il est devenu développeur web, quelles technologies il utilise, sa formation & plus encore !"
+    },
+    "hero": {
+        "title": "**A propos** de moi",
+        "content": [
+            "J'ai toujours été passionné par l'informatique. Au collège, je gérais déjà un parc informatique avec un ami. Je me suis alors tourné vers la programmation à 13 ans.",
+            "Ce n'était évidemment pas enseignée, mais j'ai réussi à apprendre par moi-même, en regardant des [tutos YouTube](https://www.youtube.com/watch?v=Wm6CUkswsNw), en lisant des articles et en [copiant-collant](https://stackoverflow.com/questions/114543/how-can-i-horizontally-center-an-element) des bouts de codes que je ne comprenais pas. Classique.",
+            "Après avoir [codé des jeux](/fr/projets/glutton-runner), je me suis finalement tourné vers le développement web! Du simple HTML et CSS, en passant par Bootstrap et Jekyll jusqu'à React et Next.js, quel parcours ! Non linéaire mais passionant...",
+            "A part ça, vous saviez que j'étais musicien ? Cela fait plus de 10 ans maintenant, jouant de la batterie, des percussions et de la guitare basse dans plusieurs groupes : [orchestre](https://ohf31.fr), [groupe rock](https://www.instagram.com/legrouperock/)..."
+        ],
+        "images": [
+            {
+                "alt": "Photo of Florian Lefebvre"
+            },
+            {
+                "alt": "Photo of Florian Lefebvre"
+            }
+        ]
+    },
+    "skills": {
+        "title": "Mes **compétences**",
+        "description": "Apprendre le développement web en autodidacte m'a permis de découvrir beaucoup, *beaucoup* de technos... Voici celles avec lesquelles je préfère travailler !"
+    },
+    "moreSkills": {
+        "title": "Et bien **plus !**",
+        "description": "Mon *stack* repose sur la connaissance de certains langages de programmation, et j'ai également travaillé avec d'autres technologies qui méritent d'être mentionnées."
+    },
+    "education": {
+        "title": "**Education** & diplômes",
+        "description": "Être un autodidacte ne signifie pas que je n'ai pas d'éducation. J'ai toujours été assez bon à l'école, voyez par vous-même !",
+        "elements": [
+            {
+                "title": "Baccalauréat",
+                "date": "2019-2022",
+                "location": "Le Ferradou",
+                "description": "Mention très bien. NSI et Mathématiques. Section européenne (anglais)",
+                "soon": false
+            },
+            {
+                "title": "RNCP niveau 6 (équivalent Bac+3)",
+                "date": "2023",
+                "location": "Le Wagon",
+                "description": "Concepteur développeur d'application web",
+                "soon": true
+            },
+            {
+                "title": "Cambridge B2",
+                "date": "2022",
+                "location": "Le Ferradou",
+                "description": "En attente des résultats",
+                "soon": true
+            },
+            {
+                "title": "Reply Code Challenge",
+                "date": "10/03/2022",
+                "location": null,
+                "description": "Teen Edition. Equipe *WhyNot* classée 156/1150",
+                "soon": false
+            }
+        ]
+    }
+}

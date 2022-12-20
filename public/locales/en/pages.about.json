@@ -1,14 +1,15 @@
 {
     "seo": {
         "title": "About me",
-        "description": ""
+        "description": "Want to know more about Florian Lefebvre? Find out how he became a web developer, what technologies he uses, his education & more!"
     },
     "hero": {
         "title": "**About** me",
         "content": [
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo. Fusce justo diam, blandit sit amet mi sed, dictum egestas est. Aenean.",
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo. Fusce justo diam, blandit sit amet mi sed, dictum egestas est. Aenean.",
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo. Fusce justo diam, blandit sit amet mi sed, dictum egestas est. Aenean."
+            "I have always been passionate about IT. In middle school, I was already managing computers and fixing problems with a friend. So no one was surprised when I turned to programming at 13.",
+            "Programming was obviously not taught, but I managed to learn on my own, watching [tutorials on YouTube](https://www.youtube.com/watch?v=Wm6CUkswsNw), reading blog posts, and [copying and pasting](https://stackoverflow.com/questions/114543/how-can-i-horizontally-center-an-element) bits of code I didn't understand. Classic.",
+            "After [coding games](/projects/glutton-runner), I finally turned to web development! From simple HTML and CSS, through Bootstrap and Jekyll to React and Next.js, what a journey! Not linear but exciting...",
+            "Besides that, did you know that I was a musician? It's been more than 10 years now, playing drums, percussions and bass guitar in various bands : [orchestra](https://ohf31.fr), [rock band](https://www.instagram.com/legrouperock/)..."
         ],
         "images": [
             {
@@ -23,7 +24,7 @@
     },
     "skills": {
         "title": "My **skills**",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo.",
+        "description": "Learning web development as a self-taught person allowed me to discover many, *many* techs... Here are the ones I prefer to work with !",
         "techs": [
             {
                 "icon": "logos:nextjs-icon",
@@ -65,7 +66,7 @@
     },
     "moreSkills": {
         "title": "And much **more!**",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo.",
+        "description": "My tech stack relies on knowledge of certain programming languages, and I have also worked with other technologies that are worth mentioning.",
         "techs": [
             {
                 "icon": "logos:html-5",
@@ -115,13 +116,13 @@
     },
     "education": {
         "title": "**Education** & certifications",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna enim, commodo eget tortor non, imperdiet condimentum justo.",
+        "description": "Being a self-taught person doesn't mean I don't have an education. I've always been pretty good at school, see for yourself!",
         "elements": [
             {
                 "title": "High School Diploma",
                 "date": "2019-2022",
                 "location": "Le Ferradou",
-                "description": "Honourable mention, European section (English)",
+                "description": "Honourable mention. CS and Mathematics. European section (English)",
                 "soon": false
             },
             {
