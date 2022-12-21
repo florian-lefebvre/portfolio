@@ -65,6 +65,7 @@ export default function Header({
                     href={links[0].href}
                     className="p-1 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-3 focus:ring-primary-7 dark:hover:bg-neutralDark-6"
                 >
+                    <span className="sr-only">{links[0].name}</span>
                     <svg
                         fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg"
