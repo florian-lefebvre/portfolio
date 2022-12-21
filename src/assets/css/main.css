@@ -10,8 +10,7 @@
 }
 
 html {
-    /* @apply scroll-pt-20 scroll-smooth; */
-    @apply scroll-smooth;
+    @apply scroll-smooth selection:bg-primary-7 selection:text-primary-12;
 }
 
 [id] {

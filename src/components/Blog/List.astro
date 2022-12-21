@@ -6,12 +6,14 @@ import { normalizeArticleCardProps } from '~/utils'
 import { localizePath } from 'astro-i18next'
 
 const articles = await Astro.glob<ArticleFrontmatter>('../../content/**/*.mdx')
-const filteredArticles = articles.filter(
-    ({ frontmatter }) =>
-        frontmatter.language === i18next.language &&
-        frontmatter.type === 'article' &&
-        !frontmatter.draft
-)
+const filteredArticles = articles
+    .filter(
+        ({ frontmatter }) =>
+            frontmatter.language === i18next.language &&
+            frontmatter.type === 'article' &&
+            !frontmatter.draft
+    )
+    .reverse()
 ---
 
 <div class="custom-container grid gap-16 py-24 px-4 md:grid-cols-2">
