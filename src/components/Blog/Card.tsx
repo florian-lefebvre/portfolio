@@ -31,7 +31,7 @@ export default function ArticleCard({
                 <LazyLoadImage
                     src={img}
                     alt={alt}
-                    className="w-full object-cover transition-transform group-hover:scale-105"
+                    className="h-72 w-full object-cover transition-transform group-hover:scale-105"
                     loading="lazy"
                     placeholder={<div className="h-72 bg-primary-5"></div>}
                 />

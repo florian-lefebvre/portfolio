@@ -10,7 +10,16 @@
 }
 
 html {
-    @apply scroll-pt-20 scroll-smooth;
+    /* @apply scroll-pt-20 scroll-smooth; */
+    @apply scroll-smooth;
+}
+
+[id] {
+    @apply -mt-20 pt-20;
+}
+
+.prose [id] {
+    @apply pt-28;
 }
 
 strong {
@@ -35,4 +44,13 @@ main[tabindex='-1'] {
 
 .markdown-link a {
     @apply text-primary-9 underline hover:text-primary-10 focus:outline-none focus:ring-3 focus:ring-primary-7;
+}
+
+.prose :where(code):not(:where([class~='not-prose'] *)) {
+    @apply inline-block bg-neutral-7 p-1 leading-[normal];
+}
+
+.prose :where(code):not(:where([class~='not-prose'] *))::before,
+.prose :where(code):not(:where([class~='not-prose'] *))::after {
+    content: '' !important;
 }
