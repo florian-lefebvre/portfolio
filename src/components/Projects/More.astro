@@ -11,7 +11,8 @@ const filteredProjects = projects
     .filter(
         ({ frontmatter }) =>
             frontmatter.language === i18next.language &&
-            frontmatter.type === 'project'
+            frontmatter.type === 'project' &&
+            !frontmatter.draft
     )
     .sort((a, b) => a.frontmatter.order - b.frontmatter.order)
 

@@ -13,7 +13,8 @@ export async function getStaticPaths() {
     const filteredProjects = projects.filter(
         ({ frontmatter }) =>
             frontmatter.language === i18next.language &&
-            frontmatter.type === 'article'
+            frontmatter.type === 'article' &&
+            !frontmatter.draft
     )
     return filteredProjects.map(({ frontmatter: { slug } }) => ({
         params: { slug },
@@ -23,7 +24,8 @@ const projects = await Astro.glob<ArticleFrontmatter>(`../../content/**/*.mdx`)
 const filteredProjects = projects.filter(
     ({ frontmatter }) =>
         frontmatter.language === i18next.language &&
-        frontmatter.type === 'article'
+        frontmatter.type === 'article' &&
+        !frontmatter.draft
 )
 const project = filteredProjects.find(
     ({ frontmatter }) => frontmatter.slug === Astro.params.slug
@@ -45,7 +47,9 @@ const { Content, frontmatter } = project
         },
     }}
 >
-    <SharedSlug frontmatter={frontmatter} headings={project.getHeadings()}>
-        <Content />
-    </SharedSlug>
+    <SharedSlug
+        frontmatter={frontmatter}
+        headings={project.getHeadings()}
+        Content={Content}
+    />
 </ContentLayout>

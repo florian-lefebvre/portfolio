@@ -11,6 +11,7 @@ export type BaseFrontmatter = {
     category: string
     tags: string[]
     modifiedTime: string
+    draft?: boolean
 }
 
 export type ProjectFrontmatter = BaseFrontmatter & {

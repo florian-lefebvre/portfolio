@@ -5,13 +5,14 @@ import i18next, { t } from 'i18next'
 import PageProgressBar from '~/components/Layout/PageProgressBar'
 import type { ArticleFrontmatter, ProjectFrontmatter } from '~/types/mdx'
 import type { MarkdownHeading } from 'astro'
-import MDXProvider from './mdx/MDXProvider'
+import MDXComponents from './mdx/MDXComponents'
 
 export type Props = {
     frontmatter: ProjectFrontmatter | ArticleFrontmatter
     headings: MarkdownHeading[]
+    Content: any
 }
-const { frontmatter, headings } = Astro.props
+const { frontmatter, headings, Content } = Astro.props
 const isArticle = 'publishedTime' in frontmatter
 ---
 
@@ -58,9 +59,7 @@ const isArticle = 'publishedTime' in frontmatter
                 {frontmatter.thumbnail.alt}
             </figcaption>
         </figure>
-        <MDXProvider>
-            <slot />
-        </MDXProvider>
+        <Content components={MDXComponents} />
     </article>
     <div class="order-2 sm:order-none">
         <div
@@ -79,7 +78,7 @@ const isArticle = 'publishedTime' in frontmatter
                             <li>
                                 <a
                                     href={`#${slug}`}
-                                    class="hover:text-neutral-12 focus:ring-3 focus:ring-primary-7 ml-2 transition-colors hover:underline focus:outline-none"
+                                    class="hover:text-neutral-12 focus:ring-3 focus:ring-primary-7 transition-colors hover:underline focus:outline-none"
                                 >
                                     {text}
                                 </a>

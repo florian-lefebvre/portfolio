@@ -1,5 +1,5 @@
 ---
-import MDXProvider from '~/components/mdx/MDXProvider'
+import MDXComponents from '~/components/mdx/MDXComponents'
 import ContentLayout from '~/layouts/Content.astro'
 import i18next, { changeLanguage } from 'i18next'
 
@@ -20,8 +20,6 @@ const { Content, frontmatter } = MdxFile
     <div class="prose prose-sm mx-auto px-4 py-24 sm:prose-base lg:prose-lg">
         <h1>{frontmatter.title}</h1>
         <p class="lead">{frontmatter.description}</p>
-        <MDXProvider>
-            <Content />
-        </MDXProvider>
+        <Content components={MDXComponents} />
     </div>
 </ContentLayout>

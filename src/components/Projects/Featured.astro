@@ -16,7 +16,8 @@ const projects = await Astro.glob<ProjectFrontmatter>(`../../content/**/*.mdx`)
 const filteredProjects = projects.filter(
     ({ frontmatter }) =>
         frontmatter.language === i18next.language &&
-        frontmatter.type === 'project'
+        frontmatter.type === 'project' &&
+        !frontmatter.draft
 )
 
 const slugs = t('featured.projects', {
