@@ -13,6 +13,7 @@
 -   [ ] image optimization
 -   [ ] seo + meta defaults
 -   [ ] check for TODOs
+-   [ ] LICENSE
 -   [ ] Netlify redirects file
 -   [ ] remove robots.txt
 -   [ ] Enable plausible (uncomment \_redirects)
