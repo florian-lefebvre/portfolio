@@ -2,6 +2,7 @@ module.exports = {
     tabWidth: 4,
     singleQuote: true,
     semi: false,
+    proseWrap: 'always',
     plugins: [
         require.resolve('prettier-plugin-astro'),
         require('prettier-plugin-tailwindcss'),

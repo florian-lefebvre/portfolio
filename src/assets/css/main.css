@@ -45,11 +45,11 @@ main[tabindex='-1'] {
     @apply text-primary-9 underline hover:text-primary-10 focus:outline-none focus:ring-3 focus:ring-primary-7;
 }
 
-.prose :where(code):not(:where([class~='not-prose'] *)) {
-    @apply inline-block bg-neutral-7 p-1 leading-[normal];
+.prose :where(:not(pre) > code):not(:where([class~='not-prose'] *)) {
+    @apply my-0 inline-block bg-neutral-7 p-1 leading-[normal];
 }
 
-.prose :where(code):not(:where([class~='not-prose'] *))::before,
-.prose :where(code):not(:where([class~='not-prose'] *))::after {
+.prose :where(:not(pre) > code):not(:where([class~='not-prose'] *))::before,
+.prose :where(:not(pre) > code):not(:where([class~='not-prose'] *))::after {
     content: '' !important;
 }

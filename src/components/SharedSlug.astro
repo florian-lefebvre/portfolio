@@ -68,14 +68,14 @@ const isArticle = 'publishedTime' in frontmatter
                     <div class="mb-4 md:text-lg">
                         {t('[slug].toc', { ns: 'common' })}
                     </div>
-                    <ul class="text-neutral-11 space-y-2 text-sm font-medium md:text-base">
+                    <ul class="space-y-2 text-sm font-medium text-neutral-11 md:text-base">
                         {headings
                             .filter(({ depth }) => depth === 2)
                             .map(({ slug, text }) => (
                                 <li>
                                     <a
                                         href={`#${slug}`}
-                                        class="hover:text-neutral-12 focus:ring-3 focus:ring-primary-7 transition-colors hover:underline focus:outline-none"
+                                        class="transition-colors hover:text-neutral-12 hover:underline focus:outline-none focus:ring-3 focus:ring-primary-7"
                                     >
                                         {text}
                                     </a>

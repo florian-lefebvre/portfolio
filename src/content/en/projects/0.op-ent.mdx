@@ -1,41 +1,392 @@
 ---
-title: 'op-ent: an open-source school management system'
-description: After working on ynotes, an unofficial client for existing ENTs (French school management systems), it was finally time to create my own... but open-source!
+title: 'op-ent: open-source school management'
+description:
+    After working on ynotes, an unofficial client for existing ENTs (French
+    school management systems), it was finally time to create my own... but
+    open-source!
 thumbnail:
-    url: https://picsum.photos/1200/627?random=4
-    alt: 'Image description'
+    url: /images/content/en/projects/op-ent-0.jpg
+    alt: op-ent thumbnail
 category: Web development
 tags: [Education, Open Source, Web development, React, Tailwind CSS, Next.js]
 ---
 
 ## Introduction
 
--   High-level summary of what the project is
--   List of core functionalities / interesting features
--   Your role in the project. were you exclusively doing development, or did you do design? If you worked in groups, what parts did you tackle?
--   Technologies used
--   Links to live demo + source code (if applicable)
--   [Link example](/)
+op-ent is an open-source school management system, called _ENT_ in French
+(translated as _digital workspace_).
+
+It aims to bring basic features in a 1st phase, such as subjects, grades,
+calendar, homework etc. The goal is to make the platform a little more unique
+once it has reached feature parity with current competitors such as
+[EcoleDirecte](https://www.ecoledirecte.com/) or
+[Pronote](https://www.index-education.com/fr/logiciel-gestion-vie-scolaire.php).
+A few ideas:
+
+-   Gamification (achievements)
+-   Knowledge center
+-   Anonymous reporting (i.e for harassment)
+-   Built-in [Notion](https://notion/so)-like editor
+
+I'm the initiator of this massive project, working on all sides at first:
+frontend and backend development, design (design systems and brand identity),
+communication, project management, community management...
+
+The project is (and will be) using **many** technologies (subject to change):
+
+-   **Frontend**: [TypeScript](https://www.typescriptlang.org/),
+    [React](https://reactjs.org/), [Next.js](https://nextjs.org/),
+    [Tailwind CSS](https://tailwindcss.com/) and
+    [Axios](https://axios-http.com/)
+-   **Backend**: TypeScript, [AdonisJS](https://adonisjs.com/),
+    [Node.js](https://nodejs.org/), [PostgreSQL](https://www.postgresql.org/),
+    [Redis](https://redis.io/), [GraphQL](https://graphql.org/) (using
+    [Apollo](https://www.apollographql.com/)) and websockets
+-   **Design**: [Figma](https://www.figma.com/)
+
+There isn't much to show for now, but here is the link to the
+[Github organization](https://github.com/op-ent) and the
+[website](https://op-ent.fr).
+
+![GitHub organization screenshot](/images/content/en/projects/op-ent-1.png)
 
 ## Purpose and Goal
 
--   Why did you build this project? Why is it important to you?
--   What was the expected outcome of the project?
--   What were the initial designs?
--   Any other preliminary planning that you did which helps build a narrative
+I've contributed to (and maintained) a project called
+[ynotes](https://ynotes.fr) ([View project](/projects/ynotes)) not so long ago.
+Its goal was to provide an unofficial client for popular ENTs and students loved
+it! Even if the project is unmaintained, it has reached almost 7k downloads on
+Android on December 2022 (**+250% on 2 months**)! All this to say that ynotes
+(and op-ent now) are solving a real issue: current ENTs suck.
 
-## Spotlight
+My objective is _pretty_ simple I'd say: make op-ent the most used ENT in
+France. Well it's really _work in progress_ but I'm confident, I really think
+this project has potential.
 
--   What is the “killer feature” of your project? What feature does it have that took the most work, or was the most technically impressive? Some possible examples: - User authentication - A feed of items fetched from a database - A particularly tricky UI element (eg. autocomplete, calendar, drag-and-drop) - Anything you're proud of!
--   What were the technical hurdles that got in your way? Any major problems you hit during development?
--   How did you solve those problems? What was the solution? Go deep here, and write with a developer in mind. ## Current status
+To achieve this ambitious goal, the project is split in several sub-projects.
+For instance:
 
--   This section is optional. If the project is actively being used by real people, talk a little bit about the current status, who uses it, why they use it, what they say to you about it, stuff like that.
--   If the project was contrived specifically for the portfolio, omit this section.
+-   [unstyled-ui](https://github.com/op-ent/unstyled-ui): Headless React
+    components library
+-   [unstyled-ui-theme](https://github.com/op-ent/unstyled-ui-theme): Headless
+    React components library
+-   [api](https://github.com/op-ent/api): The API code
+-   [dashboard](https://github.com/op-ent/dashboard): The web app
+
+I decided not to use a monorepo for this project as I'm not that familiar with
+it, and I like the one-repository-per-project approach as used in
+[AdonisJS](https://github.com/adonisjs).
+
+## Spotlight: unstyled-ui
+
+Well, op-ent is made of so many parts that there are a lot of interesting things
+to talk about. But for the sake of this page, let's focus on `unstyled-ui`.
+
+_I might write dedicated articles for other sub-projects, who knows..._
+
+Useful links:
+
+-   [GitHub repository](https://github.com/op-ent/unstyled-ui)
+-   [Docs](https://unstyled-ui.docs.op-ent.fr/)
+
+`unstyled-ui` is yet another React UI library but I think it can solve a
+problem: mixing full-featured libraries like
+[Material UI](https://material-ui.com) and headless components like
+[Headless UI](https://headlessui.com/). Have a look at the
+[full motivation](https://github.com/op-ent/unstyled-ui#motivation). In short,
+it's configurable, customizable and type-safe.
+
+I stumbled across several issues while making this library:
+
+### Typed polymorphic components in React
+
+According to
+[freeCodeCamp](https://www.freecodecamp.org/news/build-strongly-typed-polymorphic-components-with-react-and-typescript):
+
+> In the world of React components, a polymorphic component is a component that
+> can be rendered with a different container element / node.
+
+Polymorphic components are not hard to implement, but **getting the types right
+is**. An example might be useful:
+
+Let's say you create a component called `Button` and you want it to be
+polymorphic because it can be a link sometimes. Polymorhism here is controlled
+by the `as` prop which represents the element. Its type is `React.ElementType`,
+so either a string or a React component.
+
+Then, when calling the following:
+
+```jsx
+<Button as="a" href="/">
+    Click!
+</Button>
+```
+
+We want the IDE to provide autocompletion for the `a` element and not the
+`button`.
+
+So after quite some researching, a lot of experiments and frustration I came up
+with the following (can't quote the source I'm sorry):
+
+-   `polymorphic.ts`
+
+```ts
+import type React from 'react'
+
+// Source: https://github.com/emotion-js/emotion/blob/master/packages/styled-base/types/helper.d.ts
+// A more precise version of just React.ComponentPropsWithoutRef on its own
+export type PropsOf<
+    C extends keyof JSX.IntrinsicElements | React.JSXElementConstructor<unknown>
+> = JSX.LibraryManagedAttributes<C, React.ComponentPropsWithoutRef<C>>
+
+type AsProp<C extends React.ElementType> = {
+    /**
+     * An override of the default HTML tag.
+     * Can also be another React component.
+     */
+    as?: C
+}
+
+/**
+ * Allows for extending a set of props (`ExtendedProps`) by an overriding set of props
+ * (`OverrideProps`), ensuring that any duplicates are overridden by the overriding
+ * set of props.
+ */
+export type ExtendableProps<
+    ExtendedProps = Record<string, unknown>,
+    OverrideProps = Record<string, unknown>
+> = OverrideProps & Omit<ExtendedProps, keyof OverrideProps>
+
+/**
+ * Allows for inheriting the props from the specified element type so that
+ * props like children, className & style work, as well as element-specific
+ * attributes like aria roles. The component (`C`) must be passed in.
+ */
+export type InheritableElementProps<
+    C extends React.ElementType,
+    Props = Record<string, unknown>
+> = ExtendableProps<PropsOf<C>, Props>
+
+/**
+ * A more sophisticated version of `InheritableElementProps` where
+ * the passed in `as` prop will determine which props can be included
+ */
+export type PolymorphicComponentProps<
+    C extends React.ElementType,
+    Props = Record<string, unknown>
+> = InheritableElementProps<C, Props & AsProp<C>>
+
+/**
+ * Utility type to extract the `ref` prop from a polymorphic component
+ */
+export type PolymorphicRef<C extends React.ElementType> =
+    React.ComponentPropsWithRef<C>['ref']
+/**
+ * A wrapper of `PolymorphicComponentProps` that also includes the `ref`
+ * prop for the polymorphic component
+ */
+
+export type PolymorphicComponentPropsWithRef<
+    C extends React.ElementType,
+    Props = Record<string, unknown>
+> = PolymorphicComponentProps<C, Props> & { ref?: PolymorphicRef<C> }
+
+export type ComponentProps<
+    C extends React.ElementType,
+    P
+> = PolymorphicComponentPropsWithRef<C, P>
+```
+
+-   `Button.tsx`
+
+```tsx
+import React, { forwardRef } from 'react'
+import type { ComponentProps, PolymorphicRef } from './polymorphic'
+
+export type ButtonProps = {
+    as?: React.ElementType
+    children?: React.ReactNode
+}
+
+export type ButtonComponent = <C extends React.ElementType = 'button'>(
+    props: ComponentProps<C, ButtonProps>
+) => React.ReactElement | null
+
+export const Button: ButtonComponent = forwardRef(
+    <C extends React.ElementType = 'button'>(
+        props: ComponentProps<C, ButtonProps>,
+        ref?: PolymorphicRef<C>
+    ) => {
+        const { as = 'button', children, ...rest } = props
+        const Component = as as React.ElementType
+
+        return (
+            <Component ref={ref} {...rest}>
+                {children}
+            </Component>
+        )
+    }
+)
+```
+
+### Typescript and module override
+
+By default, `unstyled-ui` doesn't take much decisions about props and their
+typings. So I wanted a flexible way for library users to customize, extend the
+current types.
+
+This was actually
+[inspired](https://mantine.dev/theming/colors/#add-custom-colors-types) by
+[Mantine](https://mantine.dev/):
+
+```ts
+import { Tuple, DefaultMantineColor } from '@mantine/core'
+
+type ExtendedCustomColors =
+    | 'primaryColorName'
+    | 'secondaryColorName'
+    | DefaultMantineColor
+
+declare module '@mantine/core' {
+    export interface MantineThemeColorsOverride {
+        colors: Record<ExtendedCustomColors, Tuple<string, 10>>
+    }
+}
+```
+
+But I wasn't fully satisfied by how it worked internally so I ended up tweaking
+it and get this:
+
+```ts
+declare module '@op-ent/unstyled-ui' {
+    interface CustomizableComponentsPropsOverride {
+        button: {
+            variant: 'primary' | 'secondary'
+        }
+    }
+}
+```
+
+Then, creating a config using the public library API is correctly typed:
+
+```ts
+export const { config, extendConfig } = createConfig({
+    components: {
+        button: {
+            defaultProps: {
+                variant: 'secondary',
+            },
+            customProps: ['variant'],
+        },
+    },
+})
+```
+
+[Here](https://github.com/op-ent/unstyled-ui/blob/9066cc28e3af96beddd5bfe95378682e5b8268d1/src/types/config.ts)
+is the magic making this possible:
+
+```ts
+import type { DeepPartial } from 'ts-essentials'
+import type {
+    AccordionProps,
+    ButtonProps,
+    ButtonGroupProps,
+    IconButtonProps,
+} from '..'
+
+export type ConfigOverride = DeepPartial<Config>
+
+export type Config = {
+    /**
+     * Used in {identifierTemplate}
+     */
+    prefix: string
+    /**
+     * @default `${prefix}-${id}`
+     */
+    identifierTemplate: (ctx: { prefix: string; id: string }) => string
+    /**
+     * @default `data-${prefix}-${prop}`
+     */
+    dataPropTemplate: (ctx: { prefix: string; prop: string }) => string
+    components: ComponentsConfig
+}
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export type CustomProps<T extends {}> = (keyof T extends never
+    ? string
+    : keyof T)[]
+
+export type ComponentName = keyof ComponentsConfig
+
+export type ComponentsConfig = {
+    accordion: {
+        defaultProps: DeepPartial<AccordionProps>
+        customProps: CustomProps<CustomizableComponentsProps['accordion']>
+    }
+    button: {
+        defaultProps: DeepPartial<ButtonProps>
+        customProps: CustomProps<CustomizableComponentsProps['button']>
+    }
+    buttonGroup: {
+        defaultProps: DeepPartial<ButtonGroupProps>
+        customProps: CustomProps<CustomizableComponentsProps['buttonGroup']>
+    }
+    iconButton: {
+        defaultProps: DeepPartial<IconButtonProps>
+        customProps: CustomProps<CustomizableComponentsProps['iconButton']>
+    }
+}
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export type DefaultCustomizableComponentsProps = Record<ComponentName, {}>
+
+export type CustomizableComponentsPropsOverride = Record<string, never>
+
+export type CustomizableComponentsProps = DefaultCustomizableComponentsProps &
+    CustomizableComponentsPropsOverride
+```
+
+---
+
+In the future, I'd like to work on the following topics:
+
+-   Getting a stable internal API to make contributions easier
+-   Make `unstyled-ui` framework agnostic, to allow people to share styles
+    across UI frameworks
+-   Allow component to have custom render functions through config for total
+    customization
+-   Allow users to make custom components work great without adding them to the
+    core library
+-   Maybe rename `@op-ent/unstyled-ui` because it's way too long to something
+    like `@uui/core` & `@uui/react`
+
+![Unstyled UI repository cover](https://repository-images.githubusercontent.com/517317970/3e96e369-4654-44eb-80c9-0d044f8b40dd)
+
+## Current status
+
+As you probably understood, op-ent is under heavy development and should not
+have an alpha, or even an MVP before the end of August 2023.
+
+Moreover, this page might be a little out of date because the project is likely
+to evolve fast.
 
 ## Lessons Learned
 
--   What did you learn doing this project? Feel free to list multiple things. Also feel free to cover non-technical lessons. It's great to talk about how you learned to use an advanced feature of a framework or library, but it's just as valuable to talk about project-management experience, or things you learned about shipping projects.
--   If you used a framework or other libraries/tools, was it a good choice? How did it help? In which ways was it insufficient?
--   Is your project accessible? What did you learn about accessibility, while building this project? Describing how you tested your project using keyboard navigation or a screenreader can make for a really compelling story!
--   How has this affected the work you've done since then? Real examples of how this project built your knowledge for future projects is fantastic.
+op-ent has taught many things already:
+
+-   **Project management** using [Github](https://github.com) and
+    [Linear](https://linear.app) (awesome tool btw)
+-   **Community management** on GitHub (with issues, PRs i.e contributions) and
+    [Discord](https://discord.com) ([Join us!](https://discord.gg/kMFmfSbC2C))
+-   Awesome new technologies
+-   Building a library (being more than a user) and preparing it to scale etc
+
+I'm satisfied so far with all the techs I chose so far, except with components
+library (such as [Chakra UI](https://chakra-ui.com/) and
+[Mantine](https://mantine.dev)) and that's why I decided to build `unstyled-ui`.
+
+I'm really happy with how the project turns out, I have learned many things so
+far and I really believe op-ent is useful. Feel free to
+[contribute](https://github.com/op-ent#-contribuer) and [contact me](#contact)
+to know more!

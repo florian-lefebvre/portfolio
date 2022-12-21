@@ -1,8 +1,9 @@
 ---
 title: Upgrading an unsupported Windows 10 PC to Windows 11
 description:
-    For no reason at all, I decided to spend an entire afternoon upgrading my unsupported
-    Windows 10 PC to Windows 11. I came across a lot of stupid mistakes so I decided to write about it.
+    For no reason at all, I decided to spend an entire afternoon upgrading my
+    unsupported Windows 10 PC to Windows 11. I came across a lot of stupid
+    mistakes so I decided to write about it.
 thumbnail:
     url: /images/content/en/blog/upgrading-an-unsupported-windows-10-pc-to-windows-11-0.jpg
     alt: Official image from Microsoft Support
@@ -10,7 +11,8 @@ category: IT
 tags: [Windows, Upgrade, Tutorial, Windows 10, Windows 11]
 ---
 
-It took me a while (several hours actually) to manage to do the upgrade. I hope this article can help you!
+It took me a while (several hours actually) to manage to do the upgrade. I hope
+this article can help you!
 
 <Alert>
 
@@ -21,43 +23,52 @@ This article is probably not relevant for any other incomptability reason.
 
 <Alert>
 
-The steps described in this article might not work for you. **Use at your own risk!**
+The steps described in this article might not work for you. **Use at your own
+risk!**
 
 </Alert>
 
 ## Getting into the registry
 
-There is an [official way](https://support.microsoft.com/en-us/windows/ways-to-install-windows-11-e0edbbfb-cfc5-4011-868b-2ce77ac7c70e)
-to bypass the Windows 11 requirements by adding a value to the registry. Here is how :
+There is an
+[official way](https://support.microsoft.com/en-us/windows/ways-to-install-windows-11-e0edbbfb-cfc5-4011-868b-2ce77ac7c70e)
+to bypass the Windows 11 requirements by adding a value to the registry. Here is
+how :
 
 Open the registry. You can either search in the Windows menu or be a bit more
 efficient by pressing `Win` + `R` and typing `regedit`.
 
-Navigate to `Computer\HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup`. If the `MoSetup` directory doesn't exist,
-right click on `Setup > New > Key` and call it `MoSetup`.
+Navigate to `Computer\HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup`. If the `MoSetup`
+directory doesn't exist, right click on `Setup > New > Key` and call it
+`MoSetup`.
 
-If it doesn't exist already, create a new DWORD record (right click, `New > DWORD (32 bit) value`)
-and name it `AllowUpgradesWithUnsupportedTPMOrCPU`. Set its value to `1` (hexadecimal, by default).
+If it doesn't exist already, create a new DWORD record (right click,
+`New > DWORD (32 bit) value`) and name it
+`AllowUpgradesWithUnsupportedTPMOrCPU`. Set its value to `1` (hexadecimal, by
+default).
 
 Finally, restart your PC to apply the changes.
 
 ## Choosing the right language
 
-Before downloading the ISO, you must know what is your Default system UI language, which
-is different from your current system UI language and cannot be change. I tried to do so
-and lost 2 hours of me life...
+Before downloading the ISO, you must know what is your Default system UI
+language, which is different from your current system UI language and cannot be
+change. I tried to do so and lost 2 hours of me life...
 
-Launch the command prompt (`cmd`) as administrator by searching in Windows task bar,
-right clicking on the program and selecting `Open as administrator`.
+Launch the command prompt (`cmd`) as administrator by searching in Windows task
+bar, right clicking on the program and selecting `Open as administrator`.
 
-Run the following command : `dism /online /get-intl` and get the `Default system UI language`.
+Run the following command : `dism /online /get-intl` and get the
+`Default system UI language`.
 
 ## Downloading the right ISO & installing
 
 After all those steps, it's finally time to upgrade! Head over to the
 [official download page](https://www.microsoft.com/en-US/software-download/windows11).
 
-Under `Download Windows 11 Disk Image (ISO)`, select the option you want then **be sure to
-select the language that corresponds to what you obtained in the previous step**.
+Under `Download Windows 11 Disk Image (ISO)`, select the option you want then
+**be sure to select the language that corresponds to what you obtained in the
+previous step**.
 
-Download it and once saved to your disk, double click it and run the `setup.exe` file. Enjoy Windows 11!
+Download it and once saved to your disk, double click it and run the `setup.exe`
+file. Enjoy Windows 11!
