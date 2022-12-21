@@ -7,30 +7,30 @@ import type { ArticleFrontmatter } from '~/types/mdx'
 changeLanguage('en')
 
 export async function getStaticPaths() {
-    const projects = await Astro.glob<ArticleFrontmatter>(
+    const articles = await Astro.glob<ArticleFrontmatter>(
         `../../content/**/*.mdx`
     )
-    const filteredProjects = projects.filter(
+    const filteredArticles = articles.filter(
         ({ frontmatter }) =>
             frontmatter.language === i18next.language &&
             frontmatter.type === 'article' &&
             !frontmatter.draft
     )
-    return filteredProjects.map(({ frontmatter: { slug } }) => ({
+    return filteredArticles.map(({ frontmatter: { slug } }) => ({
         params: { slug },
     }))
 }
-const projects = await Astro.glob<ArticleFrontmatter>(`../../content/**/*.mdx`)
-const filteredProjects = projects.filter(
+const articles = await Astro.glob<ArticleFrontmatter>(`../../content/**/*.mdx`)
+const filteredArticles = articles.filter(
     ({ frontmatter }) =>
         frontmatter.language === i18next.language &&
         frontmatter.type === 'article' &&
         !frontmatter.draft
 )
-const project = filteredProjects.find(
+const article = filteredArticles.find(
     ({ frontmatter }) => frontmatter.slug === Astro.params.slug
 )!
-const { Content, frontmatter } = project
+const { Content, frontmatter } = article
 ---
 
 <ContentLayout
@@ -49,7 +49,7 @@ const { Content, frontmatter } = project
 >
     <SharedSlug
         frontmatter={frontmatter}
-        headings={project.getHeadings()}
+        headings={article.getHeadings()}
         Content={Content}
     />
 </ContentLayout>

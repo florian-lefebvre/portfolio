@@ -9,8 +9,9 @@
 -   [x] BUG: make swup work with mobile menu
 -   [x] logo
 -   [ ] content
+-   [ ] Legal
 -   [ ] https://motion.dev/dom/in-view
--   [ ] image optimization
+-   [ ] image optimization (astro endpoints + og image?)
 -   [ ] seo + meta defaults
 -   [ ] check for TODOs
 -   [ ] LICENSE
