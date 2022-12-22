@@ -6,3 +6,9 @@ publish = "dist"
 from = "/fr/*"
 to = "/fr/404.html"
 status = 404
+
+[[plugins]]
+package = "netlify-plugin-checklinks"
+
+[plugins.inputs]
+skipPatterns = ["dist/js/script.js"]

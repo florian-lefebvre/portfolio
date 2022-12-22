@@ -6,21 +6,22 @@ import Layout from '~/components/Layout/Layout.astro'
 
 export interface Props {
     pageNamespace: string
+    disableAlternate?: boolean
 }
 
-const { pageNamespace } = Astro.props
+const { pageNamespace, disableAlternate = false } = Astro.props
 const pageT = (key: string) => t(key, { ns: pageNamespace })
 ---
 
 <Layout>
     <Fragment slot="head">
-        <HeadHrefLangs />
+        {!disableAlternate && <HeadHrefLangs />}
         <HeadSEO
             title={pageT('seo.title')}
             description={pageT('seo.description')}
             image={{
-                url: pageT('seo.ogImage'),
-                alt: pageT('seo.ogImageAlt'),
+                url: '/images/og-image.jpg',
+                alt: pageT('seo.description'),
             }}
         />
     </Fragment>
