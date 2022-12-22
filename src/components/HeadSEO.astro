@@ -16,14 +16,19 @@ export interface Props {
         section: string
         tags: string[]
     }
+    canonical?: string
 }
-const { title, description, image, article } = Astro.props
+const { title, description, image, article, canonical } = Astro.props
 
-const { href: canonicalUrl } = Astro.url
+const { href } = Astro.url
 const computedTitle = t('titleTemplate', {
     ns: 'common',
     title,
 }) as string
+
+const canonicalUrl = canonical || href
+console.log(canonical)
+console.log(canonicalUrl)
 ---
 
 <SEO

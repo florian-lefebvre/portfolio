@@ -17,6 +17,7 @@ const pageT = (key: string) => t(key, { ns: pageNamespace })
     <Fragment slot="head">
         {!disableAlternate && <HeadHrefLangs />}
         <HeadSEO
+            canonical={disableAlternate ? Astro.url.origin : undefined}
             title={pageT('seo.title')}
             description={pageT('seo.description')}
             image={{
