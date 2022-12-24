@@ -10,7 +10,7 @@
 -   [x] logo
 -   [ ] content
 -   [ ] Legal
--   [ ] https://motion.dev/dom/in-view
+-   [x] framer motion
 -   [ ] image optimization (astro endpoints + og image?)
 -   [ ] seo + meta defaults
 -   [ ] check for TODOs

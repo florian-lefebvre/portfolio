@@ -5,6 +5,7 @@ import Markdown from '../Markdown'
 import i18next, { t } from 'i18next'
 import type { ProjectFrontmatter } from '~/types/mdx'
 import { normalizeProjectCardProps } from '~/utils'
+import AnimateOnce from '../AnimateOnce'
 
 export type Props = {
     simple?: boolean
@@ -26,43 +27,55 @@ const lastProjects = filteredProjects.slice(2, 5)
 
 <div class="custom-container flex flex-col gap-16 py-24 px-4">
     <div>
-        <h2 class="text-center text-2xl font-light sm:text-left sm:text-4xl">
-            <Markdown source={t('featured.title', { ns: 'pages.projects' })} />
-        </h2>
+        <AnimateOnce client:load>
+            <h2
+                class="text-center text-2xl font-light sm:text-left sm:text-4xl"
+            >
+                <Markdown
+                    source={t('featured.title', { ns: 'pages.projects' })}
+                />
+            </h2>
+        </AnimateOnce>
         {
             !simple && (
-                <p class="mx-auto mt-8 max-w-lg text-sm font-medium sm:ml-0 sm:text-base">
-                    <Markdown
-                        source={t('featured.description', {
-                            ns: 'pages.projects',
-                        })}
-                    />
-                </p>
+                <AnimateOnce client:load delay={200}>
+                    <p class="mx-auto mt-8 max-w-lg text-sm font-medium sm:ml-0 sm:text-base">
+                        <Markdown
+                            source={t('featured.description', {
+                                ns: 'pages.projects',
+                            })}
+                        />
+                    </p>
+                </AnimateOnce>
             )
         }
     </div>
     <div>
         <div class="grid gap-16 md:grid-cols-2">
             {
-                firstProjects.map(({ frontmatter }) => (
-                    <ProjectCard
-                        client:visible
-                        {...normalizeProjectCardProps(frontmatter)}
-                        variant="medium"
-                        localizedRootUrl={localizePath('/projects')}
-                    />
+                firstProjects.map(({ frontmatter }, i) => (
+                    <AnimateOnce client:load delay={200 + i * 100}>
+                        <ProjectCard
+                            client:visible
+                            {...normalizeProjectCardProps(frontmatter)}
+                            variant="medium"
+                            localizedRootUrl={localizePath('/projects')}
+                        />
+                    </AnimateOnce>
                 ))
             }
         </div>
         <div class="mt-16 grid gap-16 md:grid-cols-2 lg:grid-cols-3">
             {
-                lastProjects.map(({ frontmatter }) => (
-                    <ProjectCard
-                        client:visible
-                        {...normalizeProjectCardProps(frontmatter)}
-                        variant="small"
-                        localizedRootUrl={localizePath('/projects')}
-                    />
+                lastProjects.map(({ frontmatter }, i) => (
+                    <AnimateOnce client:load delay={200 + i * 100}>
+                        <ProjectCard
+                            client:visible
+                            {...normalizeProjectCardProps(frontmatter)}
+                            variant="small"
+                            localizedRootUrl={localizePath('/projects')}
+                        />
+                    </AnimateOnce>
                 ))
             }
         </div>

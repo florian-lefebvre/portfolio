@@ -4,6 +4,7 @@ import useEventListener from '~/hooks/useEventListener'
 import ThemeToggler from './ThemeToggler'
 import MobileMenu from './MobileMenu'
 import { t } from 'i18next'
+import AnimateOnce from '~/components/AnimateOnce'
 
 export default function Header({
     pathname: initialPathname,
@@ -31,9 +32,12 @@ export default function Header({
     })
 
     return (
-        <header
+        <AnimateOnce
+            as="header"
+            direction="bottom"
+            offset={false}
             className={clsx(
-                'sticky top-0 z-40 border-b bg-neutral-2 transition-[border,_box-shadow] dark:bg-neutralDark-4',
+                'sticky top-0 z-40 border-b bg-neutral-2 transition-[border,_box-shadow,opacity,transform] dark:bg-neutralDark-4',
                 isTop
                     ? 'border-transparent'
                     : 'border-neutral-5 shadow-sm dark:border-neutral-7'
@@ -105,6 +109,6 @@ export default function Header({
                 pathname={pathname}
                 links={links}
             />
-        </header>
+        </AnimateOnce>
     )
 }

@@ -5,6 +5,7 @@ import Markdown from '../Markdown'
 import i18next, { t } from 'i18next'
 import type { ProjectFrontmatter } from '~/types/mdx'
 import { normalizeProjectCardProps } from '~/utils'
+import AnimateOnce from '../AnimateOnce'
 
 const projects = await Astro.glob<ProjectFrontmatter>(`../../content/**/*.mdx`)
 const filteredProjects = projects
@@ -20,18 +21,22 @@ const moreProjects = filteredProjects.slice(5)
 ---
 
 <div class="custom-container flex flex-col gap-16 py-24 px-4">
-    <h2 class="text-center text-2xl font-light sm:text-left sm:text-4xl">
-        <Markdown source={t('more', { ns: 'pages.projects' })} />
-    </h2>
+    <AnimateOnce client:load>
+        <h2 class="text-center text-2xl font-light sm:text-left sm:text-4xl">
+            <Markdown source={t('more', { ns: 'pages.projects' })} />
+        </h2>
+    </AnimateOnce>
     <div class="grid gap-16 md:grid-cols-2 lg:grid-cols-3">
         {
-            moreProjects.map(({ frontmatter }) => (
-                <ProjectCard
-                    client:visible
-                    {...normalizeProjectCardProps(frontmatter)}
-                    variant="small"
-                    localizedRootUrl={localizePath('/projects')}
-                />
+            moreProjects.map(({ frontmatter }, i) => (
+                <AnimateOnce client:load delay={200 + i * 100}>
+                    <ProjectCard
+                        client:visible
+                        {...normalizeProjectCardProps(frontmatter)}
+                        variant="small"
+                        localizedRootUrl={localizePath('/projects')}
+                    />
+                </AnimateOnce>
             ))
         }
     </div>

@@ -13,6 +13,10 @@ html {
     @apply scroll-smooth selection:bg-primary-7 selection:text-primary-12;
 }
 
+* {
+    @apply motion-reduce:!animate-none motion-reduce:!transition-none;
+}
+
 [id] {
     @apply -mt-20 pt-20;
 }

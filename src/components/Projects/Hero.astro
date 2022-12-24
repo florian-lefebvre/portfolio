@@ -1,18 +1,25 @@
 ---
-import Markdown from '../Markdown'
+import Markdown from '~/components/Markdown'
 import { t } from 'i18next'
+import AnimateOnce from '~/components/AnimateOnce'
 ---
 
 <div class="custom-container px-4 pt-24">
-    <h2 class="text-center text-2xl font-light sm:text-left sm:text-4xl">
-        <Markdown source={t('hero.title', { ns: 'pages.projects' })} />
-    </h2>
+    <AnimateOnce client:load>
+        <h2 class="text-center text-2xl font-light sm:text-left sm:text-4xl">
+            <Markdown source={t('hero.title', { ns: 'pages.projects' })} />
+        </h2>
+    </AnimateOnce>
 
-    <p class="mx-auto mt-8 max-w-lg text-sm font-medium sm:ml-0 sm:text-base">
-        <Markdown
-            source={t('hero.description', {
-                ns: 'pages.projects',
-            })}
-        />
-    </p>
+    <AnimateOnce client:load delay={200}>
+        <p
+            class="mx-auto mt-8 max-w-lg text-sm font-medium sm:ml-0 sm:text-base"
+        >
+            <Markdown
+                source={t('hero.description', {
+                    ns: 'pages.projects',
+                })}
+            />
+        </p>
+    </AnimateOnce>
 </div>

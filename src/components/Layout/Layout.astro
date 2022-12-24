@@ -6,6 +6,7 @@ import i18next from 'i18next'
 import Footer from '~/components/Layout/Footer/Footer.astro'
 import Header from '~/components/Layout/Header/Header.astro'
 import BackToTop from '~/components/Layout/BackToTop'
+import AnimateOnce from '../AnimateOnce'
 ---
 
 <!DOCTYPE html>
@@ -54,7 +55,9 @@ import BackToTop from '~/components/Layout/BackToTop'
         }
     </head>
     <body class="bg-neutral-2 text-neutral-12 dark:bg-neutralDark-4">
-        <Banner />
+        <AnimateOnce client:load direction="bottom" delay={400} offset={false}>
+            <Banner />
+        </AnimateOnce>
         <Header />
         <main id="swup">
             <slot />

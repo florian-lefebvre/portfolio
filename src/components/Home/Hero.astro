@@ -2,81 +2,100 @@
 import Button from '../Button'
 import { t } from 'i18next'
 import Markdown from '../Markdown'
+import AnimateOnce from '../AnimateOnce'
 ---
 
 <div
     class="custom-container flex flex-col gap-16 py-24 px-4 text-center sm:text-left lg:flex-row"
 >
     <div class="flex-1 flex-shrink-0 pb-12 sm:py-12">
-        <h1 class="text-2xl font-light sm:text-4xl">
-            <Markdown source={t('hero.title', { ns: 'pages.index' })} />
-        </h1>
-        <p
-            class="mx-auto mt-8 max-w-lg text-sm font-medium sm:ml-0 sm:text-base lg:max-w-none"
-        >
-            <Markdown source={t('hero.description', { ns: 'pages.index' })} />
-        </p>
-        <div class="mt-16 flex justify-center gap-8 sm:justify-start">
-            <Button
-                as="a"
-                href={t('hero.ctas.learnMore.href', {
-                    ns: 'pages.index',
-                })}
+        <AnimateOnce client:load>
+            <h1 class="text-2xl font-light sm:text-4xl">
+                <Markdown source={t('hero.title', { ns: 'pages.index' })} />
+            </h1>
+        </AnimateOnce>
+        <AnimateOnce client:load delay={200}>
+            <p
+                class="mx-auto mt-8 max-w-lg text-sm font-medium sm:ml-0 sm:text-base lg:max-w-none"
             >
-                {
-                    t('hero.ctas.learnMore.name', {
+                <Markdown
+                    source={t('hero.description', { ns: 'pages.index' })}
+                />
+            </p>
+        </AnimateOnce>
+        <AnimateOnce client:load delay={400}>
+            <div class="mt-16 flex justify-center gap-8 sm:justify-start">
+                <Button
+                    as="a"
+                    href={t('hero.ctas.learnMore.href', {
                         ns: 'pages.index',
-                    })
-                }
-            </Button>
-            <Button
-                as="a"
-                href={t('hero.ctas.github.href', {
-                    ns: 'pages.index',
-                })}
-                target="_blank"
-                color="secondary"
-            >
-                {
-                    t('hero.ctas.github.name', {
+                    })}
+                >
+                    {
+                        t('hero.ctas.learnMore.name', {
+                            ns: 'pages.index',
+                        })
+                    }
+                </Button>
+                <Button
+                    as="a"
+                    href={t('hero.ctas.github.href', {
                         ns: 'pages.index',
-                    })
-                }
-            </Button>
-        </div>
+                    })}
+                    target="_blank"
+                    color="secondary"
+                >
+                    {
+                        t('hero.ctas.github.name', {
+                            ns: 'pages.index',
+                        })
+                    }
+                </Button>
+            </div>
+        </AnimateOnce>
     </div>
     <div class="relative mx-auto flex max-w-lg lg:max-w-none lg:flex-1">
-        <svg
-            class="my-auto -mr-[50%] hidden text-neutral-7 sm:block"
-            width={240}
-            height={392}
-            fill="none"
-            viewBox="0 0 240 392"
+        <AnimateOnce
+            client:load
+            direction="left"
+            className="my-auto -mr-[50%] hidden text-neutral-7 sm:block"
         >
-            <defs>
-                <pattern
-                    id="837c3e70-6c3a-44e6-8854-cc48c737b659"
-                    x={0}
-                    y={0}
-                    width={26}
-                    height={26}
-                    patternUnits="userSpaceOnUse"
-                >
-                    <rect x={0} y={0} width={6} height={6} fill="currentColor"
-                    ></rect>
-                </pattern>
-            </defs>
-            <rect
-                width={240}
-                height={392}
-                fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>
-        </svg>
-        <div
-            class="absolute right-0 isolate hidden h-full w-1/2 bg-primary-9 sm:block"
-        >
-        </div>
-        <div
-            class="static isolate m-auto w-full sm:h-[360px] sm:w-64 lg:h-80 lg:w-56"
+            <svg width={240} height={390} fill="none" viewBox="0 0 240 390">
+                <defs>
+                    <pattern
+                        id="837c3e70-6c3a-44e6-8854-cc48c737b659"
+                        x={0}
+                        y={0}
+                        width={26}
+                        height={26}
+                        patternUnits="userSpaceOnUse"
+                    >
+                        <rect
+                            x={0}
+                            y={0}
+                            width={6}
+                            height={6}
+                            fill="currentColor"></rect>
+                    </pattern>
+                </defs>
+                <rect
+                    width={240}
+                    height={390}
+                    fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>
+            </svg>
+        </AnimateOnce>
+        <AnimateOnce
+            client:load
+            direction="left"
+            delay={100}
+            className="absolute right-0 isolate hidden h-full w-1/2 bg-primary-9 sm:block"
+        />
+
+        <AnimateOnce
+            client:load
+            direction="left"
+            delay={300}
+            className="static isolate m-auto w-full sm:h-[360px] sm:w-64 lg:h-80 lg:w-56"
         >
             <img
                 src={t('hero.image.url', { ns: 'pages.index' })}
@@ -84,6 +103,6 @@ import Markdown from '../Markdown'
                 alt={t('hero.image.alt', { ns: 'pages.index' })}
                 loading="lazy"
             />
-        </div>
+        </AnimateOnce>
     </div>
 </div>

@@ -1,5 +1,6 @@
 ---
 import { t } from 'i18next'
+import AnimateOnce from '../AnimateOnce'
 import Markdown from '../Markdown'
 ---
 
@@ -7,11 +8,13 @@ import Markdown from '../Markdown'
     class="custom-container flex flex-col gap-16 py-24 px-4 text-center sm:text-left lg:flex-row"
 >
     <div class="flex-1 flex-shrink-0 pb-12 sm:py-12">
-        <h1 class="text-2xl font-light sm:text-4xl">
-            <Markdown source={t('hero.title', { ns: 'pages.about' })} />
-        </h1>
+        <AnimateOnce client:load>
+            <h1 class="text-2xl font-light sm:text-4xl">
+                <Markdown source={t('hero.title', { ns: 'pages.about' })} />
+            </h1>
+        </AnimateOnce>
         <div
-            class="markdown-link mx-auto mt-8 max-w-lg space-y-4 text-sm font-medium sm:ml-0 sm:text-base md:space-y-8 lg:max-w-none"
+            class="markdown-link mx-auto mt-8 grid max-w-lg gap-4 text-sm font-medium sm:ml-0 sm:text-base md:gap-8 lg:max-w-none"
         >
             {
                 (
@@ -19,10 +22,12 @@ import Markdown from '../Markdown'
                         ns: 'pages.about',
                         returnObjects: true,
                     }) as string[]
-                ).map((e) => (
-                    <p>
-                        <Markdown source={e} />
-                    </p>
+                ).map((e, i) => (
+                    <AnimateOnce client:load delay={200 * i}>
+                        <p>
+                            <Markdown source={e} />
+                        </p>
+                    </AnimateOnce>
                 ))
             }
         </div>
@@ -30,56 +35,74 @@ import Markdown from '../Markdown'
     <div
         class="relative mx-auto flex max-w-lg flex-col lg:max-w-none lg:flex-1"
     >
-        <svg
-            class="hidden text-neutral-7 sm:block"
-            width={240}
-            height={392}
-            fill="none"
-            viewBox="0 0 240 392"
+        <AnimateOnce
+            client:load
+            direction="left"
+            className="hidden text-neutral-7 sm:block"
         >
-            <defs>
-                <pattern
-                    id="837c3e70-6c3a-44e6-8854-cc48c737b659"
-                    x={0}
-                    y={0}
-                    width={26}
-                    height={26}
-                    patternUnits="userSpaceOnUse"
-                >
-                    <rect x={0} y={0} width={6} height={6} fill="currentColor"
-                    ></rect>
-                </pattern>
-            </defs>
-            <rect
-                width={240}
-                height={392}
-                fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>
-        </svg>
-        <div
-            class="absolute top-48 right-8 hidden h-[270px] w-[250px] bg-primary-5 sm:block"
+            <svg width={240} height={390} fill="none" viewBox="0 0 240 390">
+                <defs>
+                    <pattern
+                        id="837c3e70-6c3a-44e6-8854-cc48c737b659"
+                        x={0}
+                        y={0}
+                        width={26}
+                        height={26}
+                        patternUnits="userSpaceOnUse"
+                    >
+                        <rect
+                            x={0}
+                            y={0}
+                            width={6}
+                            height={6}
+                            fill="currentColor"></rect>
+                    </pattern>
+                </defs>
+                <rect
+                    width={240}
+                    height={390}
+                    fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>
+            </svg>
+        </AnimateOnce>
+        <AnimateOnce
+            client:load
+            direction="left"
+            delay={400}
+            className="absolute top-48 right-8 hidden h-[270px] w-[250px] bg-primary-5 sm:block"
+        />
+        <AnimateOnce
+            client:load
+            direction="left"
+            delay={600}
+            className="relative top-6 right-0 h-[225px] w-full sm:absolute sm:w-[350px] lg:top-12 group"
         >
-        </div>
-        <div
-            class="relative top-6 right-0 h-[225px] w-full sm:absolute sm:w-[350px] lg:top-12"
-        >
-            <div class="absolute inset-0 bg-primary-8/25"></div>
+            <div
+                class="absolute inset-0 bg-primary-8/25 transition-opacity duration-500 ease-in-out group-hover:opacity-0"
+            >
+            </div>
             <img
                 src={t('hero.images.1.url', { ns: 'pages.about' })}
                 class="h-full w-full object-cover"
                 alt={t('hero.images.1.alt', { ns: 'pages.about' })}
                 loading="lazy"
             />
-        </div>
-        <div
-            class="relative top-60 mx-auto h-72 w-5/6 sm:absolute sm:left-8 sm:w-72"
+        </AnimateOnce>
+        <AnimateOnce
+            client:load
+            direction="left"
+            delay={200}
+            className="relative top-60 mx-auto h-72 w-5/6 sm:absolute sm:left-8 sm:w-72 group"
         >
-            <div class="absolute inset-0 bg-primary-8/25"></div>
+            <div
+                class="absolute inset-0 bg-primary-8/25 transition-opacity duration-500 ease-in-out group-hover:opacity-0"
+            >
+            </div>
             <img
                 src={t('hero.images.0.url', { ns: 'pages.about' })}
                 class="h-full w-full object-cover"
                 alt={t('hero.images.0.alt', { ns: 'pages.about' })}
                 loading="lazy"
             />
-        </div>
+        </AnimateOnce>
     </div>
 </div>

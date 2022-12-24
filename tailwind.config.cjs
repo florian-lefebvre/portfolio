@@ -68,10 +68,10 @@ module.exports = {
                 3: '3px',
             },
             animation: {
-                test: 'test 1500ms ease-in-out',
+                theme: 'theme 1500ms ease-in-out',
             },
             keyframes: {
-                test: {
+                theme: {
                     '0%': {
                         left: 'auto',
                         right: 0,

@@ -6,6 +6,7 @@ import PageProgressBar from '~/components/Layout/PageProgressBar'
 import type { ArticleFrontmatter, ProjectFrontmatter } from '~/types/mdx'
 import type { MarkdownHeading } from 'astro'
 import MDXComponents from './mdx/MDXComponents'
+import AnimateOnce from './AnimateOnce'
 
 export type Props = {
     frontmatter: ProjectFrontmatter | ArticleFrontmatter
@@ -19,7 +20,11 @@ const isArticle = 'publishedTime' in frontmatter
 <div
     class="custom-container relative grid grid-cols-1 gap-6 px-4 py-12 pb-24 sm:grid-cols-3 md:pt-24 lg:grid-cols-4"
 >
-    <div class="order-1 sm:order-none sm:col-span-3 lg:col-span-1">
+    <AnimateOnce
+        client:load
+        direction="right"
+        className="order-1 sm:order-none sm:col-span-3 lg:col-span-1"
+    >
         <a
             href={localizePath(isArticle ? '/blog' : '/projects')}
             class="inline-flex items-center justify-center space-x-1 px-2 py-2 font-semibold leading-none text-primary-9 transition-colors hover:bg-neutral-5 focus:outline-none focus:ring-3 focus:ring-primary-7 dark:hover:bg-neutralDark-6 sm:justify-start lg:sticky lg:top-24"
@@ -31,9 +36,12 @@ const isArticle = 'publishedTime' in frontmatter
             />
             <span>{t('[slug].back', { ns: 'common' })}</span>
         </a>
-    </div>
-    <article
-        class="prose prose-sm order-3 max-w-none sm:order-none sm:col-span-2 md:prose-base"
+    </AnimateOnce>
+    <AnimateOnce
+        as="article"
+        client:load
+        delay={200}
+        className="prose prose-sm order-3 max-w-none sm:order-none sm:col-span-2 md:prose-base"
     >
         {
             isArticle && (
@@ -60,8 +68,13 @@ const isArticle = 'publishedTime' in frontmatter
             </figcaption>
         </figure>
         <Content components={MDXComponents} />
-    </article>
-    <div class="order-2 sm:order-none">
+    </AnimateOnce>
+    <AnimateOnce
+        client:load
+        delay={100}
+        direction="left"
+        className="order-2 sm:order-none"
+    >
         {
             headings.length !== 0 && (
                 <div class="sm:sticky sm:top-24 sm:max-h-[calc(100vh-120px)] sm:overflow-y-auto">
@@ -85,6 +98,6 @@ const isArticle = 'publishedTime' in frontmatter
                 </div>
             )
         }
-    </div>
+    </AnimateOnce>
 </div>
 <PageProgressBar client:load />

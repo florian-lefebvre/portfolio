@@ -3,22 +3,31 @@ import clsx from 'clsx'
 import { Icon } from '@iconify/react'
 import Markdown from '../Markdown'
 import { t } from 'i18next'
+import AnimateOnce from '../AnimateOnce'
 ---
 
 <div
     class="custom-container mx-auto flex flex-col gap-16 py-24 px-4 md:flex-row md:items-center"
 >
     <div class="flex-1">
-        <h2 class="text-center text-2xl font-light sm:text-left sm:text-4xl">
-            <Markdown source={t('moreSkills.title', { ns: 'pages.about' })} />
-        </h2>
-        <p
-            class="mx-auto mt-8 max-w-lg text-sm font-medium sm:ml-0 sm:text-base lg:max-w-none"
-        >
-            <Markdown
-                source={t('moreSkills.description', { ns: 'pages.about' })}
-            />
-        </p>
+        <AnimateOnce client:load direction="right">
+            <h2
+                class="text-center text-2xl font-light sm:text-left sm:text-4xl"
+            >
+                <Markdown
+                    source={t('moreSkills.title', { ns: 'pages.about' })}
+                />
+            </h2>
+        </AnimateOnce>
+        <AnimateOnce client:load delay={200} direction="right">
+            <p
+                class="mx-auto mt-8 max-w-lg text-sm font-medium sm:ml-0 sm:text-base lg:max-w-none"
+            >
+                <Markdown
+                    source={t('moreSkills.description', { ns: 'pages.about' })}
+                />
+            </p>
+        </AnimateOnce>
     </div>
     <div class="flex-1">
         <div
@@ -30,8 +39,12 @@ import { t } from 'i18next'
                         ns: 'pages.about',
                         returnObjects: true,
                     }) as { icon: string; name: string }[]
-                ).map(({ icon, name }) => (
-                    <div class="flex flex-col items-center justify-center p-4">
+                ).map(({ icon, name }, i) => (
+                    <AnimateOnce
+                        client:load
+                        delay={200 + 50 * i}
+                        className="flex flex-col items-center justify-center p-4"
+                    >
                         <div class="">
                             <Icon
                                 client:load
@@ -45,7 +58,7 @@ import { t } from 'i18next'
                             />
                         </div>
                         <div class="mt-4 text-sm">{name}</div>
-                    </div>
+                    </AnimateOnce>
                 ))
             }
         </div>
