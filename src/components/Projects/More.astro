@@ -5,7 +5,7 @@ import Markdown from '../Markdown'
 import i18next, { t } from 'i18next'
 import type { ProjectFrontmatter } from '~/types/mdx'
 import { normalizeProjectCardProps } from '~/utils'
-import AnimateOnce from '../AnimateOnce'
+import AnimateOnce from '~/components/AnimateOnce'
 
 const projects = await Astro.glob<ProjectFrontmatter>(`../../content/**/*.mdx`)
 const filteredProjects = projects

@@ -4,7 +4,7 @@ import type { ArticleFrontmatter } from '~/types/mdx'
 import ArticleCard from './Card'
 import { normalizeArticleCardProps } from '~/utils'
 import { localizePath } from 'astro-i18next'
-import AnimateOnce from '../AnimateOnce'
+import AnimateOnce from '~/components/AnimateOnce'
 
 const articles = await Astro.glob<ArticleFrontmatter>('../../content/**/*.mdx')
 const filteredArticles = articles
