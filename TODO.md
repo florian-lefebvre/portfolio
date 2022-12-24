@@ -14,7 +14,7 @@
 -   [ ] image optimization (astro endpoints + og image?)
 -   [ ] seo + meta defaults
 -   [ ] check for TODOs
--   [ ] LICENSE
+-   [x] LICENSE
 -   [ ] Netlify redirects file
 -   [ ] remove robots.txt
 -   [ ] Enable plausible (uncomment \_redirects)
