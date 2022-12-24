@@ -20,15 +20,8 @@ const filteredProjects = projects.filter(
         !frontmatter.draft
 )
 
-const slugs = t('featured.projects', {
-    ns: 'pages.projects',
-    returnObjects: true,
-}) as string[]
-const featuredProjects = filteredProjects
-    .filter(({ frontmatter }) => slugs.includes(frontmatter.slug))
-    .sort((a, b) => a.frontmatter.order - b.frontmatter.order)
-const firstProjects = featuredProjects.slice(0, 2)
-const lastProjects = featuredProjects.slice(-3)
+const firstProjects = filteredProjects.slice(0, 2)
+const lastProjects = filteredProjects.slice(2, 5)
 ---
 
 <div class="custom-container flex flex-col gap-16 py-24 px-4">

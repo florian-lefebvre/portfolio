@@ -9,8 +9,7 @@
     },
     "featured": {
         "title": "**Featured** work",
-        "description": "$t(hero.description)",
-        "projects": ["op-ent", "ynotes", "oss-at-novu", "regiolangues", "ohf31"]
+        "description": "$t(hero.description)"
     },
     "more": "**More** projects",
     "viewProject": "View project"
