@@ -1,7 +1,7 @@
 ---
 title: 'op-ent: open-source school management'
 description:
-    After working on ynotes, an unofficial client for existing ENTs (French
+    After working on yNotes, an unofficial client for existing ENTs (French
     school management systems), it was finally time to create my own... but
     open-source!
 thumbnail:
@@ -41,7 +41,7 @@ The project is (and will be) using **many** technologies (subject to change):
 -   **Backend**: TypeScript, [AdonisJS](https://adonisjs.com/),
     [Node.js](https://nodejs.org/), [PostgreSQL](https://www.postgresql.org/),
     [Redis](https://redis.io/), [GraphQL](https://graphql.org/) (using
-    [Apollo](https://www.apollographql.com/)) and websockets
+    [Apollo](https://www.apollographql.com/)) and WebSockets
 -   **Design**: [Figma](https://www.figma.com/)
 
 There isn't much to show for now, but here is the link to the
@@ -53,10 +53,10 @@ There isn't much to show for now, but here is the link to the
 ## Purpose and Goal
 
 I've contributed to (and maintained) a project called
-[ynotes](https://ynotes.fr) ([View project](/projects/ynotes)) not so long ago.
+[yNotes](https://ynotes.fr) ([View project](/projects/ynotes)) not so long ago.
 Its goal was to provide an unofficial client for popular ENTs and students loved
 it! Even if the project is unmaintained, it has reached almost 7k downloads on
-Android on December 2022 (**+250% on 2 months**)! All this to say that ynotes
+Android on December 2022 (**+250% on 2 months**)! All this to say that yNotes
 (and op-ent now) are solving a real issue: current ENTs suck.
 
 My objective is _pretty_ simple I'd say: make op-ent the most used ENT in
@@ -110,7 +110,7 @@ Polymorphic components are not hard to implement, but **getting the types right
 is**. An example might be useful:
 
 Let's say you create a component called `Button` and you want it to be
-polymorphic because it can be a link sometimes. Polymorhism here is controlled
+polymorphic because it can be a link sometimes. Polymorphism here is controlled
 by the `as` prop which represents the element. Its type is `React.ElementType`,
 so either a string or a React component.
 

@@ -30,7 +30,7 @@ strong {
 }
 
 .astro-code {
-    @apply !bg-neutral-3;
+    @apply !rounded-none !bg-neutral-3;
 }
 
 .astro-code *[style='color:#DBD7CAEE'] {
