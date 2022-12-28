@@ -19,13 +19,7 @@ const apply = action(state, 'apply', async (store, theme: Theme) => {
     await sleep(TRANSITION_DURATION / 4)
 
     store.setKey('theme', theme)
-    localStorage.setItem(LOCAL_STORAGE_KEY, theme)
-    const html = document.querySelector('html')
-    if (theme === 'light') {
-        html?.classList.remove('dark')
-    } else {
-        html?.classList.add('dark')
-    }
+    document.documentElement.setAttribute('data-theme', theme)
 
     await sleep((TRANSITION_DURATION * 3) / 4)
 

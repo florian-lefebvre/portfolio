@@ -27,7 +27,7 @@ import AnimateOnce from '~/components/AnimateOnce'
             console.log('Built with Astro and Tailwind CSS')
             console.log('--------')
         </script>
-        <script>
+        <!-- <script>
             ;(function () {
                 try {
                     let mode = localStorage.getItem('theme')
@@ -42,6 +42,45 @@ import AnimateOnce from '~/components/AnimateOnce'
                     }
                 } catch (e) {}
             })()
+        </script> -->
+        <script>
+            type Theme = 'light' | 'dark'
+
+            let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
+            const defaultTheme = isDarkMode.matches ? 'dark' : 'light'
+
+            function updateTheme(_theme?: Theme) {
+                const theme: Theme =
+                    _theme ?? window.localStorage.theme ?? defaultTheme
+
+                if (theme === 'dark') {
+                    document.documentElement.classList.add('dark')
+                } else if (theme === 'light') {
+                    document.documentElement.classList.remove('dark')
+                }
+
+                return theme
+            }
+
+            document.documentElement.setAttribute('data-theme', updateTheme())
+
+            new MutationObserver(([{ oldValue }]) => {
+                let newValue: Theme =
+                    (document.documentElement.getAttribute(
+                        'data-theme'
+                    ) as any) || defaultTheme
+                if (newValue !== oldValue) {
+                    try {
+                        window.localStorage.setItem('theme', newValue)
+                    } catch {}
+                    updateTheme(newValue)
+                }
+            }).observe(document.documentElement, {
+                attributeFilter: ['data-theme'],
+                attributeOldValue: true,
+            })
+
+            isDarkMode.addEventListener('change', () => updateTheme())
         </script>
         {
             process.env.MODE === 'production' && (
