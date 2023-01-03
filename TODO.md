@@ -9,7 +9,7 @@
 -   [x] BUG: make swup work with mobile menu
 -   [x] logo
 -   [ ] content
--   [ ] Legal
+-   [x] Legal
 -   [x] framer motion
 -   [ ] image optimization (astro endpoints + og image?)
 -   [ ] seo (global + per mdx file) + meta defaults
