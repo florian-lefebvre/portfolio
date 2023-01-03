@@ -12,7 +12,7 @@
 -   [ ] Legal
 -   [x] framer motion
 -   [ ] image optimization (astro endpoints + og image?)
--   [ ] seo + meta defaults
+-   [ ] seo (global + per mdx file) + meta defaults
 -   [ ] check for TODOs
 -   [x] LICENSE
 -   [ ] BUG: prefers-reduce-motion breaks swup

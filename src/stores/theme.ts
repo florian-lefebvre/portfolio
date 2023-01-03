@@ -20,6 +20,11 @@ const apply = action(state, 'apply', async (store, theme: Theme) => {
 
     store.setKey('theme', theme)
     document.documentElement.setAttribute('data-theme', theme)
+    const className = '[&_*:not([id="theme-transition"])]:!transition-none'
+    document.documentElement.classList.add(className)
+    window.setTimeout(() => {
+        document.documentElement.classList.remove(className)
+    }, 0)
 
     await sleep((TRANSITION_DURATION * 3) / 4)
 

@@ -1,60 +1,155 @@
 ---
 title: "OHF31: orchestra's website"
 description:
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in nisi lectus.
-    Donec lobortis pulvinar nisi, nec lacinia urna efficitur.
+    This is the website that got me started with web development. I actually
+    reworked it 3 times to learn, improving it each time!
 thumbnail:
-    url: https://res.cloudinary.com/af68d22a-2043-4078-857c-f2db1a1406ec/image/upload/c_scale,dpr_2.0/v1636657520/Portfolio/projects/ohf31-website/thumbnail_jfngnd.png
-    alt: 'Image description'
+    url: /images/content/en/projects/ohf31-0.png
+    alt: 'Screenshot of the 3rd version'
 ---
+
+import Image from '~/components/mdx/Image'
 
 ## Introduction
 
--   High-level summary of what the project is
--   List of core functionalities / interesting features
--   Your role in the project. were you exclusively doing development, or did you
-    do design? If you worked in groups, what parts did you tackle?
--   Technologies used
--   Links to live demo + source code (if applicable)
+This website is a showcase site for my orchestra, _l'Orchestre d'Harmonie du
+Frontonnais_. Nothing complicated, it made of a few pages : home, about the
+orchestra, its story, upcoming schedule, medias and contact.
+
+I was doing frontend development for this project, using
+[Nuxt 3](https://nuxt.com), [Tailwind CSS](https://tailwindcss.com) and
+[Cloudinary](https://cloudinary.com) for the 3rd version.
+
+Check out the [website](https://ohf31.fr)!
 
 ## Purpose and Goal
 
--   Why did you build this project? Why is it important to you?
--   What was the expected outcome of the project?
--   What were the initial designs?
--   Any other preliminary planning that you did which helps build a narrative
+At the end of 2019, I was getting involved more and more in my orchestra's
+online presence. Indeed, I was filming concerts with several cameras and editing
+videos to publish on social medias (nothing crazy, only fades in and out). But
+one thing was still not looking great: the website.
 
-## Spotlight
+Made with an old [Drupal](https://www.drupal.org/) template, I was looking for a
+solution to make the website look better and more professional. So I thought
+_“Why not learn HTML along the way?”_ and I got started.
 
--   What is the “killer feature” of your project? What feature does it have that
-    took the most work, or was the most technically impressive? Some possible
-    examples: - User authentication - A feed of items fetched from a database -
-    A particularly tricky UI element (eg. autocomplete, calendar,
-    drag-and-drop) - Anything you're proud of!
--   What were the technical hurdles that got in your way? Any major problems you
-    hit during development?
--   How did you solve those problems? What was the solution? Go deep here, and
-    write with a developer in mind.
+This website is important for me because it's really what got me started in web
+development.
+
+<Image
+    src="/images/content/en/projects/ohf31-1.png"
+    alt="Screenshot of the old Drupal powered website"
+    client:visible
+/>
+
+## Multiple versions
+
+### 1. HTML and CSS
+
+<Image
+    src="/images/content/en/projects/ohf31-2.png"
+    alt="Screenshot of the v1 website."
+    client:visible
+/>
+
+I never really coded before, I mean I coded in Unreal Engine 4 with blueprints
+but it was a visual editor, not lines of code. So to start I followed
+[this tutorial](https://www.youtube.com/watch?v=UB1O30fR-EE) from Traversy Media
+and it taught a lot of thing. I wasn't understanding the half of the CSS I was
+writing (and I was using `float`...) but still, I managed to get this first
+website done.
+
+I remember deploying this website over FTP using
+[FileZilla](https://filezilla-project.org/) on OVH around Christmas.
+
+So definitely a great way to start!
+
+### The musicians space
+
+<Image
+    src="/images/content/en/projects/ohf31-3.jpg"
+    alt="Screenshot of the storage gallery."
+    client:visible
+/>
+<Image
+    src="/images/content/en/projects/ohf31-4.jpg"
+    alt="Screenshot of the upload page."
+    client:visible
+/>
+
+Like a lot of devs out there, I decided I wanted to build my own CMS instead of
+using [WordPress](https://wordpress.com/). Why would I use a really popular CMS
+since I know everything to build a full custom one on my own? (Spoiler: _I
+wasn't ready_)
+
+So I started to learn PHP, I mean not a framework but really procedural PHP. The
+code was an absolute mess, absolutely not secure, duplications everywhere and so
+on. To be able to refresh some parts of the Ui without the whole page, I used
+AJAX with [JQuery](https://jquery.com/) so I a way, I was building some kind of
+small APIs. _BUT_ I was returning HTML, not JSON, stored in a string. It was an
+absolute nightmare to debug.
+
+But still, I learned a lot along the way, especially about
+[MySQL](https://www.mysql.com/) and CSS.
+
+### 2. Bootstrap 5 and PHP
+
+<Alert>
+
+I didn't manage to find a screenshot for this one.
+
+</Alert>
+
+As I was coding the musicians space at the same time, I discovered
+[Bootstrap 5](https://getbootstrap.com/) and was really enjoying it. So, to
+train and because the first version of the website wasn't looking that great
+after all, I decided to rebuild it from scratch. I was still using PHP for
+imports (html meta tags or stuff like this) but in retrospect, it wasn't useful.
+
+### 3. Nuxt 3 and Tailwind CSS
+
+<Image
+    src="/images/content/en/projects/ohf31-0.png"
+    alt="Screenshot of 3rd version."
+    client:visible
+/>
+
+The 2nd version had been released for more than a year and then... _"We need to
+add an announce now that we can do concerts, and the next one is in 1 week and
+half. Could you add it?"_ Sure I can but... My tech stack has changed a lot
+since last year, I was only beginning learning web development and I don't have
+the right setup nor the will to get back to such tech. So guess what... 3rd
+version!
+
+The deadline was the 10th of November and at the time I was looking for a way to
+try out Nuxt 3 now that beta was released since October. Well, it was instable
+and I had quite a lot of issues (of which HMR which is really painful) but
+eventually I managed to get it working. That was also the opportunity to try
+[VueUse motion](https://motion.vueuse.org/) for animations.
+
+I used Tailwind CSS for styling, GitHub for versioning (after all that time!),
+[Cloudinary](https://cloudinary.com/) as a CDN for my images and
+[Vercel](https://vercel.com) for deployments.
+
+Apart from the technical side, I didn't really change the whole layouts or
+content.
+
+Since then, I updated the app to use the `3.0.0` release, improving stability
+and performance.
 
 ## Current status
 
--   This section is optional. If the project is actively being used by real
-    people, talk a little bit about the current status, who uses it, why they
-    use it, what they say to you about it, stuff like that.
--   If the project was contrived specifically for the portfolio, omit this
-    section.
+The website is working pretty well and I haven't planned any further development
+for now.
+
+However, it's not that visited right now but this is because of a marketing
+issue: no many people are even aware of the orchestra's existence. I might work
+on that in the future, establishing a digital marketing strategy etc...
+
+I'm also considering plugging in a CMS for people to enter data (like future
+concerts), I need to investigate.
 
 ## Lessons Learned
 
--   What did you learn doing this project? Feel free to list multiple things.
-    Also feel free to cover non-technical lessons. It's great to talk about how
-    you learned to use an advanced feature of a framework or library, but it's
-    just as valuable to talk about project-management experience, or things you
-    learned about shipping projects.
--   If you used a framework or other libraries/tools, was it a good choice? How
-    did it help? In which ways was it insufficient?
--   Is your project accessible? What did you learn about accessibility, while
-    building this project? Describing how you tested your project using keyboard
-    navigation or a screenreader can make for a really compelling story!
--   How has this affected the work you've done since then? Real examples of how
-    this project built your knowledge for future projects is fantastic.
+This project has taught me a lot of things, web development at first and new
+techs then, each version allowing me to learn more technologies.
