@@ -1,5 +1,6 @@
 @import url('./colors.css');
 @import url('./fonts.css');
+@import url('./rmiz.css');
 
 .custom-container {
     @apply mx-auto max-w-6xl;
@@ -17,7 +18,7 @@ html {
     @apply motion-reduce:!animate-none motion-reduce:!transition-none;
 }
 
-[id] {
+[id]:not([id^='rmiz']) {
     @apply -mt-20 pt-20;
 }
 

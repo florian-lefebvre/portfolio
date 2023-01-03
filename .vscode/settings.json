@@ -19,5 +19,13 @@
         "slugified",
         "ynotes"
     ],
-    "cSpell.words": ["Régiolangues", "Supabase"]
+    "cSpell.words": [
+        "astro",
+        "Régiolangues",
+        "rmiz",
+        "Supabase",
+        "tabindex",
+        "unzoom"
+    ],
+    "css.lint.unknownAtRules": "ignore"
 }

@@ -42,6 +42,7 @@ specifiers:
   react-dom: ^18.2.0
   react-i18next: ^12.1.1
   react-lazy-load-image-component: ^1.5.6
+  react-medium-image-zoom: ^5.1.2
   react-remark: ^2.1.0
   swup: ^2.0.19
   tailwindcss: ^3.0.24
@@ -73,6 +74,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-i18next: 12.1.1_zgr5gkalxjgcd4liflgdtrvosu
   react-lazy-load-image-component: 1.5.6_biqbaboplfbrettd7655fr4n2y
+  react-medium-image-zoom: 5.1.2_biqbaboplfbrettd7655fr4n2y
   react-remark: 2.1.0_react@18.2.0
 
 devDependencies:
@@ -5490,6 +5492,16 @@ packages:
     dependencies:
       lodash.debounce: 4.0.8
       lodash.throttle: 4.1.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /react-medium-image-zoom/5.1.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-Lk9TDqd+vUpQVP77p45jXgh1LGjClLfyLJnTemCfpI+5Zp3X7MX7iGP5VmSdLGXy9mhdlZiByHOyp4Irf4N8vg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false

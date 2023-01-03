@@ -7,6 +7,7 @@ import type { ArticleFrontmatter, ProjectFrontmatter } from '~/types/mdx'
 import type { MarkdownHeading } from 'astro'
 import MDXComponents from './mdx/MDXComponents'
 import AnimateOnce from '~/components/AnimateOnce'
+import Image from './mdx/Image'
 
 export type Props = {
     frontmatter: ProjectFrontmatter | ArticleFrontmatter
@@ -58,15 +59,11 @@ const isArticle = 'publishedTime' in frontmatter
         }
         <h1>{frontmatter.title}</h1>
         <p class="lead">{frontmatter.description}</p>
-        <figure>
-            <img
-                src={frontmatter.thumbnail.url}
-                alt={frontmatter.thumbnail.alt}
-            />
-            <figcaption>
-                {frontmatter.thumbnail.alt}
-            </figcaption>
-        </figure>
+        <Image
+            src={frontmatter.thumbnail.url}
+            alt={frontmatter.thumbnail.alt}
+            client:load
+        />
         <Content components={MDXComponents} />
     </AnimateOnce>
     <AnimateOnce

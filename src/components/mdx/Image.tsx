@@ -1,3 +1,5 @@
+import Zoom from 'react-medium-image-zoom'
+
 export default function Image(
     props: React.DetailedHTMLProps<
         React.ImgHTMLAttributes<HTMLImageElement>,
@@ -6,7 +8,9 @@ export default function Image(
 ) {
     return (
         <figure>
-            <img loading="lazy" {...props} />
+            <Zoom>
+                <img loading="lazy" {...props} />
+            </Zoom>
             <figcaption>{props.alt}</figcaption>
         </figure>
     )
