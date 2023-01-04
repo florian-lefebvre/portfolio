@@ -27,22 +27,6 @@ import AnimateOnce from '~/components/AnimateOnce'
             console.log('Built with Astro and Tailwind CSS')
             console.log('--------')
         </script>
-        <!-- <script>
-            ;(function () {
-                try {
-                    let mode = localStorage.getItem('theme')
-                    let supportDarkMode =
-                        window.matchMedia('(prefers-color-scheme: dark)')
-                            .matches === true
-                    const html = document.querySelector('html')
-                    if (!mode && supportDarkMode) html?.classList.add('dark')
-                    if (!mode) return
-                    if (mode === 'dark') {
-                        html?.classList.add('dark')
-                    }
-                } catch (e) {}
-            })()
-        </script> -->
         <script>
             type Theme = 'light' | 'dark'
 
@@ -81,6 +65,20 @@ import AnimateOnce from '~/components/AnimateOnce'
             })
 
             isDarkMode.addEventListener('change', () => updateTheme())
+        </script>
+        <script>
+            const isBot =
+                /bot|googlebot|crawler|spider|robot|crawling|Chrome-Lighthouse/i.test(
+                    navigator.userAgent
+                )
+            const isMotionReduced = window.matchMedia(
+                '(prefers-reduced-motion: reduce)'
+            ).matches
+            const disableAnimation = isBot || isMotionReduced
+            document.documentElement.setAttribute(
+                'data-animate',
+                JSON.stringify(!disableAnimation)
+            )
         </script>
         {
             process.env.MODE === 'production' && (

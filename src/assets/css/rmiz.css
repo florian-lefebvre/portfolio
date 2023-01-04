@@ -95,9 +95,7 @@
     height: auto !important;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    [data-rmiz-modal-overlay],
-    [data-rmiz-modal-img] {
-        transition-duration: 0.01ms !important;
-    }
+[data-rmiz-modal-overlay],
+[data-rmiz-modal-img] {
+    @apply [[data-animate=false]_&]:!duration-[0.01ms];
 }

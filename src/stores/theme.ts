@@ -3,7 +3,6 @@ import type { Theme } from '~/types'
 import { sleep } from '~/utils'
 
 const TRANSITION_DURATION = 1500
-const LOCAL_STORAGE_KEY = 'theme'
 
 const state = map<{
     running: boolean
@@ -14,9 +13,13 @@ const state = map<{
 })
 
 const apply = action(state, 'apply', async (store, theme: Theme) => {
+    const disableAnimation =
+        document.documentElement.getAttribute('data-animate')! === 'false'
     store.setKey('running', true)
 
-    await sleep(TRANSITION_DURATION / 4)
+    if (!disableAnimation) {
+        await sleep(TRANSITION_DURATION / 4)
+    }
 
     store.setKey('theme', theme)
     document.documentElement.setAttribute('data-theme', theme)
@@ -26,22 +29,15 @@ const apply = action(state, 'apply', async (store, theme: Theme) => {
         document.documentElement.classList.remove(className)
     }, 0)
 
-    await sleep((TRANSITION_DURATION * 3) / 4)
+    if (!disableAnimation) {
+        await sleep((TRANSITION_DURATION * 3) / 4)
+    }
 
     store.setKey('running', false)
 })
 
 function get(): Theme {
-    if (
-        typeof localStorage !== 'undefined' &&
-        localStorage.getItem(LOCAL_STORAGE_KEY)
-    ) {
-        return localStorage.getItem(LOCAL_STORAGE_KEY) as Theme
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        return 'dark'
-    } else {
-        return 'light'
-    }
+    return document.documentElement.getAttribute('data-theme')! as Theme
 }
 
 export async function toggle() {
@@ -55,5 +51,4 @@ export default {
     get,
     toggle,
     TRANSITION_DURATION,
-    LOCAL_STORAGE_KEY,
 }

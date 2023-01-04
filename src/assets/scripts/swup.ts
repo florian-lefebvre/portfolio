@@ -7,7 +7,16 @@ import SwupHeadPlugin from '@swup/head-plugin'
 // @ts-ignore
 import SwupScrollPlugin from '@swup/scroll-plugin'
 // @ts-ignore
-import SwupFadeTheme from '@swup/fade-theme'
+import Theme from '@swup/theme'
+
+class PageTransition extends Theme {
+    name = 'PageTransition'
+
+    mount() {
+        // @ts-ignore
+        this.addClassName('#swup', 'main')
+    }
+}
 
 const swup: typeof Swup = new Swup({
     plugins: [
@@ -15,11 +24,9 @@ const swup: typeof Swup = new Swup({
         new SwupHeadPlugin(),
         new SwupScrollPlugin({
             doScrollingRightAway: true,
-            animateScroll: !window.matchMedia(
-                '(prefers-reduced-motion: reduce)'
-            ),
+            animateScroll: true,
         }),
-        new SwupFadeTheme(),
+        new PageTransition(),
     ],
 })
 

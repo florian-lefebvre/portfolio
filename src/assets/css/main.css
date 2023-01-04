@@ -1,5 +1,6 @@
 @import url('./colors.css');
 @import url('./fonts.css');
+@import url('./swup.css');
 @import url('./rmiz.css');
 
 .custom-container {
@@ -12,10 +13,6 @@
 
 html {
     @apply scroll-smooth selection:bg-primary-7 selection:text-primary-12;
-}
-
-* {
-    @apply motion-reduce:!animate-none motion-reduce:!transition-none;
 }
 
 [id]:not([id^='rmiz']) {
@@ -40,10 +37,6 @@ strong {
 
 .prose *:focus {
     @apply focus:outline-none focus:ring-3 focus:ring-primary-7;
-}
-
-main[tabindex='-1'] {
-    outline: none;
 }
 
 .markdown-link a {

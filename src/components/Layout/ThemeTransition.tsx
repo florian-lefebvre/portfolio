@@ -8,7 +8,7 @@ export default function ThemeTransition() {
         <div
             id="theme-transition"
             className={clsx(
-                'fixed inset-y-0 z-50 animate-theme bg-neutralDark-2 transition-all duration-700 dark:bg-neutralLight-2',
+                'fixed inset-y-0 z-50 animate-theme bg-neutralDark-2 transition-all duration-700 dark:bg-neutralLight-2 [[data-animate=false]_&]:!animate-theme-no-motion [[data-animate=false]_&]:!duration-[0.01ms]',
                 $themeStore.running ? 'block' : 'hidden'
             )}
         ></div>

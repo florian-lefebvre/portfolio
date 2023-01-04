@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { useInView, useReducedMotion } from 'framer-motion'
+import { useInView } from 'framer-motion'
 import clsx from 'clsx'
 
 export type Props = {
@@ -23,13 +23,14 @@ export default function AnimateOnce({
 }: Props) {
     const ref = useRef(null)
     const [animate, setAnimate] = useState(false)
-    const disableAnimation = useReducedMotion()
     const isInView = useInView(ref, {
         once: true,
         margin: offset === false ? '0px' : `${offset}px`,
     })
 
     useEffect(() => {
+        const disableAnimation =
+            document.documentElement.getAttribute('data-animate')! === 'false'
         if (disableAnimation) {
             setAnimate(true)
         }
@@ -54,11 +55,11 @@ export default function AnimateOnce({
         <Component
             ref={ref}
             className={clsx(
-                'transition-[opacity,transform] duration-500',
+                'transition-[opacity,transform] duration-500 [[data-animate=false]_&]:!duration-[0.01ms]',
                 className
             )}
             style={{
-                opacity: animate ? 1 : 0,
+                opacity: animate ? 1 : 0.01,
                 transform,
             }}
             {...ownProps}

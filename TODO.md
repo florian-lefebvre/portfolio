@@ -15,7 +15,7 @@
 -   [ ] seo (global + per mdx file) + meta defaults
 -   [ ] check for TODOs
 -   [x] LICENSE
--   [ ] BUG: prefers-reduce-motion breaks swup
+-   [x] BUG: prefers-reduce-motion breaks swup
 -   [ ] Netlify redirects file
 -   [ ] remove robots.txt
 -   [ ] Enable plausible (uncomment \_redirects)
