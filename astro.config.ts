@@ -13,8 +13,6 @@ import prefetch from '@astrojs/prefetch'
 import sitemap from '@astrojs/sitemap'
 // https://docs.astro.build/en/guides/integrations-guide/imag
 import image from '@astrojs/image'
-// https://github.com/astro-community/astro-critters
-import critters from 'astro-critters'
 
 import fsp from 'fs/promises'
 function contentRemarkPlugin() {
@@ -61,7 +59,6 @@ export default defineConfig({
         image({
             serviceEntryPoint: '@astrojs/image/sharp',
         }),
-        critters(),
     ],
     markdown: {
         shikiConfig: {
