@@ -11,7 +11,8 @@
 -   [ ] content
 -   [x] Legal
 -   [x] framer motion
--   [ ] image optimization (astro endpoints + og image?)
+-   [x] image optimization
+-   [ ] (astro endpoints + og image?)
 -   [ ] seo (global + per mdx file) + meta defaults
 -   [ ] check for TODOs
 -   [x] LICENSE

@@ -1,5 +1,5 @@
 ---
-import ProjectCard from './Card'
+import ProjectCard from './Card.astro'
 import { localizePath } from 'astro-i18next'
 import Markdown from '../Markdown'
 import i18next, { t } from 'i18next'
@@ -56,7 +56,6 @@ const lastProjects = filteredProjects.slice(2, 5)
                 firstProjects.map(({ frontmatter }, i) => (
                     <AnimateOnce client:load delay={200 + i * 100}>
                         <ProjectCard
-                            client:visible
                             {...normalizeProjectCardProps(frontmatter)}
                             variant="medium"
                             localizedRootUrl={localizePath('/projects')}
@@ -70,7 +69,6 @@ const lastProjects = filteredProjects.slice(2, 5)
                 lastProjects.map(({ frontmatter }, i) => (
                     <AnimateOnce client:load delay={200 + i * 100}>
                         <ProjectCard
-                            client:visible
                             {...normalizeProjectCardProps(frontmatter)}
                             variant="small"
                             localizedRootUrl={localizePath('/projects')}

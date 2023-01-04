@@ -1,5 +1,6 @@
 ---
 import { t } from 'i18next'
+import { Image } from '@astrojs/image/components'
 import AnimateOnce from '~/components/AnimateOnce'
 import Markdown from '../Markdown'
 ---
@@ -80,11 +81,14 @@ import Markdown from '../Markdown'
                 class="absolute inset-0 bg-primary-8/25 transition-opacity duration-500 ease-in-out group-hover:opacity-0"
             >
             </div>
-            <img
+            <Image
                 src={t('hero.images.1.url', { ns: 'pages.about' })}
                 class="h-full w-full object-cover"
                 alt={t('hero.images.1.alt', { ns: 'pages.about' })}
                 loading="lazy"
+                height="740"
+                aspectRatio="16:9"
+                format="webp"
             />
         </AnimateOnce>
         <AnimateOnce
@@ -97,11 +101,14 @@ import Markdown from '../Markdown'
                 class="absolute inset-0 bg-primary-8/25 transition-opacity duration-500 ease-in-out group-hover:opacity-0"
             >
             </div>
-            <img
+            <Image
                 src={t('hero.images.0.url', { ns: 'pages.about' })}
                 class="h-full w-full object-cover"
                 alt={t('hero.images.0.alt', { ns: 'pages.about' })}
                 loading="lazy"
+                height="740"
+                aspectRatio="16:9"
+                format="webp"
             />
         </AnimateOnce>
     </div>

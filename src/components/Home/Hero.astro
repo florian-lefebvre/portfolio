@@ -1,6 +1,7 @@
 ---
-import Button from '../Button'
 import { t } from 'i18next'
+import { Image } from '@astrojs/image/components'
+import Button from '../Button'
 import Markdown from '../Markdown'
 import AnimateOnce from '~/components/AnimateOnce'
 ---
@@ -97,11 +98,14 @@ import AnimateOnce from '~/components/AnimateOnce'
             delay={300}
             className="static isolate m-auto w-full sm:h-[360px] sm:w-64 lg:h-80 lg:w-56"
         >
-            <img
+            <Image
                 src={t('hero.image.url', { ns: 'pages.index' })}
                 class="h-full w-full object-cover"
                 alt={t('hero.image.alt', { ns: 'pages.index' })}
                 loading="lazy"
+                height="740"
+                aspectRatio="16:9"
+                format="webp"
             />
         </AnimateOnce>
     </div>

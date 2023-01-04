@@ -1,7 +1,7 @@
 ---
 import i18next from 'i18next'
 import type { ArticleFrontmatter } from '~/types/mdx'
-import ArticleCard from './Card'
+import ArticleCard from './Card.astro'
 import { normalizeArticleCardProps } from '~/utils'
 import { localizePath } from 'astro-i18next'
 import AnimateOnce from '~/components/AnimateOnce'
@@ -22,7 +22,6 @@ const filteredArticles = articles
         filteredArticles.map(({ frontmatter }, i) => (
             <AnimateOnce client:load delay={200 + i * 100}>
                 <ArticleCard
-                    client:visible
                     {...normalizeArticleCardProps(frontmatter)}
                     localizedRootUrl={localizePath('/blog')}
                 />

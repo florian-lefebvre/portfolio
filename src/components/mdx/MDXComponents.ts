@@ -1,5 +1,6 @@
 import Link from './Link'
-import Image from './Image'
+// @ts-ignore
+import Image from './Image.astro'
 import Alert from './Alert'
 
 const components = {

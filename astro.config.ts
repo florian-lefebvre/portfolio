@@ -11,6 +11,8 @@ import mdx from '@astrojs/mdx'
 import prefetch from '@astrojs/prefetch'
 // https://docs.astro.build/en/guides/integrations-guide/sitemap
 import sitemap from '@astrojs/sitemap'
+// https://docs.astro.build/en/guides/integrations-guide/imag
+import image from '@astrojs/image'
 
 import fsp from 'fs/promises'
 function contentRemarkPlugin() {
@@ -20,7 +22,6 @@ function contentRemarkPlugin() {
         const slug = fileName.split('.')[1]
         const language = filePath.split('/content/').at(-1)!.split('/')[0]
         const { mtime: modifiedTime } = await fsp.stat(filePath)
-
         const specificOpts: Record<string, any> = {}
         if (filePath.includes('/projects/')) {
             specificOpts.order = Number(fileName.split('.')[0])
@@ -30,7 +31,6 @@ function contentRemarkPlugin() {
             specificOpts.publishedTime = new Date(publishedDate).toISOString()
             specificOpts.type = 'article'
         }
-
         file.data.astro.frontmatter = {
             ...file.data.astro.frontmatter,
             slug,
@@ -56,6 +56,9 @@ export default defineConfig({
             selector: 'a:not([target="_blank"])',
         }),
         sitemap(),
+        image({
+            serviceEntryPoint: '@astrojs/image/sharp',
+        }),
     ],
     markdown: {
         shikiConfig: {

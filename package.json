@@ -17,6 +17,7 @@
         "script:change-language-in-dynamic-pages": "node ./scripts/change-language-in-dynamic-pages.js"
     },
     "dependencies": {
+        "@astrojs/image": "^0.12.1",
         "@astrojs/mdx": "^0.12.1",
         "@astrojs/prefetch": "^0.1.1",
         "@astrojs/react": "^1.2.2",
@@ -45,7 +46,8 @@
         "react-i18next": "^12.1.1",
         "react-lazy-load-image-component": "^1.5.6",
         "react-medium-image-zoom": "^5.1.2",
-        "react-remark": "^2.1.0"
+        "react-remark": "^2.1.0",
+        "sharp": "^0.31.3"
     },
     "devDependencies": {
         "@swup/a11y-plugin": "^2.1.0",

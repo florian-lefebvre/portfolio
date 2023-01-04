@@ -7,7 +7,7 @@ import type { ArticleFrontmatter, ProjectFrontmatter } from '~/types/mdx'
 import type { MarkdownHeading } from 'astro'
 import MDXComponents from './mdx/MDXComponents'
 import AnimateOnce from '~/components/AnimateOnce'
-import Image from '~/components/mdx/Image'
+import Image from '~/components/mdx/Image.astro'
 
 export type Props = {
     frontmatter: ProjectFrontmatter | ArticleFrontmatter
@@ -62,7 +62,6 @@ const isArticle = 'publishedTime' in frontmatter
         <Image
             src={frontmatter.thumbnail.url}
             alt={frontmatter.thumbnail.alt}
-            client:load
         />
         <Content components={MDXComponents} />
     </AnimateOnce>
