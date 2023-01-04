@@ -24,7 +24,7 @@
     },
     "skills": {
         "title": "My **skills**",
-        "description": "Learning web development as a self-taught person allowed me to discover many, *many* techs... Here are the ones I prefer to work with !",
+        "description": "Learning web development as a self-taught person allowed me to discover many, *many* techs... Here are the ones I prefer to work with!",
         "techs": [
             {
                 "icon": "logos:nextjs-icon",
