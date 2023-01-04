@@ -4,7 +4,7 @@ import { LanguageSelector } from 'astro-i18next/components'
 import { t } from 'i18next'
 import AnimateOnce from '~/components/AnimateOnce'
 import Markdown from '~/components/Markdown'
-import SocialLinks from './SocialLinks'
+import SocialLinks from './SocialLinks.astro'
 ---
 
 <div class="bg-neutral-3">
@@ -42,7 +42,7 @@ import SocialLinks from './SocialLinks'
                 </div>
             </AnimateOnce>
             <AnimateOnce client:load delay={300}>
-                <SocialLinks client:load />
+                <SocialLinks />
             </AnimateOnce>
         </div>
     </div>

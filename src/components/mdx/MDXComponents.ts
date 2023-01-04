@@ -1,7 +1,8 @@
+//@ts-nocheck
+
 import Link from './Link'
-// @ts-ignore
 import Image from './Image.astro'
-import Alert from './Alert'
+import Alert from './Alert.astro'
 
 const components = {
     a: Link,
