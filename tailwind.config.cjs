@@ -69,32 +69,25 @@ module.exports = {
             },
             animation: {
                 theme: 'theme 1500ms ease-in-out',
-                'theme-no-motion': 'theme-no-motion 0.01ms ease-in-out',
             },
             keyframes: {
-                ...(function () {
-                    const animation = {
-                        '0%': {
-                            left: 'auto',
-                            right: 0,
-                            width: 0,
-                        },
-                        '25%': {
-                            width: '100%',
-                        },
-                        '50%': {
-                            left: 0,
-                            right: 'auto',
-                        },
-                        '100%': {
-                            width: 0,
-                        },
-                    }
-                    return {
-                        theme: animation,
-                        'theme-no-motion': animation,
-                    }
-                })(),
+                theme: {
+                    '0%': {
+                        left: 'auto',
+                        right: 0,
+                        width: 0,
+                    },
+                    '25%': {
+                        width: '100%',
+                    },
+                    '50%': {
+                        left: 0,
+                        right: 'auto',
+                    },
+                    '100%': {
+                        width: 0,
+                    },
+                },
             },
             typography: ({ theme }) => ({
                 DEFAULT: {
