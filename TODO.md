@@ -14,9 +14,9 @@
 -   [x] LICENSE
 -   [x] BUG: prefers-reduce-motion breaks swup
 -   [x] a11y: zoom component
+-   [x] seo global + meta defaults
 -   [ ] content
--   [ ] (astro endpoints + og image?)
--   [ ] seo (global + per mdx file) + meta defaults
+-   [ ] seo tags per mdx file
 -   [ ] check for TODOs
 -   [ ] Netlify redirects file
 -   [ ] remove robots.txt

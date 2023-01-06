@@ -5,7 +5,7 @@ import i18next, { t } from 'i18next'
 export interface Props {
     title: string
     description: string
-    image?: {
+    image: {
         url: string
         alt: string
     }
@@ -37,11 +37,11 @@ const canonicalUrl = canonical || href
         basic: {
             title,
             type: 'website',
-            image: image?.url || '',
+            image: image.url,
             url: canonicalUrl,
         },
         image: {
-            alt: image?.alt || '',
+            alt: image.alt,
         },
         optional: {
             description,
