@@ -90,12 +90,4 @@ export default defineConfig({
             theme: 'vitesse-dark',
         },
     },
-    vite: {
-        ssr: {
-            noExternal:
-                process.env.MODE === 'production'
-                    ? ['react-lazy-load-image-component']
-                    : [],
-        },
-    },
 })

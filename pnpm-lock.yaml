@@ -44,7 +44,6 @@ specifiers:
   react: ^18.2.0
   react-dom: ^18.2.0
   react-i18next: ^12.1.1
-  react-lazy-load-image-component: ^1.5.6
   react-medium-image-zoom: ^5.1.2
   react-remark: ^2.1.0
   sharp: ^0.31.3
@@ -79,7 +78,6 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-i18next: 12.1.1_zgr5gkalxjgcd4liflgdtrvosu
-  react-lazy-load-image-component: 1.5.6_biqbaboplfbrettd7655fr4n2y
   react-medium-image-zoom: 5.1.2_biqbaboplfbrettd7655fr4n2y
   react-remark: 2.1.0_react@18.2.0
   sharp: 0.31.3
@@ -4031,10 +4029,6 @@ packages:
     resolution: {integrity: sha512-GhrVeweiTD6uTmmn5hV/lzgCQhccwReIVRLHp7LT4SopOjqEZ5BbX8b5WWEtAKasjmy8hR7ZPwsYlxRCku5odg==}
     dev: true
 
-  /lodash.debounce/4.0.8:
-    resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
-    dev: false
-
   /lodash.defaults/4.2.0:
     resolution: {integrity: sha512-qjxPLHd3r5DnsdGacqOMU6pb/avJzdh9tFX2ymgoZE27BmjXrNy/y4LoaiTeAb+O3gL8AfpJGtqfX/ae2leYYQ==}
     dev: true
@@ -4071,10 +4065,6 @@ packages:
     dependencies:
       lodash._reinterpolate: 3.0.0
     dev: true
-
-  /lodash.throttle/4.1.1:
-    resolution: {integrity: sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==}
-    dev: false
 
   /lodash.uniq/4.5.0:
     resolution: {integrity: sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==}
@@ -5985,18 +5975,6 @@ packages:
       '@babel/runtime': 7.20.6
       html-parse-stringify: 3.0.1
       i18next: 22.4.3
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    dev: false
-
-  /react-lazy-load-image-component/1.5.6_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-M0jeJtOlTHgThOfgYM9krSqYbR6ShxROy/KVankwbw9/amPKG1t5GSGN1sei6Cyu8+QJVuyAUvQ+LFtCVTTlKw==}
-    peerDependencies:
-      react: ^15.x.x || ^16.x.x || ^17.x.x || ^18.x.x
-      react-dom: ^15.x.x || ^16.x.x || ^17.x.x || ^18.x.x
-    dependencies:
-      lodash.debounce: 4.0.8
-      lodash.throttle: 4.1.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false
