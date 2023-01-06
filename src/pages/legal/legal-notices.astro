@@ -15,6 +15,10 @@ const { Content, frontmatter } = MdxFile
     head={{
         title: frontmatter.title,
         description: frontmatter.description,
+        image: {
+            url: '/images/og-image.jpg',
+            alt: frontmatter.description,
+        },
     }}
 >
     <div class="prose prose-sm mx-auto px-4 py-24 sm:prose-base lg:prose-lg">
