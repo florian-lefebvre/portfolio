@@ -71,5 +71,9 @@
     "[slug]": {
         "back": "Back",
         "toc": "Table of contents"
+    },
+    "zoom": {
+        "zoom": "Expand image",
+        "unzoom": "Minimize image"
     }
 }

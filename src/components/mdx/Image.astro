@@ -1,6 +1,7 @@
 ---
 import { Image } from '@astrojs/image/components'
-import Zoom from 'react-medium-image-zoom'
+import { t } from 'i18next'
+import Zoom from '~/components/Zoom'
 
 export type Props = Parameters<typeof Image>[0]
 
@@ -8,7 +9,11 @@ const props = Astro.props
 ---
 
 <figure>
-    <Zoom client:visible>
+    <Zoom
+        client:load
+        a11yNameButtonUnzoom={t('zoom.unzoom', { ns: 'common' }) as string}
+        a11yNameButtonZoom={t('zoom.zoom', { ns: 'common' }) as string}
+    >
         {/* @ts-ignore */}
         <Image
             loading="lazy"

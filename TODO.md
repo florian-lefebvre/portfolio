@@ -8,15 +8,16 @@
 -   [x] BUG: mobile menu : close on click
 -   [x] BUG: make swup work with mobile menu
 -   [x] logo
--   [ ] content
 -   [x] Legal
 -   [x] framer motion
 -   [x] image optimization
+-   [x] LICENSE
+-   [x] BUG: prefers-reduce-motion breaks swup
+-   [x] a11y: zoom component
+-   [ ] content
 -   [ ] (astro endpoints + og image?)
 -   [ ] seo (global + per mdx file) + meta defaults
 -   [ ] check for TODOs
--   [x] LICENSE
--   [x] BUG: prefers-reduce-motion breaks swup
 -   [ ] Netlify redirects file
 -   [ ] remove robots.txt
 -   [ ] Enable plausible (uncomment \_redirects)

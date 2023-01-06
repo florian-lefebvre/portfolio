@@ -41,5 +41,9 @@
     "[slug]": {
         "back": "Retour",
         "toc": "Table des matières"
+    },
+    "zoom": {
+        "zoom": "Agrandir l'image",
+        "unzoom": "Réduire l'image"
     }
 }
