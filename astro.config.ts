@@ -14,7 +14,10 @@ import sitemap from '@astrojs/sitemap'
 // https://docs.astro.build/en/guides/integrations-guide/imag
 import image from '@astrojs/image'
 
-import fsp from 'fs/promises'
+import fsp from 'node:fs/promises'
+import { fileURLToPath } from 'node:url'
+import { join } from 'node:path'
+import type { AstroIntegration } from 'astro'
 function contentRemarkPlugin() {
     return async function (tree: any, file: any) {
         const filePath: string = file.history[0]
@@ -41,6 +44,27 @@ function contentRemarkPlugin() {
     }
 }
 
+function imageCleanupIntegration(): AstroIntegration {
+    return {
+        name: 'image-cleanup',
+        hooks: {
+            'astro:build:done': async ({ dir }) => {
+                const basePath = fileURLToPath(new URL('./images', dir))
+                const paths = ['content', 'pp_wide.jpg'].map((e) =>
+                    join(basePath, e)
+                )
+                for (const path of paths) {
+                    await fsp.rm(path, {
+                        recursive: true,
+                        force: true,
+                    })
+                    console.log(`Removed ${path} successfully`)
+                }
+            },
+        },
+    }
+}
+
 // https://astro.build/config
 export default defineConfig({
     site: 'https://v5-florian-lefebvre.netlify.app',
@@ -59,6 +83,7 @@ export default defineConfig({
         image({
             serviceEntryPoint: '@astrojs/image/sharp',
         }),
+        imageCleanupIntegration(),
     ],
     markdown: {
         shikiConfig: {
