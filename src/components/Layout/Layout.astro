@@ -1,6 +1,6 @@
 ---
 import '~/assets/css/main.css'
-import Banner from '~/components/Layout/Banner.astro'
+import Banner from '~/components/Layout/Banner'
 import ThemeTransition from '~/components/Layout/ThemeTransition'
 import i18next from 'i18next'
 import Footer from '~/components/Layout/Footer/Footer.astro'
@@ -93,7 +93,7 @@ import AnimateOnce from '~/components/AnimateOnce'
     </head>
     <body class="bg-neutral-2 text-neutral-12 dark:bg-neutralDark-4">
         <AnimateOnce client:load direction="bottom" delay={400} offset={false}>
-            <Banner />
+            <Banner client:load />
         </AnimateOnce>
         <Header />
         <main id="swup">
