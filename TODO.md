@@ -15,10 +15,11 @@
 -   [x] BUG: prefers-reduce-motion breaks swup
 -   [x] a11y: zoom component
 -   [x] seo global + meta defaults
--   [ ] content
+-   [x] check for TODOs
+-   [x] Netlify redirects file
+-   [ ] content (en)
 -   [ ] seo tags per mdx file
--   [ ] check for TODOs
--   [ ] Netlify redirects file
+-   [ ] translate content to fr
 -   [ ] remove robots.txt
 -   [ ] Enable plausible (uncomment \_redirects)
 -   [ ] Reroute v4 to v4.florian-lefebvre.dev + update banner link

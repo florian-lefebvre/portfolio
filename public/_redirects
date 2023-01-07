@@ -5,3 +5,21 @@
 # /api/event https://plausible.io/api/event 200
 
 # v4 portfolio
+
+/legal/notices /legal/legal-notices 301
+
+/legal/privacy /legal/privacy-policy 301
+
+/projects/nuxt3-starter-medusa /projects/nuxt3-starter-template-for-medusa 301
+
+/projects/ynotes-app /projects/ynotes 301
+
+/projects/ohf31-website /projects/ohf31 301
+
+/projects/supabase /blog/contributing-to-supabase 301
+
+/projects/ynotes-website /projects/ynotes 301
+
+/projects/ynotes-packages /projects/ynotes 301
+
+/projects/vertical-timeline /projects/vertical-timeline-component 301
