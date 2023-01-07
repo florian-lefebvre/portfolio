@@ -12,8 +12,7 @@
 }
 
 * {
-    /* scrollbar-color: theme("colors.gray.400") theme("colors.gray.900"); */
-    scrollbar-color: red theme('colors.neutral.7');
+    scrollbar-color: theme('colors.neutral.9') theme('colors.neutral.7');
 }
 
 *::-webkit-scrollbar {
@@ -21,7 +20,6 @@
 }
 
 *::-webkit-scrollbar-thumb {
-    /* @apply bg-gray-400 hover:bg-gray-500; */
     @apply bg-neutral-9 hover:bg-neutral-10;
 }
 
