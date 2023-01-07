@@ -6,33 +6,45 @@ description:
     open-source!
 thumbnail:
     url: /images/content/en/projects/op-ent-0.jpg
-    alt: op-ent thumbnail
-category: Web development
-tags: [Education, Open Source, Web development, React, Tailwind CSS, Next.js]
+    alt: op-ent logo
+category: Education
+tags:
+    - Education
+    - Open Source
+    - Web development
+    - Platform
+    - E-learning
+    - React
+    - TypeScript
+    - AdonisJS
+    - Node.js
+    - PostgreSQL
+    - Redis
+    - GraphQL
+    - Apollo
+    - Figma
 ---
 
 ## Introduction
 
-op-ent is an open-source school management system, called _ENT_ in French
-(translated as _digital workspace_).
-
-It aims to bring basic features in a 1st phase, such as subjects, grades,
-calendar, homework etc. The goal is to make the platform a little more unique
-once it has reached feature parity with current competitors such as
-[EcoleDirecte](https://www.ecoledirecte.com/) or
+op-ent is an open-source school management system, called _ENT_ (which stands
+for "digital workspace" in French). It aims to provide basic features such as
+subjects, grades, calendar, and homework in its first phase. The goal is to make
+the platform more unique once it has reached feature parity with current
+competitors such as [EcoleDirecte](https://www.ecoledirecte.com/) and
 [Pronote](https://www.index-education.com/fr/logiciel-gestion-vie-scolaire.php).
-A few ideas:
+Some ideas for future features include:
 
 -   Gamification (achievements)
--   Knowledge center
--   Anonymous reporting (i.e for harassment)
--   Built-in [Notion](https://notion/so)-like editor
+-   A knowledge center
+-   Anonymous reporting for issues such as harassment
+-   A built-in editor similar to [Notion](https://notion/so)
 
-I'm the initiator of this massive project, working on all sides at first:
-frontend and backend development, design (design systems and brand identity),
-communication, project management, community management...
+As the initiator of this project, I'm working on all aspects of development,
+including frontend and backend development, design (including design systems and
+brand identity), communication, project management, and community management.
 
-The project is (and will be) using **many** technologies (subject to change):
+The project utilizes a variety of technologies, including:
 
 -   **Frontend**: [TypeScript](https://www.typescriptlang.org/),
     [React](https://reactjs.org/), [Next.js](https://nextjs.org/),
@@ -44,7 +56,7 @@ The project is (and will be) using **many** technologies (subject to change):
     [Apollo](https://www.apollographql.com/)) and WebSockets
 -   **Design**: [Figma](https://www.figma.com/)
 
-There isn't much to show for now, but here is the link to the
+There isn't much to show at this time, but you can find the project on the
 [Github organization](https://github.com/op-ent) and the
 [website](https://op-ent.fr).
 
@@ -52,51 +64,57 @@ There isn't much to show for now, but here is the link to the
 
 ## Purpose and Goal
 
-I've contributed to (and maintained) a project called
-[yNotes](https://ynotes.fr) ([View project](/projects/ynotes)) not so long ago.
-Its goal was to provide an unofficial client for popular ENTs and students loved
-it! Even if the project is unmaintained, it has reached almost 7k downloads on
-Android on December 2022 (**+250% on 2 months**)! All this to say that yNotes
-(and op-ent now) are solving a real issue: current ENTs suck.
+I have contributed to and maintained a project called
+[yNotes](https://ynotes.fr) in the past ([Read more](/projects/ynotes)). The
+goal of yNotes was to provide an unofficial client for popular school management
+systems (_ENTs_) and it was popular among students. Even though the project is
+no longer maintained, it reached almost 7,000 downloads on Android in December
+2022, which represents a **250% increase over two months**. This goes to show
+that yNotes (and now op-ent) are addressing a real issue: current ENTs are not
+very good.
 
-My objective is _pretty_ simple I'd say: make op-ent the most used ENT in
-France. Well it's really _work in progress_ but I'm confident, I really think
-this project has potential.
+My goal is _fairly_ simple: I want to make op-ent the most used school
+management system in France. While it is still a work in progress, I am
+confident that this project has a lot of potential.
 
-To achieve this ambitious goal, the project is split in several sub-projects.
-For instance:
+To achieve this ambitious goal, the project has been divided into several
+sub-projects, including:
 
--   [unstyled-ui](https://github.com/op-ent/unstyled-ui): Headless React
-    components library
--   [unstyled-ui-theme](https://github.com/op-ent/unstyled-ui-theme): Headless
-    React components library
--   [api](https://github.com/op-ent/api): The API code
--   [dashboard](https://github.com/op-ent/dashboard): The web app
+-   [unstyled-ui](https://github.com/op-ent/unstyled-ui): A library of headless
+    React components
+-   [unstyled-ui-theme](https://github.com/op-ent/unstyled-ui-theme): A theme
+    for unstyled-ui
+-   [api](https://github.com/op-ent/api): The code for the API
+-   [dashboard](https://github.com/op-ent/dashboard): The web appplication
 
-I decided not to use a monorepo for this project as I'm not that familiar with
-it, and I like the one-repository-per-project approach as used in
+I decided not to use a monorepo for this project because I am not very familiar
+with it, and I prefer the one-repository-per-project approach used in
 [AdonisJS](https://github.com/adonisjs).
 
 ## Spotlight: unstyled-ui
 
-Well, op-ent is made of so many parts that there are a lot of interesting things
-to talk about. But for the sake of this page, let's focus on `unstyled-ui`.
-
-_I might write dedicated articles for other sub-projects, who knows..._
+While there are many interesting aspects of op-ent to discuss, for the sake of
+this page, let's focus on `unstyled-ui`. It is worth noting that I may write
+dedicated articles for other sub-projects in the future.
 
 Useful links:
 
 -   [GitHub repository](https://github.com/op-ent/unstyled-ui)
 -   [Docs](https://unstyled-ui.docs.op-ent.fr/)
 
-`unstyled-ui` is yet another React UI library but I think it can solve a
-problem: mixing full-featured libraries like
-[Material UI](https://material-ui.com) and headless components like
-[Headless UI](https://headlessui.com/). Have a look at the
+`unstyled-ui` is a React UI library that aims to solve the problem of mixing
+full-featured libraries like [Material UI](https://material-ui.com) and headless
+components like [Headless UI](https://headlessui.com/). You can find the full
+motivation for this library
+[here](https://github.com/op-ent/unstyled-ui#motivation). In short, it is
+configurable, customizable, and type-safe.
+
+is yet another React UI library but I think it can solve a problem: mixing
+full-featured libraries like and headless components like . Have a look at the
 [full motivation](https://github.com/op-ent/unstyled-ui#motivation). In short,
 it's configurable, customizable and type-safe.
 
-I stumbled across several issues while making this library:
+While developing this library, I encountered a few issues:
 
 ### Typed polymorphic components in React
 
@@ -106,15 +124,12 @@ According to
 > In the world of React components, a polymorphic component is a component that
 > can be rendered with a different container element / node.
 
-Polymorphic components are not hard to implement, but **getting the types right
-is**. An example might be useful:
-
-Let's say you create a component called `Button` and you want it to be
-polymorphic because it can be a link sometimes. Polymorphism here is controlled
-by the `as` prop which represents the element. Its type is `React.ElementType`,
-so either a string or a React component.
-
-Then, when calling the following:
+While polymorphic components are not necessarily difficult to implement, getting
+the types correct can be challenging. For example, consider a component called
+`Button` that should be polymorphic because it can sometimes be a link.
+Polymorphism in this case is controlled by the `as` prop, which specifies the
+element type (a string or a React component). When calling the component like
+this:
 
 ```jsx
 <Button as="a" href="/">
@@ -125,12 +140,11 @@ Then, when calling the following:
 We want the IDE to provide autocompletion for the `a` element and not the
 `button`.
 
-So after quite some researching, a lot of experiments and frustration I came up
-with the following (can't quote the source I'm sorry):
-
--   `polymorphic.ts`
+After doing some research and experimenting, I came up with the following
+solution (I apologize for not being able to quote the source):
 
 ```ts
+// polymorphic.ts
 import type React from 'react'
 
 // Source: https://github.com/emotion-js/emotion/blob/master/packages/styled-base/types/helper.d.ts
@@ -197,9 +211,8 @@ export type ComponentProps<
 > = PolymorphicComponentPropsWithRef<C, P>
 ```
 
--   `Button.tsx`
-
 ```tsx
+// Button.tsx
 import React, { forwardRef } from 'react'
 import type { ComponentProps, PolymorphicRef } from './polymorphic'
 
@@ -231,13 +244,10 @@ export const Button: ButtonComponent = forwardRef(
 
 ### Typescript and module override
 
-By default, `unstyled-ui` doesn't take much decisions about props and their
-typings. So I wanted a flexible way for library users to customize, extend the
-current types.
-
-This was actually
-[inspired](https://mantine.dev/theming/colors/#add-custom-colors-types) by
-[Mantine](https://mantine.dev/):
+By default, `unstyled-ui` does not make many decisions about props and their
+typings, so I wanted to provide a flexible way for users of the library to
+customize and extend the current types. This idea was inspired by
+[Mantine](<[inspired](https://mantine.dev/theming/colors/#add-custom-colors-types)>):
 
 ```ts
 import { Tuple, DefaultMantineColor } from '@mantine/core'
@@ -254,8 +264,8 @@ declare module '@mantine/core' {
 }
 ```
 
-But I wasn't fully satisfied by how it worked internally so I ended up tweaking
-it and get this:
+However, I was not fully satisfied with how this worked internally, so I ended
+up modifying it and creating the following:
 
 ```ts
 declare module '@op-ent/unstyled-ui' {
@@ -267,7 +277,8 @@ declare module '@op-ent/unstyled-ui' {
 }
 ```
 
-Then, creating a config using the public library API is correctly typed:
+This allows users to create a correctly typed config using the public library
+API:
 
 ```ts
 export const { config, extendConfig } = createConfig({
@@ -283,7 +294,7 @@ export const { config, extendConfig } = createConfig({
 ```
 
 [Here](https://github.com/op-ent/unstyled-ui/blob/9066cc28e3af96beddd5bfe95378682e5b8268d1/src/types/config.ts)
-is the magic making this possible:
+is the code that makes this possible:
 
 ```ts
 import type { DeepPartial } from 'ts-essentials'
@@ -349,44 +360,43 @@ export type CustomizableComponentsProps = DefaultCustomizableComponentsProps &
 
 ---
 
-In the future, I'd like to work on the following topics:
+I am interested in exploring the following topics in the future:
 
--   Getting a stable internal API to make contributions easier
--   Make `unstyled-ui` framework agnostic, to allow people to share styles
-    across UI frameworks
--   Allow component to have custom render functions through config for total
-    customization
--   Allow users to make custom components work great without adding them to the
-    core library
--   Maybe rename `@op-ent/unstyled-ui` because it's way too long to something
-    like `@uui/core` & `@uui/react`
+-   Stabilize the internal API to facilitate contributions
+-   Make `unstyled-ui` framework agnostic to enable sharing styles across UI
+    frameworks
+-   Allow customization of component rendering through config
+-   Allow users to easily integrate custom components
+-   Consider renaming `@op-ent/unstyled-ui` to a shorter and more memorable
+    name, such as `@uui/core` and `@uui/react`.
 
 ![Unstyled UI repository cover](/images/content/en/projects/op-ent-2.png)
 
 ## Current status
 
-As you probably understood, op-ent is under heavy development and should not
-have an alpha, or even an MVP before the end of August 2023.
-
-Moreover, this page might be a little out of date because the project is likely
-to evolve fast.
+op-ent is currently in active development and is not expected to reach an alpha
+or MVP stage until August 2023. Please note that this page may not always
+reflect the most recent changes to the project, as it is likely to evolve
+quickly.
 
 ## Lessons Learned
 
-op-ent has taught many things already:
+Working on op-ent has provided many valuable lessons, including:
 
--   **Project management** using [Github](https://github.com) and
-    [Linear](https://linear.app) (awesome tool btw)
--   **Community management** on GitHub (with issues, PRs i.e contributions) and
-    [Discord](https://discord.com) ([Join us!](https://discord.gg/kMFmfSbC2C))
+-   **Project management** using tools such as [Github](https://github.com) and
+    [Linear](https://linear.app)
+-   **Community management** on platforms like GitHub (with issues, PRs i.e
+    contributions) and [Discord](https://discord.com)
+    ([Join us!](https://discord.gg/kMFmfSbC2C))
 -   Awesome new technologies
--   Building a library (being more than a user) and preparing it to scale etc
+-   Experience in building and scaling a library
 
-I'm satisfied so far with all the techs I chose so far, except with components
-library (such as [Chakra UI](https://chakra-ui.com/) and
-[Mantine](https://mantine.dev)) and that's why I decided to build `unstyled-ui`.
+Overall, I am satisfied with the technologies I have chosen for the project,
+with the exception of certain components libraries like
+[Chakra UI](https://chakra-ui.com/) and [Mantine](https://mantine.dev). This
+motivated me to create `unstyled-ui`.
 
-I'm really happy with how the project turns out, I have learned many things so
-far and I really believe op-ent is useful. Feel free to
-[contribute](https://github.com/op-ent#-contribuer) and [contact me](#contact)
-to know more!
+I am pleased with the progress of the project and believe it has the potential
+to be useful. If you are interested in contributing to the project or learning
+more, please feel free to [reach out](#contact) to me or check out the
+[contributing guide](https://github.com/op-ent#-contribuer).
