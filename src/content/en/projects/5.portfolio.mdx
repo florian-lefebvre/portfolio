@@ -1,42 +1,158 @@
 ---
-title: 'Portfolio: 5th versions and many different techs'
+title: 'Portfolio: One Thousand and One Techs'
 description:
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in nisi lectus.
-    Donec lobortis pulvinar nisi, nec lacinia urna efficitur.
+    The dev's portfolio reflects his current knowledge. Mine is no exception to
+    the rule, it's the 5th version!
 thumbnail:
-    url: https://res.cloudinary.com/af68d22a-2043-4078-857c-f2db1a1406ec/image/upload/c_scale,q_80/v1636657520/Portfolio/global/og_ekzloe.jpg
-    alt: 'Image description'
+    url: /images/content/en/projects/portfolio-0.jpg
+    alt: Portfolio v4 OpenGraph image
 ---
 
 ## Introduction
 
--   High-level summary of what the project is
--   List of core functionalities / interesting features
--   Your role in the project. were you exclusively doing development, or did you
-    do design? If you worked in groups, what parts did you tackle?
--   Technologies used
--   Links to live demo + source code (if applicable)
+-   portfolio => showcase
+-   last version features:
+
+    -   Light/Dark mode
+    -   MDX powered blog
+    -   Excellent Lighthouse score
+    -   Great accessibility
+    -   I18n
+    -   Takes `prefers-reduce-motion` into account
+
+-   techs used:
+    -   Astro (SSG)
+    -   Tailwind CSS
+    -   React
+    -   Netlify
+    -   Swup.js
+    -   MDX
+-   GitHub repo: https://github.com/florian-lefebvre/portfolio (leave a star
+    plz)
 
 ## Purpose and Goal
 
--   Why did you build this project? Why is it important to you?
--   What was the expected outcome of the project?
--   What were the initial designs?
--   Any other preliminary planning that you did which helps build a narrative
+-   why: showcase my skills, force me to learn new techs and polish a lot,
+    increase my chances to get hired
+-   For the v5, I made mockups on [Figma](https://figma.com). Here is a
+    screenshot but you can find more on my
+    [Twitter](https://twitter.com/LfbvrFlo) (links below).
 
-## Spotlight
+![Figma mockup of the "About" page](/images/content/en/projects/portfolio-1.png)
 
--   What is the “killer feature” of your project? What feature does it have that
-    took the most work, or was the most technically impressive? Some possible
-    examples: - User authentication - A feed of items fetched from a database -
-    A particularly tricky UI element (eg. autocomplete, calendar,
-    drag-and-drop) - Anything you're proud of!
--   What were the technical hurdles that got in your way? Any major problems you
-    hit during development?
--   How did you solve those problems? What was the solution? Go deep here, and
-    write with a developer in mind.
+-   [Tweet 1](https://twitter.com/LfbvrFlo/status/1596097811480805376)
+-   [Tweet 2](https://twitter.com/LfbvrFlo/status/1597347030929924096)
+-   [Tweet 3](https://twitter.com/LfbvrFlo/status/1597616061339561984)
+-   [Tweet 4](https://twitter.com/LfbvrFlo/status/1597892339321954304)
+
+I also planned what content I would put in [Notion](https://notion.so) before
+coding too much.
+
+## A quick history
+
+I've updated my website many times yet, but this time I'm confident: this
+version will stay there for a while!
+
+### Jekyll and Bootstrap 5
+
+![Screenshot of the portfolio v1](/images/content/en/projects/portfolio-2.png)
+
+Back in August 2020, I had to choose technologies to build my portfolio. At the
+time, I knew HTML5, CSS & SCSS, PHP and Bootstrap.
+
+Because I spent a lot of time on [Bootstrap docs](https://getbootstrap.com/docs)
+in the previous months, I knew that static site generators existed (since
+Bootstrap docs use Hugo). So I searched for the best fit for me and eventually
+found [Jekyll](https://jekyllrb.com/).
+
+It uses the [Liquid syntax](https://github.com/Shopify/liquid/wiki) and relies
+on [Ruby](https://www.ruby-lang.org/). I knew nothing about both of them so and
+it made it harder to build my portfolio.
+
+I used a template I found on the Internet, tweaked it a bit but I won't lie: it
+was bad.
+
+And setting the deployment was hard since GitHub Actions were not released yet
+so I had to use Travis CI and GitHub Pages to release my portfolio.
+
+So as I was learning more about frontend development and in particular
+JavaScript frameworks, I decided a few months later to rebuild my portfolio from
+scratch.
+
+### Nuxt 2 and Tailwind CSS 1.0
+
+![Screenshot of the portfolio v2](/images/content/en/projects/portfolio-3.png)
+
+I learned a lot of things since August 2020, so I decided to go with
+[Nuxt](https://nuxtjs.org) and [Tailwind CSS](https://tailwindcss.com/).
+
+I chose to use a sidebar for navigation and now I think that wasn't a good
+choice. The space I was loosing for only a few infos was too much. But anyway, I
+chose the color teal as a primary color. I also used the official Nuxt modules
+such as [`@nuxt/content`](https://content.nuxtjs.org/) but I struggled with the
+layout on some specific screen widths with weird horizontal overflow, caused by
+code blocks.
+
+This time, I used Travis CI and a Plesk server to deploy my portfolio.
+
+For further explanations about v1 and v2, check out
+[this archive](https://github.com/florian-lefebvre/portfolio/blob/v2_nuxtjs/content/work/2020-11-13-my-porfolio.md).
+
+But as always, I wasn't satisfied of my work and thought it wasn't good enough
+as a showcase of my skills. So I remade it of course!
+
+### Nuxt 2 and Tailwind CSS 2.0
+
+![Screenshot of the portfolio v3](/images/content/en/projects/portfolio-4.png)
+
+I'm not crazy, I don't use a new technology every day so I kept using Nuxt and
+Tailwind CSS. I decided to so something more simple: only one page with all
+informations. I chose some kind of minimalist design with only gray shades and
+no primary color. I also implemented a dark mode. I discovered animations using
+[AnimXYZ](https://animxyz.com/) but I've got to say that it wasn't that easy to
+do animations with it.
+
+But this simplicity didn't reflect enough my capabilities IMO so you know what
+it means...
+
+### Nuxt 3 and Tailwind CSS 3.0
+
+![Screenshot of the portfolio v4](/images/content/en/projects/portfolio-5.png)
+
+I upgraded Nuxt to its 3rd version (in beta) as well as Tailwind CSS (no major
+changes). And I've got to say that Nuxt 3 and Vue 3 are absolutely amazing
+compared to their previous major versions. Typescript is _the_ best. But using
+Nuxt 3 in beta has downsides, for stability (laggy HMR), weird broken imports or
+missing features. I'm mostly enjoying using it.
+
+Concerning animations, I switched to
+[`@vueuse/motion`](https://motion.vueuse.org/) and it's really better.
+
+In fact, because nuxt's ecosystem isn't compatible yet, I had to dive a bit
+deeper in Nuxt and learned how to build modules (for generating a sitemap for
+instance) and that was really enriching.
+
+If you're curious about it, I created a custom sitemap module,
+[check it out](https://github.com/florian-lefebvre/portfolio/blob/c513428dea912a19ffb684b8b571b08b8882158c/modules/sitemap.ts).
+
+I deploy my portfolio on Vercel, the process is way simpler than on GitHub
+Actions or any other CI since Nuxt has first class integrations for deployments.
+
+<Alert>
+
+Do you miss this version? It's still available at
+[v4.florian-lefebvre.dev](https://v4.florian-lefebvre.dev)!
+
+</Alert>
+
+But then I found out [Josh Comeau](https://www.joshwcomeau.com/)'s
+[e-book](https://www.joshwcomeau.com/effective-portfolio/): _"Building an
+Effective Dev Portfolio"_. So I decided to rebuild my portfolio, but with more
+thinking evolved so that it can't stay great for a long time.
 
 ## Current status
+
+TBD
 
 -   This section is optional. If the project is actively being used by real
     people, talk a little bit about the current status, who uses it, why they
@@ -45,6 +161,8 @@ thumbnail:
     section.
 
 ## Lessons Learned
+
+TBD
 
 -   What did you learn doing this project? Feel free to list multiple things.
     Also feel free to cover non-technical lessons. It's great to talk about how
