@@ -59,7 +59,7 @@
                 "name": "Nuxt"
             },
             {
-                "icon": "logos:astro",
+                "icon": "logos:astro-icon",
                 "name": "Astro"
             }
         ]
