@@ -46,9 +46,9 @@ import clsx from 'clsx'
                                 client:load
                                 className={clsx(
                                     'h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12',
-                                    ['logos:astro-icon'].includes(icon) &&
+                                    icon === 'logos:astro-icon' &&
                                         'dark:[&_path:nth-child(1)]:fill-white',
-                                    ['logos:nextjs-icon'].includes(icon) &&
+                                    icon === 'logos:nextjs-icon' &&
                                         'dark:[&_defs_linearGradient:nth-child(1)_stop]:[stop-color:#000] dark:[&_defs_linearGradient:nth-child(2)_stop]:[stop-color:#000] dark:[&_g_circle]:fill-white'
                                 )}
                                 icon={icon}
