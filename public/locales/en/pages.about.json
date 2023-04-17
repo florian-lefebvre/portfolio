@@ -27,10 +27,6 @@
         "description": "Learning web development as a self-taught person allowed me to discover many, *many* techs... Here are the ones I prefer to work with!",
         "techs": [
             {
-                "icon": "logos:nextjs-icon",
-                "name": "Next.js"
-            },
-            {
                 "icon": "logos:react",
                 "name": "React"
             },
@@ -43,24 +39,40 @@
                 "name": "Tailwind"
             },
             {
-                "icon": "logos:adonisjs-icon",
-                "name": "AdonisJS"
+                "icon": "logos:nextjs-icon",
+                "name": "Next"
             },
             {
-                "icon": "logos:flutter",
-                "name": "Flutter"
-            },
-            {
-                "icon": "logos:figma",
-                "name": "Figma"
-            },
-            {
-                "icon": "logos:nuxt-icon",
-                "name": "Nuxt"
+                "icon": "logos:remix-icon",
+                "name": "Remix"
             },
             {
                 "icon": "logos:astro-icon",
                 "name": "Astro"
+            },
+            {
+                "icon": "logos:vue",
+                "name": "Vue 3"
+            },
+            {
+                "icon": "logos:nuxt-icon",
+                "name": "Nuxt 3"
+            },
+            {
+                "icon": "logos:adonisjs-icon",
+                "name": "Adonis"
+            },
+            {
+                "icon": "logos:rails",
+                "name": "Rails"
+            },
+            {
+                "icon": "simple-icons:directus",
+                "name": "Directus"
+            },
+            {
+                "icon": "logos:figma",
+                "name": "Figma"
             }
         ]
     },
@@ -70,11 +82,11 @@
         "techs": [
             {
                 "icon": "logos:html-5",
-                "name": "HTML 5"
+                "name": "HTML"
             },
             {
                 "icon": "logos:css-3",
-                "name": "CSS3"
+                "name": "CSS"
             },
             {
                 "icon": "logos:javascript",
@@ -85,12 +97,12 @@
                 "name": "Dart"
             },
             {
-                "icon": "logos:nodejs-icon",
-                "name": "Node.js"
+                "icon": "logos:ruby",
+                "name": "Ruby"
             },
             {
-                "icon": "logos:vue",
-                "name": "Vue.js"
+                "icon": "logos:nodejs-icon",
+                "name": "Node.js"
             },
             {
                 "icon": "logos:supabase-icon",
@@ -111,6 +123,10 @@
             {
                 "icon": "logos:docker-icon",
                 "name": "Docker"
+            },
+            {
+                "icon": "logos:flutter",
+                "name": "Flutter"
             }
         ]
     },
