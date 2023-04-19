@@ -1,18 +1,16 @@
 import clsx from 'clsx'
-import { useScroll, useSpring, motion } from 'framer-motion'
+import { useScroll, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
 export default function PageProgressBar() {
-    const [show, setShow] = useState(false)
+    const [scaleX, setScaleX] = useState(0)
+    const show = scaleX !== 0
 
     const { scrollYProgress } = useScroll()
-    const scaleX = useSpring(scrollYProgress, {
-        stiffness: 100,
-    })
 
     useEffect(() => {
-        scaleX.on('change', (v) => setShow(v !== 0))
-    }, [scaleX])
+        scrollYProgress.on('change', (v) => setScaleX(v))
+    }, [scrollYProgress])
     return (
         <div
             className={clsx(
@@ -22,7 +20,7 @@ export default function PageProgressBar() {
         >
             <motion.div
                 className="absolute inset-0 origin-[0%] bg-primary-9 transition-transform duration-300 ease-in-out"
-                style={{ scaleX }}
+                style={{ transform: `scaleX(clamp(0, ${scaleX}, 1))` }}
             />
         </div>
     )
