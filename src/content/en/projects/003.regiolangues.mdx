@@ -13,19 +13,31 @@ thumbnail:
 Régiolangues is a centralized portal for French regional languages related
 resources.
 
-We decided to go with a recursive approach. Indeed we needed some kind of file
-explorer logic with folders and files (here categories and resources).
+This website has a bunch of cool features:
 
-For this project, I was in charge of designing the interface, its database and
-coding the website. My brother was in charge of the content.
+-   Advanced filtering
+-   Pagination
+-   Interactive map
+-   Contribution forms
+-   A CMS
+
+For this project, I'm in charge of designing the interface, its database and
+coding the website. My brother is in charge of the content.
 
 Here are the techs I used:
 
--   [Nuxt 2](https://nuxtjs.org)
+-   [Astro](https://astro.build)
+-   [React](https://react.dev/)
+-   [Jotai](https://jotai.org/)
 -   [Tailwind CSS](https://tailwindcss.com)
--   [Supabase](https://supabase.com)
+-   [Leaflet](https://leafletjs.com/)
+-   [Directus](https://directus.io)
+-   [Vercel](https://vercel.com)
+-   [Railway](https://railway.app)
 
-[Check out](https://regiolangues.fr) the website!
+And probably a lot more I've forgotten about!
+
+[Check out](https://www.regiolangues.fr) the website!
 
 ## Purpose and Goal
 
@@ -34,48 +46,173 @@ difficult to learn it online, that there were not really websites concentrating
 learning content and resources. So he asked me to build a website for this. The
 goal was to be able to have many languages so that people can contribute.
 
-## Spotlight: recursive architecture
+## Spotlight: interactive map
 
-I needed to build a breadcrumb navigation. But since the categories are
-structured as `categories/${id}-${slugified-title}` on the website, i couldn't
-use the url to build the breadcrumb. Instead, I wrote an rpc to get the
-hierarchy of categories given a category id. Here is the code:
+There are many interesting parts in this project but let's focus on what was the
+most challenging part: the [interactive map](https://www.regiolangues.fr/carte).
 
-```sql
-create or replace function public.category_hierarchy(id_param bigint)
-returns categories[]
-as $$
-  declare arr categories[];
-  declare x categories%rowtype;
-begin
-  select * into x from categories where id = id_param;
-  arr = array_append(arr, x);
-  while x.parent_id is not null loop
-    select * into x from categories where id = x.parent_id;
-    arr = array_append(arr, x);
-  end loop;
+![Screenshot of the map](/images/content/en/projects/regiolangues-1.png)
 
-  return arr;
-end;
-$$ language plpgsql security definer;
+### Techs
+
+For rendering the map itself, I used
+[React Leaflet](https://react-leaflet.js.org/) which is used a convenient
+wrapper for Leaflet. I've also used plugins such as
+[react-leaflet-cluster](https://github.com/akursat/react-leaflet-cluster) that
+were really useful.
+
+All styling (including the markers) is achieved with Tailwind CSS. Regarding the
+markers, icons are provided through the Directus CMS (as identifiers) and
+rendered using [Iconify](https://iconify.design/).
+
+Finally, as for all the website, state is managed using Jotai which allowed me
+to filter things easily.
+
+### The custom markers' nightmare
+
+When using Leaflet it's possible to use custom markers. They're usually only
+custom images but in my case, I needed to render a React component. And it was
+not that easy...
+
+#### 1st attempt: `renderToString`
+
+The first way to do this is by using `renderToString` from `react-dom/server`.
+And it actually works pretty well! It just compiles a React component to a
+string. For example:
+
+```tsx
+import React from 'react'
+import { renderToString } from 'react-dom/server'
+
+function MyComponent({ children }: { children: React.ReactNode }) {
+    return <div className="some-class">My component</div>
+}
+
+const renderedComponent = renderToString(
+    <MyComponent>Hello there!</MyComponent>
+)
 ```
+
+Becomes
+
+```html
+<div class="some-class">Hello there!</div>
+```
+
+However, you loose any client side interactivity. And that was pretty critical
+because I was using the `Icon` component from `@iconify/react`!
+
+#### 2nd attempt: `createRoot().render`
+
+So I tried to so some kind of custom rendering. It was **really** bad, it worked
+only half of the time. It was an absolute mess. I thrown it away pretty fast.
+
+_If you wanna have a look at this monstrosity, check it out
+[here](https://github.com/holytrips/react-leaflet-marker/issues/10#issuecomment-1426753224)._
+
+#### 3rd attempt: `renderToString`... and web components!
+
+The real issue there is that a custom Leaftlet marker expects a Leaftlet
+`divIcon`, which itself expects an `html` prop as a string like so:
+
+```tsx
+function SomeComponent() {
+    return (
+        <Marker
+            icon={L.divIcon({
+                html: '', // this is what we are talking about
+            })}
+        />
+    )
+}
+```
+
+And I need client-side lofic for iconify to run (it fetches icon client-side to
+avoid downloading all the icons). But there's actually a way to do this, without
+React: web components!
+
+So I extracted my custom marker icon to a component:
+
+```tsx
+// MarkerIcon.tsx
+import type { IconifyIconAttributes } from 'iconify-icon'
+import type { SVGProps } from 'react'
+import { Circle, HandsupFlower } from './Markers'
+import 'iconify-icon' // imports the web component
+
+// make sure TypeScript doesn't complain because
+// iconify-icon is not a valid html tag by default
+declare global {
+    namespace JSX {
+        interface IntrinsicElements {
+            'iconify-icon': IconifyIconAttributes &
+                Omit<SVGProps<SVGElement>, 'className'> &
+                Partial<{ class: string }>
+        }
+    }
+}
+
+export default function MarkerIcon({ icon }: { icon: string }) {
+    return (
+        <div>
+            <iconify-icon
+                icon={icon}
+                class="z-10 h-5 w-5 text-white"
+            ></iconify-icon>
+        </div>
+    )
+}
+```
+
+I can then render it as string:
+
+```tsx
+import L from 'leaflet'
+import { Marker } from 'react-leaflet'
+import { renderToString } from 'react-dom/server'
+import MarkerIcon from './MarkerIcon'
+
+function CustomMarker({
+    icon,
+    position,
+}: {
+    icon: string
+    position: [number, number]
+}) {
+    return (
+        <Marker
+            icon={L.divIcon({
+                html: renderToString(<MarkerIcon icon={icon} />),
+            })}
+            position={position}
+        />
+    )
+}
+```
+
+### What about SEO
+
+The downside with a map like this is that it's rendered client-side, so I'm
+loosing all the content associated with each point (viewable on click in a
+slideover). And here the solution is pretty easy: there is no way to have this
+content referenced.
+
+So I just created another view: a
+[standard list](https://www.regiolangues.fr/carte/liste)!
 
 ## Current status
 
-Régiolangues is kind of abandoned right now, mainly because of a lack of content
-and audience. It doesn't mean the project is dead yet but it requires more
-attention on non-dev aspects.
+Most of the development is done right now, there are only a few things like
+notify cms authors when contributions are made. Nothing crazy!
 
 ## Lessons Learned
 
-I learned:
+This project taught me many things:
 
--   To work with recursive data structures in SQL and recursive views
--   To use Supabase
-
-Looking back at the choice of technologies:
-
--   I wish I could use Nuxt 3 but it was not mature enough (beta was released a
-    few weeks after) so I had to work with Nuxt 2
--   Supabase was great because it's so easy to work with but it may be a bit
-    overkill
+-   **Using the right tool for the right job**: This is actually the 2nd version
+    of RégioLangues. First one was built like a recursive explorer view
+    (Supabase, Nuxt 2, prerendering every 20min with cron) and it was not good.
+    What was wrong above all was the mental model: recursive resources and
+    categories VS a list of resources with tags
+-   Dealing with **maps** using Leaflet
+-   A new **headless CMS**, Directus!
