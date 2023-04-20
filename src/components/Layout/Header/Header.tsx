@@ -87,7 +87,7 @@ export default function Header({
                             <a
                                 key={href}
                                 className={clsx(
-                                    'px-4 py-2 transition-colors hover:bg-neutral-4 focus:outline-none focus:ring-3 focus:ring-primary-7 dark:hover:bg-neutralDark-6',
+                                    'px-4 py-2 transition-colors hover:bg-neutral-4 focus:z-10 focus:outline-none focus:ring-3 focus:ring-primary-7 dark:hover:bg-neutralDark-6',
                                     pathname === href
                                         ? 'font-bold'
                                         : 'font-medium'
