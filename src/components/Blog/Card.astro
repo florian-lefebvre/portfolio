@@ -1,5 +1,7 @@
 ---
 import i18next from 'i18next'
+import { Icon } from '@iconify/react'
+import { t } from 'i18next'
 import { Image } from '@astrojs/image/components'
 
 export type Props = {
@@ -26,7 +28,7 @@ const {
 
 <a
     href={`${localizedRootUrl}${slug}`}
-    class="group flex flex-col gap-4 focus:outline-none focus:ring-3 focus:ring-primary-7"
+    class="group flex h-full flex-col gap-4 focus:outline-none focus:ring-3 focus:ring-primary-7"
 >
     <div class="overflow-hidden">
         <Image
@@ -55,4 +57,14 @@ const {
     <p class="text-base font-medium text-neutral-11">
         {description}
     </p>
+    <div
+        class="mr-auto mt-auto inline-flex items-center space-x-2 border-b-2 border-transparent pb-1 text-sm font-semibold text-primary-9 transition-colors group-hover:border-current sm:text-base"
+    >
+        <span>{t('readMore', { ns: 'pages.blog' })}</span>
+        <Icon
+            icon="heroicons:chevron-right-20-solid"
+            className="h-4 w-4"
+            client:load
+        />
+    </div>
 </a>
