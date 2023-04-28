@@ -17,7 +17,7 @@
 -   [x] seo global + meta defaults
 -   [x] check for TODOs
 -   [x] Netlify redirects file
--   [ ] content (en)
+-   [x] content (en)
 -   [ ] seo tags per mdx file
 -   [ ] translate content to fr
 -   [ ] remove robots.txt

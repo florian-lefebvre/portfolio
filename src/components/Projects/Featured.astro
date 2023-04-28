@@ -54,7 +54,11 @@ const lastProjects = filteredProjects.slice(2, 5)
         <div class="grid gap-16 md:grid-cols-2">
             {
                 firstProjects.map(({ frontmatter }, i) => (
-                    <AnimateOnce client:load delay={200 + i * 100}>
+                    <AnimateOnce
+                        client:load
+                        delay={200 + i * 100}
+                        className="h-full"
+                    >
                         <ProjectCard
                             {...normalizeProjectCardProps(frontmatter)}
                             variant="medium"
@@ -67,7 +71,11 @@ const lastProjects = filteredProjects.slice(2, 5)
         <div class="mt-16 grid gap-16 md:grid-cols-2 lg:grid-cols-3">
             {
                 lastProjects.map(({ frontmatter }, i) => (
-                    <AnimateOnce client:load delay={200 + i * 100}>
+                    <AnimateOnce
+                        client:load
+                        delay={200 + i * 100}
+                        className="h-full"
+                    >
                         <ProjectCard
                             {...normalizeProjectCardProps(frontmatter)}
                             variant="small"

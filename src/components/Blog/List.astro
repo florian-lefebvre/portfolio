@@ -20,7 +20,7 @@ const filteredArticles = articles
 <div class="custom-container grid gap-16 py-24 px-4 md:grid-cols-2">
     {
         filteredArticles.map(({ frontmatter }, i) => (
-            <AnimateOnce client:load delay={200 + i * 100}>
+            <AnimateOnce client:load delay={200 + i * 100} className="h-full">
                 <ArticleCard
                     {...normalizeArticleCardProps(frontmatter)}
                     localizedRootUrl={localizePath('/blog')}

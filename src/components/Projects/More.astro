@@ -29,7 +29,11 @@ const moreProjects = filteredProjects.slice(5)
     <div class="grid gap-16 md:grid-cols-2 lg:grid-cols-3">
         {
             moreProjects.map(({ frontmatter }, i) => (
-                <AnimateOnce client:load delay={200 + i * 100}>
+                <AnimateOnce
+                    client:load
+                    delay={200 + i * 100}
+                    className="h-full"
+                >
                     <ProjectCard
                         {...normalizeProjectCardProps(frontmatter)}
                         variant="small"
