@@ -1,60 +1,79 @@
 ---
-title: 'Glutton Runner: UE4 powered game'
+title: 'Glutton Runner: Subway Surfers like'
 description:
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in nisi lectus.
-    Donec lobortis pulvinar nisi, nec lacinia urna efficitur.
+    This is actually the project that got me started in coding. It was pretty
+    simple but it was already a challenge.
 thumbnail:
-    url: https://play-lh.googleusercontent.com/QumqIA38lrkP-gyWGtI46XFtPtkbkFqogqO5jXogs8YwPLN2c2d8USs6B42b_ViVU2k=w1440-h620-rw
-    alt: 'Image description'
+    url: /images/content/en/projects/glutton-runner-0.webp
+    alt: 'Screenshot of an early version of the game running on PC'
 ---
 
 ## Introduction
 
--   High-level summary of what the project is
--   List of core functionalities / interesting features
--   Your role in the project. were you exclusively doing development, or did you
-    do design? If you worked in groups, what parts did you tackle?
--   Technologies used
--   Links to live demo + source code (if applicable)
+Glutton Runner is an
+[endless runner](https://en.wikipedia.org/wiki/Endless_runner) game based on the
+famous mobile game
+[Subway Surfers](https://play.google.com/store/apps/details?id=com.kiloo.subwaysurf&hl=fr&gl=US&pli=1).
 
-## Purpose and Goal
+In 2018, I discovered programming with the
+[Unreal Engine 4](https://www.unrealengine.com/). I wasn't not writing C++ but
+blueprints instead, a visual scripting system that allowed me the same than
+writing code.
 
--   Why did you build this project? Why is it important to you?
--   What was the expected outcome of the project?
--   What were the initial designs?
--   Any other preliminary planning that you did which helps build a narrative
+![Screenshot of blueprints from the Unreal Engine 4 documentation](/images/content/en/projects/glutton-runner-1.webp)
 
-## Spotlight
+At the time, I didn't understand the principle of functions so there was
+duplicated code everywhere, it wasn't great. But still, I was able to write
+games.
 
--   What is the “killer feature” of your project? What feature does it have that
-    took the most work, or was the most technically impressive? Some possible
-    examples: - User authentication - A feed of items fetched from a database -
-    A particularly tricky UI element (eg. autocomplete, calendar,
-    drag-and-drop) - Anything you're proud of!
--   What were the technical hurdles that got in your way? Any major problems you
-    hit during development?
--   How did you solve those problems? What was the solution? Go deep here, and
-    write with a developer in mind.
+I don't remember a lot of things about developing Glutton Runner years ago, so
+I'll make my best to find interesting things to talk about.
+
+Play Store page is not accessible anymore, so nothing to show but screenshots!
+
+## Challenges
+
+I has literally no experience so the project was really challenging. Here are a
+few challenges I faced:
+
+### Target
+
+First of all, I wanted to make a mobile game using Unreal Engine 4. It's pretty
+heavy and I think it wasn't quite ready for such a small game at the time. Unity
+would have been a much better choice.
+
+Moreover, I developed the game on desktop so it was definitely not mobile
+friendly nor optimized for mobile. I had to rework a lot of stuff.
+
+### Performances
+
+I wasn't a 3D modeler so I used a free pack on the Unreal Engine marketplace
+which was [POLYGON - City](https://syntystore.com/products/polygon-city-pack)
+pack from Synty Studios. It's a low poly city with a lot of assets but I wonder
+if it was optimized enough for mobile.
+
+In order to fix the performance issues, I unloaded any tiles (basically, the
+game is about going through modules of assets like a bridge, a town etc) too far
+from the player. I also added a fog (a sphere around the player with a grey
+texture) to load the tiles as late as possible. I also added a shader to make
+the view rounded and hide upcoming fog as much as possible.
+
+I also manually worked on LODs (Level Of Detail) in order not to show too many
+polygons if not needed.
 
 ## Current status
 
--   This section is optional. If the project is actively being used by real
-    people, talk a little bit about the current status, who uses it, why they
-    use it, what they say to you about it, stuff like that.
--   If the project was contrived specifically for the portfolio, omit this
-    section.
+This game is unpublished from the Play Store, and has never been actually
+playable on mobile devices. I don't plan on going back to it.
 
 ## Lessons Learned
 
--   What did you learn doing this project? Feel free to list multiple things.
-    Also feel free to cover non-technical lessons. It's great to talk about how
-    you learned to use an advanced feature of a framework or library, but it's
-    just as valuable to talk about project-management experience, or things you
-    learned about shipping projects.
--   If you used a framework or other libraries/tools, was it a good choice? How
-    did it help? In which ways was it insufficient?
--   Is your project accessible? What did you learn about accessibility, while
-    building this project? Describing how you tested your project using keyboard
-    navigation or a screenreader can make for a really compelling story!
--   How has this affected the work you've done since then? Real examples of how
-    this project built your knowledge for future projects is fantastic.
+So many lessons learned with this project!
+
+-   First real introduction to programming
+-   Project management and versionning with Trello
+-   Deployment with the
+    [Play Store Console](https://play.google.com/console/about/)
+-   Taking care of performance
+-   Basic material work
+-   And so much more I forgot!
