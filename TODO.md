@@ -18,9 +18,10 @@
 -   [x] check for TODOs
 -   [x] Netlify redirects file
 -   [x] content (en)
--   [ ] seo tags per mdx file
+-   [x] seo tags per mdx file
 -   [ ] translate content to fr
 -   [ ] remove robots.txt
+-   [ ] Migrate back to vercel
 -   [ ] Enable plausible (uncomment \_redirects)
 -   [ ] Reroute v4 to v4.florian-lefebvre.dev + update banner link
 -   [ ] Update Netlify settings
