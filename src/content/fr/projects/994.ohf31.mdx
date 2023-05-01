@@ -1,0 +1,135 @@
+---
+title: "OHF31: orchestra's website"
+description:
+    This is the website that got me started with web development. I actually
+    reworked it 3 times to learn, improving it each time!
+thumbnail:
+    url: /images/content/en/projects/ohf31-0.png
+    alt: 'Screenshot of the 3rd version'
+category: Web development
+tags: [Web development, Nuxt 3, Tailwind CSS, Cloudinary, Vercel, Showcase]
+---
+
+## Introduction
+
+This website is a showcase site for my orchestra, _l'Orchestre d'Harmonie du
+Frontonnais_. Nothing complicated, it made of a few pages : home, about the
+orchestra, its story, upcoming schedule, medias and contact.
+
+I was doing frontend development for this project, using
+[Nuxt 3](https://nuxt.com), [Tailwind CSS](https://tailwindcss.com) and
+[Cloudinary](https://cloudinary.com) for the 3rd version.
+
+Check out the [website](https://ohf31.fr)!
+
+## Purpose and Goal
+
+At the end of 2019, I was getting involved more and more in my orchestra's
+online presence. Indeed, I was filming concerts with several cameras and editing
+videos to publish on social medias (nothing crazy, only fades in and out). But
+one thing was still not looking great: the website.
+
+Made with an old [Drupal](https://www.drupal.org/) template, I was looking for a
+solution to make the website look better and more professional. So I thought
+_“Why not learn HTML along the way?”_ and I got started.
+
+This website is important for me because it's really what got me started in web
+development.
+
+![Screenshot of the old Drupal powered website](/images/content/en/projects/ohf31-1.png)
+
+## Multiple versions
+
+### 1. HTML and CSS
+
+![Screenshot of the v1 website](/images/content/en/projects/ohf31-2.png)
+
+I never really coded before, I mean I coded in Unreal Engine 4 with blueprints
+but it was a visual editor, not lines of code. So to start I followed
+[this tutorial](https://www.youtube.com/watch?v=UB1O30fR-EE) from Traversy Media
+and it taught a lot of thing. I wasn't understanding the half of the CSS I was
+writing (and I was using `float`...) but still, I managed to get this first
+website done.
+
+I remember deploying this website over FTP using
+[FileZilla](https://filezilla-project.org/) on OVH around Christmas.
+
+So definitely a great way to start!
+
+### The musicians space
+
+![Screenshot of the storage gallery](/images/content/en/projects/ohf31-3.jpg)
+![Screenshot of the upload page](/images/content/en/projects/ohf31-4.jpg)
+
+Like a lot of devs out there, I decided I wanted to build my own CMS instead of
+using [WordPress](https://wordpress.com/). Why would I use a really popular CMS
+since I know everything to build a full custom one on my own? (Spoiler: _I
+wasn't ready_)
+
+So I started to learn PHP, I mean not a framework but really procedural PHP. The
+code was an absolute mess, absolutely not secure, duplications everywhere and so
+on. To be able to refresh some parts of the Ui without the whole page, I used
+AJAX with [JQuery](https://jquery.com/) so I a way, I was building some kind of
+small APIs. _BUT_ I was returning HTML, not JSON, stored in a string. It was an
+absolute nightmare to debug.
+
+But still, I learned a lot along the way, especially about
+[MySQL](https://www.mysql.com/) and CSS.
+
+### 2. Bootstrap 5 and PHP
+
+<Alert>
+
+I didn't manage to find a screenshot for this one.
+
+</Alert>
+
+As I was coding the musicians space at the same time, I discovered
+[Bootstrap 5](https://getbootstrap.com/) and was really enjoying it. So, to
+train and because the first version of the website wasn't looking that great
+after all, I decided to rebuild it from scratch. I was still using PHP for
+imports (html meta tags or stuff like this) but in retrospect, it wasn't useful.
+
+### 3. Nuxt 3 and Tailwind CSS
+
+![Screenshot of 3rd version](/images/content/en/projects/ohf31-0.png)
+
+The 2nd version had been released for more than a year and then... _"We need to
+add an announce now that we can do concerts, and the next one is in 1 week and
+half. Could you add it?"_ Sure I can but... My tech stack has changed a lot
+since last year, I was only beginning learning web development and I don't have
+the right setup nor the will to get back to such tech. So guess what... 3rd
+version!
+
+The deadline was the 10th of November and at the time I was looking for a way to
+try out Nuxt 3 now that beta was released since October. Well, it was instable
+and I had quite a lot of issues (of which HMR which is really painful) but
+eventually I managed to get it working. That was also the opportunity to try
+[VueUse motion](https://motion.vueuse.org/) for animations.
+
+I used Tailwind CSS for styling, GitHub for versioning (after all that time!),
+[Cloudinary](https://cloudinary.com/) as a CDN for my images and
+[Vercel](https://vercel.com) for deployments.
+
+Apart from the technical side, I didn't really change the whole layouts or
+content.
+
+Since then, I updated the app to use the `3.0.0` release, improving stability
+and performance.
+
+## Current status
+
+The website is working pretty well and I haven't planned any further development
+for now.
+
+However, it's not that visited right now but this is because of a marketing
+issue: no many people are even aware of the orchestra's existence. I might work
+on that in the future, establishing a digital marketing strategy etc...
+
+I'm also considering plugging in a CMS for people to enter data (like future
+concerts), I need to investigate.
+
+## Lessons Learned
+
+This project has taught me a lot of things, web development at first and new
+techs then, each version allowing me to learn more technologies.

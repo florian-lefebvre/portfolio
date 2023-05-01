@@ -1,0 +1,240 @@
+---
+title: 'Régiolangues: un portail de ressources collaboratif'
+description:
+    Intéressé par les langues régionales françaises, mon frère pensait qu'il
+    était difficile de trouver des ressources sur le web.
+thumbnail:
+    url: /images/content/en/projects/regiolangues-0.png
+    alt: "Capture d'écran de la page d'accueil"
+category: Développement web
+tags:
+    [
+        Développement web,
+        Astro,
+        React,
+        Jotai,
+        Tailwind CSS,
+        Directus,
+        Vercel,
+        Chemins de fer,
+        France,
+        Langues régionales,
+        Langues régionales françaises,
+        Collaboration,
+    ]
+---
+
+## Introduction
+
+Régiolangues est un portail collaboratif de ressources sur les langues
+régionales françaises.
+
+Ce site web offre un grand nombre de fonctionnalités intéressantes :
+
+-   Filtrage avancé
+-   Pagination
+-   Carte interactive
+-   Formulaires de contribution
+-   Un CMS
+
+Pour ce projet, je suis en charge de la conception de l'interface, de la base de
+données et du dévelopmment du site. Mon frère s'occupe du contenu.
+
+Voici les techniques que j'ai utilisées :
+
+-   [Astro](https://astro.build)
+-   [React](https://react.dev/)
+-   [Jotai](https://jotai.org/)
+-   [Tailwind CSS](https://tailwindcss.com)
+-   [Leaflet](https://leafletjs.com/)
+-   [Directus](https://directus.io)
+-   [Vercel](https://vercel.com)
+-   [Railway](https://railway.app)
+
+Et probablement beaucoup d'autres que j'ai oubliés !
+
+[Consultez](https://www.regiolangues.fr) le site web !
+
+## But et objectif
+
+Mon frère aime le provençal (une langue régionale française), mais il estime
+qu'il est difficile de l'apprendre en ligne, qu'il n'y a pas vraiment de sites
+Internet consacrés concentrant contenus et ressources d'apprentissage. Il m'a
+donc demandé de créer un site web à cet effet. L'objectif était de pouvoir
+proposer plusieurs langues afin que chacun puisse apporter sa contribution.
+
+## Focus : carte interactive
+
+Ce projet comporte de nombreux aspects intéressants, mais nous allons nous
+concentrer sur ce qui a été la partie la plus délicate : la
+[carte interactive](https://www.regiolangues.fr/carte).
+
+![Capture d'écran de la carte](/images/content/en/projects/regiolangues-1.png)
+
+### Techs
+
+Pour le rendu de la carte elle-même, j'ai utilisé
+[React Leaflet](https://react-leaflet.js.org/) qui est un _wrapper_ pratique
+pour Leaflet. J'ai également utilisé des plugins tels que
+[react-leaflet-cluster](https://github.com/akursat/react-leaflet-cluster) qui se
+sont avérés très utiles.
+
+Tous les styles (y compris les marqueurs) sont réalisés avec Tailwind CSS. En ce
+qui concerne les marqueurs, les icônes sont fournies par le CMS Directus (en
+tant qu'identifiants) et rendues à l'aide d'[Iconify](https://iconify.design/).
+
+Enfin, comme pour tout le site web, l'état est géré avec Jotai qui m'a permis de
+de filtrer les choses facilement.
+
+### Le cauchemar des marqueurs personnalisés
+
+Avec Leaflet, il est possible d'utiliser des marqueurs personnalisés. Il s'agit
+généralement d'images, mais dans mon cas, j'avais besoin de rendre un composant
+React. Et ce n'était pas si simple...
+
+#### 1ère tentative : `renderToString`
+
+La première façon de le faire est d'utiliser `renderToString` de
+`react-dom/server`. Et cela fonctionne plutôt bien ! Il compile simplement un
+composant React en une chaîne de caractères. Par exemple :
+
+```tsx
+import React from 'react'
+import { renderToString } from 'react-dom/server'
+
+function MyComponent({ children }: { children: React.ReactNode }) {
+    return <div className="some-class">My component</div>
+}
+
+const renderedComponent = renderToString(
+    <MyComponent>Hello there!</MyComponent>
+)
+```
+
+Devient
+
+```html
+<div class="some-class">Hello there!</div>
+```
+
+Cependant, vous perdez toute interactivité côté client. Et c'était assez
+critique car j'utilisais le composant `Icon` de `@iconify/react` !
+
+#### 2ème tentative : `createRoot().render`
+
+J'ai donc essayé de faire une sorte de rendu personnalisé. C'était **vraiment**
+mauvais, ça fonctionnait seulement la moitié du temps : un véritable gâchis. Je
+l'ai laissé de côté assez rapidement.
+
+_Si vous voulez jeter un coup d'œil à cette monstruosité,
+[cliquez ici](https://github.com/holytrips/react-leaflet-marker/issues/10#issuecomment-1426753224)._
+
+#### 3ème tentative : `renderToString`... et web components!
+
+Le vrai problème est qu'un marqueur Leaftlet personnalisé attend un marqueur
+Leaftlet `divIcon`, qui elle-même attend une propriété `html` sous la forme
+d'une chaîne de caractères :
+
+```tsx
+function SomeComponent() {
+    return (
+        <Marker
+            icon={L.divIcon({
+                html: '', // this is what we are talking about
+            })}
+        />
+    )
+}
+```
+
+Et j'ai besoin de code côté client pour qu'iconify fonctionne (il récupère les
+icônes de façon dynamique pour éviter de télécharger toutes les icônes). Mais il
+y a en fait un moyen de faire cela, sans utiliser React : les web components !
+
+J'ai donc extrait mon icône de marqueur personnalisé vers un composant :
+
+```tsx
+// MarkerIcon.tsx
+import type { IconifyIconAttributes } from 'iconify-icon'
+import type { SVGProps } from 'react'
+import { Circle, HandsupFlower } from './Markers'
+import 'iconify-icon' // imports the web component
+
+// make sure TypeScript doesn't complain because
+// iconify-icon is not a valid html tag by default
+declare global {
+    namespace JSX {
+        interface IntrinsicElements {
+            'iconify-icon': IconifyIconAttributes &
+                Omit<SVGProps<SVGElement>, 'className'> &
+                Partial<{ class: string }>
+        }
+    }
+}
+
+export default function MarkerIcon({ icon }: { icon: string }) {
+    return (
+        <div>
+            <iconify-icon
+                icon={icon}
+                class="z-10 h-5 w-5 text-white"
+            ></iconify-icon>
+        </div>
+    )
+}
+```
+
+Je peux alors le rendre sous forme de chaîne de caractères :
+
+```tsx
+import L from 'leaflet'
+import { Marker } from 'react-leaflet'
+import { renderToString } from 'react-dom/server'
+import MarkerIcon from './MarkerIcon'
+
+function CustomMarker({
+    icon,
+    position,
+}: {
+    icon: string
+    position: [number, number]
+}) {
+    return (
+        <Marker
+            icon={L.divIcon({
+                html: renderToString(<MarkerIcon icon={icon} />),
+            })}
+            position={position}
+        />
+    )
+}
+```
+
+### Qu'en est-il du référencement ?
+
+L'inconvénient d'une telle carte est qu'elle est rendue côté client, ce qui fait
+que je perds tout le contenu associé à chaque point (visualisable au clic dans
+l'interface). Et là, la solution est assez simple : il n'y a aucun moyen de
+référencer ce contenu.
+
+J'ai donc créé une autre vue : une
+[une liste banale](https://www.regiolangues.fr/carte/liste) !
+
+## Etat actuel
+
+La plupart du développement est déjà fait, il ne reste que quelques éléments
+comme avertir les auteurs du CMS lorsque des contributions sont faites. Rien
+d'extraordinaire !
+
+## Enseignements tirés
+
+Ce projet m'a appris beaucoup de choses :
+
+-   **Utiliser le bon outil pour le bon boulot** : Il s'agit en fait de la 2ème
+    version de RégioLangues. La première était construite comme une vue
+    d'explorateur de fichiers récursif (Supabase, Nuxt 2, prerendering toutes
+    les 20min avec cron) et ce n'était pas bon. Ce qui n'allait pas avant tout,
+    c'était le modèle mental : des ressources et des catégories récursives VS
+    une liste de ressources avec des tags.
+-   Gérer une **carte** avec Leaflet
+-   Un nouveau **CMS headless**, Directus !

@@ -1,0 +1,190 @@
+---
+title: 'Portfolio: One Thousand and One Techs'
+description:
+    The dev's portfolio reflects his current knowledge. Mine is no exception to
+    the rule, it's the 5th version!
+thumbnail:
+    url: /images/content/en/projects/portfolio-0.jpg
+    alt: Portfolio v4 OpenGraph image
+category: Web development
+tags:
+    [
+        Web development,
+        Portfolio,
+        Astro,
+        Tailwind CSS,
+        React,
+        Netlify,
+        Swup.js,
+        MDX,
+    ]
+---
+
+## Introduction
+
+I think a developer's portfolio is a showcase of their skills. And this is true
+by the projects it contains, but also because a portfolio is one of them!
+
+For this 5th version, I've greatly improved a lot of aspects:
+
+-   **Light and dark mode**: choose the one that suits you best
+-   **A blog (finally!)** powered by MDX
+-   **Excellent performance** thanks to Astro
+-   **Great accessibility**
+-   **Internationalization** with `i18n-next`
+-   **Respect of animation preferences** using `prefers-reduce-motion`
+
+I use the following technologies:
+
+-   [Astro](https://astro.build) (SSG)
+-   [Tailwind CSS](https://tailwindcss.com)
+-   [React](https://react.dev)
+-   [Netlify](https://www.netlify.com/)
+-   [Swup.js](https://swup.js.org/)
+-   [MDX](https://mdxjs.com/)
+
+Check out the source code on
+[GitHub](https://github.com/florian-lefebvre/portfolio)!
+
+_Don't forget to leave a star if you like it ;)_
+
+## Purpose and Goal
+
+As explained in the introduction, I think it's really important to have a great
+portfolio as a web developer. Moreover, it allows me to learn new things along
+the way (mostly Astro in this case), which is alway nice.
+
+I also made quite some effots on planning this time: I made mockups on
+[Figma](https://figma.com). Here is a screenshot but you can find more on my
+[Twitter](https://twitter.com/LfbvrFlo) (links below).
+
+![Figma mockup of the "About" page](/images/content/en/projects/portfolio-1.png)
+
+[Tweet 1](https://twitter.com/LfbvrFlo/status/1596097811480805376),
+[Tweet 2](https://twitter.com/LfbvrFlo/status/1597347030929924096),
+[Tweet 3](https://twitter.com/LfbvrFlo/status/1597616061339561984),
+[Tweet 4](https://twitter.com/LfbvrFlo/status/1597892339321954304)
+
+I also planned what content I would put in [Notion](https://notion.so) before
+coding too much.
+
+## A quick history
+
+I've updated my website many times yet, but this time I'm confident: this
+version will stay there for a while!
+
+### Jekyll and Bootstrap 5
+
+![Screenshot of the portfolio v1](/images/content/en/projects/portfolio-2.png)
+
+Back in August 2020, I had to choose technologies to build my portfolio. At the
+time, I knew HTML5, CSS & SCSS, PHP and Bootstrap.
+
+Because I spent a lot of time on [Bootstrap docs](https://getbootstrap.com/docs)
+in the previous months, I knew that static site generators existed (since
+Bootstrap docs use Hugo). So I searched for the best fit for me and eventually
+found [Jekyll](https://jekyllrb.com/).
+
+It uses the [Liquid syntax](https://github.com/Shopify/liquid/wiki) and relies
+on [Ruby](https://www.ruby-lang.org/). I knew nothing about both of them so and
+it made it harder to build my portfolio.
+
+I used a template I found on the Internet, tweaked it a bit but I won't lie: it
+was bad.
+
+And setting the deployment was hard since GitHub Actions were not released yet
+so I had to use Travis CI and GitHub Pages to release my portfolio.
+
+So as I was learning more about frontend development and in particular
+JavaScript frameworks, I decided a few months later to rebuild my portfolio from
+scratch.
+
+### Nuxt 2 and Tailwind CSS 1.0
+
+![Screenshot of the portfolio v2](/images/content/en/projects/portfolio-3.png)
+
+I learned a lot of things since August 2020, so I decided to go with
+[Nuxt](https://nuxtjs.org) and [Tailwind CSS](https://tailwindcss.com/).
+
+I chose to use a sidebar for navigation and now I think that wasn't a good
+choice. The space I was loosing for only a few infos was too much. But anyway, I
+chose the color teal as a primary color. I also used the official Nuxt modules
+such as [`@nuxt/content`](https://content.nuxtjs.org/) but I struggled with the
+layout on some specific screen widths with weird horizontal overflow, caused by
+code blocks.
+
+This time, I used Travis CI and a Plesk server to deploy my portfolio.
+
+For further explanations about v1 and v2, check out
+[this archive](https://github.com/florian-lefebvre/portfolio/blob/v2_nuxtjs/content/work/2020-11-13-my-porfolio.md).
+
+But as always, I wasn't satisfied of my work and thought it wasn't good enough
+as a showcase of my skills. So I remade it of course!
+
+### Nuxt 2 and Tailwind CSS 2.0
+
+![Screenshot of the portfolio v3](/images/content/en/projects/portfolio-4.png)
+
+I'm not crazy, I don't use a new technology every day so I kept using Nuxt and
+Tailwind CSS. I decided to so something more simple: only one page with all
+informations. I chose some kind of minimalist design with only gray shades and
+no primary color. I also implemented a dark mode. I discovered animations using
+[AnimXYZ](https://animxyz.com/) but I've got to say that it wasn't that easy to
+do animations with it.
+
+But this simplicity didn't reflect enough my capabilities IMO so you know what
+it means...
+
+### Nuxt 3 and Tailwind CSS 3.0
+
+![Screenshot of the portfolio v4](/images/content/en/projects/portfolio-5.png)
+
+I upgraded Nuxt to its 3rd version (in beta) as well as Tailwind CSS (no major
+changes). And I've got to say that Nuxt 3 and Vue 3 are absolutely amazing
+compared to their previous major versions. Typescript is _the_ best. But using
+Nuxt 3 in beta has downsides, for stability (laggy HMR), weird broken imports or
+missing features. I'm mostly enjoying using it.
+
+Concerning animations, I switched to
+[`@vueuse/motion`](https://motion.vueuse.org/) and it's really better.
+
+In fact, because nuxt's ecosystem isn't compatible yet, I had to dive a bit
+deeper in Nuxt and learned how to build modules (for generating a sitemap for
+instance) and that was really enriching.
+
+If you're curious about it, I created a custom sitemap module,
+[check it out](https://github.com/florian-lefebvre/portfolio/blob/c513428dea912a19ffb684b8b571b08b8882158c/modules/sitemap.ts).
+
+I deploy my portfolio on Vercel, the process is way simpler than on GitHub
+Actions or any other CI since Nuxt has first class integrations for deployments.
+
+<Alert>
+
+Do you miss this version? It's still available at
+[v4.florian-lefebvre.dev](https://v4.florian-lefebvre.dev)!
+
+</Alert>
+
+But then I found out [Josh Comeau](https://www.joshwcomeau.com/)'s
+[e-book](https://www.joshwcomeau.com/effective-portfolio/): _"Building an
+Effective Dev Portfolio"_. So I decided to rebuild my portfolio, but with more
+thinking involved so that it can't stay great for a long time.
+
+## Current status
+
+I consider this website done and from now on, I'll refrain from reworking it. I
+might do minor tweaks (color change) and updates (Astro 2.0) but that's all.
+
+I'll keep it updated and I'll try to post articles here and there.
+
+## Lessons Learned
+
+Here are my key learnings:
+
+-   Do at least a wireframe, it allows to gain a lot of time
+-   Astro!
+-   Radix UI Colors
+-   Better accessibility
+
+It was really useful, I used those learnings for
+[RégioLangues](/projects/regiolangues).

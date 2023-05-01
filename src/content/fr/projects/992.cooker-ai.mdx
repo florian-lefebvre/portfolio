@@ -1,0 +1,212 @@
+---
+title: 'Cooker AI: generate meals using AI'
+description: "Coming up with ideas for cooking sucks? Well... don't."
+thumbnail:
+    url: /images/content/en/projects/cooker-ai-0.png
+    alt:
+        'Screenshot of the meal plan page, containing several AI-generated meals'
+category: Web development
+tags:
+    [
+        Web development,
+        Fullstack,
+        Ruby on Rails,
+        Ruby,
+        Open AI,
+        API,
+        Tailwind CSS,
+        Stimulus,
+        Sidekiq,
+        Cloudinary,
+        Heroku,
+        Final project,
+        Le Wagon,
+        Bootcamp,
+        AI,
+        Cooking,
+        Food,
+        Suggestions,
+    ]
+---
+
+## Introduction
+
+Cooker AI is website that helps you with this boring task: find ideas for
+cooking. Finding meal ideas for up to 14 times a week is complicated. That's 728
+ideas a year! _Easy_ solution: let AI generate meals for you.
+
+This website has a bunch of interesting features:
+
+-   Plan meals ahead with a calendar-like interface
+-   Generate ideas based on parameters (diet, allergies, duration...)
+-   Swap meals if needed
+-   Regenerate meals if you don't like them
+-   Share meal plans with other users
+-   Favorite meals you liked
+
+For this project, I was the lead fullstack developer. This means I was in charge
+of the GitHub repository, project management, CI/CD and making code reviews. I
+also worked a lot on the UX design mockup.
+
+We used the following technologies
+
+-   [Ruby on Rails](https://rubyonrails.org/)
+-   [Open AI API](https://openai.com/blog/openai-api)
+-   [Tailwind CSS](https://tailwindcss.com)
+-   [Stimulus](https://stimulus.hotwired.dev/)
+-   [Sidekiq](https://sidekiq.org/)
+-   [Cloudinary](https://cloudinary.com/)
+-   [Heroku](https://www.heroku.com/)
+
+Check it out [here](https://www.cooker-ai.me/)!
+
+![Screenshot of the homepage](/images/content/en/projects/cooker-ai-1.png)
+
+## Purpose and Goal
+
+At [Le Wagon](https://www.lewagon.com/), the bootcamps ends with a 2-weeks
+project, that we have to demo the very last day (You can see the video
+[there](https://www.youtube.com/watch?v=7d9wfjRtZeM) btw). So I pitched this app
+during the bootcamp (I already had some related ideas for quite some time) and
+we built this app with [Maria Skrabalekova](https://github.com/marieSK) and
+[Chuma Mukala](https://github.com/ChumaNAM)!
+
+The goal of the project was to reinvest all the knowledge from the previous 2
+months into a great (working) app. It had to include challenging features if
+possible, that's why we chose AI.
+
+Before actually coding, we spent some time making some
+[UX Research on Figma](https://www.figma.com/proto/ai6Y9gflV1fdFakLQ463qq/Cooker-AI-UX-Research?page-id=1%3A4&node-id=11%3A710&viewport=728%2C-175%2C0.42&scaling=scale-down&starting-point-node-id=11%3A710),
+as well as defining our user stories and database schema.
+
+![Screenshot of the user stories spreadsheet](/images/content/en/projects/cooker-ai-2.png)
+
+## Spotlight: AI generation
+
+There are many interesting things in this project (background jobs, websockets)
+but let's focus on the main technical point of this project: AI generation. We
+use 2 models from Open AI:
+
+-   `gpt-3.5-turbo` to generate the meals' data
+-   `dall-e` (256x256 res) to generate meal images (yeah even those are
+    AI-generated)
+
+We faced a few issues though:
+
+### Inconsistent results
+
+To actually exploit the data returned by Chat GPT, we needed results in JSON
+format. However, we can't force it to return JSON so results could be quite
+inconsistent.
+
+To improve them, we worked on 2 main topics:
+
+1.  **A good prompt**: here is how it looks like (optimized by Chat GPT
+    itself!):
+
+```
+Please provide meal ideas that meet the following criteria:
+- All meals must be returned as JSON objects in the following format:
+ {
+  "date": "yyyy-mm-dd",
+  "dish": "name of the meal (e.g. dinner)",
+  "name": "name of the dish",
+  "ingredients": ["list of ingredients"],
+  "steps": ["list of cooking steps"],
+  "prep_time": "time needed to prepare the meal"
+ }
+- I need ideas for #{attrs[:dishes]} for #{attrs[:days]} day#{attrs[:days].to_i == 1 ? "" : "s"}
+- The "date" field should be formatted as "yyyy-mm-dd" and the first date should be #{attrs[:date]}.
+- Please consider my allergies to #{attrs[:allergies]}.
+- I really enjoy #{attrs[:cuisine]} cuisine.
+- I follow a #{attrs[:diet]} diet.
+- Only return an array of JSON objects (even if there is only one meal idea).
+- No sentences, only JSON.
+- Any other format will result in a rejected request.
+```
+
+2.  **Parsing**: Chat GPT often adds comments before (and even after) the actual
+    content such as:
+
+```
+Here are some meal ideas:
+
+[
+    {
+        "date": "..."
+    }
+]
+```
+
+So we had to parse this a little bit. It might not be the cleanest way but it
+works:
+
+```ruby
+def self.parse_response(res)
+    # Remove all the \n junk + ...
+    res = res.gsub(/\s+/, " ").strip.gsub("...", "")
+    # Chat GPT always says sorry when he can't give only json
+    valid = !res.downcase.include?("sorry")
+    # In this case we need some manual parsing
+    unless valid
+        # clean everything that is before the first [
+        _trash_content, *remainder = res.split("[")
+        res = "[#{remainder.join("[")}"
+        # If there is something after the json, clean everything
+        # that is after the last ]
+        unless res[-1, 1] == "]"
+            *remainder, _trash_content = res.split("]")
+            res = "#{remainder.join("]")}]"
+        end
+    end
+    return JSON.parse(res)
+end
+```
+
+### Finding recipes using scraping
+
+Because results can be creative with Chat GPT, there were cases where the
+recipes didn't exist on websites such as
+[allrecipes](https://www.allrecipes.com/). We even tried the
+[Spoonacular food API](https://spoonacular.com/food-api) but we faced the same
+problem. Solution: even generate the recipes and any other properties with Chat
+GPT!
+
+Because of the issue above, we also couldn't find images on websites so the only
+solution left there was to even generate the images with AI. We found this
+pretty funny!
+
+### It's slow
+
+This is something we have no control over. Indeed here are the number of
+requests made to the Open AI API:
+
+| Model    | Number of calls                |
+| -------- | ------------------------------ |
+| Chat GPT | `1`                            |
+| DALL-E   | `numberOfDays * numberOfMeals` |
+
+So as you can, it depends on the user input. Moreover, it may take more time if
+it fails (because JSON is not valid) but since we generate in background jobs,
+we retry up to 3 times. This minimizes the risk of failure but increases the
+waiting time.
+
+## Current status
+
+No more development is planned on this website. We may try to do a bit of
+marketing to see if it gets interest. In that case we'll do things but otherwise
+it's kind of dead. But feel free to try it yourself!
+
+## Lessons Learned
+
+This project taught me several things:
+
+-   Interacting with AI through code
+-   Project management
+-   CI/CD with Heroku
+-   I don't suck too much at coding: doing a lot of code reviews made me realize
+    I have quite some experience now
+
+However, I'm not a big fan of the technologies with used (except Tailwind CSS VS
+Bootstrap!): even if Ruby on Rails is powerful, I really miss the safety
+TypeScript brings.

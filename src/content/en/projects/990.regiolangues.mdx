@@ -26,7 +26,7 @@ tags:
 
 ## Introduction
 
-Régiolangues is a centralized portal for French regional languages related
+Régiolangues is a collaborative portal for French regional languages related
 resources.
 
 This website has a bunch of cool features:
@@ -143,7 +143,7 @@ function SomeComponent() {
 }
 ```
 
-And I need client-side lofic for iconify to run (it fetches icon client-side to
+And I need client-side logic for iconify to run (it fetches icon client-side to
 avoid downloading all the icons). But there's actually a way to do this, without
 React: web components!
 
@@ -206,7 +206,7 @@ function CustomMarker({
 }
 ```
 
-### What about SEO
+### What about SEO?
 
 The downside with a map like this is that it's rendered client-side, so I'm
 loosing all the content associated with each point (viewable on click in a
@@ -219,14 +219,14 @@ So I just created another view: a
 ## Current status
 
 Most of the development is done right now, there are only a few things like
-notify cms authors when contributions are made. Nothing crazy!
+notify CMS authors when contributions are made. Nothing crazy!
 
 ## Lessons Learned
 
 This project taught me many things:
 
 -   **Using the right tool for the right job**: This is actually the 2nd version
-    of RégioLangues. First one was built like a recursive explorer view
+    of RégioLangues. First one was built like a recursive file explorer view
     (Supabase, Nuxt 2, prerendering every 20min with cron) and it was not good.
     What was wrong above all was the mental model: recursive resources and
     categories VS a list of resources with tags
