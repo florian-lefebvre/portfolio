@@ -1,18 +1,18 @@
 ---
-title: 'yNotes: unofficial ENT client'
+title: "yNotes: client non officiel d'ENT"
 description:
-    '"Access your notes, assignments, schedules and more in one elegant
-    interface."'
+    '"Accédez à vos notes, devoirs, emplois du temps et plus encore dans une
+    interface élégante. élégante."'
 thumbnail:
     url: /images/content/en/projects/ynotes-0.png
-    alt: Various devices running yNotes. By Josselin Robert
+    alt: Différents appareils fonctionnant avec yNotes. Par Josselin Robert
 category: Open Source
 tags:
     [
         Education,
         Open Source,
         Mobile,
-        Development,
+        Développement,
         Cross-platform,
         Flutter,
         Dart,
@@ -22,36 +22,41 @@ tags:
 
 ## Introduction
 
-yNotes (bad pun _"Why not?"_ that almost no French student understood, credits
-to [Josselin Robert](https://jsonlines.fr/)) is an unofficial client for French
-_ENTs_ (translated as _digital workspace_).
+yNotes (mauvais jeu de mot _"Why not?"_, _pourquoi pas ?_, que presque aucun
+élève français n'a compris, crédits à [Josselin Robert](https://jsonlines.fr/))
+est un client non officiel pour les _ENTs_ français (Espace Numérique de
+Travail).
 
-It allows students to use the "basic" features provided by any ENT (grades,
-homework, calendar...) and adds useful features on top without storing anything
-on a third-party server. Data stays on the device.
+Il permet aux élèves d'utiliser les fonctionnalités "de base" fournies par
+n'importe quel ENT (notes, devoirs, calendrier...) et ajoute des fonctionnalités
+utiles sans rien stocker sur un serveur tiers. Les données restent sur
+l'appareil.
 
-My role in this open-source project has evolved quite a bit:
+Mon rôle dans ce projet open-source a quelque peu évolué :
 
--   Back in October 2020, I reworked the website and helped designing the
-    interfaces for the mobile app
--   In January 2021, I reworked the website once again
--   I started contributing to the development in itself around June 2021,
-    implementing a real design system to enforce coherence
--   I then became maintainer from September 2021 to February 2022
+-   En octobre 2020, j'ai retravaillé le site web et participé à la conception
+    des interfaces de l'application mobile
+-   En janvier 2021, j'ai de nouveau retravaillé le site web
+-   J'ai commencé à contribuer au développement en lui-même vers juin 2021, en
+    mettant en place un véritable _design system_ pour renforcer la cohérence
+-   Je suis ensuite devenu _maintainer_ de septembre 2021 à février 2022
 
-We used interesting technologies to develop the app:
+Nous avons utilisé des technologies intéressantes pour développer l'application
+:
 
--   For the app itself: [Flutter](https://flutter.dev) and
+-   Pour l'application elle-même : [Flutter](https://flutter.dev) et
     [Dart](https://dart.dev)
--   For deployments: [GitHub Actions](https://github.com/features/actions) and
+-   Pour les déploiements :
+    [GitHub Actions](https://github.com/features/actions) et
     [Fastlane](https://fastlane.tools/)
--   For the website: [Nuxt](https://nuxtjs.org/), [Vue](https://vuejs.org/) and
+-   Pour le site web: [Nuxt](https://nuxtjs.org/), [Vue](https://vuejs.org/) et
     [Tailwind CSS](https://tailwindcss.com/)
 
-You can find the source code on [GitHub](https://github.com/EduWireApps/ynotes)
-and have a look at the project on the [website](https://ynotes.fr) (in French).
+Vous pouvez trouver le code source sur
+[GitHub](https://github.com/EduWireApps/ynotes) et jeter un coup d'œil au projet
+sur le [site web](https://ynotes.fr).
 
-Check out this awesome trailer made by Josselin!
+Découvrez cette superbe bande-annonce réalisée par Josselin !
 
 <div class="aspect-w-16 aspect-h-9">
 
@@ -65,99 +70,105 @@ Check out this awesome trailer made by Josselin!
 
 </div>
 
-## Purpose and Goal
+## Objectif
 
-On January 21th 2020, [Josselin Robert](https://github.com/JsonLinesCode)
-commits the
-[first piece of code](https://github.com/EduWireApps/ynotes/commit/ca44fea8ee2b121f7221f6c26e78aab52f1567bb)
-to the GitHub repository. It was supposed to be a dark mode for
-[EcoleDirecte](https://ecoledirecte.com), the most used ENT in private schools
-in France.
+Le 21 janvier 2020, [Josselin Robert](https://github.com/JsonLinesCode) effectue
+[le premier commit](https://github.com/EduWireApps/ynotes/commit/ca44fea8ee2b121f7221f6c26e78aab52f1567bb)
+sur le repository GitHub. C'était censé être un mode sombre pour [EcoleDirecte]
+(https://ecoledirecte.com), l'ENT le plus utilisé dans les écoles privées en
+France.
 
-Little by little, it turned into a fully featured (and better) alternative to
-the 2 most used ENTs: EcoleDirecte and
-[Pronote](https://www.index-education.com/fr/logiciel-gestion-vie-scolaire.php)
+Petit à petit, il s'est transformé en une alternative complète (et meilleure)
+aux les 2 ENT les plus utilisés : EcoleDirecte et [Pronote]
+(https://www.index-education.com/fr/logiciel-gestion-vie-scolaire.php).
 
-Here are some designs from our Figma files:
+Voici quelques maquettes tirées de nos fichiers Figma :
 
-![Grades page v1. By Josselin Robert](/images/content/en/projects/ynotes-1.png)
-![Grades page v2.5. By Josselin Robert and Florian Lefebvre](/images/content/en/projects/ynotes-2.png)
-![Intro slides (horizontal parallax, smooth transition). By Florian Lefebvre](/images/content/en/projects/ynotes-3.png)
+![Page des notes v1. Par Josselin Robert](/images/content/en/projects/ynotes-1.png)
+![Page des notes v2.5. Par Josselin Robert et Florian Lefebvre](/images/content/en/projects/ynotes-2.png)
+![Slides d'intro (parallax horizontal, transition fluide). Par Florian Lefebvre](/images/content/en/projects/ynotes-3.png)
 
-## Spotlight: internal API
+## Focus : API interne
 
-I think the most impressive thing we achieved with yNotes is setting a great
-internal API. Or almost!
+Je pense que la chose la plus impressionnante que nous ayons réalisée avec
+yNotes est la mise en place d'une excellente API interne. Ou presque !
 
-Most of the issues we currently have are about to be fixed by the `v0.15`
-release. Well, when it will be out... (but I'll talk more about this a bit
-later)
+La plupart des problèmes que nous rencontrons actuellement sont sur le point
+d'être corrigés par la version `v0.15`. Enfin, quand elle sortira... (mais j'en
+parlerai un peu plus tard).
 
-Here are several topics linked to this particular issue:
+Voici plusieurs sujets liés à l'API interne :
 
-### Working with unknown APIs
+### Travailler avec des API inconnues
 
-Since yNotes is an unofficial ENT app, it relies on APIs that are not
-documented. The only way to know how to interact with them is by looking at the
-requests made in the `Network` tab of the browser. Definitely not the easiest
-way to build an app that is already complex in itself.
+Comme yNotes est une application non officielle d'ENTs, elle s'appuie sur des
+des APIs qui ne sont pas documentées. La seule façon de savoir comment interagir
+avec elles est de regarder les requêtes faites dans l'onglet "Réseau" du
+navigateur. Ce n'est certainement pas la façon la plus simple de construire une
+application qui est déjà complexe en elle-même.
 
-### Managing different data structures
+### Gérer différentes structures de données
 
-This is a common issue for apps/services that act as an interface with different
-providers. In such situation, you have to create a suitable interface for all
-the providers.
+Il s'agit d'un problème courant pour les applications/services qui servent
+d'interface avec différents services. Dans ce cas, vous devez créer une
+interface appropriée pour tous les services.
 
-In our case, the same data is stored by the ENTs (grade, homework, subject...)
-but structured differently, and also without exactly the same information.
+Dans notre cas, les mêmes données sont stockées par les ENTs (note, devoir,
+matière...) mais structurées différemment, et aussi sans tout à fait les mêmes
+informations.
 
-Creating an interface that scales is hard and we struggled for a long time with
-this. But `v0.15` aims to fix this by providing a united interface to services
-and models. More on that in the next part!
+La création d'une interface qui peut _scale_ est difficile et nous avons mis
+longtemps pour y parvenir. Mais la `v0.15` vise à corriger cela en fournissant
+une interface unifiée aux services et aux modèles. Plus d'informations à ce
+sujet dans la prochaine partie !
 
-### Making it scale
+### Coder de façon à _scale_
 
-Josselin did a lot of work and it's really great ! But when the code base gets
-bigger, it seems that there are pieces of code stuck together... and it becomes
-difficult to maintain.
+Josselin a fait beaucoup de travail et c'est vraiment génial ! Mais quand la
+base de code s'agrandit, il semble que les différentes partie de l'app manquent
+d'unité... et cela devient difficile à maintenir.
 
-Once again, I feel like it's normal when I look back at the app story. He had to
-learn how to use Flutter, do things on its own trying to reach feature-parity,
-not an easy task!
+Encore une fois, j'ai l'impression que c'est normal quand je repense à
+l'histoire de l'application. Il a dû apprendre à utiliser Flutter, tout faire
+par lui-même en essayant d'atteindre la parité des fonctionnalités, ce n'est pas
+une tâche facile !
 
-But let's take 2 examples of why it needed a huge rework:
+Mais prenons deux exemples qui expliquent pourquoi il fallait la remanier en
+profondeur :
 
-#### Coherent design
+#### Design cohérent
 
-At some point, we decided to update the app identity by changing it's primary
-color. So far so good. But hard coded colors were everywhere making really hard
-a simple branding upgrade.
+À un moment donné, nous avons décidé de mettre à jour l'identité de
+l'application en changeant sa couleur principale. Jusqu'à présent, tout allait
+bien. Mais les couleurs _hardcodées_ étaient omniprésentes, ce qui rendait très
+difficile une simple mise à jour de l'identité visuelle.
 
-Also, many buttons were _almost_ the same... Because there were many duplicate
-widgets here and there.
+De plus, de nombreux boutons étaient _presque_ les mêmes... Parce qu'il y avait
+de nombreux widgets ici et là.
 
-That's why, as my first task, I decided to work on a design system. I did not
-write _everything_ by hand (using Dart paint) but created coherent and
-centralized widgets based on Material UI.
+C'est pourquoi, comme première tâche, j'ai décidé de travailler sur un système
+de conception. Je n'ai pas écrit _tout_ à la main (en utilisant Dart paint) mais
+j'ai créé des widgets cohérents et cohérents et centralisés basés sur Material
+UI.
 
-Here is the [repository](https://github.com/EduWireApps/ynotes-packages).
+Voici le [repository](https://github.com/EduWireApps/ynotes-packages).
 
-#### And one more provider...
+#### Et un ENT de plus...
 
-On November 11th 2021, [Nathan Codes](https://github.com/ItsNathand) submitted a
-[PR](https://github.com/EduWireApps/ynotes/pull/115) adding a new provider (new
-ENT supported). And we quickly realized we were going to face huge integration
-problems to the codebase.
+Le 11 novembre 2021, [Nathan Codes](https://github.com/ItsNathand) soumet une
+[PR](https://github.com/EduWireApps/ynotes/pull/115) qui ajoute un nouveau
+service (nouvel ENT supporté). Et nous avons rapidement réalisé que nous allions
+être confrontés à d'énormes d'intégration à la base de code.
 
-The reason is pretty simple, look at this (not original example):
+La raison en est assez simple, regardez ceci (ce n'est pas un vrai exemple) :
 
 ```dart
 final List<Homework> homework = api.type == "pronote" ? api.homework : []
 ```
 
-This is a bit caricatural but that is the idea: way too hardcoded.
+C'est un peu caricatural mais c'est l'idée : beaucoup trop _hardcodé_.
 
-### Storing data
+### Stockage des données
 
 Because of its unofficial nature, data had to be stored locally. For
 configuration and authentication data, we used
@@ -170,57 +181,79 @@ made some dirty fixes like reset the database, but ultimately we wish we could
 use [Isar](https://pub.dev/packages/isar) but we had to many issues with it (for
 instance it doesn't support 32bit devices).
 
+En raison de son caractère non officiel, les données devaient être stockées
+localement. Pour les données de configuration et d'authentification, nous avons
+utilisé
+[flutter_secure_storage](https://pub.dev/packages/flutter_secure_storage). Pour
+le reste des données, nous avons utilisé [Hive](https://pub.dev/packages/hive)
+(base de données NoSQL) car nous n'avions pas vraiment besoin de relations.
+Malheureusement, Hive ne supporte pas l'accès à plusieurs _isolates_ (multi
+threading dans Dart) pour l'accès simultané en premier plan et en arrière-plan,
+ce qui entraînait des corruptions de la base de données. Nous avons effectué
+quelques corrections _"hacky"_ comme la réinitialisation de la base de données,
+mais en fin de compte, nous aurions souhaité pouvoir utiliser
+[Isar](https://pub.dev/packages/isar) mais nous avons eu trop de problèmes avec
+(par exemple, il ne supporte pas les 32 bits).
+
 <Alert>
 
 **EDIT**
 
-32bit support has been added since I wrote the lines above, so it's finally
-viable to migrate to Isar!
+Le support 32bit a été ajouté depuis que j'ai écrit les lignes ci-dessus, il est
+donc enfin viable de migrer vers Isar !
 
 </Alert>
 
-## Current status
+## Etat actuel
 
-It's complicated...
+C'est... compliqué.
 
-yNotes is currently in a weird stage. A few dates to understand why:
+yNotes est actuellement dans une phase étrange. Quelques dates pour comprendre
+pourquoi :
 
--   **September 2021**: Josselin stops working on the app to focus on its
-    studies and I become maintainer (and only active contributor)
--   **November 2021**: I start working on `v0.15`, supposed to fix all the above
-    problems and more
--   **February 2022**: I stop working on yNotes because of its growing
-    complexity, legal risks and the time it takes
+-   **Septembre 2021** : Josselin arrête de travailler sur l'application pour se
+    concentrer sur ses études et je deviens mainteneur (et seul contributeur
+    actif)
+-   **Novembre 2021** : Je commence à travailler sur la `v0.15`, censée corriger
+    tous les problèmes mentionnés ci-dessus et plus encore
+-   **Février 2022** : J'arrête de travailler sur yNotes en raison de sa
+    complexité croissante, des risques juridiques et du temps que cela me prend
 
-In April 2022, we decided to put yNotes in its _unmaintained_ phase, without
-publishing the `v0.15` because it was far from being ready (lack of 32bit
-support by Isar, only EcoleDirecte implemented, only grades implemented...)
+En avril 2022, nous avons décidé de mettre yNotes en pause (non maintenue), sans
+publier la `v0.15` parce qu'elle était loin d'être prête (manque de support
+32bit par Isar, seulement EcoleDirecte était implémenté, et que les notes...)
 
-Since then, many people wish we could still maintain yNotes and we wish too. The
-app is solving real problems, as we can see with its growing set of users but
-for now, it's paused.
+Depuis lors, de nombreuses personnes souhaitent que nous puissions encore
+maintenir yNotes et nous le souhaitons également. L'application résout de vrais
+problèmes, comme nous pouvons le voir avec ses utilisateurs de plus en plus
+nombreux. Mais pour l'instant, elle est en pause.
 
-However, I encourage you to check out the `v0.15`
-[codebase](https://github.com/EduWireApps/ynotes/tree/release/v0.15.0) for a
-really simple reason: it's awesome. I mean, reading through my code, the
-documentation I made, I felt impressed by my work 1 year later. _Feels weird..._
+Cependant, je vous encourage à consulter le
+[code](https://github.com/EduWireApps/ynotes/tree/release/v0.15.0) de la `v0.15`
+pour une raison très simple : il est pas mal. Je veux dire, en lisant mon code,
+la documentation que j'ai faite, je me suis senti impressionné par mon travail 1
+an après. _Etrange sensation..._
 
-## Lessons Learned
+## Enseignements tirés
 
-This project taught me many things considering the amount of things I worked on:
+Ce projet m'a appris beaucoup de choses compte tenu de la quantité de choses sur
+lesquelles j'ai travaillé :
 
--   Improve my skills with Nuxt and Tailwind CSS
--   Improve my UI/UX skills working on Figma and having real feedback
--   Learn Dart and Flutter
--   Improve at analyzing browser requests
--   Build robust and scalable code
--   Improve my project management skills
--   Collaborate with other devs and non-devs
+-   Améliorer mes compétences avec Nuxt et Tailwind CSS
+-   Améliorer mes compétences UI/UX en travaillant sur Figma et en ayant de
+    vrais feedbacks
+-   Apprendre Dart et Flutter
+-   Améliorer l'analyse des requêtes du navigateur
+-   Construire un code robuste et évolutif
+-   Améliorer mes compétences en gestion de projet
+-   Collaborer avec d'autres développeurs et non-développeurs
 
-I thing Josselin did a great job at choosing the tool to build yNotes. Flutter
-is awesome to build cross-platform apps (we even started working on releasing on
-Windows, Linux and MacOS!) and has a really great DX. I just regret not being
-able to use Tailwind CSS, this framework really changed the way I code UI.
+Je pense que Josselin a fait un excellent travail en choisissant l'outil pour
+construire yNotes. Flutter est génial pour construire des applications
+multiplateformes (nous avons même commencé à travailler sur des versions pour
+Windows, Linux et MacOS !) et offre vraiment une bonne DX. Je regrette juste de
+ne pas pouvoir d'utiliser Tailwind CSS, ce framework a vraiment changé ma façon
+de coder les interfaces.
 
-This project encouraged me to work on my own ENT, see
-[op-ent](/projects/op-ent).
+Ce projet m'a encouragé à travailler sur mon propre ENT, voir
+[op-ent](/fr/projets/op-ent).
