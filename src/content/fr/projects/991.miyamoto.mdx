@@ -1,15 +1,15 @@
 ---
-title: 'MiyaMoto: a smart contract auditor'
+title: 'Miyamoto: un auditeur de smart contract'
 description:
-    What if there was a way to detect vulnerabilities in smart contracts (Web3)
-    and get an AI-generated audit?
+    Et s'il existait un moyen de détecter les vulnérabilités des smart contracts
+    (Web3) et d'obtenir un audit généré par l'IA ?
 thumbnail:
     url: /images/content/en/projects/miyamoto-0.png
-    alt: 'Screenshot of the homepage, with market data and an OHLC chart'
-category: Web development
+    alt: "Capture d'écran de la page de l'analyseur de token"
+category: Développement web
 tags:
     [
-        Web development,
+        Développement web,
         Next.js,
         React,
         Tailwind CSS,
@@ -18,79 +18,83 @@ tags:
         Smart contracts,
         Freelance,
         AI,
-        RSC,
     ]
 ---
 
 ## Introduction
 
-Miyamoto is a smart contract auditor. It allows to get insights on a given smart
-contract, such as OHLC (Open-high-low-close chart), the last 100 transactions
-and the most important: insights on security.
+Miyamoto est un auditeur de smart contracts. Il permet d'obtenir des
+informations sur un smart contract donné, telles que l'OHLC (graphique
+open-high-low-close), les 100 dernières transactions et le plus important : des
+informations sur la sécurité.
 
-Indeed, a smart contracts can contain vulnerabilities such as risks of external
-calls. This app allows to generate an audit with AI based on this vulenrabilties
-to suggest ways to fix such vulnerabilities.
+En effet, un smart contract peut contenir des vulnérabilités comme des risques
+d'appels externes. Cette application permet de générer un audit avec l'IA, basé
+sur ces vulnérabilités afin de suggérer des moyens de les corriger.
 
-My role as a frontend freelancer was to build the BETA app based on Figma
-mockups. I had to interact with APIs provided by other freelancers working on
-the project.
+Mon rôle en tant que freelance frontend a été de construire l'application BETA à
+partir de maquettes Figma. J'ai dû interagir avec des API fournies par d'autres
+freelances travaillant sur le projet.
 
-To achieve this goal I used the following technologies:
+Pour atteindre cet objectif, j'ai utilisé les technologies suivantes :
 
--   [Next.js](https://nextjs.org/) 13 and
-    [RSCs](https://beta.nextjs.org/docs/rendering/server-and-client-components)
+-   [Next.js](https://nextjs.org/)
 -   [React](https://react.dev/)
 -   [Tailwind CSS](https://tailwindcss.com)
 -   [Lightweight charts](https://tradingview.github.io/lightweight-charts/)
 
-Check it out [here](https://smart-contract-auditor.vercel.app/)!
+Consultez-le [ici](https://miyamoto-website.onrender.com/)!
 
-![Screenshot of the token analyzer page](/images/content/en/projects/miyamoto-1.png)
+## Objectif
 
-## Purpose and Goal
+Ce projet était important pour moi car il s'agissait de ma première expérience
+réelle en tant que freelance ! J'avais déjà travaillé pour des gens, mais des
+gens que je connaissais. Nos relations n'étaient pas purement professionnelles.
 
-This project was quite important for me as it was my 1st real experience as a
-freelancer! I'd already worked for people but people I knew so relationships
-were not purely professional.
+L'objectif de ce projet était d'avoir un très bon frontend, à la fois en termes
+de design et de performance, tout en suivant le design Figma. C'était très
+enrichissant et je pense que j'ai atteint l'objectif !
 
-The goal for this project was to have a really good frontend, both design and
-performance wise, while following the Figma design. It was pretty enriching and
-I think I reached the objective!
+## Focus: graphique OHLC
 
-## Spotlight: OHLC chart
-
-When I first saw the Figma design, I was really worried about doing the chart.
-Such thing is really complex. So I built it by hand using a lot of relative and
-absolute positionning... of course not! Just used a cool library for this. This
+Lorsque j'ai vu le design Figma pour la première fois, j'étais vraiment inquiet
+à l'idée de réaliser le graphique. Une telle fonctionnalité est vraiment
+complexe. Je l'ai donc construit à la main en utilisant de nombreux
+positionnements relatifs et absolus... bien sûr que non ! J'ai juste utilisé une
+bibliothèque sympa pour cela. This
 [CodeSandbox](https://codesandbox.io/s/tradingview-lightweight-candlestick-x7fxrq?file=/src/index.js)
-was really useful to get started.
+a été très utile pour commencer.
 
-It was not to hard to setup and I got the data to display through an API,
-nothing to crazy. Eventually it was mostly about customization and it's probably
-still not perfect, but that's a beta so that's fine.
+Il n'a pas été trop difficile à mettre en place et j'ai obtenu l'affichage des
+données par le biais d'une API, rien d'extraordinaire. Finalement, c'était
+surtout une question de personnalisation et ce n'est probablement pas encore
+parfait, mais c'est une version bêta.
 
-For the few issues I encountered, reading the types in VS Code, reading the docs
-and searching GitHub issues was definitely helpful.
+Pour les quelques problèmes que j'ai rencontrés, la lecture des types dans VS
+Code, la lecture de la documentation et les recherches sur GitHub ont été très
+utiles.
 
-## Current status
+## Etat actuel
 
-The beta has now launched. To be honest, I don't have much insight since I'm not
-the project owner.
+La bêta est maintenant lancée. Pour être honnête, je n'ai pas beaucoup
+d'informations car je ne suis pas pas le propriétaire du projet.
 
-But even without more information, web3 investors and smart contract developers
-are the most likely to be interested in this web application.
+Mais même sans plus d'informations, les investisseurs web3 et les développeurs
+de smart contracts sont les plus susceptibles d'être intéressés par cette
+application web.
 
-## Lessons Learned
+## Enseignement tirés
 
-I learned a few things in this project:
+Ce projet m'a permis d'apprendre plusieurs choses :
 
--   **Be transparent**: if you don't know something, just say it. For instance I
-    don't know anything about Web3 so I needed some help when interacting with
-    the API
--   **Don't be afraid of asking questions**: related to the previous point
--   **Take initiatives**: everything is not defined from the beggining. For
-    instance, the Figma mockups don't show hover states, intermediary
-    breakpoints layouts etc...
--   **Overestimate the time you need**: you always need more time than expected.
-    A few bugs remain, you're waiting for other people's work... Play it safe!
+-   **Etre transparent** : si vous ne savez pas quelque chose, dites-le. Par
+    exemple, je ne connais rien à Web3 et j'ai donc eu besoin d'aide pour
+    interagir avec l'API
+-   **N'ayez pas peur de poser des questions**: en rapport avec le point
+    précédent
+-   **Prendre des initiatives** : tout n'est pas défini dès le départ. Par
+    exemple, les maquettes Figma ne montrent pas les états de survol, les
+    breakpoints intermédiaires (tablette) etc...
+-   **Surestimez le temps dont vous avez besoin**: vous avez toujours besoin de
+    plus de temps que prévu. Il reste quelques bugs, vous attendez le travail
+    d'autres personnes... Jouez la carte de la sécurité !
