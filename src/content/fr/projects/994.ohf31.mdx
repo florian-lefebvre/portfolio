@@ -1,135 +1,144 @@
 ---
-title: "OHF31: orchestra's website"
+title: "OHF31 : site web de l'orchestre"
 description:
-    This is the website that got me started with web development. I actually
-    reworked it 3 times to learn, improving it each time!
+    C'est le site web qui m'a permis de me lancer dans le développement web. En
+    fait, je l'ai refait 3 fois pour apprendre, en l'améliorant à chaque fois !
 thumbnail:
     url: /images/content/en/projects/ohf31-0.png
-    alt: 'Screenshot of the 3rd version'
-category: Web development
-tags: [Web development, Nuxt 3, Tailwind CSS, Cloudinary, Vercel, Showcase]
+    alt: "Capture d'écran de la 3ème version"
+category: Développement web
+tags: [Développement web, Nuxt 3, Tailwind CSS, Cloudinary, Vercel, Showcase]
 ---
 
 ## Introduction
 
-This website is a showcase site for my orchestra, _l'Orchestre d'Harmonie du
-Frontonnais_. Nothing complicated, it made of a few pages : home, about the
-orchestra, its story, upcoming schedule, medias and contact.
+J'ai réalisé ce site vitrine pour mon orchestre, _l'Orchestre d'Harmonie du
+Frontonnais_. Rien de compliqué, il est composé de quelques pages : accueil, à
+propos de l'orchestre, son histoire, le programme à venir, les médias et le
+contact.
 
-I was doing frontend development for this project, using
-[Nuxt 3](https://nuxt.com), [Tailwind CSS](https://tailwindcss.com) and
-[Cloudinary](https://cloudinary.com) for the 3rd version.
+J'ai fait du développement frontend pour ce projet, en utilisant
+[Nuxt 3](https://nuxt.com), [Tailwind CSS](https://tailwindcss.com) et
+[Cloudinary](https://cloudinary.com) pour la 3ème version.
 
-Check out the [website](https://ohf31.fr)!
+Découvrez le [site web](https://ohf31.fr)!
 
-## Purpose and Goal
+## Objectif
 
-At the end of 2019, I was getting involved more and more in my orchestra's
-online presence. Indeed, I was filming concerts with several cameras and editing
-videos to publish on social medias (nothing crazy, only fades in and out). But
-one thing was still not looking great: the website.
+Fin 2019, je m'impliquais de plus en plus dans la présence en ligne de mon
+orchestre. En effet, je filmais des concerts avec plusieurs caméras et je
+montais des vidéos pour les publier sur les médias sociaux (rien de fou,
+seulement des fondus enchaînés). Mais il restait encore une chose qui faisait
+pâle figure : le site internet.
 
-Made with an old [Drupal](https://www.drupal.org/) template, I was looking for a
-solution to make the website look better and more professional. So I thought
-_“Why not learn HTML along the way?”_ and I got started.
+Réalisé avec un vieux modèle [Drupal](https://www.drupal.org/), je cherchais une
+solution pour améliorer l'aspect du site et le rendre plus professionnel. Je me
+suis donc dit _"Pourquoi ne pas apprendre le HTML en cours de route ?"_ et je me
+suis lancé.
 
-This website is important for me because it's really what got me started in web
-development.
+Ce site est important pour moi car c'est lui qui m'a permis de me lancer dans le
+développement web.
 
-![Screenshot of the old Drupal powered website](/images/content/en/projects/ohf31-1.png)
+![Capture d'écran de l'ancien site Drupal](/images/content/en/projects/ohf31-1.png)
 
-## Multiple versions
+## Plusieurs versions
 
-### 1. HTML and CSS
+### 1. HTML et CSS
 
-![Screenshot of the v1 website](/images/content/en/projects/ohf31-2.png)
+![Capture d'écran du site web v1](/images/content/en/projects/ohf31-2.png)
 
-I never really coded before, I mean I coded in Unreal Engine 4 with blueprints
-but it was a visual editor, not lines of code. So to start I followed
-[this tutorial](https://www.youtube.com/watch?v=UB1O30fR-EE) from Traversy Media
-and it taught a lot of thing. I wasn't understanding the half of the CSS I was
-writing (and I was using `float`...) but still, I managed to get this first
-website done.
+Je n'avais jamais vraiment codé auparavant, je veux dire, j'avais codé dans
+Unreal Engine 4 avec des blueprints mais c'était un éditeur visuel, pas des
+lignes de code. Pour commencer, j'ai donc suivi
+[ce tutoriel](https://www.youtube.com/watch?v=UB1O30fR-EE) de Traversy Media qui
+m'a appris beaucoup de choses. Je ne comprenais pas la moitié du CSS que
+j'écrivais (et j'utilisais `float`...) mais j'ai tout de même réussi à faire ce
+premier site web.
 
-I remember deploying this website over FTP using
-[FileZilla](https://filezilla-project.org/) on OVH around Christmas.
+Je me souviens avoir déployé ce site web par FTP en utilisant
+[FileZilla](https://filezilla-project.org/) sur OVH aux alentours de Noël.
 
-So definitely a great way to start!
+C'était une bonne façon de commencer !
 
-### The musicians space
+### L'espace musiciens
 
-![Screenshot of the storage gallery](/images/content/en/projects/ohf31-3.jpg)
-![Screenshot of the upload page](/images/content/en/projects/ohf31-4.jpg)
+![Capture d'écran de la galerie de stockage](/images/content/en/projects/ohf31-3.jpg)
+![Capture d'écran de la page de téléversement](/images/content/en/projects/ohf31-4.jpg)
 
-Like a lot of devs out there, I decided I wanted to build my own CMS instead of
-using [WordPress](https://wordpress.com/). Why would I use a really popular CMS
-since I know everything to build a full custom one on my own? (Spoiler: _I
-wasn't ready_)
+Comme beaucoup de développeurs, j'ai décidé de construire mon propre CMS au lieu
+d'utiliser [WordPress] (https://wordpress.com/). Pourquoi utiliser un CMS très
+populaire populaire puisque je sais tout ce qu'il faut faire pour en créer un
+sur mesure ? (Spoiler : _Je n'étais pas prêt_)
 
-So I started to learn PHP, I mean not a framework but really procedural PHP. The
-code was an absolute mess, absolutely not secure, duplications everywhere and so
-on. To be able to refresh some parts of the Ui without the whole page, I used
-AJAX with [JQuery](https://jquery.com/) so I a way, I was building some kind of
-small APIs. _BUT_ I was returning HTML, not JSON, stored in a string. It was an
-absolute nightmare to debug.
+J'ai donc commencé à apprendre le PHP, pas un framework mais seulemùent du PHP
+procédural. Le code code était un véritable fouillis, absolument pas sécurisé,
+des duplications partout, etc. Pour pouvoir rafraîchir certaines parties de
+l'interface utilisateur sans avoir à rafraîchir toute la page, j'ai utilisé AJAX
+avec [JQuery] (https://jquery.com/). D'une certaine manière, je construisais une
+sorte de petite API. Mais je renvoyais du HTML, pas du JSON, stocké dans une
+chaîne de caractères. C'était un cauchemar absolu à déboguer.
 
-But still, I learned a lot along the way, especially about
-[MySQL](https://www.mysql.com/) and CSS.
+Mais j'ai tout de même appris beaucoup de choses en cours de route, notamment en
+ce qui concerne [MySQL](https://www.mysql.com/) et le CSS.
 
-### 2. Bootstrap 5 and PHP
+### 2. Bootstrap 5 et PHP
 
 <Alert>
 
-I didn't manage to find a screenshot for this one.
+Je n'ai pas réussi à trouver de capture d'écran pour cette version.
 
 </Alert>
 
-As I was coding the musicians space at the same time, I discovered
-[Bootstrap 5](https://getbootstrap.com/) and was really enjoying it. So, to
-train and because the first version of the website wasn't looking that great
-after all, I decided to rebuild it from scratch. I was still using PHP for
-imports (html meta tags or stuff like this) but in retrospect, it wasn't useful.
+En codant l'espace musiciens, j'ai découvert
+[Bootstrap 5](https://getbootstrap.com/) et je l'ai vraiment apprécié. Donc,
+pour me former et parce que la première version du site n'était pas si bien que
+ça avec un peu de recul, j'ai décidé de le refaire à partir de zéro. J'utilisais
+encore PHP pour les importations (balises html meta ou autres), mais
+rétrospectivement, ce n'était pas très utile.
 
-### 3. Nuxt 3 and Tailwind CSS
+### 3. Nuxt 3 et Tailwind CSS
 
-![Screenshot of 3rd version](/images/content/en/projects/ohf31-0.png)
+![Capture d'écran de la 3ème version](/images/content/en/projects/ohf31-0.png)
 
-The 2nd version had been released for more than a year and then... _"We need to
-add an announce now that we can do concerts, and the next one is in 1 week and
-half. Could you add it?"_ Sure I can but... My tech stack has changed a lot
-since last year, I was only beginning learning web development and I don't have
-the right setup nor the will to get back to such tech. So guess what... 3rd
-version!
+La deuxième version était disponible depuis plus d'un an et puis... _"Nous avons
+besoin d'ajouter une annonce maintenant que nous pouvons faire des concerts, et
+le prochain est dans 1 semaine et demie. Tu peux t'en occuper ?"_ Bien sûr que
+je peux mais... Ma _tech stack_ a beaucoup changé depuis l'année dernière, je
+commençais seulement à apprendre le développement web et je n'ai plus la bonne
+configuration ni la volonté de revenir à cette technologie. Alors devinez
+quoi... 3ème version !
 
-The deadline was the 10th of November and at the time I was looking for a way to
-try out Nuxt 3 now that beta was released since October. Well, it was instable
-and I had quite a lot of issues (of which HMR which is really painful) but
-eventually I managed to get it working. That was also the opportunity to try
-[VueUse motion](https://motion.vueuse.org/) for animations.
+La date limite était le 10 novembre et à l'époque, je cherchais un moyen
+d'essayer Nuxt 3 comme la version bêta était disponible depuis le mois
+d'octobre. C'était instable et j'ai eu pas mal de problèmes (dont le HMR ce qui
+était vraiment pénible) mais j'ai finalement réussi à le faire fonctionner.
+C'était aussi l'occasion d'essayer [VueUse motion](https://motion.vueuse.org/)
+pour les animations.
 
-I used Tailwind CSS for styling, GitHub for versioning (after all that time!),
-[Cloudinary](https://cloudinary.com/) as a CDN for my images and
-[Vercel](https://vercel.com) for deployments.
+J'ai utilisé Tailwind CSS pour le style, GitHub pour les versions (après tout ce
+temps !), [Cloudinary](https://cloudinary.com/) comme CDN pour mes images et
+[Vercel](https://vercel.com) pour les déploiements.
 
-Apart from the technical side, I didn't really change the whole layouts or
-content.
+En dehors de l'aspect technique, je n'ai pas vraiment modifié la mise en page ni
+le contenu.
 
-Since then, I updated the app to use the `3.0.0` release, improving stability
-and performance.
+Depuis, j'ai mis à jour l'application pour utiliser la version `3.0.0`,
+améliorant la stabilité et les performances.
 
-## Current status
+## Etat actuel
 
-The website is working pretty well and I haven't planned any further development
-for now.
+Le site web fonctionne assez bien et je n'ai pas prévu d'autres mises à jour
+pour l'instant.
 
-However, it's not that visited right now but this is because of a marketing
-issue: no many people are even aware of the orchestra's existence. I might work
-on that in the future, establishing a digital marketing strategy etc...
+Cependant, il n'est pas très visité pour l'instant, mais cela est dû à un
+problème de marketing : peu de gens connaissent l'existence de l'orchestre. Je
+pourrais y travailler à l'avenir, en établissant une stratégie de marketing
+numérique, etc...
 
-I'm also considering plugging in a CMS for people to enter data (like future
-concerts), I need to investigate.
+J'envisage également d'intégrer un CMS pour que les gens puissent entrer des
+données (comme les concerts à venir) sans passer par moi.
 
-## Lessons Learned
+## Enseignements tirés
 
-This project has taught me a lot of things, web development at first and new
-techs then, each version allowing me to learn more technologies.
+Ce projet m'a appris beaucoup de choses, le développement web d'abord et des
+technologies ensuite, chaque version me permettant d'en apprendre de nouvelles.
