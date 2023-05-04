@@ -1,15 +1,15 @@
 ---
-title: 'Portfolio: One Thousand and One Techs'
+title: 'Portfolio : Les Mille et Une Technos'
 description:
-    The dev's portfolio reflects his current knowledge. Mine is no exception to
-    the rule, it's the 5th version!
+    Le portfolio du développeur reflète ses connaissances actuelles. Le mien ne
+    fait pas exception à la règle, c'est la 5ème version !
 thumbnail:
     url: /images/content/en/projects/portfolio-0.jpg
-    alt: Portfolio v4 OpenGraph image
-category: Web development
+    alt: Image OpenGraph de mon portfolio v4
+category: Développement web
 tags:
     [
-        Web development,
+        Développement web,
         Portfolio,
         Astro,
         Tailwind CSS,
@@ -22,19 +22,20 @@ tags:
 
 ## Introduction
 
-I think a developer's portfolio is a showcase of their skills. And this is true
-by the projects it contains, but also because a portfolio is one of them!
+Je pense que le portfolio d'un développeur est une vitrine de ses compétences.
+Et c'est vrai de par les projets qu'il contient, mais aussi parce que le
+portfolio en fait partie !
 
-For this 5th version, I've greatly improved a lot of aspects:
+Pour cette 5ème version, j'ai amélioré de nombreux aspects :
 
--   **Light and dark mode**: choose the one that suits you best
--   **A blog (finally!)** powered by MDX
--   **Excellent performance** thanks to Astro
--   **Great accessibility**
--   **Internationalization** with `i18n-next`
--   **Respect of animation preferences** using `prefers-reduce-motion`
+-   **Mode clair et mode sombre** : choisissez celui qui vous convient le mieux
+-   **Un blog (enfin !)** alimenté par MDX
+-   **D'excellentes performances** grâce à Astro
+-   **Une bonne accessibilité**
+-   **Internationalisation** avec `i18n-next`
+-   **Respect des préférences d'animation** en utilisant `prefers-reduce-motion`
 
-I use the following technologies:
+J'utilise les technologies suivantes :
 
 -   [Astro](https://astro.build) (SSG)
 -   [Tailwind CSS](https://tailwindcss.com)
@@ -43,148 +44,160 @@ I use the following technologies:
 -   [Swup.js](https://swup.js.org/)
 -   [MDX](https://mdxjs.com/)
 
-Check out the source code on
+Consultez le code source sur
 [GitHub](https://github.com/florian-lefebvre/portfolio)!
 
-_Don't forget to leave a star if you like it ;)_
+_N'oubliez pas de la star si vous l'appréciez ;)_
 
-## Purpose and Goal
+## Objectif
 
-As explained in the introduction, I think it's really important to have a great
-portfolio as a web developer. Moreover, it allows me to learn new things along
-the way (mostly Astro in this case), which is alway nice.
+Comme je l'ai expliqué dans l'introduction, je pense qu'il est très important
+d'avoir un bon portfolio en tant que développeur web. De plus, cela me permet
+d'apprendre de nouvelles choses en cours de route (principalement Astro dans ce
+cas), c'est toujours ça de gagné.
 
-I also made quite some effots on planning this time: I made mockups on
-[Figma](https://figma.com). Here is a screenshot but you can find more on my
-[Twitter](https://twitter.com/LfbvrFlo) (links below).
+Cette fois-ci, j'ai également fait quelques efforts de planification : j'ai
+réalisé des maquettes sur [Figma] (https://figma.com). Voici une capture
+d'écran, mais vous pouvez en trouver plus sur mon
+[Twitter](https://twitter.com/LfbvrFlo) (liens ci-dessous).
 
-![Figma mockup of the "About" page](/images/content/en/projects/portfolio-1.png)
+![Maquette Figma de la page "A propos"](/images/content/en/projects/portfolio-1.png)
 
 [Tweet 1](https://twitter.com/LfbvrFlo/status/1596097811480805376),
 [Tweet 2](https://twitter.com/LfbvrFlo/status/1597347030929924096),
 [Tweet 3](https://twitter.com/LfbvrFlo/status/1597616061339561984),
 [Tweet 4](https://twitter.com/LfbvrFlo/status/1597892339321954304)
 
-I also planned what content I would put in [Notion](https://notion.so) before
-coding too much.
+J'ai également planifié le contenu avec [Notion] (https://notion.so) avant de
+trop coder.
 
-## A quick history
+## Bref historique
 
-I've updated my website many times yet, but this time I'm confident: this
-version will stay there for a while!
+J'ai déjà mis à jour mon site web à plusieurs reprises, mais cette fois-ci, je
+suis confiant : cette version restera en ligne pendant un bon moment !
 
-### Jekyll and Bootstrap 5
+### Jekyll et Bootstrap 5
 
-![Screenshot of the portfolio v1](/images/content/en/projects/portfolio-2.png)
+![Capture d'écran de mon portfolio v1](/images/content/en/projects/portfolio-2.png)
 
-Back in August 2020, I had to choose technologies to build my portfolio. At the
-time, I knew HTML5, CSS & SCSS, PHP and Bootstrap.
+En août 2020, j'ai dû choisir des technologies pour développer mon portfolio. À
+l'époque, je connaissais HTML5, CSS & SCSS, PHP et Bootstrap.
 
-Because I spent a lot of time on [Bootstrap docs](https://getbootstrap.com/docs)
-in the previous months, I knew that static site generators existed (since
-Bootstrap docs use Hugo). So I searched for the best fit for me and eventually
-found [Jekyll](https://jekyllrb.com/).
+Comme j'avais passé beaucoup de temps sur la
+[documentation de Bootstrap](https://getbootstrap.com/docs) au cours des mois
+précédents, je savais que les générateurs de sites statiques existaient (puisque
+la documentation de Bootstrap utilise Hugo). J'ai donc cherché ce qui me
+convenait le mieux et j'ai fini par trouver [Jekyll](https://jekyllrb.com/).
 
-It uses the [Liquid syntax](https://github.com/Shopify/liquid/wiki) and relies
-on [Ruby](https://www.ruby-lang.org/). I knew nothing about both of them so and
-it made it harder to build my portfolio.
+Il utilise la [syntaxe Liquid] (https://github.com/Shopify/liquid/wiki) et
+repose sur [Ruby](https://www.ruby-lang.org/). Je ne connaissais rien à ces 2
+technos, ce qui a rendu plus difficile la construction de mon portfolio.
 
-I used a template I found on the Internet, tweaked it a bit but I won't lie: it
-was bad.
+J'ai utilisé un modèle que j'ai trouvé sur Internet, je l'ai un peu modifié,
+mais clairement : c'était pas terrible.
 
-And setting the deployment was hard since GitHub Actions were not released yet
-so I had to use Travis CI and GitHub Pages to release my portfolio.
+Et la mise en place du déploiement a été difficile car les Actions GitHub
+n'étaient pas encore disponibles. J'ai donc dû utiliser Travis CI et GitHub
+Pages pour publier mon portfolio.
 
-So as I was learning more about frontend development and in particular
-JavaScript frameworks, I decided a few months later to rebuild my portfolio from
-scratch.
+Alors que j'en apprenais plus sur le développement frontend et en particulier
+sur les frameworks JavaScript, j'ai décidé quelques mois plus tard de
+reconstruire mon portfolio à partir de zéro.
 
-### Nuxt 2 and Tailwind CSS 1.0
+### Nuxt 2 et Tailwind CSS 1.0
 
-![Screenshot of the portfolio v2](/images/content/en/projects/portfolio-3.png)
+![Capture d'écran de mon portfolio v2](/images/content/en/projects/portfolio-3.png)
 
-I learned a lot of things since August 2020, so I decided to go with
-[Nuxt](https://nuxtjs.org) and [Tailwind CSS](https://tailwindcss.com/).
+J'avais appris beaucoup de choses depuis août 2020, j'ai donc décidé d'opter
+pour [Nuxt](https://nuxtjs.org) et [Tailwind CSS](https://tailwindcss.com/).
 
-I chose to use a sidebar for navigation and now I think that wasn't a good
-choice. The space I was loosing for only a few infos was too much. But anyway, I
-chose the color teal as a primary color. I also used the official Nuxt modules
-such as [`@nuxt/content`](https://content.nuxtjs.org/) but I struggled with the
-layout on some specific screen widths with weird horizontal overflow, caused by
-code blocks.
+J'ai choisi d'utiliser une barre latérale pour la navigation et je pense
+maintenant que ce n'était pas un bon choix. L'espace que je perdais pour
+seulement quelques informations était trop important. J'ai utilisé les modules
+officiels de Nuxt comme [`@nuxt/content`](https://content.nuxtjs.org/) mais j'ai
+eu du mal avec la mise en page sur certaines largeurs d'écran avec des problèmes
+d'overflow horizontal, causés par des blocs de code.
 
-This time, I used Travis CI and a Plesk server to deploy my portfolio.
+Cette fois, j'ai utilisé Travis CI et un serveur Plesk pour déployer mon site.
 
-For further explanations about v1 and v2, check out
-[this archive](https://github.com/florian-lefebvre/portfolio/blob/v2_nuxtjs/content/work/2020-11-13-my-porfolio.md).
+Pour plus d'explications sur la v1 et la v2, consultez
+[cette archive](https://github.com/florian-lefebvre/portfolio/blob/v2_nuxtjs/content/work/2020-11-13-my-porfolio.md).
 
-But as always, I wasn't satisfied of my work and thought it wasn't good enough
-as a showcase of my skills. So I remade it of course!
+Mais encore une fois, je n'étais pas satisfait de mon travail et je pensais
+qu'il n'était pas assez bon pour présenter mes compétences. Je l'ai donc refait,
+bien sûr !
 
-### Nuxt 2 and Tailwind CSS 2.0
+### Nuxt 2 et Tailwind CSS 2.0
 
-![Screenshot of the portfolio v3](/images/content/en/projects/portfolio-4.png)
+![Capture d'écran de mon portfolio v3](/images/content/en/projects/portfolio-4.png)
 
-I'm not crazy, I don't use a new technology every day so I kept using Nuxt and
-Tailwind CSS. I decided to so something more simple: only one page with all
-informations. I chose some kind of minimalist design with only gray shades and
-no primary color. I also implemented a dark mode. I discovered animations using
-[AnimXYZ](https://animxyz.com/) but I've got to say that it wasn't that easy to
-do animations with it.
+Je ne suis pas fou, je n'utilise pas une nouvelle technologie chaque jour, alors
+j'ai continué à utiliser Nuxt et Tailwind CSS. J'ai décidé de faire quelque
+chose de plus simple : une seule page, avec toutes les informations nécessaires.
+J'ai choisi une sorte de design minimaliste avec seulement des nuances de gris
+et aucune couleur primaire. J'ai également mis en place un mode sombre. J'ai
+découvert les animations en utilisant [AnimXYZ](https://animxyz.com/) mais je
+dois dire que ce n'était pas si simple.
 
-But this simplicity didn't reflect enough my capabilities IMO so you know what
-it means...
+Mais cette simplicité ne reflétait pas suffisamment mes capacités IMO, vous
+savez ce que ça veut dire...
 
-### Nuxt 3 and Tailwind CSS 3.0
+### Nuxt 3 et Tailwind CSS 3.0
 
-![Screenshot of the portfolio v4](/images/content/en/projects/portfolio-5.png)
+![Capture d'écran de mon portfolio v4](/images/content/en/projects/portfolio-5.png)
 
-I upgraded Nuxt to its 3rd version (in beta) as well as Tailwind CSS (no major
-changes). And I've got to say that Nuxt 3 and Vue 3 are absolutely amazing
-compared to their previous major versions. Typescript is _the_ best. But using
-Nuxt 3 in beta has downsides, for stability (laggy HMR), weird broken imports or
-missing features. I'm mostly enjoying using it.
+J'ai mis à jour Nuxt vers sa 3ème version (en beta) ainsi que Tailwind CSS (pas
+de changements majeurs). Et je dois dire que Nuxt 3 et Vue 3 sont absolument
+incroyables par rapport à leurs versions majeures précédentes. Et je ne parle
+même pas de Typescript... Tellement mieux que simplement du JavaScript ! Mais
+l'utilisation de Nuxt 3 en beta avait des inconvénients, pour la stabilité (HMR
+laggy), des importations cassés ou des fonctionnalités manquantes. Mais j'ai
+globalement apprécié l'utiliser.
 
-Concerning animations, I switched to
-[`@vueuse/motion`](https://motion.vueuse.org/) and it's really better.
+En ce qui concerne les animations, je suis passé à
+[`@vueuse/motion`](https://motion.vueuse.org/) et c'est vraiment mieux.
 
-In fact, because nuxt's ecosystem isn't compatible yet, I had to dive a bit
-deeper in Nuxt and learned how to build modules (for generating a sitemap for
-instance) and that was really enriching.
+En fait, comme l'écosystème de Nuxt n'était pas encore compatible, j'ai dû
+plonger un peu plus profondément dans Nuxt et j'ai appris à construire des
+modules (pour générer un sitemap pour un site web par exemple). C'était très
+enrichissant.
 
-If you're curious about it, I created a custom sitemap module,
-[check it out](https://github.com/florian-lefebvre/portfolio/blob/c513428dea912a19ffb684b8b571b08b8882158c/modules/sitemap.ts).
+Si vous êtes curieux, j'ai créé un module sitemap personnalisé,
+[découvez-le](https://github.com/florian-lefebvre/portfolio/blob/c513428dea912a19ffb684b8b571b08b8882158c/modules/sitemap.ts)
+!
 
-I deploy my portfolio on Vercel, the process is way simpler than on GitHub
-Actions or any other CI since Nuxt has first class integrations for deployments.
+Je déployais mon portfolio sur Vercel, le processus est beaucoup plus simple que
+sur GitHub Actions ou tout autre CI puisque Nuxt dispose d'intégrations
+"natives" pour les déploiements.
 
 <Alert>
 
-Do you miss this version? It's still available at
-[v4.florian-lefebvre.dev](https://v4.florian-lefebvre.dev)!
+Cette version vous manque ? Elle est encore disponible à
+[v4.florian-lefebvre.dev](https://v4.florian-lefebvre.dev) !
 
 </Alert>
 
-But then I found out [Josh Comeau](https://www.joshwcomeau.com/)'s
-[e-book](https://www.joshwcomeau.com/effective-portfolio/): _"Building an
-Effective Dev Portfolio"_. So I decided to rebuild my portfolio, but with more
-thinking involved so that it can't stay great for a long time.
+Mais j'ai découvert l'[e-book](https://www.joshwcomeau.com/effective-portfolio/)
+de [Josh Comeau](https://www.joshwcomeau.com/) : _"Building an Effective Dev
+Portfolio"_. J'ai donc décidé de refaire mon portfolio, mais en réfléchissant
+sur le long terme et pour qu'il favorise mon insertion professionnelle.
 
-## Current status
+## Etat actuel
 
-I consider this website done and from now on, I'll refrain from reworking it. I
-might do minor tweaks (color change) and updates (Astro 2.0) but that's all.
+Je considère que ce site est terminé et je m'abstiendrai désormais de le
+retravailler. Je ferai peut-être des ajustements mineurs (changement de couleur)
+et des mises à jour (Astro 2.0), mais c'est tout.
 
-I'll keep it updated and I'll try to post articles here and there.
+Je le tiendrai à jour et j'essaierai de publier des articles ici et là.
 
-## Lessons Learned
+## Enseignements tirés
 
-Here are my key learnings:
+Voici les principaux enseignements que j'en ai tirés :
 
--   Do at least a wireframe, it allows to gain a lot of time
--   Astro!
+-   Faites au moins un wireframe, cela permet de gagner beaucoup de temps
+-   Astro !
 -   Radix UI Colors
--   Better accessibility
+-   Meilleure accessibilité
 
-It was really useful, I used those learnings for
+C'était très utile, j'ai utilisé ces enseignements pour
 [RégioLangues](/projects/regiolangues).
