@@ -1,12 +1,11 @@
 ---
-title: 'op-ent: open-source school management'
+title: 'op-ent : un ENT open-source'
 description:
-    After working on yNotes, an unofficial client for existing ENTs (French
-    school management systems), it was finally time to create my own... but
-    open-source!
+    Après avoir travaillé sur yNotes, un client non officiel pour les ENT
+    existants, il était enfin temps de créer le mien... mais open-source !
 thumbnail:
     url: /images/content/en/projects/op-ent-0.jpg
-    alt: op-ent logo
+    alt: Lodo d'op-ent
 category: Education
 tags:
     [
@@ -27,111 +26,115 @@ tags:
     ]
 ---
 
+<Alert>
+
+Ce contenu est obsolète. Cependant, il n'est pas complètement hors de propos car
+il était vrai dans le passé et aide à comprendre la situation actuelle de ce
+projet.
+
+</Alert>
+
 ## Introduction
 
-op-ent is an open-source school management system, called _ENT_ (which stands
-for "digital workspace" in French). It aims to provide basic features such as
-subjects, grades, calendar, and homework in its first phase. The goal is to make
-the platform more unique once it has reached feature parity with current
-competitors such as [EcoleDirecte](https://www.ecoledirecte.com/) and
+op-ent est un ENT (Espace Numérique de Travail) open-source. Il vise à fournir
+des fonctionnalités de base telles que les matières, les notes, le calendrier et
+les devoirs dans un 1er temps. L'objectif est de rendre la plateforme plus
+unique une fois qu'elle aura atteint la parité avec les concurrents actuels tels
+que [EcoleDirecte](https://www.ecoledirecte.com/) et
+[Pronote](https://www.ecoledirecte.com/).
 [Pronote](https://www.index-education.com/fr/logiciel-gestion-vie-scolaire.php).
-Some ideas for future features include:
+Voici quelques idées de fonctionnalités futures :
 
--   Gamification (achievements)
--   A knowledge center
--   Anonymous reporting for issues such as harassment
--   A built-in editor similar to [Notion](https://notion/so)
+-   _Gamification_ (système de succès)
+-   Un centre de connaissances
+-   Signalement anonyme de problèmes, pour le harcèlement scolaire par exmple
+-   Un éditeur intégré similaire à [Notion](https://notion/so)
 
-As the initiator of this project, I'm working on all aspects of development,
-including frontend and backend development, design (including design systems and
-brand identity), communication, project management, and community management.
+En tant qu'initiateur de ce projet, je travaille sur tous les aspects du
+développement, frontend et backend, la conception (y compris le _design system_
+et l'identité l'identité de marque), la communication, la gestion de projet et
+la gestion de la communauté.
 
-The project utilizes a variety of technologies, including:
+Le projet utilise de nombreuses technologies, notamment :
 
 -   **Frontend**: [TypeScript](https://www.typescriptlang.org/),
     [React](https://reactjs.org/), [Next.js](https://nextjs.org/),
-    [Tailwind CSS](https://tailwindcss.com/) and
-    [Axios](https://axios-http.com/)
+    [Tailwind CSS](https://tailwindcss.com/) et [Axios](https://axios-http.com/)
 -   **Backend**: TypeScript, [AdonisJS](https://adonisjs.com/),
     [Node.js](https://nodejs.org/), [PostgreSQL](https://www.postgresql.org/),
     [Redis](https://redis.io/), [GraphQL](https://graphql.org/) (using
-    [Apollo](https://www.apollographql.com/)) and WebSockets
+    [Apollo](https://www.apollographql.com/)) et WebSockets
 -   **Design**: [Figma](https://www.figma.com/)
 
-There isn't much to show at this time, but you can find the project on the
-[Github organization](https://github.com/op-ent) and the
-[website](https://op-ent.fr).
+Il n'y a pas grand-chose à montrer pour l'instant, mais vous pouvez trouver le
+projet sur la page de l'[organisation GitHub](https://github.com/op-ent) et sur
+le [site web](https://op-ent.fr).
 
-![GitHub organization screenshot](/images/content/en/projects/op-ent-1.png)
+![Capture d'écran de l'organisation GitHub](/images/content/en/projects/op-ent-1.png)
 
-## Purpose and Goal
+## Objectif
 
-I have contributed to and maintained a project called
-[yNotes](https://ynotes.fr) in the past ([Read more](/projects/ynotes)). The
-goal of yNotes was to provide an unofficial client for popular school management
-systems (_ENTs_) and it was popular among students. Even though the project is
-no longer maintained, it reached almost 7,000 downloads on Android in December
-2022, which represents a **250% increase over two months**. This goes to show
-that yNotes (and now op-ent) are addressing a real issue: current ENTs are not
-very good.
+J'ai contribué et maintenu un projet appelé [yNotes](https://ynotes.fr) dans le
+passé ([Read more](/fr/projets/ynotes)). L'objectif de yNotes était de fournir
+un client non officiel pour les ENTs principaux et était populaire parmi les
+étudiants. Bien que le projet ne soit plus maintenu, il a atteint près de 7 000
+téléchargements sur Android en décembre 2022, ce qui représente une augmentation
+de **250% en deux mois**. Cela montre que que yNotes (et maintenant op-ent)
+répondent à un vrai problème : les ENT actuels ne sont pas pas très bons.
 
-My goal is _fairly_ simple: I want to make op-ent the most used school
-management system in France. While it is still a work in progress, I am
-confident that this project has a lot of potential.
+Mon objectif est _assez_ simple : Je veux faire d'op-ent l'ENT le plus utilisé
+en France. Bien qu'il s'agisse encore d'un projet en cours de réalisation, je
+suis persuadé que ce projet a beaucoup de potentiel.
 
-To achieve this ambitious goal, the project has been divided into several
-sub-projects, including:
+Pour atteindre cet objectif ambitieux, le projet a été divisé en plusieurs
+sous-projets, notamment :
 
--   [unstyled-ui](https://github.com/op-ent/unstyled-ui): A library of headless
-    React components
--   [unstyled-ui-theme](https://github.com/op-ent/unstyled-ui-theme): A theme
-    for unstyled-ui
--   [api](https://github.com/op-ent/api): The code for the API
--   [dashboard](https://github.com/op-ent/dashboard): The web appplication
+-   [unstyled-ui](https://github.com/op-ent/unstyled-ui) : Une bibliothèque de
+    composants React _headless_
+-   [unstyled-ui-theme](https://github.com/op-ent/unstyled-ui-theme) : Un thème
+    pour unstyled-ui
+-   [api](https://github.com/op-ent/api) : Le code de l'API
+-   [dashboard](https://github.com/op-ent/dashboard) : L'application web
 
-I decided not to use a monorepo for this project because I am not very familiar
-with it, and I prefer the one-repository-per-project approach used in
-[AdonisJS](https://github.com/adonisjs).
+J'ai décidé de ne pas utiliser de monorepo pour ce projet parce que je ne suis
+pas très familier avec cela, et je préfère l'approche d'un seul dépôt par projet
+utilisée par [AdonisJS] (https://github.com/adonisjs).
 
-## Spotlight: unstyled-ui
+## Focus : unstyled-ui
 
-While there are many interesting aspects of op-ent to discuss, for the sake of
-this page, let's focus on `unstyled-ui`. It is worth noting that I may write
-dedicated articles for other sub-projects in the future.
+Bien qu'il y ait de nombreux aspects intéressants de l'op-ent à discuter, pour
+les besoins de cette page, concentrons-nous sur `unstyled-ui`.
 
-Useful links:
+Lien utiles :
 
--   [GitHub repository](https://github.com/op-ent/unstyled-ui)
+-   [Repository GitHub](https://github.com/op-ent/unstyled-ui)
 -   [Docs](https://unstyled-ui.docs.op-ent.fr/)
 
-`unstyled-ui` is a React UI library that aims to solve the problem of mixing
-full-featured libraries like [Material UI](https://material-ui.com) and headless
-components like [Headless UI](https://headlessui.com/). You can find the full
-motivation for this library
-[here](https://github.com/op-ent/unstyled-ui#motivation). In short, it is
-configurable, customizable, and type-safe.
+`unstyled-ui` est une bibliothèque de composants React qui a pour but de
+résoudre le problème de mélanger des solutions tout-en-un comme
+[Material UI](https://material-ui.com) et des solutions headless comme
+[Headless UI](https://material-ui.com). Vous pouvez trouver l'intégralité des
+motivation de cette bibliothèque
+[ici](https://github.com/op-ent/unstyled-ui#motivation). En bref, elle est
+configurable, personnalisable et _type-safe_.
 
-is yet another React UI library but I think it can solve a problem: mixing
-full-featured libraries like and headless components like . Have a look at the
-[full motivation](https://github.com/op-ent/unstyled-ui#motivation). In short,
-it's configurable, customizable and type-safe.
+En développant cette bibliothèque, j'ai rencontré quelques problèmes :
 
-While developing this library, I encountered a few issues:
+### Composants polymorphes typés dans React
 
-### Typed polymorphic components in React
-
-According to
-[freeCodeCamp](https://www.freecodecamp.org/news/build-strongly-typed-polymorphic-components-with-react-and-typescript):
+Selon
+[freeCodeCamp](https://www.freecodecamp.org/news/build-strongly-typed-polymorphic-components-with-react-and-typescript)
+:
 
 > In the world of React components, a polymorphic component is a component that
 > can be rendered with a different container element / node.
 
-While polymorphic components are not necessarily difficult to implement, getting
-the types correct can be challenging. For example, consider a component called
-`Button` that should be polymorphic because it can sometimes be a link.
-Polymorphism in this case is controlled by the `as` prop, which specifies the
-element type (a string or a React component). When calling the component like
-this:
+Si les composants polymorphes ne sont pas nécessairement difficiles à mettre en
+œuvre, obtenir des types soient corrects peut être un défi. Prenons l'exemple
+d'un composant appelé `Button` qui devrait être polymorphe parce qu'il peut
+parfois être un lien. Dans ce cas, le polymorphisme est contrôlé par la
+propriété `as`, qui spécifie le type de l'élément (une chaîne de caractères ou
+un composant React). Lorsque l'on appelle le composant comme ceci :
 
 ```jsx
 <Button as="a" href="/">
@@ -139,11 +142,11 @@ this:
 </Button>
 ```
 
-We want the IDE to provide autocompletion for the `a` element and not the
-`button`.
+Nous voulons que l'IDE fournisse une autocomplétion pour l'élément `a` et non
+pour l'élément `button`.
 
-After doing some research and experimenting, I came up with the following
-solution (I apologize for not being able to quote the source):
+Après avoir fait quelques recherches et expérimentations, j'ai trouvé la
+solution suivante (je n'ai pas retrouvé la source exacte) :
 
 ```ts
 // polymorphic.ts
@@ -244,12 +247,13 @@ export const Button: ButtonComponent = forwardRef(
 )
 ```
 
-### Typescript and module override
+### TypeScript et _module override_
 
-By default, `unstyled-ui` does not make many decisions about props and their
-typings, so I wanted to provide a flexible way for users of the library to
-customize and extend the current types. This idea was inspired by
-[Mantine](https://mantine.dev/theming/colors/#add-custom-colors-types):
+Par défaut, `unstyled-ui` ne prend pas trop de décisions sur les props et leurs
+typages. Je voulais donc fournir un moyen flexible pour les utilisateurs de la
+bibliothèque de de personnaliser et d'étendre les types actuels. Cette idée a
+été inspirée par
+[Mantine](https://mantine.dev/theming/colors/#add-custom-colors-types) :
 
 ```ts
 import { Tuple, DefaultMantineColor } from '@mantine/core'
@@ -266,8 +270,8 @@ declare module '@mantine/core' {
 }
 ```
 
-However, I was not fully satisfied with how this worked internally, so I ended
-up modifying it and creating the following:
+Cependant, je n'étais pas entièrement satisfait de la manière dont cela
+fonctionnait en interne. Je l'ai modifié pour arriver à ce résultat :
 
 ```ts
 declare module '@op-ent/unstyled-ui' {
@@ -279,8 +283,8 @@ declare module '@op-ent/unstyled-ui' {
 }
 ```
 
-This allows users to create a correctly typed config using the public library
-API:
+Cela permet aux utilisateurs de créer une configuration correctement typée en
+utilisant l'API publique de la bibliothèque :
 
 ```ts
 export const { config, extendConfig } = createConfig({
@@ -295,8 +299,8 @@ export const { config, extendConfig } = createConfig({
 })
 ```
 
-[Here](https://github.com/op-ent/unstyled-ui/blob/9066cc28e3af96beddd5bfe95378682e5b8268d1/src/types/config.ts)
-is the code that makes this possible:
+[Voici](https://github.com/op-ent/unstyled-ui/blob/9066cc28e3af96beddd5bfe95378682e5b8268d1/src/types/config.ts)
+le code qui rend ça possible :
 
 ```ts
 import type { DeepPartial } from 'ts-essentials'
@@ -362,43 +366,45 @@ export type CustomizableComponentsProps = DefaultCustomizableComponentsProps &
 
 ---
 
-I am interested in exploring the following topics in the future:
+Je suis intéressé par l'exploration des sujets suivants à l'avenir :
 
--   Stabilize the internal API to facilitate contributions
--   Make `unstyled-ui` framework agnostic to enable sharing styles across UI
-    frameworks
--   Allow customization of component rendering through config
--   Allow users to easily integrate custom components
--   Consider renaming `@op-ent/unstyled-ui` to a shorter and more memorable
-    name, such as `@uui/core` and `@uui/react`.
+-   Stabiliser l'API interne pour faciliter les contributions
+-   Rendre `unstyled-ui` _framework agnostic_ pour permettre le partage des
+    styles à travers les frameworks d'UI (React, Vue, Svelte...)
+-   Permettre la personnalisation du rendu des composants via la configuration
+-   Permettre aux utilisateurs d'intégrer facilement des composants
+    personnalisés
+-   Envisager de renommer `@op-ent/unstyled-ui` en un nom plus court et plus
+    mémorable, comme `@uui/core` et `@uui/react`.
 
-![Unstyled UI repository cover](/images/content/en/projects/op-ent-2.png)
+![Couverture du repository Unstyled UI](/images/content/en/projects/op-ent-2.png)
 
-## Current status
+## Etat actuel
 
-op-ent is currently in active development and is not expected to reach an alpha
-or MVP stage until August 2023. Please note that this page may not always
-reflect the most recent changes to the project, as it is likely to evolve
-quickly.
+op-ent est actuellement en cours de développement et ne devrait pas atteindre le
+stade alpha ou MVP avant août 2023. Veuillez noter que cette page ne reflète pas
+toujours les changements les plus récents, car le projet est susceptible
+d'évoluer rapidement.
 
-## Lessons Learned
+## Enseignements tirés
 
-Working on op-ent has provided many valuable lessons, including:
+Le travail sur l'op-ent a permis de tirer de nombreuses leçons précieuses,
+notamment :
 
--   **Project management** using tools such as [Github](https://github.com) and
-    [Linear](https://linear.app)
--   **Community management** on platforms like GitHub (with issues, PRs i.e
-    contributions) and [Discord](https://discord.com)
-    ([Join us!](https://discord.gg/kMFmfSbC2C))
--   Awesome new technologies
--   Experience in building and scaling a library
+-   **La gestion de projet** avec des outils tels que
+    [GitHub](https://github.com) et [Linear](https://linear.app)
+-   **Le _community management_** sur des plateformes comme GitHub (with issues,
+    PRs i.e contributions) et [Discord](https://discord.com)
+    ([Rejoignez-nous !](https://discord.gg/kMFmfSbC2C))
+-   De nouvelles technologies géniales
+-   De l'expérience dans la création et la conception de bibliothèques
 
-Overall, I am satisfied with the technologies I have chosen for the project,
-with the exception of certain components libraries like
-[Chakra UI](https://chakra-ui.com/) and [Mantine](https://mantine.dev). This
-motivated me to create `unstyled-ui`.
+Dans l'ensemble, je suis satisfait des technologies que j'ai choisies pour le
+projet, à l'exception de certaines bibliothèques de composants comme
+[Chakra UI](https://chakra-ui.com/) et [Mantine](https://mantine.dev). Cela m'a
+m'a motivé à créer `unstyled-ui`.
 
-I am pleased with the progress of the project and believe it has the potential
-to be useful. If you are interested in contributing to the project or learning
-more, please feel free to [reach out](#contact) to me or check out the
-[contributing guide](https://github.com/op-ent#-contribuer).
+Je suis satisfait de l'avancement du projet et je pense qu'il a le potentiel
+d'être utile. Si vous souhaitez contribuer au projet ou en savoir plus,
+n'hésitez pas à me [contacter](#contact) ou à consulter le
+[guide de contribution](https://github.com/op-ent#-contribuer).
