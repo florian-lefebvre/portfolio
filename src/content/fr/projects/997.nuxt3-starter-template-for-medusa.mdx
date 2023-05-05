@@ -1,15 +1,17 @@
 ---
-title: 'Open Source e-commerce: Medusa starter template'
+title: 'E-commerce Open Source : kit de démarrage pour Medusa'
 description:
-    A Medusa starter template build with Nuxt 3, unfortunately unmaintained for
-    now.
+    Un kit de démarrage Medusa construit avec Nuxt 3, malheureusement non
+    maintenu pour l'instant.
 thumbnail:
     url: /images/content/en/projects/nuxt3-starter-template-for-medusa-0.png
-    alt: 'Screenshot of a product details page, with the cart menu open'
+    alt:
+        "Capture d'écran d'une page de détails d'un produit, avec le menu du
+        panier ouvert"
 category: Template
 tags:
     [
-        Web development,
+        Développement web,
         Template,
         Open Source,
         GitHub,
@@ -24,72 +26,74 @@ tags:
 
 <Alert>
 
-Unfortunately, this project is no longer maintained due to lack of time and a
-shift to the React ecosystem on my side.
+Malheureusement, ce projet n'est plus maintenu à cause d'un manque de temps et
+une réorientation vers l'écosystème React.
 
 </Alert>
 
-This project is storefront template for [Medusa](https://medusajs.com/), built
-with [Nuxt 3](https://nuxt.com).
+Ce projet est un template de vitrine pour [Medusa](https://medusajs.com/),
+construit avec [Nuxt 3](https://nuxt.com).
 
-It features products view with filters, product details and a shopping cart.
-[More features](https://github.com/florian-lefebvre/nuxt3-starter-medusa#routes)
-were planned but because the project is unmaintained, the project remains
-unfortunately quite incomplete.
+Il propose une vue des produits avec des filtres, des détails sur les produits
+et un panier d'achat. [Plus de fonctionnalités]
+(https://github.com/florian-lefebvre/nuxt3-starter-medusa#routes) étaient
+prévues, mais comme le projet n'est pas maintenu, il reste malheureusement
+incomplet.
 
-This project was fully frontend focused, powered by those technologies:
+Ce projet était entièrement axé frontend et s'appuyait sur ces technologies :
 
 -   [Nuxt 3](https://nuxt.com)
 -   [Tailwind CSS](https://tailwindcss.com)
 -   [Pinia](https://pinia.vuejs.org/)
 
-Check out the GitHub
-[repository](https://github.com/florian-lefebvre/nuxt3-starter-medusa)!
+Consultez le
+[repository GitHub](https://github.com/florian-lefebvre/nuxt3-starter-medusa) !
 
-![Screenshot of the products list page](/images/content/en/projects/nuxt3-starter-template-for-medusa-1.png)
+![Capture d'écran de la liste des produits](/images/content/en/projects/nuxt3-starter-template-for-medusa-1.png)
 
-## Purpose and Goal
+## Objectif
 
-When I first discovered Medusa, I was only coding with Vue and Nuxt. However,
-official templates only included [Gatsby](https://www.gatsbyjs.com/) and
+Lorsque j'ai découvert Medusa, je codais avec Vue et Nuxt. Cependant, les
+templates officiels ne comprenaient que [Gatsby](https://www.gatsbyjs.com/) et
 [Next.js](https://nextjs.org/).
 
-My ambition was to create a fully featured and nice looking template for Nuxt 3,
-equivalent of the official Next.js one. It was also an opportunity to learn how
-to create e-commerce sites.
+Mon ambition était de créer un template complet (et visuellement agréable) pour
+Nuxt 3, équivalent au modèle officiel Next.js. C'était aussi l'occasion
+d'apprendre comment créer des sites e-commerce.
 
-## Spotlight: state management and stores
+## Focus : _state management_ et _stores_
 
-This web app was one of the first to require complex state management. I had
-only been using [Vuex](https://vuex.vuejs.org/) and the official default was now
-Pinia.
+Cette application web a été l'une des premières à nécessiter une gestion
+complexe des _states_. J'avais utilisé [Vuex](https://vuex.vuejs.org/) par le
+passé mais Pinia était désormais la solution officielle.
 
-The goal was pretty simple: translate the
-[React Contexts](https://react.dev/reference/react#context-hooks) into
-[Pinia stores](https://react.dev/reference/react#context-hooks).
+Mon objectif était assez simple : "convertir" les
+[Contexts React](https://react.dev/reference/react#context-hooks) en
+[stores Pinia](https://react.dev/reference/react#context-hooks).
 
-Being used to the Vuex mental model, I started using
-[Options Stores](https://pinia.vuejs.org/core-concepts/#option-stores) but
-eventually switched to
-[Setup Stores](https://pinia.vuejs.org/core-concepts/#setup-stores), which make
-more sense in Vue 3.
+Habitué du mode de fonctionnement de Vuex, j'ai commencé à utiliser les
+[Options Stores](https://pinia.vuejs.org/core-concepts/#option-stores), pour
+finalement me tourner vers les
+[Setup Stores](https://pinia.vuejs.org/core-concepts/#setup-stores), qui font
+plus sens de le contexte de Vue 3.
 
-I encountered small issues with [TypeScript](https://www.typescriptlang.org/)
-but that was because I lacked experience.
+J'ai rencontré de petits problèmes avec
+[TypeScript](https://www.typescriptlang.org/) mais c'était par manque
+d'expérience.
 
-In the end, DX was really good!
+En fin de compte, la DX était vraiment bonne !
 
-![Screenshot of the template homepage](/images/content/en/projects/nuxt3-starter-template-for-medusa-2.png)
+![Capture d'écran de la page d'accueil du template](/images/content/en/projects/nuxt3-starter-template-for-medusa-2.png)
 
-## Current status
+## Etat actuel
 
-Unfortunately, this project is no longer maintained due to lack of time and a
-shift to the React ecosystem on my side.
+Malheureusement, ce projet n'est plus maintenu à cause d'un manque de temps et
+une réorientation vers l'écosystème React.
 
-## Lessons Learned
+## Enseignements tirés
 
-I learned a few things while doing this template:
+J'ai appris plusieurs choses en réalisant ce template :
 
--   Deal with complex state management
--   Understand React Context
--   Get started with Medusa
+-   Gérer des états complexes
+-   Comprendre React Context
+-   Démarrer avec Medusa
