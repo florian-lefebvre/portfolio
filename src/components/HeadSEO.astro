@@ -20,7 +20,7 @@ export interface Props {
 }
 const { title, description, image, article, canonical } = Astro.props
 
-const { href } = Astro.url
+const { href, origin } = Astro.url
 const computedTitle = t('titleTemplate', {
     ns: 'common',
     title,
@@ -37,7 +37,7 @@ const canonicalUrl = canonical || href
         basic: {
             title,
             type: 'website',
-            image: image.url,
+            image: origin + image.url,
             url: canonicalUrl,
         },
         image: {
@@ -62,8 +62,8 @@ const canonicalUrl = canonical || href
         card: 'summary_large_image',
         creator: '@LfbvrFlo',
         title,
-        image: image.url,
+        image: origin + image.url,
         imageAlt: image.alt,
-        description
+        description,
     }}
 />
