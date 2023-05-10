@@ -30,5 +30,5 @@
 -   [x] remove robots.txt
 -   [x] improve seo (twitter)
 -   [x] check integrations marketplace for v5
--   [ ] update default github branch
--   [ ] share
+-   [x] update default github branch
+-   [x] share
