@@ -60,7 +60,6 @@
         "@types/react-lazy-load-image-component": "^1.5.2",
         "autoprefixer": "^10.4.13",
         "cssnano": "^5.1.14",
-        "netlify-plugin-checklinks": "^4.1.1",
         "prettier": "^2.8.0",
         "prettier-plugin-astro": "^0.7.0",
         "prettier-plugin-tailwindcss": "^0.2.0",

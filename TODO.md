@@ -21,9 +21,9 @@
 -   [x] seo tags per mdx file
 -   [x] translate content to fr
 -   [x] Images
--   [ ] Migrate back to vercel
--   [ ] Enable plausible (uncomment \_redirects)
--   [ ] Reroute v4 to v4.florian-lefebvre.dev + update all links
--   [ ] Update Vercel settings
+-   [x] Migrate back to vercel
+-   [x] Enable plausible (uncomment \_redirects)
+-   [x] Reroute v4 to v4.florian-lefebvre.dev + update all links
+-   [x] Update Vercel settings
 -   [ ] Add robots.txt to v4
 -   [ ] remove robots.txt
