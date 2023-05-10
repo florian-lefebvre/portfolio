@@ -25,9 +25,9 @@
 -   [x] Enable plausible (uncomment \_redirects)
 -   [x] Reroute v4 to v4.florian-lefebvre.dev + update all links
 -   [x] Update Vercel settings
--   [ ] Redeploy both sites
--   [ ] Add robots.txt to v4
--   [ ] remove robots.txt
+-   [x] Redeploy both sites
+-   [x] Add robots.txt to v4
+-   [x] remove robots.txt
 -   [ ] check integrations marketplace for v5
 -   [ ] update default github branch
 -   [ ] share
