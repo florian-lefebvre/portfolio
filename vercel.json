@@ -2,5 +2,8 @@
   "version": 2,
   "github": {
     "silent": true
-  }
+  },
+  "installCommand": "yarn install --frozen-lockfile",
+  "buildCommand": "yarn generate",
+  "outputDirectory": "dist",
 }
