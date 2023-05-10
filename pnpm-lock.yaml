@@ -44,8 +44,8 @@ dependencies:
     specifier: 1.0.0-beta.14
     version: 1.0.0-beta.14(astro@1.6.14)
   astro-seo:
-    specifier: ^0.6.0
-    version: 0.6.0
+    specifier: ^0.7.2
+    version: 0.7.2
   clsx:
     specifier: ^1.2.1
     version: 1.2.1
@@ -1228,8 +1228,8 @@ packages:
       - encoding
     dev: false
 
-  /astro-seo@0.6.0:
-    resolution: {integrity: sha512-nR+dJlAyQhX6s0oAmbBqPq3KCZax/zVAerFsclGiJQ2znOkS/7L+RGjziS4M9Q3OQxm3FMfqIKHp9Ns73Q81ww==}
+  /astro-seo@0.7.2:
+    resolution: {integrity: sha512-YnSqj4E6vbF7wRk3gcxOPHBjenhfgaINEJlTsnu4sovAyfyGEdQksbioYKoZ+vERRDaYvEricfSzC6fc9lieww==}
     dev: false
 
   /astro@1.6.14(@types/node@18.11.13):

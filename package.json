@@ -31,7 +31,7 @@
         "@swup/theme": "^1.0.7",
         "astro": "^1.6.13",
         "astro-i18next": "1.0.0-beta.14",
-        "astro-seo": "^0.6.0",
+        "astro-seo": "^0.7.2",
         "clsx": "^1.2.1",
         "cross-env": "^7.0.3",
         "framer-motion": "^8.0.2",

@@ -28,6 +28,7 @@
 -   [x] Redeploy both sites
 -   [x] Add robots.txt to v4
 -   [x] remove robots.txt
--   [ ] check integrations marketplace for v5
+-   [x] improve seo (twitter)
+-   [x] check integrations marketplace for v5
 -   [ ] update default github branch
 -   [ ] share
