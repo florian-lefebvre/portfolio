@@ -20,7 +20,7 @@
 -   [x] content (en)
 -   [x] seo tags per mdx file
 -   [x] translate content to fr
--   [ ] Images
+-   [x] Images
 -   [ ] Migrate back to vercel
 -   [ ] Enable plausible (uncomment \_redirects)
 -   [ ] Reroute v4 to v4.florian-lefebvre.dev + update all links

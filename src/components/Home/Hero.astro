@@ -7,7 +7,7 @@ import AnimateOnce from '~/components/AnimateOnce'
 ---
 
 <div
-    class="custom-container flex flex-col gap-16 py-24 px-4 text-center sm:text-left lg:flex-row"
+    class="custom-container flex flex-col gap-16 px-4 py-24 text-center sm:text-left lg:flex-row"
 >
     <div class="flex-1 flex-shrink-0 pb-12 sm:py-12">
         <AnimateOnce client:load>
@@ -100,11 +100,11 @@ import AnimateOnce from '~/components/AnimateOnce'
         >
             <Image
                 src={t('hero.image.url', { ns: 'pages.index' })}
-                class="h-full w-full object-cover"
+                class="h-full w-full object-cover grayscale hover:grayscale-0 transition-[filter]"
                 alt={t('hero.image.alt', { ns: 'pages.index' })}
                 loading="lazy"
                 height="740"
-                aspectRatio="16:9"
+                aspectRatio="1:1"
                 format="webp"
             />
         </AnimateOnce>

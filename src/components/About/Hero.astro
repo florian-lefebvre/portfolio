@@ -6,7 +6,7 @@ import Markdown from '../Markdown'
 ---
 
 <div
-    class="custom-container flex flex-col gap-16 py-24 px-4 text-center sm:text-left lg:flex-row"
+    class="custom-container flex flex-col gap-16 px-4 py-24 text-center sm:text-left lg:flex-row"
 >
     <div class="flex-1 flex-shrink-0 pb-12 sm:py-12">
         <AnimateOnce client:load>
@@ -34,7 +34,7 @@ import Markdown from '../Markdown'
         </div>
     </div>
     <div
-        class="relative mx-auto flex max-w-lg flex-col lg:max-w-none lg:flex-1"
+        class="relative mx-auto flex max-w-lg flex-col-reverse gap-8 lg:max-w-none lg:flex-1"
     >
         <AnimateOnce
             client:load
@@ -75,15 +75,11 @@ import Markdown from '../Markdown'
             client:load
             direction="left"
             delay={600}
-            className="relative top-6 right-0 h-[225px] w-full sm:absolute sm:w-[350px] lg:top-12 group"
+            className="top-6 right-0 h-[225px] w-full sm:absolute sm:w-[350px] lg:top-12"
         >
-            <div
-                class="absolute inset-0 bg-primary-8/25 transition-opacity duration-500 ease-in-out group-hover:opacity-0"
-            >
-            </div>
             <Image
                 src={t('hero.images.1.url', { ns: 'pages.about' })}
-                class="h-full w-full object-cover"
+                class="h-full w-full object-cover grayscale hover:grayscale-0 transition-[filter]"
                 alt={t('hero.images.1.alt', { ns: 'pages.about' })}
                 loading="lazy"
                 height="740"
@@ -95,19 +91,15 @@ import Markdown from '../Markdown'
             client:load
             direction="left"
             delay={200}
-            className="relative top-60 mx-auto h-72 w-5/6 sm:absolute sm:left-8 sm:w-72 group"
+            className="top-60 mx-auto h-72 w-5/6 sm:absolute sm:left-8 sm:w-72"
         >
-            <div
-                class="absolute inset-0 bg-primary-8/25 transition-opacity duration-500 ease-in-out group-hover:opacity-0"
-            >
-            </div>
             <Image
                 src={t('hero.images.0.url', { ns: 'pages.about' })}
-                class="h-full w-full object-cover"
+                class="h-full w-full object-cover grayscale hover:grayscale-0 transition-[filter]"
                 alt={t('hero.images.0.alt', { ns: 'pages.about' })}
                 loading="lazy"
                 height="740"
-                aspectRatio="16:9"
+                aspectRatio="1:1"
                 format="webp"
             />
         </AnimateOnce>
