@@ -1,17 +1,19 @@
 ---
 import HeadSEO from '~/components/HeadSEO.astro'
-import Layout from '~/components/Layout/Layout.astro'
+import Layout, {
+    type Props as LayoutProps,
+} from '~/components/Layout/Layout.astro'
 
-export type Props = {
+export interface Props extends LayoutProps {
     head: Parameters<typeof HeadSEO>[0]
 }
 
-//
+const { head, ...layoutProps } = Astro.props
 ---
 
-<Layout>
+<Layout {...layoutProps}>
     <Fragment slot="head">
-        <HeadSEO {...Astro.props.head} />
+        <HeadSEO {...head} />
     </Fragment>
     <slot />
 </Layout>

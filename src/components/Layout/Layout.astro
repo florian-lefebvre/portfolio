@@ -7,6 +7,12 @@ import Footer from '~/components/Layout/Footer/Footer.astro'
 import Header from '~/components/Layout/Header/Header.astro'
 import BackToTop from '~/components/Layout/BackToTop'
 import AnimateOnce from '~/components/AnimateOnce'
+
+export interface Props {
+    disableAnimations?: boolean
+}
+
+const { disableAnimations = false } = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -66,7 +72,12 @@ import AnimateOnce from '~/components/AnimateOnce'
 
             isDarkMode.addEventListener('change', () => updateTheme())
         </script>
-        <script>
+        <script data-disable-animations={JSON.stringify(disableAnimations)}>
+            const disableAnimations = JSON.parse(
+                document.currentScript?.getAttribute(
+                    'data-disable-animations'
+                ) || null
+            )
             const isBot =
                 /bot|googlebot|crawler|spider|robot|crawling|Chrome-Lighthouse/i.test(
                     navigator.userAgent
@@ -74,7 +85,8 @@ import AnimateOnce from '~/components/AnimateOnce'
             const isMotionReduced = window.matchMedia(
                 '(prefers-reduced-motion: reduce)'
             ).matches
-            const disableAnimation = isBot || isMotionReduced
+            const disableAnimation =
+                disableAnimations || isBot || isMotionReduced
             document.documentElement.setAttribute(
                 'data-animate',
                 JSON.stringify(!disableAnimation)

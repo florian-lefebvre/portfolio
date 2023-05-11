@@ -2,18 +2,20 @@
 import { t } from 'i18next'
 import HeadSEO from '~/components/HeadSEO.astro'
 import { HeadHrefLangs } from 'astro-i18next/components'
-import Layout from '~/components/Layout/Layout.astro'
+import Layout, {
+    type Props as LayoutProps,
+} from '~/components/Layout/Layout.astro'
 
-export interface Props {
+export interface Props extends LayoutProps {
     pageNamespace: string
     disableAlternate?: boolean
 }
 
-const { pageNamespace, disableAlternate = false } = Astro.props
+const { pageNamespace, disableAlternate = false, ...layoutProps } = Astro.props
 const pageT = (key: string) => t(key, { ns: pageNamespace })
 ---
 
-<Layout>
+<Layout {...layoutProps}>
     <Fragment slot="head">
         {!disableAlternate && <HeadHrefLangs />}
         <HeadSEO

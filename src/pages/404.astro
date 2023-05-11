@@ -8,7 +8,30 @@ import BaseLayout from '~/layouts/Base.astro'
 changeLanguage('en')
 ---
 
-<BaseLayout pageNamespace="pages.404" disableAlternate={true}>
+<BaseLayout
+    pageNamespace="pages.404"
+    disableAlternate={true}
+    disableAnimations={true}
+>
+    <script>
+        document.addEventListener(
+            'click',
+            (e) => {
+                // @ts-ignore
+                const link: HTMLAnchorElement = e.target.closest(
+                    window.swup.options.linkSelector
+                )
+                if (!link) {
+                    return
+                }
+                e.stopPropagation()
+                e.preventDefault()
+                console.log(link.href)
+                window.location.href = link.href
+            },
+            { capture: true }
+        )
+    </script>
     <div class="custom-container px-4 py-24 md:py-48">
         <div class="mx-auto max-w-max">
             <div class="text-center sm:flex sm:text-left">
