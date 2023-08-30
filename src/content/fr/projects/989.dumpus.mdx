@@ -1,0 +1,228 @@
+---
+title: 'Dumpus - Stats pour Discord'
+description:
+    Vous aimeriez avoir une version Discord de Spotify Wrapped ? Générez la
+    vôtre à à tout moment grâce à votre Discord Data Package !
+thumbnail:
+    url: /images/content/en/projects/dumpus-0.png
+    alt: "Capture d'écran de la page Stats"
+category: Développement multiplateforme
+tags:
+    [
+        Développement multiplateforme,
+        Next.js,
+        React,
+        Tailwind CSS,
+        Freelance,
+        Open Source,
+        React Query,
+        Capacitor,
+        Tauri,
+    ]
+---
+
+## Introduction
+
+Dumpus est une application multiplateforme qui permet aux utilisateurs de
+visualiser les statistiques collectées par Discord à l'aide de leur paquet de
+données Discord.
+
+Ce projet donne suite à [DDPE](https://ddpe.androz2091.fr) fait par
+[Androz2091](https://github.com/Androz2091). Il reprend ses idées et les
+approfondit.
+
+Mon rôle en tant que freelance frontend était de créer des maquettes complètes
+de l'application, les implémenter et m'assurer que l'application est adaptée à
+toutes les plateformes (web, mobile et desktop). Je devais interagir avec l'API
+Python créée par Androz2091 et garder toute la logique côté client pour des
+raisons de sécurité.
+
+![Capture d'écran du tableau Figma](/images/content/en/projects/dumpus-1.png)
+
+Pour atteindre cet objectif, j'ai utilisé les technologies suivantes :
+
+-   [Next.js](https://nextjs.org/)
+-   [React](https://react.dev/)
+-   [Tailwind CSS](https://tailwindcss.com)
+-   [TypeScript](https://www.typescriptlang.org/)
+-   [React Query](https://tanstack.com/query/v4)
+-   [SQL.js](https://github.com/sql-js/sql.js)
+-   [Capacitor](https://capacitorjs.com/)
+-   [Tauri](https://tauri.app/)
+
+Vous pouvez le consulter [ici](https://dumpus.app) ! Bonus : c'est
+[open-source](https://github.com/dumpus-app/dumpus-app).
+
+## Objectif
+
+Ce projet est réalisé pour mon ami et client Androz2091. Nous avons déjà
+travaillé ensemble par le passé, la collaboration est donc très facile.
+
+Ce projet a plusieurs objectifs :
+
+-   Faire une meilleure version que DDPE
+-   La rendre multiplateforme (bon défi !)
+-   Designer l'ensemble de l'application
+-   Garder l'application en open-source et la maintenir
+-   Garder la logique côté client
+-   Avoir un système de traduction pratique et fonctionnel
+
+Beaucoup de défis à relever, mais quelle expérience enrichissante !
+
+## Focus : multiplateforme
+
+Ce projet présente de nombreux aspects intéressants, mais concentrons-nous sur
+la mise en place d'une application multiplateforme.
+
+J'ai d'abord commencé à développer l'application sur le web en utilisant
+Next.js, en m'assurant qu'il s'agit bien d'une application côté client en
+utilisant les
+[exports statiques](https://nextjs.org/docs/app/building-your-application/deploying/static-exports).
+En effet, les applis mobiles et desktop ne supportent pas le SSR, il a donc
+fallu en tenir compte dès le début.
+
+### Exécuter l'application pour desktop
+
+Après avoir fait fonctionner un POC sur le web, le faire fonctionner sur le
+bureau a été... très facile. En fait, il suffit de suivre la documentation de
+Tauri et c'est à peu près tout !
+
+### Exécuter l'application sur mobile
+
+La mise en place de Capacitor a été une autre paire de manches. Nous avons
+d'abord dû trouver comment gérer le HMR en développement tout en gardant une
+configuration propre pour la production. Nous avons fini avec une configuration
+assez minimale :
+
+```ts
+// https://github.com/dumpus-app/dumpus-app/blob/main/capacitor.config.ts
+import { CapacitorConfig } from '@capacitor/cli'
+import os, { NetworkInterfaceInfo } from 'node:os'
+
+function localIpAddress() {
+    const interfaces = Object.values(os.networkInterfaces()).filter(
+        (iface) => iface !== undefined
+    ) as NetworkInterfaceInfo[][]
+    const aliases = interfaces
+        .filter((iface) =>
+            iface.some((alias) => alias.family === 'IPv4' && !alias.internal)
+        )
+        .map((iface) => {
+            iface = iface.filter(
+                (alias) => alias.family === 'IPv4' && !alias.internal
+            )
+            return iface
+        })
+        .flat()
+    const ipAddress = aliases.find(
+        (alias) => !alias.address.startsWith('172')
+    )?.address
+
+    if (!ipAddress) {
+        throw new Error('No suitable network interface found.')
+    }
+
+    return ipAddress
+}
+
+const isDev = process.env.NODE_ENV === 'development' || false
+if (isDev) {
+    console.log(localIpAddress())
+}
+
+export default {
+    appId: 'app.dumpus.app',
+    appName: 'Dumpus',
+    ...(isDev
+        ? {
+              server: {
+                  url: `http://${localIpAddress()}:3000`,
+                  cleartext: true,
+              },
+          }
+        : {
+              webDir: 'dist',
+          }),
+} satisfies CapacitorConfig
+```
+
+Cependant, une certaine complexité est déplacée vers notre `package.json` à
+cause des nombreux environnements. En voici un extrait :
+
+```json
+{
+    "scripts": {
+        "android:dev": "cross-env-shell NODE_ENV=development \"echo 'Run `pnpm dev:mobile` in parallel' && cap sync && cap run android\"",
+        "android:dev:static": "cross-env-shell NODE_ENV=production \"echo 'Run `pnpm build:mobile first` && cap sync && cap run android\"",
+        "build": "cross-env-shell NEXT_PUBLIC_DEPLOY_ENV=web \"pnpm build:shared\"",
+        "build:desktop": "cross-env-shell NEXT_PUBLIC_DEPLOY_ENV=desktop \"pnpm build:shared\"",
+        "build:mobile": "cross-env-shell NEXT_PUBLIC_DEPLOY_ENV=mobile \"pnpm build:shared\"",
+        "build:shared": "pnpm script:list-locales && next build",
+        "dev": "cross-env-shell NEXT_PUBLIC_DEPLOY_ENV=web \"pnpm dev:shared\"",
+        "dev:desktop": "cross-env-shell NEXT_PUBLIC_DEPLOY_ENV=desktop \"pnpm dev:shared\"",
+        "dev:mobile": "cross-env-shell NEXT_PUBLIC_DEPLOY_ENV=mobile \"pnpm dev:shared\"",
+        "dev:shared": "pnpm script:list-locales && next dev",
+        "dev:tauri": "tauri dev",
+        "ios:dev": "cross-env-shell NODE_ENV=development \"cap sync && cap run ios\"",
+        "ios:dev:static": "cross-env-shell NODE_ENV=production \"cap sync && cap run ios\"",
+        "prepare": "pnpm script:list-locales",
+        "script:list-locales": "node ./scripts/list-locales.cjs",
+        "start": "serve dist",
+        "tauri:icon": "tauri icon ./ios/App/App/Assets.xcassets/AppIcon.appiconset/AppIcon-60@3x~car.png",
+        "trapeze:run": "node ./trapeze.config.mjs"
+    }
+}
+```
+
+Comme vous pouvez le voir, c'est plutôt massif. Mais je m'éloigne du sujet,
+l'autre partie difficile était de faire fonctionner le serveur local une fois
+l'application construite. Et les problèmes que nous avons rencontrés étaient en
+fait causés par Next 13.
+
+Si vous ne connaissez pas Next 13, il introduit
+l'[App directory](https://nextjs.org/docs#app-router-vs-pages-router) qui
+utilise les
+[React Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components)
+(RSC). Il y a fondamentalement 2 façons de construire des applications Next et
+elles peuvent coexister (vous pouvez avoir à la fois les dossiers `app` et
+`pages`).
+
+Il s'avère que nous utilisions les deux pour des raisons obscures (à cause d'un
+problème de compréhension) et que Capacitor n'était pas en mesure de gérer cette
+situation. Tout basculer sur l'`app dir` a résolu tous les problèmes que j'ai
+eus pendant d'innombrables heures.
+
+> Si vous avez d'autres questions sur le fonctionnement de Capacitor et Next.js,
+> envoyez-moi un DM sur Twitter et je mettrai à jour cette partie !
+
+### Faire fonctionner iOS
+
+Je suis un utilisateur d'Android, mais lorsqu'il s'agit de développement
+multiplateforme, vous **devez** tester votre application sur des appareils réels
+pour vous assurer que tout fonctionne. C'est pourquoi j'ai donc investi dans un
+Mac Book Air et un iPhone SE pour être en mesure de déboguer et de résoudre les
+problèmes. Je n'aurais pas pu terminer le projet sans ces appareils.
+
+## Etat actuel
+
+Dumpus a été officiellement publié et rendu open-source en août ! Plusieurs
+personnes ont déjà contribué et il y a de plus en plus d'utilisateurs !
+
+Je maintiendrai le repo pour l'instant s'il y a des problèmes critiques, mais
+n'hésitez pas à contribuer et à nous aider !
+
+## Enseignements tirés
+
+Ce projet m'a permis d'apprendre plusieurs choses :
+
+-   **Multiplateforme**: c'est quelque chose que j'avais envie d'apprendre
+    depuis longtemps et c'était le moment idéal pour le faire
+-   **Gestion asynchrone de l'état**: J'ai beaucoup appris sur l'utilisation de
+    React Query
+-   **Surévaluer le temps nécessaire**: vous avez toujours besoin de plus de
+    temps que prévu. Il reste quelques bogues, vous attendez le travail d'autres
+    personnes... Jouez la carte de la sécurité !
+
+Cette application contient pas mal de logique et cela m'a amené à en apprendre
+plus sur le TDD et l'architecture propre. la _clean architecture_. J'ai hâte
+d'appliquer ces pratiques à de vrais projets !
