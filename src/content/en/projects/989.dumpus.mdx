@@ -1,0 +1,217 @@
+---
+title: 'Dumpus - Stats for Discord'
+description:
+    Wish you had a pretty Discord version of Spotify Wrapped? Generate yours at
+    any time thanks to your Discord Data Package!
+thumbnail:
+    url: /images/content/en/projects/dumpus-0.png
+    alt: 'Screenshot of the Stats page'
+category: Cross-platform development
+tags:
+    [
+        Cross-platform development,
+        Next.js,
+        React,
+        Tailwind CSS,
+        Freelance,
+        Open Source,
+        React Query,
+        Capacitor,
+        Tauri,
+    ]
+---
+
+## Introduction
+
+Dumpus is a cross-platform app that allows users to view statistics collected by
+Discord using their Discord Data Package.
+
+This project is the follow-up of [DDPE](https://ddpe.androz2091.fr) made by
+[Androz2091](https://github.com/Androz2091). It takes all its ideas and dives
+deeper.
+
+My role as a frontend freelancer was to create full mockups of the app,
+implement them and make sure the app is adapted to all platforms (web, mobile
+and desktop). I had to interact with the Python API made by Androz2091 and keep
+all logic client-side for security reasons.
+
+![Screenshot of the Figma board](/images/content/en/projects/dumpus-1.png)
+
+To achieve this goal I used the following technologies:
+
+-   [Next.js](https://nextjs.org/)
+-   [React](https://react.dev/)
+-   [Tailwind CSS](https://tailwindcss.com)
+-   [TypeScript](https://www.typescriptlang.org/)
+-   [React Query](https://tanstack.com/query/v4)
+-   [SQL.js](https://github.com/sql-js/sql.js)
+-   [Capacitor](https://capacitorjs.com/)
+-   [Tauri](https://tauri.app/)
+
+You can check it out [here](https://dumpus.app)! Bonus point: it's
+[open-source](https://github.com/dumpus-app/dumpus-app).
+
+## Purpose and Goal
+
+This project is done for my friend and client Androz2091. We have already worked
+together in the past so collaboration is really made easy.
+
+This project has several goals:
+
+-   Make a better version than DDPE
+-   Make it cross-platform (big challenge!)
+-   Design the whole app
+-   Keep it open-source and maitain it
+-   Keep everything client-side
+-   Working i18n
+
+A lot of challenges to overcome, but what an enriching experience!
+
+## Spotlight: cross-platform
+
+This project has so many interesting aspects but let's focus on getting the app
+cross-platform.
+
+I first started to develop the app on the web using Next.js, making sure it's
+client-side only by using
+[static exports](https://nextjs.org/docs/app/building-your-application/deploying/static-exports).
+Mobile and desktop indeed don't support SSR so this had to be taken into account
+from the beggining.
+
+### Running the app on desktop
+
+After getting a POC working on web, getting it running on desktop
+was...effortless. Really, it only required to follow the Tauri documentation and
+that's pretty much it!
+
+### Running the app on mobile
+
+Setting up Capacitor was a different kettle of fish. We first had to figure out
+how to handle HMR in development while keeping a clean config for production. We
+ended up with the fairly minimal one:
+
+```ts
+// https://github.com/dumpus-app/dumpus-app/blob/main/capacitor.config.ts
+import { CapacitorConfig } from '@capacitor/cli'
+import os, { NetworkInterfaceInfo } from 'node:os'
+
+function localIpAddress() {
+    const interfaces = Object.values(os.networkInterfaces()).filter(
+        (iface) => iface !== undefined
+    ) as NetworkInterfaceInfo[][]
+    const aliases = interfaces
+        .filter((iface) =>
+            iface.some((alias) => alias.family === 'IPv4' && !alias.internal)
+        )
+        .map((iface) => {
+            iface = iface.filter(
+                (alias) => alias.family === 'IPv4' && !alias.internal
+            )
+            return iface
+        })
+        .flat()
+    const ipAddress = aliases.find(
+        (alias) => !alias.address.startsWith('172')
+    )?.address
+
+    if (!ipAddress) {
+        throw new Error('No suitable network interface found.')
+    }
+
+    return ipAddress
+}
+
+const isDev = process.env.NODE_ENV === 'development' || false
+if (isDev) {
+    console.log(localIpAddress())
+}
+
+export default {
+    appId: 'app.dumpus.app',
+    appName: 'Dumpus',
+    ...(isDev
+        ? {
+              server: {
+                  url: `http://${localIpAddress()}:3000`,
+                  cleartext: true,
+              },
+          }
+        : {
+              webDir: 'dist',
+          }),
+} satisfies CapacitorConfig
+```
+
+However, some complexity is moved to our `package.json` because of the many
+environments. Here is an extract:
+
+```json
+{
+    "scripts": {
+        "android:dev": "cross-env-shell NODE_ENV=development \"echo 'Run `pnpm dev:mobile` in parallel' && cap sync && cap run android\"",
+        "android:dev:static": "cross-env-shell NODE_ENV=production \"echo 'Run `pnpm build:mobile first` && cap sync && cap run android\"",
+        "build": "cross-env-shell NEXT_PUBLIC_DEPLOY_ENV=web \"pnpm build:shared\"",
+        "build:desktop": "cross-env-shell NEXT_PUBLIC_DEPLOY_ENV=desktop \"pnpm build:shared\"",
+        "build:mobile": "cross-env-shell NEXT_PUBLIC_DEPLOY_ENV=mobile \"pnpm build:shared\"",
+        "build:shared": "pnpm script:list-locales && next build",
+        "dev": "cross-env-shell NEXT_PUBLIC_DEPLOY_ENV=web \"pnpm dev:shared\"",
+        "dev:desktop": "cross-env-shell NEXT_PUBLIC_DEPLOY_ENV=desktop \"pnpm dev:shared\"",
+        "dev:mobile": "cross-env-shell NEXT_PUBLIC_DEPLOY_ENV=mobile \"pnpm dev:shared\"",
+        "dev:shared": "pnpm script:list-locales && next dev",
+        "dev:tauri": "tauri dev",
+        "ios:dev": "cross-env-shell NODE_ENV=development \"cap sync && cap run ios\"",
+        "ios:dev:static": "cross-env-shell NODE_ENV=production \"cap sync && cap run ios\"",
+        "prepare": "pnpm script:list-locales",
+        "script:list-locales": "node ./scripts/list-locales.cjs",
+        "start": "serve dist",
+        "tauri:icon": "tauri icon ./ios/App/App/Assets.xcassets/AppIcon.appiconset/AppIcon-60@3x~car.png",
+        "trapeze:run": "node ./trapeze.config.mjs"
+    }
+}
+```
+
+Pretty massive as you can see. But I'm digress, the other hard part was getting
+the local server running once the app built. And the issues we faced were
+actually caused by Next 13.
+
+If you don't know about Next 13, it introduces (well React does but Next is the
+first-framework to actually implement it) the
+[App directory](https://nextjs.org/docs#app-router-vs-pages-router) which uses
+[React Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components)
+(RSC). There are basically 2 ways of building Next apps and they can coexist
+(you can have both `app` and `pages` folders).
+
+Well, it turns out we were using both for obscure reasons (because of some
+misunderstanding actually) and Capacitor was not able to handle it. Switching
+everything to the app dir solved all the issues I had for countless hours.
+
+> If you have other questions about getting Capacitor and Next.js running, DM me
+> on Twitter and I'll update this part!
+
+### Getting iOS to work
+
+I'm an Android user but when it comes to cross-platform development, you **have
+to** test your app on real devices to make sure everything works. Therefore, I
+invested in a Mac Book Air and an iPhone SE to be able to debug and troubleshoot
+any issues. I couldn't have completed the project without those.
+
+## Current status
+
+Dumpus has been officially released and made open-source in August! People have
+alredy contributed and it's now getting more and more users!
+
+I'll keep maintaining the repo for now if there are any critical issues, but
+feel free to contribute and help us!
+
+## Lessons Learned
+
+I learned a few things in this project:
+
+-   **Cross-platform**: this is something I had been eager to learn for a long
+    time and that was the perfect time for it
+-   **Async state management**: I've learned a lot about using React Query
+-   **Overestimate the time you need**: you always need more time than expected.
+    A few bugs remain, you're waiting for other people's work... Play it safe!
+
+This app contains quite some logic and this led me to learn more about TDD and
+clean architecture. I can't wait to apply those practises to real projects!
