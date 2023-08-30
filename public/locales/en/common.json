@@ -60,6 +60,11 @@
                 "href": "https://twitter.com/LfbvrFlo",
                 "name": "Twitter",
                 "icon": "simple-icons:twitter"
+            },
+            {
+                "href": "https://discord.com/users/371564915414007809",
+                "name": "Discord",
+                "icon": "simple-icons:discord"
             }
         ],
         "copyright": "&copy; {{date}} Florian Lefebvre. All rights reserved.",
