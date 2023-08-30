@@ -33,14 +33,12 @@ const { disableAnimations = false } = Astro.props
             console.log('Built with Astro and Tailwind CSS')
             console.log('--------')
         </script>
-        <script>
-            type Theme = 'light' | 'dark'
-
+        <script is:inline>
             let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
             const defaultTheme = isDarkMode.matches ? 'dark' : 'light'
 
-            function updateTheme(_theme?: Theme) {
-                const theme: Theme =
+            function updateTheme(_theme) {
+                const theme =
                     _theme ?? window.localStorage.theme ?? defaultTheme
 
                 if (theme === 'dark') {
@@ -55,10 +53,9 @@ const { disableAnimations = false } = Astro.props
             document.documentElement.setAttribute('data-theme', updateTheme())
 
             new MutationObserver(([{ oldValue }]) => {
-                let newValue: Theme =
-                    (document.documentElement.getAttribute(
-                        'data-theme'
-                    ) as any) || defaultTheme
+                let newValue =
+                    document.documentElement.getAttribute('data-theme') ||
+                    defaultTheme
                 if (newValue !== oldValue) {
                     try {
                         window.localStorage.setItem('theme', newValue)
@@ -72,7 +69,10 @@ const { disableAnimations = false } = Astro.props
 
             isDarkMode.addEventListener('change', () => updateTheme())
         </script>
-        <script data-disable-animations={JSON.stringify(disableAnimations)}>
+        <script
+            is:inline
+            data-disable-animations={JSON.stringify(disableAnimations)}
+        >
             const disableAnimations = JSON.parse(
                 document.currentScript?.getAttribute(
                     'data-disable-animations'
