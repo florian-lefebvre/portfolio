@@ -7,7 +7,7 @@ import AnimateOnce from '~/components/AnimateOnce'
 ---
 
 <div
-    class="custom-container mx-auto flex flex-col gap-16 py-24 px-4 md:flex-row md:items-center"
+    class="custom-container mx-auto flex flex-col gap-16 px-4 py-24 md:flex-row md:items-center"
 >
     <div class="flex-1">
         <AnimateOnce client:load direction="right">
@@ -50,9 +50,9 @@ import AnimateOnce from '~/components/AnimateOnce'
                                 client:load
                                 className={clsx(
                                     'h-6 w-6',
-                                    ['logos:html-5', 'logos:css-3'].includes(
-                                        icon
-                                    ) && 'dark:[&_path:nth-child(4)]:fill-white'
+
+                                    icon === 'simple-icons:directus' &&
+                                        'text-[#6644FF] dark:text-[#8866ff]'
                                 )}
                                 icon={icon}
                             />

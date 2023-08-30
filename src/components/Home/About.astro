@@ -9,7 +9,7 @@ import clsx from 'clsx'
 ---
 
 <div
-    class="custom-container mx-auto flex flex-col gap-16 py-24 px-4 md:flex-row md:items-center"
+    class="custom-container mx-auto flex flex-col gap-16 px-4 py-24 md:flex-row md:items-center"
 >
     <div class="flex-1">
         <AnimateOnce client:load direction="right">
@@ -37,11 +37,7 @@ import clsx from 'clsx'
                                 icon === 'logos:astro-icon' &&
                                     'dark:[&_path:nth-child(1)]:fill-white',
                                 icon === 'logos:nextjs-icon' &&
-                                    'dark:[&_defs_linearGradient:nth-child(1)_stop]:[stop-color:#000] dark:[&_defs_linearGradient:nth-child(2)_stop]:[stop-color:#000] dark:[&_g_circle]:fill-white',
-                                icon === 'logos:remix-icon' &&
-                                    'dark:[&_path:nth-child(1)]:fill-white',
-                                icon === 'simple-icons:directus' &&
-                                    'text-[#6644FF] dark:text-[#8866ff]'
+                                    'dark:[&_defs_linearGradient:nth-child(1)_stop]:[stop-color:#000] dark:[&_defs_linearGradient:nth-child(2)_stop]:[stop-color:#000] dark:[&_g_circle]:fill-white'
                             )}
                             icon={icon}
                         />

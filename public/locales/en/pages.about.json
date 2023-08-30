@@ -43,17 +43,27 @@
                 "name": "Next"
             },
             {
-                "icon": "logos:remix-icon",
-                "name": "Remix"
-            },
-            {
                 "icon": "logos:astro-icon",
                 "name": "Astro"
             },
             {
-                "icon": "logos:vue",
-                "name": "Vue 3"
+                "icon": "logos:figma",
+                "name": "Figma"
             },
+            {
+                "icon": "logos:nodejs-icon",
+                "name": "Node.js"
+            },
+            {
+                "icon": "logos:capacitorjs-icon",
+                "name": "Capacitor"
+            }
+        ]
+    },
+    "moreSkills": {
+        "title": "And much **more!**",
+        "description": "My tech stack relies on knowledge of certain programming languages, and I have also worked with other technologies that are worth mentioning.",
+        "techs": [
             {
                 "icon": "logos:nuxt-icon",
                 "name": "Nuxt 3"
@@ -63,58 +73,8 @@
                 "name": "Adonis"
             },
             {
-                "icon": "logos:rails",
-                "name": "Rails"
-            },
-            {
                 "icon": "simple-icons:directus",
                 "name": "Directus"
-            },
-            {
-                "icon": "logos:figma",
-                "name": "Figma"
-            }
-        ]
-    },
-    "moreSkills": {
-        "title": "And much **more!**",
-        "description": "My tech stack relies on knowledge of certain programming languages, and I have also worked with other technologies that are worth mentioning.",
-        "techs": [
-            {
-                "icon": "logos:html-5",
-                "name": "HTML"
-            },
-            {
-                "icon": "logos:css-3",
-                "name": "CSS"
-            },
-            {
-                "icon": "logos:javascript",
-                "name": "JavaScript"
-            },
-            {
-                "icon": "logos:dart",
-                "name": "Dart"
-            },
-            {
-                "icon": "logos:ruby",
-                "name": "Ruby"
-            },
-            {
-                "icon": "logos:nodejs-icon",
-                "name": "Node.js"
-            },
-            {
-                "icon": "logos:supabase-icon",
-                "name": "Supabase"
-            },
-            {
-                "icon": "logos:graphql",
-                "name": "GraphQL"
-            },
-            {
-                "icon": "logos:strapi-icon",
-                "name": "Strapi"
             },
             {
                 "icon": "logos:postgresql",
@@ -127,6 +87,10 @@
             {
                 "icon": "logos:flutter",
                 "name": "Flutter"
+            },
+            {
+                "icon": "logos:tauri",
+                "name": "Tauri"
             }
         ]
     },
