@@ -99,13 +99,6 @@
         "description": "Being self-taught didn't stop me from studying, see for yourself!",
         "elements": [
             {
-                "title": "High School Diploma",
-                "date": "2019-2022",
-                "location": "Le Ferradou",
-                "description": "Honourable mention. CS and Mathematics. European section (English)",
-                "soon": false
-            },
-            {
                 "title": "Bachelor's degree",
                 "date": "2023",
                 "location": "Le Wagon",
@@ -117,6 +110,13 @@
                 "date": "2022",
                 "location": "Le Ferradou",
                 "description": "Level C1",
+                "soon": false
+            },
+            {
+                "title": "High School Diploma",
+                "date": "2019-2022",
+                "location": "Le Ferradou",
+                "description": "Honourable mention. CS and Mathematics. European section (English)",
                 "soon": false
             },
             {
