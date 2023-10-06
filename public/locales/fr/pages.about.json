@@ -33,13 +33,6 @@
         "description": "Être autodidacte ne m'a pas empêché de faire des études, voyez par vous-même !",
         "elements": [
             {
-                "title": "Baccalauréat",
-                "date": "2019-2022",
-                "location": "Le Ferradou",
-                "description": "Mention très bien. NSI et Mathématiques. Section européenne (anglais)",
-                "soon": false
-            },
-            {
                 "title": "RNCP niveau 6",
                 "date": "2023",
                 "location": "Le Wagon",
@@ -47,11 +40,18 @@
                 "soon": false
             },
             {
-                "title": "Cambridge B2",
+                "title": "Cambridge English Certificate",
                 "date": "2022",
                 "location": "Le Ferradou",
-                "description": "En attente des résultats",
-                "soon": true
+                "description": "Niveau C1",
+                "soon": false
+            },
+            {
+                "title": "Baccalauréat",
+                "date": "2019-2022",
+                "location": "Le Ferradou",
+                "description": "Mention très bien. NSI et Mathématiques. Section européenne (anglais)",
+                "soon": false
             },
             {
                 "title": "Reply Code Challenge",
