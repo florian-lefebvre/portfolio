@@ -21,7 +21,6 @@ const config: AstroI18nextConfig = {
                 index: 'blog',
             },
             legal: {
-                test: 'a',
                 'legal-notices': 'mentions-legales',
                 'privacy-policy': 'politique-de-confidentialite',
             },
