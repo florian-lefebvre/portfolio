@@ -2,11 +2,13 @@
 import Button from "~/components/Button.astro";
 import Section from "~/components/Section.astro";
 import SectionTitle from "~/components/SectionTitle.astro";
+
+const id = "services"
 ---
 
-<Section>
+<Section {id}>
   <div class="flex justify-between items-center">
-    <SectionTitle>Services</SectionTitle>
+    <SectionTitle {id}>Services</SectionTitle>
     <p class="text-gray-50 font-semibold text-lg">
       {
         new Intl.NumberFormat("en-US", {
@@ -23,7 +25,13 @@ import SectionTitle from "~/components/SectionTitle.astro";
     sapiente.
   </p>
   <div class="mt-4 grid grid-cols-2 gap-4">
-    <div class="bg-bg-subtle border border-border h-48 col-span-2"></div>
+    <div class="bg-bg-subtle border border-border h-48 col-span-2 py-2 px-3">
+      <h3 class="text-lg font-semibold text-text">Frontend</h3>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad accusamus
+        velit, tempore deleniti quod perspiciatis!
+      </p>
+    </div>
     <div class="bg-bg-subtle border border-border h-48"></div>
     <div class="bg-bg-subtle border border-border h-48"></div>
     <div class="bg-bg-subtle border border-border h-48"></div>
@@ -33,5 +41,5 @@ import SectionTitle from "~/components/SectionTitle.astro";
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt a temporibus
     laboriosam quos eius molestiae!
   </p>
-  <Button href="#" class="mt-2">Contact</Button>
+  <Button href="/#contact" class="mt-2">Contact</Button>
 </Section>
