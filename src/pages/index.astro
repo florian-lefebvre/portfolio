@@ -7,6 +7,10 @@ import About from "./_components/About.astro";
 import Services from "./_components/Services.astro";
 import Header from "~/components/Header.astro";
 import Footer from "~/components/Footer.astro";
+import Experiences from "./_components/Experiences.astro";
+import MoreProjects from "./_components/MoreProjects.astro";
+import Testimonials from "./_components/Testimonials.astro";
+import LatestArticle from "./_components/LatestArticle.astro";
 ---
 
 <html lang="en" dir="ltr" class="h-full">
@@ -28,8 +32,12 @@ import Footer from "~/components/Footer.astro";
     <Header />
     <main>
       <Hero />
+      <LatestArticle />
       <About />
       <Services />
+      <Experiences />
+      <Testimonials />
+      <MoreProjects />
     </main>
     <Footer />
   </body>

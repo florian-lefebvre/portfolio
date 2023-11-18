@@ -1,0 +1,29 @@
+---
+import Button from "~/components/Button.astro";
+import Section from "~/components/Section.astro";
+import SectionTitle from "~/components/SectionTitle.astro";
+---
+
+<Section>
+  <div class="flex justify-between items-center">
+    <SectionTitle>Latest article</SectionTitle>
+    <Button href="#">View all</Button>
+  </div>
+  <div class="mt-4 aspect-video bg-bg-subtle border border-border relative">
+    <div
+      class="absolute top-0 bg-bg px-2 py-1 text-sm flex items-center justify-between"
+    >
+      <div>1 month ago</div>
+    </div>
+    <div class="absolute inset-0 top-auto bg-bg p-2">
+      <a href="#" class="text-text">
+        Hydration in Astro
+        <span class="inset-0 absolute"></span>
+      </a>
+      <div class="text-sm mt-1">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam rerum
+        incidunt fugit ad inventore illo perferendis assumenda.
+      </div>
+    </div>
+  </div>
+</Section>
