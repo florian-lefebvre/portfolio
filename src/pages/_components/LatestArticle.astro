@@ -2,11 +2,13 @@
 import Button from "~/components/Button.astro";
 import Section from "~/components/Section.astro";
 import SectionTitle from "~/components/SectionTitle.astro";
+
+const id = "latest-article"
 ---
 
-<Section>
+<Section {id}>
   <div class="flex justify-between items-center">
-    <SectionTitle>Latest article</SectionTitle>
+    <SectionTitle {id}>Latest article</SectionTitle>
     <Button href="#">View all</Button>
   </div>
   <div class="mt-4 aspect-video bg-bg-subtle border border-border relative">

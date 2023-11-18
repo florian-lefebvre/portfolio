@@ -1,0 +1,23 @@
+---
+interface Props {
+  href: string;
+  label: string;
+}
+
+const { href, label } = Astro.props;
+---
+
+<a
+  {href}
+  target="_blank"
+  class="p-2.5 rounded-full bg-bg-subtle border border-border social-link transition-colors hover:bg-border"
+>
+  <span class="sr-only">{label}</span>
+  <slot />
+</a>
+
+<style is:global>
+  .social-link svg {
+    @apply w-6 h-6;
+  }
+</style>

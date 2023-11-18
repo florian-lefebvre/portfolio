@@ -22,6 +22,7 @@
 
 html {
   @apply selection:bg-bg-subtle selection:text-text;
+  @apply motion-safe:scroll-smooth;
 }
 
 /* Focusable elements */
