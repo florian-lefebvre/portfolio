@@ -1,10 +1,10 @@
 {
     "titleTemplate": "{{title}} | Florian Lefebvre's Portfolio",
     "banner": {
-        "enabled": true,
-        "title": "Miss the previous version?",
-        "cta": "Check it out",
-        "url": "https://v4.florian-lefebvre.dev"
+        "enabled": false,
+        "title": "",
+        "cta": "",
+        "url": ""
     },
     "header": {
         "logoAlt": "Logo representing initials of Florian Lefebvre",
