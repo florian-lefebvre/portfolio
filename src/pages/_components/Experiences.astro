@@ -1,15 +1,10 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import Section from "~/components/Section.astro";
 import SectionTitle from "~/components/SectionTitle.astro";
+import ProjectCard from "~/pages/_components/partials/ProjectCard.astro";
 
-const experiences = await Promise.all(
-  (await getCollection("experiences")).map(async (e) => ({
-    ...e,
-    ...(await e.render()),
-  }))
-);
+const experiences = await getCollection("experiences");
 
 const id = "experiences";
 ---
@@ -17,40 +12,6 @@ const id = "experiences";
 <Section {id}>
   <SectionTitle {id}>Experiences</SectionTitle>
   <div class="grid grid-cols-1 mt-4 gap-8">
-    {
-      experiences.map(({ data, Content }) => (
-        <div class="">
-          <div class="relative bg-bg border border-border aspect-video">
-            <Image
-              {...data.image}
-              class="object-cover object-center"
-              width={576}
-            />
-            <div class="absolute top-0 bg-bg-subtle px-2 py-1 text-sm flex items-center justify-between border-r border-b border-border">
-              <div>{data.date}</div>
-            </div>
-            <div class="bg-bg-subtle p-2 border-t border-border">
-              <div class="flex items-center justify-between">
-                <div class="text-text">{data.title}</div>
-                <div class="flex items-center justify-center space-x-2 text-sm">
-                  {data.links.map(({ href, text }) => (
-                    <a
-                      {href}
-                      target="_blank"
-                      class="underline hover:text-text transition-colors"
-                    >
-                      {text}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="text-sm mt-1">
-            <Content />
-          </div>
-        </div>
-      ))
-    }
+    {experiences.map((project) => <ProjectCard {project} />)}
   </div>
 </Section>
