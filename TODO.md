@@ -1,0 +1,19 @@
+- [x] update availability indicator
+- [ ] missing pages
+  - [ ] blog
+  - [ ] blog/[slug]
+  - [ ] 404
+  - [ ] legal (+ footer links)
+- [ ] migrate content
+  - [ ] experiences
+  - [ ] more projects
+  - [ ] blog
+- [ ] remove primary color
+- [ ] services section
+- [ ] work copy
+- [ ] get testimonials
+- [ ] plausible
+- [ ] responsive
+- [ ] lighthouse audit
+- [ ] check all links
+- [ ] deploy

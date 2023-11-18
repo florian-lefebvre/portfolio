@@ -1,14 +1,40 @@
 ---
 import Button from "~/components/Button.astro";
+import { availability } from "~/data/availablity";
+
+const class0 = {
+  available: "bg-green-400",
+  busy: "bg-amber-400",
+  full: "bg-red-400",
+}[availability];
+
+const class1 = {
+  available: "bg-green-500",
+  busy: "bg-amber-500",
+  full: "bg-red-500",
+}[availability];
+
+const text = {
+  available: "Available",
+  busy: "Busy",
+  full: "Full",
+}[availability];
 ---
 
 <Button href="/#services">
   <span class="relative flex h-3 w-3 mr-2">
-    <span
-      class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"
-    ></span>
-    <span class="relative inline-flex rounded-full h-3 w-3 bg-primary-500"
+    {
+      availability !== "full" && (
+        <span
+          class:list={[
+            "animate-ping absolute inline-flex h-full w-full rounded-full opacity-75",
+            class0,
+          ]}
+        />
+      )
+    }
+    <span class:list={["relative inline-flex rounded-full h-3 w-3", class1]}
     ></span>
   </span>
-  <span>Available</span>
+  <span>{text}</span>
 </Button>
