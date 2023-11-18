@@ -1,0 +1,37 @@
+---
+import Button from "~/components/Button.astro";
+import Section from "~/components/Section.astro";
+import SectionTitle from "~/components/SectionTitle.astro";
+---
+
+<Section>
+  <div class="flex justify-between items-center">
+    <SectionTitle>Services</SectionTitle>
+    <p class="text-gray-50 font-semibold text-lg">
+      {
+        new Intl.NumberFormat("en-US", {
+          style: "currency",
+          currency: "EUR",
+          maximumSignificantDigits: 2,
+        }).format(50)
+      }/hour
+    </p>
+  </div>
+  <p class="mt-4">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi voluptates
+    perferendis soluta, nisi facilis minima eveniet in possimus aliquid
+    sapiente.
+  </p>
+  <div class="mt-4 grid grid-cols-2 gap-4">
+    <div class="bg-bg-subtle border border-border h-48 col-span-2"></div>
+    <div class="bg-bg-subtle border border-border h-48"></div>
+    <div class="bg-bg-subtle border border-border h-48"></div>
+    <div class="bg-bg-subtle border border-border h-48"></div>
+    <div class="bg-bg-subtle border border-border h-48"></div>
+  </div>
+  <p class="mt-10">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt a temporibus
+    laboriosam quos eius molestiae!
+  </p>
+  <Button href="#" class="mt-2">Contact</Button>
+</Section>

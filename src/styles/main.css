@@ -1,0 +1,36 @@
+:root {
+  --color-bg: theme(colors.gray.50);
+  --color-bg-subtle: theme(colors.gray.100);
+  --color-border: theme(colors.gray.200);
+  --color-text: theme(colors.gray.950);
+  --color-text-subtle: theme(colors.gray.600);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: theme(colors.gray.900);
+    --color-bg-subtle: theme(colors.gray.800);
+    --color-border: theme(colors.gray.700);
+    --color-text: theme(colors.gray.50);
+    --color-text-subtle: theme(colors.gray.300);
+  }
+
+  html {
+    color-scheme: dark;
+  }
+}
+
+html {
+  @apply selection:bg-bg-subtle selection:text-text;
+}
+
+/* Focusable elements */
+a[href],
+button,
+input,
+textarea,
+select,
+details,
+[tabindex]:not([tabindex='-1']) {
+  @apply focus-visible:!outline-4 focus-visible:!outline-blue-300 focus-visible:![outline-style:solid] dark:focus-visible:!outline-blue-600;
+}

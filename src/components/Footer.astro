@@ -1,0 +1,13 @@
+<footer
+  class="mt-auto mx-auto px-4 max-w-xl py-4 w-full border-t border-border flex items-center justify-between text-sm"
+>
+  <span>&copy; <span id="footer-year"></span> - Florian Lefebvre</span>
+  <div class="">
+    <span>Privacy policy</span>
+    <span>Legal notices</span>
+  </div>
+
+  <script is:inline>
+    document.getElementById("footer-year").innerText = new Date().getFullYear();
+  </script>
+</footer>

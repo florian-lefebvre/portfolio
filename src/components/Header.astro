@@ -1,0 +1,24 @@
+---
+import Button from "./Button.astro";
+---
+
+<header
+  class="px-4 mx-auto max-w-xl flex items-center justify-between py-2 w-full"
+>
+  <a href="/" class="rounded-full">
+    <div class="h-10 w-10 rounded-full bg-bg-subtle border border-border"></div>
+  </a>
+  <div class="items-center flex space-x-2">
+    <Button href="#">Contact</Button>
+    <Button href="#">
+      <span class="relative flex h-3 w-3 mr-2">
+        <span
+          class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"
+        ></span>
+        <span class="relative inline-flex rounded-full h-3 w-3 bg-primary-500"
+        ></span>
+      </span>
+      <span>Available</span>
+    </Button>
+  </div>
+</header>
