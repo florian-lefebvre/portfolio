@@ -1,10 +1,15 @@
 ---
 import Section from "~/components/Section.astro";
 import SectionTitle from "~/components/SectionTitle.astro";
+import about from "~/assets/about.webp";
+import { Image } from "astro:assets";
+
+const id = "about";
+const caption = "Me in a concert, playing percussions, 2019"
 ---
 
-<Section>
-  <SectionTitle>About</SectionTitle>
+<Section {id}>
+  <SectionTitle {id}>About</SectionTitle>
   <p class="mt-4">
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, modi. Quis,
     velit voluptatibus? Itaque voluptas expedita aperiam sunt atque corporis.
@@ -19,8 +24,15 @@ import SectionTitle from "~/components/SectionTitle.astro";
     perferendis soluta, nisi facilis minima eveniet in possimus aliquid
     sapiente.
   </p>
-  <div class="bg-bg-subtle border border-border aspect-video mt-10"></div>
-  <div class="mt-2 text-sm">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-  </div>
+  <figure>
+    <Image
+      src={about}
+      alt={caption}
+      class="bg-bg-subtle border border-border aspect-video mt-10"
+      width={576}
+    />
+    <figcaption class="mt-2 text-sm">
+      {caption}
+    </figcaption>
+  </figure>
 </Section>
