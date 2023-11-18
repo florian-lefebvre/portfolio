@@ -1,68 +1,40 @@
 ---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 import Section from "~/components/Section.astro";
 import SectionTitle from "~/components/SectionTitle.astro";
+
+const testimonials = await Promise.all(
+  (await getCollection("testimonials")).map(async (e) => ({
+    ...e,
+    ...(await e.render()),
+  }))
+);
+
+const id = "testimonials";
 ---
 
-<Section>
-  <SectionTitle>Testimonials</SectionTitle>
-  <div class="flex space-x-4 mt-8">
-    <div
-      class="h-20 w-20 rounded-full bg-bg-subtle border border-border shrink-0"
-    >
-    </div>
-    <div>
-      <h1 class="mb-1 font-semibold text-text">Lorem, ipsum.</h1>
-      <p class="text-sm">Lorem ipsum dolor sit amet consectetur.</p>
-      <p class="mt-3">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-        perspiciatis repellat architecto! Expedita numquam atque fugit inventore
-        dolore quidem, temporibus qui, commodi ipsum molestias maxime.
-      </p>
-    </div>
-  </div>
-  <div class="flex space-x-4 mt-8">
-    <div
-      class="h-20 w-20 rounded-full bg-bg-subtle border border-border shrink-0"
-    >
-    </div>
-    <div>
-      <h1 class="mb-1 font-semibold text-text">Lorem, ipsum.</h1>
-      <p class="text-sm">Lorem ipsum dolor sit amet consectetur.</p>
-      <p class="mt-3">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-        perspiciatis repellat architecto! Expedita numquam atque fugit inventore
-        dolore quidem, temporibus qui, commodi ipsum molestias maxime.
-      </p>
-    </div>
-  </div>
-  <div class="flex space-x-4 mt-8">
-    <div
-      class="h-20 w-20 rounded-full bg-bg-subtle border border-border shrink-0"
-    >
-    </div>
-    <div>
-      <h1 class="mb-1 font-semibold text-text">Lorem, ipsum.</h1>
-      <p class="text-sm">Lorem ipsum dolor sit amet consectetur.</p>
-      <p class="mt-3">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-        perspiciatis repellat architecto! Expedita numquam atque fugit inventore
-        dolore quidem, temporibus qui, commodi ipsum molestias maxime.
-      </p>
-    </div>
-  </div>
-  <div class="flex space-x-4 mt-8">
-    <div
-      class="h-20 w-20 rounded-full bg-bg-subtle border border-border shrink-0"
-    >
-    </div>
-    <div>
-      <h1 class="mb-1 font-semibold text-text">Lorem, ipsum.</h1>
-      <p class="text-sm">Lorem ipsum dolor sit amet consectetur.</p>
-      <p class="mt-3">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-        perspiciatis repellat architecto! Expedita numquam atque fugit inventore
-        dolore quidem, temporibus qui, commodi ipsum molestias maxime.
-      </p>
-    </div>
+<Section {id}>
+  <SectionTitle {id}>Testimonials</SectionTitle>
+  <div class="grid grid-cols-1 mt-4 gap-8">
+    {
+      testimonials.map(({ data, Content }) => (
+        <div class="flex space-x-4">
+          <Image
+            src={data.image}
+            alt=""
+            class="h-20 w-20 rounded-full bg-bg-subtle border border-border shrink-0"
+            width={80}
+          />
+          <div>
+            <h3 class="mb-1 font-semibold text-text">{data.title}</h3>
+            <p class="text-sm">{data.subtitle}</p>
+            <p class="mt-3">
+              <Content />
+            </p>
+          </div>
+        </div>
+      ))
+    }
   </div>
 </Section>

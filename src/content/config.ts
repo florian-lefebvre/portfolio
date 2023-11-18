@@ -24,7 +24,18 @@ const posts = defineCollection({
     }),
 });
 
+const testimonials = defineCollection({
+  type: "content",
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      subtitle: z.string(),
+      image: image(),
+    }),
+});
+
 export const collections = {
   experiences,
   posts,
+  testimonials,
 };
