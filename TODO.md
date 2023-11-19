@@ -1,6 +1,6 @@
 - [x] update availability indicator
 - [ ] missing pages
-  - [ ] blog
+  - [x] blog
   - [ ] blog/[slug]
   - [ ] 404
   - [ ] legal (+ footer links)
@@ -10,10 +10,12 @@
   - [ ] blog
 - [ ] remove primary color
 - [ ] services section
+- [ ] og / seo
 - [ ] work copy
 - [ ] get testimonials
 - [ ] plausible
 - [ ] responsive
 - [ ] lighthouse audit
 - [ ] check all links
+- [ ] add license
 - [ ] deploy

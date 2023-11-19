@@ -3,8 +3,7 @@ import { getCollection } from "astro:content";
 import Button from "~/components/Button.astro";
 import Section from "~/components/Section.astro";
 import SectionTitle from "~/components/SectionTitle.astro";
-import { format } from "timeago.js";
-import { Image } from "astro:assets";
+import ArticleCard from "~/components/ArticleCard.astro";
 
 const article = (await getCollection("posts")).sort((a, b) =>
   +a.data.date < +b.data.date ? 1 : 0
@@ -14,35 +13,9 @@ const id = "latest-article";
 ---
 
 <Section {id}>
-  <div class="flex justify-between items-center">
+  <div class="flex justify-between items-center mb-4">
     <SectionTitle {id}>Latest article</SectionTitle>
     <Button href="/blog">View all</Button>
   </div>
-  <div class="mt-4 relative bg-bg border border-border aspect-video hover:opacity-80 transition-opacity">
-    <Image
-      {...article.data.cover}
-      class="object-cover object-center"
-      width={576}
-    />
-    <div
-      class="absolute top-0 bg-bg-subtle px-2 py-1 text-sm flex items-center justify-between border-r border-b border-border"
-    >
-      <div>{format(article.data.date, "en-US")}</div>
-    </div>
-    <div class="bg-bg-subtle p-2 border-t border-border">
-      <a href={`/blog/${article.slug}`} class="text-text">
-        {article.data.title}
-        <span class="inset-0 absolute"></span>
-      </a>
-      <div class="text-sm mt-1">
-        {article.data.description}
-      </div>
-    </div>
-  </div>
+  <ArticleCard {article} />
 </Section>
-
-<div id="a" style="position:relative">
-  <div id="b" style="position:absolute">
-    <div id="c" style="position:absolute; inset:0px"></div>
-  </div>
-</div>

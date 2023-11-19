@@ -1,0 +1,41 @@
+---
+import "@fontsource-variable/inter";
+import interFile from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
+import "~/styles/main.css";
+import Header from "~/components/Header.astro"
+import Footer from "~/components/Footer.astro"
+
+interface Props {
+    title: string;
+    description: string;
+    image?: string;
+}
+
+const { title: _title, description, image } = Astro.props
+
+const title = `${_title} | Florian Lefebvre`
+---
+
+<html lang="en" dir="ltr" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link
+      rel="preload"
+      as="font"
+      crossorigin="anonymous"
+      href={interFile}
+      type="font/woff2"
+    />
+  </head>
+  <body class="flex min-h-full flex-col bg-bg text-text-subtle">
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

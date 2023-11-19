@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import ArticleCard from "~/components/ArticleCard.astro";
+import Section from "~/components/Section.astro";
+import SectionTitle from "~/components/SectionTitle.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+
+const articles = (await getCollection("posts")).sort((a, b) =>
+  +a.data.date < +b.data.date ? 1 : 0
+);
+
+// TODO: description
+---
+
+<BaseLayout title="Blog" description="">
+  <Section class="pt-8">
+    <SectionTitle>Blog</SectionTitle>
+    <p class="mt-4">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, cum
+      architecto repellat vel non perspiciatis.
+    </p>
+    <div class="grid grid-cols-1 mt-4 gap-8">
+      {articles.map((article) => <ArticleCard {article} />)}
+    </div>
+  </Section>
+</BaseLayout>

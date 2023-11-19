@@ -1,0 +1,35 @@
+---
+import { type CollectionEntry } from "astro:content";
+import { format } from "timeago.js";
+import { Image } from "astro:assets";
+
+interface Props {
+  article: CollectionEntry<"posts">;
+}
+
+const { article } = Astro.props;
+---
+
+<div
+  class="relative bg-bg border border-border aspect-video hover:opacity-80 transition-opacity"
+>
+  <Image
+    {...article.data.cover}
+    class="object-cover object-center"
+    width={576}
+  />
+  <div
+    class="absolute top-0 bg-bg-subtle px-2 py-1 text-sm flex items-center justify-between border-r border-b border-border"
+  >
+    <div>{format(article.data.date, "en-US")}</div>
+  </div>
+  <div class="bg-bg-subtle p-2 border-t border-border">
+    <a href={`/blog/${article.slug}`} class="text-text">
+      {article.data.title}
+      <span class="inset-0 absolute"></span>
+    </a>
+    <div class="text-sm mt-1">
+      {article.data.description}
+    </div>
+  </div>
+</div>

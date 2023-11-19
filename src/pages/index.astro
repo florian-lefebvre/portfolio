@@ -1,46 +1,25 @@
 ---
-import "@fontsource-variable/inter";
-import interFile from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
 import "~/styles/main.css";
 import Hero from "./_components/Hero.astro";
 import About from "./_components/About.astro";
 import Services from "./_components/Services.astro";
-import Header from "~/components/Header.astro";
-import Footer from "~/components/Footer.astro";
 import Experiences from "./_components/Experiences.astro";
 import MoreProjects from "./_components/MoreProjects.astro";
 import Testimonials from "./_components/Testimonials.astro";
 import LatestArticle from "./_components/LatestArticle.astro";
 import Contact from "./_components/Contact.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+
+// TODO: description
 ---
 
-<html lang="en" dir="ltr" class="h-full">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-    <link
-      rel="preload"
-      as="font"
-      crossorigin="anonymous"
-      href={interFile}
-      type="font/woff2"
-    />
-  </head>
-  <body class="flex min-h-full flex-col bg-bg text-text-subtle">
-    <Header />
-    <main>
-      <Hero />
-      <LatestArticle />
-      <About />
-      <Services />
-      <Experiences />
-      <Testimonials />
-      <MoreProjects />
-      <Contact />
-    </main>
-    <Footer />
-  </body>
-</html>
+<BaseLayout title="Home" description="">
+  <Hero />
+  <LatestArticle />
+  <About />
+  <Services />
+  <Experiences />
+  <Testimonials />
+  <MoreProjects />
+  <Contact />
+</BaseLayout>
