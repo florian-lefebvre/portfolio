@@ -1,0 +1,22 @@
+---
+interface Props {
+  label: string;
+}
+
+const { label } = Astro.props;
+---
+
+<span
+  class="bg-bg-subtle border border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill"
+>
+  <span class="mr-1">
+    <slot />
+  </span>
+  <span>{label}</span>
+</span>
+
+<style is:global>
+  .tech-pill svg {
+    @apply h-4 w-auto;
+  }
+</style>

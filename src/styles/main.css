@@ -21,8 +21,12 @@
 }
 
 html {
-  @apply selection:bg-bg-subtle selection:text-text;
+  @apply selection:bg-blue-400/50 selection:dark:bg-blue-800/50 selection:text-text;
   @apply motion-safe:scroll-smooth;
+}
+
+img {
+  @apply select-none;
 }
 
 /* Focusable elements */
