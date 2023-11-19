@@ -3,6 +3,7 @@ import type { GetStaticPaths } from "astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import Button from "~/components/Button.astro";
+import Prose from "~/components/Prose.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 
 export const getStaticPaths = (async () => {
@@ -43,12 +44,12 @@ const { Content } = await article.render();
         }</time
       >
     </div>
-    <div class="prose max-w-none dark:prose-invert prose-zinc my-8 prose-sm sm:prose-base">
+    <Prose class="my-8">
       <Image {...data.cover} width={576} />
       <h1>{data.title}</h1>
       <p class="lead">{data.description}</p>
       <Content />
-    </div>
+    </Prose>
     <Button href="/blog">
       <svg
         xmlns="http://www.w3.org/2000/svg"

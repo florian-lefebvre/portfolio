@@ -13,6 +13,11 @@ const experiences = defineCollection({
   schema: ({ image }) => projectSchema(image),
 });
 
+const legal = defineCollection({
+  type: "content",
+  schema: z.object({ title: z.string(), description: z.string() }),
+});
+
 const posts = defineCollection({
   type: "content",
   schema: ({ image }) =>
@@ -43,6 +48,7 @@ const testimonials = defineCollection({
 
 export const collections = {
   experiences,
+  legal,
   posts,
   projects,
   testimonials,

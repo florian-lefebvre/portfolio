@@ -1,9 +1,9 @@
 - [x] update availability indicator
-- [ ] missing pages
+- [x] missing pages
   - [x] blog
   - [x] blog/[slug]
   - [x] 404
-  - [ ] legal (+ footer links)
+  - [x] legal (+ footer links)
 - [ ] migrate content
   - [ ] experiences
   - [ ] more projects

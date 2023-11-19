@@ -1,0 +1,27 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import Prose from "~/components/Prose.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+
+export const getStaticPaths = (async () => {
+  return (await getCollection("legal")).map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}) satisfies GetStaticPaths;
+
+const { article } = Astro.props;
+const { data } = article;
+const { Content } = await article.render();
+---
+
+<BaseLayout title={data.title} description={data.description}>
+  <div class="max-w-xl mx-auto px-4">
+    <Prose>
+      <h1>{data.title}</h1>
+      <p class="lead">{data.description}</p>
+      <Content />
+    </Prose>
+  </div>
+</BaseLayout>
