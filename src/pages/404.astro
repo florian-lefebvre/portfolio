@@ -1,0 +1,20 @@
+---
+import Button from "~/components/Button.astro";
+import Section from "~/components/Section.astro";
+import SectionTitle from "~/components/SectionTitle.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+
+// TODO: description
+---
+
+<BaseLayout title="Page not found" description="">
+  <Section>
+    <p class="text-text text-6xl font-bold mb-4">404</p>
+    <SectionTitle as="h1">Page not found</SectionTitle>
+    <p class="mt-4">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+      repellendus quas sapiente cum dolores itaque.
+    </p>
+    <Button href="/" class="mt-12">Home</Button>
+  </Section>
+</BaseLayout>

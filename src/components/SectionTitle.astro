@@ -1,15 +1,16 @@
 ---
 interface Props {
   id?: string;
+  as?: string;
 }
 
-const { id } = Astro.props;
+const { id, as: As = "h2" } = Astro.props;
 
 const C = id ? "a" : "div";
 const href = id ? `/#${id}` : undefined;
 ---
 
-<h2 class="text-text font-semibold text-lg">
+<As class="text-text font-semibold text-lg">
   <C {href} class="group flex items-center space-x-2">
     <span>
       <slot />
@@ -35,4 +36,4 @@ const href = id ? `/#${id}` : undefined;
       )
     }
   </C>
-</h2>
+</As>

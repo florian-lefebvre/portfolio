@@ -2,7 +2,7 @@
 - [ ] missing pages
   - [x] blog
   - [x] blog/[slug]
-  - [ ] 404
+  - [x] 404
   - [ ] legal (+ footer links)
 - [ ] migrate content
   - [ ] experiences
@@ -20,4 +20,8 @@
 - [ ] lighthouse audit
 - [ ] check all links
 - [ ] add license
+- [ ] readme
+- [ ] vercel adapter
+- [ ] redirects
+- [ ] check todos
 - [ ] deploy
