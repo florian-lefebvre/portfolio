@@ -4,15 +4,15 @@
   - [x] blog/[slug]
   - [x] 404
   - [x] legal (+ footer links)
+- [x] remove primary color
+- [x] mdx components
+- [ ] services section
+- [ ] og / seo
+- [ ] work copy
 - [ ] migrate content
   - [ ] experiences
   - [ ] more projects
   - [ ] blog
-- [ ] remove primary color
-- [ ] mdx components
-- [ ] services section
-- [ ] og / seo
-- [ ] work copy
 - [ ] get testimonials
 - [ ] plausible
 - [ ] plausible outbound clicks
@@ -25,3 +25,4 @@
 - [ ] redirects
 - [ ] check todos
 - [ ] deploy
+- [ ] remove this file

@@ -1,0 +1,16 @@
+---
+export type Props = {
+  href: string;
+};
+
+const { href } = Astro.props;
+
+const isInternalLink = href && (href.startsWith("/") || href.startsWith("#"));
+---
+
+<a
+  href={href}
+  {...isInternalLink ? {} : { target: "_blank", rel: "noopener noreferrer" }}
+>
+  <slot />
+</a>
