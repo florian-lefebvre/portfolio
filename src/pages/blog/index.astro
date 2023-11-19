@@ -1,8 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import ArticleCard from "~/components/ArticleCard.astro";
-import Section from "~/components/Section.astro";
-import SectionTitle from "~/components/SectionTitle.astro";
+import Section from "~/components/Section";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 
 const articles = (await getCollection("posts")).sort((a, b) =>
@@ -14,7 +13,7 @@ const articles = (await getCollection("posts")).sort((a, b) =>
 
 <BaseLayout title="Blog" description="">
   <Section class="pt-8">
-    <SectionTitle as="h1">Blog</SectionTitle>
+    <Section.Title as="h1">Blog</Section.Title>
     <p class="mt-4">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, cum
       architecto repellat vel non perspiciatis.

@@ -1,6 +1,5 @@
 ---
-import Section from "~/components/Section.astro";
-import SectionTitle from "~/components/SectionTitle.astro";
+import Section from "~/components/Section";
 import AvailabilityIndicator from "~/pages/_components/partials/AvailabilityIndicator.astro";
 import SocialLinks from "~/pages/_components/partials/SocialLinks.astro";
 
@@ -9,7 +8,7 @@ const id = "contact";
 
 <Section {id} class="pb-0">
   <div class="flex items-center justify-between">
-    <SectionTitle {id}>Contact</SectionTitle>
+    <Section.Title {id}>Contact</Section.Title>
     <AvailabilityIndicator />
   </div>
   <p class="mt-4">

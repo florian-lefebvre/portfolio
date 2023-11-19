@@ -1,8 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Button from "~/components/Button.astro";
-import Section from "~/components/Section.astro";
-import SectionTitle from "~/components/SectionTitle.astro";
+import Section from "~/components/Section";
 import ArticleCard from "~/components/ArticleCard.astro";
 
 const article = (await getCollection("posts")).sort((a, b) =>
@@ -14,7 +13,7 @@ const id = "latest-article";
 
 <Section {id}>
   <div class="flex justify-between items-center mb-4">
-    <SectionTitle {id}>Latest article</SectionTitle>
+    <Section.Title {id}>Latest article</Section.Title>
     <Button href="/blog">View all</Button>
   </div>
   <ArticleCard {article} />

@@ -1,6 +1,5 @@
 ---
-import Section from "~/components/Section.astro";
-import SectionTitle from "~/components/SectionTitle.astro";
+import Section from "~/components/Section";
 import about from "~/assets/about.webp";
 import { Image } from "astro:assets";
 
@@ -9,7 +8,7 @@ const caption = "Me in a concert, playing percussions, 2019"
 ---
 
 <Section {id}>
-  <SectionTitle {id}>About</SectionTitle>
+  <Section.Title {id}>About</Section.Title>
   <p class="mt-4">
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, modi. Quis,
     velit voluptatibus? Itaque voluptas expedita aperiam sunt atque corporis.

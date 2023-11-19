@@ -1,8 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-import Section from "~/components/Section.astro";
-import SectionTitle from "~/components/SectionTitle.astro";
+import Section from "~/components/Section";
 
 const testimonials = await Promise.all(
   (await getCollection("testimonials")).map(async (e) => ({
@@ -15,7 +14,7 @@ const id = "testimonials";
 ---
 
 <Section {id}>
-  <SectionTitle {id}>Testimonials</SectionTitle>
+  <Section.Title {id}>Testimonials</Section.Title>
   <div class="grid grid-cols-1 mt-4 gap-8">
     {
       testimonials.map(({ data, Content }) => (

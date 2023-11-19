@@ -1,16 +1,15 @@
 ---
 import Button from "~/components/Button.astro";
-import Section from "~/components/Section.astro";
-import SectionTitle from "~/components/SectionTitle.astro";
+import Section from "~/components/Section";
 import TechPill from "~/components/TechPill.astro";
-import { ServiceCard } from "./partials/ServiceCard";
+import ServiceCard from "./partials/ServiceCard";
 
 const id = "services";
 ---
 
 <Section {id}>
   <div class="flex justify-between items-center">
-    <SectionTitle {id}>Services</SectionTitle>
+    <Section.Title {id}>Services</Section.Title>
     <p class="text-text font-semibold text-lg">
       {
         new Intl.NumberFormat("en-US", {

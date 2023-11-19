@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import Section from "~/components/Section.astro";
-import SectionTitle from "~/components/SectionTitle.astro";
+import Section from "~/components/Section";
 import ProjectCard from "~/pages/_components/partials/ProjectCard.astro";
 
 const experiences = await getCollection("experiences");
@@ -10,7 +9,7 @@ const id = "experiences";
 ---
 
 <Section {id}>
-  <SectionTitle {id}>Experiences</SectionTitle>
+  <Section.Title {id}>Experiences</Section.Title>
   <div class="grid grid-cols-1 mt-4 gap-8">
     {experiences.map((project) => <ProjectCard {project} />)}
   </div>
