@@ -1,19 +1,26 @@
 ---
+import { getEntry, type CollectionEntry } from "astro:content";
 interface Props {
-  label: string;
+  id: CollectionEntry<"techs">["slug"];
 }
 
-const { label } = Astro.props;
+const { id } = Astro.props;
+
+const tech = await getEntry("techs", id);
+const { name, href } = tech.data;
+const { Content } = await tech.render();
 ---
 
-<span
-  class="bg-bg-subtle border border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill"
+<a
+  {href}
+  target="_blank"
+  class="bg-bg-subtle border border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
 >
   <span class="mr-1">
-    <slot />
+    <Content />
   </span>
-  <span>{label}</span>
-</span>
+  <span>{name}</span>
+</a>
 
 <style is:global>
   .tech-pill svg {

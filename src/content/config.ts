@@ -36,6 +36,14 @@ const projects = defineCollection({
   schema: ({ image }) => projectSchema(image),
 });
 
+const techs = defineCollection({
+  type: "content",
+  schema: z.object({
+    name: z.string(),
+    href: z.string().url(),
+  }),
+});
+
 const testimonials = defineCollection({
   type: "content",
   schema: ({ image }) =>
@@ -51,5 +59,6 @@ export const collections = {
   legal,
   posts,
   projects,
+  techs,
   testimonials,
 };
