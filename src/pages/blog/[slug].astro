@@ -1,0 +1,68 @@
+---
+import type { GetStaticPaths } from "astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import Button from "~/components/Button.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+
+export const getStaticPaths = (async () => {
+  return (await getCollection("posts")).map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}) satisfies GetStaticPaths;
+
+const { article } = Astro.props;
+const { data } = article;
+const { Content } = await article.render();
+---
+
+<BaseLayout title={data.title} description={data.description}>
+  <div class="max-w-xl mx-auto px-4">
+    <div class="flex items-center justify-between">
+      <Button href="/blog">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          class="h-4 w-4 mr-2 -ml-1"
+          ><path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m15 6l-6 6l6 6"></path>
+        </svg>
+        <span>All articles</span>
+      </Button>
+      <time datetime={data.date.toISOString()}
+        >{
+          new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
+            data.date
+          )
+        }</time
+      >
+    </div>
+    <div class="prose max-w-none dark:prose-invert prose-zinc my-8 prose-sm sm:prose-base">
+      <Image {...data.cover} width={576} />
+      <h1>{data.title}</h1>
+      <p class="lead">{data.description}</p>
+      <Content />
+    </div>
+    <Button href="/blog">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        class="h-4 w-4 mr-2 -ml-1"
+        ><path
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="m15 6l-6 6l6 6"></path>
+      </svg>
+      <span>All articles</span>
+    </Button>
+  </div>
+</BaseLayout>

@@ -1,4 +1,5 @@
 import defaultTheme from "tailwindcss/defaultTheme";
+import colors from "tailwindcss/colors"
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -12,24 +13,12 @@ export default {
         border: "var(--color-border)",
         text: "var(--color-text)",
         "text-subtle": "var(--color-text-subtle)",
-        gray: {
-          50: "#f6f7f6",
-          100: "#e3e5e2",
-          200: "#c7cac5",
-          300: "#a3a7a1",
-          400: "#898e87",
-          500: "#646a62",
-          600: "#4f544d",
-          700: "#424540",
-          800: "#363936",
-          900: "#2f322f",
-          950: "#191a19",
-        },
+        gray: colors.zinc,
       },
       fontFamily: {
         sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

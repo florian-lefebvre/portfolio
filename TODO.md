@@ -1,7 +1,7 @@
 - [x] update availability indicator
 - [ ] missing pages
   - [x] blog
-  - [ ] blog/[slug]
+  - [x] blog/[slug]
   - [ ] 404
   - [ ] legal (+ footer links)
 - [ ] migrate content
@@ -9,11 +9,13 @@
   - [ ] more projects
   - [ ] blog
 - [ ] remove primary color
+- [ ] mdx components
 - [ ] services section
 - [ ] og / seo
 - [ ] work copy
 - [ ] get testimonials
 - [ ] plausible
+- [ ] plausible outbound clicks
 - [ ] responsive
 - [ ] lighthouse audit
 - [ ] check all links

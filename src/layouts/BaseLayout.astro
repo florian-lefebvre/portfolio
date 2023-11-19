@@ -2,18 +2,18 @@
 import "@fontsource-variable/inter";
 import interFile from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
 import "~/styles/main.css";
-import Header from "~/components/Header.astro"
-import Footer from "~/components/Footer.astro"
+import Header from "~/components/Header.astro";
+import Footer from "~/components/Footer.astro";
 
 interface Props {
-    title: string;
-    description: string;
-    image?: string;
+  title: string;
+  description: string;
+  image?: string;
 }
 
-const { title: _title, description, image } = Astro.props
+const { title: _title, description, image } = Astro.props;
 
-const title = `${_title} | Florian Lefebvre`
+const title = `${_title} | Florian Lefebvre`;
 ---
 
 <html lang="en" dir="ltr" class="h-full">
