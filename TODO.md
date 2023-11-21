@@ -7,12 +7,12 @@
 - [x] remove primary color
 - [x] mdx components
 - [x] services section
-- [ ] og / seo
-- [ ] work copy
+- [x] work copy
 - [ ] migrate content
   - [ ] experiences
   - [ ] more projects
   - [ ] blog
+- [ ] og / seo
 - [ ] get testimonials
 - [ ] plausible
 - [ ] plausible outbound clicks
