@@ -25,4 +25,5 @@
 - [ ] redirects
 - [ ] check todos
 - [ ] deploy
+- [ ] update social media
 - [ ] remove this file

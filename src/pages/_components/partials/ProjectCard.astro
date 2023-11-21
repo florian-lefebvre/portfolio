@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+import { components } from "~/components/mdx";
 interface Props {
   project: CollectionEntry<"experiences" | "projects">;
 }
@@ -37,7 +38,7 @@ const { Content } = await project.render();
       </div>
     </div>
   </div>
-  <div class="text-sm mt-1">
-    <Content />
+  <div class="mt-2">
+    <Content {components} />
   </div>
 </div>

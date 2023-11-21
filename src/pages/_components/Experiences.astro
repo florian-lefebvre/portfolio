@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import Section from "~/components/Section";
 import ProjectCard from "~/pages/_components/partials/ProjectCard.astro";
 
-const experiences = await getCollection("experiences");
+const experiences = (await getCollection("experiences")).reverse();
 
 const id = "experiences";
 ---
