@@ -6,7 +6,7 @@
   - [x] legal (+ footer links)
 - [x] remove primary color
 - [x] mdx components
-- [ ] services section
+- [x] services section
 - [ ] og / seo
 - [ ] work copy
 - [ ] migrate content
