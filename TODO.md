@@ -9,11 +9,13 @@
 - [x] services section
 - [x] work copy
 - [ ] migrate content
-  - [ ] experiences
+  - [x] experiences
   - [ ] more projects
   - [ ] blog
 - [ ] og / seo
 - [ ] get testimonials
+- [ ] syntax highlighting
+- [ ] link github repo in footer
 - [ ] plausible
 - [ ] plausible outbound clicks
 - [ ] responsive

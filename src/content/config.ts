@@ -5,7 +5,7 @@ const projectSchema = (image: any) =>
     title: z.string(),
     date: z.string(),
     image: z.object({ src: image(), alt: z.string() }),
-    links: z.array(z.object({ href: z.string(), text: z.string() })),
+    links: z.array(z.object({ href: z.string(), text: z.string() })).optional().default([]),
   });
 
 const experiences = defineCollection({
