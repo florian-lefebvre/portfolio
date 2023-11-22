@@ -14,10 +14,6 @@ const articles = (await getCollection("posts")).sort((a, b) =>
 <BaseLayout title="Blog" description="">
   <Section class="pt-8">
     <Section.Title as="h1">Blog</Section.Title>
-    <p class="mt-4">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, cum
-      architecto repellat vel non perspiciatis.
-    </p>
     <div class="grid grid-cols-1 mt-4 gap-8">
       {articles.map((article) => <ArticleCard {article} />)}
     </div>

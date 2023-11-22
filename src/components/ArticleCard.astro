@@ -1,6 +1,5 @@
 ---
 import { type CollectionEntry } from "astro:content";
-import { format } from "timeago.js";
 import { Image } from "astro:assets";
 
 interface Props {
@@ -21,7 +20,13 @@ const { article } = Astro.props;
   <div
     class="absolute top-0 bg-bg-subtle px-2 py-1 text-sm flex items-center justify-between border-r border-b border-border"
   >
-    <div>{format(article.data.date, "en-US")}</div>
+    <div>
+      {
+        new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
+          article.data.date
+        )
+      }
+    </div>
   </div>
   <div class="bg-bg-subtle p-2 border-t border-border">
     <a href={`/blog/${article.slug}`} class="text-text">

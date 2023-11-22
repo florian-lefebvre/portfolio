@@ -1,0 +1,158 @@
+---
+title: "Hydration in Astro"
+description: "Hydration is always a tricky part in SSR. Here is a quick guide with Astro 3!"
+date: 2023-10-06
+cover:
+  src: ~/assets/posts/hydration-in-astro/cover.jpg
+  alt: Astro OpenGraph image.
+category: Web development
+tags:
+  - Astro
+  - Hydration
+  - Programming
+  - Web development
+  - Software development
+  - SSR
+  - Fullstack development
+  - Frontend development
+---
+
+Did you find yourself in a situation where you needed to hydrate a global store,
+or pass arguments to a bundled script? Well, many SSR frameworks _kinda_ take
+care of this for you but not in Astro.
+
+If you're facing this issue, then this article is for you!
+
+> Found an issue, a better way or something else?
+> [Open an issue](https://github.com/florian-lefebvre/portfolio) on my
+> portfolio!
+
+## What is hydration?
+
+I'll borrow this really good explanation from
+[Vike docs](https://vike.dev/hydration):
+
+> When doing SSR our pages are rendered to HTML. But HTML alone isn't sufficient
+> to make a page interactive. For example, a page with zero browser-side
+> JavaScript cannot be interactive (there are no JavaScript event handlers to
+> react to user actions such as a click on a button).
+>
+> To make our page interactive, in addition to render our page to HTML in
+> Node.js, our UI framework (Vue/React/...) also loads and renders the page in
+> the browser. (It creates an internal representation of the page, and then maps
+> the internal representation to the DOM elements of the HTML we rendered in
+> Node.js.)
+>
+> This process is called hydration. Informally speaking: it makes our page
+> interactive/alive/hydrated.
+
+## Usage in Astro
+
+We'll look at 2 ways of achieving this!
+
+### Using `@ayco/astro-resume`
+
+[Ayo Ayco](https://ayo.ayco.io/) has created this package for this exact
+situation. Have a look at the [docs](https://sr.ht/~ayoayco/astro-resume/)!
+
+You can use it like so:
+
+```astro
+---
+import Serialize from '@ayco/astro-resume'
+
+const data = {
+    hello: 'world',
+    isOkay: true,
+}
+// define the type of data to be serialized
+export type Data = typeof data
+---
+
+<Serialize id="my-data" {data} />
+
+<script>
+    import { deserialize } from '@ayco/astro-resume'
+    import type { Data } from './ThisComponent.astro'
+
+    const data = deserialize<Data>('my-data')
+    console.log(data) // { hello: 'world', isOkay: true }
+</script>
+```
+
+While this works, I prefer a more manual approach that I have full control over.
+
+### Using scripts and data attributes
+
+That approach is actually inspired by how both Astro and Nuxt work! Let's have a
+look at the code first:
+
+```astro
+---
+const someData = { foo: 'bar' }
+---
+
+<script is:inline data-state={JSON.stringify(someData)}>
+    const state = JSON.parse(
+        document.currentScript?.getAttribute('data-state') ?? null
+    )
+
+    window.__state = state
+</script>
+
+<script>
+    // script has no `is:inline`!
+    const someData = window.__state
+</script>
+```
+
+So here is how it works:
+
+1. You pass your **serializable data** as data attribute to an inline script
+2. You retrieve this value from within the script and **deserialize** it
+3. You add that data to the global window object. Because the script is inlined,
+   it happends (almost?) immediatly
+4. You can safely access your data in bundled scripts!
+
+A few important points there:
+
+- Make sure the property you're setting on the window object is not already
+  taken. Prefixing by 2 underscores seems pretty safe though but always check!
+- Your data needs to be serializable
+
+If you're using TypeScript (you really should!), it will complain about your
+property not existing on the window object. You need to augment the global type:
+
+```ts
+// src/env.d.ts
+
+/// <reference types="astro/client" />
+
+interface Window {
+  __state: { foo: "bar" };
+}
+
+export {};
+```
+
+You'll likely be using a more complex type, and therefore want to import it. But
+beware! You can't import a type in a `d.ts` file as you would do in a `ts` file.
+You need to use the following syntax:
+
+```ts
+// src/env.d.ts
+
+/// <reference types="astro/client" />
+
+interface Window {
+  __state: import("./my-file").State;
+}
+
+export {};
+```
+
+## Conclusion
+
+This approach probably has flaws I'm not aware of (although I hope that's not
+the case) and I'd like to know about it! [Reach out](/#contact) and tell me about
+it!

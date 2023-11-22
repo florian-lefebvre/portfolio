@@ -8,15 +8,15 @@
 - [x] mdx components
 - [x] services section
 - [x] work copy
-- [ ] migrate content
+- [x] syntax highlighting
+- [x] migrate content
   - [x] experiences
   - [x] more projects
-  - [ ] blog
+  - [x] blog
 - [ ] add description to experiences/projects + move content inside card
 - [ ] check links end whitespace issue
 - [ ] og / seo
 - [ ] get testimonials
-- [ ] syntax highlighting
 - [ ] link github repo in footer
 - [ ] plausible
 - [ ] plausible outbound clicks
