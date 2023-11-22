@@ -33,10 +33,51 @@ const title = `${_title} | Florian Lefebvre`;
     <slot name="head" />
   </head>
   <body class="flex min-h-full flex-col bg-bg text-text-subtle">
+    <div class="sticky top-0 left-0 h-2 w-full z-10 bg-bg">
+      <div
+        id="page-progress"
+        class="h-full bg-text transition-all linear duration-100"
+        style={{ width: "0%" }}
+      >
+      </div>
+    </div>
     <Header />
     <main>
       <slot />
     </main>
     <Footer />
+    <script is:inline>
+      // get elements
+      const body = document.querySelector("body");
+      const progressBar = document.getElementById("page-progress");
+
+      // this function increase or decrease the percentage of the element to stretch
+      function stretch() {
+        const pixelScrolled = window.scrollY;
+        const viewportHeight = window.innerHeight;
+        const totalHeightScrollable = body.scrollHeight;
+
+        /**
+         *
+         * @param {number} min
+         * @param {number} n
+         * @param {number} max
+         */
+        const clamp = (min, n, max) => Math.min(max, Math.max(min, n));
+
+        // convert pixels to percentage
+        const pixelsToPercentage = clamp(
+          0,
+          (pixelScrolled / (totalHeightScrollable - viewportHeight)) * 100,
+          100
+        );
+
+        // set the width of the fluid element.
+        progressBar.style.width = Math.round(pixelsToPercentage) + "%";
+      }
+
+      // append a scroll event listener to the window object
+      window.addEventListener("scroll", stretch);
+    </script>
   </body>
 </html>
