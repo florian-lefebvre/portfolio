@@ -27,7 +27,7 @@
 - [x] check all links
 - [x] vercel adapter
 - [x] redirects
-- [ ] sitemap
+- [x] sitemap
 - [ ] lighthouse audit
 - [ ] readme
 - [ ] get testimonials

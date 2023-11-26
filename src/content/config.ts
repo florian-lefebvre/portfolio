@@ -1,6 +1,6 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, z, type ImageFunction } from "astro:content";
 
-const projectSchema = (image: any) =>
+const projectSchema = (image: ImageFunction) =>
   z.object({
     title: z.string(),
     description: z.string(),

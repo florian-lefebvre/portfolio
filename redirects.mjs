@@ -1,4 +1,4 @@
-{
+export default {
   "/legal/notices": "/legal/legal-notices",
   "/legal/privacy": "/legal/privacy-policy",
   "/about": "/#about",
@@ -24,7 +24,8 @@
   "/fr/blog": "/blog",
   "/fr/blog/annonce-de-choose-tech": "/blog/announcing-choose-tech",
   "/fr/blog/hydratation-dans-astro": "/blog/hydration-in-astro",
-  "/fr/blog/mise-a-niveau-d-un-pc-sous-windows-10-non-pris-en-charge-vers-windows-11": "/blog/upgrading-an-unsupported-windows-10-pc-to-windows-11",
+  "/fr/blog/mise-a-niveau-d-un-pc-sous-windows-10-non-pris-en-charge-vers-windows-11":
+    "/blog/upgrading-an-unsupported-windows-10-pc-to-windows-11",
   "/fr/legal/mentions-legales": "/legal/legal-notices",
   "/fr/legal/politique-de-confidentialite": "/legal/privacy-policy",
   "/fr/projets": "/#experiences",
@@ -38,5 +39,5 @@
   "/fr/projets/portfolio": "/#experiences",
   "/fr/projets/regiolangues": "/#experiences",
   "/fr/projets/shortcuts-app": "/#experiences",
-  "/fr/projets/ynotes": "/#experiences"
-}
+  "/fr/projets/ynotes": "/#experiences",
+};
