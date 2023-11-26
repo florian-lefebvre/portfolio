@@ -32,9 +32,9 @@
 - [x] readme
 - [x] check todos
 - [x] deploy
-- [ ] get testimonials
+- [x] update on astro showcase
 - [ ] update social media
-- [ ] update on astro showcase
+- [ ] get testimonials
 - [ ] post on social media
   - [ ] Discord (Astro)
   - [ ] Twitter
