@@ -5,10 +5,12 @@ import Section from "~/components/Section";
 import { components } from "~/components/mdx";
 
 const testimonials = await Promise.all(
-  (await getCollection("testimonials")).reverse().map(async (e) => ({
-    ...e,
-    ...(await e.render()),
-  }))
+  (await getCollection("testimonials", ({ data }) => !data.draft))
+    .reverse()
+    .map(async (e) => ({
+      ...e,
+      ...(await e.render()),
+    }))
 );
 
 const id = "testimonials";

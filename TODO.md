@@ -30,8 +30,12 @@
 - [x] sitemap
 - [ ] lighthouse audit
 - [ ] readme
-- [ ] get testimonials
 - [ ] check todos
 - [ ] deploy
+- [ ] get testimonials
 - [ ] update social media
+- [ ] post on social media
+  - [ ] Discord (Astro)
+  - [ ] Twitter
+  - [ ] LinkedIn
 - [ ] remove this file
