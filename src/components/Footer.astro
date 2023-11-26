@@ -15,6 +15,12 @@
   </div>
 
   <script is:inline>
-    document.getElementById("footer-year").innerText = new Date().getFullYear();
+    const handleDate = () => {
+      document.getElementById("footer-year").innerText =
+        new Date().getFullYear();
+    };
+
+    handleDate();
+    document.addEventListener("astro:after-swap", () => handleDate());
   </script>
 </footer>

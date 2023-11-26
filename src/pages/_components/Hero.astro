@@ -30,25 +30,36 @@ import SocialLinks from "./partials/SocialLinks.astro";
     </div>
   </div>
   <script is:inline>
-    const updateTime = () => {
-      const today = new Date();
-      const formatter = new Intl.DateTimeFormat("en-US", {
-        timeZone: "CET",
-        hour12: false, // 24-hour format
-        hour: "numeric",
-        minute: "numeric",
-        second: "numeric",
-      });
+    window.__handleTime ??= () => {
+      const updateTime = () => {
+        const today = new Date();
+        const formatter = new Intl.DateTimeFormat("en-US", {
+          timeZone: "CET",
+          hour12: false, // 24-hour format
+          hour: "numeric",
+          minute: "numeric",
+          second: "numeric",
+        });
 
-      // Format the date using the formatter
-      const timeInTimeZone = formatter.format(today);
+        // Format the date using the formatter
+        const timeInTimeZone = formatter.format(today);
 
-      document.getElementById("hero-time").innerText = timeInTimeZone;
+        document.getElementById("hero-time").innerText = timeInTimeZone;
+      };
+
+      updateTime();
+      return setInterval(() => {
+        updateTime();
+      }, 1000);
     };
 
-    updateTime();
-    setInterval(() => {
-      updateTime();
-    }, 1000);
+    window.__handleTimeId = window.__handleTime();
+    document.addEventListener("astro:after-swap", () => {
+      if (window.__handleTimeId) {
+        clearInterval(window.__handleTimeId);
+      }
+
+      window.__handleTimeId = undefined;
+    });
   </script>
 </Section>

@@ -58,7 +58,8 @@ const { Content } = await article.render();
         </svg>
         <span>All articles</span>
       </Button>
-      <time datetime={data.date.toISOString()}
+      <time
+        datetime={data.date.toISOString()}
         >{
           new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
             data.date
@@ -67,9 +68,15 @@ const { Content } = await article.render();
       >
     </div>
     <Prose class="my-8">
-      <Image {...data.cover} width={576} />
-      <h1>{data.title}</h1>
-      <p class="lead">{data.description}</p>
+      <Image
+        {...data.cover}
+        width={576}
+        transition:name={`article-cover:${article.slug}`}
+      />
+      <h1 transition:name={`article-title:${article.slug}`}>{data.title}</h1>
+      <p class="lead" transition:name={`article-description:${article.slug}`}>
+        {data.description}
+      </p>
       <Content {components} />
     </Prose>
     <Button href="/blog">

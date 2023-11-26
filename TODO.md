@@ -18,7 +18,7 @@
 - [x] check links end whitespace issue
 - [x] add link to testimonials
 - [x] og / seo
-- [ ] test VT
+- [x] VT
 - [ ] get testimonials
 - [ ] link github repo in footer
 - [ ] plausible
