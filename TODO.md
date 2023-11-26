@@ -24,8 +24,8 @@
 - [x] responsive
 - [x] plausible
 - [x] plausible outbound clicks
-- [ ] check all links
-- [ ] vercel adapter
+- [x] check all links
+- [x] vercel adapter
 - [ ] redirects
 - [ ] lighthouse audit
 - [ ] readme

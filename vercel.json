@@ -3,6 +3,7 @@
   "version": 2,
   "installCommand": "yarn install --frozen-lockfile",
   "outputDirectory": "dist",
+  "trailingSlash": false,
   "rewrites": [
     {
       "source": "/js/script.js",
