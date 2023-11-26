@@ -21,7 +21,7 @@
 - [x] VT
 - [x] add license
 - [x] link github repo in footer
-- [ ] responsive
+- [x] responsive
 - [ ] plausible
 - [ ] plausible outbound clicks
 - [ ] check all links

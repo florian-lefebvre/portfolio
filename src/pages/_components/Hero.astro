@@ -6,26 +6,28 @@ import AvailabilityIndicator from "~/pages/_components/partials/AvailabilityIndi
 import SocialLinks from "./partials/SocialLinks.astro";
 ---
 
-<Section class="pt-8">
-  <div class="flex space-x-4">
+<Section class="pt-0 sm:pt-8">
+  <div class="flex max-sm:flex-col gap-4">
     <Image
       src={image}
       alt="Profile picture of Florian Lefebvre"
-      class="h-32 w-32 rounded-full bg-bg-subtle border border-border shrink-0"
+      class="h-24 w-24 sm:h-32 sm:w-32 rounded-full bg-bg-subtle border border-border shrink-0"
       loading="eager"
       width={128}
     />
     <div>
-      <h1 class="text-2xl mb-2 font-semibold text-text">Florian Lefebvre</h1>
-      <p>
+      <div class="flex justify-between items-center">
+        <h1 class="text-2xl font-semibold text-text">Florian Lefebvre</h1>
+        <AvailabilityIndicator />
+      </div>
+      <p class="mt-2">
         Fullstack developer. Freelancer. Open-Source lover. French. <span
           id="hero-time"
           class="bg-bg-subtle border border-border px-1 py-0.5 tabular-nums select-none"
         ></span> Central European Time.
       </p>
-      <div class="mt-4 flex space-x-2 items-center justify-between">
+      <div class="mt-4">
         <SocialLinks />
-        <AvailabilityIndicator />
       </div>
     </div>
   </div>

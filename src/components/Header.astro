@@ -1,13 +1,11 @@
 ---
 import Button from "./Button.astro";
 ---
+
 <header
   class="px-4 mx-auto max-w-xl flex items-center justify-between w-full py-2"
 >
-  <a
-    href="/"
-    class="text-text hover:text-text-subtle transition-colors"
-  >
+  <a href="/" class="text-text hover:text-text-subtle transition-colors">
     <svg
       fill="currentColor"
       viewBox="0 0 24 24"
@@ -21,7 +19,24 @@ import Button from "./Button.astro";
   </a>
   <div class="items-center flex space-x-2">
     <Button href="/blog">Articles</Button>
-    <Button href="/#contact">Contact</Button>
+    <Button href="/#contact">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        class="h-4 w-4 mr-2"
+        ><g
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          ><path d="M0 0h24v24H0z"></path><path
+            fill="currentColor"
+            d="M5.821 4.91c3.898-2.765 9.469-2.539 13.073.536c3.667 3.127 4.168 8.238 1.152 11.897c-2.842 3.447-7.965 4.583-12.231 2.805l-.232-.101l-4.375.931l-.075.013l-.11.009l-.113-.004l-.044-.005l-.11-.02l-.105-.034l-.1-.044l-.076-.042l-.108-.077l-.081-.074l-.073-.083l-.053-.075l-.065-.115l-.042-.106l-.031-.113l-.013-.075l-.009-.11l.004-.113l.005-.044l.02-.11l.022-.072l1.15-3.451l-.022-.036C.969 12.45 1.97 7.805 5.59 5.079l.23-.168z"
+          ></path></g
+        ></svg
+      >
+      <span>Contact</span>
+    </Button>
   </div>
 </header>
 <div class="bg-gradient-to-b from-bg to-bg/0 sticky top-2 h-24 z-10"></div>

@@ -24,13 +24,13 @@ const links: Array<{ href: string; text: string }> = [
 <footer
   class="mt-auto mx-auto px-4 max-w-xl py-4 w-full border-t border-border text-sm"
 >
-  <div class="flex items-center justify-between">
+  <div class="flex max-sm:flex-col items-start sm:items-center justify-between gap-4">
     <span>&copy; <span id="footer-year"></span> - Florian Lefebvre</span>
     <div>
       Made with <TechPill id="astro" /> and <TechPill id="tailwind" />
     </div>
   </div>
-  <div class="flex flex-wrap items-center mt-4 -mb-3">
+  <div class="flex max-sm:flex-col items-start sm:items-center mt-4 -mb-3">
     {
       links.map(({ href, text }) => {
         const isInternal = href.startsWith("/");
