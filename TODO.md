@@ -29,7 +29,7 @@
 - [x] redirects
 - [x] sitemap
 - [x] lighthouse audit
-- [ ] readme
+- [x] readme
 - [ ] check todos
 - [ ] deploy
 - [ ] get testimonials
