@@ -1,0 +1,63 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "installCommand": "yarn install --frozen-lockfile",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/js/script.js",
+      "destination": "https://plausible.io/js/script.outbound-links.js"
+    },
+    {
+      "source": "/api/event",
+      "destination": "https://plausible.io/api/event"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/legal/notices",
+      "destination": "/legal/legal-notices",
+      "permanent": true
+    },
+    {
+      "source": "/legal/privacy",
+      "destination": "/legal/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/projects/nuxt3-starter-medusa",
+      "destination": "/projects/nuxt3-starter-template-for-medusa",
+      "permanent": true
+    },
+    {
+      "source": "/projects/ynotes-app",
+      "destination": "/projects/ynotes",
+      "permanent": true
+    },
+    {
+      "source": "/projects/ohf31-website",
+      "destination": "/projects/ohf31",
+      "permanent": true
+    },
+    {
+      "source": "/projects/supabase",
+      "destination": "/blog/contributing-to-supabase",
+      "permanent": true
+    },
+    {
+      "source": "/projects/ynotes-website",
+      "destination": "/projects/ynotes",
+      "permanent": true
+    },
+    {
+      "source": "/projects/ynotes-packages",
+      "destination": "/projects/ynotes",
+      "permanent": true
+    },
+    {
+      "source": "/projects/ynotes-packages",
+      "destination": "/projects/ynotes",
+      "permanent": true
+    }
+  ]
+}

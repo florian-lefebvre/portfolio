@@ -22,8 +22,8 @@
 - [x] add license
 - [x] link github repo in footer
 - [x] responsive
-- [ ] plausible
-- [ ] plausible outbound clicks
+- [x] plausible
+- [x] plausible outbound clicks
 - [ ] check all links
 - [ ] vercel adapter
 - [ ] redirects

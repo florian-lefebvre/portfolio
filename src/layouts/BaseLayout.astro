@@ -65,6 +65,16 @@ const canonical = Astro.url.href;
       }}
     />
     <ViewTransitions />
+    {
+      import.meta.env.PROD && (
+        <script
+          is:inline
+          defer
+          data-domain="florian-lefebvre.dev"
+          src="/js/script.js"
+        />
+      )
+    }
     <slot name="head" />
   </head>
   <body class="flex min-h-full flex-col bg-bg text-text-subtle">
