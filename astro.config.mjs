@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
 import vercel from "@astrojs/vercel/serverless";
+import redirects from "./redirects.json" assert { type: "json" };
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,11 +11,19 @@ export default defineConfig({
   markdown: {
     shikiConfig: {
       experimentalThemes: {
-        light: 'github-light',
-        dark: 'one-dark-pro'
-      }
-    }
+        light: "github-light",
+        dark: "one-dark-pro",
+      },
+    },
   },
   output: "hybrid",
-  adapter: vercel()
+  adapter: vercel(),
+  redirects: {
+    ...Object.fromEntries(
+      Object.entries(redirects).map(([from, destination]) => [
+        from,
+        { destination, status: 308 },
+      ])
+    ),
+  },
 });

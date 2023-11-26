@@ -26,7 +26,8 @@
 - [x] plausible outbound clicks
 - [x] check all links
 - [x] vercel adapter
-- [ ] redirects
+- [x] redirects
+- [ ] sitemap
 - [ ] lighthouse audit
 - [ ] readme
 - [ ] get testimonials
