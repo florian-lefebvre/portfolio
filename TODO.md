@@ -28,7 +28,7 @@
 - [x] vercel adapter
 - [x] redirects
 - [x] sitemap
-- [ ] lighthouse audit
+- [x] lighthouse audit
 - [ ] readme
 - [ ] check todos
 - [ ] deploy

@@ -71,6 +71,7 @@ const { Content } = await article.render();
       <Image
         {...data.cover}
         width={576}
+        loading="eager"
         transition:name={`article-cover:${article.slug}`}
       />
       <h1 transition:name={`article-title:${article.slug}`}>{data.title}</h1>

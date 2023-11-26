@@ -16,7 +16,7 @@ const articles = (await getCollection("posts")).sort((a, b) =>
   <Section class="pt-8">
     <Section.Title as="h1">Blog</Section.Title>
     <div class="grid grid-cols-1 mt-4 gap-8">
-      {articles.map((article) => <ArticleCard {article} />)}
+      {articles.map((article, i) => <ArticleCard {article} preloadImage={i <= 1} />)}
     </div>
   </Section>
 </BaseLayout>

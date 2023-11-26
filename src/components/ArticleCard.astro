@@ -4,9 +4,10 @@ import { Image } from "astro:assets";
 
 interface Props {
   article: CollectionEntry<"posts">;
+  preloadImage?: boolean;
 }
 
-const { article } = Astro.props;
+const { article, preloadImage = false } = Astro.props;
 ---
 
 <div
@@ -16,6 +17,7 @@ const { article } = Astro.props;
     {...article.data.cover}
     class="object-cover object-center"
     width={576}
+    loading={preloadImage ? "eager" : "lazy"}
     transition:name={`article-cover:${article.slug}`}
   />
   <div
