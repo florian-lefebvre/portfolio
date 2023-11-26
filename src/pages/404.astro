@@ -3,16 +3,16 @@ import Button from "~/components/Button.astro";
 import Section from "~/components/Section";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 
-// TODO: description
+const title = "Page not found";
+const description = "Sorry, we couldn't find the page you're looking for.";
 ---
 
-<BaseLayout title="Page not found" description="">
+<BaseLayout {title} {description}>
   <Section>
     <p class="text-text text-6xl font-bold mb-4">404</p>
-    <Section.Title as="h1">Page not found</Section.Title>
+    <Section.Title as="h1">{title}</Section.Title>
     <p class="mt-4">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-      repellendus quas sapiente cum dolores itaque.
+      {description}
     </p>
     <Button href="/" class="mt-12">Home</Button>
   </Section>

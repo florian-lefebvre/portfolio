@@ -4,16 +4,25 @@ import interFile from "@fontsource-variable/inter/files/inter-latin-wght-normal.
 import "~/styles/main.css";
 import Header from "~/components/Header.astro";
 import Footer from "~/components/Footer.astro";
+import { SEO } from "astro-seo";
 
 interface Props {
   title: string;
   description: string;
   image?: string;
+  article?: Required<Parameters<typeof SEO>[0]>["openGraph"]["article"];
 }
 
-const { title: _title, description, image } = Astro.props;
+const {
+  title: _title,
+  description,
+  image = `${Astro.url.origin}/og.jpg`,
+  article,
+} = Astro.props;
 
 const title = `${_title} | Florian Lefebvre`;
+
+const canonical = Astro.url.href;
 ---
 
 <html lang="en" dir="ltr" class="h-full">
@@ -22,13 +31,37 @@ const title = `${_title} | Florian Lefebvre`;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
     <link
       rel="preload"
       as="font"
       crossorigin="anonymous"
       href={interFile}
       type="font/woff2"
+    />
+    <SEO
+      {title}
+      {description}
+      {canonical}
+      openGraph={{
+        basic: {
+          title,
+          type: "website",
+          image,
+          url: canonical,
+        },
+        optional: {
+          description,
+          locale: "en",
+        },
+        article,
+      }}
+      twitter={{
+        card: "summary_large_image",
+        creator: "@LfbvrFlo",
+        title,
+        image,
+        description,
+      }}
     />
     <slot name="head" />
   </head>

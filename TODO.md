@@ -17,7 +17,8 @@
 - [x] refactor texts using content collections
 - [x] check links end whitespace issue
 - [x] add link to testimonials
-- [ ] og / seo
+- [x] og / seo
+- [ ] test VT
 - [ ] get testimonials
 - [ ] link github repo in footer
 - [ ] plausible

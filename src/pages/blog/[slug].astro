@@ -21,7 +21,17 @@ const { data } = article;
 const { Content } = await article.render();
 ---
 
-<BaseLayout title={data.title} description={data.description}>
+<BaseLayout
+  title={data.title}
+  description={data.description}
+  image={data.cover.src.src}
+  article={{
+    section: data.category,
+    tags: data.tags,
+    authors: ["Florian Lefebvre"],
+    publishedTime: data.date.toISOString(),
+  }}
+>
   <Fragment slot="head">
     <link
       rel="preload"

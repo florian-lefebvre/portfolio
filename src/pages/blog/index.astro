@@ -7,11 +7,12 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 const articles = (await getCollection("posts")).sort((a, b) =>
   +a.data.date < +b.data.date ? 1 : 0
 );
-
-// TODO: description
 ---
 
-<BaseLayout title="Blog" description="">
+<BaseLayout
+  title="Blog"
+  description="Read my thoughts on software development, design, and more."
+>
   <Section class="pt-8">
     <Section.Title as="h1">Blog</Section.Title>
     <div class="grid grid-cols-1 mt-4 gap-8">
