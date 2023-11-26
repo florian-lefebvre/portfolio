@@ -19,17 +19,17 @@
 - [x] add link to testimonials
 - [x] og / seo
 - [x] VT
-- [ ] get testimonials
-- [ ] link github repo in footer
+- [x] add license
+- [x] link github repo in footer
+- [ ] responsive
 - [ ] plausible
 - [ ] plausible outbound clicks
-- [ ] responsive
-- [ ] lighthouse audit
 - [ ] check all links
-- [ ] add license
-- [ ] readme
 - [ ] vercel adapter
 - [ ] redirects
+- [ ] lighthouse audit
+- [ ] readme
+- [ ] get testimonials
 - [ ] check todos
 - [ ] deploy
 - [ ] update social media

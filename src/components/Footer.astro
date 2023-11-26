@@ -1,17 +1,66 @@
+---
+import TechPill from "~/components/TechPill.astro";
+const links: Array<{ href: string; text: string }> = [
+  {
+    href: "/legal/privacy-policy",
+    text: "Privacy policy",
+  },
+  {
+    href: "/legal/legal-notices",
+    text: "Legal notices",
+  },
+  {
+    href: "https://github.com/florian-lefebvre/portfolio/blob/v6/astro/LICENSE",
+    text: "GPL-3.0 License",
+  },
+  {
+    href: "https://github.com/florian-lefebvre/portfolio",
+    text: "Repository",
+  },
+];
+---
+
 <div class="bg-gradient-to-t from-bg to-bg/0 sticky bottom-0 h-24 z-10"></div>
 <footer
-  class="mt-auto mx-auto px-4 max-w-xl py-4 w-full border-t border-border flex items-center justify-between text-sm"
+  class="mt-auto mx-auto px-4 max-w-xl py-4 w-full border-t border-border text-sm"
 >
-  <span>&copy; <span id="footer-year"></span> - Florian Lefebvre</span>
-  <div class="">
-    <a
-      href="/legal/privacy-policy"
-      class="underline transition-colors hover:text-text">Privacy policy</a
-    >
-    <a
-      href="/legal/legal-notices"
-      class="underline transition-colors hover:text-text">Legal notices</a
-    >
+  <div class="flex items-center justify-between">
+    <span>&copy; <span id="footer-year"></span> - Florian Lefebvre</span>
+    <div>
+      Made with <TechPill id="astro" /> and <TechPill id="tailwind" />
+    </div>
+  </div>
+  <div class="flex flex-wrap items-center mt-4 -mb-3">
+    {
+      links.map(({ href, text }) => {
+        const isInternal = href.startsWith("/");
+        return (
+          <a
+            {href}
+            target={isInternal ? undefined : "_blank"}
+            class="underline medium underline-offset-2 text-text mr-3 mb-3 inline-flex space-x-2 items-center"
+          >
+            {text}
+            {!isInternal && (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="w-4 h-4"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1l9-9m-5 0h5v5"
+                />
+              </svg>
+            )}
+          </a>
+        );
+      })
+    }
   </div>
 
   <script is:inline>
