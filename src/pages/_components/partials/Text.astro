@@ -1,0 +1,22 @@
+---
+import { getEntry, type CollectionEntry } from "astro:content";
+import { components } from "~/components/mdx";
+
+interface Props {
+  id: CollectionEntry<"texts">["slug"];
+  class?: string;
+}
+
+const { id, class: className } = Astro.props;
+
+const { Content } = await (await getEntry("texts", id)).render();
+---
+
+<div
+  class:list={[
+    "text-text-subtle [&_a]:font-medium [&_a]:text-text [&_a]:underline",
+    className,
+  ]}
+>
+  <Content {components} />
+</div>

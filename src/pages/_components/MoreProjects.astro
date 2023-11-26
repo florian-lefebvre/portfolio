@@ -2,33 +2,11 @@
 import { getCollection } from "astro:content";
 import Section from "~/components/Section";
 import ProjectCard from "~/pages/_components/partials/ProjectCard.astro";
+import Text from "~/pages/_components/partials/Text.astro";
 
 const projects = (await getCollection("projects")).reverse();
 
 const id = "more-projects";
-
-const links: Array<{ text: string; href: string }> = [
-  {
-    text: "Portfolio",
-    href: "https://github.com/florian-lefebvre/portfolio",
-  },
-  {
-    text: "op-ent",
-    href: "https://github.com/florian-lefebvre/portfolio/blob/v5/astro/src/content/en/projects/996.op-ent.mdx",
-  },
-  {
-    text: "Nuxt3 Medusa starter",
-    href: "https://github.com/florian-lefebvre/nuxt3-starter-medusa",
-  },
-  {
-    text: "shortcuts-app",
-    href: "https://github.com/florian-lefebvre/portfolio/blob/v5/astro/src/content/en/projects/998.shortcuts-app.mdx",
-  },
-  {
-    text: "Glutton Runner",
-    href: "https://github.com/florian-lefebvre/portfolio/blob/v5/astro/src/content/en/projects/999.glutton-runner.mdx",
-  },
-];
 ---
 
 <Section {id}>
@@ -36,17 +14,5 @@ const links: Array<{ text: string; href: string }> = [
   <div class="grid grid-cols-1 mt-4 gap-10">
     {projects.map((project) => <ProjectCard {project} />)}
   </div>
-  <p class="mt-10">
-    There is much more! But the page is getting long already, so here are a few
-    links: {
-      links.map(({ text, href }, i) => (
-        <>
-          <a {href} class="font-medium text-text underline" target="_blank">
-            {text}
-          </a>
-          {i !== links.length - 1 && ","}
-        </>
-      ))
-    }...
-  </p>
+  <Text id="more-projects" class="mt-10" />
 </Section>

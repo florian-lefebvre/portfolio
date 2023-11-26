@@ -6,7 +6,10 @@ const projectSchema = (image: any) =>
     description: z.string(),
     date: z.string(),
     image: z.object({ src: image(), alt: z.string() }),
-    links: z.array(z.object({ href: z.string(), text: z.string() })).optional().default([]),
+    links: z
+      .array(z.object({ href: z.string(), text: z.string() }))
+      .optional()
+      .default([]),
   });
 
 const experiences = defineCollection({
@@ -55,6 +58,11 @@ const testimonials = defineCollection({
     }),
 });
 
+const texts = defineCollection({
+  type: "content",
+  schema: z.object({}),
+});
+
 export const collections = {
   experiences,
   legal,
@@ -62,4 +70,5 @@ export const collections = {
   projects,
   techs,
   testimonials,
+  texts
 };
