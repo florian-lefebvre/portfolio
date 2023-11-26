@@ -34,6 +34,7 @@
 - [x] deploy
 - [ ] get testimonials
 - [ ] update social media
+- [ ] update on astro showcase
 - [ ] post on social media
   - [ ] Discord (Astro)
   - [ ] Twitter
