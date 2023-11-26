@@ -16,7 +16,7 @@
 - [x] add description to experiences/projects + move content inside card
 - [x] refactor texts using content collections
 - [x] check links end whitespace issue
-- [ ] add link to testimonials
+- [x] add link to testimonials
 - [ ] og / seo
 - [ ] get testimonials
 - [ ] link github repo in footer

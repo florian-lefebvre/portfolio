@@ -5,7 +5,7 @@ import Section from "~/components/Section";
 import { components } from "~/components/mdx";
 
 const testimonials = await Promise.all(
-  (await getCollection("testimonials")).map(async (e) => ({
+  (await getCollection("testimonials")).reverse().map(async (e) => ({
     ...e,
     ...(await e.render()),
   }))
@@ -27,7 +27,11 @@ const id = "testimonials";
             width={80}
           />
           <div>
-            <h3 class="mb-1 font-semibold text-text">{data.title}</h3>
+            <h3 class="mb-1 font-semibold text-text underline underline-offset-2">
+              <a href={data.href} target="_blank">
+                {data.title}
+              </a>
+            </h3>
             <p class="text-sm">{data.subtitle}</p>
             <p class="mt-3">
               <Content {components} />

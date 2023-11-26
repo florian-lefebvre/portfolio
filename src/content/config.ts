@@ -55,6 +55,7 @@ const testimonials = defineCollection({
       title: z.string(),
       subtitle: z.string(),
       image: image(),
+      href: z.string().url()
     }),
 });
 
