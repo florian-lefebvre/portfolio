@@ -13,7 +13,8 @@
   - [x] experiences
   - [x] more projects
   - [x] blog
-- [ ] add description to experiences/projects + move content inside card
+- [x] add description to experiences/projects + move content inside card
+- [ ] refactor texts using content collections
 - [ ] check links end whitespace issue
 - [ ] og / seo
 - [ ] get testimonials

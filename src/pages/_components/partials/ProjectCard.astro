@@ -13,7 +13,12 @@ const { Content } = await project.render();
 
 <div class="">
   <div class="relative bg-bg border border-border aspect-video">
-    <Image {...data.image} class="object-cover object-center" width={576} quality="high" />
+    <Image
+      {...data.image}
+      class="object-cover object-center"
+      width={576}
+      quality="high"
+    />
     <div
       class="absolute top-0 bg-bg-subtle px-2 py-1 text-sm flex items-center justify-between border-r border-b border-border"
     >
@@ -36,9 +41,10 @@ const { Content } = await project.render();
           }
         </div>
       </div>
+      <div class="text-text-subtle text-sm mt-0.5">{data.description}</div>
+      <div class="mt-3">
+        <Content {components} />
+      </div>
     </div>
-  </div>
-  <div class="mt-2">
-    <Content {components} />
   </div>
 </div>
