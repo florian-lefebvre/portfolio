@@ -30,7 +30,7 @@
 - [x] sitemap
 - [x] lighthouse audit
 - [x] readme
-- [ ] check todos
+- [x] check todos
 - [ ] deploy
 - [ ] get testimonials
 - [ ] update social media
