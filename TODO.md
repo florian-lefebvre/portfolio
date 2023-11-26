@@ -31,7 +31,7 @@
 - [x] lighthouse audit
 - [x] readme
 - [x] check todos
-- [ ] deploy
+- [x] deploy
 - [ ] get testimonials
 - [ ] update social media
 - [ ] post on social media
