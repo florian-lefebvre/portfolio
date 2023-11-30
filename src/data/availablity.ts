@@ -1,1 +1,1 @@
-export const availability: "available" | "busy" | "full" = "busy";
+export const availability: "available" | "busy" | "full" = "full";
