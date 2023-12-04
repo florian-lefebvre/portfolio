@@ -1,11 +1,11 @@
 ---
 import Section from "~/components/Section";
-import about from "~/assets/about.webp";
+import about from "~/assets/about.jpg";
 import { Image } from "astro:assets";
 import Text from "~/pages/_components/partials/Text.astro";
 
 const id = "about";
-const caption = "Playing percussion at a concert in 2019";
+const caption = "Playing drums at a concert in 2019";
 ---
 
 <Section {id}>
@@ -15,7 +15,7 @@ const caption = "Playing percussion at a concert in 2019";
     <Image
       src={about}
       alt={caption}
-      class="bg-bg-subtle border border-border aspect-video mt-10"
+      class="bg-bg-subtle border border-border mt-10 aspect-square object-cover"
       width={576}
     />
     <figcaption class="mt-2 text-sm">
