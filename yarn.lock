@@ -26,6 +26,11 @@
     kleur "^4.1.5"
     yargs "^17.7.2"
 
+"@astrojs/compiler@^0.0.0-compact-20231220212312":
+  version "0.0.0-compact-20231220212312"
+  resolved "https://registry.npmjs.org/@astrojs/compiler/-/compiler-0.0.0-compact-20231220212312.tgz#0c73bf984a26bf90c7d274a657a5e54ee0f320bc"
+  integrity sha512-v2je5KSGxf4xAScMVk6vZxlFAmYZjIBKwEu/nbJv1XkSa3wZI5FIG7WU9Z6raLwXO+N4jUY7Yd2eySr4SWq/4Q==
+
 "@astrojs/compiler@^2.2.2":
   version "2.3.2"
   resolved "https://registry.npmjs.org/@astrojs/compiler/-/compiler-2.3.2.tgz#78001a4a86c3f2cf4bc80db46b13f6188fbb01da"

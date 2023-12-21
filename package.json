@@ -15,6 +15,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/compiler": "^0.0.0-compact-20231220212312",
     "@astrojs/mdx": "^2.0.2",
     "@astrojs/sitemap": "^3.0.3",
     "@astrojs/tailwind": "^5.0.4",
