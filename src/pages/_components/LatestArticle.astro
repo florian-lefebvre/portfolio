@@ -4,9 +4,8 @@ import Button from "~/components/Button.astro";
 import Section from "~/components/Section";
 import ArticleCard from "~/components/ArticleCard.astro";
 
-const article = (await getCollection("posts")).sort((a, b) =>
-  +a.data.date < +b.data.date ? 1 : 0
-)[0];
+const article = (await getCollection("posts"))
+  .sort((a, b) => (+a.data.date < +b.data.date ? 1 : -1))[0];
 
 const id = "latest-article";
 ---
