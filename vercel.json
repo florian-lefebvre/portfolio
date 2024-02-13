@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
-  "installCommand": "yarn install --frozen-lockfile",
+  "installCommand": "pnpm install --frozen-lockfile",
   "outputDirectory": "dist",
   "trailingSlash": false,
   "rewrites": [
