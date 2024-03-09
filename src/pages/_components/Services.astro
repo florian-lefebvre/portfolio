@@ -5,6 +5,7 @@ import TechPill from "~/components/TechPill.astro";
 import ServiceCard from "./partials/ServiceCard";
 
 const id = "services";
+const hourlyRate = 55;
 ---
 
 <Section {id}>
@@ -16,7 +17,7 @@ const id = "services";
           style: "currency",
           currency: "EUR",
           maximumSignificantDigits: 2,
-        }).format(50)
+        }).format(hourlyRate)
       }/hour
     </p>
   </div>
@@ -40,6 +41,28 @@ const id = "services";
         <TechPill id="nuxt" />
         <TechPill id="nextjs" />
         <TechPill id="typescript" />
+        <TechPill id="xstate" />
+      </ServiceCard.Techs>
+    </ServiceCard>
+    <ServiceCard>
+      <div
+        class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-4 sm:justify-between sm:items-center items-start"
+      >
+        <ServiceCard.Title>Custom Astro Integrations</ServiceCard.Title>
+        <div
+          class="bg-text text-bg px-1.5 py-0.5 leading-5 align-middle inline-flex items-center text-sm font-semibold"
+        >
+          New!
+        </div>
+      </div>
+      <ServiceCard.Description>
+        Astro Integrations allow to hook into the build process, dev server, and
+        more. As a maintainer of Astro and numerous integrations, I can help you
+        create one tailored to your needs.
+      </ServiceCard.Description>
+      <ServiceCard.Techs>
+        <TechPill id="astro" />
+        <TechPill id="typescript" />
       </ServiceCard.Techs>
     </ServiceCard>
     <ServiceCard>
@@ -55,6 +78,7 @@ const id = "services";
         <TechPill id="postgres" />
         <TechPill id="directus" />
         <TechPill id="tina" />
+        <TechPill id="supabase" />
       </ServiceCard.Techs>
     </ServiceCard>
     <ServiceCard>
@@ -105,6 +129,7 @@ const id = "services";
         <TechPill id="typescript" />
         <TechPill id="prettier" />
         <TechPill id="eslint" />
+        <TechPill id="biome" />
         <TechPill id="github" />
       </ServiceCard.Techs>
     </ServiceCard>
