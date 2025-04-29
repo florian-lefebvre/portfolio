@@ -1,0 +1,95 @@
+---
+title: "Passing data to a bundled script in Astro"
+description: "You wish you could use define:vars and import npm packages in your script? This article is for you."
+date: 2025-04-29
+cover:
+  src: ~/assets/posts/hydration-in-astro/cover.jpg
+  alt: Astro OpenGraph design.
+category: Web development
+tags:
+  - Astro
+  - Hydration
+  - Programming
+  - Web development
+  - Software development
+  - SSR
+  - Fullstack development
+  - Frontend development
+---
+
+You are writing a client script that calls an action from some user inputs. And now, it turns out you also need to send some data that comes from the frontmatter (server).
+
+If you recognize yourself, you've at least tried to use [`define:vars`](https://docs.astro.build/en/reference/directives-reference/#definevars) without success.
+
+Let's see how we can solve this situation!
+
+> If you simply want to be able to use TypeScript in an inline script, there's a simple solution: use the [JSDoc type syntax](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html):
+>
+> ```astro
+> <script>
+>   /** @type {string} */
+>   const myVariable = window.SOME_GLOBAL
+> </script>
+> ```
+
+## Why can't I just use `define:vars`?
+
+We all love this directive but just like any other attributes you may add to a `script` in Astro, it turns it into a bundled script!
+
+To quote the documentation:
+
+> This is because when Astro bundles a script, it includes and runs the script once even if you include the component containing the script multiple times on one page. `define:vars` requires a script to rerun with each set of values, so Astro creates an inline script instead.
+>
+> [Template directives reference](https://docs.astro.build/en/reference/directives-reference/#definevars)
+
+## Solution
+
+You'll need a 2nd script to pass the data. There are a few ways to do this but the best way in my opinion is to use a script with type `application/json` (yes those exist!):
+
+```astro
+---
+import { db } from '~/db'
+
+const data = await db.getUserData()
+---
+
+<script
+    is:inline
+    id="my-data"
+    set:html={JSON.stringify(data)}
+></script>
+
+<script>
+    const data = JSON.parse(document.getElementById('my-id').text)
+</script>
+```
+
+You can even share the type if you want to:
+
+```astro
+---
+// Demo.astro
+import { db } from '~/db'
+
+export interface Data {
+    foo: 'bar'
+}
+
+const data: Data = await db.getUserData()
+---
+
+<script
+    is:inline
+    id="my-data"
+    set:html={JSON.stringify(data)}
+></script>
+
+<script>
+    import type { Data } from './Demo.astro'
+    const data: Data = JSON.parse(document.getElementById('my-id').text)
+</script>
+```
+
+I think it's the best solution because it's compatible with [View Transitions](https://docs.astro.build/en/guides/view-transitions/). If you used a global property on `window` instead for example, the value could "lag" because only the page contents is swapped.
+
+Keep in mind that the data you pass from the server to the client has to be serializable, just like when using `define:vars`.
