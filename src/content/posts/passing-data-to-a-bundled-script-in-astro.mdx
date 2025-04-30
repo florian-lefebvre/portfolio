@@ -61,7 +61,7 @@ const data = await db.getUserData()
 ></script>
 
 <script>
-    const data = JSON.parse(document.getElementById('my-data').text)
+    const data = JSON.parse(document.getElementById("my-data")!.innerText)
 </script>
 ```
 
@@ -88,7 +88,7 @@ const data: Data = await db.getUserData()
 
 <script>
     import type { Data } from './Demo.astro'
-    const data: Data = JSON.parse(document.getElementById('my-data').text)
+    const data: Data = JSON.parse(document.getElementById("my-data")!.innerText)
 </script>
 ```
 
