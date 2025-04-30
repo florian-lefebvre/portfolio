@@ -44,7 +44,7 @@ To quote the documentation:
 
 ## Solution
 
-You'll need a 2nd script to pass the data. There are a few ways to do this but the best way in my opinion is to use a script with type `application/json` (yes those exist!):
+You'll need a 2nd script to pass the data. There are a few ways to do this (more on this below) but the best way in my opinion is to use a script with type `application/json` (yes those exist!):
 
 ```astro
 ---
@@ -92,6 +92,13 @@ const data: Data = await db.getUserData()
 </script>
 ```
 
-I think it's the best solution because it's compatible with [View Transitions](https://docs.astro.build/en/guides/view-transitions/). If you used a global property on `window` instead for example, the value could "lag" because only the page contents is swapped.
+The documentation recommends using [data attributes and custom elements](https://docs.astro.build/en/guides/client-side-scripts/#pass-frontmatter-variables-to-scripts). It's great if you want to pass data that is **scoped** to the component (ie. as custom elements props). However, I think it has the downside of having to learn a new (verbose) API just to pass some data to your script **once** (or globally).
 
-Keep in mind that the data you pass from the server to the client has to be serializable, just like when using `define:vars`.
+No matter what approach you pick:
+
+- It works great with the [Client Router](https://docs.astro.build/en/guides/view-transitions/)! If you used a global property on `window` instead for example, the value could "lag" because only the page contents is swapped
+- Keep in mind that the data you pass from the server to the client has to be serializable, just like when using `define:vars`.
+
+---
+
+Big thanks to [Armand Philippot](https://github.com/ArmandPhilippot), [HiDeoo](https://github.com/HiDeoo) and [Oliver Speir](https://github.com/OliverSpeir) for the article reviews!
