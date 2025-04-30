@@ -56,6 +56,7 @@ const data = await db.getUserData()
 <script
     is:inline
     id="my-data"
+    type="application/json"
     set:html={JSON.stringify(data)}
 ></script>
 
@@ -81,6 +82,7 @@ const data: Data = await db.getUserData()
 <script
     is:inline
     id="my-data"
+    type="application/json"
     set:html={JSON.stringify(data)}
 ></script>
 
