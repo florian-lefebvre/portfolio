@@ -1,0 +1,182 @@
+---
+title: "Dependency injection in Astro"
+description: "Dependency injection is a poweful programming technique. Learn how to apply it to Astro."
+date: 2025-05-04
+cover:
+  src: ~/assets/posts/hydration-in-astro/cover.jpg
+  alt: Astro OpenGraph design.
+category: Web development
+tags:
+  - Astro
+  - Programming
+  - Web development
+  - Software development
+  - SSR
+  - Fullstack development
+  - Frontend development
+---
+
+[Dependency injection](https://en.wikipedia.org/wiki/Dependency_injection) (DI) is a powerful technique: an object's dependencies (like services or components it needs) are provided from the outside rather than the object creating them itself. This promotes loose coupling, making code more modular, testable, and easier to maintain.
+
+Let's see how to apply it to Astro.
+
+## In Astro
+
+Astro doesn't have a built-in DI system, unlike [NestJS](https://docs.nestjs.com/providers) or [AdonisJS](https://docs.adonisjs.com/guides/concepts/dependency-injection#dependency-injection). But it's very easy to implement in userland using [locals](https://docs.astro.build/en/guides/middleware/#storing-data-in-contextlocals).
+
+Locals hold data for the current request, so it can be used as a main bus.
+
+## Example usage
+
+> This is the approach I like to take on my projects but this is not the only way. Adapt it to your needs and specific usecases.
+
+For our example, we'll implement a `getUsersByActivity()` function that retrieves users based on their `active` status and returns them.
+
+### 1. Define your dependencies
+
+Let's start by defining our user model:
+
+```ts
+// src/lib/models.ts
+export interface User {
+  id: string;
+  name: string;
+  active: boolean;
+}
+```
+
+Then define our dependencies:
+
+```ts
+// src/lib/dependencies.ts
+import type { User } from "./models";
+
+export interface Database {
+  sql: (raw: string) => Promise<Array<any>>;
+}
+
+export interface UsersRepository {
+  all: () => Promise<Array<User>>;
+}
+
+export interface Dependencies {
+  db: Database;
+  usersRepository: UsersRepository;
+}
+```
+
+### 2. Implement them
+
+Let's start with the `Database`. We'll use [`pg`](https://node-postgres.com/) to implement it. For the sake of simplicity, this example does not cover sanitizing the query nor stopping the connection:
+
+```ts
+// src/lib/implementations/database.ts
+import type { Database } from "../dependencies";
+import { Client } from "pg";
+
+export async function createPgDatabase(): Database {
+  const client = new Client();
+  await client.connect();
+
+  return {
+    sql: async (raw) => {
+      const res = await client.query(raw);
+      return res.rows;
+    },
+  };
+}
+```
+
+Then we'll implement the `UsersRepository`:
+
+```ts
+// src/lib/implementations/users-repository.ts
+import type { Dependencies, UsersRepository } from "../dependencies";
+
+export function createDatabaseUsersRepository({
+  db,
+}: Pick<Dependencies, "db">): UsersRepository {
+  return {
+    all: async () => {
+      return await db.sql("select * from users");
+    },
+  };
+}
+```
+
+Notice how this implentation of the `UsersRepository` itself has a dependency.
+
+### 3. Write your function
+
+Now that our dependencies are ready, let's use them:
+
+```ts
+// src/lib/usecases/get-users-by-activity.ts
+import type { Dependencies } from "../dependencies";
+import type { User } from "../models";
+
+export async function getUsersByActivity(
+  { usersRepository }: Pick<Dependencies, "usersRepository">,
+  { active }: { active: boolean }
+): Promise<Array<User>> {
+  const users = await usersRepository.all();
+  return users.filter((user) => user.active === active);
+}
+```
+
+The key point here is that the first argument is for dependencies, and any other argument is for actual parameters.
+
+### 4. Type your locals
+
+Make sure to use inline imports to avoid breaking global augmentation:
+
+```ts
+// src/env.d.ts
+declare namespace App {
+  type Dependencies = import("./lib/dependencies").Dependencies;
+  interface Locals extends Dependencies {}
+}
+```
+
+### 5. Initialize your dependencies
+
+Let's write a middleware to initialize everything:
+
+```ts
+// src/middleware.ts
+import { defineMiddleware, sequence } from "astro/middleware";
+import type { Dependencies } from "./lib/dependencies";
+import { createPgDatabase } from "./lib/implementations/database";
+import { createDatabaseUsersRepository } from "./lib/implementations/users-repository";
+
+const dependenciesMiddleware = defineMiddleware(async (context, next) => {
+  const db = await createPgDatabase();
+  const usersRepository = createDatabaseUsersRepository({ db });
+
+  Object.assign(context.locals, {
+    db,
+    usersRepository,
+  } satisfies Dependencies);
+
+  return await next();
+});
+
+export const onRequest = sequence(dependenciesMiddleware);
+```
+
+### 6. Use your function
+
+You can now use `getUsersByActivity()` anywhere within request scope. For example in an Astro page:
+
+```astro
+---
+// src/pages/index.astro
+import { getUsersByActivity } from '../lib/usecases/get-users-by-activity';
+
+const activeUsers = await getUsersByActivity(Astro.locals, { active: true });
+---
+
+<ul>
+    {activeUsers.map((user) => <li>{user.name}</li>)}
+</ul>
+```
