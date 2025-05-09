@@ -1,7 +1,7 @@
 ---
 title: "Dependency injection in Astro"
-description: "Dependency injection is a poweful programming technique. Learn how to apply it to Astro."
-date: 2025-05-04
+description: "Dependency injection is a poweful programming technique. Learn how to apply a simplified version to Astro."
+date: 2025-05-09
 cover:
   src: ~/assets/posts/hydration-in-astro/cover.jpg
   alt: Astro OpenGraph design.
@@ -18,7 +18,7 @@ tags:
 
 [Dependency injection](https://en.wikipedia.org/wiki/Dependency_injection) (DI) is a powerful technique: an object's dependencies (like services or components it needs) are provided from the outside rather than the object creating them itself. This promotes loose coupling, making code more modular, testable, and easier to maintain.
 
-Let's see how to apply it to Astro.
+Let's see how to apply it to Astro, in a simple way.
 
 ## In Astro
 
@@ -180,3 +180,11 @@ const activeUsers = await getUsersByActivity(Astro.locals, { active: true });
     {activeUsers.map((user) => <li>{user.name}</li>)}
 </ul>
 ```
+
+---
+
+Dependency injection usually involves more than that for more complex usecases, but this article is only meant to be used as a starting point!
+
+---
+
+Big thanks to [Lloyd Atkinson](https://github.com/lloydjatkinson) for the feedback!
