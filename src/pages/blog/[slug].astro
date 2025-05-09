@@ -6,8 +6,7 @@ import Button from "~/components/Button.astro";
 import Prose from "~/components/Prose.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import { components } from "~/components/mdx";
-import "@fontsource-variable/jetbrains-mono";
-import jetbrainsMonoFile from "@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2?url";
+import { Font } from "astro:assets";
 import { render } from "astro:content";
 
 export const getStaticPaths = (async () => {
@@ -34,13 +33,7 @@ const { Content } = await render(article);
   }}
 >
   <Fragment slot="head">
-    <link
-      rel="preload"
-      as="font"
-      crossorigin="anonymous"
-      href={jetbrainsMonoFile}
-      type="font/woff2"
-    />
+    <Font cssVariable="--font-jetbrains-mono" preload />
   </Fragment>
   <div class="max-w-xl mx-auto px-4">
     <div class="flex items-center justify-between">
@@ -59,8 +52,7 @@ const { Content } = await render(article);
         </svg>
         <span>All articles</span>
       </Button>
-      <time
-        datetime={data.date.toISOString()}
+      <time datetime={data.date.toISOString()}
         >{
           new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
             data.date
@@ -69,11 +61,7 @@ const { Content } = await render(article);
       >
     </div>
     <Prose class="my-8">
-      <Image
-        {...data.cover}
-        width={576}
-        loading="eager"
-      />
+      <Image {...data.cover} width={576} loading="eager" />
       <h1>{data.title}</h1>
       <p class="lead">
         {data.description}

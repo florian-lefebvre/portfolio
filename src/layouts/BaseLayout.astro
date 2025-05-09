@@ -1,10 +1,9 @@
 ---
-import "@fontsource-variable/inter";
-import interFile from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
 import "~/styles/main.css";
 import Header from "~/components/Header.astro";
 import Footer from "~/components/Footer.astro";
 import { SEO } from "astro-seo";
+import { Font } from "astro:assets";
 
 interface Props {
   title: string;
@@ -32,13 +31,7 @@ const canonical = Astro.url.href;
     <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <link
-      rel="preload"
-      as="font"
-      crossorigin="anonymous"
-      href={interFile}
-      type="font/woff2"
-    />
+    <Font cssVariable="--font-inter" preload />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <SEO
       {title}

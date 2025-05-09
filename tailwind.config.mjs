@@ -1,4 +1,3 @@
-import defaultTheme from "tailwindcss/defaultTheme";
 import colors from "tailwindcss/colors"
 import typography from "@tailwindcss/typography";
 
@@ -17,8 +16,8 @@ export default {
         gray: colors.zinc,
       },
       fontFamily: {
-        sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
-        mono: ["JetBrains Mono Variable", ...defaultTheme.fontFamily.mono],
+        sans: ["var(--font-inter)"],
+        mono: ["var(--font-jetbrains-mono)"],
       },
     },
   },
