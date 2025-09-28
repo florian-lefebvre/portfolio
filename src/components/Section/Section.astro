@@ -7,6 +7,6 @@ interface Props {
 const { id, class: className } = Astro.props;
 ---
 
-<section {id} class:list={["mx-auto px-4 max-w-xl py-16", className]}>
+<section {id} class:list={["mx-auto px-4 max-w-4xl py-16", className]}>
   <slot />
 </section>

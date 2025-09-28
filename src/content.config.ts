@@ -13,6 +13,7 @@ const experiences = defineCollection({
         .array(z.object({ href: z.string(), text: z.string() }))
         .optional()
         .default([]),
+      featured: z.boolean().optional(),
     }),
 });
 

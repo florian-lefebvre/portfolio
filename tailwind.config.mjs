@@ -16,6 +16,7 @@ export default {
         gray: colors.zinc,
         "primary-bg": "var(--color-primary-bg)",
         "primary-text": "var(--color-primary-text)",
+        "primary-contrast": "var(--color-primary-contrast)",
       },
       fontFamily: {
         sans: ["var(--font-inter)"],

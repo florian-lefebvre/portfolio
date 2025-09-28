@@ -6,6 +6,7 @@
   --color-text-subtle: theme(colors.gray.700);
   --color-primary-bg: theme(colors.blue.500);
   --color-primary-text: theme(colors.white);
+  --color-primary-contrast: theme(colors.blue.600);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,6 +18,7 @@
     --color-text-subtle: theme(colors.gray.300);
     --color-primary-bg: theme(colors.blue.600);
     --color-primary-text: theme(colors.white);
+    --color-primary-contrast: theme(colors.blue.400);
   }
 
   html {
