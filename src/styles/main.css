@@ -3,7 +3,9 @@
   --color-bg-subtle: theme(colors.gray.100);
   --color-border: theme(colors.gray.200);
   --color-text: theme(colors.gray.950);
-  --color-text-subtle: theme(colors.gray.600);
+  --color-text-subtle: theme(colors.gray.700);
+  --color-primary-bg: theme(colors.blue.500);
+  --color-primary-text: theme(colors.white);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +15,8 @@
     --color-border: theme(colors.gray.700);
     --color-text: theme(colors.gray.50);
     --color-text-subtle: theme(colors.gray.300);
+    --color-primary-bg: theme(colors.blue.600);
+    --color-primary-text: theme(colors.white);
   }
 
   html {
@@ -32,7 +36,7 @@
 }
 
 .astro-code {
-  @apply border border-border
+  @apply border border-border;
 }
 
 html {

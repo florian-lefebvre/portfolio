@@ -1,4 +1,4 @@
-import colors from "tailwindcss/colors"
+import colors from "tailwindcss/colors";
 import typography from "@tailwindcss/typography";
 
 /** @type {import('tailwindcss').Config} */
@@ -14,6 +14,8 @@ export default {
         text: "var(--color-text)",
         "text-subtle": "var(--color-text-subtle)",
         gray: colors.zinc,
+        "primary-bg": "var(--color-primary-bg)",
+        "primary-text": "var(--color-primary-text)",
       },
       fontFamily: {
         sans: ["var(--font-inter)"],

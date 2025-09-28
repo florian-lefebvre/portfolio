@@ -3,7 +3,7 @@ import Button from "./Button.astro";
 ---
 
 <header
-  class="px-4 mx-auto max-w-xl flex items-center justify-between w-full py-2"
+  class="px-4 mx-auto max-w-4xl flex items-center justify-between w-full py-2"
 >
   <a href="/" class="text-text hover:text-text-subtle transition-colors">
     <svg
@@ -19,25 +19,73 @@ import Button from "./Button.astro";
     <span class="sr-only">Home</span>
   </a>
   <div class="items-center flex space-x-2">
-    <Button href="/blog">Articles</Button>
-    <Button href="/#contact">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        class="h-4 w-4 mr-2"
-        ><g
+    <Button
+      href="/"
+      class="max-sm:p-2 max-sm:[&>svg:first-child]:size-5 max-sm:[&>svg:first-child]:mr-0"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <g fill="none" fill-rule="evenodd">
+          <path
+            d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"
+          ></path>
+          <path
+            fill="currentColor"
+            d="M10.671 2.843a2 2 0 0 1 2.658 0l3.934 3.497l.25-1.504a1 1 0 1 1 1.973.328L19.03 7.91l2.635 2.343a1 1 0 0 1-1.328 1.494l-.464-.412l-.787 7.864A2 2 0 0 1 17.095 21H6.905a2 2 0 0 1-1.99-1.801l-.786-7.864l-.465.412a1 1 0 0 1-1.328-1.494z"
+          ></path>
+        </g>
+      </svg>
+      <span class="max-sm:sr-only">Home</span>
+    </Button>
+    <Button
+      href="/about"
+      class="max-sm:p-2 max-sm:[&>svg:first-child]:size-5 max-sm:[&>svg:first-child]:mr-0"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M14 7a6.98 6.98 0 0 1-1.941 4.838A6.98 6.98 0 0 1 7.02 14h-.04a6.98 6.98 0 0 1-5.039-2.162A7 7 0 1 1 14 7m-2.757 3.5A5.49 5.49 0 0 0 7 8.5a5.49 5.49 0 0 0-4.243 2A5.49 5.49 0 0 0 7 12.5a5.49 5.49 0 0 0 4.243-2M7 7.5a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5"
+          clip-rule="evenodd"></path>
+      </svg>
+      <span class="max-sm:sr-only">About</span>
+    </Button>
+    <Button
+      href="/blog"
+      class="max-sm:p-2 max-sm:[&>svg:first-child]:size-5 max-sm:[&>svg:first-child]:mr-0"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M42.432 6.609c-.668-3.172-3.492-5.262-6.706-5.1c-3.061.154-7.83.51-14.531 1.324c-6.7.813-11.415 1.609-14.423 2.191c-3.161.613-5.394 3.322-5.267 6.562c.043 1.104.116 2.431.232 3.991c.897-3.447 3.904-5.875 7.465-6.121C12.329 9.239 17.485 9 25 9s12.671.24 15.798.456a8.5 8.5 0 0 1 2.279.476q-.346-1.92-.645-3.323M25 46.5c-7.462 0-12.56-.238-15.626-.45c-2.82-.195-5.1-2.306-5.38-5.174C3.747 38.351 3.5 34.459 3.5 29s.247-9.351.494-11.876c.28-2.868 2.56-4.98 5.38-5.174c3.065-.212 8.164-.45 15.626-.45s12.56.238 15.626.45c2.82.195 5.1 2.306 5.38 5.174c.247 2.525.494 6.417.494 11.876s-.247 9.351-.494 11.876c-.28 2.868-2.56 4.98-5.38 5.174c-3.065.212-8.164.45-15.626.45m-14-28a1.5 1.5 0 0 0 0 3h8a1.5 1.5 0 0 0 0-3zm0 12a1.5 1.5 0 0 0 0 3h8a1.5 1.5 0 0 0 0-3zM9.5 38a1.5 1.5 0 0 1 1.5-1.5h28a1.5 1.5 0 0 1 0 3H11A1.5 1.5 0 0 1 9.5 38M11 24.5a1.5 1.5 0 0 0 0 3h8a1.5 1.5 0 0 0 0-3zm21 9c-1.98 0-3.487-.06-4.568-.13a2.966 2.966 0 0 1-2.803-2.802A72 72 0 0 1 24.5 26c0-1.98.06-3.487.13-4.568a2.966 2.966 0 0 1 2.802-2.803c1.081-.07 2.587-.129 4.568-.129s3.487.06 4.568.13a2.966 2.966 0 0 1 2.803 2.802c.07 1.081.129 2.587.129 4.568s-.06 3.487-.13 4.568a2.966 2.966 0 0 1-2.802 2.803c-1.081.07-2.587.129-4.568.129"
+          clip-rule="evenodd"></path>
+      </svg>
+      <span class="max-sm:sr-only">Blog</span>
+    </Button>
+    <Button
+      href="/#contact"
+      variant="primary"
+      class="max-sm:p-2 max-sm:[&>svg:first-child]:size-5 max-sm:[&>svg:first-child]:mr-0"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <g
           fill="none"
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="2"
-          ><path d="M0 0h24v24H0z"></path><path
+        >
+          <path d="M0 0h24v24H0z"></path>
+          <path
             fill="currentColor"
             d="M5.821 4.91c3.898-2.765 9.469-2.539 13.073.536c3.667 3.127 4.168 8.238 1.152 11.897c-2.842 3.447-7.965 4.583-12.231 2.805l-.232-.101l-4.375.931l-.075.013l-.11.009l-.113-.004l-.044-.005l-.11-.02l-.105-.034l-.1-.044l-.076-.042l-.108-.077l-.081-.074l-.073-.083l-.053-.075l-.065-.115l-.042-.106l-.031-.113l-.013-.075l-.009-.11l.004-.113l.005-.044l.02-.11l.022-.072l1.15-3.451l-.022-.036C.969 12.45 1.97 7.805 5.59 5.079l.23-.168z"
-          ></path></g
-        ></svg
-      >
-      <span>Contact</span>
+          ></path>
+        </g>
+      </svg>
+      <span class="max-sm:sr-only">Get in touch</span>
     </Button>
   </div>
 </header>
-<div class="bg-gradient-to-b from-bg to-bg/0 sticky top-2 h-24 z-10 pointer-events-none"></div>
+<div
+  class="bg-gradient-to-b from-bg to-bg/0 sticky top-2 h-24 z-10 pointer-events-none"
+>
+</div>

@@ -1,14 +1,22 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-interface Props extends HTMLAttributes<"a"> {}
+interface Props extends HTMLAttributes<"a"> {
+  variant?: "primary" | "default";
+}
 
-const { class: className, ...rest } = Astro.props;
+const { class: className, variant = "default", ...rest } = Astro.props;
 ---
 
 <a
   {...rest}
   class:list={[
-    "bg-bg-subtle py-1.5 px-3 inline-flex items-center hover:bg-border transition-colors border border-border select-none",
+    "py-1.5 px-3 inline-flex items-center border rounded-full select-none",
+    "[&>svg:first-child]:size-4 [&>svg:first-child]:mr-2",
+    {
+      default: "hover:bg-bg-subtle border-border transition-colors",
+      primary:
+        "bg-primary-bg text-primary-text border-transparent font-semibold hover:brightness-90 transition-[filter]",
+    }[variant],
     className,
   ]}
 >
