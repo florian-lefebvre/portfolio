@@ -16,12 +16,10 @@ const featured = filteredExperiences[0];
 const { Content } = await render(featured);
 
 const link = featured.data.links.length > 0 ? featured.data.links[0] : null;
-const moreLinks =
-  featured.data.links.length > 1 ? featured.data.links.slice(1) : null;
 ---
 
 <Section
-  class="pt-0 sm:pt-8 grid grid-cols-1 md:grid-cols-5 gap-y-12 gap-x-4 items-center"
+  class="pt-0 sm:pt-8 grid grid-cols-1 md:grid-cols-4 gap-y-12 gap-x-4 items-center"
 >
   <div class="flex flex-col gap-6 md:col-span-2 max-w-md">
     <Image
@@ -49,7 +47,7 @@ const moreLinks =
       > CET
     </div>
   </div>
-  <div class="md:col-span-3">
+  <div class="md:col-span-2">
     <h3 class="px-2 text-sm mb-1">Featured project</h3>
     <div class="rounded-2xl bg-bg-subtle border border-border p-2">
       <Image
@@ -97,17 +95,7 @@ const moreLinks =
         <div class="text-sm mt-4">
           <Content {components} />
         </div>
-        <div class="grid grid-cols-2 gap-4 mt-4">
-          <div>
-            <div class="text-xs">Dates</div>
-            <div class="text-text font-medium">{featured.data.date}</div>
-          </div>
-          <div>
-            <div class="text-xs">More links</div>
-            <!-- TODO: -->
-            <div class="text-text font-medium">{moreLinks?.length ?? "N/A"}</div>
-          </div>
-        </div>
+        <div class="text-sm leading-5 mt-4">{featured.data.date}</div>
       </div>
     </div>
   </div>
