@@ -8,7 +8,7 @@ const { id } = Astro.props;
 
 const tech = await getEntry("techs", id);
 if (!tech) {
-  throw new Error(`Can't find tech for id "${id}"`)
+  throw new Error(`Can't find tech for id "${id}"`);
 }
 const { name, href } = tech.data;
 const { Content } = await render(tech);
@@ -17,16 +17,10 @@ const { Content } = await render(tech);
 <a
   {href}
   target="_blank"
-  class="bg-bg border align-middle border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
+  class="bg-bg border -my-1 align-middle border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
 >
-  <span class="mr-1 h-4 w-4">
+  <span class="contents [&>svg]:size-4 [&>svg]:mr-1">
     <Content />
   </span>
   <span class="leading-5">{name}</span>
 </a>
-
-<style is:global>
-  .tech-pill svg {
-    @apply w-full h-full;
-  }
-</style>

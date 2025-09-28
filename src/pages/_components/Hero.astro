@@ -14,6 +14,10 @@ if (filteredExperiences.length !== 1) {
 }
 const featured = filteredExperiences[0];
 const { Content } = await render(featured);
+
+const link = featured.data.links.length > 0 ? featured.data.links[0] : null;
+const moreLinks =
+  featured.data.links.length > 1 ? featured.data.links.slice(1) : null;
 ---
 
 <Section
@@ -57,40 +61,52 @@ const { Content } = await render(featured);
       />
       <div class="px-1 pt-2">
         <div class="flex items-center justify-between gap-2">
-          {
-            featured.data.links.length > 0 ? (
-              <a
-                href={featured.data.links[0].href}
-                class="text-primary-contrast underline font-bold text-lg flex items-center"
-                target="_blank"
-              >
-                {featured.data.title}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  class="size-4 ml-1"
+          <div>
+            {
+              link ? (
+                <a
+                  href={link.href}
+                  class="text-primary-contrast underline font-bold text-lg flex items-center"
+                  target="_blank"
                 >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                  />
-                </svg>
-              </a>
-            ) : (
-              <div class="text-text font-bold text-lg">
-                {featured.data.title}
-              </div>
-            )
-          }
-
-          <div class="text-sm">{featured.data.date}</div>
+                  {featured.data.title}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    class="size-4 ml-1"
+                  >
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    />
+                  </svg>
+                </a>
+              ) : (
+                <div class="text-text font-bold text-lg">
+                  {featured.data.title}
+                </div>
+              )
+            }
+            <div class="text-xs">{featured.data.description}</div>
+          </div>
         </div>
-        <div class="text-sm mt-1">
+        <div class="text-sm mt-4">
           <Content {components} />
+        </div>
+        <div class="grid grid-cols-2 gap-4 mt-4">
+          <div>
+            <div class="text-xs">Dates</div>
+            <div class="text-text font-medium">{featured.data.date}</div>
+          </div>
+          <div>
+            <div class="text-xs">More links</div>
+            <!-- TODO: -->
+            <div class="text-text font-medium">{moreLinks?.length ?? "N/A"}</div>
+          </div>
         </div>
       </div>
     </div>
