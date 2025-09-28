@@ -16,39 +16,36 @@ const featured = filteredExperiences[0];
 const { Content } = await render(featured);
 ---
 
-<Section class="pt-0 sm:pt-8 grid grid-cols-5 gap-4 items-center">
-  <div class="flex flex-col gap-6 col-span-2">
+<Section
+  class="pt-0 sm:pt-8 grid grid-cols-1 md:grid-cols-5 gap-y-12 gap-x-4 items-center"
+>
+  <div class="flex flex-col gap-6 md:col-span-2 max-w-md">
     <Image
       src={image}
       alt=""
-      class="size-24 sm:size-16 rounded-full bg-bg-subtle border border-border shrink-0"
+      class="size-24 md:size-16 rounded-full bg-bg-subtle border border-border shrink-0"
       loading="eager"
       width={128}
     />
     <div>
-      <h2 class="mb-1">Florian Lefebvre</h2>
-      <h1 class="text-3xl/7 font-semibold text-text text-balance">
+      <h2 class="text-primary-contrast">Florian Lefebvre</h2>
+      <h1 class="text-3xl/7 font-bold text-text text-balance">
         Astro expert & fullstack developer
       </h1>
-      <div class="my-6 space-y-3 sm:space-y-1">
-        <p>
-          Fullstack developer. Freelancer. Astro core maintainer & TSC member.
-        </p>
-        <p>
-          Open-Source lover. French. Two-time winner of the Astro Community
-          Award.
-        </p>
-      </div>
-      <div>
-        <span
-          id="hero-time"
-          class="bg-bg-subtle rounded-full border border-border px-1.5 py-0.5 tabular-nums select-none text-text"
-          >00:00:00</span
-        > CET
-      </div>
+    </div>
+    <p>
+      Fullstack developer. Freelancer. Astro core maintainer & TSC member.
+      Open-Source lover. French. Two-time winner of the Astro Community Award.
+    </p>
+    <div>
+      <span
+        id="hero-time"
+        class="bg-bg-subtle rounded-full border border-border px-1.5 py-0.5 tabular-nums select-none text-text"
+        >00:00:00</span
+      > CET
     </div>
   </div>
-  <div class="col-span-3">
+  <div class="md:col-span-3">
     <h3 class="px-2 text-sm mb-1">Featured project</h3>
     <div class="rounded-2xl bg-bg-subtle border border-border p-2">
       <Image
