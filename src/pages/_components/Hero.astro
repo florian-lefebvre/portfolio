@@ -5,6 +5,7 @@ import Section from "~/components/Section";
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
 import { components } from "~/components/mdx";
+import SocialLinks from "./partials/SocialLinks.astro";
 
 const filteredExperiences = (await getCollection("experiences")).filter(
   (e) => e.data.featured
@@ -19,9 +20,9 @@ const link = featured.data.links.length > 0 ? featured.data.links[0] : null;
 ---
 
 <Section
-  class="pt-0 sm:pt-8 grid grid-cols-1 md:grid-cols-4 gap-y-12 gap-x-4 items-center"
+  class="pt-0 sm:pt-8 grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-4 items-center"
 >
-  <div class="flex flex-col gap-6 md:col-span-2 max-w-md">
+  <div class="flex flex-col gap-6 max-w-md">
     <Image
       src={image}
       alt=""
@@ -39,15 +40,18 @@ const link = featured.data.links.length > 0 ? featured.data.links[0] : null;
       Fullstack developer. Freelancer. Astro core maintainer & TSC member.
       Open-Source lover. French. Two-time winner of the Astro Community Award.
     </p>
-    <div>
+    <div class="flex items-center gap-1.5">
       <span
-        id="hero-time"
-        class="bg-bg-subtle rounded-full border border-border px-1.5 py-0.5 tabular-nums select-none text-text"
-        >00:00:00</span
-      > CET
+        class="bg-bg-subtle rounded-full border border-border px-1.5 tabular-nums select-none text-text inline-flex gap-1 items-center"
+      >
+        <span class="size-2 inline-block rounded-full bg-red-500"></span>
+        <span id="hero-time">00:00:00</span>
+      </span>
+      <span>CET</span>
     </div>
+    <SocialLinks />
   </div>
-  <div class="md:col-span-2">
+  <div>
     <h3 class="px-2 text-sm mb-1">Featured project</h3>
     <div class="rounded-2xl bg-bg-subtle border border-border p-2">
       <Image

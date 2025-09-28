@@ -1,4 +1,6 @@
 ---
+import Button from "~/components/Button.astro";
+
 interface Props {
   href: string;
   label: string;
@@ -7,17 +9,11 @@ interface Props {
 const { href, label } = Astro.props;
 ---
 
-<a
+<Button
   {href}
   target="_blank"
-  class="p-1.5 sm:p-2.5 rounded-full bg-bg-subtle border border-border social-link transition-colors hover:bg-border"
+  class="!p-2 [&>svg:first-child]:size-6 [&>svg:first-child]:mr-0"
 >
-  <span class="sr-only">{label}</span>
   <slot />
-</a>
-
-<style is:global>
-  .social-link svg {
-    @apply w-5 h-5 sm:w-6 sm:h-6;
-  }
-</style>
+  <span class="sr-only">{label}</span>
+</Button>
