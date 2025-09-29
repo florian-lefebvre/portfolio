@@ -12,7 +12,7 @@ const { href, label } = Astro.props;
 <Button
   {href}
   target="_blank"
-  class="!p-2 [&>svg:first-child]:size-6 [&>svg:first-child]:mr-0"
+  class="!p-2 [&>svg:first-child]:!size-6 [&>svg:first-child]:!mr-0"
 >
   <slot />
   <span class="sr-only">{label}</span>
