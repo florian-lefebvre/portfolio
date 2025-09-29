@@ -13,6 +13,10 @@ const id = "work";
 <Section {id}>
   <Section.Title {id}>Work</Section.Title>
   <div class="grid grid-cols-1 md:grid-cols-2 mt-4 gap-6">
-    {experiences.map((project) => <ProjectCard {project} />)}
+    {
+      experiences.map((project, i) => (
+        <ProjectCard {project} loading={i <= 1 ? "eager" : "lazy"} />
+      ))
+    }
   </div>
 </Section>

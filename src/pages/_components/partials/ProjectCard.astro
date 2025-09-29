@@ -5,9 +5,10 @@ import { render } from "astro:content";
 import { components } from "~/components/mdx";
 interface Props {
   project: CollectionEntry<"experiences">;
+  loading?: "eager" | "lazy";
 }
 
-const { project } = Astro.props;
+const { project, loading = "lazy" } = Astro.props;
 const { data } = project;
 const { Content } = await render(project);
 ---
@@ -21,8 +22,10 @@ const { Content } = await render(project);
     <Image
       src={data.image.src}
       alt={data.image.alt}
-      loading="eager"
-      decoding="sync"
+      quality="max"
+      width={700}
+      {loading}
+      decoding={loading === "eager" ? "sync" : "async"}
       class="object-cover object-center size-full group-hover:scale-[1.025] transition-transform will-change-transform duration-500 ease-out"
     />
   </div>

@@ -45,7 +45,7 @@ const featured = (await getCollection("experiences")).sort((a, b) =>
   </div>
   <div>
     <h3 class="px-2 text-sm mb-1">Featured project</h3>
-    <ProjectCard project={featured} />
+    <ProjectCard project={featured} loading="eager" />
   </div>
 </Section>
 <script is:inline>
