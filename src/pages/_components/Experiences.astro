@@ -3,16 +3,16 @@ import { getCollection } from "astro:content";
 import Section from "~/components/Section";
 import ProjectCard from "~/pages/_components/partials/ProjectCard.astro";
 
-const experiences = (await getCollection("experiences")).sort((a, b) =>
-  b.id.localeCompare(a.id)
-);
+const experiences = (await getCollection("experiences"))
+  .sort((a, b) => b.id.localeCompare(a.id))
+  .slice(1);
 
-const id = "experiences";
+const id = "work";
 ---
 
 <Section {id}>
-  <Section.Title {id}>Experiences</Section.Title>
-  <div class="grid grid-cols-1 mt-4 gap-10">
+  <Section.Title {id}>Work</Section.Title>
+  <div class="grid grid-cols-1 md:grid-cols-2 mt-4 gap-8">
     {experiences.map((project) => <ProjectCard {project} />)}
   </div>
 </Section>

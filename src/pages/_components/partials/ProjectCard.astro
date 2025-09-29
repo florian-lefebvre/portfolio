@@ -12,7 +12,56 @@ const { data } = project;
 const { Content } = await render(project);
 ---
 
-<div class="">
+<div class="rounded-2xl bg-bg-subtle border border-border p-2 flex flex-col">
+  <Image
+    src={data.image.src}
+    alt={data.image.alt}
+    loading="eager"
+    decoding="sync"
+    class="rounded-[0.5rem] bg-text border border-border aspect-[2/1] object-cover"
+  />
+  <div class="px-1 pt-2 flex flex-col gap-4 flex-1">
+    <div class="flex gap-2">
+      <div class="w-full">
+        <div class="flex items-center justify-between gap-2">
+          {
+            data.url ? (
+              <a
+                href={data.url}
+                class="text-primary-contrast underline font-bold text-lg flex items-center"
+                target="_blank"
+              >
+                {data.title}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="size-4 ml-1"
+                >
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                  />
+                </svg>
+              </a>
+            ) : (
+              <div class="text-text font-bold text-lg">{data.title}</div>
+            )
+          }
+          <div class="text-xs leading-5">{data.date}</div>
+        </div>
+        <div class="text-xs">{data.description}</div>
+      </div>
+    </div>
+    <div class="text-sm mt-auto">
+      <Content {components} />
+    </div>
+  </div>
+</div>
+<!-- <div class="">
   <div class="relative bg-bg border border-border aspect-video">
     <Image
       {...data.image}
@@ -48,4 +97,4 @@ const { Content } = await render(project);
       </div>
     </div>
   </div>
-</div>
+</div> -->

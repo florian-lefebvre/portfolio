@@ -17,10 +17,10 @@ const { Content } = await render(tech);
 <a
   {href}
   target="_blank"
-  class="bg-bg border -my-1 align-middle border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
+  class="bg-bg border rounded-full -my-1 align-middle border-border px-1 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
 >
-  <span class="contents [&>svg]:size-4 [&>svg]:mr-1">
+  <span class="contents [&>svg]:size-3 [&>svg]:mr-1">
     <Content />
   </span>
-  <span class="leading-5">{name}</span>
+  <span class="leading-5 text-xs font-semibold">{name}</span>
 </a>
