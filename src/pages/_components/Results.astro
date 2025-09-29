@@ -1,0 +1,57 @@
+---
+import Section from "~/components/Section";
+
+const id = "results";
+---
+
+<Section {id}>
+  <Section.Title {id}>Results</Section.Title>
+  <div class="mt-4 grid grid-cols-2 grid-rows-2 gap-6">
+    <div
+      class="row-span-2 bg-bg-subtle rounded-2xl border border-border px-3 py-2"
+    >
+      <div class="font-bold text-2xl text-text">PayFit</div>
+      <ul class="list-disc pl-4 mt-4">
+        <li class="leading-8">
+          <span class="font-bold text-xl leading-none text-primary-contrast"
+            >56%</span
+          > faster loading time
+        </li>
+        <li class="leading-8">
+          <span class="font-bold text-xl leading-none text-primary-contrast"
+            >32%</span
+          > LCP improvement
+        </li>
+        <li class="leading-8">
+          <span class="font-bold text-xl leading-none text-primary-contrast"
+            >100%</span
+          > CLS improvement
+        </li>
+        <li class="leading-8">
+          <span class="font-bold text-xl leading-none text-primary-contrast"
+            >25%</span
+          > INP improvement
+        </li>
+        <li class="leading-8">Usage of web standards</li>
+      </ul>
+    </div>
+    <div class="bg-bg-subtle rounded-2xl border border-border px-3 py-2">
+      <div class="font-bold text-2xl text-text">Astro</div>
+      <ul class="list-disc pl-4 mt-4">
+        <li class="leading-8">
+          Improved <span
+            class="font-bold text-xl leading-none text-primary-contrast"
+            >security</span
+          > with astro:env
+        </li>
+        <li class="leading-8">
+          Improved <span
+            class="font-bold text-xl leading-none text-primary-contrast"
+            >performance</span
+          > with the fonts API
+        </li>
+      </ul>
+    </div>
+    <div class="bg-bg-subtle rounded-2xl border border-border p-2">sqt</div>
+  </div>
+</Section>
