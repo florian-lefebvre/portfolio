@@ -1,5 +1,5 @@
 import { glob } from "astro/loaders";
-import { defineCollection, z } from "astro:content";
+import { defineCollection, reference, z } from "astro:content";
 
 const experiences = defineCollection({
   loader: glob({ pattern: "**/[^_]*.mdx", base: "./src/content/experiences" }),
@@ -53,7 +53,21 @@ const testimonials = defineCollection({
 
 const texts = defineCollection({
   loader: glob({ pattern: "**/[^_]*.mdx", base: "./src/content/texts" }),
-  schema: z.object({}),
+});
+
+const results = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.mdx", base: "./src/content/results" }),
+  schema: z.object({
+    title: z.string(),
+    image: reference("results-images"),
+  }),
+});
+
+const resultsImages = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.mdx",
+    base: "./src/content/results-images",
+  }),
 });
 
 export const collections = {
@@ -63,4 +77,6 @@ export const collections = {
   techs,
   testimonials,
   texts,
+  results,
+  "results-images": resultsImages,
 };

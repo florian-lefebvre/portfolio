@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
+import { render } from "astro:content";
+
+interface Props {
+  result: CollectionEntry<"results">;
+}
+
+const { result } = Astro.props;
+const { data } = result;
+const [{ Content }, { Content: ImageContent }] = await Promise.all([
+  render(result),
+  render(await getEntry(data.image)),
+]);
+---
+
+<div class="bg-bg-subtle rounded-2xl border border-border p-2">
+  <div class="flex items-center gap-2 [&>svg]:size-6">
+    <ImageContent />
+    <div class="font-bold text-text">{data.title}</div>
+  </div>
+  <p class="text-lg mt-3 [&>strong]:text-text leading-6">
+    <Content />
+  </p>
+</div>
