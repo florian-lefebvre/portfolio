@@ -20,7 +20,7 @@ const [{ Content }, { Content: ImageContent }] = await Promise.all([
     <ImageContent />
     <div class="font-bold text-text">{data.title}</div>
   </div>
-  <p class="text-lg mt-3 [&>strong]:text-text leading-6">
+  <div class="text-lg mt-4 [&_strong]:text-primary-contrast leading-6">
     <Content />
-  </p>
+  </div>
 </div>
