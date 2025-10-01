@@ -1,7 +1,6 @@
 export default {
   "/legal/notices": "/legal/legal-notices",
   "/legal/privacy": "/legal/privacy-policy",
-  "/about": "/#about",
   "/projects": "/#experiences",
   "/projects/nuxt3-starter-medusa": "/#experiences",
   "/projects/ohf31-website": "/#experiences",
@@ -20,7 +19,7 @@ export default {
   "/projects/shortcuts-app": "/#experiences",
   "/projects/ynotes": "/#experiences",
   "/fr": "/",
-  "/fr/a-propos": "/#about",
+  "/fr/a-propos": "/about",
   "/fr/blog": "/blog",
   "/fr/blog/annonce-de-choose-tech": "/blog/announcing-choose-tech",
   "/fr/blog/hydratation-dans-astro": "/blog/hydration-in-astro",

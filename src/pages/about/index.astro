@@ -1,0 +1,18 @@
+---
+import Section from "~/components/Section";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import { Content } from "~/content/about.mdx"
+import Prose from "~/components/Prose.astro";
+---
+
+<BaseLayout
+  title="About"
+  description="Learn more about me."
+>
+  <Section class="pt-8">
+    <Section.Title as="h1">About me</Section.Title>
+    <Prose class="mt-4">
+        <Content />
+    </Prose>
+  </Section>
+</BaseLayout>
