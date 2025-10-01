@@ -11,37 +11,44 @@ const { article, preloadImage = false } = Astro.props;
 ---
 
 <div
-  class="relative bg-bg border border-border aspect-video hover:opacity-80 transition-opacity"
+  class="rounded-2xl relative bg-bg-subtle border border-border p-2 flex flex-col group"
 >
-  <Image
-    {...article.data.cover}
-    class="object-cover object-center"
-    width={576}
-    loading={preloadImage ? "eager" : "lazy"}
-  />
   <div
-    class="absolute top-0 bg-bg-subtle px-2 py-1 text-sm flex items-center justify-between border-r border-b border-border"
+    class="relative rounded-[0.5rem] border border-border aspect-[2/1] overflow-hidden"
   >
-    <time datetime={article.data.date.toISOString()}>
-      {
+    <Image
+      src={article.data.cover.src}
+      alt={article.data.cover.alt}
+      quality="max"
+      width={700}
+      loading={preloadImage ? "eager" : "lazy"}
+      class="object-cover object-center size-full group-hover:scale-[1.025] transition-transform will-change-transform duration-500 ease-out"
+    />
+  </div>
+  <div class="px-1 pt-2 flex flex-col gap-4 flex-1">
+    <div class="flex gap-2">
+      <div class="w-full">
+        <div class="flex items-center justify-between gap-2">
+          <a
+            href={`/blog/${article.id}`}
+            class="text-primary-contrast underline font-bold text-lg"
+          >
+            {article.data.title}
+            <span class="absolute inset-0"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="text-text">{article.data.description}</p>
+    <time
+      class="leading-5 text-sm mt-auto"
+      datetime={article.data.date.toISOString()}
+    >
+      Published on {
         new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
           article.data.date
         )
       }
     </time>
-  </div>
-  <div class="bg-bg-subtle p-2 border-t border-border flex flex-col-reverse">
-    <div
-      class="text-sm mt-1"
-    >
-      {article.data.description}
-    </div>
-    <a
-      href={`/blog/${article.id}`}
-      class="text-text font-semibold"
-    >
-      {article.data.title}
-      <span class="inset-0 absolute"></span>
-    </a>
   </div>
 </div>
