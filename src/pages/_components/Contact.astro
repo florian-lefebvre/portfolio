@@ -1,27 +1,45 @@
 ---
 import Section from "~/components/Section";
-import AvailabilityIndicator from "~/pages/_components/partials/AvailabilityIndicator.astro";
 import SocialLinks from "~/pages/_components/partials/SocialLinks.astro";
 
 const id = "contact";
+const hourlyRate = 100;
 ---
 
 <Section {id} class="pb-0">
   <div class="flex items-center justify-between">
     <Section.Title {id}>Contact</Section.Title>
-    <AvailabilityIndicator />
+    <p class="text-text font-semibold text-lg">
+      {
+        new Intl.NumberFormat("en-US", {
+          style: "currency",
+          currency: "EUR",
+          maximumSignificantDigits: 2,
+        }).format(hourlyRate)
+      }/hour
+    </p>
   </div>
-  <p class="mt-4">
-    Feel free to reach out if you're looking for a developer, have a question or
-    just want to connect. I may be able to take new missions depending on my
-    availability (top-right indicator).
-  </p>
-  <a
-    href="mailto:contact@florian-lefebvre.dev"
-    class="mt-4 block underline transition-colors hover:text-text"
-    >contact@florian-lefebvre.dev</a
-  >
-  <div class="mt-4">
-    <SocialLinks />
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+    <p>
+      Feel free to reach out if you're looking for a developer, have a question
+      or just want to connect. I may be able to take new missions depending on
+      my availability.
+    </p>
+    <p>
+      <span class="font-bold text-text">Services</span>: all things Astro
+      (consulting, training, reviews, custom integrations...), frontend,
+      backend, fullstack, cms, tooling and CI/CD...
+    </p>
+    <div class="flex items-center">
+      <SocialLinks />
+    </div>
+    <div class="flex items-center">
+      <a
+        href="mailto:contact@florian-lefebvre.dev"
+        class="underline underline-offset-2 text-primary-contrast"
+      >
+        contact@florian-lefebvre.dev
+      </a>
+    </div>
   </div>
 </Section>

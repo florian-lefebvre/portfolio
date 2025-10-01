@@ -52,7 +52,7 @@ const { Content } = await render(project);
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1l9-9m-5 0h5v5"
                   />
                 </svg>
               </a>
@@ -70,40 +70,3 @@ const { Content } = await render(project);
     </div>
   </div>
 </div>
-<!-- <div class="">
-  <div class="relative bg-bg border border-border aspect-video">
-    <Image
-      {...data.image}
-      class="object-cover object-center"
-      width={576}
-      quality="high"
-    />
-    <div
-      class="absolute top-0 bg-bg-subtle px-2 py-1 text-sm flex items-center justify-between border-r border-b border-border"
-    >
-      <div>{data.date}</div>
-    </div>
-    <div class="bg-bg-subtle p-2 border-t border-border">
-      <div class="flex items-center justify-between">
-        <div class="text-text font-semibold">{data.title}</div>
-        <div class="flex items-center justify-center space-x-2 text-sm">
-          {
-            data.links.map(({ href, text }) => (
-              <a
-                {href}
-                target="_blank"
-                class="underline hover:text-text transition-colors"
-              >
-                {text}
-              </a>
-            ))
-          }
-        </div>
-      </div>
-      <div class="text-text-subtle text-sm mt-0.5">{data.description}</div>
-      <div class="mt-3 [&_code]:bg-bg [&_code]:p-0.5 [&_code]:border [&_code]:border-border">
-        <Content {components} />
-      </div>
-    </div>
-  </div>
-</div> -->
