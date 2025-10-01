@@ -5,12 +5,20 @@ import mdx from "@astrojs/mdx";
 import redirects from "./redirects.mjs";
 import sitemap from "@astrojs/sitemap";
 import netlify from "@astrojs/netlify";
+import expressiveCode from "astro-expressive-code";
 
 export default defineConfig({
   site: "https://florian-lefebvre.dev",
   output: "static",
   adapter: netlify(),
-  integrations: [tailwind(), mdx(), sitemap()],
+  integrations: [
+    tailwind(),
+    expressiveCode({
+      themes: ["github-light", "one-dark-pro"],
+    }),
+    mdx(),
+    sitemap(),
+  ],
   experimental: {
     fonts: [
       {
@@ -33,14 +41,14 @@ export default defineConfig({
       },
     ],
   },
-  markdown: {
-    shikiConfig: {
-      themes: {
-        light: "github-light",
-        dark: "one-dark-pro",
-      },
-    },
-  },
+  // markdown: {
+  //   shikiConfig: {
+  //     themes: {
+  //       light: "github-light",
+  //       dark: "one-dark-pro",
+  //     },
+  //   },
+  // },
   redirects: {
     ...Object.fromEntries(
       Object.entries(redirects).map(([from, destination]) => [
