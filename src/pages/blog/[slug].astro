@@ -35,7 +35,7 @@ const { Content } = await render(article);
   <Fragment slot="head">
     <Font cssVariable="--font-jetbrains-mono" preload />
   </Fragment>
-  <div class="max-w-xl mx-auto px-4">
+  <div class="max-w-4xl mx-auto px-4">
     <div class="flex items-center justify-between">
       <Button href="/blog">
         <svg
@@ -61,7 +61,12 @@ const { Content } = await render(article);
       >
     </div>
     <Prose class="my-8">
-      <Image {...data.cover} width={576} loading="eager" />
+      <Image
+        {...data.cover}
+        width={1000}
+        loading="eager"
+        class="w-full border border-border rounded-2xl aspect-[2/1] object-cover object-center"
+      />
       <h1>{data.title}</h1>
       <p class="lead">
         {data.description}
