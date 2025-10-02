@@ -51,10 +51,6 @@ const testimonials = defineCollection({
     }),
 });
 
-const texts = defineCollection({
-  loader: glob({ pattern: "**/[^_]*.mdx", base: "./src/content/texts" }),
-});
-
 const results = defineCollection({
   loader: glob({ pattern: "**/[^_]*.mdx", base: "./src/content/results" }),
   schema: z.object({
@@ -76,7 +72,6 @@ export const collections = {
   posts,
   techs,
   testimonials,
-  texts,
   results,
   "results-images": resultsImages,
 };

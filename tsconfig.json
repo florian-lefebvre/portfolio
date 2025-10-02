@@ -5,7 +5,9 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"]
-    }
+    },
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"]
