@@ -14,7 +14,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     expressiveCode({
-      themes: ["github-light", "one-dark-pro"],
+      themes: ["github-light", "houston"],
     }),
     mdx(),
     sitemap(),
@@ -41,14 +41,6 @@ export default defineConfig({
       },
     ],
   },
-  // markdown: {
-  //   shikiConfig: {
-  //     themes: {
-  //       light: "github-light",
-  //       dark: "one-dark-pro",
-  //     },
-  //   },
-  // },
   redirects: {
     ...Object.fromEntries(
       Object.entries(redirects).map(([from, destination]) => [

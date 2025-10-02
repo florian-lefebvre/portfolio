@@ -27,11 +27,30 @@
 }
 
 .expressive-code pre {
+  --code-background: var(--color-bg);
   @apply !border !border-border;
 }
 
-.expressive-code pre > code {
-  --ec-codeFontFml: var(--font-jetbrains-mono);
+.expressive-code .frame {
+  @apply !shadow-none;
+}
+
+.expressive-code .frame > .header {
+  background: unset !important;
+  @apply !bg-bg-subtle;
+}
+
+.expressive-code .frame > .header::before {
+  @apply !border-border;
+  border-width: 1px !important;
+}
+
+.expressive-code .has-title pre {
+  border-top: 1px solid var(--color-border) !important;
+}
+
+.expressive-code .header .title::after {
+  border-top-color: var(--color-primary-contrast) !important;
 }
 
 html {
