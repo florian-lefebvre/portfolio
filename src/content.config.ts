@@ -10,6 +10,7 @@ const experiences = defineCollection({
       date: z.string(),
       image: z.object({ src: image(), alt: z.string() }),
       url: z.string().url().optional(),
+      featured: z.boolean().optional(),
     }),
 });
 

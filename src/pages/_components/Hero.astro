@@ -6,9 +6,13 @@ import { getCollection } from "astro:content";
 import SocialLinks from "./partials/SocialLinks.astro";
 import ProjectCard from "./partials/ProjectCard.astro";
 
-const featured = (await getCollection("experiences")).sort((a, b) =>
-  b.id.localeCompare(a.id)
-)[0];
+const featured = (await getCollection("experiences"))
+  .sort((a, b) => b.id.localeCompare(a.id))
+  .find((e) => e.data.featured);
+
+if (!featured) {
+  throw new Error("Needs at least one featured experience");
+}
 ---
 
 <Section
@@ -34,7 +38,7 @@ const featured = (await getCollection("experiences")).sort((a, b) =>
     </p>
     <div class="flex items-center gap-1.5 md:order-last">
       <span
-      class="bg-bg-subtle rounded-full border border-border px-1.5 tabular-nums select-none text-text inline-flex gap-1 items-center"
+        class="bg-bg-subtle rounded-full border border-border px-1.5 tabular-nums select-none text-text inline-flex gap-1 items-center"
       >
         <span class="size-2 inline-block rounded-full bg-red-500"></span>
         <span id="hero-time">00:00:00</span>

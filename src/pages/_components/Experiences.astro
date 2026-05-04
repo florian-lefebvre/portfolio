@@ -3,10 +3,9 @@ import { getCollection } from "astro:content";
 import Section from "~/components/Section";
 import ProjectCard from "~/pages/_components/partials/ProjectCard.astro";
 
-const experiences = (await getCollection("experiences"))
-  .sort((a, b) => b.id.localeCompare(a.id))
-  .slice(1);
-
+const experiences = (await getCollection("experiences")).sort((a, b) =>
+  b.id.localeCompare(a.id),
+);
 const id = "work";
 ---
 
