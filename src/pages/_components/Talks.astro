@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content";
+import Section from "~/components/Section";
+import TalkCard from "~/pages/_components/partials/TalkCard.astro";
+
+const talks = (await getCollection("talks")).sort(
+  (a, b) => +b.data.date - +a.data.date,
+);
+const id = "talks";
+---
+
+<Section {id}>
+  <Section.Title {id}>Speaking</Section.Title>
+  <div class="flex flex-col mt-4 gap-6">
+    {talks.map((talk) => <TalkCard {talk} />)}
+  </div>
+</Section>
