@@ -1,0 +1,80 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
+import Button from "~/components/Button.astro";
+import { components } from "~/components/mdx";
+
+interface Props {
+  talk: CollectionEntry<"talks">;
+}
+
+const { talk } = Astro.props;
+const { data } = talk;
+const { Content } = await render(talk);
+
+const upcoming = +data.date > Date.now();
+const formattedDate = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "long",
+}).format(data.date);
+---
+
+<div class="rounded-2xl bg-bg-subtle border border-border p-2 flex flex-col">
+  <div class="px-1 py-1 flex flex-col gap-3 flex-1">
+    <div class="flex items-baseline justify-between gap-2 flex-wrap">
+      <div class="flex items-center gap-2">
+        <span class="text-text font-bold text-lg">{data.title}</span>
+        {
+          upcoming && (
+            <span class="bg-bg border border-border rounded-full px-2 leading-5 text-xs font-semibold select-none">
+              Upcoming
+            </span>
+          )
+        }
+      </div>
+      <time class="text-xs leading-5" datetime={data.date.toISOString()}>
+        {formattedDate}
+      </time>
+    </div>
+    <div class="text-xs -mt-2">
+      {data.event}{data.location && ` - ${data.location}`}
+    </div>
+    <div
+      class="text-sm [&_code]:font-[monospace] [&_code]:bg-bg [&_code]:text-text [&_code]:px-0.5"
+    >
+      <Content {components} />
+    </div>
+    {
+      (data.video || data.slides) && (
+        <div class="flex items-center gap-2 flex-wrap mt-auto pt-1">
+          {data.video && (
+            <Button href={data.video} target="_blank" variant="on-subtle" class="text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M8 5.14v14l11-7l-11-7Z"
+                />
+              </svg>
+              <span>Watch</span>
+            </Button>
+          )}
+          {data.slides && (
+            <Button href={data.slides} target="_blank" variant="on-subtle" class="text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 4h18v12H3zM12 16v4m-4 0h8"
+                />
+              </svg>
+              <span>Slides</span>
+            </Button>
+          )}
+        </div>
+      )
+    }
+  </div>
+</div>

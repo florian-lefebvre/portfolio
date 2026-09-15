@@ -1,7 +1,7 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 interface Props extends HTMLAttributes<"a"> {
-  variant?: "primary" | "default";
+  variant?: "primary" | "default" | "on-subtle";
 }
 
 const { class: className, variant = "default", ...rest } = Astro.props;
@@ -14,6 +14,8 @@ const { class: className, variant = "default", ...rest } = Astro.props;
     "[&>svg:first-child]:size-4 [&>svg:first-child]:mr-2",
     {
       default: "hover:bg-bg-subtle border-border transition-colors",
+      // for use on a bg-bg-subtle surface, where the default hover is invisible
+      "on-subtle": "hover:bg-bg border-border transition-colors",
       primary:
         "bg-primary-bg text-primary-text border-transparent font-semibold hover:brightness-90 transition-[filter]",
     }[variant],

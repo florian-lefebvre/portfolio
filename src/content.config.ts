@@ -40,6 +40,18 @@ const techs = defineCollection({
   }),
 });
 
+const talks = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.mdx", base: "./src/content/talks" }),
+  schema: z.object({
+    title: z.string(),
+    event: z.string(),
+    location: z.string().optional(),
+    date: z.coerce.date(),
+    video: z.string().url().optional(),
+    slides: z.string().url().optional(),
+  }),
+});
+
 const testimonials = defineCollection({
   loader: glob({ pattern: "**/[^_]*.mdx", base: "./src/content/testimonials" }),
   schema: ({ image }) =>
@@ -72,6 +84,7 @@ export const collections = {
   legal,
   posts,
   techs,
+  talks,
   testimonials,
   results,
   "results-images": resultsImages,
