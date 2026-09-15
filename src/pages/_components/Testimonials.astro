@@ -3,10 +3,11 @@ import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
 import Section from "~/components/Section";
 import { components } from "~/components/mdx";
+import { byIdDesc } from "~/lib/sort";
 
 const testimonials = await Promise.all(
   (await getCollection("testimonials", ({ data }) => !data.draft))
-    .sort((a, b) => b.id.localeCompare(a.id))
+    .sort(byIdDesc)
     .map(async (e) => ({
       ...e,
       ...(await render(e)),

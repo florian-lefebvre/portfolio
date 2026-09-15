@@ -2,12 +2,11 @@
 import { getCollection } from "astro:content";
 import Section from "~/components/Section";
 import ResultCard from "./partials/ResultCard.astro";
+import { byIdDesc } from "~/lib/sort";
 
 const id = "results";
 
-const results = (await getCollection("results")).sort((a, b) =>
-  b.id.localeCompare(a.id)
-);
+const results = (await getCollection("results")).sort(byIdDesc);
 ---
 
 <Section {id}>

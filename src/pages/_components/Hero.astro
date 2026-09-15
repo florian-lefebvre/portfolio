@@ -5,9 +5,10 @@ import Section from "~/components/Section";
 import { getCollection } from "astro:content";
 import SocialLinks from "./partials/SocialLinks.astro";
 import ProjectCard from "./partials/ProjectCard.astro";
+import { byIdDesc } from "~/lib/sort";
 
 const featured = (await getCollection("experiences"))
-  .sort((a, b) => b.id.localeCompare(a.id))
+  .sort(byIdDesc)
   .find((e) => e.data.featured);
 
 if (!featured) {
@@ -27,7 +28,7 @@ if (!featured) {
       width={128}
     />
     <div>
-      <h2 class="text-primary-contrast">Florian Lefebvre</h2>
+      <p class="text-primary-contrast">Florian Lefebvre</p>
       <h1 class="text-3xl/7 font-bold text-text text-balance">
         Astro expert & fullstack developer
       </h1>

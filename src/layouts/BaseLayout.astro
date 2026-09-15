@@ -15,13 +15,16 @@ interface Props {
 const {
   title: _title,
   description,
-  image = `${Astro.url.origin}/og.jpg`,
+  image: _image = "/og.jpg",
   article,
 } = Astro.props;
 
 const title = `${_title} | Florian Lefebvre`;
 
 const canonical = Astro.url.href;
+// Open Graph and Twitter require absolute URLs, but Astro image sources are
+// emitted as site-relative paths.
+const image = new URL(_image, Astro.site ?? Astro.url).href;
 ---
 
 <html lang="en" dir="ltr" class="h-full">
@@ -71,6 +74,12 @@ const canonical = Astro.url.href;
     <slot name="head" />
   </head>
   <body class="flex min-h-full flex-col bg-bg text-text-subtle">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:z-20 focus:m-2 focus:rounded-full focus:border focus:border-border focus:bg-bg focus:px-3 focus:py-1.5 focus:text-text"
+    >
+      Skip to content
+    </a>
     <div class="sticky top-0 left-0 h-2 w-full z-10 bg-bg">
       <div
         id="page-progress"
@@ -80,43 +89,48 @@ const canonical = Astro.url.href;
       </div>
     </div>
     <Header />
-    <main>
+    <main id="main">
       <slot />
     </main>
     <Footer />
     <script is:inline>
       (() => {
-        // get elements
-        const body = document.querySelector("body");
         const progressBar = document.getElementById("page-progress");
+        let queued = false;
+
+        /**
+         *
+         * @param {number} min
+         * @param {number} n
+         * @param {number} max
+         */
+        const clamp = (min, n, max) => Math.min(max, Math.max(min, n));
 
         // this function increase or decrease the percentage of the element to stretch
         function stretch() {
-          const pixelScrolled = window.scrollY;
-          const viewportHeight = window.innerHeight;
-          const totalHeightScrollable = body.scrollHeight;
+          queued = false;
 
-          /**
-           *
-           * @param {number} min
-           * @param {number} n
-           * @param {number} max
-           */
-          const clamp = (min, n, max) => Math.min(max, Math.max(min, n));
+          const scrollable =
+            document.documentElement.scrollHeight - window.innerHeight;
 
           // convert pixels to percentage
-          const pixelsToPercentage = clamp(
-            0,
-            (pixelScrolled / (totalHeightScrollable - viewportHeight)) * 100,
-            100
-          );
+          const pixelsToPercentage =
+            scrollable > 0 ? clamp(0, (window.scrollY / scrollable) * 100, 100) : 0;
 
           // set the width of the fluid element.
           progressBar.style.width = Math.round(pixelsToPercentage) + "%";
         }
 
-        // append a scroll event listener to the window object
-        window.addEventListener("scroll", stretch);
+        // coalesce bursts of events into a single write per frame
+        function schedule() {
+          if (queued) return;
+          queued = true;
+          requestAnimationFrame(stretch);
+        }
+
+        stretch();
+        window.addEventListener("scroll", schedule, { passive: true });
+        window.addEventListener("resize", schedule, { passive: true });
       })();
     </script>
   </body>

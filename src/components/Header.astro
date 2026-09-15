@@ -18,7 +18,7 @@ import Button from "./Button.astro";
     </svg>
     <span class="sr-only">Home</span>
   </a>
-  <div class="items-center flex space-x-2">
+  <nav aria-label="Main" class="items-center flex space-x-2">
     <Button
       href="/"
       class="max-sm:p-2 max-sm:[&>svg:first-child]:size-5 max-sm:[&>svg:first-child]:mr-0"
@@ -83,7 +83,7 @@ import Button from "./Button.astro";
       </svg>
       <span class="max-sm:sr-only">Get in touch</span>
     </Button>
-  </div>
+  </nav>
 </header>
 <div
   class="bg-gradient-to-b from-bg to-bg/0 sticky top-2 h-24 z-10 pointer-events-none"

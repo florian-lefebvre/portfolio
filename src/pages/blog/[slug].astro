@@ -19,6 +19,30 @@ export const getStaticPaths = (async () => {
 const { article } = Astro.props;
 const { data } = article;
 const { Content } = await render(article);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: data.title,
+  description: data.description,
+  image: new URL(data.cover.src.src, Astro.site).href,
+  datePublished: data.date.toISOString(),
+  articleSection: data.category,
+  keywords: data.tags,
+  inLanguage: "en",
+  url: Astro.url.href,
+  mainEntityOfPage: { "@type": "WebPage", "@id": Astro.url.href },
+  author: {
+    "@type": "Person",
+    name: "Florian Lefebvre",
+    url: Astro.site?.href,
+  },
+  publisher: {
+    "@type": "Person",
+    name: "Florian Lefebvre",
+    url: Astro.site?.href,
+  },
+};
 ---
 
 <BaseLayout
@@ -34,6 +58,11 @@ const { Content } = await render(article);
 >
   <Fragment slot="head">
     <Font cssVariable="--font-jetbrains-mono" preload />
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(jsonLd).replace(/</g, "\\u003c")}
+    />
   </Fragment>
   <div class="max-w-4xl mx-auto px-4">
     <div class="flex items-center justify-between">

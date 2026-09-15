@@ -14,7 +14,7 @@ const hourlyRate = 100;
         new Intl.NumberFormat("en-US", {
           style: "currency",
           currency: "EUR",
-          maximumSignificantDigits: 2,
+          maximumFractionDigits: 0,
         }).format(hourlyRate)
       }/hour
     </p>

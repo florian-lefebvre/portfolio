@@ -7,11 +7,13 @@ interface Props {
 }
 
 const { href, label } = Astro.props;
+
+const isExternal = !href.startsWith("mailto:");
 ---
 
 <Button
   {href}
-  target="_blank"
+  target={isExternal ? "_blank" : undefined}
   class="!p-2 [&>svg:first-child]:!size-6 [&>svg:first-child]:!mr-0"
 >
   <slot />

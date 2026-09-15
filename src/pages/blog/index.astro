@@ -18,7 +18,7 @@ const articles = (await getCollection("posts")).sort((a, b) =>
     <div class="grid grid-cols-1 md:grid-cols-2 mt-4 gap-6">
       {
         articles.map((article, i) => (
-          <ArticleCard {article} preloadImage={i <= 3} />
+          <ArticleCard {article} preloadImage={i <= 1} />
         ))
       }
     </div>
